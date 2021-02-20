@@ -315,6 +315,23 @@
       <a class="reference internal nav-link" href="#plotting-eigenvectors">
        Plotting eigenvectors
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#top-eigenvectors-ordered-by-eigenvalue-size">
+         top eigenvectors ordered by eigenvalue size
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#bottom-eigenvectors-ordered-by-eigenvalue-size">
+         bottom eigenvectors ordered by eigenvalue size
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#bottom-eigenvectors-ordered-by-absolute-value-of-eigenvalue-size">
+         bottom eigenvectors ordered by absolute value of eigenvalue size
+        </a>
+       </li>
+      </ul>
      </li>
     </ul>
    </li>
@@ -1216,10 +1233,15 @@
 </div>
 <div class="section" id="plotting-eigenvectors">
 <h4>Plotting eigenvectors<a class="headerlink" href="#plotting-eigenvectors" title="Permalink to this headline">¶</a></h4>
-<p>top eigenvectors ordered by eigenvalue size</p>
-<div class="cell docutils container">
+<p>Here I will plot some of the eigenvectors for different networks to see how they are different.</p>
+<div class="section" id="top-eigenvectors-ordered-by-eigenvalue-size">
+<h5>top eigenvectors ordered by eigenvalue size<a class="headerlink" href="#top-eigenvectors-ordered-by-eigenvalue-size" title="Permalink to this headline">¶</a></h5>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
 <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
 
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">eigs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1245,10 +1267,15 @@
 <img alt="_images/feb-20-2021_53_3.png" src="_images/feb-20-2021_53_3.png" />
 </div>
 </div>
-<p>bottom eigenvectors ordered by eigenvalue size</p>
-<div class="cell docutils container">
+</div>
+<div class="section" id="bottom-eigenvectors-ordered-by-eigenvalue-size">
+<h5>bottom eigenvectors ordered by eigenvalue size<a class="headerlink" href="#bottom-eigenvectors-ordered-by-eigenvalue-size" title="Permalink to this headline">¶</a></h5>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
 <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
 
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">eigs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1274,10 +1301,15 @@
 <img alt="_images/feb-20-2021_55_3.png" src="_images/feb-20-2021_55_3.png" />
 </div>
 </div>
-<p>bottom eigenvectors ordered by absolute value of eigenvalue size</p>
-<div class="cell docutils container">
+</div>
+<div class="section" id="bottom-eigenvectors-ordered-by-absolute-value-of-eigenvalue-size">
+<h5>bottom eigenvectors ordered by absolute value of eigenvalue size<a class="headerlink" href="#bottom-eigenvectors-ordered-by-absolute-value-of-eigenvalue-size" title="Permalink to this headline">¶</a></h5>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
 <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
 
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">eigs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -1305,8 +1337,10 @@
 </div>
 </div>
 </div>
+</div>
 <div class="section" id="discussion">
 <h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>Blah blah</p>
 </div>
 </div>
 
