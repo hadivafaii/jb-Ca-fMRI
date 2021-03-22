@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>March 16th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
+    <title>March 18th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -57,8 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="March 18th, 2021" href="mar-18-2021.html" />
-    <link rel="prev" title="March 15th, 2021" href="mar-15-2021.html" />
+    <link rel="prev" title="March 16th, 2021" href="mar-16-2021.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -134,13 +133,13 @@
    March 15th, 2021
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-16-2021.html">
    March 16th, 2021
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="mar-18-2021.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    March 18th, 2021
   </a>
  </li>
@@ -186,7 +185,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/mar-16-2021.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/mar-18-2021.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -206,7 +205,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/hadivafaii/CafMRI/issues/new?title=Issue%20on%20page%20%2Fmar-16-2021.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/hadivafaii/CafMRI/issues/new?title=Issue%20on%20page%20%2Fmar-18-2021.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -227,7 +226,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/CafMRI/master?urlpath=tree/docs/mar-16-2021.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/CafMRI/master?urlpath=tree/docs/mar-18-2021.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -258,23 +257,6 @@
   <a class="reference internal nav-link" href="#detect-anomalies">
    Detect anomalies
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#delete-top-10-anomalous-idxs">
-     Delete top 10 anomalous idxs
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bandpass-filtering">
-   Bandpass filtering
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bandpass-on-anomaly-filtered-data">
-   Bandpass on anomaly filtered data
-  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bandpass-full-data-comm">
@@ -289,9 +271,26 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scale-32-x-32">
-   Scale = 32 x 32
+  <a class="reference internal nav-link" href="#bandpass-f-and-threshold-plot">
+   Bandpass f, and threshold plot
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scale-16">
+     scale = 16
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scale-32">
+     scale = 32
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scale-64">
+     scale = 64
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -304,15 +303,9 @@
         
               <div>
                 
-  <div class="section" id="march-16th-2021">
-<h1>March 16th, 2021<a class="headerlink" href="#march-16th-2021" title="Permalink to this headline">¶</a></h1>
-<p><strong>Motivation</strong>: Cleaned up, functions moved to the top of document (will be hidden).</p>
-<p>Includes:</p>
-<ul class="simple">
-<li><p>anomaly detection</p></li>
-<li><p>bandpassing</p></li>
-<li><p>community structure (with bandpassed data)</p></li>
-</ul>
+  <div class="section" id="march-18th-2021">
+<h1>March 18th, 2021<a class="headerlink" href="#march-18th-2021" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation</strong>: Eeffect of bandpassing on community structure.</br></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
@@ -943,6 +936,58 @@
 
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    
+
+<span class="k">def</span> <span class="nf">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span>
+    <span class="n">mode</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="p">):</span>
+
+    <span class="k">assert</span> <span class="n">mode</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Spearman&#39;</span><span class="p">,</span> <span class="s1">&#39;Pearson&#39;</span><span class="p">],</span> <span class="s2">&quot;invalid mode: </span><span class="si">{:s}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;RdYlBu_r&#39;</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;Spearman&#39;</span> <span class="k">else</span> <span class="s1">&#39;Spectral_r&#39;</span>
+    
+    <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">nrows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">thresholds</span><span class="p">)</span>
+    <span class="n">ncols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lowcuts</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">highcuts</span><span class="p">)</span>
+    <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="n">nrows</span> <span class="o">*</span> <span class="mf">1.4</span><span class="p">)</span> <span class="k">if</span> <span class="n">figsize</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">figsize</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lowcut</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">lowcuts</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">highcut</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">highcuts</span><span class="p">)):</span>
+            <span class="n">jj</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">highcuts</span><span class="p">)</span> <span class="o">+</span> <span class="n">j</span>
+            <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">th</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span>
+                <span class="n">corr</span> <span class="o">=</span> <span class="n">plot_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                
+                <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span>
+                <span class="n">coms</span> <span class="o">=</span> <span class="n">algorithms</span><span class="o">.</span><span class="n">leiden</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+                <span class="n">partition</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="p">:</span> <span class="p">[</span><span class="n">n</span> <span class="ow">in</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">coms</span><span class="o">.</span><span class="n">communities</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="p">()}</span>
+                <span class="n">comm_mat</span><span class="p">,</span> <span class="n">comm_dict</span> <span class="o">=</span> <span class="n">filter_islands</span><span class="p">(</span><span class="n">partition</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">min_com_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="n">nx_comm</span><span class="o">.</span><span class="n">modularity</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">communities</span><span class="o">=</span><span class="n">comm_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+                <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">comm_mat</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">colorbar</span><span class="p">:</span>
+                    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+                
+                <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;low: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">high: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">)</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="n">jj</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;th = </span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
+                    <span class="n">axes</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">jj</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Effect of thresholding and bandpassing on community structure.  Frequencies are in Hz</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;Using </span><span class="si">{:s}</span><span class="s1"> correlation + Leiden algorithm&#39;</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1003,7 +1048,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">num_stds</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">num_stds</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">num_filter</span> <span class="o">=</span> <span class="mi">5</span>
 
 <span class="n">anomalies</span> <span class="o">=</span> <span class="n">detect_anomalies</span><span class="p">(</span>
@@ -1020,417 +1065,12 @@
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>...merging dicts: 10126it [00:00, 100154.51it/s]
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47 % of all pixels contain at least one anomalous time period
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18 % of all pixels contain at least one anomalous time period
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;all_indxs&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;avg sigma values vs time (shaded area: SD)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;hist plot of idxs where anomalies occur&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Here we are using data only from pixels where an anomaly occurs&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_10_0.png" src="_images/mar-16-2021_10_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;most_common&#39;</span><span class="p">],</span> <span class="nb">len</span><span class="p">(</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([(226, 4757), (29, 474), (236, 259), (58, 168), (106, 152)], 250)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="delete-top-10-anomalous-idxs">
-<h3>Delete top 10 anomalous idxs<a class="headerlink" href="#delete-top-10-anomalous-idxs" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ca_filtered</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">ca</span><span class="p">,</span> <span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ca_filtered</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ca</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((190, 186, 21350), (190, 186, 21600))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anomalies2</span> <span class="o">=</span> <span class="n">detect_anomalies</span><span class="p">(</span>
-    <span class="n">ca_filtered</span><span class="p">,</span>
-    <span class="n">window</span><span class="o">=</span><span class="n">window</span><span class="p">,</span>
-    <span class="n">num_stds</span><span class="o">=</span><span class="n">num_stds</span><span class="p">,</span>
-    <span class="n">num_filter</span><span class="o">=</span><span class="n">num_filter</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 % of all pixels contain at least one anomalous time period
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span>
-             <span class="n">ci</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;before&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;all_indxs&#39;</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>  <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;brown&#39;</span><span class="p">,</span>
-             <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;before&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">anomalies2</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;idx&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;sigma&#39;</span><span class="p">,</span>
-             <span class="n">ci</span><span class="o">=</span><span class="s1">&#39;sd&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;after&#39;</span><span class="p">)</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">anomalies2</span><span class="p">[</span><span class="s1">&#39;all_indxs&#39;</span><span class="p">],</span> <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span>
-             <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;after&#39;</span><span class="p">)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;avg sigma values vs time (shaded area: SD)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;hist plot of idxs where anomalies occur&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Here we are using data only from pixels where an anomaly occurs&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
-
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_15_0.png" src="_images/mar-16-2021_15_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="bandpass-filtering">
-<h2>Bandpass filtering<a class="headerlink" href="#bandpass-filtering" title="Permalink to this headline">¶</a></h2>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mi">3</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">ca</span><span class="p">[</span><span class="mi">126</span><span class="p">,</span> <span class="mi">139</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="n">y10</span><span class="p">,</span> <span class="n">zo</span> <span class="o">=</span> <span class="n">butter_bandpass_filter</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
-    <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
-    <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">y</span><span class="p">,</span> <span class="n">zo</span> <span class="o">=</span> <span class="n">butter_bandpass_filter</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
-    <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
-    <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">plotting_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;raw&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="s1">&#39;ord = 2&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ord = 5&#39;</span><span class="p">:</span> <span class="n">y10</span><span class="p">}</span>
-
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11490</span> <span class="o">-</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">11490</span> <span class="o">+</span> <span class="mi">400</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">11490</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11490</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">11490</span> <span class="o">+</span> <span class="mi">50</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">11490</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18000</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_18_0.png" src="_images/mar-16-2021_18_0.png" />
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">fourier_transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">abs_fourier_transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fourier_transform</span><span class="p">)</span>
-    <span class="n">power_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">abs_fourier_transform</span><span class="p">)</span>
-    <span class="n">frequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ca_fs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fourier_transform</span><span class="p">))</span>
-
-    <span class="n">low_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frequency</span> <span class="o">-</span> <span class="n">lowcut</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
-    <span class="n">high_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frequency</span> <span class="o">-</span> <span class="n">highcut</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
-
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e11</span><span class="p">)</span>
-    
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">high_idx</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">high_idx</span><span class="p">]))</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequency</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:],</span> <span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">highcut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;power spectrum&#39;</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">)</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Power spectrum of different frequencies obtained using fast Fourier transform</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;Here we compare the raw data, and 2 bandpass filtered versiond (ord = 2 and 5)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;lowcut = </span><span class="si">{:.2f}</span><span class="s1"> Hz,  highcut = </span><span class="si">{:.2f}</span><span class="s1"> Hz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_19_0.png" src="_images/mar-16-2021_19_0.png" />
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-    <span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Sxx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">spectrogram</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hamming&#39;</span><span class="p">)</span>
-    <span class="c1"># Sxx /= Sxx.sum(0)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">Sxx</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gist_ncar_r&#39;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency [Hz]&#39;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="c1">#axes[-1].set_xticks([])</span>
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [sec]&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_20_0.png" src="_images/mar-16-2021_20_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">y10</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;frequency [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PSD [V**2/Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_21_0.png" src="_images/mar-16-2021_21_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="bandpass-on-anomaly-filtered-data">
-<h2>Bandpass on anomaly filtered data<a class="headerlink" href="#bandpass-on-anomaly-filtered-data" title="Permalink to this headline">¶</a></h2>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">ca_filtered</span><span class="p">[</span><span class="mi">126</span><span class="p">,</span> <span class="mi">139</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="n">y10</span><span class="p">,</span> <span class="n">zo</span> <span class="o">=</span> <span class="n">butter_bandpass_filter</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
-    <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
-    <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">y</span><span class="p">,</span> <span class="n">zo</span> <span class="o">=</span> <span class="n">butter_bandpass_filter</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
-    <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
-    <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
-    <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
-    <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">plotting_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;raw&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="s1">&#39;ord = 2&#39;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;ord = 5&#39;</span><span class="p">:</span> <span class="n">y10</span><span class="p">}</span>
-
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11000</span> <span class="o">-</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">11000</span> <span class="o">+</span> <span class="mi">400</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">11000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11000</span> <span class="o">-</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">11000</span> <span class="o">+</span> <span class="mi">50</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">11000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
-
-    <span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18000</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">intvl</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_24_0.png" src="_images/mar-16-2021_24_0.png" />
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
-
-
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">fourier_transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="n">abs_fourier_transform</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fourier_transform</span><span class="p">)</span>
-    <span class="n">power_spectrum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="n">abs_fourier_transform</span><span class="p">)</span>
-    <span class="n">frequency</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ca_fs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">fourier_transform</span><span class="p">))</span>
-
-    <span class="n">low_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frequency</span> <span class="o">-</span> <span class="n">lowcut</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
-    <span class="n">high_idx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frequency</span> <span class="o">-</span> <span class="n">highcut</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
-
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e0</span><span class="p">,</span> <span class="mf">1e11</span><span class="p">)</span>
-    
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frequency</span><span class="p">,</span> <span class="n">power_spectrum</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">high_idx</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:</span><span class="n">high_idx</span><span class="p">]))</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">loglog</span><span class="p">(</span><span class="n">frequency</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:],</span> <span class="n">power_spectrum</span><span class="p">[</span><span class="n">low_idx</span><span class="p">:],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">highcut</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;power spectrum&#39;</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">)</span>
-<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Power spectrum of different frequencies obtained using fast Fourier transform</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;Here we compare the raw data, and 2 bandpass filtered versiond (ord = 2 and 5)</span><span class="se">\n</span><span class="s1">&#39;</span>
-<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;lowcut = </span><span class="si">{:.2f}</span><span class="s1"> Hz,  highcut = </span><span class="si">{:.2f}</span><span class="s1"> Hz&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_26_0.png" src="_images/mar-16-2021_26_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">plotting_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
-    <span class="n">f</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">Sxx</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">spectrogram</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hamming&#39;</span><span class="p">)</span>
-    <span class="c1"># Sxx /= Sxx.sum(0)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">Sxx</span><span class="p">,</span> <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gist_ncar_r&#39;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency [Hz]&#39;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-
-<span class="c1"># axes[-1].set_xticks()</span>
-<span class="n">axes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [sec]&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_28_0.png" src="_images/mar-16-2021_28_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">y10</span><span class="p">,</span> <span class="n">ca_fs</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">Pxx_den</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;frequency [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;PSD [V**2/Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_30_0.png" src="_images/mar-16-2021_30_0.png" />
-</div>
+</script></div>
 </div>
 </div>
 <div class="section" id="bandpass-full-data-comm">
@@ -1438,7 +1078,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">3.0</span>
+<span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">4.0</span>
 
 <span class="n">ca_bp</span> <span class="o">=</span> <span class="n">apply_bandpass</span><span class="p">(</span>
     <span class="n">ca</span><span class="p">,</span>
@@ -1480,7 +1120,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_35_0.png" src="_images/mar-16-2021_35_0.png" />
+<img alt="_images/mar-18-2021_12_0.png" src="_images/mar-18-2021_12_0.png" />
 </div>
 </div>
 <div class="section" id="downsample">
@@ -1506,12 +1146,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_38_0.png" src="_images/mar-16-2021_38_0.png" />
+<img alt="_images/mar-18-2021_15_0.png" src="_images/mar-18-2021_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
 
 <span class="n">df</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">downsampled</span><span class="p">,</span> <span class="n">filter_idxs</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
 <span class="n">pearson</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">spearman</span><span class="p">,</span> <span class="n">spearman_corr</span> <span class="o">=</span> <span class="n">get_corrs</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">)</span>
@@ -1521,94 +1161,9 @@
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                            
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_corrs</span><span class="p">(</span><span class="n">spearman</span><span class="p">,</span> <span class="n">pearson</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_40_0.png" src="_images/mar-16-2021_40_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_corr_hist</span><span class="p">(</span><span class="n">spearman_corr</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_41_0.png" src="_images/mar-16-2021_41_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_k</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">spearman</span><span class="p">[</span><span class="mf">0.8</span><span class="p">])</span>
-<span class="n">communities</span><span class="p">,</span> <span class="n">modularities</span><span class="p">,</span> <span class="n">num_communities</span> <span class="o">=</span> <span class="n">run_louvain</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
+</script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">440</span><span class="p">,</span> <span class="mi">520</span><span class="p">,</span> <span class="mi">620</span><span class="p">,</span> <span class="mi">770</span><span class="p">]</span>
-<span class="n">plot_louvain_results</span><span class="p">(</span><span class="n">modularities</span><span class="p">,</span> <span class="n">num_communities</span><span class="p">,</span> <span class="n">selected_idxs</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_44_0.png" src="_images/mar-16-2021_44_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_louvain_communities</span><span class="p">(</span>
-    <span class="n">spearman</span><span class="o">=</span><span class="n">spearman</span><span class="p">,</span>
-    <span class="n">pearson</span><span class="o">=</span><span class="n">pearson</span><span class="p">,</span>
-    <span class="n">modularities</span><span class="o">=</span><span class="n">modularities</span><span class="p">,</span>
-    <span class="n">selected_idxs</span><span class="o">=</span><span class="n">selected_idxs</span><span class="p">,</span>
-    <span class="n">spearman_th</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-    <span class="n">pearson_th</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_46_0.png" src="_images/mar-16-2021_46_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_louvain_extended</span><span class="p">(</span>
-    <span class="n">plot_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Spearman&#39;</span><span class="p">:</span> <span class="n">spearman</span><span class="p">,</span> <span class="s1">&#39;Pearson&#39;</span><span class="p">:</span> <span class="n">pearson</span><span class="p">},</span>
-    <span class="n">modularities</span><span class="o">=</span><span class="n">modularities</span><span class="p">,</span>
-    <span class="n">selected_idxs</span><span class="o">=</span><span class="n">selected_idxs</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_47_0.png" src="_images/mar-16-2021_47_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<img alt="_images/mar-16-2021_47_2.png" src="_images/mar-16-2021_47_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1617,148 +1172,559 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_48_0.png" src="_images/mar-16-2021_48_0.png" />
+<img alt="_images/mar-18-2021_17_0.png" src="_images/mar-18-2021_17_0.png" />
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="scale-32-x-32">
-<h2>Scale = 32 x 32<a class="headerlink" href="#scale-32-x-32" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bandpass-f-and-threshold-plot">
+<h2>Bandpass f, and threshold plot<a class="headerlink" href="#bandpass-f-and-threshold-plot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scale-16">
+<h3>scale = 16<a class="headerlink" href="#scale-16" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+
+<span class="n">order</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">lf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="n">hf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+
+<span class="n">results_spearman</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">results_pearson</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">lowcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lf</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">highcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">hf</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># apply bandpass</span>
+        <span class="n">ca_bp</span> <span class="o">=</span> <span class="n">apply_bandpass</span><span class="p">(</span>
+            <span class="n">ca</span><span class="p">,</span>
+            <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
+            <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
+            <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># downsample</span>
+        <span class="n">downsampled</span> <span class="o">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">ca_bp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="c1"># get df and corrs</span>
+        <span class="n">df</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">downsampled</span><span class="p">,</span> <span class="n">filter_idxs</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
+        <span class="n">pearson</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">spearman</span><span class="p">,</span> <span class="n">spearman_corr</span> <span class="o">=</span> <span class="n">get_corrs</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span>
+            <span class="n">results_spearman</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">spearman</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
+            <span class="n">results_pearson</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">pearson</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "48100cb09faf4dcb9c9ead0c8dab5f0a", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_spearman</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Spearman&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/mar-18-2021_24_0.png" src="_images/mar-18-2021_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_pearson</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Pearson&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/mar-18-2021_25_0.png" src="_images/mar-18-2021_25_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="scale-32">
+<h3>scale = 32<a class="headerlink" href="#scale-32" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">32</span>
-<span class="n">downsampled</span> <span class="o">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">ca_bp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
-<span class="n">downsampled</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(32, 32, 21600)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_downsampled</span><span class="p">(</span><span class="n">downsampled</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_54_0.png" src="_images/mar-16-2021_54_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
+<span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
 
-<span class="n">df</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">downsampled</span><span class="p">,</span> <span class="n">filter_idxs</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
-<span class="n">pearson</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">spearman</span><span class="p">,</span> <span class="n">spearman_corr</span> <span class="o">=</span> <span class="n">get_corrs</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">)</span>
+<span class="n">order</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">lf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="n">hf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+
+<span class="n">results_spearman</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">results_pearson</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">lowcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lf</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">highcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">hf</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># apply bandpass</span>
+        <span class="n">ca_bp</span> <span class="o">=</span> <span class="n">apply_bandpass</span><span class="p">(</span>
+            <span class="n">ca</span><span class="p">,</span>
+            <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
+            <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
+            <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># downsample</span>
+        <span class="n">downsampled</span> <span class="o">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">ca_bp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="c1"># get df and corrs</span>
+        <span class="n">df</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">downsampled</span><span class="p">,</span> <span class="n">filter_idxs</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
+        <span class="n">pearson</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">spearman</span><span class="p">,</span> <span class="n">spearman_corr</span> <span class="o">=</span> <span class="n">get_corrs</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span>
+            <span class="n">results_spearman</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">spearman</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
+            <span class="n">results_pearson</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">pearson</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "303b7ab6a5c84aed90e5899292afe21e", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                             
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_corrs</span><span class="p">(</span><span class="n">spearman</span><span class="p">,</span> <span class="n">pearson</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_spearman</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Spearman&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_56_0.png" src="_images/mar-16-2021_56_0.png" />
+<img alt="_images/mar-18-2021_29_0.png" src="_images/mar-18-2021_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_corr_hist</span><span class="p">(</span><span class="n">spearman_corr</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_pearson</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Pearson&#39;</span><span class="p">,</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_57_0.png" src="_images/mar-16-2021_57_0.png" />
+<img alt="_images/mar-18-2021_30_0.png" src="_images/mar-18-2021_30_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="scale-64">
+<h3>scale = 64<a class="headerlink" href="#scale-64" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_k</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">64</span>
+<span class="n">thresholds</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.78</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]</span>
 
-<span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_matrix</span><span class="p">(</span><span class="n">spearman</span><span class="p">[</span><span class="mf">0.75</span><span class="p">])</span>
-<span class="n">communities</span><span class="p">,</span> <span class="n">modularities</span><span class="p">,</span> <span class="n">num_communities</span> <span class="o">=</span> <span class="n">run_louvain</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="p">)</span>
+<span class="n">order</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">lf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+<span class="n">hf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">]</span>
+
+<span class="n">results_spearman</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">results_pearson</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">lowcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lf</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">highcut</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">hf</span><span class="p">,</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="c1"># apply bandpass</span>
+        <span class="n">ca_bp</span> <span class="o">=</span> <span class="n">apply_bandpass</span><span class="p">(</span>
+            <span class="n">ca</span><span class="p">,</span>
+            <span class="n">fs</span><span class="o">=</span><span class="n">ca_fs</span><span class="p">,</span>
+            <span class="n">lowcut</span><span class="o">=</span><span class="n">lowcut</span><span class="p">,</span>
+            <span class="n">highcut</span><span class="o">=</span><span class="n">highcut</span><span class="p">,</span>
+            <span class="n">order</span><span class="o">=</span><span class="n">order</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># downsample</span>
+        <span class="n">downsampled</span> <span class="o">=</span> <span class="n">downsample</span><span class="p">(</span><span class="n">ca_bp</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="c1"># get df and corrs</span>
+        <span class="n">df</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">downsampled</span><span class="p">,</span> <span class="n">filter_idxs</span><span class="o">=</span><span class="n">anomalies</span><span class="p">[</span><span class="s1">&#39;filter_indxs&#39;</span><span class="p">])</span>
+        <span class="n">pearson</span><span class="p">,</span> <span class="n">pearson_corr</span><span class="p">,</span> <span class="n">spearman</span><span class="p">,</span> <span class="n">spearman_corr</span> <span class="o">=</span> <span class="n">get_corrs</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">:</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">,</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lowcut</span><span class="p">,</span> <span class="n">highcut</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span>
+            <span class="n">results_spearman</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">spearman</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
+            <span class="n">results_pearson</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">pearson</span><span class="p">[</span><span class="n">th</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "81ad05113e234badbed82869de59973b", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># selected_idxs = [440, 520, 620, 770]</span>
-<span class="n">selected_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">440</span><span class="p">,</span> <span class="mi">540</span><span class="p">,</span> <span class="mi">590</span><span class="p">,</span> <span class="mi">720</span><span class="p">]</span>
-<span class="n">plot_louvain_results</span><span class="p">(</span><span class="n">modularities</span><span class="p">,</span> <span class="n">num_communities</span><span class="p">,</span> <span class="n">selected_idxs</span><span class="p">)</span>
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_60_0.png" src="_images/mar-16-2021_60_0.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_louvain_communities</span><span class="p">(</span>
-    <span class="n">spearman</span><span class="o">=</span><span class="n">spearman</span><span class="p">,</span>
-    <span class="n">pearson</span><span class="o">=</span><span class="n">pearson</span><span class="p">,</span>
-    <span class="n">modularities</span><span class="o">=</span><span class="n">modularities</span><span class="p">,</span>
-    <span class="n">selected_idxs</span><span class="o">=</span><span class="n">selected_idxs</span><span class="p">,</span>
-    <span class="n">spearman_th</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-    <span class="n">pearson_th</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_spearman</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresho</span>
+    
+    <span class="n">lds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Spearman&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_62_0.png" src="_images/mar-16-2021_62_0.png" />
+<img alt="_images/mar-18-2021_35_0.png" src="_images/mar-18-2021_35_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_louvain_extended</span><span class="p">(</span>
-    <span class="n">plot_data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Spearman&#39;</span><span class="p">:</span> <span class="n">spearman</span><span class="p">,</span> <span class="s1">&#39;Pearson&#39;</span><span class="p">:</span> <span class="n">pearson</span><span class="p">},</span>
-    <span class="n">modularities</span><span class="o">=</span><span class="n">modularities</span><span class="p">,</span>
-    <span class="n">selected_idxs</span><span class="o">=</span><span class="n">selected_idxs</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden_extended</span><span class="p">(</span>
+    <span class="n">plot_data</span><span class="o">=</span><span class="n">results_pearson</span><span class="p">,</span>
+    <span class="n">thresholds</span><span class="o">=</span><span class="n">thresholds</span><span class="p">,</span>
+    <span class="n">lowcuts</span><span class="o">=</span><span class="n">lf</span><span class="p">,</span>
+    <span class="n">highcuts</span><span class="o">=</span><span class="n">hf</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;Pearson&#39;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_64_0.png" src="_images/mar-16-2021_64_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<img alt="_images/mar-18-2021_36_0.png" src="_images/mar-18-2021_36_0.png" />
 </div>
-<img alt="_images/mar-16-2021_64_2.png" src="_images/mar-16-2021_64_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_leiden</span><span class="p">(</span><span class="n">spearman</span><span class="p">,</span> <span class="n">pearson</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/mar-16-2021_66_0.png" src="_images/mar-16-2021_66_0.png" />
 </div>
 </div>
 </div>
@@ -1792,8 +1758,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="mar-15-2021.html" title="previous page">March 15th, 2021</a>
-    <a class='right-next' id="next-link" href="mar-18-2021.html" title="next page">March 18th, 2021</a>
+    <a class='left-prev' id="prev-link" href="mar-16-2021.html" title="previous page">March 16th, 2021</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
