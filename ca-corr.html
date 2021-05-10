@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>March ?th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -26,7 +26,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,20 +34,17 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -81,15 +78,12 @@
   <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Welcome
@@ -152,11 +146,34 @@
    March 26th, 2021
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-29-2021.html">
+   March 29th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="apr-07-2021.html">
+   April 7th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="apr-30-2021.html">
+   April 30th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-08-2021.html">
+   May 8th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-09-2021.html">
+   May 9th, 2021
+  </a>
+ </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -171,25 +188,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -201,9 +218,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -222,13 +239,13 @@
 </div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -247,13 +264,14 @@
     </div>
 </div>
 
-    </div>
+        </div>
 
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
+            <i class="fas fa-list"></i>
+            Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -305,6 +323,7 @@
 
         </nav>
         
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -508,7 +527,7 @@
 
 <span class="n">expt_seconds</span> <span class="o">=</span> <span class="mi">600</span>   <span class="c1"># 600 seconds</span>
 <span class="n">ca_frequency</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">exclude_seconds</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">exclude_seconds</span> <span class="o">=</span> <span class="mi">60</span>
 <span class="n">good_timepoints</span> <span class="o">=</span> <span class="p">(</span><span class="n">expt_seconds</span> <span class="o">-</span> <span class="n">exclude_seconds</span><span class="p">)</span> <span class="o">*</span> <span class="n">ca_frequency</span>
 
 <span class="n">filter_fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;ca&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="s1">&#39;ses-1&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="s1">&#39;sub-SLC06&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">and</span> <span class="s1">&#39;rest&#39;</span> <span class="ow">in</span> <span class="n">x</span>
@@ -529,7 +548,7 @@
   &#39;sub-SLC06_ses-1_run-3_task-rest_ca.npy&#39;,
   &#39;sub-SLC06_ses-1_run-5_task-rest_ca.npy&#39;,
   &#39;sub-SLC06_ses-1_run-7_task-rest_ca.npy&#39;],
- (256, 250, 22000))
+ (256, 250, 21600))
 </pre></div>
 </div>
 </div>
@@ -555,9 +574,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((256, 250, 22000), (190, 186, 22000))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((256, 250, 21600), (190, 186, 21600))
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pix</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">ca_reduced</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pix</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">pix</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;./ca_avg.pdf&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ca-corr_11_0.png" src="_images/ca-corr_11_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -596,7 +632,7 @@
   warnings.warn(PearsonRConstantInputWarning())
 </pre></div>
 </div>
-<img alt="_images/ca-corr_11_2.png" src="_images/ca-corr_11_2.png" />
+<img alt="_images/ca-corr_14_2.png" src="_images/ca-corr_14_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -617,7 +653,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_12_0.png" src="_images/ca-corr_12_0.png" />
+<img alt="_images/ca-corr_15_0.png" src="_images/ca-corr_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -656,7 +692,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_15_0.png" src="_images/ca-corr_15_0.png" />
+<img alt="_images/ca-corr_18_0.png" src="_images/ca-corr_18_0.png" />
 </div>
 </div>
 <div class="section" id="downsample">
@@ -716,7 +752,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_19_0.png" src="_images/ca-corr_19_0.png" />
+<img alt="_images/ca-corr_22_0.png" src="_images/ca-corr_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -764,7 +800,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_23_0.png" src="_images/ca-corr_23_0.png" />
+<img alt="_images/ca-corr_26_0.png" src="_images/ca-corr_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -778,7 +814,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb92f59f6d0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_25_1.png" src="_images/ca-corr_25_1.png" />
+<img alt="_images/ca-corr_28_1.png" src="_images/ca-corr_28_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -805,7 +841,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_27_1.png" src="_images/ca-corr_27_1.png" />
+<img alt="_images/ca-corr_30_1.png" src="_images/ca-corr_30_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -820,7 +856,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_28_1.png" src="_images/ca-corr_28_1.png" />
+<img alt="_images/ca-corr_31_1.png" src="_images/ca-corr_31_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -909,7 +945,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_37_0.png" src="_images/ca-corr_37_0.png" />
+<img alt="_images/ca-corr_40_0.png" src="_images/ca-corr_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -920,7 +956,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_39_0.png" src="_images/ca-corr_39_0.png" />
+<img alt="_images/ca-corr_42_0.png" src="_images/ca-corr_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -949,7 +985,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fb9285146d0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_42_1.png" src="_images/ca-corr_42_1.png" />
+<img alt="_images/ca-corr_45_1.png" src="_images/ca-corr_45_1.png" />
 </div>
 </div>
 </div>
@@ -975,7 +1011,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_48_0.png" src="_images/ca-corr_48_0.png" />
+<img alt="_images/ca-corr_51_0.png" src="_images/ca-corr_51_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -989,7 +1025,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb9284c9fa0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_49_1.png" src="_images/ca-corr_49_1.png" />
+<img alt="_images/ca-corr_52_1.png" src="_images/ca-corr_52_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1016,7 +1052,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_51_1.png" src="_images/ca-corr_51_1.png" />
+<img alt="_images/ca-corr_54_1.png" src="_images/ca-corr_54_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1111,7 +1147,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_60_0.png" src="_images/ca-corr_60_0.png" />
+<img alt="_images/ca-corr_63_0.png" src="_images/ca-corr_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1142,7 +1178,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_62_0.png" src="_images/ca-corr_62_0.png" />
+<img alt="_images/ca-corr_65_0.png" src="_images/ca-corr_65_0.png" />
 </div>
 </div>
 </div>
@@ -1203,7 +1239,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_69_0.png" src="_images/ca-corr_69_0.png" />
+<img alt="_images/ca-corr_72_0.png" src="_images/ca-corr_72_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1254,7 +1290,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_73_0.png" src="_images/ca-corr_73_0.png" />
+<img alt="_images/ca-corr_76_0.png" src="_images/ca-corr_76_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1266,7 +1302,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_75_0.png" src="_images/ca-corr_75_0.png" />
+<img alt="_images/ca-corr_78_0.png" src="_images/ca-corr_78_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1280,7 +1316,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fbb318173d0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_76_1.png" src="_images/ca-corr_76_1.png" />
+<img alt="_images/ca-corr_79_1.png" src="_images/ca-corr_79_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1295,7 +1331,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_77_1.png" src="_images/ca-corr_77_1.png" />
+<img alt="_images/ca-corr_80_1.png" src="_images/ca-corr_80_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1396,7 +1432,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_86_0.png" src="_images/ca-corr_86_0.png" />
+<img alt="_images/ca-corr_89_0.png" src="_images/ca-corr_89_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1427,7 +1463,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_89_0.png" src="_images/ca-corr_89_0.png" />
+<img alt="_images/ca-corr_92_0.png" src="_images/ca-corr_92_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1454,7 +1490,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fb91731a340&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_91_1.png" src="_images/ca-corr_91_1.png" />
+<img alt="_images/ca-corr_94_1.png" src="_images/ca-corr_94_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1493,7 +1529,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_94_0.png" src="_images/ca-corr_94_0.png" />
+<img alt="_images/ca-corr_97_0.png" src="_images/ca-corr_97_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1530,7 +1566,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fb91731ab50&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_98_1.png" src="_images/ca-corr_98_1.png" />
+<img alt="_images/ca-corr_101_1.png" src="_images/ca-corr_101_1.png" />
 </div>
 </div>
 </div>
@@ -1593,7 +1629,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_103_0.png" src="_images/ca-corr_103_0.png" />
+<img alt="_images/ca-corr_106_0.png" src="_images/ca-corr_106_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1648,7 +1684,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_108_0.png" src="_images/ca-corr_108_0.png" />
+<img alt="_images/ca-corr_111_0.png" src="_images/ca-corr_111_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1662,7 +1698,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fb8dc44fd30&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_109_1.png" src="_images/ca-corr_109_1.png" />
+<img alt="_images/ca-corr_112_1.png" src="_images/ca-corr_112_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1677,7 +1713,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_110_1.png" src="_images/ca-corr_110_1.png" />
+<img alt="_images/ca-corr_113_1.png" src="_images/ca-corr_113_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1787,7 +1823,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_118_0.png" src="_images/ca-corr_118_0.png" />
+<img alt="_images/ca-corr_121_0.png" src="_images/ca-corr_121_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1818,7 +1854,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_120_0.png" src="_images/ca-corr_120_0.png" />
+<img alt="_images/ca-corr_123_0.png" src="_images/ca-corr_123_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1845,7 +1881,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fb92812eac0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_123_1.png" src="_images/ca-corr_123_1.png" />
+<img alt="_images/ca-corr_126_1.png" src="_images/ca-corr_126_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2698,7 +2734,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ca-corr_127_0.png" src="_images/ca-corr_127_0.png" />
+<img alt="_images/ca-corr_130_0.png" src="_images/ca-corr_130_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2735,7 +2771,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fb927a53fd0&gt;
 </pre></div>
 </div>
-<img alt="_images/ca-corr_130_1.png" src="_images/ca-corr_130_1.png" />
+<img alt="_images/ca-corr_133_1.png" src="_images/ca-corr_133_1.png" />
 </div>
 </div>
 </div>
@@ -2768,13 +2804,13 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -2793,7 +2829,7 @@
     </div>
 
     
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
 
 
     

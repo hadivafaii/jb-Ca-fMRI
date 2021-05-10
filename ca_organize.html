@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>&lt;no title&gt; &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="feb-12-2021.html">
+   February, 12th 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feb-13-2021.html">
+   February, 13th 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feb-16-2021.html">
+   February, 16th 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="feb-20-2021.html">
+   February, 20th 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-10-2021.html">
+   March 10th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-13-2021.html">
+   March 13th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-15-2021.html">
+   March 15th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-16-2021.html">
+   March 16th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-18-2021.html">
+   March 18th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-19-2021.html">
+   March 19th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-26-2021.html">
+   March 26th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mar-29-2021.html">
+   March 29th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="apr-07-2021.html">
+   April 7th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="apr-30-2021.html">
+   April 30th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-08-2021.html">
+   May 8th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-09-2021.html">
+   May 9th, 2021
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ca_organize.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/CafMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/CafMRI/issues/new?title=Issue%20on%20page%20%2Fca_organize.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/CafMRI/master?urlpath=tree/docs/ca_organize.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span> <span class="k">as</span> <span class="n">sp_stats</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># GitHub</span>
+<span class="n">git_path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git/Ca-fMRI/&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">git_path</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">simulation.simulation</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.processing</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span><span class="n">atlas_mode</span><span class="o">=</span><span class="s1">&#39;allen&#39;</span><span class="p">)</span>
+<span class="nb">vars</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;base_dir&#39;: &#39;/home/hadi/Documents/Ca-fMRI&#39;,
+ &#39;run_duration&#39;: 600,
+ &#39;exclude&#39;: 50,
+ &#39;ca_fs&#39;: 10,
+ &#39;bold_fs&#39;: 1,
+ &#39;num_subjects&#39;: 10,
+ &#39;num_sessions&#39;: 3,
+ &#39;num_runs&#39;: 7,
+ &#39;atlas_mode&#39;: &#39;allen&#39;,
+ &#39;num_regions&#39;: 256,
+ &#39;ws_dir&#39;: &#39;/home/hadi/Documents/Ca-fMRI&#39;,
+ &#39;processed_dir&#39;: &#39;/home/hadi/Documents/Ca-fMRI/processed&#39;,
+ &#39;download_dir&#39;: &#39;/mnt/storage/hadi/Ca-fMRI&#39;,
+ &#39;raw_dir&#39;: &#39;/mnt/storage/hadi/Ca-fMRI/raw&#39;,
+ &#39;npy_dir&#39;: &#39;/mnt/storage/hadi/Ca-fMRI/npy&#39;,
+ &#39;labels&#39;: {1: &#39;R-Frontal pole, cerebral cortex (FRP,184)&#39;,
+  2: &#39;R-Primary motor area (MOp,985)&#39;,
+  3: &#39;R-Secondary motor area (MOs,993)&#39;,
+  4: &#39;R-Primary somatosensory area, nose (SSp-n,353)&#39;,
+  5: &#39;R-Primary somatosensory area, barrel field (SSp-bfd,329)&#39;,
+  6: &#39;R-Primary somatosensory area, lower limb (SSp-ll,337)&#39;,
+  7: &#39;R-Primary somatosensory area, mouth (SSp-m,345)&#39;,
+  8: &#39;R-Primary somatosensory area, upper limb (SSp-ul,369)&#39;,
+  9: &#39;R-Primary somatosensory area, trunk (SSp-tr,361)&#39;,
+  10: &#39;R-Primary somatosensory area, unassigned (SSp-un,182305689)&#39;,
+  11: &#39;R-Supplemental somatosensory area (SSs,378)&#39;,
+  12: &#39;R-Gustatory areas (GU,1057)&#39;,
+  13: &#39;R-Visceral area (VISC,677)&#39;,
+  14: &#39;R-Dorsal auditory area (AUDd,1011)&#39;,
+  15: &#39;R-Primary auditory area (AUDp,1002)&#39;,
+  16: &#39;R-Posterior auditory area (AUDpo,1027)&#39;,
+  17: &#39;R-Ventral auditory area (AUDv,1018)&#39;,
+  18: &#39;R-Anterolateral visual area (VISal,402)&#39;,
+  19: &#39;R-Anteromedial visual area (VISam,394)&#39;,
+  20: &#39;R-Lateral visual area (VISl,409)&#39;,
+  21: &#39;R-Primary visual area (VISp,385)&#39;,
+  22: &#39;R-Posterolateral visual area (VISpl,425)&#39;,
+  23: &#39;R-posteromedial visual area (VISpm,533)&#39;,
+  24: &#39;R-Anterior area (VISa,312782546)&#39;,
+  25: &#39;R-Laterointermediate area (VISli,312782574)&#39;,
+  26: &#39;R-Rostrolateral visual area (VISrl,417)&#39;,
+  27: &#39;R-Postrhinal area (VISpor,312782628)&#39;,
+  28: &#39;R-Anterior cingulate area, dorsal part (ACAd,39)&#39;,
+  29: &#39;R-Anterior cingulate area, ventral part (ACAv,48)&#39;,
+  30: &#39;R-Prelimbic area (PL,972)&#39;,
+  31: &#39;R-Infralimbic area (ILA,44)&#39;,
+  32: &#39;R-Orbital area, lateral part (ORBl,723)&#39;,
+  33: &#39;R-Orbital area, medial part (ORBm,731)&#39;,
+  34: &#39;R-Orbital area, ventrolateral part (ORBvl,746)&#39;,
+  35: &#39;R-Agranular insular area, dorsal part (AId,104)&#39;,
+  36: &#39;R-Agranular insular area, posterior part (AIp,111)&#39;,
+  37: &#39;R-Agranular insular area, ventral part (AIv,119)&#39;,
+  38: &#39;R-Retrosplenial area, lateral agranular part (RSPagl,894)&#39;,
+  39: &#39;R-Retrosplenial area, dorsal part (RSPd,879)&#39;,
+  40: &#39;R-Retrosplenial area, ventral part (RSPv,886)&#39;,
+  41: &#39;R-Temporal association areas (TEa,541)&#39;,
+  42: &#39;R-Perirhinal area (PERI,922)&#39;,
+  43: &#39;R-Ectorhinal area (ECT,895)&#39;,
+  44: &#39;R-Main olfactory bulb (MOB,507)&#39;,
+  45: &#39;R-Accessory olfactory bulb, glomerular layer (AOBgl,188)&#39;,
+  46: &#39;R-Accessory olfactory bulb, granular layer (AOBgr,196)&#39;,
+  47: &#39;R-Accessory olfactory bulb, mitral layer (AOBmi,204)&#39;,
+  48: &#39;R-Nucleus of the lateral olfactory tract, layer 3 (NLOT3,1139)&#39;,
+  49: &#39;R-Anterior olfactory nucleus (AON,159)&#39;,
+  50: &#39;R-Nucleus of the lateral olfactory tract, molecular layer (NLOT1,260)&#39;,
+  51: &#39;R-Postpiriform transition area (TR,566)&#39;,
+  52: &#39;R-Taenia tecta (TT,589)&#39;,
+  53: &#39;R-Cortical amygdalar area, anterior part (COAa,639)&#39;,
+  54: &#39;R-Cortical amygdalar area, posterior part (COAp,647)&#39;,
+  55: &#39;R-Piriform-amygdalar area (PAA,788)&#39;,
+  56: &#39;R-Dorsal peduncular area (DP,814)&#39;,
+  57: &#39;R-Piriform area (PIR,961)&#39;,
+  58: &#39;R-Main olfactory bulb (MOB,507)&#39;,
+  59: &#39;R-Field CA1 (CA1,382)&#39;,
+  60: &#39;R-Field CA2 (CA2,423)&#39;,
+  61: &#39;R-Field CA3 (CA3,463)&#39;,
+  62: &#39;R-Dentate gyrus, molecular layer (DG-mo,10703)&#39;,
+  63: &#39;R-Dentate gyrus, polymorph layer (DG-po,10704)&#39;,
+  64: &#39;R-Dentate gyrus, granule cell layer (DG-sg,632)&#39;,
+  65: &#39;R-Fasciola cinerea (FC,982)&#39;,
+  66: &#39;R-Subiculum (SUB,502)&#39;,
+  67: &#39;R-Parasubiculum (PAR,843)&#39;,
+  68: &#39;R-Entorhinal area, lateral part (ENTl,918)&#39;,
+  69: &#39;R-Entorhinal area, medial part, dorsal zone (ENTm,926)&#39;,
+  70: &#39;R-Entorhinal area, medial part, ventral zone (ENTmv,934)&#39;,
+  71: &#39;R-Postsubiculum (POST,1037)&#39;,
+  72: &#39;R-Presubiculum (PRE,1084)&#39;,
+  73: &#39;R-Claustrum (CLA,583)&#39;,
+  74: &#39;R-Endopiriform nucleus (EP,942)&#39;,
+  75: &#39;R-Lateral amygdalar nucleus (LA,131)&#39;,
+  76: &#39;R-Basolateral amygdalar nucleus, anterior part (BLAa,303)&#39;,
+  77: &#39;R-Basolateral amygdalar nucleus, posterior part (BLAp,311)&#39;,
+  78: &#39;R-Basomedial amygdalar nucleus (BMA,319)&#39;,
+  79: &#39;R-Basolateral amygdalar nucleus, ventral part (BLAv,451)&#39;,
+  80: &#39;R-Posterior amygdalar nucleus (PA,780)&#39;,
+  81: &#39;R-Caudoputamen (CP,672)&#39;,
+  82: &#39;R-Nucleus accumbens (ACB,56)&#39;,
+  83: &#39;R-Olfactory tubercle (OT,754)&#39;,
+  84: &#39;R-Lateral septal nucleus, caudal (caudodorsal) part (LSc,250)&#39;,
+  85: &#39;R-Septohippocampal nucleus (SH,333)&#39;,
+  86: &#39;R-Striatum-like amygdalar nuclei (sAMY,278)&#39;,
+  87: &#39;R-Lateral septal nucleus, rostral (rostroventral) part (LSr,258)&#39;,
+  88: &#39;R-Lateral septal nucleus, ventral part (LSv,266)&#39;,
+  89: &#39;R-Septofimbrial nucleus (SF,310)&#39;,
+  90: &#39;R-Fundus of striatum (FS,998)&#39;,
+  91: &#39;R-Globus pallidus, external segment (GPe,1022)&#39;,
+  92: &#39;R-Globus pallidus, internal segment (GPi,1031)&#39;,
+  93: &#39;R-Pallidum, caudal region (PALc,809)&#39;,
+  94: &#39;R-Magnocellular nucleus (MA,298)&#39;,
+  95: &#39;R-Substantia innominata (SI,342)&#39;,
+  96: &#39;R-Medial septal nucleus (MS,564)&#39;,
+  97: &#39;R-Triangular nucleus of septum (TRS,581)&#39;,
+  98: &#39;R-Diagonal band nucleus (NDB,596)&#39;,
+  99: &#39;R-Ventral anterior-lateral complex of the thalamus (VAL,629)&#39;,
+  100: &#39;R-Ventral medial nucleus of the thalamus (VM,685)&#39;,
+  101: &#39;R-Ventral posterolateral nucleus of the thalamus (VPL,718)&#39;,
+  102: &#39;R-Ventral posteromedial nucleus of the thalamus (VPM,733)&#39;,
+  103: &#39;R-Peripeduncular nucleus (PP,1044)&#39;,
+  104: &#39;R-Medial geniculate complex (MG,475)&#39;,
+  105: &#39;R-Dorsal part of the lateral geniculate complex (LGd,170)&#39;,
+  106: &#39;R-Lateral posterior nucleus of the thalamus (LP,218)&#39;,
+  107: &#39;R-Posterior complex of the thalamus (PO,1020)&#39;,
+  108: &#39;R-Suprageniculate nucleus (SGN,325)&#39;,
+  109: &#39;R-Anteroventral nucleus of thalamus (AV,255)&#39;,
+  110: &#39;R-Anteromedial nucleus (AM,127)&#39;,
+  111: &#39;R-Anterodorsal nucleus (AD,64)&#39;,
+  112: &#39;R-Lateral dorsal nucleus of thalamus (LD,155)&#39;,
+  113: &#39;R-Interanterodorsal nucleus of the thalamus (IAD,1113)&#39;,
+  114: &#39;R-Interanteromedial nucleus of the thalamus (IAM,1120)&#39;,
+  115: &#39;R-Intermediodorsal nucleus of the thalamus (IMD,59)&#39;,
+  116: &#39;R-Mediodorsal nucleus of thalamus (MD,362)&#39;,
+  117: &#39;R-Submedial nucleus of the thalamus (SMT,366)&#39;,
+  118: &#39;R-Paraventricular nucleus of the thalamus (PVT,149)&#39;,
+  119: &#39;R-Parataenial nucleus (PT,15)&#39;,
+  120: &#39;R-Nucleus of reuniens (RE,181)&#39;,
+  121: &#39;R-Rhomboid nucleus (RH,189)&#39;,
+  122: &#39;R-Paracentral nucleus (PCN,907)&#39;,
+  123: &#39;R-Central lateral nucleus of the thalamus (CL,575)&#39;,
+  124: &#39;R-Central medial nucleus of the thalamus (CM,599)&#39;,
+  125: &#39;R-Parafascicular nucleus (PF,930)&#39;,
+  126: &#39;R-Reticular nucleus of the thalamus (RT,262)&#39;,
+  127: &#39;R-Intergeniculate leaflet of the lateral geniculate complex (IGL,27)&#39;,
+  128: &#39;R-Ventral part of the lateral geniculate complex (LGv,178)&#39;,
+  129: &#39;R-Medial habenula (MH,483)&#39;,
+  130: &#39;R-Lateral habenula (LH,186)&#39;,
+  131: &#39;R-Subparafascicular nucleus, magnocellular part (SPFm,414)&#39;,
+  132: &#39;R-Subparafascicular nucleus, parvicellular part (SPFp,422)&#39;,
+  133: &#39;R-Subparafascicular area (SPA,609)&#39;,
+  134: &#39;R-Ventral posterolateral nucleus of the thalamus, parvicellular part (VPLpc,725)&#39;,
+  135: &#39;R-Ventral posteromedial nucleus of the thalamus, parvicellular part (VPMpc,741)&#39;,
+  136: &#39;R-Posterior limiting nucleus of the thalamus (POL,1029)&#39;,
+  137: &#39;R-Perireunensis nucleus (PR,1077)&#39;,
+  138: &#39;R-Periventricular zone (PVZ,157)&#39;,
+  139: &#39;R-Periventricular region (PVR,141)&#39;,
+  140: &#39;R-Lateral mammillary nucleus (LM,210)&#39;,
+  141: &#39;R-Medial mammillary nucleus (MM,491)&#39;,
+  142: &#39;R-Hypothalamic lateral zone (LZ,290)&#39;,
+  143: &#39;R-Tuberomammillary nucleus (TM,557)&#39;,
+  144: &#39;R-Paraventricular hypothalamic nucleus, descending division (PVHd,63)&#39;,
+  145: &#39;R-Anterior hypothalamic nucleus (AHN,88)&#39;,
+  146: &#39;R-Medial preoptic nucleus (MPN,515)&#39;,
+  147: &#39;R-Supramammillary nucleus (SUM,525)&#39;,
+  148: &#39;R-Ventromedial hypothalamic nucleus (VMH,693)&#39;,
+  149: &#39;R-Posterior hypothalamic nucleus (PH,946)&#39;,
+  150: &#39;R-Dorsal premammillary nucleus (PMd,980)&#39;,
+  151: &#39;R-Ventral premammillary nucleus (PMv,1004)&#39;,
+  152: &#39;R-Periventricular zone (PVZ,157)&#39;,
+  153: &#39;R-Periventricular region (PVR,141)&#39;,
+  154: &#39;R-Superior colliculus, optic layer (SCop,851)&#39;,
+  155: &#39;R-Superior colliculus, superficial gray layer (SCsg,842)&#39;,
+  156: &#39;R-Midbrain, sensory related (MBsen,339)&#39;,
+  157: &#39;R-Midbrain, motor related (MBmot,323)&#39;,
+  158: &#39;R-Superior colliculus, motor related, deep gray layer (SCdg,26)&#39;,
+  159: &#39;R-Superior colliculus, motor related, deep white layer (SCdw,42)&#39;,
+  160: &#39;R-Superior colliculus, motor related, intermediate white layer (SCiw,17)&#39;,
+  161: &#39;R-Superior colliculus, motor related, intermediate gray layer (SCig,10)&#39;,
+  162: &#39;R-Anterior pretectal nucleus (APN,215)&#39;,
+  163: &#39;R-Midbrain raphe nuclei (RAmb,165)&#39;,
+  164: &#39;R-Midbrain, behavioral state related (MBsta,348)&#39;,
+  165: &#39;R-Medial pretectal area (MPT,531)&#39;,
+  166: &#39;R-Nucleus of the optic tract (NOT,628)&#39;,
+  167: &#39;R-Nucleus of the posterior commissure (NPC,634)&#39;,
+  168: &#39;R-Olivary pretectal nucleus (OP,706)&#39;,
+  169: &#39;R-Posterior pretectal nucleus (PPT,1061)&#39;,
+  170: &#39;R-Midbrain, behavioral state related (MBsta,348)&#39;,
+  171: &#39;R-Midbrain, behavioral state related (MBsta,348)&#39;,
+  172: &#39;R-Nucleus of the lateral lemniscus (NLL,612)&#39;,
+  173: &#39;R-Principal sensory nucleus of the trigeminal (PSV,7)&#39;,
+  174: &#39;R-Superior olivary complex, periolivary region (POR,122)&#39;,
+  175: &#39;R-Superior olivary complex, medial part (SOCm,105)&#39;,
+  176: &#39;R-Superior olivary complex, lateral part (SOCl,114)&#39;,
+  177: &#39;R-Pons, motor related (P-mot,987)&#39;,
+  178: &#39;R-Pons, behavioral state related (P-sat,1117)&#39;,
+  179: &#39;R-Parabrachial nucleus (PB,867)&#39;,
+  180: &#39;R-Pons, behavioral state related (P-sat,1117)&#39;,
+  181: &#39;R-Pons, behavioral state related (P-sat,1117)&#39;,
+  182: &#39;R-Area postrema (AP,207)&#39;,
+  183: &#39;R-Dorsal cochlear nucleus (DCO,96)&#39;,
+  184: &#39;R-Ventral cochlear nucleus (VCO,101)&#39;,
+  185: &#39;R-Cuneate nucleus (CU,711)&#39;,
+  186: &#39;R-Gracile nucleus (GR,1039)&#39;,
+  187: &#39;R-External cuneate nucleus (ECU,903)&#39;,
+  188: &#39;R-Nucleus of the trapezoid body (NTB,642)&#39;,
+  189: &#39;R-Spinal nucleus of the trigeminal, caudal part (SPVC,429)&#39;,
+  190: &#39;R-Spinal nucleus of the trigeminal, interpolar part (SPVI,437)&#39;,
+  191: &#39;R-Spinal nucleus of the trigeminal, oral part (SPVO,445)&#39;,
+  192: &#39;R-Medulla, motor related (MY-mot,370)&#39;,
+  193: &#39;R-Nucleus ambiguus, dorsal division (AMBd,939)&#39;,
+  194: &#39;R-Nucleus ambiguus, ventral division (AMBv,143)&#39;,
+  195: &#39;R-Nucleus prepositus (PRP,169)&#39;,
+  196: &#39;R-Lateral vestibular nucleus (LAV,209)&#39;,
+  197: &#39;R-Medial vestibular nucleus (MV,202)&#39;,
+  198: &#39;R-Spinal vestibular nucleus (SPIV,225)&#39;,
+  199: &#39;R-Nucleus of Roller (NR,177)&#39;,
+  200: &#39;R-Medulla, behavioral state related (MY-sat,379)&#39;,
+  201: &#39;R-Superior vestibular nucleus (SUV,217)&#39;,
+  202: &#39;R-Nucleus of the solitary tract (NTS,651)&#39;,
+  203: &#39;R-Paragigantocellular reticular nucleus, dorsal part (PGRNd,970)&#39;,
+  204: &#39;R-Paragigantocellular reticular nucleus, lateral part (PGRNl,978)&#39;,
+  205: &#39;R-Medullary reticular nucleus, dorsal part (MDRNd,1098)&#39;,
+  206: &#39;R-Medullary reticular nucleus, ventral part (MDRNv,1107)&#39;,
+  207: &#39;R-Medulla, motor related (MY-mot,370)&#39;,
+  208: &#39;R-Paraflocculus (PFL,1041)&#39;,
+  209: &#39;R-Flocculus (FL,1049)&#39;,
+  210: &#39;R-Fastigial nucleus (FN,989)&#39;,
+  211: &#39;R-Interposed nucleus (IP,91)&#39;,
+  212: &#39;R-Dentate nucleus (DN,846)&#39;,
+  213: &#39;R-Lingula (I) (LING,912)&#39;,
+  214: &#39;R-Central lobule (CENT,920)&#39;,
+  215: &#39;R-Culmen (CUL,928)&#39;,
+  216: &#39;R-Declive (VI) (DEC,936)&#39;,
+  217: &#39;R-Folium-tuber vermis (VII) (FOTU,944)&#39;,
+  218: &#39;R-Pyramus (VIII) (PYR,951)&#39;,
+  219: &#39;R-Uvula (IX) (UVU,957)&#39;,
+  220: &#39;R-Nodulus (X) (NOD,968)&#39;,
+  221: &#39;R-Simple lobule (SIM,1007)&#39;,
+  222: &#39;R-Ansiform lobule (AN,1017)&#39;,
+  223: &#39;R-Paramedian lobule (PRM,1025)&#39;,
+  224: &#39;R-Copula pyramidis (COPY,1033)&#39;,
+  501: &#39;L-Frontal pole, cerebral cortex (FRP,184)&#39;,
+  502: &#39;L-Primary motor area (MOp,985)&#39;,
+  503: &#39;L-Secondary motor area (MOs,993)&#39;,
+  504: &#39;L-Primary somatosensory area, nose (SSp-n,353)&#39;,
+  505: &#39;L-Primary somatosensory area, barrel field (SSp-bfd,329)&#39;,
+  506: &#39;L-Primary somatosensory area, lower limb (SSp-ll,337)&#39;,
+  507: &#39;L-Primary somatosensory area, mouth (SSp-m,345)&#39;,
+  508: &#39;L-Primary somatosensory area, upper limb (SSp-ul,369)&#39;,
+  509: &#39;L-Primary somatosensory area, trunk (SSp-tr,361)&#39;,
+  510: &#39;L-Primary somatosensory area, unassigned (SSp-un,182305689)&#39;,
+  511: &#39;L-Supplemental somatosensory area (SSs,378)&#39;,
+  512: &#39;L-Gustatory areas (GU,1057)&#39;,
+  513: &#39;L-Visceral area (VISC,677)&#39;,
+  514: &#39;L-Dorsal auditory area (AUDd,1011)&#39;,
+  515: &#39;L-Primary auditory area (AUDp,1002)&#39;,
+  516: &#39;L-Posterior auditory area (AUDpo,1027)&#39;,
+  517: &#39;L-Ventral auditory area (AUDv,1018)&#39;,
+  518: &#39;L-Anterolateral visual area (VISal,402)&#39;,
+  519: &#39;L-Anteromedial visual area (VISam,394)&#39;,
+  520: &#39;L-Lateral visual area (VISl,409)&#39;,
+  521: &#39;L-Primary visual area (VISp,385)&#39;,
+  522: &#39;L-Posterolateral visual area (VISpl,425)&#39;,
+  523: &#39;L-posteromedial visual area (VISpm,533)&#39;,
+  524: &#39;L-Anterior area (VISa,312782546)&#39;,
+  525: &#39;L-Laterointermediate area (VISli,312782574)&#39;,
+  526: &#39;L-Rostrolateral visual area (VISrl,417)&#39;,
+  527: &#39;L-Postrhinal area (VISpor,312782628)&#39;,
+  528: &#39;L-Anterior cingulate area, dorsal part (ACAd,39)&#39;,
+  529: &#39;L-Anterior cingulate area, ventral part (ACAv,48)&#39;,
+  530: &#39;L-Prelimbic area (PL,972)&#39;,
+  531: &#39;L-Infralimbic area (ILA,44)&#39;,
+  532: &#39;L-Orbital area, lateral part (ORBl,723)&#39;,
+  533: &#39;L-Orbital area, medial part (ORBm,731)&#39;,
+  534: &#39;L-Orbital area, ventrolateral part (ORBvl,746)&#39;,
+  535: &#39;L-Agranular insular area, dorsal part (AId,104)&#39;,
+  536: &#39;L-Agranular insular area, posterior part (AIp,111)&#39;,
+  537: &#39;L-Agranular insular area, ventral part (AIv,119)&#39;,
+  538: &#39;L-Retrosplenial area, lateral agranular part (RSPagl,894)&#39;,
+  539: &#39;L-Retrosplenial area, dorsal part (RSPd,879)&#39;,
+  540: &#39;L-Retrosplenial area, ventral part (RSPv,886)&#39;,
+  541: &#39;L-Temporal association areas (TEa,541)&#39;,
+  542: &#39;L-Perirhinal area (PERI,922)&#39;,
+  543: &#39;L-Ectorhinal area (ECT,895)&#39;,
+  544: &#39;L-Main olfactory bulb (MOB,507)&#39;,
+  545: &#39;L-Accessory olfactory bulb, glomerular layer (AOBgl,188)&#39;,
+  546: &#39;L-Accessory olfactory bulb, granular layer (AOBgr,196)&#39;,
+  547: &#39;L-Accessory olfactory bulb, mitral layer (AOBmi,204)&#39;,
+  548: &#39;L-Nucleus of the lateral olfactory tract, layer 3 (NLOT3,1139)&#39;,
+  549: &#39;L-Anterior olfactory nucleus (AON,159)&#39;,
+  550: &#39;L-Nucleus of the lateral olfactory tract, molecular layer (NLOT1,260)&#39;,
+  551: &#39;L-Postpiriform transition area (TR,566)&#39;,
+  552: &#39;L-Taenia tecta (TT,589)&#39;,
+  553: &#39;L-Cortical amygdalar area, anterior part (COAa,639)&#39;,
+  554: &#39;L-Cortical amygdalar area, posterior part (COAp,647)&#39;,
+  555: &#39;L-Piriform-amygdalar area (PAA,788)&#39;,
+  556: &#39;L-Dorsal peduncular area (DP,814)&#39;,
+  557: &#39;L-Piriform area (PIR,961)&#39;,
+  558: &#39;L-Main olfactory bulb (MOB,507)&#39;,
+  559: &#39;L-Field CA1 (CA1,382)&#39;,
+  560: &#39;L-Field CA2 (CA2,423)&#39;,
+  561: &#39;L-Field CA3 (CA3,463)&#39;,
+  562: &#39;L-Dentate gyrus, molecular layer (DG-mo,10703)&#39;,
+  563: &#39;L-Dentate gyrus, polymorph layer (DG-po,10704)&#39;,
+  564: &#39;L-Dentate gyrus, granule cell layer (DG-sg,632)&#39;,
+  565: &#39;L-Fasciola cinerea (FC,982)&#39;,
+  566: &#39;L-Subiculum (SUB,502)&#39;,
+  567: &#39;L-Parasubiculum (PAR,843)&#39;,
+  568: &#39;L-Entorhinal area, lateral part (ENTl,918)&#39;,
+  569: &#39;L-Entorhinal area, medial part, dorsal zone (ENTm,926)&#39;,
+  570: &#39;L-Entorhinal area, medial part, ventral zone (ENTmv,934)&#39;,
+  571: &#39;L-Postsubiculum (POST,1037)&#39;,
+  572: &#39;L-Presubiculum (PRE,1084)&#39;,
+  573: &#39;L-Claustrum (CLA,583)&#39;,
+  574: &#39;L-Endopiriform nucleus (EP,942)&#39;,
+  575: &#39;L-Lateral amygdalar nucleus (LA,131)&#39;,
+  576: &#39;L-Basolateral amygdalar nucleus, anterior part (BLAa,303)&#39;,
+  577: &#39;L-Basolateral amygdalar nucleus, posterior part (BLAp,311)&#39;,
+  578: &#39;L-Basomedial amygdalar nucleus (BMA,319)&#39;,
+  579: &#39;L-Basolateral amygdalar nucleus, ventral part (BLAv,451)&#39;,
+  580: &#39;L-Posterior amygdalar nucleus (PA,780)&#39;,
+  581: &#39;L-Caudoputamen (CP,672)&#39;,
+  582: &#39;L-Nucleus accumbens (ACB,56)&#39;,
+  583: &#39;L-Olfactory tubercle (OT,754)&#39;,
+  584: &#39;L-Lateral septal nucleus, caudal (caudodorsal) part (LSc,250)&#39;,
+  585: &#39;L-Septohippocampal nucleus (SH,333)&#39;,
+  586: &#39;L-Striatum-like amygdalar nuclei (sAMY,278)&#39;,
+  587: &#39;L-Lateral septal nucleus, rostral (rostroventral) part (LSr,258)&#39;,
+  588: &#39;L-Lateral septal nucleus, ventral part (LSv,266)&#39;,
+  589: &#39;L-Septofimbrial nucleus (SF,310)&#39;,
+  590: &#39;L-Fundus of striatum (FS,998)&#39;,
+  591: &#39;L-Globus pallidus, external segment (GPe,1022)&#39;,
+  592: &#39;L-Globus pallidus, internal segment (GPi,1031)&#39;,
+  593: &#39;L-Pallidum, caudal region (PALc,809)&#39;,
+  594: &#39;L-Magnocellular nucleus (MA,298)&#39;,
+  595: &#39;L-Substantia innominata (SI,342)&#39;,
+  596: &#39;L-Medial septal nucleus (MS,564)&#39;,
+  597: &#39;L-Triangular nucleus of septum (TRS,581)&#39;,
+  598: &#39;L-Diagonal band nucleus (NDB,596)&#39;,
+  599: &#39;L-Ventral anterior-lateral complex of the thalamus (VAL,629)&#39;,
+  600: &#39;L-Ventral medial nucleus of the thalamus (VM,685)&#39;,
+  601: &#39;L-Ventral posterolateral nucleus of the thalamus (VPL,718)&#39;,
+  602: &#39;L-Ventral posteromedial nucleus of the thalamus (VPM,733)&#39;,
+  603: &#39;L-Peripeduncular nucleus (PP,1044)&#39;,
+  604: &#39;L-Medial geniculate complex (MG,475)&#39;,
+  605: &#39;L-Dorsal part of the lateral geniculate complex (LGd,170)&#39;,
+  606: &#39;L-Lateral posterior nucleus of the thalamus (LP,218)&#39;,
+  607: &#39;L-Posterior complex of the thalamus (PO,1020)&#39;,
+  608: &#39;L-Suprageniculate nucleus (SGN,325)&#39;,
+  609: &#39;L-Anteroventral nucleus of thalamus (AV,255)&#39;,
+  610: &#39;L-Anteromedial nucleus (AM,127)&#39;,
+  611: &#39;L-Anterodorsal nucleus (AD,64)&#39;,
+  612: &#39;L-Lateral dorsal nucleus of thalamus (LD,155)&#39;,
+  613: &#39;L-Interanterodorsal nucleus of the thalamus (IAD,1113)&#39;,
+  614: &#39;L-Interanteromedial nucleus of the thalamus (IAM,1120)&#39;,
+  615: &#39;L-Intermediodorsal nucleus of the thalamus (IMD,59)&#39;,
+  616: &#39;L-Mediodorsal nucleus of thalamus (MD,362)&#39;,
+  617: &#39;L-Submedial nucleus of the thalamus (SMT,366)&#39;,
+  618: &#39;L-Paraventricular nucleus of the thalamus (PVT,149)&#39;,
+  619: &#39;L-Parataenial nucleus (PT,15)&#39;,
+  620: &#39;L-Nucleus of reuniens (RE,181)&#39;,
+  621: &#39;L-Rhomboid nucleus (RH,189)&#39;,
+  622: &#39;L-Paracentral nucleus (PCN,907)&#39;,
+  623: &#39;L-Central lateral nucleus of the thalamus (CL,575)&#39;,
+  624: &#39;L-Central medial nucleus of the thalamus (CM,599)&#39;,
+  625: &#39;L-Parafascicular nucleus (PF,930)&#39;,
+  626: &#39;L-Reticular nucleus of the thalamus (RT,262)&#39;,
+  627: &#39;L-Intergeniculate leaflet of the lateral geniculate complex (IGL,27)&#39;,
+  628: &#39;L-Ventral part of the lateral geniculate complex (LGv,178)&#39;,
+  629: &#39;L-Medial habenula (MH,483)&#39;,
+  630: &#39;L-Lateral habenula (LH,186)&#39;,
+  631: &#39;L-Subparafascicular nucleus, magnocellular part (SPFm,414)&#39;,
+  632: &#39;L-Subparafascicular nucleus, parvicellular part (SPFp,422)&#39;,
+  633: &#39;L-Subparafascicular area (SPA,609)&#39;,
+  634: &#39;L-Ventral posterolateral nucleus of the thalamus, parvicellular part (VPLpc,725)&#39;,
+  635: &#39;L-Ventral posteromedial nucleus of the thalamus, parvicellular part (VPMpc,741)&#39;,
+  636: &#39;L-Posterior limiting nucleus of the thalamus (POL,1029)&#39;,
+  637: &#39;L-Perireunensis nucleus (PR,1077)&#39;,
+  638: &#39;L-Periventricular zone (PVZ,157)&#39;,
+  639: &#39;L-Periventricular region (PVR,141)&#39;,
+  640: &#39;L-Lateral mammillary nucleus (LM,210)&#39;,
+  641: &#39;L-Medial mammillary nucleus (MM,491)&#39;,
+  642: &#39;L-Hypothalamic lateral zone (LZ,290)&#39;,
+  643: &#39;L-Tuberomammillary nucleus (TM,557)&#39;,
+  644: &#39;L-Paraventricular hypothalamic nucleus, descending division (PVHd,63)&#39;,
+  645: &#39;L-Anterior hypothalamic nucleus (AHN,88)&#39;,
+  646: &#39;L-Medial preoptic nucleus (MPN,515)&#39;,
+  647: &#39;L-Supramammillary nucleus (SUM,525)&#39;,
+  648: &#39;L-Ventromedial hypothalamic nucleus (VMH,693)&#39;,
+  649: &#39;L-Posterior hypothalamic nucleus (PH,946)&#39;,
+  650: &#39;L-Dorsal premammillary nucleus (PMd,980)&#39;,
+  651: &#39;L-Ventral premammillary nucleus (PMv,1004)&#39;,
+  652: &#39;L-Periventricular zone (PVZ,157)&#39;,
+  653: &#39;L-Periventricular region (PVR,141)&#39;,
+  654: &#39;L-Superior colliculus, optic layer (SCop,851)&#39;,
+  655: &#39;L-Superior colliculus, superficial gray layer (SCsg,842)&#39;,
+  656: &#39;L-Midbrain, sensory related (MBsen,339)&#39;,
+  657: &#39;L-Midbrain, motor related (MBmot,323)&#39;,
+  658: &#39;L-Superior colliculus, motor related, deep gray layer (SCdg,26)&#39;,
+  659: &#39;L-Superior colliculus, motor related, deep white layer (SCdw,42)&#39;,
+  660: &#39;L-Superior colliculus, motor related, intermediate white layer (SCiw,17)&#39;,
+  661: &#39;L-Superior colliculus, motor related, intermediate gray layer (SCig,10)&#39;,
+  662: &#39;L-Anterior pretectal nucleus (APN,215)&#39;,
+  663: &#39;L-Midbrain raphe nuclei (RAmb,165)&#39;,
+  664: &#39;L-Midbrain, behavioral state related (MBsta,348)&#39;,
+  665: &#39;L-Medial pretectal area (MPT,531)&#39;,
+  666: &#39;L-Nucleus of the optic tract (NOT,628)&#39;,
+  667: &#39;L-Nucleus of the posterior commissure (NPC,634)&#39;,
+  668: &#39;L-Olivary pretectal nucleus (OP,706)&#39;,
+  669: &#39;L-Posterior pretectal nucleus (PPT,1061)&#39;,
+  670: &#39;L-Midbrain, behavioral state related (MBsta,348)&#39;,
+  671: &#39;L-Midbrain, behavioral state related (MBsta,348)&#39;,
+  672: &#39;L-Nucleus of the lateral lemniscus (NLL,612)&#39;,
+  673: &#39;L-Principal sensory nucleus of the trigeminal (PSV,7)&#39;,
+  674: &#39;L-Superior olivary complex, periolivary region (POR,122)&#39;,
+  675: &#39;L-Superior olivary complex, medial part (SOCm,105)&#39;,
+  676: &#39;L-Superior olivary complex, lateral part (SOCl,114)&#39;,
+  677: &#39;L-Pons, motor related (P-mot,987)&#39;,
+  678: &#39;L-Pons, behavioral state related (P-sat,1117)&#39;,
+  679: &#39;L-Parabrachial nucleus (PB,867)&#39;,
+  680: &#39;L-Pons, behavioral state related (P-sat,1117)&#39;,
+  681: &#39;L-Pons, behavioral state related (P-sat,1117)&#39;,
+  682: &#39;L-Area postrema (AP,207)&#39;,
+  683: &#39;L-Dorsal cochlear nucleus (DCO,96)&#39;,
+  684: &#39;L-Ventral cochlear nucleus (VCO,101)&#39;,
+  685: &#39;L-Cuneate nucleus (CU,711)&#39;,
+  686: &#39;L-Gracile nucleus (GR,1039)&#39;,
+  687: &#39;L-External cuneate nucleus (ECU,903)&#39;,
+  688: &#39;L-Nucleus of the trapezoid body (NTB,642)&#39;,
+  689: &#39;L-Spinal nucleus of the trigeminal, caudal part (SPVC,429)&#39;,
+  690: &#39;L-Spinal nucleus of the trigeminal, interpolar part (SPVI,437)&#39;,
+  691: &#39;L-Spinal nucleus of the trigeminal, oral part (SPVO,445)&#39;,
+  692: &#39;L-Medulla, motor related (MY-mot,370)&#39;,
+  693: &#39;L-Nucleus ambiguus, dorsal division (AMBd,939)&#39;,
+  694: &#39;L-Nucleus ambiguus, ventral division (AMBv,143)&#39;,
+  695: &#39;L-Nucleus prepositus (PRP,169)&#39;,
+  696: &#39;L-Lateral vestibular nucleus (LAV,209)&#39;,
+  697: &#39;L-Medial vestibular nucleus (MV,202)&#39;,
+  698: &#39;L-Spinal vestibular nucleus (SPIV,225)&#39;,
+  699: &#39;L-Nucleus of Roller (NR,177)&#39;,
+  700: &#39;L-Medulla, behavioral state related (MY-sat,379)&#39;,
+  701: &#39;L-Superior vestibular nucleus (SUV,217)&#39;,
+  702: &#39;L-Nucleus of the solitary tract (NTS,651)&#39;,
+  703: &#39;L-Paragigantocellular reticular nucleus, dorsal part (PGRNd,970)&#39;,
+  704: &#39;L-Paragigantocellular reticular nucleus, lateral part (PGRNl,978)&#39;,
+  705: &#39;L-Medullary reticular nucleus, dorsal part (MDRNd,1098)&#39;,
+  706: &#39;L-Medullary reticular nucleus, ventral part (MDRNv,1107)&#39;,
+  707: &#39;L-Medulla, motor related (MY-mot,370)&#39;,
+  708: &#39;L-Paraflocculus (PFL,1041)&#39;,
+  709: &#39;L-Flocculus (FL,1049)&#39;,
+  710: &#39;L-Fastigial nucleus (FN,989)&#39;,
+  711: &#39;L-Interposed nucleus (IP,91)&#39;,
+  712: &#39;L-Dentate nucleus (DN,846)&#39;,
+  713: &#39;L-Lingula (I) (LING,912)&#39;,
+  714: &#39;L-Central lobule (CENT,920)&#39;,
+  715: &#39;L-Culmen (CUL,928)&#39;,
+  716: &#39;L-Declive (VI) (DEC,936)&#39;,
+  717: &#39;L-Folium-tuber vermis (VII) (FOTU,944)&#39;,
+  718: &#39;L-Pyramus (VIII) (PYR,951)&#39;,
+  719: &#39;L-Uvula (IX) (UVU,957)&#39;,
+  720: &#39;L-Nodulus (X) (NOD,968)&#39;,
+  721: &#39;L-Simple lobule (SIM,1007)&#39;,
+  722: &#39;L-Ansiform lobule (AN,1017)&#39;,
+  723: &#39;L-Paramedian lobule (PRM,1025)&#39;,
+  724: &#39;L-Copula pyramidis (COPY,1033)&#39;}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">organize_ca_data</span><span class="p">(</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="n">bandpass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">normalize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "a8a0dbf595474625ad745c5040a6e3e3", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC03&#39;, &#39;ses-1&#39;, &#39;run-1&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC05&#39;, &#39;ses-1&#39;, &#39;run-5&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC06&#39;, &#39;ses-3&#39;, &#39;run-2&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC08&#39;, &#39;ses-1&#39;, &#39;run-7&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC10&#39;, &#39;ses-3&#39;, &#39;run-1&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">organize_ca_data</span><span class="p">(</span>
+    <span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+    <span class="n">bandpass</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "53e066efec5841ae93932053f6aa1dd9", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC03&#39;, &#39;ses-1&#39;, &#39;run-1&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC05&#39;, &#39;ses-1&#39;, &#39;run-5&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC06&#39;, &#39;ses-3&#39;, &#39;run-2&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC08&#39;, &#39;ses-1&#39;, &#39;run-7&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning! File not found, moving on . . .
+[&#39;sub-SLC10&#39;, &#39;ses-3&#39;, &#39;run-1&#39;, &#39;ca&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
