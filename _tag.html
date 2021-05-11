@@ -171,6 +171,11 @@
    May 9th, 2021
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-11-2021.html">
+   May 11th, 2021
+  </a>
+ </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -305,7 +310,7 @@
 <span class="p">}</span>
 
 <span class="c1"># Search through each notebook and look for the text, add a tag if necessary</span>
-<span class="k">for</span> <span class="n">ipath</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">notebooks</span><span class="p">)):</span>
+<span class="k">for</span> <span class="n">ipath</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">notebooks</span><span class="p">),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">ntbk</span> <span class="o">=</span> <span class="n">nbf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">ipath</span><span class="p">,</span> <span class="n">nbf</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">ntbk</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
@@ -323,7 +328,7 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "e14a0b9ca073410aa3651c6ae6461bca", "version_major": 2, "version_minor": 0}
+{"model_id": "621c8df358a941b8a879ff7916c536bc", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 
