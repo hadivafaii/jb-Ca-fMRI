@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>February, 12th 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
@@ -25,8 +26,8 @@
     href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -36,23 +37,23 @@
     
   <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -188,6 +189,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="may-20-2021.html">
    May 20th, 2021
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="may-24-2021.html">
+   May 24th, 2021
   </a>
  </li>
 </ul>
@@ -384,7 +390,7 @@
         
               <div>
                 
-  <div class="section" id="february-12th-2021">
+  <section id="february-12th-2021">
 <h1>February, 12th 2021<a class="headerlink" href="#february-12th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Simple analysis on data. Learn how it is structured, come up with clarification questions.<br>
 <strong>Results</strong>:  In this document I only focus on BOLD signals, and discuss Ca on the next page.</p>
@@ -407,13 +413,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="about-dataset">
+<section id="about-dataset">
 <h2>About dataset<a class="headerlink" href="#about-dataset" title="Permalink to this headline">¶</a></h2>
 <p>First, I am copying email from Eve below to discuss different things.  Down below I will summarize things I think I understood, and discuss the parts I didn’t fully understand.</p>
-<div class="section" id="email-from-eve">
+<section id="email-from-eve">
 <h3>Email from Eve<a class="headerlink" href="#email-from-eve" title="Permalink to this headline">¶</a></h3>
 <hr class="docutils" />
-<div class="section" id="data-sets">
+<section id="data-sets">
 <h4>Data sets<a class="headerlink" href="#data-sets" title="Permalink to this headline">¶</a></h4>
 <p>During our conversation, we touched on four data sets.</p>
 <p>(1) The published data from the Nature Methods paper. This data set includes N=6 mice imaged acutely (immediately after surgery to optically expose the skull) at a single time point. Each imaging session is composed of n=9 runs that are 10-minutes in length (a total of 90 minutes of simultaneous fMRI/calcium imaging data). During 4/9 runs we presented unilateral hind-limb stimulation. The remaining 5/9 runs are rest-runs. The stimuli are short (5 seconds in duration) and presented sparsely - once every minute in a 5:55 second ON:OFF cycle. All data are collected under low-dose isoflurane anesthesia.</p>
@@ -421,8 +427,8 @@
 <p>(3) Unpublished ‘state’ data. This data set includes N=9 mice. Six of these animals are shared between this experiment and the one above (2 - longitudinal data). After the third and final simultaneous fMRI/calcium imaging session, these N=6 underwent an additional calcium-only out-of-scanner imaging session. These data are collected using ‘traditional’ or commercially available calcium imaging hardware. During this experiment, we collected data under anesthesia (to match the in-scanner condition) and under the awake condition. The additional N=3 mice in this data set underwent one in-scanner simultaneous fMRI/calcium imaging session, and one out-of-scanner calcium-only anesthetized/awake imaging session. The in-scanner data are collected following the same protocol as described above (2 - longitudinal data). I will need to review the out-of-scanner data to provide you with a good summary.</p>
 <p>All the animals described in data sets 1, 2 and 3 have excitatory neurons labeled with a calcium indicator.</p>
 <p>(4) Unpublished multi-cell data. These experiments are the same as those described above for data set 2 but include animals with different cell-type labels. Moving forward we can discuss these data further. Overall, due to the sparseness of these cell populations the calcium signal is dimmer and more difficult to analyze. It makes the most sense to begin with the stronger excitatory neural signal.</p>
-</div>
-<div class="section" id="data-registration-and-preprocessing">
+</section>
+<section id="data-registration-and-preprocessing">
 <h4>Data registration and preprocessing:<a class="headerlink" href="#data-registration-and-preprocessing" title="Permalink to this headline">¶</a></h4>
 <p>Most of this is described in the Nature Methods manuscript. However, I think it’s useful to go over the key points here.  Also, since submitting this manuscript, we’ve made a number of improvements to the pipeline.</p>
 <p><strong>MRI Data.</strong> All fMRI data is collected at 1Hz. The anatomical MR images that are acquired at each imaging session include: an isotropic (0.2mm) anatomical image of the whole brain (including cerebellum and olfactory bulb), a high in-plane resolution (0.1x0.1x0.4mm) anatomical image that matches the prescription of the fMRI data (0.4mm isotropic), and a time-of-flight angiogram. The angiogram is used to register the MR to the calcium data. The isotropic whole-brain anatomical image is used to generate a non-linear transformation to a common space (which we’ve created). The fMRI data are registered to the high in-plane resolution anatomical image, and the high in-plane resolution anatomical image is registered to the isotropic anatomical whole-brain image. By concatenating these two transforms, we move the fMRI data into the ‘individual mouse anatomical space’ i.e. the native space of the isotropic anatomical whole-brain image. These fMRI data can then be moved into the common space using the non-linear transformation derived from registering the isotropic anatomical image to our reference space. This is a bit hard to follow - I’m happy to explain in more detail (and to provide pictures) if you have any questions. The take-home message is that we have three spaces where our fMRI data can reside:</p>
@@ -431,7 +437,7 @@
 (C) a common reference space (shared between mice/sessions) [follows a non-linear transformation].</p>
 <p><strong>Calcium data.</strong> We acquire two wavelengths (each at 20Hz). The first (cyan) is calcium-indicator sensitive, the second (violet) is calcium-indicator insensitive. Signal in the violet channel can result from autofluorescence and hemodynamic changes. Thus, the violet serves as a baseline measurement. The cyan and violet frames are interleaved throughout the acquisition. As part of the preprocessing of these data, the violet frames are regressed from the cyan frames. This leaves an effective 10Hz measurement of calcium-indicator sensitive fluorescence. To register the calcium data to the fMRI data we use the MR-angiogram. The calcium data can reside in any of the three aforementioned spaces.</p>
 <p>Our preprocessing is conducted using an in-house built platform (which includes a bunch of tools designed to deal with the multi-modal data). The platform and tools are freely available online if you want to check them out (<a class="reference external" href="https://bioimagesuiteweb.github.io/webapp/">https://bioimagesuiteweb.github.io/webapp/</a>). The code for BioImage Suite is written in C++. We also implement some preprocessing in Python (notably the preprocessing of the calcium data), and MATLAB. Happy to discuss further.</p>
-<div class="section" id="preprocessing-the-fmri-data">
+<section id="preprocessing-the-fmri-data">
 <h5>Preprocessing the fMRI data:<a class="headerlink" href="#preprocessing-the-fmri-data" title="Permalink to this headline">¶</a></h5>
 <p>(1) Motion correction (all runs in one session to the middle slice of the first run) - six parameters - this is done in (A) native fMRI space</p>
 <p>(2) Using linear registration, move fMRI data to (B) individual mouse anatomical space (interpolate resolution from 0.4mm to 0.2mm isotropic)</p>
@@ -440,8 +446,8 @@
 <p>(5) Bandpass filter [0.008-0.2Hz] and global signal regression</p>
 <p>(6) Transform data to (C) the common reference space</p>
 <p>*Our brain masks are derived using an automated deep learning approach. This is (in-part) why we haven’t included a ventricular mask (yet).</p>
-</div>
-<div class="section" id="preprocessing-the-calcium-data">
+</section>
+<section id="preprocessing-the-calcium-data">
 <h5>Preprocessing the calcium data:<a class="headerlink" href="#preprocessing-the-calcium-data" title="Permalink to this headline">¶</a></h5>
 <p>(1) Separation of the cyan and violet frames</p>
 <p>(2) Data are smoothed from 25x25um to 50x50um (median filter, kernel size 4)</p>
@@ -454,9 +460,9 @@
 <p>(5) Regress violet from cyan, computed within mask</p>
 <p>(6) Transform data to (C) the common reference space</p>
 <p>*These masks are drawn in the angiogram MRI space and transformed into the optical space using a linear registration.</p>
-</div>
-</div>
-<div class="section" id="where-we-re-at">
+</section>
+</section>
+<section id="where-we-re-at">
 <h4>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h4>
 <p>Each of the four aforementioned data sets are at a different point in the preprocessing pipeline.
 From our conversation, it seems to me that you’re most interested in data after the preprocessing described above has been applied, and the multi-modal data have been moved to a common reference space (C).
@@ -465,16 +471,16 @@ This is why I’ve included all the details above, just in case you can foresee 
 <p>(2) Unpublished longitudinal data. We are in the final stages of preprocessing these data using the new pipeline. The fMRI data preprocessing is complete, and the data have been transposed into the common reference space (C). The last steps of the calcium preprocessing (using the newest pipeline) are currently running. I expect it to be complete within the next 7 days. After we’ve had a chance to double check that everything has turned out as expected, we could share these data.</p>
 <p>(3) Unpublished ‘state’ data. The simultaneous fMRI/calcium imaging data from 6/9 of these mice are shared with data set (2). Thus, these data would be ready at the same time. The additional N=3 simultaneous imaging sessions have not yet been analyzed. Further, we have not analyzed the out-of-scanner calcium imaging data. It is my hope that we will be able to prioritize analyzing the remaining components of this data set in late January. However, if you are particularly interested in these data please let me know and we can see if there is a way to expedite the process.</p>
 <p>It seems to me that it makes the most sense for us to share data set (2) with you when it reaches the end of the preprocessing pipeline in a couple weeks. Please let me know if you’ve come to a different conclusion. I can also keep you apprised of where we’re at with the other data I’ve described.</p>
-</div>
-<div class="section" id="end-of-email">
+</section>
+<section id="end-of-email">
 <h4>End of email.<a class="headerlink" href="#end-of-email" title="Permalink to this headline">¶</a></h4>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="my-summary">
+<section id="my-summary">
 <h3>My summary<a class="headerlink" href="#my-summary" title="Permalink to this headline">¶</a></h3>
 <p>Here is what I understand form this email, the Nature Methods paper, and also looking at the dataset shared on Drive.</p>
-<div class="section" id="dataset-on-drive">
+<section id="dataset-on-drive">
 <h4>Dataset on Drive<a class="headerlink" href="#dataset-on-drive" title="Permalink to this headline">¶</a></h4>
 <p>There are:</p>
 <ul class="simple">
@@ -484,8 +490,8 @@ This is why I’ve included all the details above, just in case you can foresee 
 <li><p>10 mins of simultaneous ca and fmri data in all the runs and sessions</p></li>
 </ul>
 <p>This means we have 21 runs total, or 210 minutes of data per mouse.  Roughly, half of the data is <em>rest</em> runs, and the other half is <em>LED</em> stimulation.  It seems like the dataset currently is in <strong>individual space</strong> format, which is <strong>space (B)</strong> as described above in the emial.</p>
-</div>
-<div class="section" id="correspondence-between-data-modalities">
+</section>
+<section id="correspondence-between-data-modalities">
 <h4>Correspondence between data modalities<a class="headerlink" href="#correspondence-between-data-modalities" title="Permalink to this headline">¶</a></h4>
 <p>There are 3 anatomical MR images used for different purposes:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>i) isotropic (0.2mm) anatomical image of the whole brain (including cerebellum and olfactory bulb),
@@ -508,13 +514,13 @@ iii) time-of-flight angiogram,
 </ul>
 <p>I still don’t know how to precisely interpret these dimensions and how to related fMRI to Ca data in an exact way.  Fig 2 from the paper is helpful, which I’m embedding here:</p>
 <p><img alt="Drag Racing" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-020-00984-6/MediaObjects/41592_2020_984_Fig2_HTML.png" /></p>
-</div>
-<div class="section" id="processing-the-data">
+</section>
+<section id="processing-the-data">
 <h4>Processing the data<a class="headerlink" href="#processing-the-data" title="Permalink to this headline">¶</a></h4>
 <p>It is great to be aware of the preprocessing details, however I still have a few questions about the details.  I will discuss this more later on.</p>
-</div>
-</div>
-<div class="section" id="very-simple-analysis">
+</section>
+</section>
+<section id="very-simple-analysis">
 <h3>Very simple analysis<a class="headerlink" href="#very-simple-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Ok let’s plot some of the data and see how it looks like.  In this document I will only look at some fMRI data, and do Ca next in a separate document.</p>
 <div class="cell tag_hide-input docutils container">
@@ -745,9 +751,9 @@ Meta:  sub-SLC10_ses-1_run-4_task-led		Data shape: (64, 64, 78, 600)
 <img alt="_images/feb-12-2021_10_0.png" src="_images/feb-12-2021_10_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="discussion">
+</section>
+</section>
+<section id="discussion">
 <h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
 <p>There are things that I still don’t understand about standard practice in working with BOLD data.</p>
 <ul class="simple">
@@ -759,8 +765,8 @@ Meta:  sub-SLC10_ses-1_run-4_task-led		Data shape: (64, 64, 78, 600)
 <li><p>Is this statement correct: “ROIs are defined based on coordinate positions, parcellation on the other hand is defined either anatomically, or functionally, correct?  For example, one can use Allen Atlas to parcellate many ROIs to a larger region. One can also use pearson correlation + a community detection algorithm to achieve functional parcellation.  And sometiems we don’t want to assign strict binary memebeship values to ROIs, therefore, we use Bayesian mixed-membership algorithms to get a fluid parcellation just like Njafi16.”</p></li>
 </ul>
 <p>I think discussing these in a meeting would greatly help me understand the fMRI data strcutures and processing steps much better.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
