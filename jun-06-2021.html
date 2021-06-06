@@ -208,11 +208,6 @@
    June 06, 2021
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#and-then-add-the-isocortex-parcellation">
-   and then add the isocortex parcellation
-  </a>
- </li>
 </ul>
 
 </nav> <!-- To handle the deprecated key -->
@@ -317,68 +312,47 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   June 06, 2021
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-nx-tree">
+   Make nx tree
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#make-nx-tree">
-     Make nx tree
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#levels">
+     4 levels
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#levels">
-       4 levels
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#load-other-data">
-     Load other data
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#roi-definition-ccf-space">
-     ROI definition (CCF space)
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#todo-add-these-masks-using-their-names-left-and-right">
-       TODO: add these masks using their names (left and right)
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#and-then-add-the-isocortex-parcellation">
-   and then add the isocortex parcellation
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-other-data">
+   Load other data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#roi-definition-ccf-space">
+   ROI definition (CCF space)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-normalization-using-ants">
+   Spatial normalization using ANTs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#register">
+   Register
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#spatial-normalization-using-ants">
-     Spatial normalization using ANTs
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inv-mask-transforms">
+     Inv mask transforms
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#register">
-     Register
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#todo-now-combine-functional-data-from-runs-compute-means-and-cluster">
+     TODO: now combine functional data from runs, compute means, and cluster
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inv-mask-transforms">
-       Inv mask transforms
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#todo-now-combine-functional-data-compute-means-and-cluster">
-       TODO: now combine functional data, compute means, and cluster
-      </a>
-     </li>
-    </ul>
    </li>
   </ul>
  </li>
@@ -488,6 +462,117 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">tr_axes</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,)</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">tr_axes</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">mask_left_right</span><span class="p">(</span><span class="n">mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">left_right_axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="n">npix</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span>
+    <span class="n">coverage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">npix</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">slices_l</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+        <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">coverage</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">left_right_axis</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">slices_r</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+        <span class="nb">slice</span><span class="p">(</span><span class="n">npix</span><span class="o">-</span><span class="n">coverage</span><span class="p">,</span> <span class="n">npix</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">left_right_axis</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">mask_l</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">mask_l</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mask_r</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">return</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">kmeans_parcellation</span><span class="p">(</span>
+    <span class="n">mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">num_regions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
+    <span class="n">symmetrize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">left_right_axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="p">):</span>
+    
+    <span class="n">mask_l</span><span class="p">,</span> <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask_left_right</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">left_right_axis</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">symmetrize</span><span class="p">:</span>
+        <span class="n">mask_r_full</span> <span class="o">=</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">mask_l_full</span> <span class="o">=</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">mask_r_full</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">mask_r</span><span class="p">[</span><span class="n">slices_r</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
+        <span class="n">mask_l_full</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">mask_l</span><span class="p">[</span><span class="n">slices_l</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
+        <span class="n">mask_sym</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">mask_r_full</span><span class="p">,</span> <span class="n">mask_l_full</span><span class="p">)</span>
+        
+        <span class="n">mask_l</span> <span class="o">=</span> <span class="n">mask_sym</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask_sym</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="n">mask_l</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">mask_r</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="c1"># do left</span>
+        <span class="n">atlas_kmeans</span><span class="p">,</span> <span class="n">cluster_centers</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_l</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
+        
+        <span class="c1"># mirror symmetry clusters to right hemisphere</span>
+        <span class="k">for</span> <span class="n">region_id</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">atlas_kmeans</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]):</span>
+            
+            <span class="n">region_id_r</span> <span class="o">=</span> <span class="n">region_id</span> <span class="o">+</span> <span class="n">num_regions</span>
+            <span class="n">flipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">slices_l</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
+            <span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">slices_r</span><span class="p">][</span><span class="n">flipped</span> <span class="o">==</span> <span class="n">region_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">region_id_r</span>
+            
+            <span class="c1"># get center for right cluster</span>
+            <span class="n">_ctr</span> <span class="o">=</span> <span class="n">cluster_centers</span><span class="p">[</span><span class="n">region_id</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="n">delta</span> <span class="o">=</span> <span class="n">npix</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">_ctr</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span>
+            <span class="n">_ctr</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">delta</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">cluster_centers</span><span class="p">[</span><span class="n">region_id_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">_ctr</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">atlas_kmeans_l</span><span class="p">,</span> <span class="n">cluster_centers_l</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_l</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
+        <span class="n">atlas_kmeans_r</span><span class="p">,</span> <span class="n">cluster_centers_r</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_r</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
+        
+        <span class="n">atlas_kmeans_r</span> <span class="o">+=</span> <span class="n">num_regions</span> 
+        <span class="n">cluster_centers_r</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="n">num_regions</span><span class="p">:</span> <span class="n">ctr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ctr</span> <span class="ow">in</span> <span class="n">cluster_centers_r</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+        
+        <span class="n">atlas_kmeans</span> <span class="o">=</span> <span class="n">atlas_kmeans_l</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">mask_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">atlas_kmeans_r</span><span class="p">[</span><span class="n">mask_r</span><span class="p">]</span>
+        <span class="n">cluster_centers</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">cluster_centers_l</span><span class="p">,</span> <span class="o">**</span><span class="n">cluster_centers_r</span><span class="p">}</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;atlas_kmeans&#39;</span><span class="p">:</span> <span class="n">atlas_kmeans</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
+        <span class="s1">&#39;cluster_centers&#39;</span><span class="p">:</span> <span class="n">cluster_centers</span><span class="p">,</span>
+        <span class="s1">&#39;mask_l&#39;</span><span class="p">:</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+        <span class="s1">&#39;mask_r&#39;</span><span class="p">:</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">output</span>
+
+
+<span class="k">def</span> <span class="nf">_do_kmeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
+    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))))</span>
+    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)))</span>
+    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span>
+        <span class="n">n_clusters</span><span class="o">=</span><span class="n">num_regions</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+
+    <span class="n">roi_unique</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lbl</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">:</span>
+            <span class="n">roi_unique</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+    <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">lbl</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">roi_unique</span><span class="p">)}</span>
+
+    <span class="n">roi_relabeld</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">:</span>
+        <span class="n">roi_relabeld</span><span class="p">[</span><span class="n">roi</span> <span class="o">==</span> <span class="n">lbl</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span>
+
+    <span class="n">atlas_kmeans_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="p">,</span> <span class="n">roi_relabeld</span><span class="p">):</span>
+        <span class="n">atlas_kmeans_dict</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">voxel</span><span class="p">))</span>
+    <span class="n">atlas_kmeans_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">atlas_kmeans_dict</span><span class="p">)</span>
+
+    <span class="n">atlas_kmeans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">voxel_list</span> <span class="ow">in</span> <span class="n">atlas_kmeans_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">atlas_kmeans</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">voxel_list</span><span class="p">))]</span> <span class="o">=</span> <span class="n">region_id</span>
+
+    <span class="n">cluster_centers</span> <span class="o">=</span> <span class="p">{</span><span class="n">mapping</span><span class="p">[</span><span class="n">lbl</span><span class="p">]:</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span> <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">atlas_kmeans</span><span class="p">,</span> <span class="n">cluster_centers</span>
 </pre></div>
 </div>
 </div>
@@ -677,101 +762,6 @@
 <h2>ROI definition (CCF space)<a class="headerlink" href="#roi-definition-ccf-space" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">npix_x, npix_y, npix_z = template_info[&#39;sizes&#39;]</span>
-<span class="sd">left_hemisphere, right_hemisphere = np.ones(template.shape), np.ones(template.shape)</span>
-<span class="sd">left_hemisphere[..., npix_z//2:] = 0</span>
-<span class="sd">left_hemisphere = left_hemisphere.astype(bool)</span>
-<span class="sd">cortex_mask_l = np.logical_and(cortex_mask, left_hemisphere).astype(&#39;uint8&#39;)</span>
-<span class="sd">cortex_mask_r = np.logical_and(cortex_mask, ~left_hemisphere).astype(&#39;uint8&#39;)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask),</span>
-<span class="sd">    overlay_cmap=&#39;Greys_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=1,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex&#39;,</span>
-<span class="sd">    figsize=1,</span>
-<span class="sd">)</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask_l),</span>
-<span class="sd">    overlay_cmap=&#39;binary_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=1,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex (left hemisphere)&#39;,</span>
-<span class="sd">    figsize=1,</span>
-
-<span class="sd">)</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask_r),</span>
-<span class="sd">    overlay_cmap=&#39;binary_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=1,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex (right hemisphere)&#39;,</span>
-<span class="sd">    figsize=1,</span>
-<span class="sd">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_19_0.png" src="_images/jun-06-2021_19_0.png" />
-<img alt="_images/jun-06-2021_19_1.png" src="_images/jun-06-2021_19_1.png" />
-<img alt="_images/jun-06-2021_19_2.png" src="_images/jun-06-2021_19_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask),</span>
-<span class="sd">    overlay_cmap=&#39;Greys_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=0,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex&#39;,</span>
-<span class="sd">    figsize=1,</span>
-<span class="sd">)</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask_l),</span>
-<span class="sd">    overlay_cmap=&#39;binary_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=0,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex (left hemisphere)&#39;,</span>
-<span class="sd">    figsize=1,</span>
-<span class="sd">)</span>
-<span class="sd">ants.from_numpy(template.astype(float)).plot(</span>
-<span class="sd">    overlay=ants.from_numpy(cortex_mask_r),</span>
-<span class="sd">    overlay_cmap=&#39;binary_r&#39;,</span>
-<span class="sd">    overlay_alpha=0.6,</span>
-<span class="sd">    axis=0,</span>
-<span class="sd">    nslices=16,</span>
-<span class="sd">    title=&#39;iscortex (right hemisphere)&#39;,</span>
-<span class="sd">    figsize=1,</span>
-<span class="sd">)</span>
-<span class="sd">&quot;&quot;&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_20_0.png" src="_images/jun-06-2021_20_0.png" />
-<img alt="_images/jun-06-2021_20_1.png" src="_images/jun-06-2021_20_1.png" />
-<img alt="_images/jun-06-2021_20_2.png" src="_images/jun-06-2021_20_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
 <span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
@@ -783,122 +773,6 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mask_left_right</span><span class="p">(</span><span class="n">mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">left_right_axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>
-    
-    <span class="n">npix</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span>
-    <span class="n">coverage</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">npix</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-    <span class="n">slices_l</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-        <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">coverage</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">left_right_axis</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-    <span class="p">)</span>
-    <span class="n">slices_r</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
-        <span class="nb">slice</span><span class="p">(</span><span class="n">npix</span><span class="o">-</span><span class="n">coverage</span><span class="p">,</span> <span class="n">npix</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">left_right_axis</span> <span class="k">else</span> <span class="nb">slice</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
-    <span class="p">)</span>
-    <span class="n">mask_l</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-    <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-    <span class="n">mask_l</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">mask_r</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">return</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">kmeans_parcellation</span><span class="p">(</span>
-    <span class="n">mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
-    <span class="n">num_regions</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span>
-    <span class="n">symmetrize</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">left_right_axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-    <span class="n">random_state</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="p">):</span>
-    
-    <span class="n">mask_l</span><span class="p">,</span> <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask_left_right</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">left_right_axis</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">symmetrize</span><span class="p">:</span>
-        <span class="n">mask_r_full</span> <span class="o">=</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">mask_l_full</span> <span class="o">=</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">mask_r_full</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">mask_r</span><span class="p">[</span><span class="n">slices_r</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
-        <span class="n">mask_l_full</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">mask_l</span><span class="p">[</span><span class="n">slices_l</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
-        <span class="n">mask_sym</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">mask_r_full</span><span class="p">,</span> <span class="n">mask_l_full</span><span class="p">)</span>
-        
-        <span class="n">mask_l</span> <span class="o">=</span> <span class="n">mask_sym</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-        <span class="n">mask_r</span> <span class="o">=</span> <span class="n">mask_sym</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
-        <span class="n">mask_l</span><span class="p">[</span><span class="n">slices_r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">mask_r</span><span class="p">[</span><span class="n">slices_l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-        
-        <span class="c1"># do left</span>
-        <span class="n">atlas_kmeans</span><span class="p">,</span> <span class="n">cluster_centers</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_l</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
-        
-        <span class="c1"># mirror symmetry clusters to right hemisphere</span>
-        <span class="k">for</span> <span class="n">region_id</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">atlas_kmeans</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]):</span>
-            
-            <span class="n">region_id_r</span> <span class="o">=</span> <span class="n">region_id</span> <span class="o">+</span> <span class="n">num_regions</span>
-            <span class="n">flipped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">slices_l</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">left_right_axis</span><span class="p">)</span>
-            <span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">slices_r</span><span class="p">][</span><span class="n">flipped</span> <span class="o">==</span> <span class="n">region_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">region_id_r</span>
-            
-            <span class="c1"># get center for right cluster</span>
-            <span class="n">_ctr</span> <span class="o">=</span> <span class="n">cluster_centers</span><span class="p">[</span><span class="n">region_id</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-            <span class="n">delta</span> <span class="o">=</span> <span class="n">npix</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">_ctr</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span>
-            <span class="n">_ctr</span><span class="p">[</span><span class="n">left_right_axis</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">*</span><span class="n">delta</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="n">cluster_centers</span><span class="p">[</span><span class="n">region_id_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">_ctr</span>
-
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">atlas_kmeans_l</span><span class="p">,</span> <span class="n">cluster_centers_l</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_l</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
-        <span class="n">atlas_kmeans_r</span><span class="p">,</span> <span class="n">cluster_centers_r</span> <span class="o">=</span> <span class="n">_do_kmeans</span><span class="p">(</span><span class="n">mask_r</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">)</span>
-        
-        <span class="n">atlas_kmeans_r</span> <span class="o">+=</span> <span class="n">num_regions</span> 
-        <span class="n">cluster_centers_r</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="o">+</span><span class="n">num_regions</span><span class="p">:</span> <span class="n">ctr</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ctr</span> <span class="ow">in</span> <span class="n">cluster_centers_r</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-        
-        <span class="n">atlas_kmeans</span> <span class="o">=</span> <span class="n">atlas_kmeans_l</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">atlas_kmeans</span><span class="p">[</span><span class="n">mask_r</span><span class="p">]</span> <span class="o">=</span> <span class="n">atlas_kmeans_r</span><span class="p">[</span><span class="n">mask_r</span><span class="p">]</span>
-        <span class="n">cluster_centers</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">cluster_centers_l</span><span class="p">,</span> <span class="o">**</span><span class="n">cluster_centers_r</span><span class="p">}</span>
-
-    <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;atlas_kmeans&#39;</span><span class="p">:</span> <span class="n">atlas_kmeans</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span>
-        <span class="s1">&#39;cluster_centers&#39;</span><span class="p">:</span> <span class="n">cluster_centers</span><span class="p">,</span>
-        <span class="s1">&#39;mask_l&#39;</span><span class="p">:</span> <span class="n">mask_l</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
-        <span class="s1">&#39;mask_r&#39;</span><span class="p">:</span> <span class="n">mask_r</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">output</span>
-
-
-<span class="k">def</span> <span class="nf">_do_kmeans</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">,</span> <span class="n">random_state</span><span class="p">):</span>
-    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))))</span>
-    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)))</span>
-    <span class="n">nonzero_voxels</span> <span class="o">=</span> <span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-    <span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span>
-        <span class="n">n_clusters</span><span class="o">=</span><span class="n">num_regions</span><span class="p">,</span>
-        <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">,</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
-    <span class="n">roi</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
-
-    <span class="n">roi_unique</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">lbl</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">:</span>
-            <span class="n">roi_unique</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
-    <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">lbl</span><span class="p">:</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">roi_unique</span><span class="p">)}</span>
-
-    <span class="n">roi_relabeld</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">:</span>
-        <span class="n">roi_relabeld</span><span class="p">[</span><span class="n">roi</span> <span class="o">==</span> <span class="n">lbl</span><span class="p">]</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span>
-
-    <span class="n">atlas_kmeans_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">voxel</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nonzero_voxels</span><span class="p">,</span> <span class="n">roi_relabeld</span><span class="p">):</span>
-        <span class="n">atlas_kmeans_dict</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">voxel</span><span class="p">))</span>
-    <span class="n">atlas_kmeans_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">atlas_kmeans_dict</span><span class="p">)</span>
-
-    <span class="n">atlas_kmeans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">voxel_list</span> <span class="ow">in</span> <span class="n">atlas_kmeans_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">atlas_kmeans</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">voxel_list</span><span class="p">))]</span> <span class="o">=</span> <span class="n">region_id</span>
-
-    <span class="n">cluster_centers</span> <span class="o">=</span> <span class="p">{</span><span class="n">mapping</span><span class="p">[</span><span class="n">lbl</span><span class="p">]:</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span> <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">roi_unique</span><span class="p">}</span>
-    
-    <span class="k">return</span> <span class="n">atlas_kmeans</span><span class="p">,</span> <span class="n">cluster_centers</span>
 </pre></div>
 </div>
 </div>
@@ -943,49 +817,6 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;cluster_centers&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: array([29.09545674, 23.29410343, 45.47245046]),
- 2: array([30.93121693, 34.58823529, 50.97385621]),
- 3: array([30.46142649, 36.8216885 , 34.77971858]),
- 4: array([41.29056047, 24.62979351, 31.8387414 ]),
- 5: array([41.97473915, 43.58072488, 23.25562878]),
- 6: array([46.19735183, 18.12379151, 48.55842791]),
- 7: array([52.86304636, 29.47629139, 19.76450331]),
- 8: array([57.58708601, 16.4741482 , 31.81010245]),
- 9: array([60.7876979 , 44.65585258, 13.77861407]),
- 10: array([63.32475643, 10.5948039 , 47.78940794]),
- 11: array([69.2430911 , 24.32881269, 16.95291709]),
- 12: array([75.57251685, 11.83006153, 29.08116027]),
- 13: array([78.44709997, 38.44709997, 10.56689012]),
- 14: array([82.65221774,  8.60458669, 47.27570565]),
- 15: array([89.80727486, 24.07509534, 16.1839249 ]),
- 16: array([94.34822715, 13.61660421, 32.0328625 ]),
- 17: array([28.64169139, 23.56824926, 68.14910979]),
- 18: array([31.19884639, 34.53673345, 62.27686703]),
- 19: array([30.37694553, 36.66950389, 78.91585603]),
- 20: array([41.02176063, 24.2007913 , 81.23071217]),
- 21: array([41.5670816 , 43.45145228, 90.32890733]),
- 22: array([45.90954774, 18.32600503, 64.6409129 ]),
- 23: array([52.00503578, 29.14206202, 93.54943016]),
- 24: array([57.52610442, 16.2400189 , 81.51051264]),
- 25: array([59.93751614, 44.59566228, 99.88690937]),
- 26: array([63.18231091, 10.74722838, 65.42941611]),
- 27: array([68.38683544, 24.62227848, 96.85291139]),
- 28: array([75.44415881, 11.95515567, 84.9982862 ]),
- 29: array([ 77.63257027,  38.94233555, 103.21066358]),
- 30: array([82.55318627,  8.64362745, 66.57205882]),
- 31: array([89.2001706 , 24.66761444, 98.25789025]),
- 32: array([94.3295838 , 13.78008999, 82.20669291])}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">region_id</span><span class="p">,</span> <span class="n">cluster_ctr</span> <span class="ow">in</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;cluster_centers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">region_id</span> <span class="o">&gt;</span> <span class="n">num_regions</span><span class="p">:</span>
         <span class="k">break</span>
@@ -995,22 +826,22 @@
     <span class="k">if</span> <span class="n">error</span> <span class="o">&gt;</span> <span class="mf">0.2</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
             <span class="n">region_id</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cluster_ctr</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cluster_ctr_r</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cluster_ctr</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cluster_ctr_r</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span>
         <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.364 [29.095 23.294] [28.642 23.568]
-4 0.349 [41.291 24.63 ] [41.022 24.201]
-5 0.268 [41.975 43.581] [41.567 43.451]
-6 0.245 [46.197 18.124] [45.91  18.326]
-7 0.596 [52.863 29.476] [52.005 29.142]
-9 0.455 [60.788 44.656] [59.938 44.596]
-11 0.575 [69.243 24.329] [68.387 24.622]
-13 0.655 [78.447 38.447] [77.633 38.942]
-15 0.6 [89.807 24.075] [89.2   24.668]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 0.364 [29.095 23.294 45.472] [28.642 23.568 68.149]
+4 0.349 [41.291 24.63  31.839] [41.022 24.201 81.231]
+5 0.268 [41.975 43.581 23.256] [41.567 43.451 90.329]
+6 0.245 [46.197 18.124 48.558] [45.91  18.326 64.641]
+7 0.596 [52.863 29.476 19.765] [52.005 29.142 93.549]
+9 0.455 [60.788 44.656 13.779] [59.938 44.596 99.887]
+11 0.575 [69.243 24.329 16.953] [68.387 24.622 96.853]
+13 0.655 [78.447 38.447 10.567] [ 77.633  38.942 103.211]
+15 0.6 [89.807 24.075 16.184] [89.2   24.668 98.258]
 </pre></div>
 </div>
 </div>
@@ -1057,7 +888,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_35_0.png" src="_images/jun-06-2021_35_0.png" />
+<img alt="_images/jun-06-2021_28_0.png" src="_images/jun-06-2021_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1081,35 +912,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_37_0.png" src="_images/jun-06-2021_37_0.png" />
-<img alt="_images/jun-06-2021_37_1.png" src="_images/jun-06-2021_37_1.png" />
-<img alt="_images/jun-06-2021_37_2.png" src="_images/jun-06-2021_37_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;atlas_kmeans&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-<span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">overlay</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_l&#39;</span><span class="p">],</span>
-        <span class="n">overlay_cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span>
-        <span class="n">overlay_alpha</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
-        <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-        <span class="n">nslices</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;iscortex ROIs (axis = </span><span class="si">{:d}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span>
-        <span class="n">figsize</span><span class="o">=</span><span class="mi">2</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">cbar_dx</span><span class="o">=</span><span class="mf">0.07</span><span class="p">,</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_39_0.png" src="_images/jun-06-2021_39_0.png" />
-<img alt="_images/jun-06-2021_39_1.png" src="_images/jun-06-2021_39_1.png" />
-<img alt="_images/jun-06-2021_39_2.png" src="_images/jun-06-2021_39_2.png" />
+<img alt="_images/jun-06-2021_30_0.png" src="_images/jun-06-2021_30_0.png" />
+<img alt="_images/jun-06-2021_30_1.png" src="_images/jun-06-2021_30_1.png" />
+<img alt="_images/jun-06-2021_30_2.png" src="_images/jun-06-2021_30_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1127,7 +932,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/jun-06-2021_41_1.png" src="_images/jun-06-2021_41_1.png" />
+<img alt="_images/jun-06-2021_32_1.png" src="_images/jun-06-2021_32_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1201,7 +1006,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_45_0.png" src="_images/jun-06-2021_45_0.png" />
+<img alt="_images/jun-06-2021_36_0.png" src="_images/jun-06-2021_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1226,36 +1031,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_47_0.png" src="_images/jun-06-2021_47_0.png" />
-<img alt="_images/jun-06-2021_47_1.png" src="_images/jun-06-2021_47_1.png" />
-<img alt="_images/jun-06-2021_47_2.png" src="_images/jun-06-2021_47_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">atlas_kmeans_eroded</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-
-<span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-        <span class="n">overlay</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_l&#39;</span><span class="p">],</span>
-        <span class="n">overlay_cmap</span><span class="o">=</span><span class="s1">&#39;Paired&#39;</span><span class="p">,</span>
-        <span class="n">overlay_alpha</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span>
-        <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-        <span class="n">nslices</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
-        <span class="n">figsize</span><span class="o">=</span><span class="mi">3</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">4</span><span class="p">,</span>
-        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;iscortex ROIs (axis = </span><span class="si">{:d}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">axis</span><span class="p">),</span>
-        <span class="n">title_dy</span><span class="o">=</span><span class="mf">0.01</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.03</span><span class="p">,</span>
-        <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">cbar_dx</span><span class="o">=</span><span class="mf">0.07</span><span class="p">,</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_49_0.png" src="_images/jun-06-2021_49_0.png" />
-<img alt="_images/jun-06-2021_49_1.png" src="_images/jun-06-2021_49_1.png" />
-<img alt="_images/jun-06-2021_49_2.png" src="_images/jun-06-2021_49_2.png" />
+<img alt="_images/jun-06-2021_38_0.png" src="_images/jun-06-2021_38_0.png" />
+<img alt="_images/jun-06-2021_38_1.png" src="_images/jun-06-2021_38_1.png" />
+<img alt="_images/jun-06-2021_38_2.png" src="_images/jun-06-2021_38_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1273,7 +1051,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:ylabel=&#39;Count&#39;&gt;
 </pre></div>
 </div>
-<img alt="_images/jun-06-2021_51_1.png" src="_images/jun-06-2021_51_1.png" />
+<img alt="_images/jun-06-2021_40_1.png" src="_images/jun-06-2021_40_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1368,11 +1146,10 @@ Isocortex 315
         <span class="c1"># x[x == 0.] = np.nan</span>
         <span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
             <span class="n">overlay</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
-            <span class="n">overlay_cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">,</span>
             <span class="n">overlay_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
             <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
             <span class="n">nslices</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-            <span class="n">figsize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">figsize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> (axis = </span><span class="si">{:d}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span>
             <span class="n">title_dy</span><span class="o">=</span><span class="mf">0.01</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.03</span><span class="p">,</span>
             <span class="n">cbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -1382,165 +1159,142 @@ Isocortex 315
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_58_0.png" src="_images/jun-06-2021_58_0.png" />
-<img alt="_images/jun-06-2021_58_1.png" src="_images/jun-06-2021_58_1.png" />
-<img alt="_images/jun-06-2021_58_2.png" src="_images/jun-06-2021_58_2.png" />
-<img alt="_images/jun-06-2021_58_3.png" src="_images/jun-06-2021_58_3.png" />
-<img alt="_images/jun-06-2021_58_4.png" src="_images/jun-06-2021_58_4.png" />
-<img alt="_images/jun-06-2021_58_5.png" src="_images/jun-06-2021_58_5.png" />
-<img alt="_images/jun-06-2021_58_6.png" src="_images/jun-06-2021_58_6.png" />
-<img alt="_images/jun-06-2021_58_7.png" src="_images/jun-06-2021_58_7.png" />
-<img alt="_images/jun-06-2021_58_8.png" src="_images/jun-06-2021_58_8.png" />
-<img alt="_images/jun-06-2021_58_9.png" src="_images/jun-06-2021_58_9.png" />
-<img alt="_images/jun-06-2021_58_10.png" src="_images/jun-06-2021_58_10.png" />
-<img alt="_images/jun-06-2021_58_11.png" src="_images/jun-06-2021_58_11.png" />
-<img alt="_images/jun-06-2021_58_12.png" src="_images/jun-06-2021_58_12.png" />
-<img alt="_images/jun-06-2021_58_13.png" src="_images/jun-06-2021_58_13.png" />
-<img alt="_images/jun-06-2021_58_14.png" src="_images/jun-06-2021_58_14.png" />
-<img alt="_images/jun-06-2021_58_15.png" src="_images/jun-06-2021_58_15.png" />
-<img alt="_images/jun-06-2021_58_16.png" src="_images/jun-06-2021_58_16.png" />
-<img alt="_images/jun-06-2021_58_17.png" src="_images/jun-06-2021_58_17.png" />
-<img alt="_images/jun-06-2021_58_18.png" src="_images/jun-06-2021_58_18.png" />
-<img alt="_images/jun-06-2021_58_19.png" src="_images/jun-06-2021_58_19.png" />
-<img alt="_images/jun-06-2021_58_20.png" src="_images/jun-06-2021_58_20.png" />
-<img alt="_images/jun-06-2021_58_21.png" src="_images/jun-06-2021_58_21.png" />
-<img alt="_images/jun-06-2021_58_22.png" src="_images/jun-06-2021_58_22.png" />
-<img alt="_images/jun-06-2021_58_23.png" src="_images/jun-06-2021_58_23.png" />
-<img alt="_images/jun-06-2021_58_24.png" src="_images/jun-06-2021_58_24.png" />
-<img alt="_images/jun-06-2021_58_25.png" src="_images/jun-06-2021_58_25.png" />
-<img alt="_images/jun-06-2021_58_26.png" src="_images/jun-06-2021_58_26.png" />
-<img alt="_images/jun-06-2021_58_27.png" src="_images/jun-06-2021_58_27.png" />
-<img alt="_images/jun-06-2021_58_28.png" src="_images/jun-06-2021_58_28.png" />
-<img alt="_images/jun-06-2021_58_29.png" src="_images/jun-06-2021_58_29.png" />
-<img alt="_images/jun-06-2021_58_30.png" src="_images/jun-06-2021_58_30.png" />
-<img alt="_images/jun-06-2021_58_31.png" src="_images/jun-06-2021_58_31.png" />
-<img alt="_images/jun-06-2021_58_32.png" src="_images/jun-06-2021_58_32.png" />
-<img alt="_images/jun-06-2021_58_33.png" src="_images/jun-06-2021_58_33.png" />
-<img alt="_images/jun-06-2021_58_34.png" src="_images/jun-06-2021_58_34.png" />
-<img alt="_images/jun-06-2021_58_35.png" src="_images/jun-06-2021_58_35.png" />
-<img alt="_images/jun-06-2021_58_36.png" src="_images/jun-06-2021_58_36.png" />
-<img alt="_images/jun-06-2021_58_37.png" src="_images/jun-06-2021_58_37.png" />
-<img alt="_images/jun-06-2021_58_38.png" src="_images/jun-06-2021_58_38.png" />
-<img alt="_images/jun-06-2021_58_39.png" src="_images/jun-06-2021_58_39.png" />
-<img alt="_images/jun-06-2021_58_40.png" src="_images/jun-06-2021_58_40.png" />
-<img alt="_images/jun-06-2021_58_41.png" src="_images/jun-06-2021_58_41.png" />
-<img alt="_images/jun-06-2021_58_42.png" src="_images/jun-06-2021_58_42.png" />
-<img alt="_images/jun-06-2021_58_43.png" src="_images/jun-06-2021_58_43.png" />
-<img alt="_images/jun-06-2021_58_44.png" src="_images/jun-06-2021_58_44.png" />
-<img alt="_images/jun-06-2021_58_45.png" src="_images/jun-06-2021_58_45.png" />
-<img alt="_images/jun-06-2021_58_46.png" src="_images/jun-06-2021_58_46.png" />
-<img alt="_images/jun-06-2021_58_47.png" src="_images/jun-06-2021_58_47.png" />
-<img alt="_images/jun-06-2021_58_48.png" src="_images/jun-06-2021_58_48.png" />
-<img alt="_images/jun-06-2021_58_49.png" src="_images/jun-06-2021_58_49.png" />
-<img alt="_images/jun-06-2021_58_50.png" src="_images/jun-06-2021_58_50.png" />
-<img alt="_images/jun-06-2021_58_51.png" src="_images/jun-06-2021_58_51.png" />
-<img alt="_images/jun-06-2021_58_52.png" src="_images/jun-06-2021_58_52.png" />
-<img alt="_images/jun-06-2021_58_53.png" src="_images/jun-06-2021_58_53.png" />
-<img alt="_images/jun-06-2021_58_54.png" src="_images/jun-06-2021_58_54.png" />
-<img alt="_images/jun-06-2021_58_55.png" src="_images/jun-06-2021_58_55.png" />
-<img alt="_images/jun-06-2021_58_56.png" src="_images/jun-06-2021_58_56.png" />
-<img alt="_images/jun-06-2021_58_57.png" src="_images/jun-06-2021_58_57.png" />
-<img alt="_images/jun-06-2021_58_58.png" src="_images/jun-06-2021_58_58.png" />
-<img alt="_images/jun-06-2021_58_59.png" src="_images/jun-06-2021_58_59.png" />
-<img alt="_images/jun-06-2021_58_60.png" src="_images/jun-06-2021_58_60.png" />
-<img alt="_images/jun-06-2021_58_61.png" src="_images/jun-06-2021_58_61.png" />
-<img alt="_images/jun-06-2021_58_62.png" src="_images/jun-06-2021_58_62.png" />
-<img alt="_images/jun-06-2021_58_63.png" src="_images/jun-06-2021_58_63.png" />
-<img alt="_images/jun-06-2021_58_64.png" src="_images/jun-06-2021_58_64.png" />
-<img alt="_images/jun-06-2021_58_65.png" src="_images/jun-06-2021_58_65.png" />
-<img alt="_images/jun-06-2021_58_66.png" src="_images/jun-06-2021_58_66.png" />
-<img alt="_images/jun-06-2021_58_67.png" src="_images/jun-06-2021_58_67.png" />
-<img alt="_images/jun-06-2021_58_68.png" src="_images/jun-06-2021_58_68.png" />
-<img alt="_images/jun-06-2021_58_69.png" src="_images/jun-06-2021_58_69.png" />
-<img alt="_images/jun-06-2021_58_70.png" src="_images/jun-06-2021_58_70.png" />
-<img alt="_images/jun-06-2021_58_71.png" src="_images/jun-06-2021_58_71.png" />
-<img alt="_images/jun-06-2021_58_72.png" src="_images/jun-06-2021_58_72.png" />
-<img alt="_images/jun-06-2021_58_73.png" src="_images/jun-06-2021_58_73.png" />
-<img alt="_images/jun-06-2021_58_74.png" src="_images/jun-06-2021_58_74.png" />
-<img alt="_images/jun-06-2021_58_75.png" src="_images/jun-06-2021_58_75.png" />
-<img alt="_images/jun-06-2021_58_76.png" src="_images/jun-06-2021_58_76.png" />
-<img alt="_images/jun-06-2021_58_77.png" src="_images/jun-06-2021_58_77.png" />
-<img alt="_images/jun-06-2021_58_78.png" src="_images/jun-06-2021_58_78.png" />
-<img alt="_images/jun-06-2021_58_79.png" src="_images/jun-06-2021_58_79.png" />
-<img alt="_images/jun-06-2021_58_80.png" src="_images/jun-06-2021_58_80.png" />
-<img alt="_images/jun-06-2021_58_81.png" src="_images/jun-06-2021_58_81.png" />
-<img alt="_images/jun-06-2021_58_82.png" src="_images/jun-06-2021_58_82.png" />
-<img alt="_images/jun-06-2021_58_83.png" src="_images/jun-06-2021_58_83.png" />
-<img alt="_images/jun-06-2021_58_84.png" src="_images/jun-06-2021_58_84.png" />
-<img alt="_images/jun-06-2021_58_85.png" src="_images/jun-06-2021_58_85.png" />
-<img alt="_images/jun-06-2021_58_86.png" src="_images/jun-06-2021_58_86.png" />
-<img alt="_images/jun-06-2021_58_87.png" src="_images/jun-06-2021_58_87.png" />
-<img alt="_images/jun-06-2021_58_88.png" src="_images/jun-06-2021_58_88.png" />
-<img alt="_images/jun-06-2021_58_89.png" src="_images/jun-06-2021_58_89.png" />
-<img alt="_images/jun-06-2021_58_90.png" src="_images/jun-06-2021_58_90.png" />
-<img alt="_images/jun-06-2021_58_91.png" src="_images/jun-06-2021_58_91.png" />
-<img alt="_images/jun-06-2021_58_92.png" src="_images/jun-06-2021_58_92.png" />
-<img alt="_images/jun-06-2021_58_93.png" src="_images/jun-06-2021_58_93.png" />
-<img alt="_images/jun-06-2021_58_94.png" src="_images/jun-06-2021_58_94.png" />
-<img alt="_images/jun-06-2021_58_95.png" src="_images/jun-06-2021_58_95.png" />
-<img alt="_images/jun-06-2021_58_96.png" src="_images/jun-06-2021_58_96.png" />
-<img alt="_images/jun-06-2021_58_97.png" src="_images/jun-06-2021_58_97.png" />
-<img alt="_images/jun-06-2021_58_98.png" src="_images/jun-06-2021_58_98.png" />
-<img alt="_images/jun-06-2021_58_99.png" src="_images/jun-06-2021_58_99.png" />
-<img alt="_images/jun-06-2021_58_100.png" src="_images/jun-06-2021_58_100.png" />
-<img alt="_images/jun-06-2021_58_101.png" src="_images/jun-06-2021_58_101.png" />
-<img alt="_images/jun-06-2021_58_102.png" src="_images/jun-06-2021_58_102.png" />
-<img alt="_images/jun-06-2021_58_103.png" src="_images/jun-06-2021_58_103.png" />
-<img alt="_images/jun-06-2021_58_104.png" src="_images/jun-06-2021_58_104.png" />
-<img alt="_images/jun-06-2021_58_105.png" src="_images/jun-06-2021_58_105.png" />
-<img alt="_images/jun-06-2021_58_106.png" src="_images/jun-06-2021_58_106.png" />
-<img alt="_images/jun-06-2021_58_107.png" src="_images/jun-06-2021_58_107.png" />
-<img alt="_images/jun-06-2021_58_108.png" src="_images/jun-06-2021_58_108.png" />
-<img alt="_images/jun-06-2021_58_109.png" src="_images/jun-06-2021_58_109.png" />
-<img alt="_images/jun-06-2021_58_110.png" src="_images/jun-06-2021_58_110.png" />
-<img alt="_images/jun-06-2021_58_111.png" src="_images/jun-06-2021_58_111.png" />
-<img alt="_images/jun-06-2021_58_112.png" src="_images/jun-06-2021_58_112.png" />
-<img alt="_images/jun-06-2021_58_113.png" src="_images/jun-06-2021_58_113.png" />
-<img alt="_images/jun-06-2021_58_114.png" src="_images/jun-06-2021_58_114.png" />
-<img alt="_images/jun-06-2021_58_115.png" src="_images/jun-06-2021_58_115.png" />
-<img alt="_images/jun-06-2021_58_116.png" src="_images/jun-06-2021_58_116.png" />
-<img alt="_images/jun-06-2021_58_117.png" src="_images/jun-06-2021_58_117.png" />
-<img alt="_images/jun-06-2021_58_118.png" src="_images/jun-06-2021_58_118.png" />
-<img alt="_images/jun-06-2021_58_119.png" src="_images/jun-06-2021_58_119.png" />
-<img alt="_images/jun-06-2021_58_120.png" src="_images/jun-06-2021_58_120.png" />
-<img alt="_images/jun-06-2021_58_121.png" src="_images/jun-06-2021_58_121.png" />
-<img alt="_images/jun-06-2021_58_122.png" src="_images/jun-06-2021_58_122.png" />
-<img alt="_images/jun-06-2021_58_123.png" src="_images/jun-06-2021_58_123.png" />
-<img alt="_images/jun-06-2021_58_124.png" src="_images/jun-06-2021_58_124.png" />
-<img alt="_images/jun-06-2021_58_125.png" src="_images/jun-06-2021_58_125.png" />
-</div>
-</div>
-<section id="todo-add-these-masks-using-their-names-left-and-right">
-<h3>TODO: add these masks using their names (left and right)<a class="headerlink" href="#todo-add-these-masks-using-their-names-left-and-right" title="Permalink to this headline">¶</a></h3>
-</section>
-</section>
-</section>
-<section id="and-then-add-the-isocortex-parcellation">
-<h1>and then add the isocortex parcellation<a class="headerlink" href="#and-then-add-the-isocortex-parcellation" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_regions</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">selected_names</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
-</pre></div>
-</div>
+<img alt="_images/jun-06-2021_47_0.png" src="_images/jun-06-2021_47_0.png" />
+<img alt="_images/jun-06-2021_47_1.png" src="_images/jun-06-2021_47_1.png" />
+<img alt="_images/jun-06-2021_47_2.png" src="_images/jun-06-2021_47_2.png" />
+<img alt="_images/jun-06-2021_47_3.png" src="_images/jun-06-2021_47_3.png" />
+<img alt="_images/jun-06-2021_47_4.png" src="_images/jun-06-2021_47_4.png" />
+<img alt="_images/jun-06-2021_47_5.png" src="_images/jun-06-2021_47_5.png" />
+<img alt="_images/jun-06-2021_47_6.png" src="_images/jun-06-2021_47_6.png" />
+<img alt="_images/jun-06-2021_47_7.png" src="_images/jun-06-2021_47_7.png" />
+<img alt="_images/jun-06-2021_47_8.png" src="_images/jun-06-2021_47_8.png" />
+<img alt="_images/jun-06-2021_47_9.png" src="_images/jun-06-2021_47_9.png" />
+<img alt="_images/jun-06-2021_47_10.png" src="_images/jun-06-2021_47_10.png" />
+<img alt="_images/jun-06-2021_47_11.png" src="_images/jun-06-2021_47_11.png" />
+<img alt="_images/jun-06-2021_47_12.png" src="_images/jun-06-2021_47_12.png" />
+<img alt="_images/jun-06-2021_47_13.png" src="_images/jun-06-2021_47_13.png" />
+<img alt="_images/jun-06-2021_47_14.png" src="_images/jun-06-2021_47_14.png" />
+<img alt="_images/jun-06-2021_47_15.png" src="_images/jun-06-2021_47_15.png" />
+<img alt="_images/jun-06-2021_47_16.png" src="_images/jun-06-2021_47_16.png" />
+<img alt="_images/jun-06-2021_47_17.png" src="_images/jun-06-2021_47_17.png" />
+<img alt="_images/jun-06-2021_47_18.png" src="_images/jun-06-2021_47_18.png" />
+<img alt="_images/jun-06-2021_47_19.png" src="_images/jun-06-2021_47_19.png" />
+<img alt="_images/jun-06-2021_47_20.png" src="_images/jun-06-2021_47_20.png" />
+<img alt="_images/jun-06-2021_47_21.png" src="_images/jun-06-2021_47_21.png" />
+<img alt="_images/jun-06-2021_47_22.png" src="_images/jun-06-2021_47_22.png" />
+<img alt="_images/jun-06-2021_47_23.png" src="_images/jun-06-2021_47_23.png" />
+<img alt="_images/jun-06-2021_47_24.png" src="_images/jun-06-2021_47_24.png" />
+<img alt="_images/jun-06-2021_47_25.png" src="_images/jun-06-2021_47_25.png" />
+<img alt="_images/jun-06-2021_47_26.png" src="_images/jun-06-2021_47_26.png" />
+<img alt="_images/jun-06-2021_47_27.png" src="_images/jun-06-2021_47_27.png" />
+<img alt="_images/jun-06-2021_47_28.png" src="_images/jun-06-2021_47_28.png" />
+<img alt="_images/jun-06-2021_47_29.png" src="_images/jun-06-2021_47_29.png" />
+<img alt="_images/jun-06-2021_47_30.png" src="_images/jun-06-2021_47_30.png" />
+<img alt="_images/jun-06-2021_47_31.png" src="_images/jun-06-2021_47_31.png" />
+<img alt="_images/jun-06-2021_47_32.png" src="_images/jun-06-2021_47_32.png" />
+<img alt="_images/jun-06-2021_47_33.png" src="_images/jun-06-2021_47_33.png" />
+<img alt="_images/jun-06-2021_47_34.png" src="_images/jun-06-2021_47_34.png" />
+<img alt="_images/jun-06-2021_47_35.png" src="_images/jun-06-2021_47_35.png" />
+<img alt="_images/jun-06-2021_47_36.png" src="_images/jun-06-2021_47_36.png" />
+<img alt="_images/jun-06-2021_47_37.png" src="_images/jun-06-2021_47_37.png" />
+<img alt="_images/jun-06-2021_47_38.png" src="_images/jun-06-2021_47_38.png" />
+<img alt="_images/jun-06-2021_47_39.png" src="_images/jun-06-2021_47_39.png" />
+<img alt="_images/jun-06-2021_47_40.png" src="_images/jun-06-2021_47_40.png" />
+<img alt="_images/jun-06-2021_47_41.png" src="_images/jun-06-2021_47_41.png" />
+<img alt="_images/jun-06-2021_47_42.png" src="_images/jun-06-2021_47_42.png" />
+<img alt="_images/jun-06-2021_47_43.png" src="_images/jun-06-2021_47_43.png" />
+<img alt="_images/jun-06-2021_47_44.png" src="_images/jun-06-2021_47_44.png" />
+<img alt="_images/jun-06-2021_47_45.png" src="_images/jun-06-2021_47_45.png" />
+<img alt="_images/jun-06-2021_47_46.png" src="_images/jun-06-2021_47_46.png" />
+<img alt="_images/jun-06-2021_47_47.png" src="_images/jun-06-2021_47_47.png" />
+<img alt="_images/jun-06-2021_47_48.png" src="_images/jun-06-2021_47_48.png" />
+<img alt="_images/jun-06-2021_47_49.png" src="_images/jun-06-2021_47_49.png" />
+<img alt="_images/jun-06-2021_47_50.png" src="_images/jun-06-2021_47_50.png" />
+<img alt="_images/jun-06-2021_47_51.png" src="_images/jun-06-2021_47_51.png" />
+<img alt="_images/jun-06-2021_47_52.png" src="_images/jun-06-2021_47_52.png" />
+<img alt="_images/jun-06-2021_47_53.png" src="_images/jun-06-2021_47_53.png" />
+<img alt="_images/jun-06-2021_47_54.png" src="_images/jun-06-2021_47_54.png" />
+<img alt="_images/jun-06-2021_47_55.png" src="_images/jun-06-2021_47_55.png" />
+<img alt="_images/jun-06-2021_47_56.png" src="_images/jun-06-2021_47_56.png" />
+<img alt="_images/jun-06-2021_47_57.png" src="_images/jun-06-2021_47_57.png" />
+<img alt="_images/jun-06-2021_47_58.png" src="_images/jun-06-2021_47_58.png" />
+<img alt="_images/jun-06-2021_47_59.png" src="_images/jun-06-2021_47_59.png" />
+<img alt="_images/jun-06-2021_47_60.png" src="_images/jun-06-2021_47_60.png" />
+<img alt="_images/jun-06-2021_47_61.png" src="_images/jun-06-2021_47_61.png" />
+<img alt="_images/jun-06-2021_47_62.png" src="_images/jun-06-2021_47_62.png" />
+<img alt="_images/jun-06-2021_47_63.png" src="_images/jun-06-2021_47_63.png" />
+<img alt="_images/jun-06-2021_47_64.png" src="_images/jun-06-2021_47_64.png" />
+<img alt="_images/jun-06-2021_47_65.png" src="_images/jun-06-2021_47_65.png" />
+<img alt="_images/jun-06-2021_47_66.png" src="_images/jun-06-2021_47_66.png" />
+<img alt="_images/jun-06-2021_47_67.png" src="_images/jun-06-2021_47_67.png" />
+<img alt="_images/jun-06-2021_47_68.png" src="_images/jun-06-2021_47_68.png" />
+<img alt="_images/jun-06-2021_47_69.png" src="_images/jun-06-2021_47_69.png" />
+<img alt="_images/jun-06-2021_47_70.png" src="_images/jun-06-2021_47_70.png" />
+<img alt="_images/jun-06-2021_47_71.png" src="_images/jun-06-2021_47_71.png" />
+<img alt="_images/jun-06-2021_47_72.png" src="_images/jun-06-2021_47_72.png" />
+<img alt="_images/jun-06-2021_47_73.png" src="_images/jun-06-2021_47_73.png" />
+<img alt="_images/jun-06-2021_47_74.png" src="_images/jun-06-2021_47_74.png" />
+<img alt="_images/jun-06-2021_47_75.png" src="_images/jun-06-2021_47_75.png" />
+<img alt="_images/jun-06-2021_47_76.png" src="_images/jun-06-2021_47_76.png" />
+<img alt="_images/jun-06-2021_47_77.png" src="_images/jun-06-2021_47_77.png" />
+<img alt="_images/jun-06-2021_47_78.png" src="_images/jun-06-2021_47_78.png" />
+<img alt="_images/jun-06-2021_47_79.png" src="_images/jun-06-2021_47_79.png" />
+<img alt="_images/jun-06-2021_47_80.png" src="_images/jun-06-2021_47_80.png" />
+<img alt="_images/jun-06-2021_47_81.png" src="_images/jun-06-2021_47_81.png" />
+<img alt="_images/jun-06-2021_47_82.png" src="_images/jun-06-2021_47_82.png" />
+<img alt="_images/jun-06-2021_47_83.png" src="_images/jun-06-2021_47_83.png" />
+<img alt="_images/jun-06-2021_47_84.png" src="_images/jun-06-2021_47_84.png" />
+<img alt="_images/jun-06-2021_47_85.png" src="_images/jun-06-2021_47_85.png" />
+<img alt="_images/jun-06-2021_47_86.png" src="_images/jun-06-2021_47_86.png" />
+<img alt="_images/jun-06-2021_47_87.png" src="_images/jun-06-2021_47_87.png" />
+<img alt="_images/jun-06-2021_47_88.png" src="_images/jun-06-2021_47_88.png" />
+<img alt="_images/jun-06-2021_47_89.png" src="_images/jun-06-2021_47_89.png" />
+<img alt="_images/jun-06-2021_47_90.png" src="_images/jun-06-2021_47_90.png" />
+<img alt="_images/jun-06-2021_47_91.png" src="_images/jun-06-2021_47_91.png" />
+<img alt="_images/jun-06-2021_47_92.png" src="_images/jun-06-2021_47_92.png" />
+<img alt="_images/jun-06-2021_47_93.png" src="_images/jun-06-2021_47_93.png" />
+<img alt="_images/jun-06-2021_47_94.png" src="_images/jun-06-2021_47_94.png" />
+<img alt="_images/jun-06-2021_47_95.png" src="_images/jun-06-2021_47_95.png" />
+<img alt="_images/jun-06-2021_47_96.png" src="_images/jun-06-2021_47_96.png" />
+<img alt="_images/jun-06-2021_47_97.png" src="_images/jun-06-2021_47_97.png" />
+<img alt="_images/jun-06-2021_47_98.png" src="_images/jun-06-2021_47_98.png" />
+<img alt="_images/jun-06-2021_47_99.png" src="_images/jun-06-2021_47_99.png" />
+<img alt="_images/jun-06-2021_47_100.png" src="_images/jun-06-2021_47_100.png" />
+<img alt="_images/jun-06-2021_47_101.png" src="_images/jun-06-2021_47_101.png" />
+<img alt="_images/jun-06-2021_47_102.png" src="_images/jun-06-2021_47_102.png" />
+<img alt="_images/jun-06-2021_47_103.png" src="_images/jun-06-2021_47_103.png" />
+<img alt="_images/jun-06-2021_47_104.png" src="_images/jun-06-2021_47_104.png" />
+<img alt="_images/jun-06-2021_47_105.png" src="_images/jun-06-2021_47_105.png" />
+<img alt="_images/jun-06-2021_47_106.png" src="_images/jun-06-2021_47_106.png" />
+<img alt="_images/jun-06-2021_47_107.png" src="_images/jun-06-2021_47_107.png" />
+<img alt="_images/jun-06-2021_47_108.png" src="_images/jun-06-2021_47_108.png" />
+<img alt="_images/jun-06-2021_47_109.png" src="_images/jun-06-2021_47_109.png" />
+<img alt="_images/jun-06-2021_47_110.png" src="_images/jun-06-2021_47_110.png" />
+<img alt="_images/jun-06-2021_47_111.png" src="_images/jun-06-2021_47_111.png" />
+<img alt="_images/jun-06-2021_47_112.png" src="_images/jun-06-2021_47_112.png" />
+<img alt="_images/jun-06-2021_47_113.png" src="_images/jun-06-2021_47_113.png" />
+<img alt="_images/jun-06-2021_47_114.png" src="_images/jun-06-2021_47_114.png" />
+<img alt="_images/jun-06-2021_47_115.png" src="_images/jun-06-2021_47_115.png" />
+<img alt="_images/jun-06-2021_47_116.png" src="_images/jun-06-2021_47_116.png" />
+<img alt="_images/jun-06-2021_47_117.png" src="_images/jun-06-2021_47_117.png" />
+<img alt="_images/jun-06-2021_47_118.png" src="_images/jun-06-2021_47_118.png" />
+<img alt="_images/jun-06-2021_47_119.png" src="_images/jun-06-2021_47_119.png" />
+<img alt="_images/jun-06-2021_47_120.png" src="_images/jun-06-2021_47_120.png" />
+<img alt="_images/jun-06-2021_47_121.png" src="_images/jun-06-2021_47_121.png" />
+<img alt="_images/jun-06-2021_47_122.png" src="_images/jun-06-2021_47_122.png" />
+<img alt="_images/jun-06-2021_47_123.png" src="_images/jun-06-2021_47_123.png" />
+<img alt="_images/jun-06-2021_47_124.png" src="_images/jun-06-2021_47_124.png" />
+<img alt="_images/jun-06-2021_47_125.png" src="_images/jun-06-2021_47_125.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">roi_masks</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sklearnex</span><span class="o">.</span><span class="n">unpatch_sklearn</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 <section id="spatial-normalization-using-ants">
 <h2>Spatial normalization using ANTs<a class="headerlink" href="#spatial-normalization-using-ants" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -1685,12 +1439,12 @@ Isocortex 315
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------+--------------------------------------+
 |     interpolator    | MI(fixed, warped) / MI(fixed, fixed) |
 +---------------------+--------------------------------------+
-|   nearestNeighbor   |                0.423                 |
+|   nearestNeighbor   |                0.422                 |
 | lanczosWindowedSinc |                0.438                 |
 |       gaussian      |                0.453                 |
-|     genericLabel    |                0.423                 |
-|       bSpline       |                 0.44                 |
-| hammingWindowedSinc |                 0.44                 |
+|     genericLabel    |                0.422                 |
+|       bSpline       |                0.439                 |
+| hammingWindowedSinc |                0.439                 |
 |        linear       |                0.447                 |
 |  welchWindowedSinc  |                0.437                 |
 |      multiLabel     |                0.332                 |
@@ -1723,201 +1477,85 @@ Isocortex 315
 </div>
 </div>
 </div>
-<section id="inv-mask-transforms">
-<h3>Inv mask transforms<a class="headerlink" href="#inv-mask-transforms" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roi_masks_fixed</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">lbl</span><span class="p">:</span> <span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="n">roi_masks</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-<span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>       
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">fixed</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;fixed&#39;</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">moving</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;moving&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">warped</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;moving warped&#39;</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;coronal</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;axial</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;saggital</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">top_title</span> <span class="o">+</span> <span class="n">title</span>
+        
+        <span class="c1"># data2plt = x.take(max_slice, axis=j)</span>
+        <span class="n">data2plt</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Plotting averaged data</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;1st row: Average template</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;2nd row: Anatomical data [raw] (sub-SLC</span><span class="si">{:02d}</span><span class="s1">)</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;3rd row: Anatomical data [warped] (sub-SLC</span><span class="si">{:02d}</span><span class="s1">)&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">subject</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/jun-06-2021_62_0.png" src="_images/jun-06-2021_62_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fixed</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">moving</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">warped</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((132, 80, 114), (78, 64, 64), (132, 80, 114))
 </pre></div>
 </div>
 </div>
 </div>
+<section id="inv-mask-transforms">
+<h3>Inv mask transforms<a class="headerlink" href="#inv-mask-transforms" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roi_masks_inv</span> <span class="o">=</span> <span class="p">{</span>
     <span class="n">lbl</span><span class="p">:</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
         <span class="n">fixed</span><span class="o">=</span><span class="n">moving</span><span class="p">,</span>
-        <span class="n">moving</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span>
+        <span class="n">moving</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span>
         <span class="n">transformlist</span><span class="o">=</span><span class="n">tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
         <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="n">roi_masks_fixed</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">lbl</span><span class="p">,</span> <span class="n">mask</span> <span class="ow">in</span> <span class="n">roi_masks</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
 <span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">mask_inv</span> <span class="ow">in</span> <span class="n">roi_masks_inv</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="c1"># x = mask.copy().astype(&#39;uint8&#39;)</span>
-        <span class="c1"># x[x == 0.] = np.nan</span>
-        <span class="n">moving</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-            <span class="n">overlay</span><span class="o">=</span><span class="n">mask_inv</span><span class="p">,</span>
-            <span class="c1"># overlay_cmap=&#39;Greys_r&#39;,</span>
-            <span class="n">overlay_alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-            <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
-            <span class="n">nslices</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-            <span class="n">figsize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{:s}</span><span class="s1"> (axis = </span><span class="si">{:d}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">axis</span><span class="p">),</span>
-            <span class="n">title_dy</span><span class="o">=</span><span class="mf">0.01</span> <span class="k">if</span> <span class="n">axis</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="mf">0.03</span><span class="p">,</span>
-        <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_86_0.png" src="_images/jun-06-2021_86_0.png" />
-<img alt="_images/jun-06-2021_86_1.png" src="_images/jun-06-2021_86_1.png" />
-<img alt="_images/jun-06-2021_86_2.png" src="_images/jun-06-2021_86_2.png" />
-<img alt="_images/jun-06-2021_86_3.png" src="_images/jun-06-2021_86_3.png" />
-<img alt="_images/jun-06-2021_86_4.png" src="_images/jun-06-2021_86_4.png" />
-<img alt="_images/jun-06-2021_86_5.png" src="_images/jun-06-2021_86_5.png" />
-<img alt="_images/jun-06-2021_86_6.png" src="_images/jun-06-2021_86_6.png" />
-<img alt="_images/jun-06-2021_86_7.png" src="_images/jun-06-2021_86_7.png" />
-<img alt="_images/jun-06-2021_86_8.png" src="_images/jun-06-2021_86_8.png" />
-<img alt="_images/jun-06-2021_86_9.png" src="_images/jun-06-2021_86_9.png" />
-<img alt="_images/jun-06-2021_86_10.png" src="_images/jun-06-2021_86_10.png" />
-<img alt="_images/jun-06-2021_86_11.png" src="_images/jun-06-2021_86_11.png" />
-<img alt="_images/jun-06-2021_86_12.png" src="_images/jun-06-2021_86_12.png" />
-<img alt="_images/jun-06-2021_86_13.png" src="_images/jun-06-2021_86_13.png" />
-<img alt="_images/jun-06-2021_86_14.png" src="_images/jun-06-2021_86_14.png" />
-<img alt="_images/jun-06-2021_86_15.png" src="_images/jun-06-2021_86_15.png" />
-<img alt="_images/jun-06-2021_86_16.png" src="_images/jun-06-2021_86_16.png" />
-<img alt="_images/jun-06-2021_86_17.png" src="_images/jun-06-2021_86_17.png" />
-<img alt="_images/jun-06-2021_86_18.png" src="_images/jun-06-2021_86_18.png" />
-<img alt="_images/jun-06-2021_86_19.png" src="_images/jun-06-2021_86_19.png" />
-<img alt="_images/jun-06-2021_86_20.png" src="_images/jun-06-2021_86_20.png" />
-<img alt="_images/jun-06-2021_86_21.png" src="_images/jun-06-2021_86_21.png" />
-<img alt="_images/jun-06-2021_86_22.png" src="_images/jun-06-2021_86_22.png" />
-<img alt="_images/jun-06-2021_86_23.png" src="_images/jun-06-2021_86_23.png" />
-<img alt="_images/jun-06-2021_86_24.png" src="_images/jun-06-2021_86_24.png" />
-<img alt="_images/jun-06-2021_86_25.png" src="_images/jun-06-2021_86_25.png" />
-<img alt="_images/jun-06-2021_86_26.png" src="_images/jun-06-2021_86_26.png" />
-<img alt="_images/jun-06-2021_86_27.png" src="_images/jun-06-2021_86_27.png" />
-<img alt="_images/jun-06-2021_86_28.png" src="_images/jun-06-2021_86_28.png" />
-<img alt="_images/jun-06-2021_86_29.png" src="_images/jun-06-2021_86_29.png" />
-<img alt="_images/jun-06-2021_86_30.png" src="_images/jun-06-2021_86_30.png" />
-<img alt="_images/jun-06-2021_86_31.png" src="_images/jun-06-2021_86_31.png" />
-<img alt="_images/jun-06-2021_86_32.png" src="_images/jun-06-2021_86_32.png" />
-<img alt="_images/jun-06-2021_86_33.png" src="_images/jun-06-2021_86_33.png" />
-<img alt="_images/jun-06-2021_86_34.png" src="_images/jun-06-2021_86_34.png" />
-<img alt="_images/jun-06-2021_86_35.png" src="_images/jun-06-2021_86_35.png" />
-<img alt="_images/jun-06-2021_86_36.png" src="_images/jun-06-2021_86_36.png" />
-<img alt="_images/jun-06-2021_86_37.png" src="_images/jun-06-2021_86_37.png" />
-<img alt="_images/jun-06-2021_86_38.png" src="_images/jun-06-2021_86_38.png" />
-<img alt="_images/jun-06-2021_86_39.png" src="_images/jun-06-2021_86_39.png" />
-<img alt="_images/jun-06-2021_86_40.png" src="_images/jun-06-2021_86_40.png" />
-<img alt="_images/jun-06-2021_86_41.png" src="_images/jun-06-2021_86_41.png" />
-<img alt="_images/jun-06-2021_86_42.png" src="_images/jun-06-2021_86_42.png" />
-<img alt="_images/jun-06-2021_86_43.png" src="_images/jun-06-2021_86_43.png" />
-<img alt="_images/jun-06-2021_86_44.png" src="_images/jun-06-2021_86_44.png" />
-<img alt="_images/jun-06-2021_86_45.png" src="_images/jun-06-2021_86_45.png" />
-<img alt="_images/jun-06-2021_86_46.png" src="_images/jun-06-2021_86_46.png" />
-<img alt="_images/jun-06-2021_86_47.png" src="_images/jun-06-2021_86_47.png" />
-<img alt="_images/jun-06-2021_86_48.png" src="_images/jun-06-2021_86_48.png" />
-<img alt="_images/jun-06-2021_86_49.png" src="_images/jun-06-2021_86_49.png" />
-<img alt="_images/jun-06-2021_86_50.png" src="_images/jun-06-2021_86_50.png" />
-<img alt="_images/jun-06-2021_86_51.png" src="_images/jun-06-2021_86_51.png" />
-<img alt="_images/jun-06-2021_86_52.png" src="_images/jun-06-2021_86_52.png" />
-<img alt="_images/jun-06-2021_86_53.png" src="_images/jun-06-2021_86_53.png" />
-<img alt="_images/jun-06-2021_86_54.png" src="_images/jun-06-2021_86_54.png" />
-<img alt="_images/jun-06-2021_86_55.png" src="_images/jun-06-2021_86_55.png" />
-<img alt="_images/jun-06-2021_86_56.png" src="_images/jun-06-2021_86_56.png" />
-<img alt="_images/jun-06-2021_86_57.png" src="_images/jun-06-2021_86_57.png" />
-<img alt="_images/jun-06-2021_86_58.png" src="_images/jun-06-2021_86_58.png" />
-<img alt="_images/jun-06-2021_86_59.png" src="_images/jun-06-2021_86_59.png" />
-<img alt="_images/jun-06-2021_86_60.png" src="_images/jun-06-2021_86_60.png" />
-<img alt="_images/jun-06-2021_86_61.png" src="_images/jun-06-2021_86_61.png" />
-<img alt="_images/jun-06-2021_86_62.png" src="_images/jun-06-2021_86_62.png" />
-<img alt="_images/jun-06-2021_86_63.png" src="_images/jun-06-2021_86_63.png" />
-<img alt="_images/jun-06-2021_86_64.png" src="_images/jun-06-2021_86_64.png" />
-<img alt="_images/jun-06-2021_86_65.png" src="_images/jun-06-2021_86_65.png" />
-<img alt="_images/jun-06-2021_86_66.png" src="_images/jun-06-2021_86_66.png" />
-<img alt="_images/jun-06-2021_86_67.png" src="_images/jun-06-2021_86_67.png" />
-<img alt="_images/jun-06-2021_86_68.png" src="_images/jun-06-2021_86_68.png" />
-<img alt="_images/jun-06-2021_86_69.png" src="_images/jun-06-2021_86_69.png" />
-<img alt="_images/jun-06-2021_86_70.png" src="_images/jun-06-2021_86_70.png" />
-<img alt="_images/jun-06-2021_86_71.png" src="_images/jun-06-2021_86_71.png" />
-<img alt="_images/jun-06-2021_86_72.png" src="_images/jun-06-2021_86_72.png" />
-<img alt="_images/jun-06-2021_86_73.png" src="_images/jun-06-2021_86_73.png" />
-<img alt="_images/jun-06-2021_86_74.png" src="_images/jun-06-2021_86_74.png" />
-<img alt="_images/jun-06-2021_86_75.png" src="_images/jun-06-2021_86_75.png" />
-<img alt="_images/jun-06-2021_86_76.png" src="_images/jun-06-2021_86_76.png" />
-<img alt="_images/jun-06-2021_86_77.png" src="_images/jun-06-2021_86_77.png" />
-<img alt="_images/jun-06-2021_86_78.png" src="_images/jun-06-2021_86_78.png" />
-<img alt="_images/jun-06-2021_86_79.png" src="_images/jun-06-2021_86_79.png" />
-<img alt="_images/jun-06-2021_86_80.png" src="_images/jun-06-2021_86_80.png" />
-<img alt="_images/jun-06-2021_86_81.png" src="_images/jun-06-2021_86_81.png" />
-<img alt="_images/jun-06-2021_86_82.png" src="_images/jun-06-2021_86_82.png" />
-<img alt="_images/jun-06-2021_86_83.png" src="_images/jun-06-2021_86_83.png" />
-<img alt="_images/jun-06-2021_86_84.png" src="_images/jun-06-2021_86_84.png" />
-<img alt="_images/jun-06-2021_86_85.png" src="_images/jun-06-2021_86_85.png" />
-<img alt="_images/jun-06-2021_86_86.png" src="_images/jun-06-2021_86_86.png" />
-<img alt="_images/jun-06-2021_86_87.png" src="_images/jun-06-2021_86_87.png" />
-<img alt="_images/jun-06-2021_86_88.png" src="_images/jun-06-2021_86_88.png" />
-<img alt="_images/jun-06-2021_86_89.png" src="_images/jun-06-2021_86_89.png" />
-<img alt="_images/jun-06-2021_86_90.png" src="_images/jun-06-2021_86_90.png" />
-<img alt="_images/jun-06-2021_86_91.png" src="_images/jun-06-2021_86_91.png" />
-<img alt="_images/jun-06-2021_86_92.png" src="_images/jun-06-2021_86_92.png" />
-<img alt="_images/jun-06-2021_86_93.png" src="_images/jun-06-2021_86_93.png" />
-<img alt="_images/jun-06-2021_86_94.png" src="_images/jun-06-2021_86_94.png" />
-<img alt="_images/jun-06-2021_86_95.png" src="_images/jun-06-2021_86_95.png" />
-<img alt="_images/jun-06-2021_86_96.png" src="_images/jun-06-2021_86_96.png" />
-<img alt="_images/jun-06-2021_86_97.png" src="_images/jun-06-2021_86_97.png" />
-<img alt="_images/jun-06-2021_86_98.png" src="_images/jun-06-2021_86_98.png" />
-<img alt="_images/jun-06-2021_86_99.png" src="_images/jun-06-2021_86_99.png" />
-<img alt="_images/jun-06-2021_86_100.png" src="_images/jun-06-2021_86_100.png" />
-<img alt="_images/jun-06-2021_86_101.png" src="_images/jun-06-2021_86_101.png" />
-<img alt="_images/jun-06-2021_86_102.png" src="_images/jun-06-2021_86_102.png" />
-<img alt="_images/jun-06-2021_86_103.png" src="_images/jun-06-2021_86_103.png" />
-<img alt="_images/jun-06-2021_86_104.png" src="_images/jun-06-2021_86_104.png" />
-<img alt="_images/jun-06-2021_86_105.png" src="_images/jun-06-2021_86_105.png" />
-<img alt="_images/jun-06-2021_86_106.png" src="_images/jun-06-2021_86_106.png" />
-<img alt="_images/jun-06-2021_86_107.png" src="_images/jun-06-2021_86_107.png" />
-<img alt="_images/jun-06-2021_86_108.png" src="_images/jun-06-2021_86_108.png" />
-<img alt="_images/jun-06-2021_86_109.png" src="_images/jun-06-2021_86_109.png" />
-<img alt="_images/jun-06-2021_86_110.png" src="_images/jun-06-2021_86_110.png" />
-<img alt="_images/jun-06-2021_86_111.png" src="_images/jun-06-2021_86_111.png" />
-<img alt="_images/jun-06-2021_86_112.png" src="_images/jun-06-2021_86_112.png" />
-<img alt="_images/jun-06-2021_86_113.png" src="_images/jun-06-2021_86_113.png" />
-<img alt="_images/jun-06-2021_86_114.png" src="_images/jun-06-2021_86_114.png" />
-<img alt="_images/jun-06-2021_86_115.png" src="_images/jun-06-2021_86_115.png" />
-<img alt="_images/jun-06-2021_86_116.png" src="_images/jun-06-2021_86_116.png" />
-<img alt="_images/jun-06-2021_86_117.png" src="_images/jun-06-2021_86_117.png" />
-<img alt="_images/jun-06-2021_86_118.png" src="_images/jun-06-2021_86_118.png" />
-<img alt="_images/jun-06-2021_86_119.png" src="_images/jun-06-2021_86_119.png" />
-<img alt="_images/jun-06-2021_86_120.png" src="_images/jun-06-2021_86_120.png" />
-<img alt="_images/jun-06-2021_86_121.png" src="_images/jun-06-2021_86_121.png" />
-<img alt="_images/jun-06-2021_86_122.png" src="_images/jun-06-2021_86_122.png" />
-<img alt="_images/jun-06-2021_86_123.png" src="_images/jun-06-2021_86_123.png" />
-<img alt="_images/jun-06-2021_86_124.png" src="_images/jun-06-2021_86_124.png" />
-<img alt="_images/jun-06-2021_86_125.png" src="_images/jun-06-2021_86_125.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask_l_inv</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
-    <span class="n">fixed</span><span class="o">=</span><span class="n">moving</span><span class="p">,</span>
-    <span class="n">moving</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_l&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span>
-    <span class="n">transformlist</span><span class="o">=</span><span class="n">tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
-    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">mask_r_inv</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
-    <span class="n">fixed</span><span class="o">=</span><span class="n">moving</span><span class="p">,</span>
-    <span class="n">moving</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span>
-    <span class="n">transformlist</span><span class="o">=</span><span class="n">tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
-    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">root_mask_inv</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
-    <span class="n">fixed</span><span class="o">=</span><span class="n">moving</span><span class="p">,</span>
-    <span class="n">moving</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">root_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span>
-    <span class="n">transformlist</span><span class="o">=</span><span class="n">tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
-    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="n">mask_l_inv</span><span class="p">,</span> <span class="n">mask_r_inv</span><span class="p">,</span> <span class="n">root_mask_inv</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
+        <span class="n">fixed</span><span class="o">=</span><span class="n">moving</span><span class="p">,</span>
+        <span class="n">moving</span><span class="o">=</span><span class="n">ants</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span>
+        <span class="n">transformlist</span><span class="o">=</span><span class="n">tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
+        <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,)</span>
+    <span class="k">for</span> <span class="n">mask</span> <span class="ow">in</span> <span class="p">[</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_l&#39;</span><span class="p">],</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;mask_r&#39;</span><span class="p">],</span> <span class="n">root_mask</span><span class="p">]</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1925,11 +1563,9 @@ Isocortex 315
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atlas_kmeans_inv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">moving</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">mask_inv</span> <span class="ow">in</span> <span class="n">roi_masks_inv</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">isocortex</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
         <span class="k">continue</span>
-        
     <span class="n">region_id</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">atlas_kmeans_inv</span><span class="p">[</span><span class="n">mask_inv</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)]</span> <span class="o">=</span> <span class="n">region_id</span>
 </pre></div>
@@ -1978,15 +1614,16 @@ Isocortex 315
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/jun-06-2021_93_0.png" src="_images/jun-06-2021_93_0.png" />
+<img alt="_images/jun-06-2021_71_0.png" src="_images/jun-06-2021_71_0.png" />
 </div>
 </div>
 </section>
-<section id="todo-now-combine-functional-data-compute-means-and-cluster">
-<h3>TODO: now combine functional data, compute means, and cluster<a class="headerlink" href="#todo-now-combine-functional-data-compute-means-and-cluster" title="Permalink to this headline">¶</a></h3>
+<section id="todo-now-combine-functional-data-from-runs-compute-means-and-cluster">
+<h3>TODO: now combine functional data from runs, compute means, and cluster<a class="headerlink" href="#todo-now-combine-functional-data-from-runs-compute-means-and-cluster" title="Permalink to this headline">¶</a></h3>
 <blockquote>
-<div><p>first: try the simple hierarchical
-then: try louvain</p>
+<div><p>first: try simple agglomerative hierarchical clustering
+then: try Louvain
+then: SVINET</p>
 </div></blockquote>
 </section>
 </section>
