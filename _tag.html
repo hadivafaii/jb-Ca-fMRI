@@ -203,8 +203,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="jun-06-2021.html">
-   June 06, 2021
+  <a class="reference internal" href="jun-07-2021.html">
+   June 07, 2021
   </a>
  </li>
 </ul>
@@ -330,8 +330,9 @@
 <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="c1"># Collect a list of all notebooks in the content folder</span>
+<span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./_tag.ipynb&#39;</span><span class="p">,</span> <span class="s1">&#39;./_reset_cell_id.ipynb&#39;</span><span class="p">]</span>
 <span class="n">notebooks</span> <span class="o">=</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./*.ipynb&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">notebooks</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;./_tag.ipynb&#39;</span><span class="p">)</span> <span class="c1"># remove this one</span>
+<span class="n">notebooks</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">notebooks</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">exclude</span><span class="p">]</span>
 
 <span class="c1"># Text to look for in adding tags</span>
 <span class="n">text_search_dict</span> <span class="o">=</span> <span class="p">{</span>
@@ -357,10 +358,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 
     <script type="text/x-thebe-config">
