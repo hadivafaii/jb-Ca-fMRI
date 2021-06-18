@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>February, 12th 2021 &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="February, 13th 2021" href="feb-13-2021.html" />
+    <link rel="prev" title="Updates" href="../../md/feb21_updates.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  February 2021
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/feb21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../md/feb21_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     February, 12th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-13-2021.html">
+     February, 13th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-16-2021.html">
+     February, 16th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-20-2021.html">
+     February, 20th 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  March 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/mar21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/mar21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-10-2021.html">
+     March 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-13-2021.html">
+     March 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-15-2021.html">
+     March 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-16-2021.html">
+     March 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-18-2021.html">
+     March 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-19-2021.html">
+     March 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-26-2021.html">
+     March 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-29-2021.html">
+     March 29th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  April 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/apr21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/apr21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-07-2021.html">
+     April 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-30-2021.html">
+     April 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  May 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-08-2021.html">
+     May 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-09-2021.html">
+     May 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-11-2021.html">
+     May 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-12-2021.html">
+     May 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-20-2021.html">
+     May 20th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-24-2021.html">
+     May 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-31-2021.html">
+     May 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  June 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jun21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jun21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-05-2021.html">
+     June 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-06-2021.html">
+     June 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-07-2021.html">
+     June 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-12-2021.html">
+     June 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-13-2021.html">
+     June 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-15-2021.html">
+     June 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-17-2021.html">
+     June 17th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/feb21/feb-12-2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/feb21/feb-12-2021.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/nb/feb21/feb-12-2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#about-dataset">
+   About dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#email-from-eve">
+     Email from Eve
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-sets">
+       Data sets
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-registration-and-preprocessing">
+       Data registration and preprocessing:
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#preprocessing-the-fmri-data">
+         Preprocessing the fMRI data:
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#preprocessing-the-calcium-data">
+         Preprocessing the calcium data:
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#where-we-re-at">
+       Where we’re at:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#end-of-email">
+       End of email.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#my-summary">
+     My summary
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dataset-on-drive">
+       Dataset on Drive
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#correspondence-between-data-modalities">
+       Correspondence between data modalities
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#processing-the-data">
+       Processing the data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#very-simple-analysis">
+     Very simple analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion">
+   Discussion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="february-12th-2021">
+<h1>February, 12th 2021<a class="headerlink" href="#february-12th-2021" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation</strong>: Simple analysis on data. Learn how it is structured, come up with clarification questions.<br>
+<strong>Results</strong>:  In this document I only focus on BOLD signals, and discuss Ca on the next page.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="about-dataset">
+<h2>About dataset<a class="headerlink" href="#about-dataset" title="Permalink to this headline">¶</a></h2>
+<p>First, I am copying email from Eve below to discuss different things.  Down below I will summarize things I think I understood, and discuss the parts I didn’t fully understand.</p>
+<div class="section" id="email-from-eve">
+<h3>Email from Eve<a class="headerlink" href="#email-from-eve" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="section" id="data-sets">
+<h4>Data sets<a class="headerlink" href="#data-sets" title="Permalink to this headline">¶</a></h4>
+<p>During our conversation, we touched on four data sets.</p>
+<p>(1) The published data from the Nature Methods paper. This data set includes N=6 mice imaged acutely (immediately after surgery to optically expose the skull) at a single time point. Each imaging session is composed of n=9 runs that are 10-minutes in length (a total of 90 minutes of simultaneous fMRI/calcium imaging data). During 4/9 runs we presented unilateral hind-limb stimulation. The remaining 5/9 runs are rest-runs. The stimuli are short (5 seconds in duration) and presented sparsely - once every minute in a 5:55 second ON:OFF cycle. All data are collected under low-dose isoflurane anesthesia.</p>
+<p>(2) Unpublished longitudinal data. This data set includes N=10 mice imaged chronically. Mice underwent surgery (to optically expose the skull) 7 days before the first imaging session. Mice are imaged at three time points with a minimum of 7 days between each imaging sessions. During each imaging session, we collect n=7 runs that are 10-minutes in length (a total of 70 minutes of simultaneous fMRI/calcium imaging data at each of three different time points or 210 minutes of data per mouse). During 3/7 runs we present unilateral visual stimulation. The remaining 4/7 runs are rest-runs. Again, the stimuli are short (5 seconds in duration) and presented sparsely - once every minute in a 5:55 second ON:OFF cycle. All data are collected under the same low-dose isoflurane anesthesia.</p>
+<p>(3) Unpublished ‘state’ data. This data set includes N=9 mice. Six of these animals are shared between this experiment and the one above (2 - longitudinal data). After the third and final simultaneous fMRI/calcium imaging session, these N=6 underwent an additional calcium-only out-of-scanner imaging session. These data are collected using ‘traditional’ or commercially available calcium imaging hardware. During this experiment, we collected data under anesthesia (to match the in-scanner condition) and under the awake condition. The additional N=3 mice in this data set underwent one in-scanner simultaneous fMRI/calcium imaging session, and one out-of-scanner calcium-only anesthetized/awake imaging session. The in-scanner data are collected following the same protocol as described above (2 - longitudinal data). I will need to review the out-of-scanner data to provide you with a good summary.</p>
+<p>All the animals described in data sets 1, 2 and 3 have excitatory neurons labeled with a calcium indicator.</p>
+<p>(4) Unpublished multi-cell data. These experiments are the same as those described above for data set 2 but include animals with different cell-type labels. Moving forward we can discuss these data further. Overall, due to the sparseness of these cell populations the calcium signal is dimmer and more difficult to analyze. It makes the most sense to begin with the stronger excitatory neural signal.</p>
+</div>
+<div class="section" id="data-registration-and-preprocessing">
+<h4>Data registration and preprocessing:<a class="headerlink" href="#data-registration-and-preprocessing" title="Permalink to this headline">¶</a></h4>
+<p>Most of this is described in the Nature Methods manuscript. However, I think it’s useful to go over the key points here.  Also, since submitting this manuscript, we’ve made a number of improvements to the pipeline.</p>
+<p><strong>MRI Data.</strong> All fMRI data is collected at 1Hz. The anatomical MR images that are acquired at each imaging session include: an isotropic (0.2mm) anatomical image of the whole brain (including cerebellum and olfactory bulb), a high in-plane resolution (0.1x0.1x0.4mm) anatomical image that matches the prescription of the fMRI data (0.4mm isotropic), and a time-of-flight angiogram. The angiogram is used to register the MR to the calcium data. The isotropic whole-brain anatomical image is used to generate a non-linear transformation to a common space (which we’ve created). The fMRI data are registered to the high in-plane resolution anatomical image, and the high in-plane resolution anatomical image is registered to the isotropic anatomical whole-brain image. By concatenating these two transforms, we move the fMRI data into the ‘individual mouse anatomical space’ i.e. the native space of the isotropic anatomical whole-brain image. These fMRI data can then be moved into the common space using the non-linear transformation derived from registering the isotropic anatomical image to our reference space. This is a bit hard to follow - I’m happy to explain in more detail (and to provide pictures) if you have any questions. The take-home message is that we have three spaces where our fMRI data can reside:</p>
+<p>(A) Native fMRI space (no transformations)
+(B) Individual mouse anatomical space where the fMRI data have been registered to an isotropic anatomical image from the same mouse (collected during the same imaging session) [linear transformations only]
+(C) a common reference space (shared between mice/sessions) [follows a non-linear transformation].</p>
+<p><strong>Calcium data.</strong> We acquire two wavelengths (each at 20Hz). The first (cyan) is calcium-indicator sensitive, the second (violet) is calcium-indicator insensitive. Signal in the violet channel can result from autofluorescence and hemodynamic changes. Thus, the violet serves as a baseline measurement. The cyan and violet frames are interleaved throughout the acquisition. As part of the preprocessing of these data, the violet frames are regressed from the cyan frames. This leaves an effective 10Hz measurement of calcium-indicator sensitive fluorescence. To register the calcium data to the fMRI data we use the MR-angiogram. The calcium data can reside in any of the three aforementioned spaces.</p>
+<p>Our preprocessing is conducted using an in-house built platform (which includes a bunch of tools designed to deal with the multi-modal data). The platform and tools are freely available online if you want to check them out (<a class="reference external" href="https://bioimagesuiteweb.github.io/webapp/">https://bioimagesuiteweb.github.io/webapp/</a>). The code for BioImage Suite is written in C++. We also implement some preprocessing in Python (notably the preprocessing of the calcium data), and MATLAB. Happy to discuss further.</p>
+<div class="section" id="preprocessing-the-fmri-data">
+<h5>Preprocessing the fMRI data:<a class="headerlink" href="#preprocessing-the-fmri-data" title="Permalink to this headline">¶</a></h5>
+<p>(1) Motion correction (all runs in one session to the middle slice of the first run) - six parameters - this is done in (A) native fMRI space</p>
+<p>(2) Using linear registration, move fMRI data to (B) individual mouse anatomical space (interpolate resolution from 0.4mm to 0.2mm isotropic)</p>
+<p>(3) Apply a brain mask* to the fMRI data - remaining steps applied within the mask</p>
+<p>(4) Regress 6 motion parameters (from step one)</p>
+<p>(5) Bandpass filter [0.008-0.2Hz] and global signal regression</p>
+<p>(6) Transform data to (C) the common reference space</p>
+<p>*Our brain masks are derived using an automated deep learning approach. This is (in-part) why we haven’t included a ventricular mask (yet).</p>
+</div>
+<div class="section" id="preprocessing-the-calcium-data">
+<h5>Preprocessing the calcium data:<a class="headerlink" href="#preprocessing-the-calcium-data" title="Permalink to this headline">¶</a></h5>
+<p>(1) Separation of the cyan and violet frames</p>
+<p>(2) Data are smoothed from 25x25um to 50x50um (median filter, kernel size 4)</p>
+<p>(3) Motion correction (all runs in one session to the middle slice of the first run) - two parameters - this frame is used for registration to the MRI data</p>
+<ul class="simple">
+<li><p>Motion correction is run on the cyan and violet wavelengths independently and applied to each</p></li>
+<li><p>Motion parameters are computed on heavily smoothed data (size 16 kernel) but applied to less smoothed data from after step 2</p></li>
+</ul>
+<p>(4) Photobleaching correction (done on each wavelength), computed within mask*</p>
+<p>(5) Regress violet from cyan, computed within mask</p>
+<p>(6) Transform data to (C) the common reference space</p>
+<p>*These masks are drawn in the angiogram MRI space and transformed into the optical space using a linear registration.</p>
+</div>
+</div>
+<div class="section" id="where-we-re-at">
+<h4>Where we’re at:<a class="headerlink" href="#where-we-re-at" title="Permalink to this headline">¶</a></h4>
+<p>Each of the four aforementioned data sets are at a different point in the preprocessing pipeline.
+From our conversation, it seems to me that you’re most interested in data after the preprocessing described above has been applied, and the multi-modal data have been moved to a common reference space (C).
+This is why I’ve included all the details above, just in case you can foresee a problem with the analyses you plan to perform, or if something comes up unexpectedly.</p>
+<p>(1) The published data from the Nature Methods paper. These data are currently only in (B) individual mouse anatomical space. For the methods paper, we never moved the data to a common reference space (C). Further, we’ve made a number of improvements to the calcium preprocessing pipeline since analyzing these data. It’s on my to-do list to move these data to common space, and to re-run the preprocessing using our improved protocol. I hope to get to this early in the New Year.</p>
+<p>(2) Unpublished longitudinal data. We are in the final stages of preprocessing these data using the new pipeline. The fMRI data preprocessing is complete, and the data have been transposed into the common reference space (C). The last steps of the calcium preprocessing (using the newest pipeline) are currently running. I expect it to be complete within the next 7 days. After we’ve had a chance to double check that everything has turned out as expected, we could share these data.</p>
+<p>(3) Unpublished ‘state’ data. The simultaneous fMRI/calcium imaging data from 6/9 of these mice are shared with data set (2). Thus, these data would be ready at the same time. The additional N=3 simultaneous imaging sessions have not yet been analyzed. Further, we have not analyzed the out-of-scanner calcium imaging data. It is my hope that we will be able to prioritize analyzing the remaining components of this data set in late January. However, if you are particularly interested in these data please let me know and we can see if there is a way to expedite the process.</p>
+<p>It seems to me that it makes the most sense for us to share data set (2) with you when it reaches the end of the preprocessing pipeline in a couple weeks. Please let me know if you’ve come to a different conclusion. I can also keep you apprised of where we’re at with the other data I’ve described.</p>
+</div>
+<div class="section" id="end-of-email">
+<h4>End of email.<a class="headerlink" href="#end-of-email" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="my-summary">
+<h3>My summary<a class="headerlink" href="#my-summary" title="Permalink to this headline">¶</a></h3>
+<p>Here is what I understand form this email, the Nature Methods paper, and also looking at the dataset shared on Drive.</p>
+<div class="section" id="dataset-on-drive">
+<h4>Dataset on Drive<a class="headerlink" href="#dataset-on-drive" title="Permalink to this headline">¶</a></h4>
+<p>There are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N=10\)</span> mice</p></li>
+<li><p>3 sessions each</p></li>
+<li><p>7 runs per session</p></li>
+<li><p>10 mins of simultaneous ca and fmri data in all the runs and sessions</p></li>
+</ul>
+<p>This means we have 21 runs total, or 210 minutes of data per mouse.  Roughly, half of the data is <em>rest</em> runs, and the other half is <em>LED</em> stimulation.  It seems like the dataset currently is in <strong>individual space</strong> format, which is <strong>space (B)</strong> as described above in the emial.</p>
+</div>
+<div class="section" id="correspondence-between-data-modalities">
+<h4>Correspondence between data modalities<a class="headerlink" href="#correspondence-between-data-modalities" title="Permalink to this headline">¶</a></h4>
+<p>There are 3 anatomical MR images used for different purposes:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>i) isotropic (0.2mm) anatomical image of the whole brain (including cerebellum and olfactory bulb),
+ii) high in-plane resolution (0.1x0.1x0.4mm) anatomical image,
+    this matches the prescription of the fMRI data (0.4mm isotropic),
+iii) time-of-flight angiogram,
+</pre></div>
+</div>
+<p>These images are used for different things: The fMRI data are registered to (ii), and (ii) is registered to (i).  Therefore, by concatenating these two transformaitons they move the fMRI data into the <em>individual mouse anatomical space</em> i.e. the native space of (i).  Also, (i) is used to generate a non-linear transformation to a common space (shared among animals, this would be <strong>space (C)</strong>).  Finally, (iii) is used to register the MR to the calcium data.</p>
+<p>I still don’t know the full details.  Will have to ask Dave about details.  For example, fMRI data are currently in <strong>xyzt format</strong>:</p>
+<ul class="simple">
+<li><p>xy: 64 x 64 planes across the brain</p></li>
+<li><p>z: times a depth direction which I suspect corresponds to anterior -&gt; posterior, and</p></li>
+<li><p>t: is 600 frames, since each run is 10 mins long and f = 1 Hz.</p></li>
+</ul>
+<p>In contrast, Ca data is in <strong>xyt</strong> format:</p>
+<ul class="simple">
+<li><p>xy: 256 x 250 corresponds to cortex surface</p></li>
+<li><p>t: is 6000 frames, because Ca data has an effective rate of f = 10 Hz.</p></li>
+</ul>
+<p>I still don’t know how to precisely interpret these dimensions and how to related fMRI to Ca data in an exact way.  Fig 2 from the paper is helpful, which I’m embedding here:</p>
+<p><img alt="Drag Racing" src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-020-00984-6/MediaObjects/41592_2020_984_Fig2_HTML.png" /></p>
+</div>
+<div class="section" id="processing-the-data">
+<h4>Processing the data<a class="headerlink" href="#processing-the-data" title="Permalink to this headline">¶</a></h4>
+<p>It is great to be aware of the preprocessing details, however I still have a few questions about the details.  I will discuss this more later on.</p>
+</div>
+</div>
+<div class="section" id="very-simple-analysis">
+<h3>Very simple analysis<a class="headerlink" href="#very-simple-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Ok let’s plot some of the data and see how it looks like.  In this document I will only look at some fMRI data, and do Ca next in a separate document.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">data_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Documents/Ca-fMRI&#39;</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;part-\d&quot;</span><span class="p">)</span>
+
+<span class="n">ca_tmp</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">ca</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">bold</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sub-SLC02&#39;</span><span class="p">,</span> <span class="s1">&#39;sub-SLC08&#39;</span><span class="p">,</span> <span class="s1">&#39;sub-SLC10&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">file_name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)):</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;sub&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">meta</span><span class="p">))</span>
+    <span class="n">ses</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;ses&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">meta</span><span class="p">))</span>
+    <span class="n">run</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;run&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">meta</span><span class="p">))</span>
+    <span class="n">task</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;task&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">meta</span><span class="p">))</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">,</span> <span class="n">run</span><span class="p">,</span> <span class="n">task</span><span class="p">])</span>
+    
+    <span class="n">skip</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">animals</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">file_name</span><span class="p">:</span>
+            <span class="n">skip</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">skip</span><span class="p">:</span>
+        <span class="k">continue</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="p">))</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="s1">&#39;bold&#39;</span> <span class="ow">in</span> <span class="n">file_name</span><span class="p">:</span>
+        <span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">+=</span> <span class="s1">&#39;:&#39;</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ca_tmp</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">bold</span><span class="p">:</span>
+    <span class="n">_ca_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">_ca_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ca_tmp</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="s1">&#39;:part-</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span>
+    <span class="n">ca</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">_ca_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="n">ca</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">ca</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">ca</span><span class="p">)}</span>
+<span class="n">bold</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">bold</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">bold</span><span class="p">)}</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bold</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Meta:  </span><span class="si">{:s}</span><span class="se">\t\t</span><span class="s2">Data shape: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Meta:  sub-SLC02_ses-1_run-5_task-rest		Data shape: (64, 64, 78, 600)
+Meta:  sub-SLC08_ses-2_run-1_task-rest		Data shape: (64, 64, 78, 600)
+Meta:  sub-SLC10_ses-1_run-4_task-led		Data shape: (64, 64, 78, 600)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC08_ses-2_run-1_task-rest&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bold signal at xyz = [5, 8, 23]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bold signal at xyz = [5, 8, 24]&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-12-2021_4_0.png" src="../../_images/feb-12-2021_4_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">1</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">23</span><span class="p">)):</span>
+        <span class="n">axes</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="o">...</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">t</span><span class="p">])</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;horizontal axis is time, vertical axis is depth (z-direction), and each plot is 64 x 64 </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;I&#39;m guessing the the 3rd dimension (vertical axis in this plot) corresponds to anterior -&gt; posterior (?)&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-12-2021_5_0.png" src="../../_images/feb-12-2021_5_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+
+<span class="n">source</span> <span class="o">=</span> <span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">corrs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="p">:],</span>
+                            <span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">source</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">source</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">source</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">:])</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+                <span class="n">corrs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2083182a440141cf8df998f97df488fd", "version_major": 2, "version_minor": 0}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/hadi/.local/lib/python3.8/site-packages/scipy/stats/stats.py:3845: PearsonRConstantInputWarning: An input array is constant; the correlation coefficent is not defined.
+  warnings.warn(PearsonRConstantInputWarning())
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">//</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">ncols</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">corrs</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">idx</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;seismic&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;z = </span><span class="si">{:d}</span><span class="s2"> (src)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">if</span> <span class="n">source</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">idx</span> <span class="k">else</span> <span class="s1">&#39;z = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Correlation of other voxels with a selected one in the middle at: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;Here each plot corresponds to a certain z coordinate.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;We see that structure emerges near where the source voxel is at&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-12-2021_7_0.png" src="../../_images/feb-12-2021_7_0.png" />
+</div>
+</div>
+<p>We see that a lot of these frames are empty, so we need to remove them in processing.  Note that at z = 29 (src) we hace a sharp +1 correlation at the center (x, y) = (30, 31) which is where the source voxel was at.</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">//</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">ncols</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">corrs</span><span class="p">[:,</span> <span class="n">idx</span><span class="p">,</span> <span class="p">:],</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;seismic&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;y = </span><span class="si">{:d}</span><span class="s2"> (src)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">if</span> <span class="n">source</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">idx</span> <span class="k">else</span> <span class="s1">&#39;y = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Correlation of other voxels with a selected one in the middle at: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;Here each plot corresponds to a certain y coordinate.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;We see that structure emerges near where the source voxel is at&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-12-2021_9_0.png" src="../../_images/feb-12-2021_9_0.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bold</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">//</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">idx</span> <span class="o">%</span> <span class="n">ncols</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">corrs</span><span class="p">[</span><span class="n">idx</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;seismic&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;x = </span><span class="si">{:d}</span><span class="s2"> (src)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span> <span class="k">if</span> <span class="n">source</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">idx</span> <span class="k">else</span> <span class="s1">&#39;x = </span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Correlation of other voxels with a selected one in the middle at: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;Here each plot corresponds to a certain x coordinate.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;We see that structure emerges near where the source voxel is at&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-12-2021_10_0.png" src="../../_images/feb-12-2021_10_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
+<p>There are things that I still don’t understand about standard practice in working with BOLD data.</p>
+<ul class="simple">
+<li><p>How to interpret multiple dimensions in the data?  Does z dimention correspond to anterior &lt;-&gt; posterior?</p></li>
+<li><p>Do we care about subcortical data, or only cortex? Since Ca signal is only from cortex.</p></li>
+<li><p>How to map to cortical surface?  In Najafi16 it is mentioned that “cortical data were mapped to the surface (using the Conte69, 32k standard mesh)”.  I think this is supposed to be part of the preprocessing step, when they map both Ca and BOLD signals to a common space.  And as far as I could tell, this mapping would be still linear, because the nonlinear one would be about a common space among subjects.</p></li>
+<li><p>How to define ROIs.  In Najafi16 it is mentiond that “cortical regions of interest (ROIs) were deﬁned to cover the cortex, yet be small enough to minimize the mixing of signals from adjacent but (potentially) functionally heterogeneous regions. k-Means (with “city block” or L 1 distance; 1000 iterations; Duda et al., 2012) was used to cluster each cortical hemisphere into 500 target regions based on their xyz coordinates. Thus, ROIs were deﬁned based on their spatial coordinates on the cortical mesh, not functional data”. This makes sense, because ROIs should be defined irrespective of functional considerations(?).</p></li>
+<li><p>I still don’t understand how k-means is used to define ROIs.  Is it just each voxel has a 3-d vector for its position, and k-means is applied to these 3-d position vectors?  After mapping data to a surface mesh? In that case it would be a 2d position vector?</p></li>
+<li><p>Is this statement correct: “ROIs are defined based on coordinate positions, parcellation on the other hand is defined either anatomically, or functionally, correct?  For example, one can use Allen Atlas to parcellate many ROIs to a larger region. One can also use pearson correlation + a community detection algorithm to achieve functional parcellation.  And sometiems we don’t want to assign strict binary memebeship values to ROIs, therefore, we use Bayesian mixed-membership algorithms to get a fluid parcellation just like Njafi16.”</p></li>
+</ul>
+<p>I think discussing these in a meeting would greatly help me understand the fMRI data strcutures and processing steps much better.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/feb21"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../md/feb21_updates.html" title="previous page">Updates</a>
+    <a class='right-next' id="next-link" href="feb-13-2021.html" title="next page">February, 13th 2021</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
