@@ -349,6 +349,11 @@
      June, 18th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-19-2021.html">
+     June, 19th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -476,7 +481,7 @@
     <span class="k">return</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">[:</span><span class="n">id_length</span><span class="p">]</span>
 
 <span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;jun&#39;</span>
-<span class="n">notebooks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">nb_name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./*.ipynb&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
+<span class="n">notebooks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">nb_name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./nb/**/*.ipynb&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)))</span>
 
 <span class="k">for</span> <span class="n">ipath</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">notebooks</span><span class="p">):</span>
     <span class="n">ntbk</span> <span class="o">=</span> <span class="n">nbf</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">ipath</span><span class="p">,</span> <span class="n">nbf</span><span class="o">.</span><span class="n">NO_CONVERT</span><span class="p">)</span>
