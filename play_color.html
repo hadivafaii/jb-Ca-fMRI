@@ -1,0 +1,1479 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play color &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  February 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/feb21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/feb21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/feb21/feb-12-2021.html">
+     February, 12th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/feb21/feb-13-2021.html">
+     February, 13th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/feb21/feb-16-2021.html">
+     February, 16th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/feb21/feb-20-2021.html">
+     February, 20th 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  March 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/mar21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/mar21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-10-2021.html">
+     March 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-13-2021.html">
+     March 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-15-2021.html">
+     March 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-16-2021.html">
+     March 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-18-2021.html">
+     March 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-19-2021.html">
+     March 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-26-2021.html">
+     March 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/mar21/mar-29-2021.html">
+     March 29th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  April 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/apr21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/apr21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/apr21/apr-07-2021.html">
+     April 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/apr21/apr-30-2021.html">
+     April 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  May 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/may21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/may21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-08-2021.html">
+     May 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-09-2021.html">
+     May 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-11-2021.html">
+     May 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-12-2021.html">
+     May 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-20-2021.html">
+     May 20th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-24-2021.html">
+     May 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may21/may-31-2021.html">
+     May 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  June 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/jun21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/jun21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-05-2021.html">
+     June 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-06-2021.html">
+     June 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-07-2021.html">
+     June 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-12-2021.html">
+     June 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-13-2021.html">
+     June 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-15-2021.html">
+     June 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-17-2021.html">
+     June 17th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-18-2021.html">
+     June, 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-19-2021.html">
+     June, 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-21-2021.html">
+     June, 21st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jun21/jun-24-2021.html">
+     June, 24th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/play_color.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fplay_color.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/play_color.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#allen-atlas">
+   Allen &amp; Atlas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-rois">
+   Compute ROIs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roi-mask">
+     ROI mask
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-func-data">
+   Load func data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-clustering">
+   Hierarchical clustering
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-clusters">
+     All clusters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#render">
+   Render
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#color-play">
+   Color play
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#report-properties-of-a-parcellation-todo">
+   Report properties of a parcellation (TODO)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="play-color">
+<h1>Play color<a class="headerlink" href="#play-color" title="Permalink to this headline">¶</a></h1>
+<p>June, ??st, 2021</p>
+<p><strong>Motivation</strong>: There are two motivations:<br></p>
+<ol class="simple">
+<li><p>Show content of a parcellation using <strong>pyinspect</strong><br></p></li>
+<li><p>Find an <strong>automated</strong> way of <strong>assigning color</strong> to hierarchical clusters</p></li>
+</ol>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">ants</span>
+<span class="kn">import</span> <span class="nn">nrrd</span>
+<span class="kn">import</span> <span class="nn">collections</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">operator</span> <span class="k">as</span> <span class="nn">op</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">rich</span> <span class="kn">import</span> <span class="nb">print</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">orange</span><span class="p">,</span> <span class="n">blue_grey</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># set style &amp; no interpolalation</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+<span class="c1"># tmp &amp; extras dir</span>
+<span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
+<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
+<span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
+
+<span class="c1"># GitHub</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;Ca-fMRI&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">analysis.cluster</span> <span class="kn">import</span> <span class="n">Clusters</span>
+<span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.network</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.registration</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
+
+<span class="c1"># warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="k">def</span> <span class="nf">plot_parcellation</span><span class="p">(</span>
+    <span class="n">parcellation</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">mask_l</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">mask_r</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">root_mask</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;turbo&#39;</span><span class="p">,</span> <span class="p">):</span>
+
+    <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">parcellation</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">[</span><span class="n">mask_r</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;left</span><span class="se">\n</span><span class="s1">&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span><span class="p">[</span><span class="n">mask_l</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="c1"># x[x != 0] -= int(np.max(parcellation) // 2)</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;right</span><span class="se">\n</span><span class="s1">&#39;</span>
+
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;coronal&#39;</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;axial&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;saggital&#39;</span>
+
+            <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="o">~</span><span class="n">root_mask</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">j</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+
+            <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span>
+
+
+<span class="k">def</span> <span class="nf">plot_registration</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">moving</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">warped</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">):</span>
+    
+    <span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>       
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">fixed</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;fixed&#39;</span>
+            <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">moving</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;moving&#39;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">warped</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;warped&#39;</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;axis = </span><span class="si">{:d}</span><span class="se">\n</span><span class="s1">(coronal)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;axis = </span><span class="si">{:d}</span><span class="se">\n</span><span class="s1">(axial)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">top_title</span> <span class="o">=</span> <span class="s1">&#39;axis = </span><span class="si">{:d}</span><span class="se">\n</span><span class="s1">(saggital)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">top_title</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">label</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+            <span class="n">data2plt</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">)</span>
+
+            <span class="n">_</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">),</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+            <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+    <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Plotting averaged data across different dimensions</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+    <span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;1st row (fixed):  Average template,    shape = </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fixed</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;2nd row (moving):  Anatomical data,    shape = </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">moving</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;3rd row (warped):  Anatomical data,    shape = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">warped</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span>
+
+
+<span class="k">def</span> <span class="nf">viz_parcel</span><span class="p">(</span><span class="n">parcellation</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">80</span><span class="p">):</span>
+    <span class="n">accepted</span><span class="p">,</span> <span class="n">rejected</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="n">all_distances_accepted</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ctr</span> <span class="ow">in</span> <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;cluster_centers&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">num_voxels</span> <span class="o">=</span> <span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;parcel&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="n">num_accepted</span> <span class="o">=</span> <span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;eroded&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    
+
+        <span class="n">accepted</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_accepted</span><span class="p">)</span> 
+        <span class="n">rejected</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num_voxels</span> <span class="o">-</span> <span class="n">num_accepted</span><span class="p">)</span>
+
+        <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;eroded&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">))))</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">sp_dist</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">ctr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">points</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+        <span class="n">all_distances_accepted</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
+
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">rejected</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C7&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;rejected&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">accepted</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;accepted&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">accepted</span><span class="p">)</span>
+    <span class="n">_median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">accepted</span><span class="p">)</span>
+    <span class="n">_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">accepted</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">_min</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;min: </span><span class="si">{</span><span class="n">_min</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">_median</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;median: </span><span class="si">{</span><span class="n">_median</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;max: </span><span class="si">{</span><span class="n">_max</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;distribution of ROI sizes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;num voxels&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+    <span class="n">y</span><span class="p">,</span> <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">all_distances_accepted</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">bin_edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">+</span> <span class="n">bin_edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">m</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">all_distances_accepted</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C6&#39;</span><span class="p">,</span> <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span>
+        <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;lw&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;fitted slope (log2): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+        <span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;max radius: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;voxel distances from ROI ctrs (eroded)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="allen-atlas">
+<h2>Allen &amp; Atlas<a class="headerlink" href="#allen-atlas" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">()</span>
+<span class="n">allen</span> <span class="o">=</span> <span class="n">load_allen</span><span class="p">()</span>
+<span class="n">atlas</span> <span class="o">=</span> <span class="n">fix_br_atlas</span><span class="p">()</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">space</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allen mouse atlas (res. 100um)
+From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007 )
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">BGSpace</span><span style="color: #000000; text-decoration-color: #000000"> AnatomicalSpace object</span><span style="font-weight: bold">&gt;</span>
+origin: <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'Anterior'</span>, <span style="color: #008000; text-decoration-color: #008000">'Superior'</span>, <span style="color: #008000; text-decoration-color: #008000">'Left'</span><span style="font-weight: bold">)</span>
+sections: <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'Frontal plane'</span>, <span style="color: #008000; text-decoration-color: #008000">'Horizontal plane'</span>, <span style="color: #008000; text-decoration-color: #008000">'Sagittal plane'</span><span style="font-weight: bold">)</span>
+shape: <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
+
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="compute-rois">
+<h2>Compute ROIs<a class="headerlink" href="#compute-rois" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_hemisphere_regions</span> <span class="o">=</span> <span class="mi">64</span>
+
+<span class="n">parcellation</span> <span class="o">=</span> <span class="n">kmeans_parcellation</span><span class="p">(</span>
+    <span class="n">mask</span><span class="o">=</span><span class="n">allen</span><span class="p">[</span><span class="s1">&#39;isocortex_mask&#39;</span><span class="p">],</span>
+    <span class="n">n_hemisphere_regions</span><span class="o">=</span><span class="n">n_hemisphere_regions</span><span class="p">,</span>
+    <span class="n">symmetrize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">left_right_axis</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">parcellation</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">dict_keys</span><span style="font-weight: bold">([</span><span style="color: #008000; text-decoration-color: #008000">'parcel'</span>, <span style="color: #008000; text-decoration-color: #008000">'eroded'</span>, <span style="color: #008000; text-decoration-color: #008000">'eroded_masks'</span>, <span style="color: #008000; text-decoration-color: #008000">'cluster_centers'</span>, <span style="color: #008000; text-decoration-color: #008000">'mask_l'</span>, <span style="color: #008000; text-decoration-color: #008000">'mask_r'</span>, <span style="color: #008000; text-decoration-color: #008000">'n_cortical_regions'</span>, <span style="color: #008000; text-decoration-color: #008000">'radius'</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">viz_parcel</span><span class="p">(</span><span class="n">parcellation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/play_color_9_0.png" src="_images/play_color_9_0.png" />
+</div>
+</div>
+<div class="section" id="roi-mask">
+<h3>ROI mask<a class="headerlink" href="#roi-mask" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">roi_masks</span><span class="p">,</span> <span class="n">major_masks</span> <span class="o">=</span> <span class="n">get_roi_masks</span><span class="p">(</span><span class="n">parcellation</span><span class="p">,</span> <span class="n">allen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>id: 477,	name: Striatum
+id: 803,	name: Pallidum
+id: 698,	name: Olfactory areas
+id: 703,	name: Cortical subplate
+id: 1089,	name: Hippocampal formation
+id: 315,	name: Isocortex
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">struct_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">acro</span><span class="p">:</span> <span class="n">rgb2hex</span><span class="p">([</span>
+        <span class="n">item</span> <span class="o">/</span> <span class="mi">255</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span>
+        <span class="n">allen</span><span class="p">[</span><span class="s1">&#39;structure_tree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_structures_by_acronym</span><span class="p">([</span><span class="n">acro</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">]</span>
+    <span class="p">])</span> <span class="k">for</span> <span class="n">acro</span> <span class="ow">in</span> <span class="n">major_masks</span>
+<span class="p">}</span>
+<span class="n">struct_cmap</span> <span class="o">=</span> <span class="n">make_cmap</span><span class="p">(</span>
+    <span class="n">ramp_colors</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">struct_colors</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span>
+    <span class="n">n_colors</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">struct_colors</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;structs&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/play_color_13_0.png" src="_images/play_color_13_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="load-func-data">
+<h2>Load func data<a class="headerlink" href="#load-func-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;func_data.df&#39;</span><span class="p">))</span>
+
+<span class="n">df_table</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">subject</span><span class="p">,</span> <span class="n">session</span><span class="p">,</span> <span class="n">run</span><span class="p">)</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">looper</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">selected_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">subject</span> <span class="o">==</span> <span class="n">subject</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">session</span> <span class="o">==</span> <span class="n">session</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">run</span> <span class="o">==</span> <span class="n">run</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">selected_df</span><span class="p">):</span>
+        <span class="n">df_table</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">selected_df</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;timepoint&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;region_id&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">df_table</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">node_labels</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">node_labels</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">lbl</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">node_labels</span><span class="p">)}</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3187800</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">23100</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">138</span><span style="font-weight: bold">))</span>
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="hierarchical-clustering">
+<h2>Hierarchical clustering<a class="headerlink" href="#hierarchical-clustering" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hier_results</span> <span class="o">=</span> <span class="n">hierarchical_cluster</span><span class="p">(</span>
+    <span class="n">df</span><span class="o">=</span><span class="n">df_combined</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;ward&#39;</span><span class="p">,</span>
+    <span class="n">dist_metric</span><span class="o">=</span><span class="s1">&#39;canberra&#39;</span><span class="p">,</span>
+    <span class="n">link_metric</span><span class="o">=</span><span class="s1">&#39;canberra&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">translate_labels</span><span class="p">(</span><span class="n">hier_results</span><span class="p">[</span><span class="s1">&#39;labels&#39;</span><span class="p">],</span> <span class="n">allen</span><span class="p">[</span><span class="s1">&#39;mcc&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hier_output</span> <span class="o">=</span> <span class="n">get_clust_graph</span><span class="p">(</span>
+    <span class="n">linkage_mat</span><span class="o">=</span><span class="n">hier_results</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span>
+    <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+    <span class="n">num_clusters</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">leaf_font_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">hier_output</span><span class="p">[</span><span class="s1">&#39;fig&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/play_color_19_0.png" src="_images/play_color_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;tab20c&#39;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="1100" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#3182bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#6baed6;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#9ecae1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#c6dbef;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#e6550d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#fd8d3c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fdae6b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#fdd0a2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#31a354;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#74c476;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#a1d99b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#c7e9c0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#756bb1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#9e9ac8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="770" y="0" width="55" height="55" style="fill:#bcbddc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="825" y="0" width="55" height="55" style="fill:#dadaeb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="880" y="0" width="55" height="55" style="fill:#636363;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="935" y="0" width="55" height="55" style="fill:#969696;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="990" y="0" width="55" height="55" style="fill:#bdbdbd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="1045" y="0" width="55" height="55" style="fill:#d9d9d9;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="section" id="all-clusters">
+<h3>All clusters<a class="headerlink" href="#all-clusters" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cluster_color_idxs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="mi">3</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span> 
+    <span class="mi">4</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+    <span class="mi">5</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+    <span class="mi">6</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+    <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">],</span>
+    <span class="mi">8</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">9</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">10</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">11</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">12</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">13</span><span class="p">:</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+    <span class="mi">14</span><span class="p">:</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+<span class="p">}</span>
+<span class="n">struct_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">acro</span><span class="p">:</span> <span class="n">rgb2hex</span><span class="p">([</span>
+        <span class="n">item</span> <span class="o">/</span> <span class="mi">255</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span>
+        <span class="n">allen</span><span class="p">[</span><span class="s1">&#39;structure_tree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_structures_by_acronym</span><span class="p">([</span><span class="n">acro</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;rgb_triplet&#39;</span><span class="p">]</span>
+    <span class="p">])</span> <span class="k">for</span> <span class="n">acro</span> <span class="ow">in</span> <span class="n">major_masks</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clusters_all</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">n_clusters</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
+    <span class="n">hier_output</span> <span class="o">=</span> <span class="n">get_clust_graph</span><span class="p">(</span>
+        <span class="n">linkage_mat</span><span class="o">=</span><span class="n">hier_results</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span>
+        <span class="n">c_list</span><span class="o">=</span><span class="n">cluster_color_idxs</span><span class="p">[</span><span class="n">n_clusters</span><span class="p">],</span>
+        <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span>
+        <span class="n">num_clusters</span><span class="o">=</span><span class="n">n_clusters</span><span class="p">,</span>
+        <span class="n">leaf_font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">3.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;n_clusters = </span><span class="si">{</span><span class="n">n_clusters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">hier_output</span><span class="p">[</span><span class="s1">&#39;cluster_classes&#39;</span><span class="p">])</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">hier_output</span><span class="p">[</span><span class="s1">&#39;fig&#39;</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="n">community</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">i</span><span class="p">:</span> <span class="n">translate_labels</span><span class="p">(</span><span class="n">leaves</span><span class="p">,</span> <span class="n">allen</span><span class="p">[</span><span class="s1">&#39;mcc&#39;</span><span class="p">],</span> <span class="n">forward</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">leaves</span> <span class="ow">in</span> <span class="n">hier_output</span><span class="p">[</span><span class="s1">&#39;cluster_assigns&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">community</span><span class="p">)</span> <span class="o">==</span> <span class="n">n_clusters</span>
+
+    <span class="n">comms3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">allen</span><span class="p">[</span><span class="s1">&#39;template&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cluster_idx</span><span class="p">,</span> <span class="n">leaves</span> <span class="ow">in</span> <span class="n">community</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">leaves</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">allen</span><span class="p">[</span><span class="s1">&#39;isocortex&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">])</span> <span class="ow">in</span> <span class="n">lbl</span><span class="p">:</span>
+                <span class="n">lr</span><span class="p">,</span> <span class="n">structure_id</span><span class="p">,</span> <span class="n">region_id</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">lbl</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)))</span>
+                <span class="n">comms3d</span><span class="p">[</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;parcel&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">region_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster_idx</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">comms3d</span><span class="p">[</span><span class="n">roi_masks</span><span class="p">[</span><span class="n">lbl</span><span class="p">]]</span> <span class="o">=</span> <span class="n">cluster_idx</span>
+    <span class="n">comms3d</span> <span class="o">=</span> <span class="n">comms3d</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="c1"># save results</span>
+    <span class="n">cluster</span> <span class="o">=</span> <span class="n">Clusters</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">comms3d</span><span class="p">,</span>
+        <span class="n">masks</span><span class="o">=</span><span class="n">major_masks</span><span class="p">,</span>
+        <span class="n">c_cluster</span><span class="o">=</span><span class="n">hier_output</span><span class="p">[</span><span class="s1">&#39;cluster_colors&#39;</span><span class="p">],</span>
+        <span class="n">c_structure</span><span class="o">=</span><span class="n">struct_colors</span><span class="p">,</span>
+        <span class="n">threshold</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">clusters_all</span><span class="p">[</span><span class="n">n_clusters</span><span class="p">]</span> <span class="o">=</span> <span class="n">cluster</span>
+    
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;table-regions_n-</span><span class="si">{</span><span class="n">n_clusters</span><span class="si">}</span><span class="s2">.html&quot;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cluster</span><span class="o">.</span><span class="n">repr_html_regions</span><span class="p">())</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;table-clusters_n-</span><span class="si">{</span><span class="n">n_clusters</span><span class="si">}</span><span class="s2">.html&quot;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">cluster</span><span class="o">.</span><span class="n">repr_html_clusters</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)', '(128)']</code></td></tr></table></div><img alt="_images/play_color_25_2.png" src="_images/play_color_25_2.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)', '(45)', '(83)']</code></td></tr></table></div><img alt="_images/play_color_25_6.png" src="_images/play_color_25_6.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)', '(45)', '(37)', '(46)']</code></td></tr></table></div><img alt="_images/play_color_25_10.png" src="_images/play_color_25_10.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)', '(45)', '(46)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(16)', '(21)']</code></td></tr></table></div><img alt="_images/play_color_25_14.png" src="_images/play_color_25_14.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)', '(46)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(26)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(21)']</code></td></tr></table></div><img alt="_images/play_color_25_18.png" src="_images/play_color_25_18.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(26)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(21)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(16)', '(30)']</code></td></tr></table></div><img alt="_images/play_color_25_22.png" src="_images/play_color_25_22.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(26)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(21)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(16)', '(9)', '(21)']</code></td></tr></table></div><img alt="_images/play_color_25_26.png" src="_images/play_color_25_26.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(9)', '(17)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(21)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(21)', '(16)', '(9)']</code></td></tr></table></div><img alt="_images/play_color_25_30.png" src="_images/play_color_25_30.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(9)', '(17)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(7)', '(14)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(9)', '(21)', '(16)']</code></td></tr></table></div><img alt="_images/play_color_25_34.png" src="_images/play_color_25_34.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(9)', '(17)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(16)', '(7)', '(14)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(9)', '(7)', '(14)', '(16)']</code></td></tr></table></div><img alt="_images/play_color_25_38.png" src="_images/play_color_25_38.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(9)', '(17)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(6)', '(10)', '(7)', '(14)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(16)', '(9)', '(7)', '(14)']</code></td></tr></table></div><img alt="_images/play_color_25_42.png" src="_images/play_color_25_42.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #1f77b4; border: 0;"><code style="background-color: #1f77b4;">#1f77b4</code></td><td style="border: 0"><code>['(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(19)', '(9)', '(7)', '(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(14)', '(6)', '(10)', '(7)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(16)', '(9)', '(7)', '(14)']</code></td></tr></table></div><img alt="_images/play_color_25_46.png" src="_images/play_color_25_46.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">n_clusters = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">14</span>
+</pre>
+</div><div class="output text_html"><table style="border: 0;"><tr style="border: 0;"><td style="background-color: #ff7f0e; border: 0;"><code style="background-color: #ff7f0e;">#ff7f0e</code></td><td style="border: 0"><code>['(4)', '(6)']</code></td></tr><tr style="border: 0;"><td style="background-color: #2ca02c; border: 0;"><code style="background-color: #2ca02c;">#2ca02c</code></td><td style="border: 0"><code>['(19)', '(9)', '(7)', '(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #d62728; border: 0;"><code style="background-color: #d62728;">#d62728</code></td><td style="border: 0"><code>['(7)', '(14)', '(6)', '(10)']</code></td></tr><tr style="border: 0;"><td style="background-color: #9467bd; border: 0;"><code style="background-color: #9467bd;">#9467bd</code></td><td style="border: 0"><code>['(16)', '(9)', '(7)', '(14)']</code></td></tr></table></div><img alt="_images/play_color_25_50.png" src="_images/play_color_25_50.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span> <span class="o">=</span> <span class="n">clusters_all</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span>
+<span class="n">cl</span><span class="o">.</span><span class="n">set_display</span><span class="p">(</span><span class="s1">&#39;regions&#39;</span><span class="p">)</span>
+<span class="n">cl</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="fixed" style="border:0px solid black;width: 100%; table-layout: fixed"><col width="5%" /><col width="95%" /><tr style="border: 0"><td style="background-color: #98d6f9;border: 0; text-align: center">STR</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_1</b><br>100%</p></td><td style="background-color: #636363;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #8599cc;border: 0; text-align: center">PAL</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_1</b><br>100%</p></td><td style="background-color: #636363;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #9ad2bd;border: 0; text-align: center">OLF</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_2</b><br>100%</p></td><td style="background-color: #969696;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #8ada87;border: 0; text-align: center">CTXsp</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_2</b><br>100%</p></td><td style="background-color: #969696;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #7ed04b;border: 0; text-align: center">HPF</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_2</b><br>100%</p></td><td style="background-color: #969696;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #08858c;border: 0; text-align: center">VIS</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="44.42138038401661%" /><col width="45px" /><col width="30.48409815405145%" /><col width="45px" /><col width="17.56245829935503%" /><col width="45px" /><col width="6.872266291051968%" /><col width="45px" /><col width="0.6597968715249463%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>44%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>30%</p></td><td style="background-color: #fd8d3c;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>18%</p></td><td style="background-color: #e6550d;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_10</b><br>7%</p></td><td style="background-color: #fdd0a2;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>1%</p></td><td style="background-color: #756bb1;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #15b0b3;border: 0; text-align: center">TEa</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="45.84674822923374%" /><col width="45px" /><col width="17.643271088216355%" /><col width="45px" /><col width="17.643271088216355%" /><col width="45px" /><col width="8.596265292981327%" /><col width="45px" /><col width="5.537669027688345%" /><col width="45px" /><col width="4.732775273663877%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>46%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>18%</p></td><td style="background-color: #fd8d3c;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>18%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>9%</p></td><td style="background-color: #e6550d;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_10</b><br>6%</p></td><td style="background-color: #fdd0a2;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_4</b><br>5%</p></td><td style="background-color: #74c476;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #0e9684;border: 0; text-align: center">PERI</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="93.47553324968632%" /><col width="45px" /><col width="5.646173149309912%" /><col width="45px" /><col width="0.8782936010037641%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>93%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>6%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>1%</p></td><td style="background-color: #fd8d3c;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #0d9f91;border: 0; text-align: center">ECT</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="91.66666666666667%" /><col width="45px" /><col width="6.423611111111111%" /><col width="45px" /><col width="1.9097222222222223%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>92%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>6%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>2%</p></td><td style="background-color: #fd8d3c;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #1aa698;border: 0; text-align: center">RSP</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="56.60449545671927%" /><col width="45px" /><col width="27.40315638450502%" /><col width="45px" /><col width="7.862266857962697%" /><col width="45px" /><col width="4.782400765184122%" /><col width="45px" /><col width="3.3476805356288857%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>57%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_12</b><br>27%</p></td><td style="background-color: #9e9ac8;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>8%</p></td><td style="background-color: #756bb1;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>5%</p></td><td style="background-color: #fd8d3c;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>3%</p></td><td style="background-color: #e6550d;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #019399;border: 0; text-align: center">AUD</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="44.24610051993068%" /><col width="45px" /><col width="43.968804159445405%" /><col width="45px" /><col width="5.892547660311958%" /><col width="45px" /><col width="2.876949740034662%" /><col width="45px" /><col width="1.681109185441941%" /><col width="45px" /><col width="1.3344887348353554%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_10</b><br>44%</p></td><td style="background-color: #fdd0a2;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>44%</p></td><td style="background-color: #e6550d;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>6%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_8</b><br>3%</p></td><td style="background-color: #fd8d3c;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>2%</p></td><td style="background-color: #fdae6b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_4</b><br>1%</p></td><td style="background-color: #74c476;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #009fac;border: 0; text-align: center">PTLp</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="41.03504482477587%" /><col width="45px" /><col width="35.81907090464548%" /><col width="45px" /><col width="20.08964955175224%" /><col width="45px" /><col width="3.056234718826406%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>41%</p></td><td style="background-color: #e6550d;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>36%</p></td><td style="background-color: #756bb1;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_10</b><br>20%</p></td><td style="background-color: #fdd0a2;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_9</b><br>3%</p></td><td style="background-color: #fdae6b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #11ad83;border: 0; text-align: center">VISC</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="71.43459915611814%" /><col width="45px" /><col width="14.345991561181435%" /><col width="45px" /><col width="12.91139240506329%" /><col width="45px" /><col width="1.3080168776371308%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>71%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_4</b><br>14%</p></td><td style="background-color: #74c476;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_6</b><br>13%</p></td><td style="background-color: #c7e9c0;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>1%</p></td><td style="background-color: #e6550d;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #188064;border: 0; text-align: center">SS</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="34.35483386859561%" /><col width="45px" /><col width="20.974277395924002%" /><col width="45px" /><col width="17.88276255365129%" /><col width="45px" /><col width="9.607707776810637%" /><col width="45px" /><col width="9.271543056097487%" /><col width="45px" /><col width="7.833838580904644%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_6</b><br>34%</p></td><td style="background-color: #c7e9c0;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>21%</p></td><td style="background-color: #756bb1;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_4</b><br>18%</p></td><td style="background-color: #74c476;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_10</b><br>10%</p></td><td style="background-color: #fdd0a2;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_7</b><br>9%</p></td><td style="background-color: #e6550d;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>8%</p></td><td style="background-color: #a1d99b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #009c75;border: 0; text-align: center">GU</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="39.26136363636363%" /><col width="45px" /><col width="36.19318181818182%" /><col width="45px" /><col width="24.545454545454547%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_6</b><br>39%</p></td><td style="background-color: #c7e9c0;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>36%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_14</b><br>25%</p></td><td style="background-color: #dadaeb;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #40a666;border: 0; text-align: center">ACA</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="59.607344119251046%" /><col width="45px" /><col width="29.576440647155064%" /><col width="45px" /><col width="9.598254862752228%" /><col width="45px" /><col width="1.217960370841665%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_12</b><br>60%</p></td><td style="background-color: #9e9ac8;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>30%</p></td><td style="background-color: #bcbddc;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>10%</p></td><td style="background-color: #756bb1;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>1%</p></td><td style="background-color: #a1d99b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #219866;border: 0; text-align: center">AI</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="64.03953370501775%" /><col width="45px" /><col width="30.347187024835275%" /><col width="45px" /><col width="3.5732387227572224%" /><col width="45px" /><col width="2.040040547389762%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_14</b><br>64%</p></td><td style="background-color: #dadaeb;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_3</b><br>30%</p></td><td style="background-color: #31a354;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_6</b><br>4%</p></td><td style="background-color: #c7e9c0;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>2%</p></td><td style="background-color: #bcbddc;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #1f9d5a;border: 0; text-align: center">MO</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="26.540536122915984%" /><col width="45px" /><col width="24.52598888525662%" /><col width="45px" /><col width="23.876266753841126%" /><col width="45px" /><col width="16.353383458646615%" /><col width="45px" /><col width="6.333769205622753%" /><col width="45px" /><col width="2.370055573716901%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>27%</p></td><td style="background-color: #a1d99b;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_11</b><br>25%</p></td><td style="background-color: #756bb1;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_6</b><br>24%</p></td><td style="background-color: #c7e9c0;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>16%</p></td><td style="background-color: #bcbddc;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_14</b><br>6%</p></td><td style="background-color: #dadaeb;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_12</b><br>2%</p></td><td style="background-color: #9e9ac8;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #59b363;border: 0; text-align: center">ILA</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="100.0%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>100%</p></td><td style="background-color: #bcbddc;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #2fa850;border: 0; text-align: center">PL</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="98.10933004521168%" /><col width="45px" /><col width="1.5207562679819153%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>98%</p></td><td style="background-color: #bcbddc;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>2%</p></td><td style="background-color: #a1d99b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #248a5e;border: 0; text-align: center">ORB</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="78.37240910635406%" /><col width="45px" /><col width="20.863064899762147%" /><col width="45px" /><col width="0.764525993883792%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>78%</p></td><td style="background-color: #bcbddc;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_14</b><br>21%</p></td><td style="background-color: #dadaeb;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>1%</p></td><td style="background-color: #a1d99b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #268f45;border: 0; text-align: center">FRP</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="45px" /><col width="52.89855072463768%" /><col width="45px" /><col width="44.099378881987576%" /><col width="45px" /><col width="3.002070393374741%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_14</b><br>53%</p></td><td style="background-color: #dadaeb;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_13</b><br>44%</p></td><td style="background-color: #bcbddc;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>C_5</b><br>3%</p></td><td style="background-color: #a1d99b;"></td></tr></table></td></tr></table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cl</span><span class="o">.</span><span class="n">set_threshold</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">cl</span><span class="o">.</span><span class="n">set_display</span><span class="p">(</span><span class="s1">&#39;clusters&#39;</span><span class="p">)</span>
+<span class="n">cl</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="fixed" style="border:0px solid black;width: 100%; table-layout: fixed"><col width="4%" /><col width="96%" /><tr style="border: 0"><td style="background-color: #636363;border: 0;text-align: center">C_1</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="82.89887599109623%" /><col width="55px" /><col width="17.10112400890377%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>STR</b><br>100%</p></td><td style="background-color: #98d6f9;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>PAL</b><br>100%</p></td><td style="background-color: #8599cc;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #969696;border: 0;text-align: center">C_2</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="47.42314324487027%" /><col width="55px" /><col width="9.029967247237442%" /><col width="55px" /><col width="43.546889507892296%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>OLF</b><br>100%</p></td><td style="background-color: #9ad2bd;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>CTXsp</b><br>100%</p></td><td style="background-color: #8ada87;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>HPF</b><br>100%</p></td><td style="background-color: #7ed04b;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #31a354;border: 0;text-align: center">C_3</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="8.428555266432854%" /><col width="55px" /><col width="17.920579251046497%" /><col width="55px" /><col width="19.15375042425614%" /><col width="55px" /><col width="16.110419730738773%" /><col width="55px" /><col width="7.206697590225138%" /><col width="55px" /><col width="27.09582531960629%" /><col width="4.084172417694319%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>PERI</b><br>93%</p></td><td style="background-color: #0e9684;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ECT</b><br>92%</p></td><td style="background-color: #0d9f91;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>VISC</b><br>71%</p></td><td style="background-color: #11ad83;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>TEa</b><br>46%</p></td><td style="background-color: #15b0b3;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>GU</b><br>36%</p></td><td style="background-color: #009c75;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>AI</b><br>30%</p></td><td style="background-color: #219866;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #74c476;border: 0;text-align: center">C_4</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="100%" /><tr style="border: 0"><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #a1d99b;border: 0;text-align: center">C_5</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="69.96660562318216%" /><col width="30.03339437681784%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>MO</b><br>27%</p></td><td style="background-color: #1f9d5a;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #c7e9c0;border: 0;text-align: center">C_6</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="3.721456268849634%" /><col width="55px" /><col width="61.643688065489016%" /><col width="55px" /><col width="31.468117190866007%" /><col width="3.1667384747953378%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>GU</b><br>39%</p></td><td style="background-color: #009c75;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>SS</b><br>34%</p></td><td style="background-color: #188064;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>MO</b><br>24%</p></td><td style="background-color: #1f9d5a;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #e6550d;border: 0;text-align: center">C_7</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="26.29015544041451%" /><col width="55px" /><col width="10.435233160621761%" /><col width="63.27461139896373%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>AUD</b><br>44%</p></td><td style="background-color: #019399;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>PTLp</b><br>41%</p></td><td style="background-color: #009fac;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #fd8d3c;border: 0;text-align: center">C_8</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="76.63063734625419%" /><col width="23.36936265374581%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>VIS</b><br>30%</p></td><td style="background-color: #08858c;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #fdae6b;border: 0;text-align: center">C_9</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="46.28499921789457%" /><col width="55px" /><col width="46.86375723447521%" /><col width="6.851243547630219%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>RSP</b><br>57%</p></td><td style="background-color: #1aa698;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>VIS</b><br>44%</p></td><td style="background-color: #08858c;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #fdd0a2;border: 0;text-align: center">C_10</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="34.75360740539069%" /><col width="65.24639259460932%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>AUD</b><br>44%</p></td><td style="background-color: #019399;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #756bb1;border: 0;text-align: center">C_11</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="5.742095636268617%" /><col width="55px" /><col width="39.20825712045989%" /><col width="55px" /><col width="45.649333681735044%" /><col width="9.40031356153645%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>PTLp</b><br>36%</p></td><td style="background-color: #009fac;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>MO</b><br>25%</p></td><td style="background-color: #1f9d5a;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>SS</b><br>21%</p></td><td style="background-color: #188064;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #9e9ac8;border: 0;text-align: center">C_12</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="48.693198693198696%" /><col width="55px" /><col width="42.54529254529255%" /><col width="8.761508761508765%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ACA</b><br>60%</p></td><td style="background-color: #40a666;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>RSP</b><br>27%</p></td><td style="background-color: #1aa698;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #bcbddc;border: 0;text-align: center">C_13</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="6.036260220405262%" /><col width="55px" /><col width="16.97120511908994%" /><col width="55px" /><col width="32.79772484891575%" /><col width="55px" /><col width="3.0287948809100604%" /><col width="55px" /><col width="11.567721293992179%" /><col width="29.598293636686805%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ILA</b><br>100%</p></td><td style="background-color: #59b363;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>PL</b><br>98%</p></td><td style="background-color: #2fa850;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ORB</b><br>78%</p></td><td style="background-color: #248a5e;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>FRP</b><br>44%</p></td><td style="background-color: #268f45;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ACA</b><br>30%</p></td><td style="background-color: #40a666;"></td><td style="background-color: transparent;"></td></tr></table></td></tr><tr style="border: 0"><td style="background-color: #dadaeb;border: 0;text-align: center">C_14</td><td style="border: 0; padding: 10px"><table class="fixed" style="border: 1px solid black;width: 100%; table-layout: fixed"><col width="55px" /><col width="57.57575757575758%" /><col width="55px" /><col width="5.821371610845295%" /><col width="55px" /><col width="4.921394395078606%" /><col width="55px" /><col width="13.989519252677148%" /><col width="17.691957165641384%" /><tr style="border: 0"><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>AI</b><br>64%</p></td><td style="background-color: #219866;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>FRP</b><br>53%</p></td><td style="background-color: #268f45;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>GU</b><br>25%</p></td><td style="background-color: #009c75;"></td><td style="background-color: transparent;border: 1px solid black;"><p style="font-family:Courier; text-align: center;"><b>ORB</b><br>21%</p></td><td style="background-color: #248a5e;"></td><td style="background-color: transparent;"></td></tr></table></td></tr></table></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="render">
+<h2>Render<a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n_clusters</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span> 
+    <span class="n">_</span> <span class="o">=</span> <span class="n">cluster2html</span><span class="p">(</span>
+        <span class="n">cluster</span><span class="o">=</span><span class="n">clusters_all</span><span class="p">[</span><span class="n">n_clusters</span><span class="p">],</span>
+        <span class="n">save_name</span><span class="o">=</span><span class="s1">&#39;canberra&#39;</span><span class="p">,</span>
+        <span class="n">n_cortex_regions</span><span class="o">=</span><span class="n">parcellation</span><span class="p">[</span><span class="s1">&#39;n_cortical_regions&#39;</span><span class="p">],</span>
+        <span class="n">save_dir</span><span class="o">=</span><span class="n">extras_dir</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-2.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-3.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-4.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-5.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-6.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-7.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-8.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-9.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-10.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-11.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-12.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-13.html</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Scene saved at 
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/_extras/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">cluster3d-canberra_parcel-128_n-14.html</span>
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="color-play">
+<h2>Color play<a class="headerlink" href="#color-play" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;tab20c&#39;</span><span class="p">,</span> <span class="n">n_colors</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><svg  width="1100" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#3182bd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="55" y="0" width="55" height="55" style="fill:#6baed6;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="110" y="0" width="55" height="55" style="fill:#9ecae1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="165" y="0" width="55" height="55" style="fill:#c6dbef;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="220" y="0" width="55" height="55" style="fill:#e6550d;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="275" y="0" width="55" height="55" style="fill:#fd8d3c;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="330" y="0" width="55" height="55" style="fill:#fdae6b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="385" y="0" width="55" height="55" style="fill:#fdd0a2;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="440" y="0" width="55" height="55" style="fill:#31a354;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="495" y="0" width="55" height="55" style="fill:#74c476;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="550" y="0" width="55" height="55" style="fill:#a1d99b;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="605" y="0" width="55" height="55" style="fill:#c7e9c0;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="660" y="0" width="55" height="55" style="fill:#756bb1;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="715" y="0" width="55" height="55" style="fill:#9e9ac8;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="770" y="0" width="55" height="55" style="fill:#bcbddc;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="825" y="0" width="55" height="55" style="fill:#dadaeb;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="880" y="0" width="55" height="55" style="fill:#636363;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="935" y="0" width="55" height="55" style="fill:#969696;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="990" y="0" width="55" height="55" style="fill:#bdbdbd;stroke-width:2;stroke:rgb(255,255,255)"/><rect x="1045" y="0" width="55" height="55" style="fill:#d9d9d9;stroke-width:2;stroke:rgb(255,255,255)"/></svg></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_colors</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">white</span> <span class="o">=</span> <span class="s1">&#39;#FFFFFF&#39;</span>
+
+<span class="n">Bu</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#00AADB&#39;</span><span class="p">,</span> <span class="s1">&#39;#007bed&#39;</span><span class="p">,</span> <span class="s1">&#39;#0058B1&#39;</span><span class="p">,</span> <span class="s1">&#39;#0044ff&#39;</span><span class="p">,</span> <span class="s1">&#39;#0200A7&#39;</span><span class="p">]</span>
+<span class="n">Gn</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#00ffc2&#39;</span><span class="p">,</span> <span class="s1">&#39;#00D43F&#39;</span><span class="p">,</span> <span class="s1">&#39;#11B848&#39;</span><span class="p">,</span> <span class="s1">&#39;#009C06&#39;</span><span class="p">,</span> <span class="s1">&#39;#008227&#39;</span><span class="p">]</span>
+<span class="n">YlOrRd</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#DCFF00&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFB100&#39;</span><span class="p">,</span> <span class="s1">&#39;#F18100&#39;</span><span class="p">,</span> <span class="s1">&#39;#FF6600&#39;</span><span class="p">,</span> <span class="s1">&#39;#FF4200&#39;</span><span class="p">,</span> <span class="s1">&#39;#FF0D0A&#39;</span><span class="p">,</span> <span class="s1">&#39;#DE0022&#39;</span><span class="p">]</span>
+<span class="n">Pu</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#FF0078&#39;</span><span class="p">,</span> <span class="s1">&#39;#FF0199&#39;</span><span class="p">,</span> <span class="s1">&#39;#CD00C1&#39;</span><span class="p">,</span> <span class="s1">&#39;#94008A&#39;</span><span class="p">]</span>
+<span class="n">Other</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#8AC639&#39;</span><span class="p">,</span> <span class="s1">&#39;#43BC92&#39;</span><span class="p">,</span> <span class="s1">&#39;#3A9BA9&#39;</span><span class="p">,</span> <span class="s1">&#39;#647F8E&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;#59589D&#39;</span><span class="p">,</span> <span class="s1">&#39;#424745&#39;</span><span class="p">,</span> <span class="s1">&#39;#63736E&#39;</span><span class="p">,</span> <span class="s1">&#39;#9D4C47&#39;</span><span class="p">,</span> <span class="s1">&#39;#B44B58&#39;</span><span class="p">,</span> <span class="s1">&#39;#BC6943&#39;</span><span class="p">]</span>
+
+<span class="n">candidate_colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Bu&#39;</span><span class="p">:</span> <span class="n">Bu</span><span class="p">,</span>
+    <span class="s1">&#39;Gn&#39;</span><span class="p">:</span> <span class="n">Gn</span><span class="p">,</span>
+    <span class="s1">&#39;YlOrRd&#39;</span><span class="p">:</span> <span class="n">YlOrRd</span><span class="p">,</span>
+    <span class="s1">&#39;Pu&#39;</span><span class="p">:</span> <span class="n">Pu</span><span class="p">,</span>
+    <span class="s1">&#39;Other&#39;</span><span class="p">:</span> <span class="n">Other</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">c_list</span> <span class="ow">in</span> <span class="n">candidate_colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">c_list</span><span class="p">:</span>
+        <span class="n">ramp_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">white</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+        <span class="n">custom_cmap</span> <span class="o">=</span> <span class="n">make_cmap</span><span class="p">(</span>
+            <span class="n">ramp_colors</span><span class="o">=</span><span class="n">ramp_colors</span><span class="p">,</span>
+            <span class="n">n_colors</span><span class="o">=</span><span class="n">n_colors</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">,</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Bu
+</pre>
+</div><img alt="_images/play_color_38_1.png" src="_images/play_color_38_1.png" />
+<img alt="_images/play_color_38_2.png" src="_images/play_color_38_2.png" />
+<img alt="_images/play_color_38_3.png" src="_images/play_color_38_3.png" />
+<img alt="_images/play_color_38_4.png" src="_images/play_color_38_4.png" />
+<img alt="_images/play_color_38_5.png" src="_images/play_color_38_5.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Gn
+</pre>
+</div><img alt="_images/play_color_38_7.png" src="_images/play_color_38_7.png" />
+<img alt="_images/play_color_38_8.png" src="_images/play_color_38_8.png" />
+<img alt="_images/play_color_38_9.png" src="_images/play_color_38_9.png" />
+<img alt="_images/play_color_38_10.png" src="_images/play_color_38_10.png" />
+<img alt="_images/play_color_38_11.png" src="_images/play_color_38_11.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">YlOrRd
+</pre>
+</div><img alt="_images/play_color_38_13.png" src="_images/play_color_38_13.png" />
+<img alt="_images/play_color_38_14.png" src="_images/play_color_38_14.png" />
+<img alt="_images/play_color_38_15.png" src="_images/play_color_38_15.png" />
+<img alt="_images/play_color_38_16.png" src="_images/play_color_38_16.png" />
+<img alt="_images/play_color_38_17.png" src="_images/play_color_38_17.png" />
+<img alt="_images/play_color_38_18.png" src="_images/play_color_38_18.png" />
+<img alt="_images/play_color_38_19.png" src="_images/play_color_38_19.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Pu
+</pre>
+</div><img alt="_images/play_color_38_21.png" src="_images/play_color_38_21.png" />
+<img alt="_images/play_color_38_22.png" src="_images/play_color_38_22.png" />
+<img alt="_images/play_color_38_23.png" src="_images/play_color_38_23.png" />
+<img alt="_images/play_color_38_24.png" src="_images/play_color_38_24.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Other
+</pre>
+</div><img alt="_images/play_color_38_26.png" src="_images/play_color_38_26.png" />
+<img alt="_images/play_color_38_27.png" src="_images/play_color_38_27.png" />
+<img alt="_images/play_color_38_28.png" src="_images/play_color_38_28.png" />
+<img alt="_images/play_color_38_29.png" src="_images/play_color_38_29.png" />
+<img alt="_images/play_color_38_30.png" src="_images/play_color_38_30.png" />
+<img alt="_images/play_color_38_31.png" src="_images/play_color_38_31.png" />
+<img alt="_images/play_color_38_32.png" src="_images/play_color_38_32.png" />
+<img alt="_images/play_color_38_33.png" src="_images/play_color_38_33.png" />
+<img alt="_images/play_color_38_34.png" src="_images/play_color_38_34.png" />
+<img alt="_images/play_color_38_35.png" src="_images/play_color_38_35.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">candidate_colors</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'Bu'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, <span style="color: #008000; text-decoration-color: #008000">'Gn'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, <span style="color: #008000; text-decoration-color: #008000">'YlOrRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, <span style="color: #008000; text-decoration-color: #008000">'Pu'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008000; text-decoration-color: #008000">'Other'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.6</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">c_list</span> <span class="ow">in</span> <span class="n">candidate_colors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c_list</span><span class="p">)</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">))</span>
+    <span class="n">sz</span> <span class="o">=</span> <span class="mf">5.2</span> <span class="k">if</span> <span class="n">nrows</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">else</span> <span class="mi">3</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="n">sz</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="n">cmaps</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">c_list</span><span class="p">,</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+        <span class="n">ramp_colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">white</span><span class="p">,</span> <span class="n">c</span><span class="p">]</span>
+        <span class="n">custom_cmap</span> <span class="o">=</span> <span class="n">make_cmap</span><span class="p">(</span>
+            <span class="n">ramp_colors</span><span class="o">=</span><span class="n">ramp_colors</span><span class="p">,</span>
+            <span class="n">n_colors</span><span class="o">=</span><span class="n">n_colors</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span><span class="p">,</span>
+            <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">cmaps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">custom_cmap</span><span class="p">)</span>
+        <span class="c1"># colors = [rgb2hex(custom_cmap(x)) for x in ]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">]):</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">rgb2hex</span><span class="p">(</span><span class="n">custom_cmap</span><span class="p">(</span><span class="n">r</span><span class="p">)),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">trim_axs</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">c_list</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">cmap</span> <span class="ow">in</span> <span class="n">cmaps</span><span class="p">:</span>
+        <span class="n">display_cmap</span><span class="p">(</span><span class="n">cmap</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/play_color_40_0.png" src="_images/play_color_40_0.png" />
+<img alt="_images/play_color_40_1.png" src="_images/play_color_40_1.png" />
+<img alt="_images/play_color_40_2.png" src="_images/play_color_40_2.png" />
+<img alt="_images/play_color_40_3.png" src="_images/play_color_40_3.png" />
+<img alt="_images/play_color_40_4.png" src="_images/play_color_40_4.png" />
+<img alt="_images/play_color_40_5.png" src="_images/play_color_40_5.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div><img alt="_images/play_color_40_7.png" src="_images/play_color_40_7.png" />
+<img alt="_images/play_color_40_8.png" src="_images/play_color_40_8.png" />
+<img alt="_images/play_color_40_9.png" src="_images/play_color_40_9.png" />
+<img alt="_images/play_color_40_10.png" src="_images/play_color_40_10.png" />
+<img alt="_images/play_color_40_11.png" src="_images/play_color_40_11.png" />
+<img alt="_images/play_color_40_12.png" src="_images/play_color_40_12.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div><img alt="_images/play_color_40_14.png" src="_images/play_color_40_14.png" />
+<img alt="_images/play_color_40_15.png" src="_images/play_color_40_15.png" />
+<img alt="_images/play_color_40_16.png" src="_images/play_color_40_16.png" />
+<img alt="_images/play_color_40_17.png" src="_images/play_color_40_17.png" />
+<img alt="_images/play_color_40_18.png" src="_images/play_color_40_18.png" />
+<img alt="_images/play_color_40_19.png" src="_images/play_color_40_19.png" />
+<img alt="_images/play_color_40_20.png" src="_images/play_color_40_20.png" />
+<img alt="_images/play_color_40_21.png" src="_images/play_color_40_21.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div><img alt="_images/play_color_40_23.png" src="_images/play_color_40_23.png" />
+<img alt="_images/play_color_40_24.png" src="_images/play_color_40_24.png" />
+<img alt="_images/play_color_40_25.png" src="_images/play_color_40_25.png" />
+<img alt="_images/play_color_40_26.png" src="_images/play_color_40_26.png" />
+<img alt="_images/play_color_40_27.png" src="_images/play_color_40_27.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div><img alt="_images/play_color_40_29.png" src="_images/play_color_40_29.png" />
+<img alt="_images/play_color_40_30.png" src="_images/play_color_40_30.png" />
+<img alt="_images/play_color_40_31.png" src="_images/play_color_40_31.png" />
+<img alt="_images/play_color_40_32.png" src="_images/play_color_40_32.png" />
+<img alt="_images/play_color_40_33.png" src="_images/play_color_40_33.png" />
+<img alt="_images/play_color_40_34.png" src="_images/play_color_40_34.png" />
+<img alt="_images/play_color_40_35.png" src="_images/play_color_40_35.png" />
+<img alt="_images/play_color_40_36.png" src="_images/play_color_40_36.png" />
+<img alt="_images/play_color_40_37.png" src="_images/play_color_40_37.png" />
+<img alt="_images/play_color_40_38.png" src="_images/play_color_40_38.png" />
+<img alt="_images/play_color_40_39.png" src="_images/play_color_40_39.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">colorsys</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hsv</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">rgb</span> <span class="o">=</span> <span class="n">colorsys</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="o">*</span><span class="n">hsv</span><span class="p">)</span>
+<span class="n">hx</span> <span class="o">=</span> <span class="n">rgb2hex</span><span class="p">(</span><span class="n">rgb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'#ff3333'</span>
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="report-properties-of-a-parcellation-todo">
+<h2>Report properties of a parcellation (TODO)<a class="headerlink" href="#report-properties-of-a-parcellation-todo" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>use this:</p>
+</div></blockquote>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyinspect</span> <span class="k">as</span> <span class="nn">pi</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prints an overview of the Actors in the scene.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">actors</span> <span class="o">=</span> <span class="n">pi</span><span class="o">.</span><span class="n">Report</span><span class="p">(</span>
+            <span class="s2">&quot;Scene actors&quot;</span><span class="p">,</span> <span class="n">accent</span><span class="o">=</span><span class="n">salmon</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="n">orange</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">orange</span>
+        <span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">act</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">actors</span><span class="p">:</span>
+            <span class="n">actors</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;[bold][</span><span class="si">{</span><span class="n">amber</span><span class="si">}</span><span class="s2">]- </span><span class="si">{</span><span class="n">act</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">[/bold][</span><span class="si">{</span><span class="n">orange_darker</span><span class="si">}</span><span class="s2">] &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(type: [</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="n">act</span><span class="o">.</span><span class="n">br_class</span><span class="si">}</span><span class="s2">[/</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]) &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(color: [</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="n">rgb2hex</span><span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">c</span><span class="p">())</span><span class="si">}</span><span class="s2">[/</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]) &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(alpha: [</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]</span><span class="si">{</span><span class="n">act</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">alpha</span><span class="p">()</span><span class="si">}</span><span class="s2">[/</span><span class="si">{</span><span class="n">orange</span><span class="si">}</span><span class="s2">]) &quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="s2">&quot;win32&quot;</span> <span class="o">!=</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span><span class="p">:</span>
+            <span class="n">actors</span><span class="o">.</span><span class="n">print</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">actors</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
