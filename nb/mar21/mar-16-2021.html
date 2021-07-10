@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>March 16th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -376,6 +377,45 @@
      June 29th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-30-2021.html">
+     June 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  July 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-01-2021.html">
+     July 1st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-09-2021.html">
+     July 9th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,7 +577,7 @@
         
               <div>
                 
-  <div class="section" id="march-16th-2021">
+  <section id="march-16th-2021">
 <h1>March 16th, 2021<a class="headerlink" href="#march-16th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Cleaned up, functions moved to the top of document (will be hidden).</p>
 <p>Includes:</p>
@@ -1180,7 +1220,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="closer-look-at-possible-data-flaws">
+<section id="closer-look-at-possible-data-flaws">
 <h2>Closer look at possible data flaws<a class="headerlink" href="#closer-look-at-possible-data-flaws" title="Permalink to this headline">¶</a></h2>
 <p>I choose a dataset that looks OK from subject named <strong>sub-SLC08</strong>.  Then I will describe a systematic way of examining data quality.  I don’t think serious flaws such as sudden drastic jumps are that frequent.</p>
 <div class="cell tag_hide-input docutils container">
@@ -1230,8 +1270,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="detect-anomalies">
+</section>
+<section id="detect-anomalies">
 <h2>Detect anomalies<a class="headerlink" href="#detect-anomalies" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1301,7 +1341,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="delete-top-10-anomalous-idxs">
+<section id="delete-top-10-anomalous-idxs">
 <h3>Delete top 10 anomalous idxs<a class="headerlink" href="#delete-top-10-anomalous-idxs" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1377,9 +1417,9 @@
 <img alt="../../_images/mar-16-2021_15_0.png" src="../../_images/mar-16-2021_15_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="bandpass-filtering">
+</section>
+</section>
+<section id="bandpass-filtering">
 <h2>Bandpass filtering<a class="headerlink" href="#bandpass-filtering" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1524,8 +1564,8 @@
 <img alt="../../_images/mar-16-2021_21_0.png" src="../../_images/mar-16-2021_21_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="bandpass-on-anomaly-filtered-data">
+</section>
+<section id="bandpass-on-anomaly-filtered-data">
 <h2>Bandpass on anomaly filtered data<a class="headerlink" href="#bandpass-on-anomaly-filtered-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1665,8 +1705,8 @@
 <img alt="../../_images/mar-16-2021_30_0.png" src="../../_images/mar-16-2021_30_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="bandpass-full-data-comm">
+</section>
+<section id="bandpass-full-data-comm">
 <h2>Bandpass (full data) + Comm<a class="headerlink" href="#bandpass-full-data-comm" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1716,7 +1756,7 @@
 <img alt="../../_images/mar-16-2021_35_0.png" src="../../_images/mar-16-2021_35_0.png" />
 </div>
 </div>
-<div class="section" id="downsample">
+<section id="downsample">
 <h3>Downsample<a class="headerlink" href="#downsample" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1853,9 +1893,9 @@
 <img alt="../../_images/mar-16-2021_48_0.png" src="../../_images/mar-16-2021_48_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="scale-32-x-32">
+</section>
+</section>
+<section id="scale-32-x-32">
 <h2>Scale = 32 x 32<a class="headerlink" href="#scale-32-x-32" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1994,8 +2034,8 @@
 <img alt="../../_images/mar-16-2021_66_0.png" src="../../_images/mar-16-2021_66_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

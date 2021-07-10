@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>February, 13th 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -33,23 +34,23 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -378,6 +379,45 @@
      June 29th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-30-2021.html">
+     June 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  July 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-01-2021.html">
+     July 1st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-09-2021.html">
+     July 9th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -537,7 +577,7 @@
         
               <div>
                 
-  <div class="section" id="february-13th-2021">
+  <section id="february-13th-2021">
 <h1>February, 13th 2021<a class="headerlink" href="#february-13th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Simple analysis on data. Learn how it is structured, come up with clarification questions.<br>
 <strong>Results</strong>:  In this document I focus on Ca sinals.</p>
@@ -621,7 +661,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="simple-plots-ca-data">
+<section id="simple-plots-ca-data">
 <h2>Simple plots (Ca data)<a class="headerlink" href="#simple-plots-ca-data" title="Permalink to this headline">¶</a></h2>
 <p>Let’s make a few plots to just look at the data.  I will select a few datasets (name in the plot title) and plot time traces in three different time windows.  Also, below this, I will plot the time average of the entire FOV time series.  And I also time average of the absolute value of the traces.</p>
 <div class="cell tag_hide-input docutils container">
@@ -864,8 +904,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="simple-analysis">
+</section>
+<section id="simple-analysis">
 <h2>Simple analysis<a class="headerlink" href="#simple-analysis" title="Permalink to this headline">¶</a></h2>
 <p>I choose a dataset that looks OK from subject named <strong>sub-SLC08</strong>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -886,7 +926,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="correlation-analysis">
+<section id="correlation-analysis">
 <h3>Correlation analysis<a class="headerlink" href="#correlation-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Take a source signal from one of the “voxels” and compute its correlation with every other point. We should not call these voxels because this is different than fMRI data.  But then if not voxels, what should we call them for Ca data?</p>
 <p>Anyway, I take signal from point (128, 128) on cortex surface and compute its correlation with every other point.  Here is how this correlation result looks like.</p>
@@ -950,8 +990,8 @@
 <img alt="../../_images/feb-13-2021_11_0.png" src="../../_images/feb-13-2021_11_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="non-negative-matrix-factorization-nmf">
+</section>
+<section id="non-negative-matrix-factorization-nmf">
 <h3>Non-negative matrix factorization (NMF)<a class="headerlink" href="#non-negative-matrix-factorization-nmf" title="Permalink to this headline">¶</a></h3>
 <p>Ca imaging data is a signal that always has non-negative values by definition.  A natural method that fits this is NMF, where a positive matrix is factorized into two positive matrices:  <span class="math notranslate nohighlight">\(X = WF\)</span>, where <span class="math notranslate nohighlight">\(F\)</span> are factors, and <span class="math notranslate nohighlight">\(W\)</span> are loading matrices.</p>
 <p>We first compute the absolute value of Ca traces to meet the non-negative criterion.  After this step, above traces look like this:</p>
@@ -1337,8 +1377,8 @@
 <img alt="../../_images/feb-13-2021_39_0.png" src="../../_images/feb-13-2021_39_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ica">
+</section>
+<section id="ica">
 <h3>ICA<a class="headerlink" href="#ica" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1541,8 +1581,8 @@
 <img alt="../../_images/feb-13-2021_58_0.png" src="../../_images/feb-13-2021_58_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="pca">
+</section>
+<section id="pca">
 <h3>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1601,8 +1641,8 @@
 <img alt="../../_images/feb-13-2021_62_0.png" src="../../_images/feb-13-2021_62_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="this-could-mean-either-of-two-things">
+</section>
+<section id="this-could-mean-either-of-two-things">
 <h3>This could mean either of two things:<a class="headerlink" href="#this-could-mean-either-of-two-things" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
 <li><p>Those regions were more active (retrosplenial?)</p></li>
@@ -1763,13 +1803,13 @@
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="discussion">
+</section>
+</section>
+<section id="discussion">
 <h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this headline">¶</a></h2>
 <p>No discussion, waiting for their response</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
