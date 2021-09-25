@@ -1008,8 +1008,7 @@
 <h3>Logit transform of last bin:<a class="headerlink" href="#logit-transform-of-last-bin" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>The last bin shows proportion of nodes that have a membership value of 0.8 or larger in a given community.  Let us call this number <span class="math notranslate nohighlight">\(\theta_{k, (0.8, 1]}\)</span>.  We have <span class="math notranslate nohighlight">\(\theta_{k, (0.8, 1]} \in (0, 1)\)</span>, since proportions cannot be negative or greater than one.</p></li>
-<li><p>Now consider the logit transformed version of this number:
-$<span class="math notranslate nohighlight">\(u = \text{logit}(\theta) = \log(\frac{\theta}{1 - \theta}).\)</span>$</p></li>
+<li><p>Now consider the logit transformed version of this number: <span class="math notranslate nohighlight">\(u = \text{logit}(\theta) = \log(\frac{\theta}{1 - \theta}).\)</span></p></li>
 <li><p>One can show that <span class="math notranslate nohighlight">\(\theta \in (0, 1)\)</span> implies <span class="math notranslate nohighlight">\(u \in (-\infty, \infty)\)</span></p></li>
 <li><p>A t-test now makes a lot more sense for <span class="math notranslate nohighlight">\(u\)</span> rather than <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
 <li><p>Thus, we can test for significante in a more <strong>proper</strong> way.  I’m expecting to get ridiculously small p-values, indicating solid evidence for overlap.</p></li>
@@ -1050,7 +1049,7 @@ Addressing: what if these results are an artifact of the algorithm used?</p>
 <li><p>Therefore, any difference we see between these random baselines and the real one must be due to the nontrivial topology of the real one.</p></li>
 <li><p>In Fig 2 the focus was on communities (we plotted the membership distributions for communities). Here the focus is primarily on nodes.</p></li>
 <li><p>We already showed that the communities are all significantly overlapping.  What about the nodes?  How many of them have mixed-memberships, and how many only like to belong to a single community?</p></li>
-<li><p>To this end, we define the maximum membership value for each node:$<span class="math notranslate nohighlight">\(x_i := \max_{k} (\pi_{ik}).\)</span>$</p></li>
+<li><p>To this end, we define the maximum membership value for each node: <span class="math notranslate nohighlight">\(x_i := \max_{k} (\pi_{ik}).\)</span></p></li>
 <li><p>This is an interesting number.  It will tell us to what extent is a node overlapping or disjoint.</p></li>
 <li><p>The membership values are bounded and they add up to one.  In other words, <span class="math notranslate nohighlight">\(\pi_{ik} \in (0, 1)\)</span> for all <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(\sum_k \pi_{ik} = 1\)</span>.  This implies <span class="math notranslate nohighlight">\(x_i \in (1/k, 1)\)</span>.</p></li>
 <li><p>For a graph with <span class="math notranslate nohighlight">\(N\)</span> nodes, there are <span class="math notranslate nohighlight">\(N\)</span> numbers <span class="math notranslate nohighlight">\(\{x_i : i = 1, \dots, N\}\)</span>.  We plot the distribution of these numbers per graph, and compare to LFR, as well as random baselines.</p></li>
