@@ -816,7 +816,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sup-fig-candidates">
-   Sup fig candidates
+   Sup fig candidates:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1229,7 +1229,7 @@ relationship between our findings and FC gradients</p>
 <li><p>If the way <span class="math notranslate nohighlight">\(a\)</span> connects to everybody esle is very similar to the way <span class="math notranslate nohighlight">\(b\)</span> connects to everybody else, then they are similar and they will most likely be in the same community.</p></li>
 <li><p>Therefore, saying <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> similar is equivalent to <span class="math notranslate nohighlight">\(\cos(Y_a, Y_b)\)</span> is large.</p></li>
 <li><p>We can think of <span class="math notranslate nohighlight">\(Y_{ij}\)</span> as a questionare in a social science study. If two people answer similarly to a large set of questions, then chances are they are very similar people and do very similar things.</p></li>
-<li><p>Another way is to think about each element of <span class="math notranslate nohighlight">\(Y_i\)</span> as a perturbation study. I poke something in <span class="math notranslate nohighlight">\(N - 1\)</span> different ways and measure its responses in these <span class="math notranslate nohighlight">\(N - 1\)</span> experiments.  I can use these measurements to find out which of these thigns (nodes) are similar.</p></li>
+<li><p>Another way is to think about each element of <span class="math notranslate nohighlight">\(Y_i\)</span> as a perturbation study. I poke something in <span class="math notranslate nohighlight">\(N - 1\)</span> different ways and measure its responses in these <span class="math notranslate nohighlight">\(N - 1\)</span> experiments.  I can use these measurements to find out which of these things (nodes) are similar.</p></li>
 </ul>
 </li>
 </ul>
@@ -1238,7 +1238,7 @@ relationship between our findings and FC gradients</p>
 <h3>t-SNE embedding of <span class="math notranslate nohighlight">\(Y\)</span>:<a class="headerlink" href="#t-sne-embedding-of-y" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Since our network is structured, there will be lots of redundacy in <span class="math notranslate nohighlight">\(Y_i\)</span> profiles.</p></li>
-<li><p>Take this similarity matrix <span class="math notranslate nohighlight">\(Y\)</span> and apply t-SNE on its rows <span class="math notranslate nohighlight">\(Y_i\)</span> so that we can visualize the 2D embedded versions. I did this and found very interesting organization. Please see <a class="reference external" href="#brief-t-sne-before-moving-on">this figure for example</a>.</p></li>
+<li><p>Take this similarity matrix <span class="math notranslate nohighlight">\(Y\)</span> and apply t-SNE on its rows <span class="math notranslate nohighlight">\(Y_i\)</span> so that we can visualize the 2D embedded versions.  Here by embedding I mean take the <span class="math notranslate nohighlight">\(N\)</span> dimensional vector <span class="math notranslate nohighlight">\(Y_i\)</span> and embed it in a 2D space.  This point in 2D is represntative of the whole thing. I did this and found very interesting organization among these 2D projected similarity measures. Please see <a class="reference external" href="#brief-t-sne-before-moving-on">this figure for example</a>.</p></li>
 <li><p>In that figure we see an arch which has visual community in one end (orange), and somatosensory on the other end (green).  They both converge in the middle upon DMN (blue, red and purple).  On the other side we have our subcortical regions (yellow).</p></li>
 <li><p>This result is quite robust to the choice of random seed and perplexity (a tunable parameter in t-SNE).  Therefore, I believe it is capturing something real and important.</p></li>
 <li><p>From this approach, I think I accidentally stumbled upon something that people call <strong>sensory-to-transmodal</strong> dimension in FC gradient literature.</p></li>
@@ -1368,7 +1368,7 @@ Trade off between integration and flow of information and metabolic cost of long
 <p>It’s difficult to discuss these things in a formal way, but I think we should at least have some toned-down version of this and also include a physics analogy. At least mention that when using disjoint approaches, you implicitely assume separation of scales exists in neuroscience (which we show it’s probably not true).</p>
 </section>
 <section id="sup-fig-candidates">
-<h2>Sup fig candidates<a class="headerlink" href="#sup-fig-candidates" title="Permalink to this headline">¶</a></h2>
+<h2>Sup fig candidates:<a class="headerlink" href="#sup-fig-candidates" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Result of applying Louvain, Lieden, and other modularity maximization algorithms.  Show that (i) plateaus in the resolution-modularity plot indicate existence of robust communities, however cite the Clauset 2009 paper and talk about this degeneracy is a huge problem.  Thus, overlapping approach is helpful in that sense as well.  This fig has overlapping and non overlapping modularity performance reports too.</p></li>
 <li><p>Robustness of resutls to the choise of k (num communities) + showing how results depend on the chosie of k.</p></li>
@@ -1406,7 +1406,7 @@ Trade off between integration and flow of information and metabolic cost of long
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_17_0.png" src="../../_images/sep-24-2021_17_0.png" />
+<img alt="../../_images/sep-24-2021_18_0.png" src="../../_images/sep-24-2021_18_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1456,7 +1456,7 @@ Trade off between integration and flow of information and metabolic cost of long
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_26_0.png" src="../../_images/sep-24-2021_26_0.png" />
+<img alt="../../_images/sep-24-2021_27_0.png" src="../../_images/sep-24-2021_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1466,7 +1466,7 @@ Trade off between integration and flow of information and metabolic cost of long
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_27_0.png" src="../../_images/sep-24-2021_27_0.png" />
+<img alt="../../_images/sep-24-2021_28_0.png" src="../../_images/sep-24-2021_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1577,7 +1577,7 @@ Trade off between integration and flow of information and metabolic cost of long
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_43_0.png" src="../../_images/sep-24-2021_43_0.png" />
+<img alt="../../_images/sep-24-2021_44_0.png" src="../../_images/sep-24-2021_44_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1587,7 +1587,7 @@ Trade off between integration and flow of information and metabolic cost of long
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_45_0.png" src="../../_images/sep-24-2021_45_0.png" />
+<img alt="../../_images/sep-24-2021_46_0.png" src="../../_images/sep-24-2021_46_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1606,7 +1606,7 @@ Trade off between integration and flow of information and metabolic cost of long
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb7fb5608b0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-24-2021_48_1.png" src="../../_images/sep-24-2021_48_1.png" />
+</div><img alt="../../_images/sep-24-2021_49_1.png" src="../../_images/sep-24-2021_49_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1625,7 +1625,7 @@ Trade off between integration and flow of information and metabolic cost of long
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb7faf59ee0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-24-2021_50_1.png" src="../../_images/sep-24-2021_50_1.png" />
+</div><img alt="../../_images/sep-24-2021_51_1.png" src="../../_images/sep-24-2021_51_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1707,7 +1707,7 @@ From: https://kimlab.io/brain-map/atlas/ (Chon et al. 2019, https://doi.org/10.1
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb7fa64bc40</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-24-2021_57_1.png" src="../../_images/sep-24-2021_57_1.png" />
+</div><img alt="../../_images/sep-24-2021_58_1.png" src="../../_images/sep-24-2021_58_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1810,7 +1810,7 @@ From: https://kimlab.io/brain-map/atlas/ (Chon et al. 2019, https://doi.org/10.1
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb842cd3490</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-24-2021_65_1.png" src="../../_images/sep-24-2021_65_1.png" />
+</div><img alt="../../_images/sep-24-2021_66_1.png" src="../../_images/sep-24-2021_66_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1823,7 +1823,7 @@ From: https://kimlab.io/brain-map/atlas/ (Chon et al. 2019, https://doi.org/10.1
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb7fc3dce50</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-24-2021_66_1.png" src="../../_images/sep-24-2021_66_1.png" />
+</div><img alt="../../_images/sep-24-2021_67_1.png" src="../../_images/sep-24-2021_67_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1840,7 +1840,7 @@ From: https://kimlab.io/brain-map/atlas/ (Chon et al. 2019, https://doi.org/10.1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_69_0.png" src="../../_images/sep-24-2021_69_0.png" />
+<img alt="../../_images/sep-24-2021_70_0.png" src="../../_images/sep-24-2021_70_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1928,7 +1928,7 @@ perf    <span style="color: #008080; text-decoration-color: #008080; font-weight
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_82_0.png" src="../../_images/sep-24-2021_82_0.png" />
+<img alt="../../_images/sep-24-2021_83_0.png" src="../../_images/sep-24-2021_83_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1947,7 +1947,7 @@ perf    <span style="color: #008080; text-decoration-color: #008080; font-weight
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_85_0.png" src="../../_images/sep-24-2021_85_0.png" />
+<img alt="../../_images/sep-24-2021_86_0.png" src="../../_images/sep-24-2021_86_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1976,7 +1976,7 @@ perf    <span style="color: #008080; text-decoration-color: #008080; font-weight
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_88_0.png" src="../../_images/sep-24-2021_88_0.png" />
+<img alt="../../_images/sep-24-2021_89_0.png" src="../../_images/sep-24-2021_89_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1993,7 +1993,7 @@ perf    <span style="color: #008080; text-decoration-color: #008080; font-weight
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_89_0.png" src="../../_images/sep-24-2021_89_0.png" />
+<img alt="../../_images/sep-24-2021_90_0.png" src="../../_images/sep-24-2021_90_0.png" />
 </div>
 </div>
 <section id="ara-2-yale">
@@ -2051,7 +2051,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_95_0.png" src="../../_images/sep-24-2021_95_0.png" />
+<img alt="../../_images/sep-24-2021_96_0.png" src="../../_images/sep-24-2021_96_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2080,7 +2080,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_98_0.png" src="../../_images/sep-24-2021_98_0.png" />
+<img alt="../../_images/sep-24-2021_99_0.png" src="../../_images/sep-24-2021_99_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2097,7 +2097,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_99_0.png" src="../../_images/sep-24-2021_99_0.png" />
+<img alt="../../_images/sep-24-2021_100_0.png" src="../../_images/sep-24-2021_100_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2114,7 +2114,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_100_0.png" src="../../_images/sep-24-2021_100_0.png" />
+<img alt="../../_images/sep-24-2021_101_0.png" src="../../_images/sep-24-2021_101_0.png" />
 </div>
 </div>
 </section>
@@ -2191,7 +2191,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_112_0.png" src="../../_images/sep-24-2021_112_0.png" />
+<img alt="../../_images/sep-24-2021_113_0.png" src="../../_images/sep-24-2021_113_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2269,7 +2269,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_122_0.png" src="../../_images/sep-24-2021_122_0.png" />
+<img alt="../../_images/sep-24-2021_123_0.png" src="../../_images/sep-24-2021_123_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2290,7 +2290,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_124_0.png" src="../../_images/sep-24-2021_124_0.png" />
+<img alt="../../_images/sep-24-2021_125_0.png" src="../../_images/sep-24-2021_125_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3883,7 +3883,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_143_0.png" src="../../_images/sep-24-2021_143_0.png" />
+<img alt="../../_images/sep-24-2021_144_0.png" src="../../_images/sep-24-2021_144_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3925,7 +3925,7 @@ perf      <span style="color: #008080; text-decoration-color: #008080; font-weig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-24-2021_146_0.png" src="../../_images/sep-24-2021_146_0.png" />
+<img alt="../../_images/sep-24-2021_147_0.png" src="../../_images/sep-24-2021_147_0.png" />
 </div>
 </div>
 </section>
