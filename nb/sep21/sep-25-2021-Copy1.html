@@ -2575,141 +2575,695 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iso_indiv</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_dir</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Dropbox/git/jb-Ca-fMRI/nb/sep21/sep28&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">_dir</span><span class="p">,</span> <span class="s1">&#39;yale-0.1.df&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SyNAggro&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;grad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;syn_bin&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;aff_bin&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">13</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;aff_rate&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">_df</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13346</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>type</th>
+      <th>grad</th>
+      <th>syn_bin</th>
+      <th>aff_bin</th>
+      <th>aff_rate</th>
+      <th>metric</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4009</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>mi</td>
+      <td>0.521271</td>
+    </tr>
+    <tr>
+      <th>4010</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_VIS</td>
+      <td>0.999773</td>
+    </tr>
+    <tr>
+      <th>4011</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_VIS</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4012</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_TEa</td>
+      <td>0.944390</td>
+    </tr>
+    <tr>
+      <th>4013</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_TEa</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4014</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_PTLp</td>
+      <td>0.982619</td>
+    </tr>
+    <tr>
+      <th>4015</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_PTLp</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>4016</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_VISC</td>
+      <td>0.921525</td>
+    </tr>
+    <tr>
+      <th>4017</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_VISC</td>
+      <td>0.999464</td>
+    </tr>
+    <tr>
+      <th>4018</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_AI</td>
+      <td>0.937911</td>
+    </tr>
+    <tr>
+      <th>4019</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_AI</td>
+      <td>0.971646</td>
+    </tr>
+    <tr>
+      <th>4020</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_SS</td>
+      <td>0.973203</td>
+    </tr>
+    <tr>
+      <th>4021</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_SS</td>
+      <td>0.999780</td>
+    </tr>
+    <tr>
+      <th>4022</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_MO</td>
+      <td>0.997391</td>
+    </tr>
+    <tr>
+      <th>4023</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_MO</td>
+      <td>0.997580</td>
+    </tr>
+    <tr>
+      <th>4024</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_ISO</td>
+      <td>0.998510</td>
+    </tr>
+    <tr>
+      <th>4025</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_ISO</td>
+      <td>0.997187</td>
+    </tr>
+    <tr>
+      <th>4026</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym</td>
+      <td>0.978081</td>
+    </tr>
+    <tr>
+      <th>4027</th>
+      <td>1</td>
+      <td>SyNAggro</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp</td>
+      <td>0.996751</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;mi&#39;</span><span class="p">]</span>
+<span class="n">sym</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;sym&#39;</span><span class="p">]</span>
+<span class="n">mi</span> <span class="o">=</span> <span class="n">mi</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sym</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="n">mi</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">nanquantile</span><span class="p">(</span><span class="n">mi</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">],</span> <span class="mf">0.75</span><span class="p">)</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-Copy1_46_1.png" src="../../_images/sep-25-2021-Copy1_46_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">mi</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9780812440341268</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5224554370642382</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vis_indiv</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">mi</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1472</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>type</th>
+      <th>grad</th>
+      <th>syn_bin</th>
+      <th>aff_bin</th>
+      <th>aff_rate</th>
+      <th>metric</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>35</th>
+      <td>0</td>
+      <td>SyN</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>32</td>
+      <td>0.8</td>
+      <td>mi</td>
+      <td>0.522455</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_df</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;SyN&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;grad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;syn_bin&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;aff_bin&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">32</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">sym</span><span class="p">[</span><span class="s1">&#39;aff_rate&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="n">_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>type</th>
+      <th>grad</th>
+      <th>syn_bin</th>
+      <th>aff_bin</th>
+      <th>aff_rate</th>
+      <th>metric</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>143</th>
+      <td>1</td>
+      <td>SyN</td>
+      <td>0.3</td>
+      <td>32</td>
+      <td>32</td>
+      <td>0.8</td>
+      <td>sym</td>
+      <td>0.975619</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># reg = Register(mice, resolution=100)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen</span> <span class="o">=</span> <span class="n">load_allen</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">mice</span><span class="o">.</span><span class="n">allen</span> <span class="o">=</span> <span class="n">allen</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">get_objects</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'VIS'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'TEa'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'PTLp'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'VISC'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'AI'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'SS'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'MO'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'Isocortex'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'mask_l'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'mask_r'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
+<span style="font-weight: bold">}</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iso_indiv</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">vis_indiv</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bg_atlasapi</span> <span class="kn">import</span> <span class="n">show_atlases</span><span class="p">,</span> <span class="n">BrainGlobeAtlas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;allen_mouse_25um&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.066576086956522</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>allen mouse atlas (res. 25um)
+From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.2020.04.007 )
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">left_hemisphere_value</span><span class="p">,</span> <span class="n">atlas</span><span class="o">.</span><span class="n">right_hemisphere_value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;major_masks&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;mask_r&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">img_in_ccf</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">left_hemisphere_value</span><span class="p">,</span> <span class="s1">&#39;uint32&#39;</span><span class="p">)</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;mask_l&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">img_in_ccf</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">hemispheres</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">right_hemisphere_value</span><span class="p">,</span> <span class="s1">&#39;uint32&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
-    <span style="color: #008000; text-decoration-color: #008000">'PAL'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'STR'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'CTXsp'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'OLF'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'HIP'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'RHP'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'IB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'MB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'HB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'CB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'VIS'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'TEa'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'PERI'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'ECT'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'RSP'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'AUD'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'PTLp'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'VISC'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SS'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-bfd'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-ll'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-m'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-n'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-tr'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-ul'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSp-un'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'SSs'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'GU'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'ACA'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'AI'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'MO'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'MOp'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'MOs'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'ILA'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'PL'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'ORB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'FRP'</span>
-<span style="font-weight: bold">]</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">160</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">90</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">118</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC01_ses-2&#39;</span>
-<span class="n">indiv</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">indiv</span><span class="p">)</span>
-<span class="n">m_indiv</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
-<span class="n">m_indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">m_indiv</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;uint32&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span><span class="p">)</span>
-<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">m_indiv</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_mask.nii.gz&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tx</span><span class="p">,</span> <span class="n">best_tx</span><span class="p">,</span> <span class="n">perf</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reg = Register(mice, resolution=100)</span>
+
+<span class="n">df_tx</span><span class="p">,</span> <span class="n">best_tx</span><span class="p">,</span> <span class="n">perf</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
     <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">,</span>
-    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;nissl2yale&#39;</span><span class="p">,</span>
-    <span class="n">fixed</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
-    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;50&#39;</span><span class="p">,</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
     <span class="n">save_results</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">,</span> <span class="s1">&#39;SyNAggro&#39;</span><span class="p">],</span>
-    <span class="n">grads</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">],</span>
-    <span class="n">syn_bins</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
-    <span class="n">aff_bins</span><span class="o">=</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
-    <span class="n">aff_rates</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
-    <span class="n">n_seeds</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">types</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;SyNAggro&#39;</span><span class="p">],</span>
+    <span class="n">grads</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">],</span>
+    <span class="n">syn_bins</span><span class="o">=</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span>
+    <span class="n">aff_bins</span><span class="o">=</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span>
+    <span class="n">aff_rates</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">],</span>
+    <span class="n">n_seeds</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">mi_q</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "5f334fd538644b92bffeb7bae080173c", "version_major": 2, "version_minor": 0}
-</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">nissl2yale, perf:
-seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
-type        ElasticSyN
-grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>
-syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
-metric             sym
-score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.993072</span>
+{"model_id": "b97606cca58f4d92bac229e0772bfb69", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vis_yale</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;VIS&#39;</span><span class="p">],</span>
+    <span class="n">transformlist</span><span class="o">=</span><span class="n">best_tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
+    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">iso_yale</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">],</span>
+    <span class="n">transformlist</span><span class="o">=</span><span class="n">best_tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
+    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">vis_yale</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./sep28/vis_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_25_best.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">iso_yale</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./sep28/iso_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_25_best.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vis_yale</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;VIS&#39;</span><span class="p">],</span>
+    <span class="n">transformlist</span><span class="o">=</span><span class="n">best_tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
+    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">iso_yale</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">apply_transforms</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">],</span>
+    <span class="n">transformlist</span><span class="o">=</span><span class="n">best_tx</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">],</span>
+    <span class="n">interpolator</span><span class="o">=</span><span class="s1">&#39;genericLabel&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">vis_yale</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./sep28/vis_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_50_best.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">iso_yale</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./sep28/iso_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_50_best.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;./iso_CCF.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;VIS&#39;</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;./vis_CCF.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span><span class="p">[</span><span class="s1">&#39;ISO&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.1</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
 
 </pre>
 </div></div>
@@ -2825,7 +3379,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56473d8e0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-Copy1_55_1.png" src="../../_images/sep-25-2021-Copy1_55_1.png" />
+</div><img alt="../../_images/sep-25-2021-Copy1_79_1.png" src="../../_images/sep-25-2021-Copy1_79_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3143,7 +3697,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56472a430</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-Copy1_68_1.png" src="../../_images/sep-25-2021-Copy1_68_1.png" />
+</div><img alt="../../_images/sep-25-2021-Copy1_92_1.png" src="../../_images/sep-25-2021-Copy1_92_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3165,7 +3719,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56474c880</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-Copy1_70_1.png" src="../../_images/sep-25-2021-Copy1_70_1.png" />
+</div><img alt="../../_images/sep-25-2021-Copy1_94_1.png" src="../../_images/sep-25-2021-Copy1_94_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3194,7 +3748,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee534114040</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-Copy1_73_1.png" src="../../_images/sep-25-2021-Copy1_73_1.png" />
+</div><img alt="../../_images/sep-25-2021-Copy1_97_1.png" src="../../_images/sep-25-2021-Copy1_97_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3226,7 +3780,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee4c87dd250</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-Copy1_77_1.png" src="../../_images/sep-25-2021-Copy1_77_1.png" />
+</div><img alt="../../_images/sep-25-2021-Copy1_101_1.png" src="../../_images/sep-25-2021-Copy1_101_1.png" />
 </div>
 </div>
 </section>
