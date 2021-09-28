@@ -1,0 +1,1918 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sep 27th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Sep 25th, 2021" href="sep-25-2021.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  February 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/feb21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/feb21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-12-2021.html">
+     February, 12th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-13-2021.html">
+     February, 13th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-16-2021.html">
+     February, 16th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-20-2021.html">
+     February, 20th 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  March 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/mar21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/mar21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-10-2021.html">
+     March 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-13-2021.html">
+     March 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-15-2021.html">
+     March 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-16-2021.html">
+     March 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-18-2021.html">
+     March 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-19-2021.html">
+     March 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-26-2021.html">
+     March 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-29-2021.html">
+     March 29th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  April 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/apr21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/apr21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-07-2021.html">
+     April 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-30-2021.html">
+     April 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  May 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-08-2021.html">
+     May 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-09-2021.html">
+     May 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-11-2021.html">
+     May 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-12-2021.html">
+     May 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-20-2021.html">
+     May 20th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-24-2021.html">
+     May 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-31-2021.html">
+     May 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  June 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jun21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jun21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-05-2021.html">
+     June 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-06-2021.html">
+     June 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-07-2021.html">
+     June 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-12-2021.html">
+     June 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-13-2021.html">
+     June 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-15-2021.html">
+     June 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-17-2021.html">
+     June 17th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-18-2021.html">
+     June 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-19-2021.html">
+     June 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-21-2021.html">
+     June 21st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-24-2021.html">
+     June 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-26-2021.html">
+     June, 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-29-2021.html">
+     June 29th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-30-2021.html">
+     June 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  July 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-01-2021.html">
+     July 1st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-09-2021.html">
+     July 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-11-2021.html">
+     July 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-31-2021.html">
+     July 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  August 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/aug21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/aug21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug21/aug-21-2021.html">
+     Aug 21st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  September 2021
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/sep21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../md/sep21_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-07-2021.html">
+     Sep 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-08-2021.html">
+     Sep 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-15-2021.html">
+     Sep 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-19-2021.html">
+     Sep 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-24-2021.html">
+     Sep 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-25-2021.html">
+     Sep 25th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Sep 27th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/sep21/sep-27-2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/sep21/sep-27-2021.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/nb/sep21/sep-27-2021.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-1">
+   Figure 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how">
+     How:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-2">
+   Figure 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logit-transform-of-last-bin">
+     Logit transform of last bin:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-3">
+   Figure 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-details-on-how-to-achieve-this">
+     More details on how to achieve this:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-4">
+   Figure 4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     What:
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#edit-sept-27th">
+       Edit Sept 27th:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-covariance-matrices">
+     1. Compare covariance matrices:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-graph-topologies-thresholded">
+     2. Compare graph topologies (thresholded)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     How:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-5">
+   Figure 5
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     How:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-6">
+   Figure 6
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     What:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-7">
+   Figure 7
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     What:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-8">
+   Figure 8
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#define-a-node-similarity-measure">
+     Define a node similarity measure:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t-sne-embedding-of-y">
+     t-SNE embedding of
+     <span class="math notranslate nohighlight">
+      \(Y\)
+     </span>
+     :
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relationship-between-our-findings-and-fc-gradients">
+     Relationship between our findings and FC gradients
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#figure-9">
+   Figure 9
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     What:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-about-using-w-ij-as-similarity-measure">
+     What about using
+     <span class="math notranslate nohighlight">
+      \(W_{ij}\)
+     </span>
+     as similarity measure?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intuition-figure">
+   Intuition figure:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-half">
+     First half:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#second-half">
+     Second half:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#if-i-was-a-hypothetical-reader-of-this-paper">
+   If I was a hypothetical reader of this paper:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sup-fig-candidates">
+   Sup fig candidates:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-update-about-registration">
+   An update about registration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#latest-results-with-subcortical">
+   Latest results (with subcortical)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compute-y-ij">
+   Compute
+   <span class="math notranslate nohighlight">
+    \(Y_{ij}\)
+   </span>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brief-t-sne-before-moving-on">
+     Brief t-SNE before moving on
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="sep-27th-2021">
+<h1>Sep 27th, 2021<a class="headerlink" href="#sep-27th-2021" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation</strong>: Figures <br></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">orange</span><span class="p">,</span> <span class="n">blue_grey</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># set style &amp; no interpolalation</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+<span class="c1"># tmp &amp; extras dir</span>
+<span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
+<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
+<span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
+<span class="n">lfr_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Documents/workspaces/lfr/binary_overlapping&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># GitHub</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">load_allen</span><span class="p">,</span> <span class="n">make_tree_graph</span>
+<span class="kn">from</span> <span class="nn">register.parcellation</span> <span class="kn">import</span> <span class="n">Parcellation</span>
+<span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="n">Hierarchical</span>
+<span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.svinet</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.group</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.lfr</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
+<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
+
+<span class="c1"># warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1135</span>
+<span class="n">figs_dir</span> <span class="o">=</span> <span class="s1">&#39;../../_extras/fig_sketches&#39;</span>
+<span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-8.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-7.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-3.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-2.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-6.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-1.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-5.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Phys-Analogy.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-4a.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-4b.pdf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'Fig-9.pdf'</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<section id="figure-1">
+<h2>Figure 1<a class="headerlink" href="#figure-1" title="Permalink to this headline">¶</a></h2>
+<section id="what">
+<h3>What:<a class="headerlink" href="#what" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Intro, experimental setup, overal approach, set the stage</strong></p>
+<hr class="docutils" />
+<p>Specifically, this figure shows the following:</p>
+<ul class="simple">
+<li><p>This study is about functional connectivity.</p></li>
+<li><p>Using simultaneous BOLD and <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> data from mice.</p></li>
+<li><p>Communicate how we define ROIs: somehwere in this figure there is a 3D rendering of ROIs.</p></li>
+<li><p>A very crude, big picture illustration of the algorithm used.</p>
+<ul>
+<li><p>Should emphasize: the main result of the algorithm is <span class="math notranslate nohighlight">\(\pi_i\)</span>. Illustrate what it means using an example ROI that has mixed membership</p></li>
+<li><p>Also it should be clear this is an explicit generative model of network edges.  More details how to show this below</p></li>
+</ul>
+</li>
+<li><p>At the end of this figure we are ready to see the main results.</p></li>
+</ul>
+</section>
+<section id="how">
+<h3>How:<a class="headerlink" href="#how" title="Permalink to this headline">¶</a></h3>
+<p>More details about how to achieve this:</p>
+<ul class="simple">
+<li><p>On top left there is a mouse cartoon, and somehow showing that we get BOLD as well as <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> data from same animals simultanesouly.  Brainstorming with Yale people can be helpful, and specially with this part of the figure.</p></li>
+<li><p>Then we show the timeseries are used to compute covariance matrix, which is thresholded to give us a binary graph that represents interactions in the brain.</p></li>
+<li><p>Once again, we emphasize that there are two data modalities throughout this study:</p>
+<ul>
+<li><p>BOLD will be shown with Crimson, or Dark Red, or Copper color.</p></li>
+<li><p><span class="math notranslate nohighlight">\(Ca^{2+}\)</span> will be shown with Green that reminds us about the fluorescence.</p></li>
+</ul>
+</li>
+<li><p>These binarized graphs go into the algorithm as inputs.  The algorithm then tries to explain the links (or non links) with an explicit generative model.</p></li>
+<li><p>The most important things about the algorithm are visualized:</p>
+<ul>
+<li><p>First, some how we show every ROI is allowed to belong to more than one communities: this is the main message that everyone should immediately see from this figure.</p></li>
+<li><p>Therefore, the membership vector is like a die (each ROI has its own die, and the algorithm returns a bad of dice for the whole brain)</p></li>
+<li><p>Generative process:</p>
+<ul>
+<li><p>(a) roll die for <span class="math notranslate nohighlight">\(i\)</span> (i.e. sample from <span class="math notranslate nohighlight">\(\pi_i\)</span>)</p></li>
+<li><p>(b) roll die for <span class="math notranslate nohighlight">\(j\)</span> (i.e. sample from <span class="math notranslate nohighlight">\(\pi_j\)</span>)</p></li>
+<li><p>(c) if you get the same answer then there is a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>At the end of the figure, we somehow communicate that we run the algorithm and receive two bags of dice, one for each data modality.  Then the reader will be ready to see in the next figure how these bags of dice are distributed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-1.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-1.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-2">
+<h2>Figure 2<a class="headerlink" href="#figure-2" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3>What:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Main result: mouse FC is significantly overlapping</strong></p>
+<hr class="docutils" />
+<p>This figure shows:</p>
+<ul class="simple">
+<li><p>The resulting overlapping communities (how they look like on cortex and subcortex) and also the distribution of membership values.</p></li>
+<li><p>Also, to emphasize this is a link communituy, there is a mouse brain on which there are some nodes and the links are colored according to the disjoint approximation.  One for each data modality. This part is inspired by the main figure in Blei PNAS.</p></li>
+<li><p>There are 4 bins spanning (0.2, 1.0).  The last bin has special meaning.</p></li>
+<li><p>I think this figure should have a subfigure specially emphasizing the last bin.</p></li>
+<li><p>I propose plotting the bootstrapped distribution of the logit transformed version of the last bin.</p></li>
+</ul>
+</section>
+<section id="logit-transform-of-last-bin">
+<h3>Logit transform of last bin:<a class="headerlink" href="#logit-transform-of-last-bin" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The last bin shows proportion of nodes that have a membership value of 0.8 or larger in a given community.  Let us call this number <span class="math notranslate nohighlight">\(\theta_{k, (0.8, 1]}\)</span>.  We have <span class="math notranslate nohighlight">\(\theta_{k, (0.8, 1]} \in (0, 1)\)</span>, since proportions cannot be negative or greater than one.</p></li>
+<li><p>Now consider the logit transformed version of this number: <span class="math notranslate nohighlight">\(u = \text{logit}(\theta) = \log(\frac{\theta}{1 - \theta}).\)</span></p></li>
+<li><p>One can show that <span class="math notranslate nohighlight">\(\theta \in (0, 1)\)</span> implies <span class="math notranslate nohighlight">\(u \in (-\infty, \infty)\)</span></p></li>
+<li><p>A t-test now makes a lot more sense for <span class="math notranslate nohighlight">\(u\)</span> rather than <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
+<li><p>Thus, we can test for significante in a more <strong>proper</strong> way.  I’m expecting to get ridiculously small p-values, indicating solid evidence for overlap.</p></li>
+<li><p>I think it would be useful to just throw in a few values from LFR showing that there is a nice correspondence between the distribution of last bin values with the amount of ground truth overlap. Although, this would reduce the coherence of this figure so I’m not sure.  Any thoughts on this?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-2.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-2.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-3">
+<h2>Figure 3<a class="headerlink" href="#figure-3" title="Permalink to this headline">¶</a></h2>
+<section id="id2">
+<h3>What:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Comparison to baseline graphs</strong> <br>
+Addressing: what if these results are an artifact of the algorithm used?</p>
+<hr class="docutils" />
+<p>First we define the baseline models used:</p>
+<ol class="simple">
+<li><p>Well known <em><strong>LFR</strong></em> graphs with controllable amounts of overlap.</p></li>
+<li><p>Well known <em><strong>Config</strong></em> model, and less well known <em><strong>Clustered Config</strong></em> model.</p></li>
+</ol>
+<p>Then, these baselines are used to make the following claims:</p>
+<ul class="simple">
+<li><p>The algorithm used is pretty good in what we ask it to do: it detects the correct amount of overlap in LFR graphs.</p></li>
+<li><p>How does topology of the real graph contribute to this overlap?  Is it the degree distribution, or is it the clustering coefficient that’s driving this?</p></li>
+<li><p>Would randomizing the graph topology change the results? The answer is yes.</p>
+<ul>
+<li><p>We see that Config shows more overlap than the real model, and Clust-Config shows less overlap.</p></li>
+<li><p>Thus, we conclude that the real graph has a nontrivial topology (i.e. wiring between nodes) that leads to the way things are organized.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="more-details-on-how-to-achieve-this">
+<h3>More details on how to achieve this:<a class="headerlink" href="#more-details-on-how-to-achieve-this" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First, we introduce LFR.  On the top left corner of the figure there are two represntative adjacency matrices for LFR graphs: one totally disjoint, and the other overlapping. This immediately gives the impression why we use them to test our claims.</p></li>
+<li><p>Next, we talk about the randomized baselines.  There is a bar plot showing that Config and Config-Clust are good baselines: they have the same degree distribution like the real graph, and the clustered version has the same clustering coefficient (includes bootstrap + significance testing).</p></li>
+<li><p>Therefore, any difference we see between these random baselines and the real one must be due to the nontrivial topology of the real one.</p></li>
+<li><p>In Fig 2 the focus was on communities (we plotted the membership distributions for communities). Here the focus is primarily on nodes.</p></li>
+<li><p>We already showed that the communities are all significantly overlapping.  What about the nodes?  How many of them have mixed-memberships, and how many only like to belong to a single community?</p></li>
+<li><p>To this end, we define the maximum membership value for each node: <span class="math notranslate nohighlight">\(x_i := \max_{k} (\pi_{ik}).\)</span></p></li>
+<li><p>This is an interesting number.  It will tell us to what extent is a node overlapping or disjoint.</p></li>
+<li><p>The membership values are bounded and they add up to one.  In other words, <span class="math notranslate nohighlight">\(\pi_{ik} \in (0, 1)\)</span> for all <span class="math notranslate nohighlight">\(k\)</span>, and <span class="math notranslate nohighlight">\(\sum_k \pi_{ik} = 1\)</span>.  This implies <span class="math notranslate nohighlight">\(x_i \in (1/k, 1)\)</span>.</p></li>
+<li><p>For a graph with <span class="math notranslate nohighlight">\(N\)</span> nodes, there are <span class="math notranslate nohighlight">\(N\)</span> numbers <span class="math notranslate nohighlight">\(\{x_i : i = 1, \dots, N\}\)</span>.  We plot the distribution of these numbers per graph, and compare to LFR, as well as random baselines.</p></li>
+<li><p>We see that for LFR with no overlap all <span class="math notranslate nohighlight">\(x_i\)</span> are greater than <span class="math notranslate nohighlight">\(0.8\)</span>.  And there is a nice gradient of increased density in lower values, as we crank up the amount of overlap.</p></li>
+<li><p>I suggest using an Empirical CDF (ECDF) plot along with showing just the density of <span class="math notranslate nohighlight">\(x_i\)</span>. This visualization aids the readers in seeing the truth: that at least half of the nodes in mouse FC are overlapping.  Hence, a disjoint approach does not do justice.</p></li>
+<li><p>The fact that <span class="math notranslate nohighlight">\(x_i \in (1/k, 1)\)</span> is interesting.  In the limit of <span class="math notranslate nohighlight">\(k = 1\)</span>, all nodes are forced to be disjoint and belong to the one community: the entire network.</p></li>
+<li><p>We can use this oppourtinity to test our results by varying <span class="math notranslate nohighlight">\(k\)</span>.  This way, we can better understand how the proportion of overlapping nodes depends on the choice of <span class="math notranslate nohighlight">\(k\)</span>. Looking at the two extreme limits of <span class="math notranslate nohighlight">\(k = 1\)</span> and <span class="math notranslate nohighlight">\(k \to \infty\)</span> is informative here, but so is just plotting the proportion detected as disjoint as a function of <span class="math notranslate nohighlight">\(k\)</span>.  Is there a robust plateauing effect here?</p></li>
+<li><p>Once again, we show that our results make sense on LFR graphs, therefore, our claim will be strong.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-3.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-3.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-4">
+<h2>Figure 4<a class="headerlink" href="#figure-4" title="Permalink to this headline">¶</a></h2>
+<section id="id3">
+<h3>What:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Systematic comparison of results for BOLD and <span class="math notranslate nohighlight">\(Ca^{2+}\)</span></strong><br>
+Here: only at the adjacency matrix and graph level</p>
+<hr class="docutils" />
+<section id="edit-sept-27th">
+<h4>Edit Sept 27th:<a class="headerlink" href="#edit-sept-27th" title="Permalink to this headline">¶</a></h4>
+</section>
+<p>I think Fig 4 hurts the coherence and smooth flow of the paper.  The content discussed here can be its own paper, or contribute as additinal analysis in a future paper.  I still left it here and didn’t take it out to get feedback.</p>
+<ul class="simple">
+<li><p>Ok, so far in 3 figs we have established:</p>
+<ol class="simple">
+<li><p>What this study is about, big picture goals.</p></li>
+<li><p>Characterizing overlapping communities.</p></li>
+<li><p>Solid evidence that mouse FC graph is overlapping in a nontrivial way: <strong>justification</strong> for using an overlapping approach for the <strong>rest of the study</strong>.</p></li>
+</ol>
+</li>
+<li><p>Now it is time to look at the two data modaliteis carefully to find out in what ways they are similar and different.</p></li>
+<li><p>I think this is an excellent opportunity to study the differences and similarities between the two modalities at the network level only, and benchmark things. This will be useful in the future when we starts at the direct time series level to study dynamic FC.</p></li>
+<li><p>Here we want to address a simple question: what aspects of our results is present/valid for both Ca and BOLD, and what parts differ in what ways.</p></li>
+</ul>
+</section>
+<section id="compare-covariance-matrices">
+<h3>1. Compare covariance matrices:<a class="headerlink" href="#compare-covariance-matrices" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First off, let’s look at the covariance matrices.  Each element <span class="math notranslate nohighlight">\(w_{ij}\)</span> is correlation between time series recorded from <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p>If we restrict our analysis to the ROIs that are present in 2d Ca space, then we can directly compare things between the two.</p></li>
+<li><p>Why compare adjacency matrices?  Linear correlations are informative about the interactions going on in the system.  We don’t have a good theory (any theory) to understand these correlations properly, but at least we can see if we get the same structure from both data modalities.</p></li>
+<li><p>Rank correlation betweeen the two covariance matrices can be used to study similarity, and specially, which edges are most similar across datasets, and which edges are most dissimilar.  Is this due to something interesting, or just noise, or other errors in data processing?</p></li>
+<li><p>Rank correlation because global signal regression shifts distribution of correlations quite a lot.</p></li>
+<li><p>It is important to make comparisons at different frequency bands.  The adjacency matrix is well defined for the raw signals as wells as bandpassed ones.  How does this number (similarity of adj matrices) vary as a function of bandpassing?</p></li>
+</ul>
+</section>
+<section id="compare-graph-topologies-thresholded">
+<h3>2. Compare graph topologies (thresholded)<a class="headerlink" href="#compare-graph-topologies-thresholded" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>It is interesting to look at graph topology at different thresholds.</p></li>
+<li><p>Compare graph topologies at different thresholds, for <span class="math notranslate nohighlight">\(Ca^{2+}\)</span>, BOLD,  but also within the same data modality but between-subject, within-same-subject and so on. There are many interesting combinations, this will become clearer later.</p></li>
+<li><p>At each level of this figure, the within-subject, and within-session similarities are used as baseline comparison.</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>How:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>I don’t have a clear plan about how exactly to do this yet, but here are some rough ideas.</p></li>
+<li><p>For topological distance, I like to use Network Portrain Divergence. It’s based on solid information thoeretic principles and shows reliable results (I was happy last time i tried it).  Might change my mind later.</p></li>
+<li><p>The adjacency matrices can be directly compared in Fourier domain.  Each frequency has a non-negative contribution to each element of the adjacency matrix <span class="math notranslate nohighlight">\(w_{ij}\)</span>.</p></li>
+<li><p>By studying this problem in the Fourier domain, we can learn whether we gain nontrivial amount of information about the underlying dynamics by using <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> data (I am certain we do, but have to quantify it and provide evidence).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-4a.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-4a.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-4b.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-4b.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-5">
+<h2>Figure 5<a class="headerlink" href="#figure-5" title="Permalink to this headline">¶</a></h2>
+<section id="id5">
+<h3>What:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Comparing our results to disjoint results</strong><br />
+Including the recently published ones about mouse FC</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The goal is to show we recover whatever disjoint results you can think of: be it existing results by other labs that have used non-overlapping approaches, or application of disjoint clustering algorithms directly on the time series data.</p></li>
+<li><p>Shows that the argmax, disjoint limit of our results reduces to existing results.</p></li>
+<li><p>Also, compare to hierarchical clustering results, which I already have shown we get very similar community structures.</p></li>
+<li><p>Just like every other figure, we have both BOLD and <span class="math notranslate nohighlight">\(Ca^{2+}\)</span>.</p></li>
+<li><p>This figure includes comparison of BOLD with <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> at the community structure level.  Maybe this should be Fig 4, and 4 should be 5?</p></li>
+</ul>
+</section>
+<section id="id6">
+<h3>How:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>At the disjoint approxmination level, Dice coefficient will be used to quantify similarity scores.</p></li>
+<li><p>Specifically, I want to download the <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0896627320308898">DMN mask published last year</a>.  They define DMN by applying ICA and choosing two thresholds.</p></li>
+<li><p>The interesting thing is that we compare between:</p>
+<ul>
+<li><p>The disjoint limit of our overlapping results (argmax): a <strong>stochastic</strong> algorithm that acts on the interaction graph.</p></li>
+<li><p>Recent ICA results: is simple <strong>generative</strong> model on time series.</p></li>
+<li><p>Hierarchical clustering (Ward’s Linkage): dumb, <strong>brute-force</strong>, agglomerative approach also on time series.</p></li>
+</ul>
+</li>
+<li><p>If they all give the same answer, then we can be more confident about robustness of our results.  Yet another validation for our overlapping philosophy. That is, overlapping mindset gives you what other algorithms give, plus way more than that: dense memberships.</p></li>
+<li><p>The comparison between BOLD and <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> can be made at several levels:</p>
+<ol class="simple">
+<li><p>Dice coefficient for argmax approximation.</p></li>
+<li><p>Dot product between membership vectors</p></li>
+</ol>
+</li>
+<li><p>Again, between-subject, and same-subject but between-session numbers will be used as baselines to make sense of these quantities.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-5.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span> <span class="o">*</span> <span class="mf">1.02</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="867.0"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-5.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-6">
+<h2>Figure 6<a class="headerlink" href="#figure-6" title="Permalink to this headline">¶</a></h2>
+<section id="id7">
+<h3>What:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Study of node entropies</strong></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Here we focus on node entropies: a quantity that our overlapping algorithm provides us, but disjoint ones do not.</p></li>
+<li><p>In the previous figure we showed that existing results in the literature can be obtained as a special case of our approach.</p></li>
+<li><p>Now, in this figure the goal is to show what else we can learn about the brain by using an overlapping approach, that is missing in a disjoint parcellation.</p></li>
+<li><p>In network science literature <a class="reference external" href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.77.016107">people call this bridgeness</a>. A reg plot showing bridgeness vs entropy is useful to have at some corner: shows that they literally are the same thing.  I did this before, I got spearman <span class="math notranslate nohighlight">\(\rho \approx 0.98\)</span> between the two quantities.</p></li>
+<li><p>The entropy values are visualized on the cortex, for both <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> and BOLD.</p></li>
+<li><p>Entropy-Degree cartography map reveals interesting structures that would be burried down if we used simple centrality measures.</p></li>
+<li><p>The entropy exis adds more info that is not captured by hubness or eigenvecgor centrality or all the other rather nonsensical measures people have talked about in FC literature.</p></li>
+<li><p>Also show <a class="reference external" href="https://cs.stanford.edu/people/jure/pubs/communities-pieee14.pdf">something like fig 2 here</a>, and say that both types of overlap are present in our data:</p>
+<ol class="simple">
+<li><p>Dense overlap: high-degree / high-entropy,</p></li>
+<li><p>Sparse overlap: low-degree / high-entropy.</p></li>
+</ol>
+</li>
+<li><p>To do this plot represntative parts of adjacency matrix for both dense and sparse overlaps. Yes they both exist in our data.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-6.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-6.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-7">
+<h2>Figure 7<a class="headerlink" href="#figure-7" title="Permalink to this headline">¶</a></h2>
+<section id="id8">
+<h3>What:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Relationship between entropy and anatomical connectome</strong><br>
+Possible result: why certain nodes have high entropies?</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Obvious intuition about high entropy nodes: they act as coordinators in the brain.  They talk a little bit to a lot of other regions.  Therefore, they will have a little bit of correlation with many other regions.</p></li>
+<li><p>If this is true, then anatomical hubs or connector hubs will be more likely coincide with functional high entropy nodes.</p></li>
+<li><p>A reg plot of anatomical degree and functiona entropy should reveal this relationship if it exists.</p></li>
+<li><p>Here it would be useful to have a comparison between results obtained from other overlapping algorithms:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0018961">OSLOM</a> is a good one (highly cited)</p></li>
+<li><p><a class="reference external" href="https://cs.stanford.edu/people/jure/pubs/communities-pieee14.pdf">Community-Affiliation Graph Model (AGM)</a> is good</p></li>
+<li><p><a class="reference external" href="https://www.nature.com/articles/s41593-020-00719-y">Edge-centric FC</a></p></li>
+</ol>
+</li>
+<li><p>Edge FC predicts high entropy for visual cortex and low entropy for association areas, while SVINET and the other algorithms predict the opposit.  Which prediction better captures the underlying truth?</p></li>
+<li><p>A reg plot beteen anatomical degree and entropy as estimated by all these algorithms shall reveal this.  Which reg plot has a nonzero positive slope?</p></li>
+<li><p>I think the motivation behind Edge FC algorithm is nice and respectable, but something must be horribly wrong. Otherwise, it wouldn’t have made such nonesense predictions.</p></li>
+<li><p>I think it is important to examine this in Fig 7.  That paper got into nature neurosceince so people need to know if it’s actually nonesense.  Maybe I judge too harshly, but this is something we can test.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-7.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-7.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-8">
+<h2>Figure 8<a class="headerlink" href="#figure-8" title="Permalink to this headline">¶</a></h2>
+<section id="id9">
+<h3>What:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Define and present a node similarity measure, and more</strong><br>
+relationship between our findings and FC gradients</p>
+<hr class="docutils" />
+<p>This figure has several goals.  First, it wants to communicate that the question of community finding is not only about finding tightly knit subgraphs.  It is more than that.  From <a class="reference external" href="https://jmlr.org/papers/v18/16-480.html">this paper</a>:</p>
+<blockquote>
+<div><p>From a more general point of view, community structures may also refer to groups of vertices that connect similarly to the rest of the graphs without having necessarily a higher inner density.</p>
+</div></blockquote>
+<p>How does one find <em><strong>groups of vertices that connect similarly</strong></em> to the rest of the graph?  Let me define a node similarity measure that is freely available to us as a side product of SVINET.</p>
+</section>
+<section id="define-a-node-similarity-measure">
+<h3>Define a node similarity measure:<a class="headerlink" href="#define-a-node-similarity-measure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The algorithm is built on the idea that membership values can be used to infer whether two nodes will be linked or not.</p></li>
+<li><p>For aligned <span class="math notranslate nohighlight">\(\pi_i\)</span> and <span class="math notranslate nohighlight">\(\pi_j\)</span> there is a higher chance of drawing the same community indicator.  This means a higher chance of having a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p>Express this mathematically by defining <span class="math notranslate nohighlight">\(Y_{ij} = \sum_k \pi_{ik} \pi_{jk}\)</span> (in the full model this is a weighted sum <span class="math notranslate nohighlight">\(Y_{ij} = \sum_k \beta_k \pi_{ik} \pi_{jk}\)</span>, where <span class="math notranslate nohighlight">\(\beta_k\)</span> is community strenght for different <span class="math notranslate nohighlight">\(k\)</span>).</p></li>
+<li><p>This quantity can be interpreted as a node similarity measure, because:</p>
+<ul>
+<li><p>By definition, <span class="math notranslate nohighlight">\(Y_{ij}\)</span> is the probability for existence of a link between <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+<li><p>Take <span class="math notranslate nohighlight">\(i\)</span>-th row of this matrix and call it <span class="math notranslate nohighlight">\(Y_i\)</span>. This vector essentially has dense information about likelihood of node <span class="math notranslate nohighlight">\(i\)</span> connecting to every other node in the graph.</p></li>
+<li><p><em><strong>Main insight</strong></em>: if two nodes <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are <strong>similar</strong>, then they will have a similar <span class="math notranslate nohighlight">\(Y_a\)</span> and <span class="math notranslate nohighlight">\(Y_b\)</span>.  In other words, the way you connect to everybody else defines who you are.</p></li>
+<li><p>If the way <span class="math notranslate nohighlight">\(a\)</span> connects to everybody esle is very similar to the way <span class="math notranslate nohighlight">\(b\)</span> connects to everybody else, then they are similar and they will most likely be in the same community.</p></li>
+<li><p>Therefore, saying <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> similar is equivalent to <span class="math notranslate nohighlight">\(\cos(Y_a, Y_b)\)</span> is large.</p></li>
+<li><p>We can think of <span class="math notranslate nohighlight">\(Y_{ij}\)</span> as a questionare in a social science study. If two people answer similarly to a large set of questions, then chances are they are very similar people and do very similar things.</p></li>
+<li><p>Another way is to think about each element of <span class="math notranslate nohighlight">\(Y_i\)</span> as a perturbation study. I poke something in <span class="math notranslate nohighlight">\(N - 1\)</span> different ways and measure its responses in these <span class="math notranslate nohighlight">\(N - 1\)</span> experiments.  I can use these measurements to find out which of these things (nodes) are similar.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="t-sne-embedding-of-y">
+<h3>t-SNE embedding of <span class="math notranslate nohighlight">\(Y\)</span>:<a class="headerlink" href="#t-sne-embedding-of-y" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Since our network is structured, there will be lots of redundacy in <span class="math notranslate nohighlight">\(Y_i\)</span> profiles.</p></li>
+<li><p>Take this similarity matrix <span class="math notranslate nohighlight">\(Y\)</span> and apply t-SNE on its rows <span class="math notranslate nohighlight">\(Y_i\)</span> so that we can visualize the 2D embedded versions.  Here by embedding I mean take the <span class="math notranslate nohighlight">\(N\)</span> dimensional vector <span class="math notranslate nohighlight">\(Y_i\)</span> and embed it in a 2D space.  This point in 2D is represntative of the whole thing. I did this and found very interesting organization among these 2D projected similarity measures. Please see <a class="reference external" href="#brief-t-sne-before-moving-on">this figure for example</a>.</p></li>
+<li><p>In that figure we see an arch which has visual community in one end (orange), and somatosensory on the other end (green).  They both converge in the middle upon DMN (blue, red and purple).  On the other side we have our subcortical regions (yellow).</p></li>
+<li><p>This result is quite robust to the choice of random seed and perplexity (a tunable parameter in t-SNE).  Therefore, I believe it is capturing something real and important.</p></li>
+<li><p>From this approach, I think I accidentally stumbled upon something that people call <strong>sensory-to-transmodal</strong> dimension in FC gradient literature.</p></li>
+<li><p>I belive this is rich with insights, but I haven’t had time to explore properly.</p></li>
+<li><p>Which brings me to the next main point of Fig 8.</p></li>
+</ul>
+</section>
+<section id="relationship-between-our-findings-and-fc-gradients">
+<h3>Relationship between our findings and FC gradients<a class="headerlink" href="#relationship-between-our-findings-and-fc-gradients" title="Permalink to this headline">¶</a></h3>
+<p>Specifically: how are network overlap patterns and entropy maps related to FC gradients?</p>
+<ul class="simple">
+<li><p>Gradient approach is getting a lot of momentum recently. I like it and want to contribute to this momentum.   From <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1053811920310132">this paper</a>:</p></li>
+</ul>
+<blockquote>
+<div><p>Large-scale cortical gradients were recently put forward as an analytic tool to capture the intrinsic dimensions of cortical organization (Haak et al., 2017; Huntenburg et al., 2018; Margulies et al., 2016). In contrast to parcellation approaches, which emphasize the <strong>discreteness</strong> of cortical regions or networks (Glasser et al., 2016; Yeo et al., 2011), cortical gradients focus on the significance of <strong>overarching spatial patterns</strong> in cortical features.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>This way of thinking is interesting, and aligned with our big picture goals.  Therefore I definitely want to have a figure related to gradints.  Possibly in the same figure talking about <span class="math notranslate nohighlight">\(Y_{ij}\)</span> and t-SNE stuff.</p></li>
+<li><p>Since I don’t know the literature very well I will refrain from discussing specifics here and now.</p></li>
+<li><p>The intuitions (e.g. discussion about sensory-to-transmodal) make sense to me.</p></li>
+<li><p>This seems related to the t-SNE embedding of node similarities as described above.</p></li>
+<li><p>Things are not crystal clear in my mind yet, but I’m sure there is an interesting correspondense and we should talk about it.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-8.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-8.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="figure-9">
+<h2>Figure 9<a class="headerlink" href="#figure-9" title="Permalink to this headline">¶</a></h2>
+<section id="id10">
+<h3>What:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<p><strong>Functional node similarities vs. physiological distance</strong><br>
+Trade off between integration and flow of information and metabolic cost of long-range connections.  Relationship to node entropies?</p>
+<hr class="docutils" />
+<p>Once again, this figure aims to ground and relate our functional findings (overlap, node entropies, and node similarity patterns <span class="math notranslate nohighlight">\(Y_{ij}\)</span>) to other approaches in studying large-scale brain organization.</p>
+<ul class="simple">
+<li><p>We defined <span class="math notranslate nohighlight">\(Y_{ij}\)</span> in the previous fig, looked at its t-SNE embedding and compared it to FC gradients.</p></li>
+<li><p>We also have a new node centrality measure: node entropies that quantify membership (functional) diversity of brain regions.</p></li>
+<li><p>An alternative way of thinking about large scale brain organization is to look at physiological distance between regions in conjunction to functional distance.</p>
+<ul>
+<li><p>Physiological distance: Euclidean distance in real space between regions.</p></li>
+<li><p>Functioanl similarity: defined as <span class="math notranslate nohighlight">\(\cos(Y_i, Y_j)\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Having long-range connections is costly, but in return you get fast information integration. Hence the trade-off.</p></li>
+<li><p>This is a genetic hyper-prior that primes certain regions to become connectors or coordinators among other, more specialized units (e.g. vision). Another way of trying to understand why some nodes have high entropy.</p></li>
+<li><p>I expect high entropy nodes will be more represented among regions that connect to physiologically distant regions more frequently. But in general, is there a meaningful relationship between functional similarity as defined by <span class="math notranslate nohighlight">\(Y_{ij}\)</span> and physiological distance?</p></li>
+<li><p>Of special interest are regions that are anatomically far away, but have high likelihood of having link (i.e. large <span class="math notranslate nohighlight">\(Y_{ij}\)</span>.  Do these coincide with high entropy regions? <a class="reference external" href="https://www.pnas.org/content/109/15/5868">See this ref</a>.</p></li>
+</ul>
+</section>
+<section id="what-about-using-w-ij-as-similarity-measure">
+<h3>What about using <span class="math notranslate nohighlight">\(W_{ij}\)</span>  as similarity measure?<a class="headerlink" href="#what-about-using-w-ij-as-similarity-measure" title="Permalink to this headline">¶</a></h3>
+<p>One question that might arise here is why not just look at edge weights <span class="math notranslate nohighlight">\(W_{ij}\)</span>? Why go this extra mile and define <span class="math notranslate nohighlight">\(Y_{ij}\)</span>?  I will argue that generative models learn a general strcuture of the system given observable data. If done properly, this structure is more general and is more interesting and informative compared to a simple instance or draw from the distribution (i.e. <span class="math notranslate nohighlight">\(W_{ij})\)</span>.</p>
+<p>The optimization procedure in Blei algorithm is as follows. They first subsamples parts of graph at a time and updates parameters iteratively based on these subsamples. The technical term here is that they define noisy gradients estimated from the subsample that are unbiased estimates of the true gradients. In face of noisy, incomplete data, generative models are forced to learn a general structure in data that enables them to generalize well (to the best of the model’s knowledge at each iteration).  Hence, noise here is not a bug but a feature. A related (but different) intuition is discussed best in <a class="reference external" href="https://www.jmlr.org/papers/v11/vincent10a.html">this paper</a>, but it’s beyond the scope of our paper.  See figure 8 for instance.</p>
+<p>This is a deep insight about generative models and the role of noise in learning which we don’t have to go into.  But I think we should discuss the basic intuition that the model is forced to learn not only a point estimate that exactly explains the data (i.e models that are based on maximum likelihood estimation), but also it allows for generalization in the immediate vicinity of that point which makes <span class="math notranslate nohighlight">\(Y_{ij}\)</span> more useful and informative than <span class="math notranslate nohighlight">\(W_{ij}\)</span> which is just one draw from the whole generative distribution.</p>
+<p>The model infers a general structure that is not fully present in that sample of the adjacency matrix <span class="math notranslate nohighlight">\(W_{ij}\)</span>, even tho it’s objective is to predict the links.  I have looked at the relationship between <span class="math notranslate nohighlight">\(Y_{ij}\)</span> and <span class="math notranslate nohighlight">\(W_{ij}\)</span> empirically.  They are correlated but different. My descroption here is probably quite poor, but will try to find how to make this clearer.</p>
+<p>In any case, the motivation remains unchanged: we should use <span class="math notranslate nohighlight">\(Y_{ij}\)</span> as similarity measure and compare it to other quantities such as physiological distance, anatomical degree centrality and so on. In the combinations of these quantities interesting structures might be revealed as other cartography type of subplot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Fig-9.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Fig-9.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+</section>
+<hr class="docutils" />
+<section id="intuition-figure">
+<h2>Intuition figure:<a class="headerlink" href="#intuition-figure" title="Permalink to this headline">¶</a></h2>
+<p>I’m thinking that we should have a figure that shows the intuition behind why overlapping should be the default mindset when it comes to brain rather than disjoint.</p>
+<p>An analogy from physics would help.  This extremely sharp separation of scales in physics is almost like a miracle.  It’s probably why elegenat math and symmetry based arguments work in the first place.  You don’t need to know about quarks that make up protons when you are trying to understand hydrogen atom.  You don’t need to know about atoms when you are trying to understand motion of a ball thrown on the surface of earth. This is not the case in the brain, and we provide evidence for it.</p>
+<p>Consider two figures side by side:</p>
+<ol class="simple">
+<li><p>In one figure rigid bodies like balls are bouncing off of each other.  Since they are ridid in this energy scale, the correlation in phase space trajectory of each ball’s constituent atoms will be a 1 among each other (i.e. fully connected graph).  Therefore, each ball can be thought of a disjoint community in this energy level.</p></li>
+<li><p>In contrast, there is a figure showing interaction of non rigid bodies (such as two galaxies colliding).  The stars in one galaxy can migrate to the other one in the course of such collisions.  Therefore, they change their memberhsip.  In the time-averaged, static approximation of these interactions, those stars would be in the overlap.  In contrast, consider stars that happened to be far from the collision center and were not as affected by the impact.  These starts will remain in their current galaxy and maintain a disjoint type of membership vector throughout.</p></li>
+</ol>
+<p>Thinking about brain communities as fixed and disjoint is implicitly equivalent to thinking of these networks as rigid bodies colliding.  But in fact the reality is mostly like inelastic collision.</p>
+<p>We have not yet earned the right to think about the brain as if there is also a sharp separation of scales there as well.  In fact, most likely there is a continuum in the brain and we will have to abandon these old ways of thinking.</p>
+<p>So this intuition figure somehow tries to communicate the following:</p>
+<ul class="simple">
+<li><p>In physics there is sharp separation of scales.</p></li>
+<li><p>Schrodinger equation works well on hydrogen atom, doesnt need to know about quarks.</p></li>
+<li><p>Similarly, in thermodynamic limit <span class="math notranslate nohighlight">\(N \to \infty\)</span> we <em>usually</em> don’t need Schrodinger’s equation and classical thermodynamics or just Newton’s equation are sufficient.</p></li>
+<li><p>In neuroscience most likely there is a continuum of scales rather than sharp discrete separation like in physics.</p></li>
+<li><p>Therefore, as a first step towards a better future in neuroscience research we must accept that things are complex (complicated?) and its ok for them to be complex (complicated?).</p></li>
+<li><p>After we embraced this, next we can think about how to make real progress.</p></li>
+<li><p>But we first need to correct our guiding philosophy.</p></li>
+</ul>
+<p>It’s difficult to discuss these things in a formal way, but I think we should at least have some toned-down version of this and also include a physics analogy. At least mention that <strong>when using disjoint approaches, you implicitely assume separation of scales exists in neuroscience</strong> (which we show it’s most likely not true).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Phys-Analogy.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Phys-Analogy.pdf"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<p>The general story of this paper is about large-scale functional organization of the mouse brain.  Specifically, within an overlapping community detection framework.  Another persistent theme throughout all of these figures is presense and comparison of both BOLD and <span class="math notranslate nohighlight">\(Ca^{2+}\)</span> data.  We first introduce overlapping approach as a superior framework, then we provide evidence for this claim.  Next, we use one of the products of this approach, node entropies, to learn new things about the brain that otherwise wouldn’t have been possible.</p>
+<hr class="docutils" />
+<p>The paper can be split into 2 different parts when it comes to progression of ideas.</p>
+<section id="first-half">
+<h3>First half:<a class="headerlink" href="#first-half" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This is about about providing evidence why we use overlapping, and why it’s a better philosophy to begin with.</p></li>
+<li><p>Extra effort is needed to do things in a Bayesian way properly.  Some people find this to be unnecessary.  Here we provide evidence that this way of thinking is interesting, and in fact, necessary.  At least when you are talking about a complex system like the brain.</p></li>
+<li><p>Science is more about characterizing uncertainty, than it is about putting names on things and calling it a day. Reality is seldom binary, except maybe in some physical systems where a sharp separation of scales exists.</p></li>
+</ul>
+</section>
+<section id="second-half">
+<h3>Second half:<a class="headerlink" href="#second-half" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>This is about using what the overlapping approach gives us, and profiting off of it. We can use it to characterize node entropies. Use node entropies along with degree centrality to tease apart differnt types of nodes and characterize different communities.</p></li>
+<li><p>We can study its relationship with other modalities (e.g. anatomical data) and try to find an explanation for existence of high entropy.</p></li>
+<li><p>We also compare our findings and our point of view with other interesting approaches out there. Quite frankly, I think the question of community detection is going to be obsolete in the near future because better <strong>ways of thinking</strong> are going to emerege.</p></li>
+<li><p>Let’s just do a good job and establish some results at this level of description and move on.</p></li>
+</ul>
+</section>
+</section>
+<section id="if-i-was-a-hypothetical-reader-of-this-paper">
+<h2>If I was a hypothetical reader of this paper:<a class="headerlink" href="#if-i-was-a-hypothetical-reader-of-this-paper" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I would find the first half to be trivial.  Why do these people want to show it’s overlapping?  Do we have to write a paper to show earth is moving around the sun, and not the other way around?  I thought Galileo already did that…</p></li>
+<li><p>The second half would be the most interesting part for me.  It’s speculative, exciting and is a step toward understanding the relationship between FC and SC, and also their relationship to multimodal gradients in the brain.</p></li>
+<li><p>So there is something for everyone.</p></li>
+</ul>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+<hr class="docutils" />
+<section id="sup-fig-candidates">
+<h2>Sup fig candidates:<a class="headerlink" href="#sup-fig-candidates" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Result of applying Louvain, Lieden, and other modularity maximization algorithms.  Show that (i) plateaus in the resolution-modularity plot indicate existence of robust communities, however cite the Clauset 2009 paper and talk about this degeneracy is a huge problem.  Thus, overlapping approach is helpful in that sense as well.  This fig has overlapping and non overlapping modularity performance reports too.</p></li>
+<li><p>Robustness of resutls to the choise of k (num communities) + showing how results depend on the chosie of k.</p></li>
+<li><p>How results depend on different choices of binarization threshold.</p></li>
+<li><p>Dependence on number of seeds (make a figure and show a plateauing effect).</p></li>
+<li><p>Different ROI definitions give same result.  This is just changing the n_roi parameter and showing the communities, and entropy map. They look similar, but with different resolutions.</p></li>
+<li><p>Robustness of results to ROI definition.  Eroded? Spheres? etc. This has a figure showing the distribution of ROI sizes, and shows that it is uniform.  Therefore, it leads to more robust results in cortex). Using allen ROI definitions lead to bad results (we need spatially homogeneous, at least for cortex).</p></li>
+<li><p>Discuss something about subcortical regions, and why it requires careful decision making.  This leads nicely to the next figure about e.g. Dorsal Striatum.</p></li>
+<li><p>Correlation patterns of <strong>dorsal striatum</strong> with everything else –&gt; thus the need to break it into many smaller regions(?). The question of <strong>correct</strong> labeling of regions is far from solved (and might not resolve ever).  So we can add some discussions about this and raise awareness about the issues.</p></li>
+<li><p>Also discussions about data spaces, how we register allen CCF to our 3D and 2D individual spaces.  We can show some of that info in supp figs (Eve and Francesca are writing a paper about this, so they can provide some figs).</p></li>
+</ul>
+<hr class="docutils" />
+<hr class="docutils" />
+</section>
+<hr class="docutils" />
+<section id="an-update-about-registration">
+<h2>An update about registration<a class="headerlink" href="#an-update-about-registration" title="Permalink to this headline">¶</a></h2>
+<p>I was using allen template image (left) but this wasn’t ideal.  It’s made using a technique called “serial Two-photon (STP) tomography” but there is another version using NISSL staining (mididle).  Xilin said they used this one, so I tried it and improved the quality of registration.</p>
+<p>I’m not sure, but suspect that the left-right asymmetry that I found in the visual cortex and in the left hemisphere in general could be due to bad registration.  Right now I’m working to finish this up and move on with all the other items.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">32</span><span class="p">))</span>
+
+<span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">template</span><span class="p">[:,</span> <span class="mi">40</span><span class="p">,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[:,</span> <span class="mi">40</span><span class="p">,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">[:,</span> <span class="mi">13</span><span class="p">,</span> <span class="p">:],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Allen main template</span><span class="se">\n</span><span class="s1">showing 0.1mm resolution here</span><span class="se">\n</span><span class="s1">serial two-photon (STP) tomography&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Allen histological template</span><span class="se">\n</span><span class="s1">also 0.1mm resolution</span><span class="se">\n</span><span class="s1">NISSL images registered to CCF&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Yale N162 MRI template (this is 0.2mm resolution)</span><span class="se">\n</span><span class="s1">Average over N = 162 animals&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-27-2021_39_0.png" src="../../_images/sep-27-2021_39_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>Left: Allen main template:</p>
+<ul>
+<li><p>Serial two-photon (STP) tomography.</p></li>
+<li><p>I used this to register fMRI data but Xilin told me NISSL is more suitable, has better contrast</p></li>
+</ul>
+</li>
+<li><p>Middle: Allen histological template:</p>
+<ul>
+<li><p>NISSL images in the same common coordinates.</p></li>
+<li><p>Now I’m redoing the registration using this.</p></li>
+<li><p>Already seeing some improvements.</p></li>
+</ul>
+</li>
+<li><p>Right: Yale MRI template:</p>
+<ul>
+<li><p>Average over N = 162 animals.</p></li>
+<li><p>This is before registration that’s why it looks so different.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="latest-results-with-subcortical">
+<h2>Latest results (with subcortical)<a class="headerlink" href="#latest-results-with-subcortical" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svinet</span> <span class="o">=</span> <span class="n">SVINET</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;sub-SLC&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">svinet</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">group</span><span class="p">[</span><span class="s1">&#39;pi_avg&#39;</span><span class="p">],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-27-2021_44_0.png" src="../../_images/sep-27-2021_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eh</span> <span class="o">=</span> <span class="n">entropy_expect_beta</span><span class="p">(</span><span class="n">gam_avg</span><span class="p">)</span>
+<span class="n">ehr</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">eh</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">eh</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">ehr</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">svinet</span><span class="o">.</span><span class="n">pi2arr</span><span class="p">(</span><span class="n">data2plt</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">cortex_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">data2plt</span><span class="p">),</span> <span class="n">vmax</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="n">data2plt</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdGy_r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;vmin=</span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">data2plt</span><span class="p">)</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">,  vmax=</span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">data2plt</span><span class="p">)</span><span class="si">:</span><span class="s2">0.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-27-2021_46_0.png" src="../../_images/sep-27-2021_46_0.png" />
+</div>
+</div>
+</section>
+<section id="compute-y-ij">
+<h2>Compute <span class="math notranslate nohighlight">\(Y_{ij}\)</span><a class="headerlink" href="#compute-y-ij" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">,</span> <span class="n">y_avg</span> <span class="o">=</span> <span class="n">node_sim_matrix</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">y_avg</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span><span style="font-weight: bold">))</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y_avg</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<section id="brief-t-sne-before-moving-on">
+<h3>Brief t-SNE before moving on<a class="headerlink" href="#brief-t-sne-before-moving-on" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.manifold</span> <span class="kn">import</span> <span class="n">TSNE</span>
+<span class="n">y_emb</span> <span class="o">=</span> <span class="n">TSNE</span><span class="p">(</span>
+    <span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">perplexity</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">random_state</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y_avg</span><span class="p">)</span>
+<span class="n">y_emb</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hemis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;R&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">svinet</span><span class="o">.</span><span class="n">n2l</span><span class="p">))</span>
+<span class="n">hemis</span><span class="p">[</span><span class="n">svinet</span><span class="o">.</span><span class="n">l_ids</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;L&#39;</span>
+
+<span class="n">cortex_subcortex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;Subcortex&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">svinet</span><span class="o">.</span><span class="n">n2l</span><span class="p">))</span>
+<span class="n">cortex_subcortex</span><span class="p">[[</span><span class="nb">str</span><span class="p">(</span><span class="mi">315</span><span class="p">)</span> <span class="ow">in</span> <span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">svinet</span><span class="o">.</span><span class="n">l2n</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;Cortex&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">),</span> <span class="s1">&#39;ticks&#39;</span><span class="p">)</span>
+
+<span class="n">_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">y_emb</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y_emb</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s1">&#39;partition&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">pi_avg</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+    <span class="s1">&#39;structure&#39;</span><span class="p">:</span> <span class="n">cortex_subcortex</span><span class="p">,</span>
+    <span class="s1">&#39;hemisphere&#39;</span><span class="p">:</span> <span class="n">hemis</span><span class="p">,</span>
+    <span class="s1">&#39;entropy&#39;</span><span class="p">:</span> <span class="n">eh</span><span class="p">,</span>
+    <span class="s1">&#39;entropy_rank&#39;</span><span class="p">:</span> <span class="n">ehr</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;partition&#39;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s1">&#39;hemisphere&#39;</span><span class="p">,</span>
+    <span class="n">markers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;L&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">},</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">svinet</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;partition&#39;</span><span class="p">,</span>
+    <span class="n">style</span><span class="o">=</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span>
+    <span class="n">markers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Cortex&#39;</span><span class="p">:</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;Subcortex&#39;</span><span class="p">:</span> <span class="s1">&#39;X&#39;</span><span class="p">},</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">svinet</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;partition&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="s1">&#39;entropy_rank&#39;</span><span class="p">,</span>
+    <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">svinet</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-27-2021_56_0.png" src="../../_images/sep-27-2021_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ncols</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">k</span> <span class="o">/</span> <span class="n">nrows</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mf">4.4</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="s1">&#39;ticks&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+        <span class="k">break</span>
+
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="n">y_emb</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="n">y_emb</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;hemisphere&#39;</span><span class="p">:</span> <span class="n">hemis</span><span class="p">,</span>
+        <span class="s1">&#39;structure&#39;</span><span class="p">:</span> <span class="n">cortex_subcortex</span><span class="p">,</span>
+        <span class="s1">&#39;strength&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pi_avg</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:],</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="p">})</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;strength&#39;</span><span class="p">,</span>
+        <span class="n">size</span><span class="o">=</span><span class="s1">&#39;strength&#39;</span><span class="p">,</span>
+        <span class="n">style</span><span class="o">=</span><span class="s1">&#39;structure&#39;</span><span class="p">,</span>
+        <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">160</span><span class="p">),</span>
+        <span class="n">palette</span><span class="o">=</span><span class="n">svinet</span><span class="o">.</span><span class="n">cmaps</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span>
+        <span class="n">s</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span>
+        <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="c1"># ax.set_xlim((ax.get_xlim()[0], 44))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower center&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">trim_axs</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-27-2021_59_0.png" src="../../_images/sep-27-2021_59_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/sep21"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="sep-25-2021.html" title="previous page">Sep 25th, 2021</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
