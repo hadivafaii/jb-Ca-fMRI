@@ -1,0 +1,2229 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Sep gaban-th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  February 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/feb21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/feb21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-12-2021.html">
+     February, 12th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-13-2021.html">
+     February, 13th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-16-2021.html">
+     February, 16th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-20-2021.html">
+     February, 20th 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  March 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/mar21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/mar21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-10-2021.html">
+     March 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-13-2021.html">
+     March 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-15-2021.html">
+     March 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-16-2021.html">
+     March 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-18-2021.html">
+     March 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-19-2021.html">
+     March 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-26-2021.html">
+     March 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-29-2021.html">
+     March 29th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  April 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/apr21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/apr21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-07-2021.html">
+     April 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-30-2021.html">
+     April 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  May 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-08-2021.html">
+     May 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-09-2021.html">
+     May 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-11-2021.html">
+     May 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-12-2021.html">
+     May 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-20-2021.html">
+     May 20th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-24-2021.html">
+     May 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-31-2021.html">
+     May 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  June 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jun21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jun21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-05-2021.html">
+     June 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-06-2021.html">
+     June 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-07-2021.html">
+     June 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-12-2021.html">
+     June 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-13-2021.html">
+     June 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-15-2021.html">
+     June 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-17-2021.html">
+     June 17th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-18-2021.html">
+     June 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-19-2021.html">
+     June 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-21-2021.html">
+     June 21st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-24-2021.html">
+     June 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-26-2021.html">
+     June, 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-29-2021.html">
+     June 29th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-30-2021.html">
+     June 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  July 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-01-2021.html">
+     July 1st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-09-2021.html">
+     July 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-11-2021.html">
+     July 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-31-2021.html">
+     July 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  August 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/aug21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/aug21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug21/aug-21-2021.html">
+     Aug 21st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  September 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/sep21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/sep21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-07-2021.html">
+     Sep 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-08-2021.html">
+     Sep 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-15-2021.html">
+     Sep 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-19-2021.html">
+     Sep 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-24-2021.html">
+     Sep 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-25-2021.html">
+     Sep 25th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sep-27-2021.html">
+     Sep 27th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  October 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/oct21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/oct21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-06-2021.html">
+     Oct 6th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/sep21/sep-25-2021-gaban.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/sep21/sep-25-2021-gaban.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/nb/sep21/sep-25-2021-gaban.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#test">
+   Test
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#establishement">
+   Establishement
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#affined">
+   Affined
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-do-indiv">
+   Now do indiv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#now-direct">
+   Now Direct
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <section id="sep-gaban-th-2021">
+<h1>Sep gaban-th, 2021<a class="headerlink" href="#sep-gaban-th-2021" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation</strong>: This has the most succesfull registration of Nissl to Yale N162 0.1 mm <br></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">myterial</span> <span class="kn">import</span> <span class="n">orange</span><span class="p">,</span> <span class="n">blue_grey</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># set style &amp; no interpolalation</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+
+<span class="c1"># tmp &amp; extras dir</span>
+<span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
+<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
+<span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
+<span class="n">lfr_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Documents/workspaces/lfr/binary_overlapping&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># GitHub</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">Allen</span>
+<span class="kn">from</span> <span class="nn">register.parcellation</span> <span class="kn">import</span> <span class="n">Parcellation</span>
+<span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="n">Hierarchical</span>
+<span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.svinet</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.group</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.lfr</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
+<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
+
+<span class="c1"># warnings</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">25</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.2 s, sys: 4.8 s, total: 12 s
+Wall time: 20.6 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;SyNAggro&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+    <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">],</span>
+    <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">],</span>
+    <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
+    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">kwargs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'SyNAggro'</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'syn_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'aff_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'n_seeds'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_1.png" src="../../_images/sep-25-2021-gaban_5_1.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.987587</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-1:   0%|                                     | 0/30 [00:00&lt;?, ?it/s] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_5.png" src="../../_images/sep-25-2021-gaban_5_5.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+type        SyNAggro
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.981961</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-2:   3%|▋                   | 1/30 [5:16:03&lt;152:45:39, 18963.44s/it] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_9.png" src="../../_images/sep-25-2021-gaban_5_9.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.974484</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-3:   7%|█▎                 | 2/30 [10:28:37&lt;146:32:13, 18840.47s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_13.png" src="../../_images/sep-25-2021-gaban_5_13.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        SyNAggro
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.962286</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-1:  10%|█▉                 | 3/30 [15:41:04&lt;140:58:55, 18797.62s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_17.png" src="../../_images/sep-25-2021-gaban_5_17.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.936319</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-2:  13%|██▌                | 4/30 [20:55:16&lt;135:54:54, 18819.03s/it]
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_21.png" src="../../_images/sep-25-2021-gaban_5_21.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.936449</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-3:  17%|███▏               | 5/30 [26:19:59&lt;132:21:07, 19058.70s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_25.png" src="../../_images/sep-25-2021-gaban_5_25.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.946395</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-1:  20%|███▊               | 6/30 [31:49:44&lt;128:42:11, 19305.49s/it] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_29.png" src="../../_images/sep-25-2021-gaban_5_29.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.956925</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-2:  23%|████▍              | 7/30 [37:06:20&lt;122:41:35, 19204.15s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_33.png" src="../../_images/sep-25-2021-gaban_5_33.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        SyNAggro
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.946528</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-3:  27%|█████              | 8/30 [42:14:41&lt;115:59:29, 18980.44s/it]
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_37.png" src="../../_images/sep-25-2021-gaban_5_37.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type        SyNAggro
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.960585</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-1:  30%|█████▋             | 9/30 [47:23:10&lt;109:51:37, 18833.19s/it] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_41.png" src="../../_images/sep-25-2021-gaban_5_41.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.982141</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-2:  33%|██████            | 10/30 [52:37:26&lt;104:40:04, 18840.22s/it] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_45.png" src="../../_images/sep-25-2021-gaban_5_45.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.979793</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-3:  37%|██████▉            | 11/30 [57:49:50&lt;99:16:43, 18810.70s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_49.png" src="../../_images/sep-25-2021-gaban_5_49.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type            SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric          sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.98143</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC05_ses-1:  40%|███████▌           | 12/30 [63:09:33&lt;94:37:10, 18923.89s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_53.png" src="../../_images/sep-25-2021-gaban_5_53.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type        SyNAggro
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.976346</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC05_ses-2:  43%|████████▏          | 13/30 [68:25:07&lt;89:22:39, 18927.03s/it] bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_5_57.png" src="../../_images/sep-25-2021-gaban_5_57.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "2aef1be5624646a7b9a53c873ebf2034", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Oct 03 :  This was 3 seeds, compare to 5 above ^</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_8_1.png" src="../../_images/sep-25-2021-gaban_8_1.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.989239</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-1:   0%|                                     | 0/30 [00:00&lt;?, ?it/s] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_8_5.png" src="../../_images/sep-25-2021-gaban_8_5.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.976612</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-2:   3%|▋                     | 1/30 [2:21:01&lt;68:09:43, 8461.52s/it] bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/sep-25-2021-gaban_8_9.png" src="../../_images/sep-25-2021-gaban_8_9.png" />
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "dd2f6ca7648444c28032e9fce8eede2e", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">anat</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">anat</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="n">tx_aff</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_space-CCF-3d_ants-Aff-init.mat&quot;</span>
+    <span class="n">tx_aff</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">tx_dir</span><span class="p">,</span> <span class="n">tx_aff</span><span class="p">)</span>
+    <span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">tx_aff</span><span class="p">)</span>
+    <span class="n">indiv_aff</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+    <span class="n">mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">indiv_aff</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">,  perf: </span><span class="si">{</span><span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-25-2021-gaban_16_0.png" src="../../_images/sep-25-2021-gaban_16_0.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_1.png" src="../../_images/sep-25-2021-gaban_16_1.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_2.png" src="../../_images/sep-25-2021-gaban_16_2.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_3.png" src="../../_images/sep-25-2021-gaban_16_3.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_4.png" src="../../_images/sep-25-2021-gaban_16_4.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_5.png" src="../../_images/sep-25-2021-gaban_16_5.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_6.png" src="../../_images/sep-25-2021-gaban_16_6.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_7.png" src="../../_images/sep-25-2021-gaban_16_7.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_8.png" src="../../_images/sep-25-2021-gaban_16_8.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_9.png" src="../../_images/sep-25-2021-gaban_16_9.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_10.png" src="../../_images/sep-25-2021-gaban_16_10.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_11.png" src="../../_images/sep-25-2021-gaban_16_11.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_12.png" src="../../_images/sep-25-2021-gaban_16_12.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_13.png" src="../../_images/sep-25-2021-gaban_16_13.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_14.png" src="../../_images/sep-25-2021-gaban_16_14.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_15.png" src="../../_images/sep-25-2021-gaban_16_15.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_16.png" src="../../_images/sep-25-2021-gaban_16_16.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_17.png" src="../../_images/sep-25-2021-gaban_16_17.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_18.png" src="../../_images/sep-25-2021-gaban_16_18.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_19.png" src="../../_images/sep-25-2021-gaban_16_19.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_20.png" src="../../_images/sep-25-2021-gaban_16_20.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_21.png" src="../../_images/sep-25-2021-gaban_16_21.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_22.png" src="../../_images/sep-25-2021-gaban_16_22.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_23.png" src="../../_images/sep-25-2021-gaban_16_23.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_24.png" src="../../_images/sep-25-2021-gaban_16_24.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_25.png" src="../../_images/sep-25-2021-gaban_16_25.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_26.png" src="../../_images/sep-25-2021-gaban_16_26.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_27.png" src="../../_images/sep-25-2021-gaban_16_27.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_28.png" src="../../_images/sep-25-2021-gaban_16_28.png" />
+<img alt="../../_images/sep-25-2021-gaban_16_29.png" src="../../_images/sep-25-2021-gaban_16_29.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">3.1</span><span class="p">))</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+    <span class="c1"># mi = ants.image_mutual_information(reg.nissl, indiv_aff)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">,   perf: </span><span class="si">{</span><span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/sep-25-2021-gaban_18_0.png" src="../../_images/sep-25-2021-gaban_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC07_ses-3&#39;</span>
+<span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">indiv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">78</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_space-CCF-3d_ants-Aff-init.mat&quot;</span>
+<span class="n">tx_aff</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">tx_dir</span><span class="p">,</span> <span class="n">tx_aff</span><span class="p">)</span>
+<span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">tx_aff</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span><span class="o">.</span><span class="n">parameters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.61217237e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.25951836e-01</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.17604810e-01</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.80213410e-01</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.69637799e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.56995130e-02</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.82953203e-01</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.90555328e-02</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.77895510e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.63565674e+03</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-1.94909814e+03</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.54836377e+03</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indiv_aff</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f68c47856a0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_25_1.png" src="../../_images/sep-25-2021-gaban_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">indiv_aff</span><span class="p">)</span>
+<span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.013736391173934145</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">25</span><span class="p">),</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">in_house_res</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">txfile</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">affine_initializer</span><span class="p">(</span>
+    <span class="n">fixed_image</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving_image</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+    <span class="n">search_factor</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">radian_fraction</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span>
+    <span class="n">use_principal_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">local_search_iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">txfile</span><span class="p">,</span>
+    <span class="n">dimension</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">indiv_aff</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+<span class="n">mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">indiv_aff</span><span class="p">)</span>
+<span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 37min 49s, sys: 13.9 s, total: 38min 3s
+Wall time: 2min 40s
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41517654207466365</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_36_3.png" src="../../_images/sep-25-2021-gaban_36_3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txfile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/tmp/tmpnbmis7il.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span><span class="o">.</span><span class="n">parameters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.52979982e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.47550324e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.41722520e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.11171031e-01</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.26168299e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-9.09454003e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.68244685e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.07388338e-02</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.30673540e-01</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.68883057e+02</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-1.92286346e+02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.21988770e+02</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;test.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">tx_dir</span><span class="p">,</span> <span class="n">dst</span><span class="p">)</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Documents/Ca-fMRI/processed/transforms/test.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txfile2</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Documents/Ca-fMRI/processed/transforms/test.mat&#39;</span>
+<span class="n">tx_aff2</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">txfile2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff2</span><span class="o">.</span><span class="n">parameters</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.52979982e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.47550324e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-2.41722520e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.11171031e-01</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.26168299e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-9.09454003e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.68244685e-02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.07388338e-02</span>,
+        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9.30673540e-01</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.68883057e+02</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-1.92286346e+02</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.21988770e+02</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indiv_aff</span> <span class="o">=</span> <span class="n">tx_aff2</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+<span class="n">mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">indiv_aff</span><span class="p">)</span>
+<span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41517654207466365</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_47_1.png" src="../../_images/sep-25-2021-gaban_47_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indiv_aff</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_aff</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+
+<span class="n">mi</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">indiv_aff</span><span class="p">)</span>
+<span class="n">mi</span> <span class="o">/</span> <span class="n">base_mi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4170571606162416</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_53_1.png" src="../../_images/sep-25-2021-gaban_53_1.png" />
+</div>
+</div>
+</section>
+<section id="establishement">
+<h2>Establishement<a class="headerlink" href="#establishement" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">25</span><span class="p">),</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">in_house_res</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'misc'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'iso'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+,
+    <span style="color: #008000; text-decoration-color: #008000">'hemis'</span>: ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : unsigned int <span style="font-weight: bold">(</span>uint32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="o">.</span><span class="n">numpy</span><span class="p">()[</span><span class="mi">250</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ffb1066faf0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_62_1.png" src="../../_images/sep-25-2021-gaban_62_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span> <span class="o">/</span> <span class="mf">1e9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.308183176</span>
+</pre>
+</div></div>
+</div>
+</section>
+<section id="affined">
+<h2>Affined<a class="headerlink" href="#affined" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txfile</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">affine_initializer</span><span class="p">(</span>
+    <span class="n">fixed_image</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving_image</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">txfile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det 
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/tmp/tmpe4rgq92k.mat'</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">tx_aff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yale_affined</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">yale_affined</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ffac9725a90</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_72_1.png" src="../../_images/sep-25-2021-gaban_72_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">mi_base</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx2</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">yale_affined</span><span class="p">,</span>
+    <span class="n">type_of_transform</span><span class="o">=</span><span class="s1">&#39;SyNAggro&#39;</span><span class="p">,</span>
+    <span class="n">aff_metric</span><span class="o">=</span><span class="s1">&#39;GC&#39;</span><span class="p">,</span>
+    <span class="n">grad_step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">syn_sampling</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">aff_sampling</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">aff_random_sampling_rate</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">tx_peformance</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">yale_affined</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'mi'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5045410467450004</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9929003418353931</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9892344497607656</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9672688422688422</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9758241758241758</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9704397981254507</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9996900666356733</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9818796068796068</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9966887417218543</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9724137931034482</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.998886104149262</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9514563106796117</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9982576500054449</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9999750040618399</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9824826560951437</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9831409609006256</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9999802351413913</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects_in_house</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">apply2objects</span><span class="p">(</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">yale_affined</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">reg</span><span class="o">.</span><span class="n">objects_in_house</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_25_aff_gc_best.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">reg</span><span class="o">.</span><span class="n">objects_in_house</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">lps</span> <span class="o">=</span> <span class="n">reorient_arr</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">reg</span><span class="o">.</span><span class="n">tr_axes</span><span class="p">)</span>
+    <span class="n">lps</span> <span class="o">=</span> <span class="n">lps</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">lps</span> <span class="o">=</span> <span class="n">reset_ants_img</span><span class="p">(</span><span class="n">lps</span><span class="p">,</span> <span class="n">spacing</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint32&#39;</span><span class="p">)</span>
+    <span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">lps</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">_yale-</span><span class="si">{</span><span class="mf">0.1</span><span class="si">}</span><span class="s2">_25_aff_gc_best_lps.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dst</span> <span class="o">=</span> <span class="s1">&#39;Sep29/yale100_2_nissl25&#39;</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;fwdtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-fwd.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-inv.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+    
+<span class="n">dst</span> <span class="o">=</span> <span class="s1">&#39;Sep29/yale100_2_nissl25&#39;</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-aff.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'./Sep29/yale100_2_nissl25-aff.mat'</span>
+</pre>
+</div></div>
+</div>
+</section>
+<section id="now-do-indiv">
+<h2>Now do indiv<a class="headerlink" href="#now-do-indiv" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC01_ses-1&#39;</span>
+<span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">indiv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">78</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txfile</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">affine_initializer</span><span class="p">(</span>
+    <span class="n">fixed_image</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving_image</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">txfile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/tmp/tmp46w5d512.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">tx_aff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indiv_affined</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_affined</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ffac956ecd0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_94_1.png" src="../../_images/sep-25-2021-gaban_94_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">mi_base</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx2</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">type_of_transform</span><span class="o">=</span><span class="s1">&#39;ElasticSyN&#39;</span><span class="p">,</span><span class="c1"># &#39;SyNAggro&#39;,</span>
+    <span class="n">aff_metric</span><span class="o">=</span><span class="s1">&#39;GC&#39;</span><span class="p">,</span>
+    <span class="n">grad_step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">syn_sampling</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">aff_sampling</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">aff_random_sampling_rate</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">objects</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">objects_in_house</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">tx_peformance</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">scores</span><span class="p">[</span><span class="s1">&#39;mi&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8084222014735437</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'mi'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8084222014735437</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9931840311587147</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9599236641221374</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9953314659197012</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9907063197026023</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9996719160104987</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9002493765586035</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.984</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9991087344028521</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9547038327526133</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9800703399765534</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8747252747252747</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9594594594594594</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8648648648648649</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9272300469483568</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.736842105263158</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.96</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9959835850868768</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9897498262682418</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9355104952452368</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9974250204772248</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dst</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">_2_yale100&#39;</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;fwdtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-fwd.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-inv.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+    
+<span class="n">dst</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">_2_yale100&#39;</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-aff.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'./Sep29/sub-SLC01_ses-1_2_yale100-aff.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">apply2objects</span><span class="p">(</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_25_aff_gc_best.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-direct">
+<h2>Now Direct<a class="headerlink" href="#now-direct" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC01_ses-1&#39;</span>
+<span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">get_data</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.nii.gz&quot;</span><span class="p">)</span>
+<span class="n">indiv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
+         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
+         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">78</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span><span style="font-weight: bold">)</span>
+         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span><span style="font-weight: bold">)</span>
+         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
+         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">txfile</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">affine_initializer</span><span class="p">(</span>
+    <span class="n">fixed_image</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving_image</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">txfile</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
+ bad det -1 v 1 u -1 new 1
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/tmp/tmpj06j3f3x.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">read_transform</span><span class="p">(</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dimension</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">tx_aff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">indiv_affined</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span><span class="n">indiv</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">[</span><span class="mi">280</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">indiv_affined</span><span class="p">[</span><span class="mi">280</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f1c89df40a0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/sep-25-2021-gaban_114_1.png" src="../../_images/sep-25-2021-gaban_114_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">mi_base</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_mutual_information</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx2</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">type_of_transform</span><span class="o">=</span><span class="s1">&#39;ElasticSyN&#39;</span><span class="p">,</span>
+    <span class="n">aff_metric</span><span class="o">=</span><span class="s1">&#39;GC&#39;</span><span class="p">,</span>
+    <span class="n">grad_step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">syn_sampling</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">aff_sampling</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+    <span class="n">aff_random_sampling_rate</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">tx_peformance</span><span class="p">(</span>
+    <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'mi'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4778731666809255</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9989550679205852</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9854771784232366</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9972118959107806</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_MOs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9925925925925926</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9988810145468109</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_SS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9455732946298984</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VISC'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9565217391304348</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_VIS'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9646017699115044</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9845505617977528</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_AI'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9560439560439561</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_PTLp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9761904761904762</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_TEa'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9738562091503268</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CA1'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_CLA'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9375</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_STRd'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9925742574257426</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9980910566001718</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym_iso'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9922038410344172</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sym'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9727930001168793</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ovp'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.998322763871698</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dst</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">_2_nissl&#39;</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;fwdtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-fwd.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">tx2</span><span class="p">[</span><span class="s1">&#39;invtransforms&#39;</span><span class="p">]:</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="n">_dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span>
+        <span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-inv.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">src</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">_dst</span><span class="p">)</span>
+
+<span class="n">dst</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Sep29/</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">_2_nissl&#39;</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">txfile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">dst</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dst</span><span class="si">}</span><span class="s2">-aff.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="n">txfile</span><span class="p">,</span> <span class="n">dst</span><span class="o">=</span><span class="n">dst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'./Sep29/sub-SLC01_ses-1_2_nissl-aff.mat'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obj</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">apply2objects</span><span class="p">(</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv_affined</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">ants</span><span class="o">.</span><span class="n">image_write</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;./Sep29/</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_25_aff_gc_direct_best.nii.gz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/sep21"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
