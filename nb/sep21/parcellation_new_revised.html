@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sep parcel, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,17 +33,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -79,7 +78,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -538,7 +537,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../oct21/oct-06-2021.html">
-     Oct 6th, 2021
+     October 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-10-2021.html">
+     October 10th, 2021
     </a>
    </li>
   </ul>
@@ -650,7 +654,7 @@
         
               <div>
                 
-  <section id="sep-parcel-2021">
+  <div class="section" id="sep-parcel-2021">
 <h1>Sep parcel, 2021<a class="headerlink" href="#sep-parcel-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: 0.1 and 0.2 <br></p>
 <div class="cell tag_hide-input docutils container">
@@ -701,6 +705,73 @@
 <span class="c1"># warnings</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">show_versions</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INSTALLED VERSIONS
+------------------
+commit           : 73c68257545b5f8530b7044f56647bd2db92e2ba
+python           : 3.8.5.final.0
+python-bits      : 64
+OS               : Linux
+OS-release       : 5.11.0-36-generic
+Version          : #40~20.04.1-Ubuntu SMP Sat Sep 18 02:14:19 UTC 2021
+machine          : x86_64
+processor        : x86_64
+byteorder        : little
+LC_ALL           : None
+LANG             : en_US.UTF-8
+LOCALE           : en_US.UTF-8
+
+pandas           : 1.3.3
+numpy            : 1.20.3
+pytz             : 2021.1
+dateutil         : 2.8.2
+pip              : 21.0.1
+setuptools       : 58.0.4
+Cython           : 0.29.24
+pytest           : 6.2.4
+hypothesis       : None
+sphinx           : 4.2.0
+blosc            : None
+feather          : None
+xlsxwriter       : 3.0.1
+lxml.etree       : 4.6.3
+html5lib         : 1.1
+pymysql          : None
+psycopg2         : 2.9.1 (dt dec pq3 ext lo64)
+jinja2           : 3.0.1
+IPython          : 7.27.0
+pandas_datareader: None
+bs4              : 4.10.0
+bottleneck       : 1.3.2
+fsspec           : 2021.08.1
+fastparquet      : None
+gcsfs            : None
+matplotlib       : 3.4.3
+numexpr          : 2.7.3
+odfpy            : None
+openpyxl         : 3.0.7
+pandas_gbq       : None
+pyarrow          : None
+pyxlsb           : None
+s3fs             : None
+scipy            : 1.7.1
+sqlalchemy       : 1.4.22
+tables           : 3.6.1
+tabulate         : None
+xarray           : 0.15.1
+xlrd             : 2.0.1
+xlwt             : 1.3.0
+numba            : 0.54.0
 </pre></div>
 </div>
 </div>
@@ -5881,7 +5952,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f48f5658be0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_18_1.png" src="../../_images/parcellation_new_revised_18_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_20_1.png" src="../../_images/parcellation_new_revised_20_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5904,7 +5975,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f23d272fa90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_26_1.png" src="../../_images/parcellation_new_revised_26_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_28_1.png" src="../../_images/parcellation_new_revised_28_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6021,7 +6092,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb53bf32940</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_41_1.png" src="../../_images/parcellation_new_revised_41_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_43_1.png" src="../../_images/parcellation_new_revised_43_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6125,7 +6196,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb6aeeecb20</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_57_1.png" src="../../_images/parcellation_new_revised_57_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_59_1.png" src="../../_images/parcellation_new_revised_59_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7250,7 +7321,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e86d7280</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_99_1.png" src="../../_images/parcellation_new_revised_99_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_101_1.png" src="../../_images/parcellation_new_revised_101_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7262,7 +7333,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e83cdf40</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_101_1.png" src="../../_images/parcellation_new_revised_101_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_103_1.png" src="../../_images/parcellation_new_revised_103_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7287,7 +7358,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e7f330a0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_104_1.png" src="../../_images/parcellation_new_revised_104_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_106_1.png" src="../../_images/parcellation_new_revised_106_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7310,7 +7381,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f6a5db3a0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_109_1.png" src="../../_images/parcellation_new_revised_109_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_111_1.png" src="../../_images/parcellation_new_revised_111_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7487,7 +7558,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f44e56f70</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_124_1.png" src="../../_images/parcellation_new_revised_124_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_126_1.png" src="../../_images/parcellation_new_revised_126_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7499,7 +7570,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f44dd95b0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_126_1.png" src="../../_images/parcellation_new_revised_126_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_128_1.png" src="../../_images/parcellation_new_revised_128_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7509,7 +7580,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/parcellation_new_revised_129_0.png" src="../../_images/parcellation_new_revised_129_0.png" />
+<img alt="../../_images/parcellation_new_revised_131_0.png" src="../../_images/parcellation_new_revised_131_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7519,10 +7590,10 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/parcellation_new_revised_130_0.png" src="../../_images/parcellation_new_revised_130_0.png" />
+<img alt="../../_images/parcellation_new_revised_132_0.png" src="../../_images/parcellation_new_revised_132_0.png" />
 </div>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -7547,10 +7618,14 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
@@ -7569,9 +7644,10 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 
       </div>
     </div>
-  
+    
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+
+    
   </body>
 </html>

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>&lt;no title&gt; &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,17 +33,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -79,7 +78,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -538,7 +537,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../oct21/oct-06-2021.html">
-     Oct 6th, 2021
+     October 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-10-2021.html">
+     October 10th, 2021
     </a>
    </li>
   </ul>
@@ -645,7 +649,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="simple visible nav section-nav flex-column">
 </ul>
 
@@ -691,7 +695,7 @@
 
 <span class="c1"># GitHub</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">load_allen</span><span class="p">,</span> <span class="n">make_tree_graph</span>
+<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">make_tree_graph</span>
 <span class="kn">from</span> <span class="nn">register.parcellation</span> <span class="kn">import</span> <span class="n">Parcellation</span>
 <span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="n">Hierarchical</span>
 <span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
@@ -712,14 +716,215 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nrrd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen</span> <span class="o">=</span> <span class="n">load_allen</span><span class="p">(</span><span class="n">resolution</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/cortical_maps_play_2_2.png" src="../../_images/cortical_maps_play_2_2.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'163'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'178'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'193'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num merged regions,     left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1024</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="n">Register</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|██████████| 30/30 [14:13&lt;00:00, 28.44s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">organize_func</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-1:   3%|▎         | 7/210 [01:39&lt;46:21, 13.70s/it]  /home/hadi/Dropbox/git/_Ca-fMRI/register/register.py:827: RuntimeWarning:
+
+Mean of empty slice.
+
+/home/hadi/anaconda3/lib/python3.8/site-packages/numpy/core/_methods.py:180: RuntimeWarning:
+
+invalid value encountered in true_divide
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-2:   4%|▍         | 8/210 [01:53&lt;45:49, 13.61s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-3:   4%|▍         | 9/210 [02:06&lt;45:16, 13.51s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-4:   5%|▍         | 10/210 [02:20&lt;45:01, 13.51s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-5:   5%|▌         | 11/210 [02:32&lt;44:00, 13.27s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-6:   6%|▌         | 12/210 [02:45&lt;43:37, 13.22s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC01_ses-2_run-7:   6%|▌         | 13/210 [02:58&lt;42:50, 13.05s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC01_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1042'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">18</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-1:  33%|███▎      | 70/210 [13:11&lt;30:54, 13.25s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-2:  34%|███▍      | 71/210 [13:24&lt;30:42, 13.26s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-3:  34%|███▍      | 72/210 [13:37&lt;30:24, 13.22s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-4:  35%|███▍      | 73/210 [13:50&lt;30:08, 13.20s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-5:  35%|███▌      | 74/210 [14:03&lt;29:47, 13.14s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-6:  36%|███▌      | 75/210 [14:16&lt;29:36, 13.16s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC04_ses-2_run-7:  36%|███▌      | 76/210 [14:30&lt;29:29, 13.20s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC04_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1080'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-1:  67%|██████▋   | 140/210 [29:10&lt;16:26, 14.09s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-2:  67%|██████▋   | 141/210 [29:24&lt;16:10, 14.06s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-3:  68%|██████▊   | 142/210 [29:37&lt;15:36, 13.77s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-4:  68%|██████▊   | 143/210 [29:50&lt;15:19, 13.72s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-5:  69%|██████▊   | 144/210 [30:05&lt;15:17, 13.90s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-6:  69%|██████▉   | 145/210 [30:20&lt;15:24, 14.22s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC07_ses-3_run-7:  70%|██████▉   | 146/210 [30:35&lt;15:27, 14.49s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC07_ses-3_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'15'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-1:  70%|███████   | 147/210 [30:49&lt;15:02, 14.33s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-2:  70%|███████   | 148/210 [31:03&lt;14:38, 14.17s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-3:  71%|███████   | 149/210 [31:17&lt;14:33, 14.32s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-4:  71%|███████▏  | 150/210 [31:32&lt;14:29, 14.49s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-5:  72%|███████▏  | 151/210 [31:46&lt;14:05, 14.33s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC08_ses-1_run-6:  72%|███████▏  | 152/210 [31:59&lt;13:23, 13.86s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warnin! doing sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>, but empty mask found at <span style="color: #008000; text-decoration-color: #008000">'1050'</span> = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">26</span>-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC10_ses-3_run-7: 100%|██████████| 210/210 [45:30&lt;00:00, 13.00s/it]
 </pre></div>
 </div>
 </div>
@@ -781,7 +986,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f3297ac18b0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_11_1.png" src="../../_images/cortical_maps_play_11_1.png" />
+</div><img alt="../../_images/cortical_maps_play_17_1.png" src="../../_images/cortical_maps_play_17_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -822,7 +1027,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f3296611790</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_18_1.png" src="../../_images/cortical_maps_play_18_1.png" />
+</div><img alt="../../_images/cortical_maps_play_24_1.png" src="../../_images/cortical_maps_play_24_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -848,7 +1053,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f329664e970</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_21_1.png" src="../../_images/cortical_maps_play_21_1.png" />
+</div><img alt="../../_images/cortical_maps_play_27_1.png" src="../../_images/cortical_maps_play_27_1.png" />
 </div>
 </div>
 
@@ -875,10 +1080,14 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
@@ -897,9 +1106,10 @@
 
       </div>
     </div>
-  
+    
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+
+    
   </body>
 </html>
