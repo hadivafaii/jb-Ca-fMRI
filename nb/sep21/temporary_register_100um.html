@@ -545,6 +545,11 @@
      October 10th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-11-2021.html">
+     October 11th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -652,6 +657,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#is-cutoff-5-good-if-yes-proceed-with-below">
+   Is cutoff = 5 good? if yes, proceed with below
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#masks">
    Masks
   </a>
@@ -725,21 +735,80 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.56 s, sys: 1.18 s, total: 5.75 s
-Wall time: 7.58 s
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-128</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.79 s, sys: 1.06 s, total: 5.85 s
+Wall time: 7.79 s
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="n">force_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> kmeans fit: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 2D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> 2d --&gt; 3d: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fill gaps: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 3D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/temporary_register_100um_3_8.png" src="../../_images/temporary_register_100um_3_8.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num merged regions,     left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">251</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">251</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">256</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">251</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-128</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="section" id="is-cutoff-5-good-if-yes-proceed-with-below">
+<h2>Is cutoff = 5 good? if yes, proceed with below<a class="headerlink" href="#is-cutoff-5-good-if-yes-proceed-with-below" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|██████████| 30/30 [10:53&lt;00:00, 21.78s/it]
 </pre></div>
 </div>
 </div>
@@ -783,7 +852,7 @@ Wall time: 7.58 s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-1:   0%|          | 0/30 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<img alt="../../_images/temporary_register_100um_5_1.png" src="../../_images/temporary_register_100um_5_1.png" />
+<img alt="../../_images/temporary_register_100um_13_1.png" src="../../_images/temporary_register_100um_13_1.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -848,7 +917,7 @@ Wall time: 3h 37min 5s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e8004246fd0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/temporary_register_100um_10_1.png" src="../../_images/temporary_register_100um_10_1.png" />
+</div><img alt="../../_images/temporary_register_100um_18_1.png" src="../../_images/temporary_register_100um_18_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +929,7 @@ Wall time: 3h 37min 5s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e800421e910</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/temporary_register_100um_11_1.png" src="../../_images/temporary_register_100um_11_1.png" />
+</div><img alt="../../_images/temporary_register_100um_19_1.png" src="../../_images/temporary_register_100um_19_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -947,7 +1016,7 @@ Wall time: 3h 37min 5s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e8004358d90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/temporary_register_100um_19_1.png" src="../../_images/temporary_register_100um_19_1.png" />
+</div><img alt="../../_images/temporary_register_100um_27_1.png" src="../../_images/temporary_register_100um_27_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1170,7 +1239,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_29_0.png" src="../../_images/temporary_register_100um_29_0.png" />
+<img alt="../../_images/temporary_register_100um_37_0.png" src="../../_images/temporary_register_100um_37_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1192,7 +1261,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_31_0.png" src="../../_images/temporary_register_100um_31_0.png" />
+<img alt="../../_images/temporary_register_100um_39_0.png" src="../../_images/temporary_register_100um_39_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1214,7 +1283,8 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_33_0.png" src="../../_images/temporary_register_100um_33_0.png" />
+<img alt="../../_images/temporary_register_100um_41_0.png" src="../../_images/temporary_register_100um_41_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="masks">
@@ -1423,7 +1493,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_44_0.png" src="../../_images/temporary_register_100um_44_0.png" />
+<img alt="../../_images/temporary_register_100um_52_0.png" src="../../_images/temporary_register_100um_52_0.png" />
 </div>
 </div>
 <div class="cell docutils container">

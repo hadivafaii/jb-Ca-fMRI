@@ -545,6 +545,11 @@
      October 10th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-11-2021.html">
+     October 11th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -734,6 +739,102 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="n">force_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/sep-25-2021-kaba_3_2.png" src="../../_images/sep-25-2021-kaba_3_2.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num merged regions,     left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">486</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">486</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">512</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">486</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-128</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="n">force_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> kmeans fit: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 2D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> 2d --&gt; 3d: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fill gaps: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 3D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/sep-25-2021-kaba_6_8.png" src="../../_images/sep-25-2021-kaba_6_8.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'163'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'178'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'193'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num merged regions,     left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1024</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Documents/Ca-fMRI/processed/norm-global_parcel-spatial-sym_n-128/results/SVINET/bold_pearson_task-rest_sub-SLC10_ses-3_n128/p20/k6-real-euclidean-linksampling-(2021_09_14)&#39;</span>
 <span class="n">file</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;gam.npy&#39;</span><span class="p">)</span>
 <span class="n">gam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
@@ -780,7 +881,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f7fd3c09fd0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_6_1.png" src="../../_images/sep-25-2021-kaba_6_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_13_1.png" src="../../_images/sep-25-2021-kaba_13_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -962,7 +1063,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-25-2021-kaba_22_0.png" src="../../_images/sep-25-2021-kaba_22_0.png" />
+<img alt="../../_images/sep-25-2021-kaba_29_0.png" src="../../_images/sep-25-2021-kaba_29_0.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
@@ -979,7 +1080,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-1:   0%|          | 0/30 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_22_4.png" src="../../_images/sep-25-2021-kaba_22_4.png" />
+<img alt="../../_images/sep-25-2021-kaba_29_4.png" src="../../_images/sep-25-2021-kaba_29_4.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1074,7 +1175,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/home/hadi/Documents/Ca-fMRI/processed/norm-global_parcel-spatial-sym_n-17/masks/sub-SLC01_ses-1_space-indiv-3d_iso-inv-cor.png&#39;
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_22_9.png" src="../../_images/sep-25-2021-kaba_22_9.png" />
+<img alt="../../_images/sep-25-2021-kaba_29_9.png" src="../../_images/sep-25-2021-kaba_29_9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1084,10 +1185,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-25-2021-kaba_26_0.png" src="../../_images/sep-25-2021-kaba_26_0.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_1.png" src="../../_images/sep-25-2021-kaba_26_1.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_2.png" src="../../_images/sep-25-2021-kaba_26_2.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_3.png" src="../../_images/sep-25-2021-kaba_26_3.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_0.png" src="../../_images/sep-25-2021-kaba_33_0.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_1.png" src="../../_images/sep-25-2021-kaba_33_1.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_2.png" src="../../_images/sep-25-2021-kaba_33_2.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_3.png" src="../../_images/sep-25-2021-kaba_33_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.40897511339278064</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4099525098499613</span>,
@@ -1095,7 +1196,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4080977078912497</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_5.png" src="../../_images/sep-25-2021-kaba_26_5.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_5.png" src="../../_images/sep-25-2021-kaba_33_5.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "3c3e984f072c471b90cb5655754cfd6e", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
@@ -1112,10 +1213,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-1:   0%|          | 0/30 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_9.png" src="../../_images/sep-25-2021-kaba_26_9.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_10.png" src="../../_images/sep-25-2021-kaba_26_10.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_11.png" src="../../_images/sep-25-2021-kaba_26_11.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_12.png" src="../../_images/sep-25-2021-kaba_26_12.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_9.png" src="../../_images/sep-25-2021-kaba_33_9.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_10.png" src="../../_images/sep-25-2021-kaba_33_10.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_11.png" src="../../_images/sep-25-2021-kaba_33_11.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_12.png" src="../../_images/sep-25-2021-kaba_33_12.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.424994107293971</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41833226369509086</span>,
@@ -1123,7 +1224,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42287758557863264</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_14.png" src="../../_images/sep-25-2021-kaba_26_14.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_14.png" src="../../_images/sep-25-2021-kaba_33_14.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "f46e0df2ae8a45f59a15c3f6e96fa998", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1140,10 +1241,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-2:   3%|▎         | 1/30 [54:52&lt;26:31:29, 3292.75s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_18.png" src="../../_images/sep-25-2021-kaba_26_18.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_19.png" src="../../_images/sep-25-2021-kaba_26_19.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_20.png" src="../../_images/sep-25-2021-kaba_26_20.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_21.png" src="../../_images/sep-25-2021-kaba_26_21.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_18.png" src="../../_images/sep-25-2021-kaba_33_18.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_19.png" src="../../_images/sep-25-2021-kaba_33_19.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_20.png" src="../../_images/sep-25-2021-kaba_33_20.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_21.png" src="../../_images/sep-25-2021-kaba_33_21.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4309807107494317</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4299205279519728</span>,
@@ -1151,7 +1252,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4285162402490301</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_23.png" src="../../_images/sep-25-2021-kaba_26_23.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_23.png" src="../../_images/sep-25-2021-kaba_33_23.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "f7c36c338dad43b49c915ef3cd535def", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1168,10 +1269,10 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC01_ses-3:   7%|▋         | 2/30 [1:49:39&lt;25:35:00, 3289.30s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_27.png" src="../../_images/sep-25-2021-kaba_26_27.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_28.png" src="../../_images/sep-25-2021-kaba_26_28.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_29.png" src="../../_images/sep-25-2021-kaba_26_29.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_30.png" src="../../_images/sep-25-2021-kaba_26_30.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_27.png" src="../../_images/sep-25-2021-kaba_33_27.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_28.png" src="../../_images/sep-25-2021-kaba_33_28.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_29.png" src="../../_images/sep-25-2021-kaba_33_29.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_30.png" src="../../_images/sep-25-2021-kaba_33_30.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4284734206212528</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4278549530803701</span>,
@@ -1179,7 +1280,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4256244960255919</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_32.png" src="../../_images/sep-25-2021-kaba_26_32.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_32.png" src="../../_images/sep-25-2021-kaba_33_32.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "10050054f52143068726d2171a1a185c", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1196,10 +1297,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-1:  10%|█         | 3/30 [2:46:17&lt;25:02:35, 3339.08s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_36.png" src="../../_images/sep-25-2021-kaba_26_36.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_37.png" src="../../_images/sep-25-2021-kaba_26_37.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_38.png" src="../../_images/sep-25-2021-kaba_26_38.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_39.png" src="../../_images/sep-25-2021-kaba_26_39.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_36.png" src="../../_images/sep-25-2021-kaba_33_36.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_37.png" src="../../_images/sep-25-2021-kaba_33_37.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_38.png" src="../../_images/sep-25-2021-kaba_33_38.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_39.png" src="../../_images/sep-25-2021-kaba_33_39.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4280266425928773</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.427643618063653</span>,
@@ -1207,7 +1308,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42586975122012394</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_41.png" src="../../_images/sep-25-2021-kaba_26_41.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_41.png" src="../../_images/sep-25-2021-kaba_33_41.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1918108c072d4adc92f81da14c265f8e", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1224,10 +1325,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-2:  13%|█▎        | 4/30 [3:39:35&lt;23:42:41, 3283.13s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_45.png" src="../../_images/sep-25-2021-kaba_26_45.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_46.png" src="../../_images/sep-25-2021-kaba_26_46.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_47.png" src="../../_images/sep-25-2021-kaba_26_47.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_48.png" src="../../_images/sep-25-2021-kaba_26_48.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_45.png" src="../../_images/sep-25-2021-kaba_33_45.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_46.png" src="../../_images/sep-25-2021-kaba_33_46.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_47.png" src="../../_images/sep-25-2021-kaba_33_47.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_48.png" src="../../_images/sep-25-2021-kaba_33_48.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42145673081094437</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4231758652320484</span>,
@@ -1235,7 +1336,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4207383670311209</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_50.png" src="../../_images/sep-25-2021-kaba_26_50.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_50.png" src="../../_images/sep-25-2021-kaba_33_50.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "f275b9fb35e3407f821bcd6d85362d98", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1252,10 +1353,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC02_ses-3:  17%|█▋        | 5/30 [4:33:29&lt;22:40:34, 3265.39s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_54.png" src="../../_images/sep-25-2021-kaba_26_54.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_55.png" src="../../_images/sep-25-2021-kaba_26_55.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_56.png" src="../../_images/sep-25-2021-kaba_26_56.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_57.png" src="../../_images/sep-25-2021-kaba_26_57.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_54.png" src="../../_images/sep-25-2021-kaba_33_54.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_55.png" src="../../_images/sep-25-2021-kaba_33_55.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_56.png" src="../../_images/sep-25-2021-kaba_33_56.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_57.png" src="../../_images/sep-25-2021-kaba_33_57.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4271485453615431</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4273856670108458</span>,
@@ -1263,7 +1364,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42848226893574354</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_59.png" src="../../_images/sep-25-2021-kaba_26_59.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_59.png" src="../../_images/sep-25-2021-kaba_33_59.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "53af1533bc0942c3af6867da8855048e", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1280,10 +1381,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-1:  20%|██        | 6/30 [5:27:21&lt;21:41:37, 3254.05s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_63.png" src="../../_images/sep-25-2021-kaba_26_63.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_64.png" src="../../_images/sep-25-2021-kaba_26_64.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_65.png" src="../../_images/sep-25-2021-kaba_26_65.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_66.png" src="../../_images/sep-25-2021-kaba_26_66.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_63.png" src="../../_images/sep-25-2021-kaba_33_63.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_64.png" src="../../_images/sep-25-2021-kaba_33_64.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_65.png" src="../../_images/sep-25-2021-kaba_33_65.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_66.png" src="../../_images/sep-25-2021-kaba_33_66.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4125989276067751</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4130868075997236</span>,
@@ -1291,7 +1392,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4094662607041321</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_68.png" src="../../_images/sep-25-2021-kaba_26_68.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_68.png" src="../../_images/sep-25-2021-kaba_33_68.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "9038d64a16654956a90bda488feae467", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1308,10 +1409,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-2:  23%|██▎       | 7/30 [6:23:02&lt;20:58:16, 3282.48s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_72.png" src="../../_images/sep-25-2021-kaba_26_72.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_73.png" src="../../_images/sep-25-2021-kaba_26_73.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_74.png" src="../../_images/sep-25-2021-kaba_26_74.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_75.png" src="../../_images/sep-25-2021-kaba_26_75.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_72.png" src="../../_images/sep-25-2021-kaba_33_72.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_73.png" src="../../_images/sep-25-2021-kaba_33_73.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_74.png" src="../../_images/sep-25-2021-kaba_33_74.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_75.png" src="../../_images/sep-25-2021-kaba_33_75.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4231778241041845</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42375533986034103</span>,
@@ -1319,7 +1420,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42348866754138126</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_77.png" src="../../_images/sep-25-2021-kaba_26_77.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_77.png" src="../../_images/sep-25-2021-kaba_33_77.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "2779a3c3a198497994a93d3e8ce9a7b1", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1336,10 +1437,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC03_ses-3:  27%|██▋       | 8/30 [7:18:27&lt;20:08:31, 3295.96s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_81.png" src="../../_images/sep-25-2021-kaba_26_81.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_82.png" src="../../_images/sep-25-2021-kaba_26_82.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_83.png" src="../../_images/sep-25-2021-kaba_26_83.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_84.png" src="../../_images/sep-25-2021-kaba_26_84.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_81.png" src="../../_images/sep-25-2021-kaba_33_81.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_82.png" src="../../_images/sep-25-2021-kaba_33_82.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_83.png" src="../../_images/sep-25-2021-kaba_33_83.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_84.png" src="../../_images/sep-25-2021-kaba_33_84.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4172094983249913</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41906314376101733</span>,
@@ -1347,7 +1448,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41668154769258314</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_86.png" src="../../_images/sep-25-2021-kaba_26_86.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_86.png" src="../../_images/sep-25-2021-kaba_33_86.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "588efaf1eac045d5a5c50a582e2d3582", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1364,10 +1465,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-1:  30%|███       | 9/30 [8:12:56&lt;19:10:40, 3287.62s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_90.png" src="../../_images/sep-25-2021-kaba_26_90.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_91.png" src="../../_images/sep-25-2021-kaba_26_91.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_92.png" src="../../_images/sep-25-2021-kaba_26_92.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_93.png" src="../../_images/sep-25-2021-kaba_26_93.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_90.png" src="../../_images/sep-25-2021-kaba_33_90.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_91.png" src="../../_images/sep-25-2021-kaba_33_91.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_92.png" src="../../_images/sep-25-2021-kaba_33_92.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_93.png" src="../../_images/sep-25-2021-kaba_33_93.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4378258132027841</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.43770236855386896</span>,
@@ -1375,7 +1476,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4338033649151914</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_95.png" src="../../_images/sep-25-2021-kaba_26_95.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_95.png" src="../../_images/sep-25-2021-kaba_33_95.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "518a4bbf6fec45a1a1c6e643186be84e", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1392,10 +1493,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-2:  33%|███▎      | 10/30 [9:09:02&lt;18:23:58, 3311.95s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_99.png" src="../../_images/sep-25-2021-kaba_26_99.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_100.png" src="../../_images/sep-25-2021-kaba_26_100.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_101.png" src="../../_images/sep-25-2021-kaba_26_101.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_102.png" src="../../_images/sep-25-2021-kaba_26_102.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_99.png" src="../../_images/sep-25-2021-kaba_33_99.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_100.png" src="../../_images/sep-25-2021-kaba_33_100.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_101.png" src="../../_images/sep-25-2021-kaba_33_101.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_102.png" src="../../_images/sep-25-2021-kaba_33_102.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.44024239816977867</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4402085163349112</span>,
@@ -1403,7 +1504,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4397070065626486</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_104.png" src="../../_images/sep-25-2021-kaba_26_104.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_104.png" src="../../_images/sep-25-2021-kaba_33_104.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "fa5df3816dd345f5a1990921e1487aca", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1420,10 +1521,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC04_ses-3:  37%|███▋      | 11/30 [10:04:25&lt;17:29:50, 3315.29s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_108.png" src="../../_images/sep-25-2021-kaba_26_108.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_109.png" src="../../_images/sep-25-2021-kaba_26_109.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_110.png" src="../../_images/sep-25-2021-kaba_26_110.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_111.png" src="../../_images/sep-25-2021-kaba_26_111.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_108.png" src="../../_images/sep-25-2021-kaba_33_108.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_109.png" src="../../_images/sep-25-2021-kaba_33_109.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_110.png" src="../../_images/sep-25-2021-kaba_33_110.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_111.png" src="../../_images/sep-25-2021-kaba_33_111.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4376110883091097</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4358410683980051</span>,
@@ -1431,7 +1532,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4359047416747815</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_113.png" src="../../_images/sep-25-2021-kaba_26_113.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_113.png" src="../../_images/sep-25-2021-kaba_33_113.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "216c315cd4c245038574507fff854316", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1448,10 +1549,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC05_ses-1:  40%|████      | 12/30 [11:00:31&lt;16:39:12, 3330.69s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_117.png" src="../../_images/sep-25-2021-kaba_26_117.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_118.png" src="../../_images/sep-25-2021-kaba_26_118.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_119.png" src="../../_images/sep-25-2021-kaba_26_119.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_120.png" src="../../_images/sep-25-2021-kaba_26_120.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_117.png" src="../../_images/sep-25-2021-kaba_33_117.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_118.png" src="../../_images/sep-25-2021-kaba_33_118.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_119.png" src="../../_images/sep-25-2021-kaba_33_119.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_120.png" src="../../_images/sep-25-2021-kaba_33_120.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4094645444551483</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.40947270533806684</span>,
@@ -1459,7 +1560,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4102424394523413</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_122.png" src="../../_images/sep-25-2021-kaba_26_122.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_122.png" src="../../_images/sep-25-2021-kaba_33_122.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "bc82edbcedfa49f19a42c7cb5b68a900", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1476,10 +1577,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC05_ses-2:  43%|████▎     | 13/30 [11:55:20&lt;15:40:08, 3318.15s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_126.png" src="../../_images/sep-25-2021-kaba_26_126.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_127.png" src="../../_images/sep-25-2021-kaba_26_127.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_128.png" src="../../_images/sep-25-2021-kaba_26_128.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_129.png" src="../../_images/sep-25-2021-kaba_26_129.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_126.png" src="../../_images/sep-25-2021-kaba_33_126.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_127.png" src="../../_images/sep-25-2021-kaba_33_127.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_128.png" src="../../_images/sep-25-2021-kaba_33_128.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_129.png" src="../../_images/sep-25-2021-kaba_33_129.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4078996296826021</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.40881004201129945</span>,
@@ -1487,7 +1588,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.38728962583830756</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_131.png" src="../../_images/sep-25-2021-kaba_26_131.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_131.png" src="../../_images/sep-25-2021-kaba_33_131.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "195c91273f654f5c8381de29e3ec25ab", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1504,10 +1605,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC05_ses-3:  47%|████▋     | 14/30 [12:50:35&lt;14:44:33, 3317.09s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_135.png" src="../../_images/sep-25-2021-kaba_26_135.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_136.png" src="../../_images/sep-25-2021-kaba_26_136.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_137.png" src="../../_images/sep-25-2021-kaba_26_137.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_138.png" src="../../_images/sep-25-2021-kaba_26_138.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_135.png" src="../../_images/sep-25-2021-kaba_33_135.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_136.png" src="../../_images/sep-25-2021-kaba_33_136.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_137.png" src="../../_images/sep-25-2021-kaba_33_137.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_138.png" src="../../_images/sep-25-2021-kaba_33_138.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4128658250010294</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4114179985922351</span>,
@@ -1515,7 +1616,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41057804371596024</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_140.png" src="../../_images/sep-25-2021-kaba_26_140.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_140.png" src="../../_images/sep-25-2021-kaba_33_140.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "9a7aebeadaf8403c9d6b53e35d056608", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1532,10 +1633,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC06_ses-1:  50%|█████     | 15/30 [13:44:28&lt;13:42:55, 3291.67s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_144.png" src="../../_images/sep-25-2021-kaba_26_144.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_145.png" src="../../_images/sep-25-2021-kaba_26_145.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_146.png" src="../../_images/sep-25-2021-kaba_26_146.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_147.png" src="../../_images/sep-25-2021-kaba_26_147.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_144.png" src="../../_images/sep-25-2021-kaba_33_144.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_145.png" src="../../_images/sep-25-2021-kaba_33_145.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_146.png" src="../../_images/sep-25-2021-kaba_33_146.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_147.png" src="../../_images/sep-25-2021-kaba_33_147.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4270204036393664</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42660997481200896</span>,
@@ -1543,7 +1644,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4261428696261633</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_149.png" src="../../_images/sep-25-2021-kaba_26_149.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_149.png" src="../../_images/sep-25-2021-kaba_33_149.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "f4b3a28d8b414f6698c1a20bd88bf8ba", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1560,10 +1661,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC06_ses-2:  53%|█████▎    | 16/30 [14:38:36&lt;12:45:00, 3278.58s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_153.png" src="../../_images/sep-25-2021-kaba_26_153.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_154.png" src="../../_images/sep-25-2021-kaba_26_154.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_155.png" src="../../_images/sep-25-2021-kaba_26_155.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_156.png" src="../../_images/sep-25-2021-kaba_26_156.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_153.png" src="../../_images/sep-25-2021-kaba_33_153.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_154.png" src="../../_images/sep-25-2021-kaba_33_154.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_155.png" src="../../_images/sep-25-2021-kaba_33_155.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_156.png" src="../../_images/sep-25-2021-kaba_33_156.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4156490319422594</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4154412942098065</span>,
@@ -1571,7 +1672,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4136913049286427</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_158.png" src="../../_images/sep-25-2021-kaba_26_158.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_158.png" src="../../_images/sep-25-2021-kaba_33_158.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "1027474f86b947f996d60093876a95f9", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1588,10 +1689,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC06_ses-3:  57%|█████▋    | 17/30 [15:32:46&lt;11:48:31, 3270.12s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_162.png" src="../../_images/sep-25-2021-kaba_26_162.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_163.png" src="../../_images/sep-25-2021-kaba_26_163.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_164.png" src="../../_images/sep-25-2021-kaba_26_164.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_165.png" src="../../_images/sep-25-2021-kaba_26_165.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_162.png" src="../../_images/sep-25-2021-kaba_33_162.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_163.png" src="../../_images/sep-25-2021-kaba_33_163.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_164.png" src="../../_images/sep-25-2021-kaba_33_164.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_165.png" src="../../_images/sep-25-2021-kaba_33_165.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4277991190545364</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42660632513796354</span>,
@@ -1599,7 +1700,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42626334878845157</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_167.png" src="../../_images/sep-25-2021-kaba_26_167.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_167.png" src="../../_images/sep-25-2021-kaba_33_167.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "28267913e24d4706b888e49eaf55f60c", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1616,10 +1717,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC07_ses-1:  60%|██████    | 18/30 [16:26:57&lt;10:52:51, 3264.29s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_171.png" src="../../_images/sep-25-2021-kaba_26_171.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_172.png" src="../../_images/sep-25-2021-kaba_26_172.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_173.png" src="../../_images/sep-25-2021-kaba_26_173.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_174.png" src="../../_images/sep-25-2021-kaba_26_174.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_171.png" src="../../_images/sep-25-2021-kaba_33_171.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_172.png" src="../../_images/sep-25-2021-kaba_33_172.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_173.png" src="../../_images/sep-25-2021-kaba_33_173.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_174.png" src="../../_images/sep-25-2021-kaba_33_174.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4193187743650372</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4206489804154522</span>,
@@ -1627,7 +1728,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41275554826890937</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_176.png" src="../../_images/sep-25-2021-kaba_26_176.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_176.png" src="../../_images/sep-25-2021-kaba_33_176.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "156d6ff0df424e2ebfa0846eaa4363ce", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
@@ -1644,10 +1745,10 @@ score        <span style="color: #008080; text-decoration-color: #008080; font-w
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC07_ses-2:  63%|██████▎   | 19/30 [17:21:42&lt;9:59:35, 3270.47s/it] 
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_180.png" src="../../_images/sep-25-2021-kaba_26_180.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_181.png" src="../../_images/sep-25-2021-kaba_26_181.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_182.png" src="../../_images/sep-25-2021-kaba_26_182.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_183.png" src="../../_images/sep-25-2021-kaba_26_183.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_180.png" src="../../_images/sep-25-2021-kaba_33_180.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_181.png" src="../../_images/sep-25-2021-kaba_33_181.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_182.png" src="../../_images/sep-25-2021-kaba_33_182.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_183.png" src="../../_images/sep-25-2021-kaba_33_183.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42262772235469515</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4215400839970252</span>,
@@ -1655,7 +1756,7 @@ score        <span style="color: #008080; text-decoration-color: #008080; font-w
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4211242119887085</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_185.png" src="../../_images/sep-25-2021-kaba_26_185.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_185.png" src="../../_images/sep-25-2021-kaba_33_185.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "56a5981ee1dc468682c3663f076abbff", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
@@ -1672,10 +1773,10 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat:  sub-SLC07_ses-3:  67%|██████▋   | 20/30 [18:17:53&lt;9:10:06, 3300.68s/it]
 </pre></div>
 </div>
-<img alt="../../_images/sep-25-2021-kaba_26_189.png" src="../../_images/sep-25-2021-kaba_26_189.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_190.png" src="../../_images/sep-25-2021-kaba_26_190.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_191.png" src="../../_images/sep-25-2021-kaba_26_191.png" />
-<img alt="../../_images/sep-25-2021-kaba_26_192.png" src="../../_images/sep-25-2021-kaba_26_192.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_189.png" src="../../_images/sep-25-2021-kaba_33_189.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_190.png" src="../../_images/sep-25-2021-kaba_33_190.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_191.png" src="../../_images/sep-25-2021-kaba_33_191.png" />
+<img alt="../../_images/sep-25-2021-kaba_33_192.png" src="../../_images/sep-25-2021-kaba_33_192.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.10'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4158642801727713</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fac: 5, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4128678237684909</span>,
@@ -1683,7 +1784,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
     <span style="color: #008000; text-decoration-color: #008000">'fac: 10, rad: 0.20'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.40950701507795095</span>
 <span style="font-weight: bold">}</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_26_194.png" src="../../_images/sep-25-2021-kaba_26_194.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_33_194.png" src="../../_images/sep-25-2021-kaba_33_194.png" />
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "9634c3f0e3624bacb3fd0eae613487e7", "version_major": 2, "version_minor": 0}
 </script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
@@ -1782,7 +1883,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e44ee6003d0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_43_1.png" src="../../_images/sep-25-2021-kaba_43_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_50_1.png" src="../../_images/sep-25-2021-kaba_50_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2382,7 +2483,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e9fb7ca4490</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_56_1.png" src="../../_images/sep-25-2021-kaba_56_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_63_1.png" src="../../_images/sep-25-2021-kaba_63_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3250,7 +3351,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_66_1.png" src="../../_images/sep-25-2021-kaba_66_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_73_1.png" src="../../_images/sep-25-2021-kaba_73_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3344,7 +3445,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_73_1.png" src="../../_images/sep-25-2021-kaba_73_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_80_1.png" src="../../_images/sep-25-2021-kaba_80_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3583,7 +3684,7 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e9fb43fbc40</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_78_1.png" src="../../_images/sep-25-2021-kaba_78_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_85_1.png" src="../../_images/sep-25-2021-kaba_85_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3926,7 +4027,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_88_1.png" src="../../_images/sep-25-2021-kaba_88_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_95_1.png" src="../../_images/sep-25-2021-kaba_95_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4482,7 +4583,7 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/sep-25-2021-kaba_114_0.png" src="../../_images/sep-25-2021-kaba_114_0.png" />
+<img alt="../../_images/sep-25-2021-kaba_121_0.png" src="../../_images/sep-25-2021-kaba_121_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5303,7 +5404,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f0647aaceb0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_142_1.png" src="../../_images/sep-25-2021-kaba_142_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_149_1.png" src="../../_images/sep-25-2021-kaba_149_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5315,7 +5416,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f0647a2fca0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_143_1.png" src="../../_images/sep-25-2021-kaba_143_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_150_1.png" src="../../_images/sep-25-2021-kaba_150_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5455,7 +5556,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f654c5f33a0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_156_1.png" src="../../_images/sep-25-2021-kaba_156_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_163_1.png" src="../../_images/sep-25-2021-kaba_163_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5467,7 +5568,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f654c21dfd0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_157_1.png" src="../../_images/sep-25-2021-kaba_157_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_164_1.png" src="../../_images/sep-25-2021-kaba_164_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5486,7 +5587,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f63d8187910</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_161_1.png" src="../../_images/sep-25-2021-kaba_161_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_168_1.png" src="../../_images/sep-25-2021-kaba_168_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5498,7 +5599,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f63d07a2190</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_162_1.png" src="../../_images/sep-25-2021-kaba_162_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_169_1.png" src="../../_images/sep-25-2021-kaba_169_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5719,7 +5820,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56473d8e0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_183_1.png" src="../../_images/sep-25-2021-kaba_183_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_190_1.png" src="../../_images/sep-25-2021-kaba_190_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6037,7 +6138,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56472a430</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_196_1.png" src="../../_images/sep-25-2021-kaba_196_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_203_1.png" src="../../_images/sep-25-2021-kaba_203_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6059,7 +6160,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee56474c880</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_198_1.png" src="../../_images/sep-25-2021-kaba_198_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_205_1.png" src="../../_images/sep-25-2021-kaba_205_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6088,7 +6189,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee534114040</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_201_1.png" src="../../_images/sep-25-2021-kaba_201_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_208_1.png" src="../../_images/sep-25-2021-kaba_208_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6120,7 +6221,7 @@ tx          <span style="font-weight: bold">{</span><span style="color: #008000;
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">seaborn.axisgrid.FacetGrid</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ee4c87dd250</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/sep-25-2021-kaba_205_1.png" src="../../_images/sep-25-2021-kaba_205_1.png" />
+</div><img alt="../../_images/sep-25-2021-kaba_212_1.png" src="../../_images/sep-25-2021-kaba_212_1.png" />
 </div>
 </div>
 </div>
