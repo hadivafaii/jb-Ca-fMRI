@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Sep kaba-th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -78,7 +79,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -550,6 +551,11 @@
      October 11th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-12-2021.html">
+     October 12th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -654,13 +660,8 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#is-cutoff-1-good-if-yes-proceed-with-below">
-   Is cutoff = 1 good? if yes, proceed with below
-  </a>
- </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#masks">
    Masks
@@ -677,7 +678,7 @@
         
               <div>
                 
-  <div class="section" id="sep-kaba-th-2021">
+  <section id="sep-kaba-th-2021">
 <h1>Sep kaba-th, 2021<a class="headerlink" href="#sep-kaba-th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: This has the most succesfull registration of Nissl to Yale N162 0.1 mm <br></p>
 <div class="cell tag_hide-input docutils container">
@@ -735,36 +736,24 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">768</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-768</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
-</pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.83 s, sys: 1.14 s, total: 5.97 s
-Wall time: 7.66 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.67 s, sys: 1.18 s, total: 5.85 s
+Wall time: 7.71 s
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="n">force_fit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
-</pre>
-</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mice.parcel.fit_parcel(force_fit=True, cutoff=4)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="is-cutoff-1-good-if-yes-proceed-with-below">
-<h2>Is cutoff = 1 good? if yes, proceed with below<a class="headerlink" href="#is-cutoff-1-good-if-yes-proceed-with-below" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
@@ -775,28 +764,25 @@ Wall time: 7.66 s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|██████████| 30/30 [10:53&lt;00:00, 21.78s/it]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reg.register_anat(True)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">,</span> <span class="s1">&#39;SyNAggro&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
-    <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
-    <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-    <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
-    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
-    <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">kwargs</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;kwargs = {</span>
+<span class="sd">    &#39;types&#39;: [&#39;SyN&#39;, &#39;ElasticSyN&#39;, &#39;SyNAggro&#39;],</span>
+<span class="sd">    &#39;grads&#39;: [0.2, 0.25, 0.3],</span>
+<span class="sd">    &#39;syn_bins&#39;: [32, 16],</span>
+<span class="sd">    &#39;aff_bins&#39;: [13, 20],</span>
+<span class="sd">    &#39;aff_rates&#39;: [0.2, 0.5, 0.8],</span>
+<span class="sd">    &#39;aff_metric&#39;: &#39;mattes&#39;,</span>
+<span class="sd">    &#39;syn_metric&#39;: &#39;mattes&#39;,</span>
+<span class="sd">    &#39;mi_q&#39;: 0.75,</span>
+<span class="sd">    &#39;n_seeds&#39;: 10,</span>
+<span class="sd">}</span>
+<span class="sd">kwargs&quot;&quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -815,180 +801,56 @@ Wall time: 7.66 s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-1:   0%|          | 0/30 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<img alt="../../_images/temporary_register_100um_13_1.png" src="../../_images/temporary_register_100um_13_1.png" />
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "", "version_major": 2, "version_minor": 0}
-</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
-seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
-type        ElasticSyN
-grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
-syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
-aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
-metric             sym
-score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.972845</span>
-
-</pre>
-</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|██████████| 30/30 [3:36:31&lt;00:00, 433.06s/it]    
-</pre></div>
-</div>
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">overal scores:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.973</span> ± <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.000</span>
-
-
-</pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2d 6h 53min 15s, sys: 1h 16min 6s, total: 2d 8h 9min 22s
-Wall time: 3h 37min 5s
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_l</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">)</span>, <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">)</span>, <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">57</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">))</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_r</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">)</span>, <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">)</span>, <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">slice</span><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">57</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span>, <span style="color: #800080; text-decoration-color: #800080; font-style: italic">None</span><span style="font-weight: bold">))</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;subcortex&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_l</span><span class="p">][</span><span class="mi">45</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e8004246fd0</span><span style="font-weight: bold">&gt;</span>
-</pre>
-</div><img alt="../../_images/temporary_register_100um_18_1.png" src="../../_images/temporary_register_100um_18_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_r</span><span class="p">][</span><span class="mi">45</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e800421e910</span><span style="font-weight: bold">&gt;</span>
-</pre>
-</div><img alt="../../_images/temporary_register_100um_19_1.png" src="../../_images/temporary_register_100um_19_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_r</span><span class="p">][</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span>  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">258</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">342</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">583</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">589</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">596</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">672</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">754</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">814</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">942</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">961</span><span style="font-weight: bold">]</span>,
-      <span style="color: #808000; text-decoration-color: #808000">dtype</span>=<span style="color: #800080; text-decoration-color: #800080">uint32</span><span style="font-weight: bold">)</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_l</span><span class="p">][</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span>  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">258</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">342</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">583</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">589</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">672</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">754</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">814</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">942</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">961</span><span style="font-weight: bold">]</span>,
-      <span style="color: #808000; text-decoration-color: #808000">dtype</span>=<span style="color: #800080; text-decoration-color: #800080">uint32</span><span style="font-weight: bold">)</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_r</span><span class="p">][</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">808</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">slices_l</span><span class="p">][</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">800</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">596</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">],</span>
+    <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
+    <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
+    <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
+    <span class="s1">&#39;aff_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;syn_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">kwargs</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
-    <span style="color: #008000; text-decoration-color: #008000">'acronym'</span>: <span style="color: #008000; text-decoration-color: #008000">'NDB'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'graph_id'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'graph_order'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">618</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'id'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">596</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'name'</span>: <span style="color: #008000; text-decoration-color: #008000">'Diagonal band nucleus'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'structure_id_path'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">997</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">567</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">623</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">803</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">826</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">904</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">596</span><span style="font-weight: bold">]</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'structure_set_ids'</span>: <span style="font-weight: bold">[</span>
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">112905828</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">691663206</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">687527945</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">688152362</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">12</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">184527634</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">167587189</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114512891</span>
-    <span style="font-weight: bold">]</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'rgb_triplet'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">150</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">167</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">211</span><span style="font-weight: bold">]</span>
+    <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'ElasticSyN'</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'syn_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'aff_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'aff_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'syn_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'n_seeds'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>
 <span style="font-weight: bold">}</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">40</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e8004358d90</span><span style="font-weight: bold">&gt;</span>
-</pre>
-</div><img alt="../../_images/temporary_register_100um_27_1.png" src="../../_images/temporary_register_100um_27_1.png" />
+<img alt="../../_images/temporary_register_100um_12_0.png" src="../../_images/temporary_register_100um_12_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seed-0_type-SyN_grad-0.20_synbin-32_affbin-20_affrate-0.8,  iso: 0.973 VIS: 0.977 CLA: 0.884 mi: 0.515 sym: 0.986 ovp: 1.000:   0%|          | 0/10 [00:53&lt;?, ?it/s]
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1211,7 +1073,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_37_0.png" src="../../_images/temporary_register_100um_37_0.png" />
+<img alt="../../_images/temporary_register_100um_22_0.png" src="../../_images/temporary_register_100um_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1233,7 +1095,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_39_0.png" src="../../_images/temporary_register_100um_39_0.png" />
+<img alt="../../_images/temporary_register_100um_24_0.png" src="../../_images/temporary_register_100um_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1255,11 +1117,10 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_41_0.png" src="../../_images/temporary_register_100um_41_0.png" />
+<img alt="../../_images/temporary_register_100um_26_0.png" src="../../_images/temporary_register_100um_26_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="masks">
+<section id="masks">
 <h2>Masks<a class="headerlink" href="#masks" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1465,7 +1326,7 @@ Wall time: 3h 37min 5s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_52_0.png" src="../../_images/temporary_register_100um_52_0.png" />
+<img alt="../../_images/temporary_register_100um_37_0.png" src="../../_images/temporary_register_100um_37_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1505,8 +1366,8 @@ Wall time: 3h 37min 5s
 </pre>
 </div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1531,14 +1392,10 @@ Wall time: 3h 37min 5s
               </div>
               
         
+        <div class='prev-next-bottom'>
             
 
-
-
-<div class='prev-next-bottom'>
-    
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -1557,10 +1414,9 @@ Wall time: 3h 37min 5s
 
       </div>
     </div>
-    
+  
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-
-    
+  
   </body>
 </html>

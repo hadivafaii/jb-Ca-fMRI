@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>April 7th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -80,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -547,6 +548,16 @@
      October 10th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-11-2021.html">
+     October 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-12-2021.html">
+     October 12th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -651,7 +662,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-highly-modular-network-with-no-overlap">
@@ -912,7 +923,7 @@
         
               <div>
                 
-  <div class="section" id="april-7th-2021">
+  <section id="april-7th-2021">
 <h1>April 7th, 2021<a class="headerlink" href="#april-7th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Overlapping communities: exploring LFR benchmark and SVINET algorithm. </br></p>
 <div class="cell tag_hide-input docutils container">
@@ -991,7 +1002,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="a-highly-modular-network-with-no-overlap">
+<section id="a-highly-modular-network-with-no-overlap">
 <h2>A highly modular network with no overlap<a class="headerlink" href="#a-highly-modular-network-with-no-overlap" title="Permalink to this headline">¶</a></h2>
 <p>Code to generate this network:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./benchmark -N <span class="m">1000</span> -k <span class="m">100</span> -maxk <span class="m">300</span> -mut <span class="m">0</span>.1 -muw <span class="m">0</span>.1 -t1 <span class="m">3</span> -t2 <span class="m">1</span>.7 -minc <span class="m">600</span> -on <span class="m">0</span> -om <span class="m">0</span>
@@ -1021,7 +1032,7 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_4_0.png" src="../../_images/apr-07-2021_4_0.png" />
 </div>
 </div>
-<div class="section" id="louvain">
+<section id="louvain">
 <h3>Louvain<a class="headerlink" href="#louvain" title="Permalink to this headline">¶</a></h3>
 <p>The communities in this network are highly disjoint and Louvain is expected to recover ground truth.</p>
 <div class="cell docutils container">
@@ -1033,7 +1044,7 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-<div class="section" id="plot-results">
+<section id="plot-results">
 <h4>Plot results<a class="headerlink" href="#plot-results" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,8 +1057,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 <p>Louvain learns the true community structure</p>
-</div>
-<div class="section" id="quantitative-comparison">
+</section>
+<section id="quantitative-comparison">
 <h4>Quantitative comparison<a class="headerlink" href="#quantitative-comparison" title="Permalink to this headline">¶</a></h4>
 <p>Compute normalized_mutual_info between ground truth as returned by the benchmark code, and the partition learned by Louvain algorithm.</p>
 <div class="cell docutils container">
@@ -1071,8 +1082,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plot-adjacency-matrix">
+</section>
+<section id="plot-adjacency-matrix">
 <h4>Plot adjacency matrix<a class="headerlink" href="#plot-adjacency-matrix" title="Permalink to this headline">¶</a></h4>
 <p>Here I will group nodes together using i) ground truth, and ii) Louvain community labels.  Here we also see that the gruond truth labels must be wrong.</p>
 <div class="cell docutils container">
@@ -1100,9 +1111,9 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_14_0.png" src="../../_images/apr-07-2021_14_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="svinet">
+</section>
+</section>
+<section id="svinet">
 <h3>SVINET<a class="headerlink" href="#svinet" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1123,8 +1134,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="run-algorithm">
+</section>
+<section id="run-algorithm">
 <h3>Run algorithm<a class="headerlink" href="#run-algorithm" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1196,8 +1207,8 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_26_0.png" src="../../_images/apr-07-2021_26_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="viz-memberships">
+</section>
+<section id="viz-memberships">
 <h3>Viz memberships<a class="headerlink" href="#viz-memberships" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1402,7 +1413,7 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_44_0.png" src="../../_images/apr-07-2021_44_0.png" />
 </div>
 </div>
-<div class="section" id="entropy-analysis">
+<section id="entropy-analysis">
 <h4>Entropy analysis<a class="headerlink" href="#entropy-analysis" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1474,10 +1485,10 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="medium-no-overlap">
+</section>
+</section>
+</section>
+<section id="medium-no-overlap">
 <h2>Medium (no overlap)<a class="headerlink" href="#medium-no-overlap" title="Permalink to this headline">¶</a></h2>
 <p>Code to generate this network:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./benchmark -N <span class="m">100</span> -k <span class="m">50</span> -maxk <span class="m">70</span> -mut <span class="m">0</span>.1 -muw <span class="m">0</span>.1 -t1 <span class="m">3</span>.5 -t2 <span class="m">1</span>.9 -minc <span class="m">50</span> -on <span class="m">0</span> -om <span class="m">0</span>
@@ -1507,7 +1518,7 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_62_0.png" src="../../_images/apr-07-2021_62_0.png" />
 </div>
 </div>
-<div class="section" id="id1">
+<section id="id1">
 <h3>Louvain<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The communities in this network are highly disjoint and Louvain is expected to recover ground truth.</p>
 <div class="cell docutils container">
@@ -1519,7 +1530,7 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-<div class="section" id="id2">
+<section id="id2">
 <h4>Plot results<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1532,8 +1543,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 <p>Louvain learns the true community structure</p>
-</div>
-<div class="section" id="id3">
+</section>
+<section id="id3">
 <h4>Quantitative comparison<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Compute normalized_mutual_info between ground truth as returned by the benchmark code, and the partition learned by Louvain algorithm.</p>
 <div class="cell docutils container">
@@ -1557,8 +1568,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id4">
+</section>
+<section id="id4">
 <h4>Plot adjacency matrix<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Here I will group nodes together using i) ground truth, and ii) Louvain community labels.  Here we also see that the gruond truth labels must be wrong.</p>
 <div class="cell docutils container">
@@ -1586,9 +1597,9 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_72_0.png" src="../../_images/apr-07-2021_72_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id5">
+</section>
+</section>
+<section id="id5">
 <h3>SVINET<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1609,8 +1620,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id6">
+</section>
+<section id="id6">
 <h3>Run algorithm<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1682,8 +1693,8 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_84_0.png" src="../../_images/apr-07-2021_84_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id7">
+</section>
+<section id="id7">
 <h3>Viz memberships<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1871,7 +1882,7 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_100_0.png" src="../../_images/apr-07-2021_100_0.png" />
 </div>
 </div>
-<div class="section" id="id8">
+<section id="id8">
 <h4>Entropy analysis<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1943,10 +1954,10 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="large-no-overlap">
+</section>
+</section>
+</section>
+<section id="large-no-overlap">
 <h2>Large (no overlap)<a class="headerlink" href="#large-no-overlap" title="Permalink to this headline">¶</a></h2>
 <p>Code to generate this network:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./benchmark -N <span class="m">5000</span> -k <span class="m">500</span> -maxk <span class="m">700</span> -mut <span class="m">0</span>.1 -muw <span class="m">0</span>.1 -t1 <span class="m">3</span>.5 -t2 <span class="m">1</span>.9 -minc <span class="m">1000</span> -on <span class="m">0</span> -om <span class="m">0</span>
@@ -1976,7 +1987,7 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_117_0.png" src="../../_images/apr-07-2021_117_0.png" />
 </div>
 </div>
-<div class="section" id="id9">
+<section id="id9">
 <h3>Louvain<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>The communities in this network are highly disjoint and Louvain is expected to recover ground truth.</p>
 <div class="cell docutils container">
@@ -1988,7 +1999,7 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-<div class="section" id="id10">
+<section id="id10">
 <h4>Plot results<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2001,8 +2012,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 <p>Louvain learns the true community structure</p>
-</div>
-<div class="section" id="id11">
+</section>
+<section id="id11">
 <h4>Quantitative comparison<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p>Compute normalized_mutual_info between ground truth as returned by the benchmark code, and the partition learned by Louvain algorithm.</p>
 <div class="cell docutils container">
@@ -2026,8 +2037,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id12">
+</section>
+<section id="id12">
 <h4>Plot adjacency matrix<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <p>Here I will group nodes together using i) ground truth, and ii) Louvain community labels.  Here we also see that the gruond truth labels must be wrong.</p>
 <div class="cell docutils container">
@@ -2055,9 +2066,9 @@ Num overlapping nodes:	0
 <img alt="../../_images/apr-07-2021_127_0.png" src="../../_images/apr-07-2021_127_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id13">
+</section>
+</section>
+<section id="id13">
 <h3>SVINET<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2078,8 +2089,8 @@ Num overlapping nodes:	0
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id14">
+</section>
+<section id="id14">
 <h3>Run algorithm<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2151,8 +2162,8 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_139_0.png" src="../../_images/apr-07-2021_139_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id15">
+</section>
+<section id="id15">
 <h3>Viz memberships<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2353,9 +2364,9 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_155_0.png" src="../../_images/apr-07-2021_155_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="an-overlapping-network">
+</section>
+</section>
+<section id="an-overlapping-network">
 <h2>An overlapping network<a class="headerlink" href="#an-overlapping-network" title="Permalink to this headline">¶</a></h2>
 <p>The bug persists for the overlapping case. Here I will load an overlapping network to show this.  Code to generate the network used below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./benchmark -N <span class="m">1000</span> -k <span class="m">200</span> -maxk <span class="m">500</span> -mut <span class="m">0</span>.1 -muw <span class="m">0</span>.1 -t1 <span class="m">3</span> -t2 <span class="m">1</span>.7 -minc <span class="m">400</span> -on <span class="m">100</span> -om <span class="m">5</span>
@@ -2385,7 +2396,7 @@ Num overlapping nodes:	100
 <img alt="../../_images/apr-07-2021_161_0.png" src="../../_images/apr-07-2021_161_0.png" />
 </div>
 </div>
-<div class="section" id="id16">
+<section id="id16">
 <h3>Louvain<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
 <p>The communities in this network are highly disjoint and Louvain is expected to recover ground truth.</p>
 <div class="cell docutils container">
@@ -2397,7 +2408,7 @@ Num overlapping nodes:	100
 </div>
 </div>
 </div>
-<div class="section" id="id17">
+<section id="id17">
 <h4>Plot results<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2410,8 +2421,8 @@ Num overlapping nodes:	100
 </div>
 </div>
 <p>Louvain learns the true community structure</p>
-</div>
-<div class="section" id="id18">
+</section>
+<section id="id18">
 <h4>Quantitative comparison<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
 <p>Compute normalized_mutual_info between ground truth as returned by the benchmark code, and the partition learned by Louvain algorithm.</p>
 <div class="cell docutils container">
@@ -2435,8 +2446,8 @@ Num overlapping nodes:	100
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id19">
+</section>
+<section id="id19">
 <h4>Plot adjacency matrix<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <p>Here I will group nodes together using i) ground truth, and ii) Louvain community labels.  Here we also see that the gruond truth labels must be wrong.</p>
 <div class="cell docutils container">
@@ -2464,9 +2475,9 @@ Num overlapping nodes:	100
 <img alt="../../_images/apr-07-2021_171_0.png" src="../../_images/apr-07-2021_171_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id20">
+</section>
+</section>
+<section id="id20">
 <h3>SVINET<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2487,8 +2498,8 @@ Num overlapping nodes:	100
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id21">
+</section>
+<section id="id21">
 <h3>Run algorithm<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2560,8 +2571,8 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_183_0.png" src="../../_images/apr-07-2021_183_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id22">
+</section>
+<section id="id22">
 <h3>Viz memberships<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2756,7 +2767,7 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_199_0.png" src="../../_images/apr-07-2021_199_0.png" />
 </div>
 </div>
-<div class="section" id="id23">
+<section id="id23">
 <h4>Entropy analysis<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2824,10 +2835,10 @@ medium.txt  n5000-k9-mmsb-seed42-linksampling
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="name-003-lots-of-overlap">
+</section>
+</section>
+</section>
+<section id="name-003-lots-of-overlap">
 <h2>Name: 003 (lots of overlap)<a class="headerlink" href="#name-003-lots-of-overlap" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./benchmark -N <span class="m">1000</span> -k <span class="m">100</span> -maxk <span class="m">200</span> -mut <span class="m">0</span>.1 -muw <span class="m">0</span>.1 -t1 <span class="m">3</span> -t2 <span class="m">1</span>.7 -minc <span class="m">400</span> -on <span class="m">500</span> -om <span class="m">10</span>
 </pre></div>
@@ -2856,7 +2867,7 @@ Num overlapping nodes:	500
 <img alt="../../_images/apr-07-2021_218_0.png" src="../../_images/apr-07-2021_218_0.png" />
 </div>
 </div>
-<div class="section" id="id24">
+<section id="id24">
 <h3>Louvain<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
 <p>The communities in this network are highly disjoint and Louvain is expected to recover ground truth.</p>
 <div class="cell docutils container">
@@ -2868,7 +2879,7 @@ Num overlapping nodes:	500
 </div>
 </div>
 </div>
-<div class="section" id="id25">
+<section id="id25">
 <h4>Plot results<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2881,8 +2892,8 @@ Num overlapping nodes:	500
 </div>
 </div>
 <p>Louvain learns the true community structure</p>
-</div>
-<div class="section" id="id26">
+</section>
+<section id="id26">
 <h4>Quantitative comparison<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
 <p>Compute normalized_mutual_info between ground truth as returned by the benchmark code, and the partition learned by Louvain algorithm.</p>
 <div class="cell docutils container">
@@ -2906,8 +2917,8 @@ Num overlapping nodes:	500
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id27">
+</section>
+<section id="id27">
 <h4>Plot adjacency matrix<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
 <p>Here I will group nodes together using i) ground truth, and ii) Louvain community labels.  Here we also see that the gruond truth labels must be wrong.</p>
 <div class="cell docutils container">
@@ -2935,9 +2946,9 @@ Num overlapping nodes:	500
 <img alt="../../_images/apr-07-2021_228_0.png" src="../../_images/apr-07-2021_228_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id28">
+</section>
+</section>
+<section id="id28">
 <h3>SVINET<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2958,8 +2969,8 @@ Num overlapping nodes:	500
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id29">
+</section>
+<section id="id29">
 <h3>Run algorithm<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3033,8 +3044,8 @@ n1000-k6-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_240_0.png" src="../../_images/apr-07-2021_240_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="id30">
+</section>
+<section id="id30">
 <h3>Viz memberships<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3270,7 +3281,7 @@ n1000-k6-mmsb-seed42-linksampling
 <img alt="../../_images/apr-07-2021_256_0.png" src="../../_images/apr-07-2021_256_0.png" />
 </div>
 </div>
-<div class="section" id="id31">
+<section id="id31">
 <h4>Entropy analysis<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3345,10 +3356,10 @@ n1000-k6-mmsb-seed42-linksampling
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3373,32 +3384,12 @@ n1000-k6-mmsb-seed42-linksampling
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="../../md/apr21_updates.html" title="previous page">Updates</a>
+    <a class='right-next' id="next-link" href="apr-30-2021.html" title="next page">April 30th, 2021</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="../../md/apr21_updates.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Updates</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="apr-30-2021.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">April 30th, 2021</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -3417,10 +3408,9 @@ n1000-k6-mmsb-seed42-linksampling
 
       </div>
     </div>
-    
+  
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-
-    
+  
   </body>
 </html>

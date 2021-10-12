@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>June, 26th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -80,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -547,6 +548,16 @@
      October 10th, 2021
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-11-2021.html">
+     October 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-12-2021.html">
+     October 12th, 2021
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -651,7 +662,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
+            <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#load-prepare">
@@ -720,7 +731,7 @@
         
               <div>
                 
-  <div class="section" id="june-26th-2021">
+  <section id="june-26th-2021">
 <h1>June, 26th, 2021<a class="headerlink" href="#june-26th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Clean up. Added Parcellation and Hierarchical objects <br></p>
 <div class="cell tag_hide-input docutils container">
@@ -770,9 +781,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="load-prepare">
+<section id="load-prepare">
 <h2>Load &amp; prepare<a class="headerlink" href="#load-prepare" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="allen-atlas">
+<section id="allen-atlas">
 <h3>Allen &amp; Atlas<a class="headerlink" href="#allen-atlas" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,8 +810,8 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </pre>
 </div></div>
 </div>
-</div>
-<div class="section" id="parcellation">
+</section>
+<section id="parcellation">
 <h3>parcellation<a class="headerlink" href="#parcellation" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,8 +889,8 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 <img alt="../../_images/jun-26-2021_8_0.png" src="../../_images/jun-26-2021_8_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="combine-all-data">
+</section>
+<section id="combine-all-data">
 <h3>Combine all data<a class="headerlink" href="#combine-all-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -897,9 +908,9 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </pre>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="hierarchical-clustering">
+</section>
+</section>
+<section id="hierarchical-clustering">
 <h2>Hierarchical clustering<a class="headerlink" href="#hierarchical-clustering" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -928,7 +939,7 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 <img alt="../../_images/jun-26-2021_14_0.png" src="../../_images/jun-26-2021_14_0.png" />
 </div>
 </div>
-<div class="section" id="all-clusters">
+<section id="all-clusters">
 <h3>All clusters<a class="headerlink" href="#all-clusters" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1184,8 +1195,8 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </pre>
 </div></div>
 </div>
-</div>
-<div class="section" id="embed-table">
+</section>
+<section id="embed-table">
 <h3>Embed table<a class="headerlink" href="#embed-table" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1206,9 +1217,9 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 ></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="render">
+</section>
+</section>
+<section id="render">
 <h2>Render<a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1255,7 +1266,7 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </pre>
 </div></div>
 </div>
-<div class="section" id="embed-3d">
+<section id="embed-3d">
 <h3>Embed 3d<a class="headerlink" href="#embed-3d" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1276,9 +1287,9 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 ></iframe>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="report-properties-of-a-parcellation-todo">
+</section>
+</section>
+<section id="report-properties-of-a-parcellation-todo">
 <h2>Report properties of a parcellation (TODO)<a class="headerlink" href="#report-properties-of-a-parcellation-todo" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><p>use this:</p>
@@ -1313,8 +1324,8 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1339,32 +1350,12 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="jun-24-2021.html" title="previous page">June 24th, 2021</a>
+    <a class='right-next' id="next-link" href="jun-29-2021.html" title="next page">June 29th, 2021</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="jun-24-2021.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">June 24th, 2021</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="jun-29-2021.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">June 29th, 2021</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -1383,10 +1374,9 @@ From: http://www.brain-map.org (Wang et al 2020, https://doi.org/10.1016/j.cell.
 
       </div>
     </div>
-    
+  
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-
-    
+  
   </body>
 </html>
