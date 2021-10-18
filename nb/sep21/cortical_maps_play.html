@@ -23,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -79,7 +79,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   February 2021
  </span>
@@ -132,7 +132,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   March 2021
  </span>
@@ -196,7 +196,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   April 2021
  </span>
@@ -230,7 +230,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   May 2021
  </span>
@@ -289,7 +289,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   June 2021
  </span>
@@ -383,7 +383,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   July 2021
  </span>
@@ -427,7 +427,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   August 2021
  </span>
@@ -456,7 +456,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   September 2021
  </span>
@@ -515,7 +515,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   October 2021
  </span>
@@ -554,6 +554,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../oct21/oct-12-2021.html">
      October 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-17-2021.html">
+     October 17th, 2021
     </a>
    </li>
   </ul>
@@ -660,7 +665,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="simple visible nav section-nav flex-column">
 </ul>
 
@@ -691,6 +696,7 @@
 <span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># set style &amp; no interpolalation</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
@@ -727,7 +733,915 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mice.parcel.fit_parcel(True, cutoff=4)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/cortical_maps_play_2_2.png" src="../../_images/cortical_maps_play_2_2.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">254</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">254</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">256</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">254</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-128</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">setup_dfs</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;rest&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">setup_dfs</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;rest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 157 ms, sys: 6.44 s, total: 6.6 s
+Wall time: 8.11 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="kn">import</span> <span class="nn">ants</span>
+
+<span class="n">top2d</span> <span class="o">=</span> <span class="s1">&#39;parcel2d-top_10um.nii.gz&#39;</span>
+<span class="n">top2d</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">main_dir</span><span class="p">,</span> <span class="n">top2d</span><span class="p">)</span>
+<span class="n">top2d</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_read</span><span class="p">(</span><span class="n">top2d</span><span class="p">,</span> <span class="n">pixeltype</span><span class="o">=</span><span class="s1">&#39;unsigned int&#39;</span><span class="p">)</span>
+<span class="n">top2d</span> <span class="o">=</span> <span class="n">top2d</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+<span class="n">flat2d</span> <span class="o">=</span> <span class="s1">&#39;parcel2d-flat_10um.nii.gz&#39;</span>
+<span class="n">flat2d</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">main_dir</span><span class="p">,</span> <span class="n">flat2d</span><span class="p">)</span>
+<span class="n">flat2d</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_read</span><span class="p">(</span><span class="n">flat2d</span><span class="p">,</span> <span class="n">pixeltype</span><span class="o">=</span><span class="s1">&#39;unsigned int&#39;</span><span class="p">)</span>
+<span class="n">flat2d</span> <span class="o">=</span> <span class="n">flat2d</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+<span class="c1">#parcel3d = &#39;parcel3d_10um.nii.gz&#39;</span>
+<span class="c1">#parcel3d = pjoin(mice.cfg.main_dir, parcel3d)</span>
+<span class="c1">#parcel3d = ants.image_read(parcel3d, pixeltype=&#39;unsigned int&#39;)</span>
+<span class="c1">#parcel3d = parcel3d.numpy()</span>
+
+<span class="n">topview</span> <span class="o">=</span> <span class="s1">&#39;topview_10um.nii.gz&#39;</span>
+<span class="n">topview</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">topview</span><span class="p">)</span>
+<span class="n">topview</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_read</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">pixeltype</span><span class="o">=</span><span class="s1">&#39;unsigned int&#39;</span><span class="p">)</span>
+<span class="n">topview</span> <span class="o">=</span> <span class="n">topview</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
+<span class="n">flatmap</span> <span class="o">=</span> <span class="s1">&#39;flatmap_10um.nii.gz&#39;</span>
+<span class="n">flatmap</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">flatmap</span><span class="p">)</span>
+<span class="n">flatmap</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">image_read</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">pixeltype</span><span class="o">=</span><span class="s1">&#39;unsigned int&#39;</span><span class="p">)</span>
+<span class="n">flatmap</span> <span class="o">=</span> <span class="n">flatmap</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 188 ms, sys: 39.7 ms, total: 228 ms
+Wall time: 249 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="color: #008000; text-decoration-color: #008000">'cortex'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cortex-top'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cortex-raw'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cortex-eroded'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cortex-regions'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'merged-regions'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'top-regions'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'merged-ids'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'radius'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cutoff'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-flat'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-top'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel3d'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-flat'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-top'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel3d'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'shape_parcel2d-flat'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'shape_parcel2d-top'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'shape_parcel3d'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'subcortex'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'subcortex-l'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'subcortex-r'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'major_masks'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'major_colors'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cmap'</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span> <span class="o">=</span> <span class="n">SVINET</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ca2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load_results</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">current expt: <span style="color: #008000; text-decoration-color: #008000">'p15'</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> loading <span style="color: #008000; text-decoration-color: #008000">'k6-real-euclidean-linksampling-(2021_10_16)'</span> from
+<span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Documents/Ca-fMRI/processed/norm-global_parcel-columnar_n-128*2/results/SVINET/n-</span>
+<span style="color: #008000; text-decoration-color: #008000">128*2_ca2_rest_pearson_sub-SLC/p15'</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> process results: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> results loaded
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cortical_maps_play_11_0.png" src="../../_images/cortical_maps_play_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_regions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">l2n</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">project_pi</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">min_thres</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">items</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">items</span> <span class="o">=</span> <span class="n">items</span> <span class="k">if</span> <span class="n">items</span> <span class="k">else</span> <span class="p">[</span>
+        <span class="s1">&#39;parcel2d-top&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parcel2d-flat&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;parcel3d&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">dense</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">name</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+            <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi</span><span class="p">),</span> <span class="o">*</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;shape_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">items</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">oc_idx</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">pi</span><span class="p">),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">pi</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">n2l</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">ii</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">arr</span> <span class="ow">in</span> <span class="n">dense</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;region-idxs_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]:</span>
+                    <span class="n">ids</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;region-idxs_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">][</span><span class="n">ii</span><span class="p">]</span>
+                    <span class="n">ids</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;nonzero-idxs_</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">][</span><span class="n">ids</span><span class="p">]</span>
+                    <span class="n">arr</span><span class="p">[</span><span class="n">oc_idx</span><span class="p">]</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dense</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">min_thres</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">dense</span> <span class="o">=</span> <span class="n">project_pi</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">min_thres</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;parcel2d-top&#39;</span><span class="p">,</span> <span class="s1">&#39;parcel2d-flat&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "6b5b9447631d45c28ef22385cc04f618", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 130 ms, sys: 21.8 ms, total: 152 ms
+Wall time: 149 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)):</span>
+    <span class="n">data_top</span> <span class="o">=</span> <span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel2d-top&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">data_flat</span> <span class="o">=</span> <span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel2d-flat&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+        
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;mako&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (top)&quot;</span><span class="p">)</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flat2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;mako&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (flat)&quot;</span><span class="p">)</span>
+
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cortical_maps_play_18_0.png" src="../../_images/cortical_maps_play_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;ca2_mega-animal_k6.pdf&#39;</span><span class="p">),</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span> <span class="o">=</span> <span class="n">SVINET</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load_results</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">current expt: <span style="color: #008000; text-decoration-color: #008000">'p15'</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> loading <span style="color: #008000; text-decoration-color: #008000">'k8-real-euclidean-linksampling-(2021_10_16)'</span> from
+<span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Documents/Ca-fMRI/processed/norm-global_parcel-columnar_n-128*2/results/SVINET/n-</span>
+<span style="color: #008000; text-decoration-color: #008000">128*2_bold_rest_pearson_sub-SLC/p15'</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> process results: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> results loaded
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_regions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">l2n</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">min_thres</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">dense</span> <span class="o">=</span> <span class="n">project_pi</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">min_thres</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0f0db4739f0b4358a073e9f88baf8eb3", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 10.2 s, sys: 5.98 s, total: 16.2 s
+Wall time: 16.2 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)):</span>
+    <span class="n">data_top</span> <span class="o">=</span> <span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel2d-top&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">data_flat</span> <span class="o">=</span> <span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel2d-flat&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (top)&quot;</span><span class="p">)</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flat2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (flat)&quot;</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cortical_maps_play_26_0.png" src="../../_images/cortical_maps_play_26_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">800</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1140</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f72edbcbd60</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_29_1.png" src="../../_images/cortical_maps_play_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f72edbaf070</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_30_1.png" src="../../_images/cortical_maps_play_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">))):</span>
+    <span class="n">vol2top</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">cortical_map</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;top_view&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+    <span class="n">vol2flat</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">cortical_map</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;dorsal_flatmap&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">vol2top</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">vol2top</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (top)&quot;</span><span class="p">)</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flat2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">vol2flat</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">vol2flat</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (flat)&quot;</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "93ee0961399548bfbcfeda1372218d16", "version_major": 2, "version_minor": 0}
+</script><img alt="../../_images/cortical_maps_play_32_1.png" src="../../_images/cortical_maps_play_32_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f31e83767c0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_36_1.png" src="../../_images/cortical_maps_play_36_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f31e869fb20</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_37_1.png" src="../../_images/cortical_maps_play_37_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">min_thres</span> <span class="o">=</span> <span class="mf">0.1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">ncols</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">))):</span>
+    <span class="n">vol2top</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">cortical_map</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;top_view&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+    <span class="n">vol2flat</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">cortical_map</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;dorsal_flatmap&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+
+    <span class="n">smoothed</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">vol2top</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">smoothed</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">,</span> <span class="n">vol2top</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (top)&quot;</span><span class="p">)</span>
+
+    <span class="n">smoothed</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">vol2flat</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">smoothed</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">,</span> <span class="n">vol2flat</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (flat)&quot;</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b1f001ce626b451bb4c036aaf1855b7f", "version_major": 2, "version_minor": 0}
+</script><img alt="../../_images/cortical_maps_play_41_1.png" src="../../_images/cortical_maps_play_41_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;bold_mega-animal_k8.pdf&#39;</span><span class="p">),</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f7521e8ba00</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_44_1.png" src="../../_images/cortical_maps_play_44_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cortex_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">n2l</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lbl</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">subcortex_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">n2l</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lbl</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cortex_nodes</span><span class="p">,</span> <span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">cortex_nodes</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f7521bc90a0</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_46_1.png" src="../../_images/cortical_maps_play_46_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">cortex_nodes</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">185</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">cortex_nodes</span><span class="p">[</span><span class="mi">185</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6953683493331805</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span><span class="o">.</span><span class="n">n2l</span><span class="p">[</span><span class="n">cortex_nodes</span><span class="p">[</span><span class="mi">185</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'1-94-1'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">Allen</span>
+<span class="n">al10</span> <span class="o">=</span> <span class="n">Allen</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">al10</span><span class="o">.</span><span class="n">get_masks</span><span class="p">(</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">)])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">118</span><span class="o">-</span><span class="n">f444cec7c8d2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">al10</span><span class="o">.</span><span class="n">get_masks</span><span class="p">(</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">)])</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/distributions.py</span> in <span class="ni">histplot</span><span class="nt">(data, x, y, hue, weights, stat, bins, binwidth, binrange, discrete, cumulative, common_bins, common_norm, multiple, element, fill, shrink, kde, kde_kws, line_kws, thresh, pthresh, pmax, cbar, cbar_ax, cbar_kws, palette, hue_order, hue_norm, color, log_scale, legend, ax, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1428</span> <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1429</span> 
+<span class="ne">-&gt; </span><span class="mi">1430</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">_DistributionPlotter</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1431</span>         <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1432</span>         <span class="n">variables</span><span class="o">=</span><span class="n">_DistributionPlotter</span><span class="o">.</span><span class="n">get_semantics</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/distributions.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> 
+<span class="ne">--&gt; </span><span class="mi">111</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> 
+<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="nd">@property</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/_core.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="p">{}):</span>
+<span class="g g-Whitespace">    </span><span class="mi">604</span> 
+<span class="ne">--&gt; </span><span class="mi">605</span>         <span class="bp">self</span><span class="o">.</span><span class="n">assign_variables</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">variables</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">606</span> 
+<span class="g g-Whitespace">    </span><span class="mi">607</span>         <span class="k">for</span> <span class="n">var</span><span class="p">,</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_semantic_mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/_core.py</span> in <span class="ni">assign_variables</span><span class="nt">(self, data, variables)</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span>         <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span>             <span class="bp">self</span><span class="o">.</span><span class="n">input_format</span> <span class="o">=</span> <span class="s2">&quot;wide&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">663</span>             <span class="n">plot_data</span><span class="p">,</span> <span class="n">variables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assign_variables_wideform</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span>                 <span class="n">data</span><span class="p">,</span> <span class="o">**</span><span class="n">variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span>             <span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/_core.py</span> in <span class="ni">_assign_variables_wideform</span><span class="nt">(self, data, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>             <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">722</span>         <span class="n">flat</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">723</span>             <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>             <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/seaborn/_core.py</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">721</span>             <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">722</span>         <span class="n">flat</span> <span class="o">=</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+<span class="ne">--&gt; </span><span class="mi">723</span>             <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>             <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">values</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span>         <span class="p">)</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/abc.py</span> in <span class="ni">__instancecheck__</span><span class="nt">(cls, instance)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>         <span class="k">def</span> <span class="fm">__instancecheck__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>             <span class="sd">&quot;&quot;&quot;Override for isinstance(instance, cls).&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">98</span>             <span class="k">return</span> <span class="n">_abc_instancecheck</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">instance</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> 
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="k">def</span> <span class="fm">__subclasscheck__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subclass</span><span class="p">):</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dense</span><span class="p">[</span><span class="s1">&#39;parcel3d&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f7521f094c0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_57_1.png" src="../../_images/cortical_maps_play_57_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">vol2flat</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f7522abb4c0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_59_1.png" src="../../_images/cortical_maps_play_59_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">vol2flat</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f91b0b2b070</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_60_1.png" src="../../_images/cortical_maps_play_60_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data_vol</span><span class="p">[</span><span class="mi">70</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f91b09ba250</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_62_1.png" src="../../_images/cortical_maps_play_62_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ncols</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">))</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="p">(</span><span class="mf">13.5</span><span class="p">,</span> <span class="mf">2.5</span> <span class="o">*</span> <span class="n">nrows</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]})</span>
+
+<span class="n">min_thres</span> <span class="o">=</span> <span class="mf">0.01</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
+    <span class="n">data_top</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">top2d</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">data_flat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">flat2d</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">node</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">n2l</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">ii</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+        <span class="n">data_top</span><span class="p">[</span><span class="n">top2d</span> <span class="o">==</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+        <span class="n">data_flat</span><span class="p">[</span><span class="n">flat2d</span> <span class="o">==</span> <span class="n">ii</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">node</span><span class="p">]</span>
+    
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">top2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_top</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">topview</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (top)&quot;</span><span class="p">)</span>
+
+    <span class="n">cond</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flat2d</span><span class="p">,</span> <span class="n">valid_regions</span><span class="p">)</span>
+    <span class="n">cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span> <span class="o">&lt;</span> <span class="n">min_thres</span><span class="p">)</span>
+    <span class="n">data2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">data_flat</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">()[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flatmap</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rocket&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OC_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> (flat)&quot;</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">masks_fx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">fuse_masks</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">struct_ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="n">Register</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">organize_func</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">logger <span style="color: #008000; text-decoration-color: #008000">'organize_func_(2021_10_12).log'</span> created at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-768</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/log
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: cortex-merged . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1020</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing ca2:  sub-SLC10_ses-3_run-7: 100%|██████████| 210/210 [1:37:44&lt;00:00, 27.92s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: cortex-merged . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5368</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">98</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: subcortex-l . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: subcortex-r . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC10_ses-3_run-7: 100%|██████████| 210/210 [1:18:37&lt;00:00, 22.47s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">get_accepted_regions</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">acc</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: cortex-merged . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5368</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">98</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: subcortex-l . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: subcortex-r . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'cortex-merged'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5368</span>, <span style="color: #008000; text-decoration-color: #008000">'subcortex-l'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span>, <span style="color: #008000; text-decoration-color: #008000">'subcortex-r'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span>, <span style="color: #008000; text-decoration-color: #008000">'subcortex'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cor3d</span> <span class="o">=</span> <span class="n">acc</span><span class="p">[</span><span class="s1">&#39;cortex-merged&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span>
+<span class="n">acc2</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">get_accepted_regions</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">acc2</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+<span class="n">cor2d</span> <span class="o">=</span> <span class="n">acc2</span><span class="p">[</span><span class="s1">&#39;cortex-merged&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+Name: cortex-merged . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1020</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">72</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cor2d</span> <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cor3d</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thres</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">regions_all</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">sub_ids</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">ses</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">ses_ids</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">(</span><span class="s1">&#39;unsigned int&#39;</span><span class="p">)</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">mask</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">load_obj_masks</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;cortex-merged&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+        <span class="n">x</span> <span class="o">*=</span> <span class="n">mask</span>
+        <span class="n">regions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()])</span>
+        <span class="n">regions_all</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">regions</span><span class="p">)</span>
+
+<span class="n">regions_agg</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">regions_all</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">regions_agg</span> <span class="o">+=</span> <span class="n">item</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">regions_agg</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">i</span><span class="p">:</span> <span class="n">v</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">regions_all</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">freq</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">i</span><span class="p">:</span> <span class="n">freq</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">freq</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="n">rej</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">thres</span><span class="p">,</span>
+    <span class="n">freq</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">))</span>
+<span class="n">rej</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">complement</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">rej</span><span class="p">))</span>
+<span class="n">acc</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">freq</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">rej</span>
+<span class="p">]</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="s1">&#39;cortex-merged&#39;</span><span class="si">}</span><span class="s2"> . . . a total of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span><span class="si">}</span><span class="s2"> regions were accepted.</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;accept ratio: </span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="si">:</span><span class="s2">0.0f</span><span class="si">}</span><span class="s2"> %, &quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;reject ratio: </span><span class="si">{</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">rej</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="si">:</span><span class="s2">0.0f</span><span class="si">}</span><span class="s2"> %, &quot;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;using a presence threshold of </span><span class="si">{</span><span class="mf">0.1</span> <span class="o">*</span> <span class="mi">100</span><span class="si">}</span><span class="s2"> %</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+Name: cortex-merged . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5368</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">98</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">ecdfplot</span><span class="p">(</span><span class="n">freq</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Proportion'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/cortical_maps_play_87_1.png" src="../../_images/cortical_maps_play_87_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'cortex-merged'</span>, <span style="color: #008000; text-decoration-color: #008000">'subcortex-l'</span>, <span style="color: #008000; text-decoration-color: #008000">'subcortex-r'</span>, <span style="color: #008000; text-decoration-color: #008000">'CH'</span><span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regions_all</span> <span class="o">=</span> <span class="p">{}</span>
 </pre></div>
 </div>
 </div>
@@ -743,7 +1657,7 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
 </pre>
-</div><img alt="../../_images/cortical_maps_play_2_2.png" src="../../_images/cortical_maps_play_2_2.png" />
+</div><img alt="../../_images/cortical_maps_play_101_2.png" src="../../_images/cortical_maps_play_101_2.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'163'</span> is flat
@@ -997,7 +1911,7 @@ invalid value encountered in true_divide
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f3297ac18b0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_17_1.png" src="../../_images/cortical_maps_play_17_1.png" />
+</div><img alt="../../_images/cortical_maps_play_116_1.png" src="../../_images/cortical_maps_play_116_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1038,7 +1952,7 @@ invalid value encountered in true_divide
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f3296611790</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_24_1.png" src="../../_images/cortical_maps_play_24_1.png" />
+</div><img alt="../../_images/cortical_maps_play_123_1.png" src="../../_images/cortical_maps_play_123_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1064,7 +1978,7 @@ invalid value encountered in true_divide
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f329664e970</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/cortical_maps_play_27_1.png" src="../../_images/cortical_maps_play_27_1.png" />
+</div><img alt="../../_images/cortical_maps_play_126_1.png" src="../../_images/cortical_maps_play_126_1.png" />
 </div>
 </div>
 
@@ -1091,10 +2005,14 @@ invalid value encountered in true_divide
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
@@ -1113,9 +2031,10 @@ invalid value encountered in true_divide
 
       </div>
     </div>
-  
+    
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+
+    
   </body>
 </html>

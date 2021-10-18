@@ -23,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -79,7 +79,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   February 2021
  </span>
@@ -132,7 +132,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   March 2021
  </span>
@@ -196,7 +196,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   April 2021
  </span>
@@ -230,7 +230,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   May 2021
  </span>
@@ -289,7 +289,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   June 2021
  </span>
@@ -383,7 +383,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   July 2021
  </span>
@@ -427,7 +427,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   August 2021
  </span>
@@ -456,7 +456,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   September 2021
  </span>
@@ -515,7 +515,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   October 2021
  </span>
@@ -554,6 +554,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../oct21/oct-12-2021.html">
      October 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-17-2021.html">
+     October 17th, 2021
     </a>
    </li>
   </ul>
@@ -660,7 +665,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#masks">
@@ -736,13 +741,13 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_preproc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.67 s, sys: 1.18 s, total: 5.85 s
-Wall time: 7.71 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4.51 s, sys: 1.21 s, total: 5.71 s
+Wall time: 7.42 s
 </pre></div>
 </div>
 </div>
@@ -811,7 +816,7 @@ Wall time: 7.71 s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">],</span>
+    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">],</span>
     <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
     <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
     <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
@@ -827,7 +832,7 @@ Wall time: 7.71 s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'ElasticSyN'</span><span style="font-weight: bold">]</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.2</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'syn_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
@@ -847,10 +852,460 @@ Wall time: 7.71 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_12_0.png" src="../../_images/temporary_register_100um_12_0.png" />
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>seed-0_type-SyN_grad-0.20_synbin-32_affbin-20_affrate-0.8,  iso: 0.973 VIS: 0.977 CLA: 0.884 mi: 0.515 sym: 0.986 ovp: 1.000:   0%|          | 0/10 [00:53&lt;?, ?it/s]
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">logger <span style="color: #008000; text-decoration-color: #008000">'register_anat_(2021_10_12).log'</span> created at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-128</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/log
+</pre>
+</div><img alt="../../_images/temporary_register_100um_12_1.png" src="../../_images/temporary_register_100um_12_1.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.99357</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-1:   0%|          | 0/30 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
+<img alt="../../_images/temporary_register_100um_12_4.png" src="../../_images/temporary_register_100um_12_4.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.979336</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-2:   3%|▎         | 1/30 [3:48:09&lt;110:16:39, 13689.62s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_7.png" src="../../_images/temporary_register_100um_12_7.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.977949</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-3:   7%|▋         | 2/30 [7:24:38&lt;103:16:14, 13277.67s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_10.png" src="../../_images/temporary_register_100um_12_10.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.983112</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC02_ses-1:  10%|█         | 3/30 [11:03:30&lt;99:04:50, 13210.76s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_13.png" src="../../_images/temporary_register_100um_12_13.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.2</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.953726</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC02_ses-2:  13%|█▎        | 4/30 [14:41:29&lt;95:02:08, 13158.78s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_16.png" src="../../_images/temporary_register_100um_12_16.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.935792</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC02_ses-3:  17%|█▋        | 5/30 [18:25:16&lt;92:03:07, 13255.49s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_19.png" src="../../_images/temporary_register_100um_12_19.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.946362</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC03_ses-1:  20%|██        | 6/30 [23:07:08&lt;96:39:29, 14498.74s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_22.png" src="../../_images/temporary_register_100um_12_22.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.969785</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC03_ses-2:  23%|██▎       | 7/30 [28:04:02&lt;99:33:23, 15582.77s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_25.png" src="../../_images/temporary_register_100um_12_25.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.962318</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC03_ses-3:  27%|██▋       | 8/30 [33:05:07&lt;100:03:24, 16372.92s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_28.png" src="../../_images/temporary_register_100um_12_28.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.962795</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC04_ses-1:  30%|███       | 9/30 [36:58:41&lt;91:12:23, 15635.41s/it] 
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_31.png" src="../../_images/temporary_register_100um_12_31.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.981375</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC04_ses-2:  33%|███▎      | 10/30 [40:44:53&lt;83:19:26, 14998.35s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_34.png" src="../../_images/temporary_register_100um_12_34.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.970159</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC04_ses-3:  37%|███▋      | 11/30 [44:50:09&lt;78:42:08, 14912.01s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_37.png" src="../../_images/temporary_register_100um_12_37.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.977276</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC05_ses-1:  40%|████      | 12/30 [50:29:35&lt;82:51:21, 16571.21s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_40.png" src="../../_images/temporary_register_100um_12_40.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.975758</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC05_ses-2:  43%|████▎     | 13/30 [56:20:17&lt;84:38:56, 17925.67s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_43.png" src="../../_images/temporary_register_100um_12_43.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.958838</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC05_ses-3:  47%|████▋     | 14/30 [62:10:40&lt;83:49:37, 18861.08s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_46.png" src="../../_images/temporary_register_100um_12_46.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.975777</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC06_ses-1:  50%|█████     | 15/30 [66:54:46&lt;76:18:30, 18314.01s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_49.png" src="../../_images/temporary_register_100um_12_49.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.965058</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC06_ses-2:  53%|█████▎    | 16/30 [70:30:18&lt;64:55:15, 16693.97s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_52.png" src="../../_images/temporary_register_100um_12_52.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.963937</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC06_ses-3:  57%|█████▋    | 17/30 [74:14:31&lt;56:45:51, 15719.35s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_55.png" src="../../_images/temporary_register_100um_12_55.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.972604</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC07_ses-1:  60%|██████    | 18/30 [77:55:42&lt;49:56:45, 14983.80s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_58.png" src="../../_images/temporary_register_100um_12_58.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.953374</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC07_ses-2:  63%|██████▎   | 19/30 [81:39:30&lt;44:21:22, 14516.59s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_61.png" src="../../_images/temporary_register_100um_12_61.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.952118</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC07_ses-3:  67%|██████▋   | 20/30 [85:27:03&lt;39:36:11, 14257.15s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_64.png" src="../../_images/temporary_register_100um_12_64.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.962861</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC08_ses-1:  70%|███████   | 21/30 [89:08:37&lt;34:55:13, 13968.20s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_67.png" src="../../_images/temporary_register_100um_12_67.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.952088</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC08_ses-2:  73%|███████▎  | 22/30 [92:45:01&lt;30:23:01, 13672.71s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_70.png" src="../../_images/temporary_register_100um_12_70.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.930726</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC08_ses-3:  77%|███████▋  | 23/30 [99:30:43&lt;32:48:40, 16874.42s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_73.png" src="../../_images/temporary_register_100um_12_73.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.958294</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC09_ses-1:  80%|████████  | 24/30 [107:22:37&lt;33:50:41, 20306.93s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_76.png" src="../../_images/temporary_register_100um_12_76.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>
+type             SyN
+grad             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.983589</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC09_ses-2:  83%|████████▎ | 25/30 [114:47:44&lt;30:52:15, 22227.10s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_79.png" src="../../_images/temporary_register_100um_12_79.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.983021</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC09_ses-3:  87%|████████▋ | 26/30 [119:45:21&lt;23:14:24, 20916.07s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_82.png" src="../../_images/temporary_register_100um_12_82.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.982062</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-1:  90%|█████████ | 27/30 [123:23:20&lt;15:28:14, 18564.84s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_85.png" src="../../_images/temporary_register_100um_12_85.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC10_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.971213</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-2:  93%|█████████▎| 28/30 [126:56:59&lt;9:21:21, 16840.87s/it] 
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_88.png" src="../../_images/temporary_register_100um_12_88.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC10_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+type        ElasticSyN
+grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.976879</span>
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3:  97%|█████████▋| 29/30 [130:30:02&lt;4:20:23, 15623.49s/it]
+</pre></div>
+</div>
+<img alt="../../_images/temporary_register_100um_12_91.png" src="../../_images/temporary_register_100um_12_91.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1073,7 +1528,7 @@ Wall time: 7.71 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_22_0.png" src="../../_images/temporary_register_100um_22_0.png" />
+<img alt="../../_images/temporary_register_100um_25_0.png" src="../../_images/temporary_register_100um_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1095,7 +1550,7 @@ Wall time: 7.71 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_24_0.png" src="../../_images/temporary_register_100um_24_0.png" />
+<img alt="../../_images/temporary_register_100um_27_0.png" src="../../_images/temporary_register_100um_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1117,7 +1572,7 @@ Wall time: 7.71 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_26_0.png" src="../../_images/temporary_register_100um_26_0.png" />
+<img alt="../../_images/temporary_register_100um_29_0.png" src="../../_images/temporary_register_100um_29_0.png" />
 </div>
 </div>
 <section id="masks">
@@ -1326,7 +1781,7 @@ Wall time: 7.71 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/temporary_register_100um_37_0.png" src="../../_images/temporary_register_100um_37_0.png" />
+<img alt="../../_images/temporary_register_100um_40_0.png" src="../../_images/temporary_register_100um_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1392,10 +1847,14 @@ Wall time: 7.71 s
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
@@ -1414,9 +1873,10 @@ Wall time: 7.71 s
 
       </div>
     </div>
-  
+    
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+
+    
   </body>
 </html>

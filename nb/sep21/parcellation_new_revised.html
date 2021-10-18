@@ -23,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -34,17 +34,17 @@
     
   <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -79,7 +79,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -88,7 +88,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   February 2021
  </span>
@@ -132,7 +132,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   March 2021
  </span>
@@ -196,7 +196,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   April 2021
  </span>
@@ -230,7 +230,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   May 2021
  </span>
@@ -289,7 +289,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   June 2021
  </span>
@@ -383,7 +383,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   July 2021
  </span>
@@ -427,7 +427,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   August 2021
  </span>
@@ -456,7 +456,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   September 2021
  </span>
@@ -515,7 +515,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p>
  <span class="caption-text">
   October 2021
  </span>
@@ -554,6 +554,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../oct21/oct-12-2021.html">
      October 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-17-2021.html">
+     October 17th, 2021
     </a>
    </li>
   </ul>
@@ -719,6 +724,232 @@
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">metadata for combined not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.53 s, sys: 145 ms, total: 2.68 s
+Wall time: 4.24 s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">cutoff</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! missing regions:
+<span style="color: #008000; text-decoration-color: #008000">'[1596, 1597, 3629, 3644, 3645, 3656, 4079]'</span>
+</pre>
+</div><img alt="../../_images/parcellation_new_revised_3_3.png" src="../../_images/parcellation_new_revised_3_3.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'305'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'389'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'391'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'410'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1740</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1740</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2048</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1740</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">metadata for combined not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+<span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [17:36&lt;00:00, 35.23s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">metadata for combined not found, concatenating data now . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC08_ses-1_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, sub-SLC10_ses-2_run-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> % of ROIs are nan. Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'combine_meta.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 38.8 s, sys: 1min 20s, total: 1min 59s
+Wall time: 3min 3s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mice.parcel.fit_parcel(True, cutoff=3)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><img alt="../../_images/parcellation_new_revised_16_2.png" src="../../_images/parcellation_new_revised_16_2.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'163'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'178'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'193'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1024</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">923</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'parcel_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reg = Register(mice)</span>
+<span class="c1"># reg.register_anat(True)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [28:11&lt;00:00, 56.37s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reg = Register(mice)</span>
+<span class="c1"># reg.organize_func(0.1)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">logger <span style="color: #008000; text-decoration-color: #008000">'organize_func_(2021_10_16).log'</span> created at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/log
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: cortex . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">386</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">78</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing ca2:  sub-SLC10_ses-3_run-7: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 210/210 [2:39:39&lt;00:00, 45.62s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: cortex . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1834</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">99</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: subcortex-l . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: subcortex-r . . . a total of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions were accepted.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>organizing bold:  sub-SLC10_ses-3_run-7: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 210/210 [1:21:14&lt;00:00, 23.21s/it]
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'roi_lookup.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5896,7 +6127,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f48f5658be0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_19_1.png" src="../../_images/parcellation_new_revised_19_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_43_1.png" src="../../_images/parcellation_new_revised_43_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -5919,7 +6150,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f23d272fa90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_27_1.png" src="../../_images/parcellation_new_revised_27_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_51_1.png" src="../../_images/parcellation_new_revised_51_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6036,7 +6267,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb53bf32940</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_42_1.png" src="../../_images/parcellation_new_revised_42_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_66_1.png" src="../../_images/parcellation_new_revised_66_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -6140,7 +6371,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fb6aeeecb20</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_58_1.png" src="../../_images/parcellation_new_revised_58_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_82_1.png" src="../../_images/parcellation_new_revised_82_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7265,7 +7496,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e86d7280</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_100_1.png" src="../../_images/parcellation_new_revised_100_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_124_1.png" src="../../_images/parcellation_new_revised_124_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7277,7 +7508,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e83cdf40</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_102_1.png" src="../../_images/parcellation_new_revised_102_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_126_1.png" src="../../_images/parcellation_new_revised_126_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7302,7 +7533,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f18e7f330a0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_105_1.png" src="../../_images/parcellation_new_revised_105_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_129_1.png" src="../../_images/parcellation_new_revised_129_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7325,7 +7556,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f6a5db3a0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_110_1.png" src="../../_images/parcellation_new_revised_110_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_134_1.png" src="../../_images/parcellation_new_revised_134_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7502,7 +7733,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f44e56f70</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_125_1.png" src="../../_images/parcellation_new_revised_125_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_149_1.png" src="../../_images/parcellation_new_revised_149_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7514,7 +7745,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f9f44dd95b0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/parcellation_new_revised_127_1.png" src="../../_images/parcellation_new_revised_127_1.png" />
+</div><img alt="../../_images/parcellation_new_revised_151_1.png" src="../../_images/parcellation_new_revised_151_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7524,7 +7755,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/parcellation_new_revised_130_0.png" src="../../_images/parcellation_new_revised_130_0.png" />
+<img alt="../../_images/parcellation_new_revised_154_0.png" src="../../_images/parcellation_new_revised_154_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -7534,7 +7765,7 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/parcellation_new_revised_131_0.png" src="../../_images/parcellation_new_revised_131_0.png" />
+<img alt="../../_images/parcellation_new_revised_155_0.png" src="../../_images/parcellation_new_revised_155_0.png" />
 </div>
 </div>
 </section>
@@ -7562,10 +7793,14 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
@@ -7584,9 +7819,10 @@ Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-le
 
       </div>
     </div>
-  
+    
   <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+
+    
   </body>
 </html>
