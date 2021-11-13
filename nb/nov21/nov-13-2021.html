@@ -819,8 +819,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#consistency-across-sessions">
-     Consistency across sessions
+    <a class="reference internal nav-link" href="#consistency-across-sessions-an-objective-function">
+     Consistency across sessions: an objective function
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -911,6 +911,17 @@
   <section id="november-13th-2021">
 <h1>November 13th, 2021<a class="headerlink" href="#november-13th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Discussing ways of comparing Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD results and more. <br></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
+
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1135</span>
+<span class="n">figs_dir</span> <span class="o">=</span> <span class="s1">&#39;../../_extras/fig_sketches&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <hr class="docutils" />
 <hr class="docutils" />
 <hr class="docutils" />
@@ -937,7 +948,7 @@
 <h3>Closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span><a class="headerlink" href="#closed-simplex-in-mathbb-r-k" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(c\)</span> be a positive number.  The <span class="math notranslate nohighlight">\(n-\)</span>dimensional closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> is defined by</p>
 <p>\begin{equation}
-\mathbb{T}<em>n(c) = \Big{ (x_1, \dots, x_n)^T: ; x_i &gt; 0, : 1 \leq i \leq n, : \sum</em>{i=1}^n x_i = c \Big}.
+\mathbb{T}<em>n(c) = \Big{ (x_1, \dots, x_n): ; x_i &gt; 0, : 1 \leq i \leq n, : \sum</em>{i=1}^n x_i = c \Big}.
 \end{equation}</p>
 <p>Therefore, membership distributions <span class="math notranslate nohighlight">\(\pi_i\)</span> are members of <span class="math notranslate nohighlight">\(\mathbb{T}_K(1)\)</span>.</p>
 </section>
@@ -958,7 +969,7 @@
 <p>\begin{equation}
 \pi^{(\alpha)} = \frac{1}{N_{ses}}\frac{1}{N_{run}}\sum_{i_{ses} = 1}^{N_{ses}}\sum_{i_{run} = 1}^{N_{run}}\Pi_{\alpha, i_{ses}, i_{run}},
 \end{equation}
-where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{sub}}\)</span>.  To get group results, we average again along the animal dimension:</p>
+where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{sub}}\)</span>. To get group results, we average again along the animal dimension:</p>
 <p>\begin{equation}
 \pi^{(group)} = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}\pi^{(\alpha)}.
 \end{equation}</p>
@@ -984,8 +995,8 @@ where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{s
 <h3>What kinds of comparisons?<a class="headerlink" href="#what-kinds-of-comparisons" title="Permalink to this headline">¶</a></h3>
 <p>Here I define some conditions that I will frequently refer back to.</p>
 <ol class="simple">
-<li><p><strong>Condition # 1 (across sessions):</strong> In this condition, we use data from one modality (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD) and from the same set of animals.  Session label is the only variable.</p></li>
-<li><p><strong>Condition # 2 (across animals):</strong> Data from one modality and same session(s) is used, but for different sets of animals.  This can be a comparison of a single animal to the group average obtained from other animals.  Or it could be comparison of each individual to all other individuals in the group (as is typically done in CPM type of work).</p></li>
+<li><p><strong>Condition # 1 (across sessions):</strong> In this condition, we pool data from one modality (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> or BOLD) and from the same set of animals.  Session label is the only difference between the two groups.</p></li>
+<li><p><strong>Condition # 2 (across animals):</strong> Data from one modality and same session(s) is used, but for different sets of animals.  This can be a comparison of a single animal to the group average obtained from other animals.  Or it could be comparison of each individual to all other individuals in the group (as is more commonly done done in CPM type of work).</p></li>
 <li><p><strong>Condition # 3 (across modalities):</strong> Here we use the same animal(s) and session(s) to compare Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD results.</p></li>
 </ol>
 <p>Each of these conditions serves a unique purpose.  I will go over what we can gain from such comparisons and motivate each of these, but before that let’s discuss what are the necessary ingredients for these comparisons to make sense.</p>
@@ -994,46 +1005,73 @@ where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{s
 <h3>How to compare<a class="headerlink" href="#how-to-compare" title="Permalink to this headline">¶</a></h3>
 <p>To do this properly, we need the following:</p>
 <ol class="simple">
-<li><p><strong>Define distance measure:</strong> we should use interpretable metrics that extract relevant information from the results.</p></li>
-<li><p><strong>Choose unit of variance</strong>: how to properly quantify variability around these numbers and test for significance.</p></li>
+<li><p><strong>Define distance measure:</strong> we should use interpretable metrics that extract relevant quantities from the results.</p></li>
+<li><p><strong>Choose unit of variance</strong>: how to properly quantify variability around these numbers and test for significance if necessary.</p></li>
 </ol>
-<p>In the following sections, I will discuss different kinds of comparisons that we can carry out. For each item, I will define and motivate the particular distance metric I have in mind.  I also explicitly discuss how to quantify variability.</p>
+<p>In the following sections, I will discuss different kinds of comparisons that we can carry out.  In short, we can compare</p>
+<ul class="simple">
+<li><p>at the interaction graph level,</p></li>
+<li><p>at overlapping or disjoint community membership level, and</p></li>
+<li><p>compare the amount of overlap present in overlapping results.</p></li>
+</ul>
+<p>For each item, I will define and motivate the particular distance metric I have in mind.  I also explicitly discuss how to quantify variability.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="comparison-at-the-interaction-graph-level">
 <h2>Comparison at the interaction graph level<a class="headerlink" href="#comparison-at-the-interaction-graph-level" title="Permalink to this headline">¶</a></h2>
-<p>First, we compare the interaction graphs. These graphs are the input to SVINET algorithm, so it makes sense to quantify how similar or different they are in different conditions.  These differences will inevitabely leak into next levels of analysis and will be combined with other sources of variability. Therefore, it makes sense to start here.</p>
-<section id="consistency-across-sessions">
-<h3>Consistency across sessions<a class="headerlink" href="#consistency-across-sessions" title="Permalink to this headline">¶</a></h3>
+<p>First, we compare the interaction graphs. These graphs are the input to SVINET algorithm, so it makes sense to quantify how similar or different they are in different conditions.  These differences will inevitabely leak into next levels of analysis and will be combined with other sources of variability. Therefore, it makes sense to start here and quantify some of the varialibity.</p>
+<section id="consistency-across-sessions-an-objective-function">
+<h3>Consistency across sessions: an objective function<a class="headerlink" href="#consistency-across-sessions-an-objective-function" title="Permalink to this headline">¶</a></h3>
 <p>I’m gonna argue that a longitudinal dataset recorded in the span of several spread out sessions is actually a fantstic resource.  We can use this to choose some of the hyperparameters in the study without relying on arbitrary metrics.  For instance, I have already established that the <strong>amount of overlap</strong> present in our results depends on the <strong>sparsification threshold</strong> used.  This is problematic, because ideally a biological fact should not depend so strongly on how we extract it from data.  This situation can potentially be remedied by using <em><strong>consistency across sessions</strong></em> as an objective function.</p>
 <section id="the-argument">
 <h4>The argument<a class="headerlink" href="#the-argument" title="Permalink to this headline">¶</a></h4>
 <p>If thresholded covariance matrices are reprentative of the true interaction graphs in mice, then these interaction graphs must exhibit some level of consistency across sessions.  That is, if we take interaction graphs from session 1 and compare them to session 2, we should not see significant differences. Any significant and strong dependence on session label here would be concerning (assuming there was enough data per session to sample relevant corners of the phase space).</p>
-<p>Constructing the interaction graph depends nontrivially on the choices we make.  These choices include the initial parcellation scheme used (columnar or not?, number of columns, number of layers), data preprocessing steps (GSR or no GSR? bandpass frequency, etc.), edge filtering approach, and sparsification threshold.  Rather than relying on heuristics, we should strive to find hyperparameters that maximize the representativeness of interaction graphs across sessions.  This is one reason why Condition # 1 is useful to consider.</p>
+<p>Constructing the interaction graph depends nontrivially on the choices we make.  These choices include the initial parcellation scheme used (columnar or not?, number of columns, number of layers), data preprocessing steps (GSR or no GSR? bandpass frequency, etc.), edge filtering approach (proportional thresholding, constant threshold, or other?), and the threshold value used.  Rather than relying on heuristics, we should strive to find hyperparameters that maximize the representativeness of interaction graphs across sessions.  This is one reason why Condition # 1 is useful to consider.</p>
 </section>
 <section id="examples-in-the-literature">
 <h4>Examples in the literature<a class="headerlink" href="#examples-in-the-literature" title="Permalink to this headline">¶</a></h4>
-<p>A recent <a class="reference external" href="https://direct.mit.edu/netn/article/5/1/96/97529/Combining-network-topology-and-information-theory">paper</a> uses Network Portrait Divergence (I discussed this in my very first presentation) to find parcellation and edge filtering schemes that are maximally representative.  Their goal is respectable; however, their objective is not very well motivated:</p>
+<p>This very nice <a class="reference external" href="https://direct.mit.edu/netn/article/3/1/1/2187/Graph-theory-approaches-to-functional-network">paper</a> exposes some of the issues.  A recent <a class="reference external" href="https://direct.mit.edu/netn/article/5/1/96/97529/Combining-network-topology-and-information-theory">paper</a> uses Network Portrait Divergence (I discussed this in my very first presentation) to find parcellation and edge filtering schemes that are maximally representative.  Their goal is respectable; however, their objective is not very well motivated:</p>
 <blockquote>
 <div><p>…We reasoned that the lower a parcellation’s average divergence from the others, the more this is
 a representative parcellation. Thus, our measure of representativeness for a given parcellation
 was deﬁned as one minus its average divergence from all other parcellations.</p>
 </div></blockquote>
-<p>In other words, they consider a parcellation (or edge filtering) approach to be better (more representative) if it has smaller divergence from all other approaches.  This argument is inherently problematic. We can do better by defining <em><strong>consistency across sessions</strong></em> as our objective.  How to do this?  Below I define an appropriate distance metric and statistical approach.</p>
+<p>In other words, they consider a parcellation (or edge filtering) approach to be better (more representative) if it has smaller divergence from all other approaches.  This argument is inherently problematic since they assume being closer to the concensus (quantified by having smaller average divergence) is the best. We can do better by defining <em><strong>consistency across sessions</strong></em> as our objective.  How to do this?  Below I define an appropriate distance metric and statistical approach.</p>
 </section>
 <section id="distance-measure">
 <h4>1) Distance measure<a class="headerlink" href="#distance-measure" title="Permalink to this headline">¶</a></h4>
-<p>We use Portrait Divergence between interaction graphs inferred from each run.  I do not like using correlation on the covariance matrix since the distribution of edge weights strongly depends on preprocessing steps.  For instance, GSR mathematically mandates that approximately 50% of correlations between regions will be negative.  Therefore, looking at distances between an idealized (binary) interaction graphs is a better choice, even though we lose some information about correlation strengths.  Another reason to do this at the graph level is simply because our algorithm accents binary edges.</p>
+<p>We use Portrait Divergence between interaction graphs inferred from each run.  I do not like using correlation on the covariance matrix since the distribution of edge weights strongly depends on preprocessing steps.  For instance, GSR mathematically mandates that approximately 50% of correlations between regions will be negative.  Therefore, looking at distances between an idealized (binary) interaction graphs is a better choice.  We gain some sort of normalization (or abstraction) at the extent of losing information about correlation strengths.  Another reason to do this at the graph level is simply because SVINET accepts only binary edges.</p>
 </section>
 <section id="variability">
 <h4>2) Variability<a class="headerlink" href="#variability" title="Permalink to this headline">¶</a></h4>
-<p>There are <span class="math notranslate nohighlight">\(N_{ses} = 3\)</span> sessions and <span class="math notranslate nohighlight">\(N_{run} \times N_{sub} = 4 \times 10 = 40\)</span> runs per session for each data modality. Therefore, we have a total of <span class="math notranslate nohighlight">\(3 \times 40 = 120\)</span> runs overal.  Let’s say our goal is to find the best sparsity threshold that maximizes consistency across sessions for BOLD.  This means we would like to minimize topological distances between runs across sessions.  We compute the pairwise Portrait Divergence between each pairs of runs and arrange these numbers in a distance matrix with size <span class="math notranslate nohighlight">\(120 \times 120\)</span>.  This matrix has a block diagonal structure, meaning that blocks of size <span class="math notranslate nohighlight">\(40\)</span> can be identified that contain distances only in either <em>within-session</em> or <em>across-session</em> groups.  We can compute the average distances for each label.  Here the null hypothesis would be these numbers (<em>within-session</em> vs. <em>across-session</em> distances) come from the same distribution.  A permutation test can be used to test statistical significane. It is equivalent to shuffling rows and columns of this distance matrix and performing the averaging for each group while pretending the session labels remain unchanged.</p>
+<p>There are <span class="math notranslate nohighlight">\(N_{ses} = 3\)</span> sessions and <span class="math notranslate nohighlight">\(N_{run} \times N_{sub} = 4 \times 10 = 40\)</span> runs per session for each data modality. Therefore, we have a total of <span class="math notranslate nohighlight">\(3 \times 40 = 120\)</span> runs overal.  Let’s say our goal is to find the best sparsity threshold that maximizes consistency across sessions for BOLD.  This means we would like to minimize topological distances between runs across sessions.  We compute the pairwise Portrait Divergence between each pairs of runs and arrange these numbers in a distance matrix with size <span class="math notranslate nohighlight">\(120 \times 120\)</span>.  This matrix has a block diagonal structure, meaning that blocks of size <span class="math notranslate nohighlight">\(40\)</span> can be identified that contain distances only in either <em>within-session</em> or <em>across-session</em> groups.  Please see figure below.</p>
+<p>We can compute the average distances for each label.  Here the null hypothesis can be that these numbers (<em>within-session</em> vs. <em>across-session</em> distances) come from different distributions.  This is not the usual choise becuase most people want to find group vs control effects, but here we want to show that our hyperparameter choices are effective as they minimize the differences between sessions. In other words, we want to show that distribution of within-session vs across-session distances are not different in a statistically sgificant way given our hyperparameter and preprocessing choices. A permutation test can be used to test statistical significane. It is equivalent to shuffling rows and columns of this distance matrix and performing the averaging for each group while pretending the session labels remain unchanged.</p>
+<p>Alternatively, we can use the usual null hypothesis that assumes the samples come from identical distributions.  Then we can report the p-value and show that we could not find significant evidence to reject null hypothesis, therefore we assume it is true to the best of our knowledge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Comparison-1.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Comparison-1.pdf"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 </section>
 <section id="how-similar-different-are-these-animals-from-each-other">
 <h3>How similar/different are these animals from each other?<a class="headerlink" href="#how-similar-different-are-these-animals-from-each-other" title="Permalink to this headline">¶</a></h3>
-<p>I’m not insisting on doing this. I don’t care about this particular measure as much.  I know that Eve definitely cares and maybe Todd does too, so I would like to include this as well.  One benefit of doing this analysis is that the numbers we get can put other numbers into perspective.  For instance we may find that the average similarity between these animals is 0.7 but the similarity between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD is 0.5 or whatever.  That’s it.  We are just looking at some numbers and trying to understand different sources of variability.</p>
+<p>I’m not really insisting on doing this. I don’t care about this particular measure as much.  I know that Eve definitely cares and maybe Todd does too, so I would like to include this as well.  One benefit of doing this analysis is that these numbers can put other numbers into perspective.  For instance we may find that the average distance between the animals is 0.3 but the distance between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD is 0.5 or whatever.  That’s it.  We are just looking at some numbers and trying to understand different sources of variability.</p>
 <section id="id1">
 <h4>Examples in the literature<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>This <a class="reference external" href="https://www.nature.com/articles/s42003-020-01472-5">paper</a> has similar goals.  They compare adjacency matrices to characterize individual variation.  They do a bunch of CPM style analysis too.</p>
@@ -1041,7 +1079,7 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 </section>
 <section id="ca-2-vs-bold">
 <h3>Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD<a class="headerlink" href="#ca-2-vs-bold" title="Permalink to this headline">¶</a></h3>
-<p>We compare the interaction graphs constructed from different data modalities.  This is important since it’s the starting point for all the other downstream analysis.  How can we compare other things without knowing how the starting graphs compare to each other? Moreover, if necessary, we can include the results from here when choosing the appropriate frequency band for processing Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> data.  This depends on our end goal, so we should discuss this during my presentation next week to see what Eve thinks.</p>
+<p>We compare the interaction graphs constructed from different data modalities.  This is important since it’s the starting point for all the other downstream analysis.  How can we compare other things without knowing how the starting graphs compare to each other? Moreover, if necessary, we can include the results from here when choosing the appropriate frequency band for processing Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> data. This depends on our end goal, so we should discuss this during my presentation next week to see what Eve thinks.</p>
 <p>Here is what I have in mind specifically:</p>
 <section id="id2">
 <h4>1) Distance measure<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
@@ -1049,8 +1087,27 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 </section>
 <section id="id3">
 <h4>2) Variability<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>There are a total of <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} = 10 \times 3 \times 4 = 120\)</span> runs per modality.  We forget about all other labels here and retain only the Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD label.  Thus, we assume there are <span class="math notranslate nohighlight">\(N = 120\)</span> samples drawn from each group.  We then apply Portrait Divergence between every possible pair of graphs. This yields a distance matrix with size <span class="math notranslate nohighlight">\(240 \times 240\)</span>, because we have a total of <span class="math notranslate nohighlight">\(2 \times 120\)</span> runs.  This distancec matrix can be used to compute the average <em>within-group</em> distances (for each modality), as well as average <em>across-group</em> distance (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD).  Similar to above, a permutation test here would correspond to randomly shuffling rows and columns of this distance matrix but pretending that the labels are the same.</p>
-<p><strong>Question:</strong> I’m not sure if this is the best approach.  This depends on what our goal is.  One possible goal would be to show that interaction graphs have different topologies for Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD.  If that is the case, within-group mean distance will be significantly smaller than across-group mean distance. On the contrary, let’s say for a particular analysis we decided to choose a frequency band or number of ROIs that maximizes topological similarity between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD.  Here the null hypothesis would be: “distribution of within-group distances is not significantly different than the distribution of across-group distances”.  If that is the case, the histograms obtained by shuffling modality labels will overlap.  Depending on the goal, we can define proper distributions, statistics, and hypothesis to test.</p>
+<p>There are a total of <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} = 10 \times 3 \times 4 = 120\)</span> runs per modality.  We forget about all other labels here and retain only the Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD label.  Thus, we assume there are <span class="math notranslate nohighlight">\(N = 120\)</span> samples drawn from each group.  We then apply Portrait Divergence between every possible pair of graphs. This yields a distance matrix with size <span class="math notranslate nohighlight">\(240 \times 240\)</span>, because we have a total of <span class="math notranslate nohighlight">\(2 \times 120\)</span> runs.  See figure below.  This distancec matrix can be used to compute the average <em>within-group</em> distances (for each modality), as well as average <em>across-group</em> distance (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD).  Similar to above, a permutation test here would correspond to randomly shuffling rows and columns of this distance matrix but pretending that the labels are the same.</p>
+<p><strong>Question:</strong> I’m not sure if this is the best approach.  This depends on what our goal is.  One possible goal would be to show that interaction graphs have different topologies for Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD.  If that is the case, within-group mean distance will be significantly smaller than across-group mean distance. On the contrary, let’s say for a particular analysis we decided to choose a frequency band or number of ROIs that maximizes topological similarity between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD.  Here the null hypothesis would be: “distribution of within-group distances is significantly different than the distribution of across-group distances”.  If that is the case, the histograms obtained by shuffling modality labels will overlap.  Depending on the goal, we can define proper distributions, statistics, and hypothesis to test.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Comparison-2.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="850"
+    height="1135"
+    src="../../_extras/fig_sketches/Comparison-2.pdf"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 </section>
 </section>
