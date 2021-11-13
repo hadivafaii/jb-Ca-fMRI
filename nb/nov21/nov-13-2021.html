@@ -1256,8 +1256,8 @@ x_{i} = \underset{k}{\mathrm{max}} \; \pi_{ik}.
 <p>A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that node <span class="math notranslate nohighlight">\(i\)</span> is most likely belongs to disjoint parts of the graph. Therefore, keeping track of this quantity across conditions can reveal whether a node prefers to belong to many communities or just one.  Let us label a node <strong>disjoint</strong> if <span class="math notranslate nohighlight">\(x_i \gtrsim 0.8\)</span>, and <strong>overlapping</strong> if <span class="math notranslate nohighlight">\(x_i \lesssim 0.8\)</span>.  We use this criterion to define</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\text{set of disjoint nodes} = S_{disjoint} = \big\{i : i = 1, \dots, N \; \text{if} \; \bar{x}_{i} \geq 0.8 \big\}\\
-\text{set of overlapping nodes} = S_{overlap} = \big\{i : i = 1, \dots, N \; \text{if} \; \bar{x}_{i} &lt; 0.8 \big\}.
+\text{set of disjoint nodes} = S_{disjoint} = \big\{i : i = 1, \dots, N \; \text{if} \; x_{i} \geq 0.8 \big\}\\
+\text{set of overlapping nodes} = S_{overlap} = \big\{i : i = 1, \dots, N \; \text{if} \; x_{i} &lt; 0.8 \big\}.
 \end{split}\]</div>
 <p>Next, we use this criterion to compute, <span class="math notranslate nohighlight">\(\theta^{(A)}\)</span>, proportion of nodes that are overlapping in condition <span class="math notranslate nohighlight">\(A\)</span>.  That is</p>
 <div class="math notranslate nohighlight">
