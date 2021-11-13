@@ -955,7 +955,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
 
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">810</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">640</span>
 <span class="n">figs_dir</span> <span class="o">=</span> <span class="s1">&#39;../../_extras/fig_sketches&#39;</span>
 </pre></div>
 </div>
@@ -986,9 +986,10 @@
 <section id="closed-simplex-in-mathbb-r-k">
 <h3>Closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span><a class="headerlink" href="#closed-simplex-in-mathbb-r-k" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(c\)</span> be a positive number.  The <span class="math notranslate nohighlight">\(n-\)</span>dimensional closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> is defined by</p>
-<p>\begin{equation}
-\mathbb{T}<em>n(c) = \Big{ (x_1, \dots, x_n): ; x_i &gt; 0, : 1 \leq i \leq n, : \sum</em>{i=1}^n x_i = c \Big}.
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{T}_n(c) = \Big\{ (x_1, \dots, x_n): \; x_i &gt; 0, \: 1 \leq i \leq n, \: \sum_{i=1}^n x_i = c \Big\}.
+\]</div>
 <p>Therefore, membership distributions <span class="math notranslate nohighlight">\(\pi_i\)</span> are members of <span class="math notranslate nohighlight">\(\mathbb{T}_K(1)\)</span>.</p>
 </section>
 <section id="memberships">
@@ -1001,28 +1002,33 @@
 <section id="all-runs">
 <h4>All runs<a class="headerlink" href="#all-runs" title="Permalink to this headline">¶</a></h4>
 <p>We can take membership matrices for all runs and arrange them in a large tensor that contains membership information for all runs from every session/animal:</p>
-<p>\begin{equation}
-\Pi_{i_{sub}, i_{ses}, i_{run}} \quad := \quad \text{membership matrix for run <span class="math notranslate nohighlight">\(i_{run}\)</span> from session <span class="math notranslate nohighlight">\(i_{ses}\)</span> from animal <span class="math notranslate nohighlight">\(i_{sub}\)</span>},
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+\Pi_{i_{sub}, i_{ses}, i_{run}} \quad := \quad \text{membership matrix for run $i_{run}$ from session $i_{ses}$ from animal $i_{sub}$},
+\]</div>
 <p>where <span class="math notranslate nohighlight">\(i_{sub} \in \{1, 2, \dots, N_{sub}\}\)</span> and so on. We see that <span class="math notranslate nohighlight">\(\Pi\)</span> is a tensor with shape <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} \times N \times K\)</span>.  To get membership matrix for each animal, we simply align and average across run dimension and then average across session dimension.  Let us use greek letters to index animals.  We use <span class="math notranslate nohighlight">\(\pi^{(\alpha)}\)</span> to denote the averaged membership matrix for animal <span class="math notranslate nohighlight">\(\alpha\)</span>:</p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 \pi^{(\alpha)} = \frac{1}{N_{ses}}\frac{1}{N_{run}}\sum_{i_{ses} = 1}^{N_{ses}}\sum_{i_{run} = 1}^{N_{run}}\Pi_{\alpha, i_{ses}, i_{run}},
-\end{equation}
-where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{sub}}\)</span>. To get group results, we average again along the animal dimension:</p>
-<p>\begin{equation}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{sub}}\)</span>. To get group results, we average again along the animal dimension:</p>
+<div class="math notranslate nohighlight">
+\[
 \pi^{(group)} = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}\pi^{(\alpha)}.
-\end{equation}</p>
+\]</div>
 </section>
 <section id="entropy">
 <h4>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h4>
 <p>For animal <span class="math notranslate nohighlight">\(\alpha\)</span>, membership diversity of node <span class="math notranslate nohighlight">\(i\)</span> is estimated using Shannon’s entropy</p>
-<p>\begin{equation}
-h^{(\alpha)}<em>i = -\sum</em>{k = 1}^{K}\pi^{(\alpha)}<em>{ik} \log\pi^{(\alpha)}</em>{ik}.
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+h^{(\alpha)}_i = -\sum_{k = 1}^{K}\pi^{(\alpha)}_{ik} \log\pi^{(\alpha)}_{ik}.
+\]</div>
 <p>Similarly, group entropy estimate of node <span class="math notranslate nohighlight">\(i\)</span> is obtained by averaging over all animals</p>
-<p>\begin{equation}
-h^{(group)}<em>i = \frac{1}{N</em>{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+h^{(group)}_i = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
+\]</div>
 <p><strong>Question:</strong> An alternative way to calculate entropies would be to use <span class="math notranslate nohighlight">\(h^{(group)}_i = -\sum_{k = 1}^{K}\pi^{(group)}_{ik} \log\pi^{(group)}_{ik}\)</span>.  This does not sound like the most principled way to go since animals are units of variability in our analysis.  Therefore, I think the other way I described above makes the most sense. Right?</p>
 </section>
 <section id="data-modalities">
@@ -1109,8 +1115,8 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="780"
-    height="810"
+    width="600"
+    height="640"
     src="../../_extras/fig_sketches/Comparison-1.pdf"
     frameborder="0"
     allowfullscreen
@@ -1138,7 +1144,7 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 </section>
 <section id="id3">
 <h4>2) Variability<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>There are a total of <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} = 10 \times 3 \times 4 = 120\)</span> runs per modality.  We forget about all other labels here and retain only the Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD label.  Thus, we assume there are <span class="math notranslate nohighlight">\(N = 120\)</span> samples drawn from each group.  We then apply Portrait Divergence between every possible pair of graphs. This yields a distance matrix with size <span class="math notranslate nohighlight">\(240 \times 240\)</span>, because we have a total of <span class="math notranslate nohighlight">\(2 \times 120\)</span> runs.  See figure below.  This distancec matrix can be used to compute the average <em>within-group</em> distances (for each modality), as well as average <em>across-group</em> distance (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD).  Similar to above, a permutation test here would correspond to randomly shuffling rows and columns of this distance matrix but pretending that the labels are the same.</p>
+<p>There are a total of <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} = 10 \times 3 \times 4 = 120\)</span> runs per modality.  We forget about all other labels here and retain only the Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD label.  Thus, we assume there are <span class="math notranslate nohighlight">\(N = 120\)</span> samples drawn from each group.  We then apply Portrait Divergence between every possible pair of graphs. This yields a distance matrix with size <span class="math notranslate nohighlight">\(240 \times 240\)</span>, because we have a total of <span class="math notranslate nohighlight">\(2 \times 120\)</span> runs.  Plea  This distancec matrix can be used to compute the average <em>within-group</em> distances (for each modality), as well as average <em>across-group</em> distance (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD).  Similar to above, a permutation test here would correspond to randomly shuffling rows and columns of this distance matrix but pretending that the labels are the same.</p>
 <p><strong>Question:</strong> I’m not sure if this is the best approach.  This depends on what our goal is.  One possible goal would be to show that interaction graphs have different topologies for Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD.  If that is the case, within-group mean distance will be significantly smaller than across-group mean distance. On the contrary, let’s say for a particular analysis we decided to choose a frequency band or number of ROIs that maximizes topological similarity between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD.  Here the null hypothesis would be: “distribution of within-group distances is significantly different than the distribution of across-group distances”.  If that is the case, the histograms obtained by shuffling modality labels will overlap.  Depending on the goal, we can define proper distributions, statistics, and hypothesis to test.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1150,8 +1156,8 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="780"
-    height="810"
+    width="600"
+    height="640"
     src="../../_extras/fig_sketches/Comparison-2.pdf"
     frameborder="0"
     allowfullscreen
@@ -1190,64 +1196,74 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <section id="overlapping-comparison">
 <h4>1) Overlapping comparison<a class="headerlink" href="#overlapping-comparison" title="Permalink to this headline">¶</a></h4>
 <p><strong>Between communities.</strong> For overlapping communities, we compute the cosine similarity of membership vectors across communities (after aligning them).  Specifically, let’s use <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k}\)</span> to denote the membership vector over all nodes for community <span class="math notranslate nohighlight">\(k\)</span> estimated using data from condition/group <span class="math notranslate nohighlight">\(A\)</span>.  For instance, we could have <span class="math notranslate nohighlight">\(A = (group, \,\text{Ca}^{2+})\)</span> and so on. Here <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k} = (\pi^{(A)}_{1k}, \dots, \pi^{(A)}_{ik}, \dots, \pi^{(A)}_{Nk})^T\)</span> is simply <span class="math notranslate nohighlight">\(k-\)</span>th column of <span class="math notranslate nohighlight">\(\pi^{(A)}\)</span>.  We use cosine distance to quantify network similarities at the overlapping community level</p>
-<p>\begin{align}
-d_{\cos}(A, B) &amp;= \frac{1}{K} \sum_{k=1}^K d_{\cos}(A, B; k),\
-d_{\cos}(A, B; k) &amp;= \frac{1}{2}\big[1 - \cos(A, B; k)\nonumber\big]\
-&amp;= 1 - \frac{\sum_{i = 1}^N \pi^{(A)}<em>{ik} \pi^{(B)}</em>{ik}}{||\pi^{(A)}<em>{[1:N], k}|| . ||\pi^{(B)}</em>{[1:N], k}||}.\nonumber
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+d_{\cos}(A, B) = \frac{1}{K} \sum_{k=1}^K d_{\cos}(A, B; k), \\
+d_{\cos}(A, B; k) = \frac{1}{2}\big[1 - \cos(A, B; k)\big]
+= \frac{1}{2}\Bigg[1 - \frac{\sum_{i = 1}^N \pi^{(A)}_{ik} \pi^{(B)}_{ik}}{||\pi^{(A)}_{[1:N], k}|| . ||\pi^{(B)}_{[1:N], k}||}\Bigg].
+\end{split}\]</div>
 <p>If the two groups have identical membership vectors we will have <span class="math notranslate nohighlight">\(d_{\cos}(A, B) = 0\)</span> which corresponds to maximum similarity.</p>
 <p><strong>Between nodes.</strong> We can also quantify similarity between node membership vectors across conditions.  Let <span class="math notranslate nohighlight">\(\pi^{(A)}_{i}\)</span> denote the <span class="math notranslate nohighlight">\(K\)</span>-dimensional membership distribution for node <span class="math notranslate nohighlight">\(i\)</span> estimated using data from group <span class="math notranslate nohighlight">\(A\)</span>.  This is a probability distribution, therefore, we can use standard measures such as Jensen–Shannon divergence to compute the distance between <span class="math notranslate nohighlight">\(\pi^{(A)}_{i}\)</span> and <span class="math notranslate nohighlight">\(\pi^{(B)}_{i}\)</span>.  Jensen–Shannon divergence is simply symmetrized Kullback–Leibler divergence:</p>
-<p>\begin{align}
-d_{JS}(A, B) &amp;= \frac{1}{N} \sum_{i = 1}^N d_{JS}(A, B; i),\
-d_{JS}(A, B; i) &amp;= \frac{1}{2} d_{KL}(\pi^{(A)}<em>{i} || \pi^{(AB)}</em>{i}) + \frac{1}{2} d_{KL}(\pi^{(B)}<em>{i} || \pi^{(AB)}</em>{i}),\nonumber
-\end{align}
-where we have defined <span class="math notranslate nohighlight">\(\pi^{(AB)}_{i} := (\pi^{(A)}_{i} + \pi^{(B)}_{i}) / 2\)</span> and KL divergence is given by</p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+d_{JS}(A, B) = \frac{1}{N} \sum_{i = 1}^N d_{JS}(A, B; i), \\
+d_{JS}(A, B; i) = \frac{1}{2} d_{KL}(\pi^{(A)}_{i} || \pi^{(AB)}_{i}) + \frac{1}{2} d_{KL}(\pi^{(B)}_{i} || \pi^{(AB)}_{i}).
+\end{split}\]</div>
+<p>Here we have defined <span class="math notranslate nohighlight">\(\pi^{(AB)}_{i} := (\pi^{(A)}_{i} + \pi^{(B)}_{i}) / 2\)</span> and KL divergence is given by</p>
+<div class="math notranslate nohighlight">
+\[
 d_{KL}(Q || P) = \mathbb{E}_Q\Big[\log \frac{Q}{P}\Big].
-\end{equation}</p>
+\]</div>
 <p>For identical membership distributions <span class="math notranslate nohighlight">\(\pi^{(A)}_{i} = \pi^{(B)}_{i}\)</span> we have <span class="math notranslate nohighlight">\(d_{JS}(A, B; i) = 0\)</span>, therefore, a smaller JS divergence indicates larger agreement between node membership distributions.</p>
 </section>
 <section id="disjoint-comparison">
 <h4>2) Disjoint comparison<a class="headerlink" href="#disjoint-comparison" title="Permalink to this headline">¶</a></h4>
 <p>Our overlapping results can be used to infer disjoint communities for each node as a special case.  We assign a disjoint community index <span class="math notranslate nohighlight">\(k_i\)</span> to node <span class="math notranslate nohighlight">\(i\)</span> by choosing its maximum membership value.  In other words, we have</p>
-<p>\begin{equation}
-k_{i} = \underset{k}{\mathrm{argmax}} ; \pi_{ik}.
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+k_{i} = \underset{k}{\mathrm{argmax}} \; \pi_{ik}. 
+\]</div>
 <p>The measures discussed here can also be used to compare our argmax disjoint results with the results of other disjoint algorithms such as Hierarchical clustering.</p>
 <p><strong>Between communities.</strong> We use Dice coefficient to quantify similarity between disjoint communities as follows</p>
-<p>\begin{align}
-d_{dice}(A, B) &amp;= \frac{1}{K} \sum_{k = 1}^K d_{dice}(A, B; k),\
-d_{dice}(A, B; k) &amp;= 1 - \frac{ 2 |A_k \cap B_k|}{|A_k| + |B_k|}.\nonumber
-\end{align}
-where <span class="math notranslate nohighlight">\(A_k\)</span> denotes the set of all voxels assigned to community <span class="math notranslate nohighlight">\(k\)</span> for group <span class="math notranslate nohighlight">\(A\)</span> and similarly for <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+d_{dice}(A, B) = \frac{1}{K} \sum_{k = 1}^K d_{dice}(A, B; k), \\
+d_{dice}(A, B; k) = 1 - \frac{ 2 |A_k \cap B_k|}{|A_k| + |B_k|}.
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(A_k\)</span> denotes the set of all voxels assigned to community <span class="math notranslate nohighlight">\(k\)</span> for group <span class="math notranslate nohighlight">\(A\)</span> and similarly for <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p><strong>Between nodes.</strong>  For comparison at node level we use Hamming distance to quantify disjoint community similarities.  The Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different.  Therefore, it is an appropriate measure to quantify distance between two discrete codes (community indices).  Let use define <span class="math notranslate nohighlight">\(V\)</span> as the set of all vertices (nodes).  We have</p>
-<p>\begin{align}
-d_{hamm}(A, B) &amp;= \text{# nodes with different community indices} ; /
-; \text{total # nodes}\
-&amp;= \frac{|{i : k^{(A)}_i \neq k^{(B)}_i ,,, \text{for} ,,, i \in V}|}{|V|}.\nonumber
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+d_{hamm}(A, B) = \text{# nodes with different community indices} \; / 
+\; \text{total # nodes}\\
+= \frac{|\{i : k^{(A)}_i \neq k^{(B)}_i \,\,\, \text{for} \,\,\, i \in V\}|}{|V|}.
+\end{split}\]</div>
 <p>If all nodes get the same disjoint community assignments in both groups <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, then we will have <span class="math notranslate nohighlight">\(d_{hamm}(A, B) = 0\)</span>.  This means maximum disjoint similarity.</p>
 </section>
 </section>
 <section id="comparing-the-amount-of-overlap">
 <h3>Comparing the amount of overlap<a class="headerlink" href="#comparing-the-amount-of-overlap" title="Permalink to this headline">¶</a></h3>
 <p>So far there is strong evidence that <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{Ca}^{2+})}\)</span> is substantially more overlapping than <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{BOLD})}\)</span>.  The best way to quantify this difference is across nodes, since there might be alignment issues between communities.  To do so, let us define a quantity, maximum membership value of a node</p>
-<p>\begin{equation}
-x_{i} = \underset{k}{\mathrm{max}} ; \pi_{ik}.
-\end{equation}</p>
+<div class="math notranslate nohighlight">
+\[
+x_{i} = \underset{k}{\mathrm{max}} \; \pi_{ik}.
+\]</div>
 <p>This quantity keeps track of the strongest membership value that a node expresses to some community, any community.  It is bounded from below by <span class="math notranslate nohighlight">\(1/K\)</span> and from above by <span class="math notranslate nohighlight">\(1\)</span></p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 \frac{1}{K} \leq x_i \leq 1.
-\end{equation}
-A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that node <span class="math notranslate nohighlight">\(i\)</span> is most likely belongs to disjoint parts of the graph. Therefore, keeping track of this quantity across conditions can reveal whether a node prefers to belong to many communities or just one.  Let us label a node <strong>disjoint</strong> if <span class="math notranslate nohighlight">\(x_i \gtrsim 0.8\)</span>, and <strong>overlapping</strong> if <span class="math notranslate nohighlight">\(x_i \lesssim 0.8\)</span>.  We use this criterion to define</p>
-<p>\begin{align}
-\text{set of disjoint nodes} &amp;= S_{disjoint} = \big{i : i = 1, \dots, N ; \text{if} ; \bar{x}<em>{i} \geq 0.8 \big}\
-\text{set of overlapping nodes} &amp;= S</em>{overlap} = \big{i : i = 1, \dots, N ; \text{if} ; \bar{x}_{i} &lt; 0.8 \big}.
-\end{align}</p>
+\]</div>
+<p>A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that node <span class="math notranslate nohighlight">\(i\)</span> is most likely belongs to disjoint parts of the graph. Therefore, keeping track of this quantity across conditions can reveal whether a node prefers to belong to many communities or just one.  Let us label a node <strong>disjoint</strong> if <span class="math notranslate nohighlight">\(x_i \gtrsim 0.8\)</span>, and <strong>overlapping</strong> if <span class="math notranslate nohighlight">\(x_i \lesssim 0.8\)</span>.  We use this criterion to define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\text{set of disjoint nodes} = S_{disjoint} = \big\{i : i = 1, \dots, N \; \text{if} \; \bar{x}_{i} \geq 0.8 \big\}\\
+\text{set of overlapping nodes} = S_{overlap} = \big\{i : i = 1, \dots, N \; \text{if} \; \bar{x}_{i} &lt; 0.8 \big\}.
+\end{split}\]</div>
 <p>Next, we use this criterion to compute, <span class="math notranslate nohighlight">\(\theta^{(A)}\)</span>, proportion of nodes that are overlapping in condition <span class="math notranslate nohighlight">\(A\)</span>.  That is</p>
-<p>\begin{align}
-\theta^{(A)} &amp;= \frac{\big| S^{(A)}_{overlap} \big|}{N}.
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[
+\theta^{(A)} = \frac{\big| S^{(A)}_{overlap} \big|}{N}.
+\]</div>
 <p>Comparing the amount of overlap this way has several benefits.  For example, we avoid complications that come from having to match different communities across modalities, because <span class="math notranslate nohighlight">\(x_i\)</span> is well defined for any set of communities.</p>
 </section>
 </section>
@@ -1261,6 +1277,7 @@ A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that
 <li><p><strong>When comparing proportion of overlapping nodes:</strong> Similar arguments apply here.  When comparing <span class="math notranslate nohighlight">\(\theta^{(\text{Ca}^{2+})}\)</span> and <span class="math notranslate nohighlight">\(\theta^{(\text{BOLD})}\)</span>, we should calculate this quantity for all <span class="math notranslate nohighlight">\(n=120\)</span> runs and plot the histograms.  Then we can comptute the means across all runs and peerform approriate statistical tests on these means.</p></li>
 <li><p><strong>When visualizing communities and entropies:</strong> Here it is best to calculate <span class="math notranslate nohighlight">\(\pi^{(\alpha)}\)</span> for each animal and calculate entropies from this for each animal separately. We can then compute the mean over all animals to get the group membership matrix and entropy values, which we can then visualie in the main paper.  If necessary, we can visualize each animal’s membership and entropy maps somewhere in the supplementary.</p></li>
 </ul>
+<p>Lastly, I wanted to mention that we can consider another type of shuffling to get a sense of community similarities.  For instance, we can shuffle the community dimension when comparing <span class="math notranslate nohighlight">\(\pi^{(A)}\)</span> and <span class="math notranslate nohighlight">\(\pi^{(B)}\)</span>.  This is not exactly permutation test, but still can be used to see how results from each distance metric depends on shuffling the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Comparison-3.pdf&#39;</span><span class="p">)</span>
@@ -1271,8 +1288,8 @@ A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="780"
-    height="810"
+    width="600"
+    height="640"
     src="../../_extras/fig_sketches/Comparison-3.pdf"
     frameborder="0"
     allowfullscreen
