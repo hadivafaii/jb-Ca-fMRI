@@ -783,6 +783,11 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entropy">
+       Entropy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#data-modalities">
        Data modalities
       </a>
@@ -881,21 +886,55 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#similarity-of-membership-vectors">
-   Similarity of membership vectors
+  <a class="reference internal nav-link" href="#differences-similarities-in-main-results">
+   Differences/similarities in main results
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     1) Distance measure
+    <a class="reference internal nav-link" href="#similarity-of-membership-vectors">
+     Similarity of membership vectors
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       1) Distance measure
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       2) Variability
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     2) Variability
+    <a class="reference internal nav-link" href="#distance-metrics">
+     Distance metrics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overlapping-comparison">
+       1) Overlapping comparison
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#disjoint-comparison">
+       2) Disjoint comparison
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparing-the-amount-of-overlap">
+     Comparing the amount of overlap
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-questions-to-discuss">
+   General questions to discuss
+  </a>
  </li>
 </ul>
 
@@ -916,7 +955,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
 
-<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">850</span><span class="p">,</span> <span class="mi">1135</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">780</span><span class="p">,</span> <span class="mi">810</span>
 <span class="n">figs_dir</span> <span class="o">=</span> <span class="s1">&#39;../../_extras/fig_sketches&#39;</span>
 </pre></div>
 </div>
@@ -973,6 +1012,18 @@ where <span class="math notranslate nohighlight">\(\alpha \in {1, 2, \dots, N_{s
 <p>\begin{equation}
 \pi^{(group)} = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}\pi^{(\alpha)}.
 \end{equation}</p>
+</section>
+<section id="entropy">
+<h4>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h4>
+<p>For animal <span class="math notranslate nohighlight">\(\alpha\)</span>, membership diversity of node <span class="math notranslate nohighlight">\(i\)</span> is estimated using Shannon’s entropy</p>
+<p>\begin{equation}
+h^{(\alpha)}<em>i = -\sum</em>{k = 1}^{K}\pi^{(\alpha)}<em>{ik} \log\pi^{(\alpha)}</em>{ik}.
+\end{equation}</p>
+<p>Similarly, group entropy estimate of node <span class="math notranslate nohighlight">\(i\)</span> is obtained by averaging over all animals</p>
+<p>\begin{equation}
+h^{(group)}<em>i = \frac{1}{N</em>{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
+\end{equation}</p>
+<p><strong>Question:</strong> An alternative way to calculate entropies would be to use <span class="math notranslate nohighlight">\(h^{(group)}_i = -\sum_{k = 1}^{K}\pi^{(group)}_{ik} \log\pi^{(group)}_{ik}\)</span>.  This does not sound like the most principled way to go since animals are units of variability in our analysis.  Therefore, I think the other way I described above makes the most sense. Right?</p>
 </section>
 <section id="data-modalities">
 <h4>Data modalities<a class="headerlink" href="#data-modalities" title="Permalink to this headline">¶</a></h4>
@@ -1047,7 +1098,7 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <h4>2) Variability<a class="headerlink" href="#variability" title="Permalink to this headline">¶</a></h4>
 <p>There are <span class="math notranslate nohighlight">\(N_{ses} = 3\)</span> sessions and <span class="math notranslate nohighlight">\(N_{run} \times N_{sub} = 4 \times 10 = 40\)</span> runs per session for each data modality. Therefore, we have a total of <span class="math notranslate nohighlight">\(3 \times 40 = 120\)</span> runs overal.  Let’s say our goal is to find the best sparsity threshold that maximizes consistency across sessions for BOLD.  This means we would like to minimize topological distances between runs across sessions.  We compute the pairwise Portrait Divergence between each pairs of runs and arrange these numbers in a distance matrix with size <span class="math notranslate nohighlight">\(120 \times 120\)</span>.  This matrix has a block diagonal structure, meaning that blocks of size <span class="math notranslate nohighlight">\(40\)</span> can be identified that contain distances only in either <em>within-session</em> or <em>across-session</em> groups.  Please see figure below.</p>
 <p>We can compute the average distances for each label.  Here the null hypothesis can be that these numbers (<em>within-session</em> vs. <em>across-session</em> distances) come from different distributions.  This is not the usual choise becuase most people want to find group vs control effects, but here we want to show that our hyperparameter choices are effective as they minimize the differences between sessions. In other words, we want to show that distribution of within-session vs across-session distances are not different in a statistically sgificant way given our hyperparameter and preprocessing choices. A permutation test can be used to test statistical significane. It is equivalent to shuffling rows and columns of this distance matrix and performing the averaging for each group while pretending the session labels remain unchanged.</p>
-<p>Alternatively, we can use the usual null hypothesis that assumes the samples come from identical distributions.  Then we can report the p-value and show that we could not find significant evidence to reject null hypothesis, therefore we assume it is true to the best of our knowledge.</p>
+<p>Alternatively, we can define a null hypothesis that assumes the samples come from identical distributions.  Then we can report the p-value and show that we could not find significant evidence to reject null hypothesis, therefore we assume it is true to the best of our knowledge.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Comparison-1.pdf&#39;</span><span class="p">)</span>
@@ -1058,8 +1109,8 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="850"
-    height="1135"
+    width="780"
+    height="810"
     src="../../_extras/fig_sketches/Comparison-1.pdf"
     frameborder="0"
     allowfullscreen
@@ -1099,8 +1150,8 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="850"
-    height="1135"
+    width="780"
+    height="810"
     src="../../_extras/fig_sketches/Comparison-2.pdf"
     frameborder="0"
     allowfullscreen
@@ -1112,21 +1163,126 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 </section>
 </section>
 <hr class="docutils" />
+<section id="differences-similarities-in-main-results">
+<h2>Differences/similarities in main results<a class="headerlink" href="#differences-similarities-in-main-results" title="Permalink to this headline">¶</a></h2>
+<p>So far, we have used consistency across sessions to choose hyperparameters and have a sense of similarities and differences at the interaction graph level.  We have done this across sessions (condition # 1) and across modalities (condition # 3), and maybe across animals (condition # 2).  In this section we discuss how our main results (membership vectors or some of its deriivatives) compare when we use different modalities.</p>
 <section id="similarity-of-membership-vectors">
-<h2>Similarity of membership vectors<a class="headerlink" href="#similarity-of-membership-vectors" title="Permalink to this headline">¶</a></h2>
-<p>So far, we have used consistency across sessions to choose hyperparameters and have a sense of similarities and differences at the interaction graph level.  We have done this across sessions (condition # 1) and across modalities (condition # 3), and maybe across animals (condition # 2).</p>
-<p>Next, we want to find out if the resulting membership vectors are similar across modalities. One goal here is to compare <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{Ca}^{2+})}\)</span> with <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{BOLD})}\)</span> for <span class="math notranslate nohighlight">\(\alpha \in \{1, 2, \dots, 10, group\}\)</span>.  There are multiple types of comparisons we can make, but for now let us assume we have an awesome metric, <span class="math notranslate nohighlight">\(d_{awesome}\)</span> that takes the resulting membership vectors and outputs a number in <span class="math notranslate nohighlight">\([0, 1]\)</span>.  This represents some sort of distance between the inputs and is informative about some aspect of the results.  For instance, it could be cosine distance between communities or the difference between overlap size and so on.</p>
+<h3>Similarity of membership vectors<a class="headerlink" href="#similarity-of-membership-vectors" title="Permalink to this headline">¶</a></h3>
+<p>We want to find out if the resulting membership vectors are similar across modalities. One goal here is to compare <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{Ca}^{2+})}\)</span> with <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{BOLD})}\)</span> for <span class="math notranslate nohighlight">\(\alpha \in \{1, 2, \dots, 10, group\}\)</span>.  There are multiple types of comparisons we can make, but for now let us assume we have an awesome metric, <span class="math notranslate nohighlight">\(d_{awesome}\)</span> that takes the resulting membership vectors and outputs a number in <span class="math notranslate nohighlight">\([0, 1]\)</span>.  This represents some sort of distance between the inputs and is informative about some aspect of the results.  For instance, it could be cosine distance between communities or the difference between overlap size and so on.</p>
 <section id="id4">
-<h3>1) Distance measure<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>(copy from methods section here)</p>
+<h4>1) Distance measure<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Let’s skip details of this for now.  I will discuss possible options below.</p>
 </section>
 <section id="id5">
-<h3>2) Variability<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Once again, permutation testing can be used here.  There are two possibilities.  When are</p>
-<hr class="docutils" />
-<hr class="docutils" />
-<hr class="docutils" />
+<h4>2) Variability<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p>There are several optoins.  First of all, for a comparison between <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{Ca}^{2+})}\)</span> with <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{BOLD})}\)</span> we can simply use the bootstrapped distribution to get a sense of the variability around the number coming from real sample.  If we wanted to define a concrete hypothesis and test it, then a permutation test would be a better option.</p>
+<p><strong>Question:</strong> Is it OK sometimes to just look at some quantities without having to define a hypothesis to test for significance?  Simply report a number and quantify variability around it without having a hypothesis in mind.</p>
 </section>
+</section>
+<section id="distance-metrics">
+<h3>Distance metrics<a class="headerlink" href="#distance-metrics" title="Permalink to this headline">¶</a></h3>
+<p>In general, community comparison can be divided into the following categories:</p>
+<ol class="simple">
+<li><p>Overlapping comparison</p></li>
+<li><p>Disjoint comparison</p></li>
+</ol>
+<p>Furthermore, for each category, I define two complementary approaches to compare results across modalities: a) by comparing communities, and b) by comparing nodes.</p>
+<section id="overlapping-comparison">
+<h4>1) Overlapping comparison<a class="headerlink" href="#overlapping-comparison" title="Permalink to this headline">¶</a></h4>
+<p><strong>Between communities.</strong> For overlapping communities, we compute the cosine similarity of membership vectors across communities (after aligning them).  Specifically, let’s use <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k}\)</span> to denote the membership vector over all nodes for community <span class="math notranslate nohighlight">\(k\)</span> estimated using data from condition/group <span class="math notranslate nohighlight">\(A\)</span>.  For instance, we could have <span class="math notranslate nohighlight">\(A = (group, \,\text{Ca}^{2+})\)</span> and so on. Here <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k} = (\pi^{(A)}_{1k}, \dots, \pi^{(A)}_{ik}, \dots, \pi^{(A)}_{Nk})^T\)</span> is simply <span class="math notranslate nohighlight">\(k-\)</span>th column of <span class="math notranslate nohighlight">\(\pi^{(A)}\)</span>.  We use cosine distance to quantify network similarities at the overlapping community level</p>
+<p>\begin{align}
+d_{\cos}(A, B) &amp;= \frac{1}{K} \sum_{k=1}^K d_{\cos}(A, B; k),\
+d_{\cos}(A, B; k) &amp;= \frac{1}{2}\big[1 - \cos(A, B; k)\nonumber\big]\
+&amp;= 1 - \frac{\sum_{i = 1}^N \pi^{(A)}<em>{ik} \pi^{(B)}</em>{ik}}{||\pi^{(A)}<em>{[1:N], k}|| . ||\pi^{(B)}</em>{[1:N], k}||}.\nonumber
+\end{align}</p>
+<p>If the two groups have identical membership vectors we will have <span class="math notranslate nohighlight">\(d_{\cos}(A, B) = 0\)</span> which corresponds to maximum similarity.</p>
+<p><strong>Between nodes.</strong> We can also quantify similarity between node membership vectors across conditions.  Let <span class="math notranslate nohighlight">\(\pi^{(A)}_{i}\)</span> denote the <span class="math notranslate nohighlight">\(K\)</span>-dimensional membership distribution for node <span class="math notranslate nohighlight">\(i\)</span> estimated using data from group <span class="math notranslate nohighlight">\(A\)</span>.  This is a probability distribution, therefore, we can use standard measures such as Jensen–Shannon divergence to compute the distance between <span class="math notranslate nohighlight">\(\pi^{(A)}_{i}\)</span> and <span class="math notranslate nohighlight">\(\pi^{(B)}_{i}\)</span>.  Jensen–Shannon divergence is simply symmetrized Kullback–Leibler divergence:</p>
+<p>\begin{align}
+d_{JS}(A, B) &amp;= \frac{1}{N} \sum_{i = 1}^N d_{JS}(A, B; i),\
+d_{JS}(A, B; i) &amp;= \frac{1}{2} d_{KL}(\pi^{(A)}<em>{i} || \pi^{(AB)}</em>{i}) + \frac{1}{2} d_{KL}(\pi^{(B)}<em>{i} || \pi^{(AB)}</em>{i}),\nonumber
+\end{align}
+where we have defined <span class="math notranslate nohighlight">\(\pi^{(AB)}_{i} := (\pi^{(A)}_{i} + \pi^{(B)}_{i}) / 2\)</span> and KL divergence is given by</p>
+<p>\begin{equation}
+d_{KL}(Q || P) = \mathbb{E}_Q\Big[\log \frac{Q}{P}\Big].
+\end{equation}</p>
+<p>For identical membership distributions <span class="math notranslate nohighlight">\(\pi^{(A)}_{i} = \pi^{(B)}_{i}\)</span> we have <span class="math notranslate nohighlight">\(d_{JS}(A, B; i) = 0\)</span>, therefore, a smaller JS divergence indicates larger agreement between node membership distributions.</p>
+</section>
+<section id="disjoint-comparison">
+<h4>2) Disjoint comparison<a class="headerlink" href="#disjoint-comparison" title="Permalink to this headline">¶</a></h4>
+<p>Our overlapping results can be used to infer disjoint communities for each node as a special case.  We assign a disjoint community index <span class="math notranslate nohighlight">\(k_i\)</span> to node <span class="math notranslate nohighlight">\(i\)</span> by choosing its maximum membership value.  In other words, we have</p>
+<p>\begin{equation}
+k_{i} = \underset{k}{\mathrm{argmax}} ; \pi_{ik}.
+\end{equation}</p>
+<p>The measures discussed here can also be used to compare our argmax disjoint results with the results of other disjoint algorithms such as Hierarchical clustering.</p>
+<p><strong>Between communities.</strong> We use Dice coefficient to quantify similarity between disjoint communities as follows</p>
+<p>\begin{align}
+d_{dice}(A, B) &amp;= \frac{1}{K} \sum_{k = 1}^K d_{dice}(A, B; k),\
+d_{dice}(A, B; k) &amp;= 1 - \frac{ 2 |A_k \cap B_k|}{|A_k| + |B_k|}.\nonumber
+\end{align}
+where <span class="math notranslate nohighlight">\(A_k\)</span> denotes the set of all voxels assigned to community <span class="math notranslate nohighlight">\(k\)</span> for group <span class="math notranslate nohighlight">\(A\)</span> and similarly for <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p><strong>Between nodes.</strong>  For comparison at node level we use Hamming distance to quantify disjoint community similarities.  The Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different.  Therefore, it is an appropriate measure to quantify distance between two discrete codes (community indices).  Let use define <span class="math notranslate nohighlight">\(V\)</span> as the set of all vertices (nodes).  We have</p>
+<p>\begin{align}
+d_{hamm}(A, B) &amp;= \text{# nodes with different community indices} ; /
+; \text{total # nodes}\
+&amp;= \frac{|{i : k^{(A)}_i \neq k^{(B)}_i ,,, \text{for} ,,, i \in V}|}{|V|}.\nonumber
+\end{align}</p>
+<p>If all nodes get the same disjoint community assignments in both groups <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, then we will have <span class="math notranslate nohighlight">\(d_{hamm}(A, B) = 0\)</span>.  This means maximum disjoint similarity.</p>
+</section>
+</section>
+<section id="comparing-the-amount-of-overlap">
+<h3>Comparing the amount of overlap<a class="headerlink" href="#comparing-the-amount-of-overlap" title="Permalink to this headline">¶</a></h3>
+<p>So far there is strong evidence that <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{Ca}^{2+})}\)</span> is substantially more overlapping than <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{BOLD})}\)</span>.  The best way to quantify this difference is across nodes, since there might be alignment issues between communities.  To do so, let us define a quantity, maximum membership value of a node</p>
+<p>\begin{equation}
+x_{i} = \underset{k}{\mathrm{max}} ; \pi_{ik}.
+\end{equation}</p>
+<p>This quantity keeps track of the strongest membership value that a node expresses to some community, any community.  It is bounded from below by <span class="math notranslate nohighlight">\(1/K\)</span> and from above by <span class="math notranslate nohighlight">\(1\)</span></p>
+<p>\begin{equation}
+\frac{1}{K} \leq x_i \leq 1.
+\end{equation}
+A large <span class="math notranslate nohighlight">\(x_i\)</span> indicates that node <span class="math notranslate nohighlight">\(i\)</span> is most likely belongs to disjoint parts of the graph. Therefore, keeping track of this quantity across conditions can reveal whether a node prefers to belong to many communities or just one.  Let us label a node <strong>disjoint</strong> if <span class="math notranslate nohighlight">\(x_i \gtrsim 0.8\)</span>, and <strong>overlapping</strong> if <span class="math notranslate nohighlight">\(x_i \lesssim 0.8\)</span>.  We use this criterion to define</p>
+<p>\begin{align}
+\text{set of disjoint nodes} &amp;= S_{disjoint} = \big{i : i = 1, \dots, N ; \text{if} ; \bar{x}<em>{i} \geq 0.8 \big}\
+\text{set of overlapping nodes} &amp;= S</em>{overlap} = \big{i : i = 1, \dots, N ; \text{if} ; \bar{x}_{i} &lt; 0.8 \big}.
+\end{align}</p>
+<p>Next, we use this criterion to compute, <span class="math notranslate nohighlight">\(\theta^{(A)}\)</span>, proportion of nodes that are overlapping in condition <span class="math notranslate nohighlight">\(A\)</span>.  That is</p>
+<p>\begin{align}
+\theta^{(A)} &amp;= \frac{\big| S^{(A)}_{overlap} \big|}{N}.
+\end{align}</p>
+<p>Comparing the amount of overlap this way has several benefits.  For example, we avoid complications that come from having to match different communities across modalities, because <span class="math notranslate nohighlight">\(x_i\)</span> is well defined for any set of communities.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="general-questions-to-discuss">
+<h2>General questions to discuss<a class="headerlink" href="#general-questions-to-discuss" title="Permalink to this headline">¶</a></h2>
+<p>The comparisons discussed so far can be made at different levels.  For instance, we can consider each animal as a sample (<span class="math notranslate nohighlight">\(n=10\)</span>) and compute averages before comparing, or we can forget about session and animal labels and assume each run is a sample (<span class="math notranslate nohighlight">\(n=120\)</span>). I think both approaches are useful in different scenarios.</p>
+<ul class="simple">
+<li><p><strong>When comparing interaction graphs:</strong> I propose using each run as a sample for this.  To get interaction graphs at animal level, we should either concatenate data before computing correlations or average over adjacency matrices. This introduces additional complications due to co-registration artifacts or lack of proper theory to interpret each edge value in a covariance matrix.</p></li>
+<li><p><strong>When comparing the amount of overlap:</strong> I think here we should still compute quantities of interest for each run first. Then we can compute aggregate statistics to get quantities such as last bin density for each animal, and eventually for the group.  The reason to do this is because we want to minimize artifacts due to co-registration and misalignment.  Averagin before binning adds additional but spurious overlap to the results.</p></li>
+<li><p><strong>When comparing proportion of overlapping nodes:</strong> Similar arguments apply here.  When comparing <span class="math notranslate nohighlight">\(\theta^{(\text{Ca}^{2+})}\)</span> and <span class="math notranslate nohighlight">\(\theta^{(\text{BOLD})}\)</span>, we should calculate this quantity for all <span class="math notranslate nohighlight">\(n=120\)</span> runs and plot the histograms.  Then we can comptute the means across all runs and peerform approriate statistical tests on these means.</p></li>
+<li><p><strong>When visualizing communities and entropies:</strong> Here it is best to calculate <span class="math notranslate nohighlight">\(\pi^{(\alpha)}\)</span> for each animal and calculate entropies from this for each animal separately. We can then compute the mean over all animals to get the group membership matrix and entropy values, which we can then visualie in the main paper.  If necessary, we can visualize each animal’s membership and entropy maps somewhere in the supplementary.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">figs_dir</span><span class="p">,</span> <span class="s1">&#39;Comparison-3.pdf&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">height</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="780"
+    height="810"
+    src="../../_extras/fig_sketches/Comparison-3.pdf"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<hr class="docutils" />
+<hr class="docutils" />
+<hr class="docutils" />
 </section>
 </section>
 
