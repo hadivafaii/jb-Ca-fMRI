@@ -853,10 +853,16 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">exclude_runs</span><span class="o">=</span><span class="p">[]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">768</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,7 +871,127 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[]</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span><span style="font-weight: bold">)</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">anat</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">anat</span><span class="o">.</span><span class="n">nii_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC01_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC01_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC01_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC01_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC02_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC02_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC02_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC02_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC03_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC03_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC03_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC04_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC04_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC04_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC04_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC05_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC05_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC05_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC05_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC06_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC06_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC06_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC06_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC07_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC07_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC07_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC07_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC08_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC08_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC08_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC09_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC09_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC09_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span> sub-SLC09_ses-3_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC10_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> sub-SLC10_ses-1_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC10_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span> sub-SLC10_ses-2_space-individual_desc-mask_bold.nii.gz
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="n">Register</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">get_accepted_regions</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: cortex . . . a total of: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">996</span> regions accepted, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">388</span> regions rejected.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">71.97</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">28.03</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">get_accepted_regions</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: cortex . . . a total of: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4614</span> regions accepted, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">16</span> regions rejected.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">99.65</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: subcortex-l . . . a total of: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions accepted, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> regions rejected.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.00</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.00</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Name: subcortex-r . . . a total of: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">154</span> regions accepted, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span> regions rejected.
+accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.00</span> %, reject ratio: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.00</span> %, using a presence threshold of <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10.0</span> %
+
 </pre>
 </div></div>
 </div>
@@ -1575,7 +1701,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_12_0.png" src="../../_images/nov-??-2021_12_0.png" />
+<img alt="../../_images/nov-??-2021_24_0.png" src="../../_images/nov-??-2021_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2121,7 +2247,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_26_0.png" src="../../_images/nov-??-2021_26_0.png" />
+<img alt="../../_images/nov-??-2021_38_0.png" src="../../_images/nov-??-2021_38_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2278,7 +2404,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_44_0.png" src="../../_images/nov-??-2021_44_0.png" />
+<img alt="../../_images/nov-??-2021_56_0.png" src="../../_images/nov-??-2021_56_0.png" />
 </div>
 </div>
 <section id="spectrogram-periodogram">
@@ -2297,7 +2423,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_49_0.png" src="../../_images/nov-??-2021_49_0.png" />
+<img alt="../../_images/nov-??-2021_61_0.png" src="../../_images/nov-??-2021_61_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2307,7 +2433,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_50_0.png" src="../../_images/nov-??-2021_50_0.png" />
+<img alt="../../_images/nov-??-2021_62_0.png" src="../../_images/nov-??-2021_62_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2317,7 +2443,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_51_0.png" src="../../_images/nov-??-2021_51_0.png" />
+<img alt="../../_images/nov-??-2021_63_0.png" src="../../_images/nov-??-2021_63_0.png" />
 </div>
 </div>
 </section>
@@ -2363,7 +2489,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_57_0.png" src="../../_images/nov-??-2021_57_0.png" />
+<img alt="../../_images/nov-??-2021_69_0.png" src="../../_images/nov-??-2021_69_0.png" />
 </div>
 </div>
 </section>
@@ -2394,7 +2520,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_59_0.png" src="../../_images/nov-??-2021_59_0.png" />
+<img alt="../../_images/nov-??-2021_71_0.png" src="../../_images/nov-??-2021_71_0.png" />
 </div>
 </div>
 </section>
@@ -2484,7 +2610,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_67_0.png" src="../../_images/nov-??-2021_67_0.png" />
+<img alt="../../_images/nov-??-2021_79_0.png" src="../../_images/nov-??-2021_79_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2503,7 +2629,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_69_0.png" src="../../_images/nov-??-2021_69_0.png" />
+<img alt="../../_images/nov-??-2021_81_0.png" src="../../_images/nov-??-2021_81_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2571,7 +2697,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_79_0.png" src="../../_images/nov-??-2021_79_0.png" />
+<img alt="../../_images/nov-??-2021_91_0.png" src="../../_images/nov-??-2021_91_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2595,7 +2721,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7facfc287dc0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/nov-??-2021_81_1.png" src="../../_images/nov-??-2021_81_1.png" />
+</div><img alt="../../_images/nov-??-2021_93_1.png" src="../../_images/nov-??-2021_93_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2632,7 +2758,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_84_0.png" src="../../_images/nov-??-2021_84_0.png" />
+<img alt="../../_images/nov-??-2021_96_0.png" src="../../_images/nov-??-2021_96_0.png" />
 </div>
 </div>
 </section>
@@ -2662,7 +2788,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_89_0.png" src="../../_images/nov-??-2021_89_0.png" />
+<img alt="../../_images/nov-??-2021_101_0.png" src="../../_images/nov-??-2021_101_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2690,7 +2816,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_93_0.png" src="../../_images/nov-??-2021_93_0.png" />
+<img alt="../../_images/nov-??-2021_105_0.png" src="../../_images/nov-??-2021_105_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2732,7 +2858,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_96_0.png" src="../../_images/nov-??-2021_96_0.png" />
+<img alt="../../_images/nov-??-2021_108_0.png" src="../../_images/nov-??-2021_108_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2785,7 +2911,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/nov-??-2021_102_0.png" src="../../_images/nov-??-2021_102_0.png" />
+<img alt="../../_images/nov-??-2021_114_0.png" src="../../_images/nov-??-2021_114_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2797,7 +2923,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/nov-??-2021_104_1.png" src="../../_images/nov-??-2021_104_1.png" />
+</div><img alt="../../_images/nov-??-2021_116_1.png" src="../../_images/nov-??-2021_116_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
