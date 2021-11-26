@@ -645,6 +645,11 @@
      November 24th, 2021 (corr distrs)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nov-26-2021.html">
+     November 26th, 2021 (identify spikes)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -746,6 +751,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaba-continues">
+   Kaba continues
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -813,16 +831,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
-</pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
-</pre>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,7 +936,51 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/register_N162_12_0.png" src="../../_images/register_N162_12_0.png" />
+<img alt="../../_images/register_N162_13_0.png" src="../../_images/register_N162_13_0.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
+seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
+type        ElasticSyN
+grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9</span>
+syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>
+metric             sym
+score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.990933</span>
+
+</pre>
+</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3255689</span><span class="o">/</span><span class="mf">1420153608.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">name</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house_name</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">fit_register</span><span class="nt">(self, name, fixed, moving, logger, syn_metric, aff_metric, affine_init, save_results, types, grads, syn_bins, aff_bins, aff_rates, mi_q, n_seeds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>                 <span class="k">if</span> <span class="n">save_results</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_sv_tx</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">best_tx</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">509</span> 			<span class="bp">self</span><span class="o">.</span><span class="n">_apply_tx_obj2lps</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>                                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>                                 <span class="n">moving</span><span class="o">=</span><span class="n">moving_aff</span> <span class="k">if</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">_apply_tx_obj2lps</span><span class="nt">(self, name, moving, moving_orig, tx, tx_aff, save_results, use_mm, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">723</span> 			<span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>                         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">725</span> 				<span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">726</span>                                         <span class="n">item</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="n">item</span><span class="p">][:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>                                         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">    </span><span class="mi">724</span>                         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">725</span> 				<span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
+<span class="ne">--&gt; </span><span class="mi">726</span>                                         <span class="n">item</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="n">item</span><span class="p">][:]</span>
+<span class="g g-Whitespace">    </span><span class="mi">727</span>                                         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span>
+<span class="g g-Whitespace">    </span><span class="mi">728</span> 				<span class="p">}</span>
+
+<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -933,7 +989,85 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3255689</span><span class="o">/</span><span class="mf">3177313780.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">save_obj</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fit_N162_</span><span class="si">{</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;npy&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;results&#39; is not defined
+</pre></div>
 </div>
+</div>
+</div>
+<p>2021-11-25 10:21:35,508 : INFO : register.register : Registering Symmetric_N162 …</p>
+<p>iso: 0.982 VIS: 0.989 CLA: 0.875 mi: 0.520 sym: 0.991 ovp: 0.997 … seed-7_type-ElasticSyN_grad-0.90_synbin-32_affbin-13_affrate-0.6</p>
+<section id="kaba-continues">
+<h2>Kaba continues<a class="headerlink" href="#kaba-continues" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span> <span class="o">=</span> <span class="n">reg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span><span class="p">,</span> <span class="n">tx_aff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_tx</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_house_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Documents/Ca-fMRI/processed/transforms/Symmetric_N162_space-CCF3d_ants-inv.mat'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Documents/Ca-fMRI/processed/transforms/Symmetric_N162_space-CCF3d_ants-inv.nii.gz'</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tx_aff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ANTsTransform
+         Type       : AffineTransform
+         Dimension  : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+         Precision  : float
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">affined</span> <span class="o">=</span> <span class="n">tx_aff</span><span class="o">.</span><span class="n">apply_to_image</span><span class="p">(</span>
+    <span class="n">image</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">reference</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
+    <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apply_tx_obj2lps</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">in_house_name</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">affined</span><span class="p">,</span>
+    <span class="n">moving_orig</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">tx_aff</span><span class="o">=</span><span class="n">tx_aff</span><span class="p">,</span>
+    <span class="n">tx</span><span class="o">=</span><span class="n">tx</span><span class="p">,</span>
+    <span class="n">use_mm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
