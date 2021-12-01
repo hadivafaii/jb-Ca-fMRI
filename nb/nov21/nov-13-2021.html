@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>November 13th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -92,7 +91,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   February 2021
  </span>
@@ -136,7 +135,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   March 2021
  </span>
@@ -200,7 +199,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   April 2021
  </span>
@@ -234,7 +233,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   May 2021
  </span>
@@ -293,7 +292,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   June 2021
  </span>
@@ -387,7 +386,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   July 2021
  </span>
@@ -431,7 +430,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   August 2021
  </span>
@@ -460,7 +459,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   September 2021
  </span>
@@ -519,7 +518,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   October 2021
  </span>
@@ -603,7 +602,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   November 2021
  </span>
@@ -657,6 +656,35 @@
    <li class="toctree-l2">
     <a class="reference internal" href="nov-29-2021.html">
      November 29th, 2021 (figs 1 and 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  December 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/dec21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/dec21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-01-2021.html">
+     Dec 1st, 2021 (topo dist)
     </a>
    </li>
   </ul>
@@ -963,7 +991,7 @@
         
               <div>
                 
-  <section id="november-13th-2021">
+  <div class="section" id="november-13th-2021">
 <h1>November 13th, 2021<a class="headerlink" href="#november-13th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Discussing ways of comparing Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD results and more. <br></p>
 <div class="cell docutils container">
@@ -980,10 +1008,10 @@
 <hr class="docutils" />
 <hr class="docutils" />
 <hr class="docutils" />
-<section id="definitions">
+<div class="section" id="definitions">
 <h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <p>In this section I will define mathematical symbols that I will use throughout this document.</p>
-<section id="number-of">
+<div class="section" id="number-of">
 <h3>Number of …<a class="headerlink" href="#number-of" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Number of nodes (or ROIs):  <span class="math notranslate nohighlight">\(N = 996\)</span></p>
@@ -998,8 +1026,8 @@
 <li><p>Number of rest runs:  <span class="math notranslate nohighlight">\(N_{run} = 4\)</span></p></li>
 <li><p>Number of random seeds:  <span class="math notranslate nohighlight">\(N_{seed} = 1000\)</span></p></li>
 </ul>
-</section>
-<section id="closed-simplex-in-mathbb-r-k">
+</div>
+<div class="section" id="closed-simplex-in-mathbb-r-k">
 <h3>Closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span><a class="headerlink" href="#closed-simplex-in-mathbb-r-k" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(c\)</span> be a positive number.  The <span class="math notranslate nohighlight">\(n-\)</span>dimensional closed simplex in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> is defined by</p>
 <div class="math notranslate nohighlight">
@@ -1007,15 +1035,15 @@
 \mathbb{T}_n(c) = \Big\{ (x_1, \dots, x_n): \; x_i &gt; 0, \: 1 \leq i \leq n, \: \sum_{i=1}^n x_i = c \Big\}.
 \]</div>
 <p>Therefore, membership distributions <span class="math notranslate nohighlight">\(\pi_i\)</span> are members of <span class="math notranslate nohighlight">\(\mathbb{T}_K(1)\)</span>.</p>
-</section>
-<section id="memberships">
+</div>
+<div class="section" id="memberships">
 <h3>Memberships<a class="headerlink" href="#memberships" title="Permalink to this headline">¶</a></h3>
 <p>In this section I define some mathematical notations for membership values, the main quantity in our analysis.</p>
-<section id="for-a-run">
+<div class="section" id="for-a-run">
 <h4>For a run<a class="headerlink" href="#for-a-run" title="Permalink to this headline">¶</a></h4>
 <p>We apply the algorithm <span class="math notranslate nohighlight">\(N_{seed} = 1000\)</span> times to each run to get membership values.  This is a matrix that has shape <span class="math notranslate nohighlight">\(N_{seed} \times N \times K\)</span>.  After aligning and averaging results across seeds, we get the membership matrix for this run, <span class="math notranslate nohighlight">\(\pi\)</span>, that has shape <span class="math notranslate nohighlight">\(N \times K\)</span> where each row <span class="math notranslate nohighlight">\(\pi_i \in \mathbb{T}_K(1)\)</span>.  Each column of <span class="math notranslate nohighlight">\(\pi\)</span> corresponds to an overlapping community and contains membership values for all nodes in that community.</p>
-</section>
-<section id="all-runs">
+</div>
+<div class="section" id="all-runs">
 <h4>All runs<a class="headerlink" href="#all-runs" title="Permalink to this headline">¶</a></h4>
 <p>We can take membership matrices for all runs and arrange them in a large tensor that contains membership information for all runs from every session/animal:</p>
 <div class="math notranslate nohighlight">
@@ -1032,8 +1060,8 @@
 \[
 \pi^{(group)} = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}\pi^{(\alpha)}.
 \]</div>
-</section>
-<section id="entropy">
+</div>
+<div class="section" id="entropy">
 <h4>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h4>
 <p>For animal <span class="math notranslate nohighlight">\(\alpha\)</span>, membership diversity of node <span class="math notranslate nohighlight">\(i\)</span> is estimated using Shannon’s entropy</p>
 <div class="math notranslate nohighlight">
@@ -1046,25 +1074,25 @@ h^{(\alpha)}_i = -\sum_{k = 1}^{K}\pi^{(\alpha)}_{ik} \log\pi^{(\alpha)}_{ik}.
 h^{(group)}_i = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
 \]</div>
 <p><strong>Question:</strong> An alternative way to calculate entropies would be to use <span class="math notranslate nohighlight">\(h^{(group)}_i = -\sum_{k = 1}^{K}\pi^{(group)}_{ik} \log\pi^{(group)}_{ik}\)</span>.  This does not sound like the most principled way to go since animals are units of variability in our analysis.  Therefore, I think the other way I described above makes the most sense. Right?</p>
-</section>
-<section id="data-modalities">
+</div>
+<div class="section" id="data-modalities">
 <h4>Data modalities<a class="headerlink" href="#data-modalities" title="Permalink to this headline">¶</a></h4>
 <p>We have one <span class="math notranslate nohighlight">\(\Pi\)</span> tensor per data modality: <span class="math notranslate nohighlight">\(\Pi^{(\text{Ca}^{2+})}\)</span> and <span class="math notranslate nohighlight">\(\Pi^{(\text{BOLD-Lite})}\)</span>. From now on we refer to BOLD-Lite as simply BOLD but remembering that it’s only the surface subset of the full ROIs.  In this notation, we use <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{Ca}^{2+})}\)</span> to denote membership matrix for animal <span class="math notranslate nohighlight">\(\alpha\)</span> obtained using Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> data and so on.  Similarly, <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{Ca}^{2+})}\)</span> and <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{BOLD})}\)</span> represent group results obtained from Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD data respectively.</p>
 <hr class="docutils" />
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="aligning-results">
+<div class="section" id="aligning-results">
 <h2>Aligning results<a class="headerlink" href="#aligning-results" title="Permalink to this headline">¶</a></h2>
 <p>We use k-means on the membership vectors.  I will add more details later.</p>
 <hr class="docutils" />
-</section>
+</div>
 <hr class="docutils" />
-<section id="comparing-results">
+<div class="section" id="comparing-results">
 <h2>Comparing results<a class="headerlink" href="#comparing-results" title="Permalink to this headline">¶</a></h2>
 <p>Next we seek to compare the results across different conditions.  This is useful information to learn in general, but also necessary to explore to a reasonable extent now.  Why do we report both Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD results?  What do we gain by including both data modalities in our analysis?  I think Eve is very interested in addressing this, and I’m also partially interested. It is useful to explore this question a little bit now because a) reviewers might ask about this, and b) what we learn now will become useful later when building dynamic models that operate at the time series level.</p>
-<section id="what-kinds-of-comparisons">
+<div class="section" id="what-kinds-of-comparisons">
 <h3>What kinds of comparisons?<a class="headerlink" href="#what-kinds-of-comparisons" title="Permalink to this headline">¶</a></h3>
 <p>Here I define some conditions that I will frequently refer back to.</p>
 <ol class="simple">
@@ -1073,8 +1101,8 @@ h^{(group)}_i = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
 <li><p><strong>Condition # 3 (across modalities):</strong> Here we use the same animal(s) and session(s) to compare Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD results.</p></li>
 </ol>
 <p>Each of these conditions serves a unique purpose.  I will go over what we can gain from such comparisons and motivate each of these, but before that let’s discuss what are the necessary ingredients for these comparisons to make sense.</p>
-</section>
-<section id="how-to-compare">
+</div>
+<div class="section" id="how-to-compare">
 <h3>How to compare<a class="headerlink" href="#how-to-compare" title="Permalink to this headline">¶</a></h3>
 <p>To do this properly, we need the following:</p>
 <ol class="simple">
@@ -1088,21 +1116,21 @@ h^{(group)}_i = \frac{1}{N_{sub}}\sum_{\alpha = 1}^{N_{sub}}h^{(\alpha)}_i.
 <li><p>compare the amount of overlap present in overlapping results.</p></li>
 </ul>
 <p>For each item, I will define and motivate the particular distance metric I have in mind.  I also explicitly discuss how to quantify variability.</p>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="comparison-at-the-interaction-graph-level">
+<div class="section" id="comparison-at-the-interaction-graph-level">
 <h2>Comparison at the interaction graph level<a class="headerlink" href="#comparison-at-the-interaction-graph-level" title="Permalink to this headline">¶</a></h2>
 <p>First, we compare the interaction graphs. These graphs are the input to SVINET algorithm, so it makes sense to quantify how similar or different they are in different conditions.  These differences will inevitabely leak into next levels of analysis and will be combined with other sources of variability. Therefore, it makes sense to start here and quantify some of the varialibity.</p>
-<section id="consistency-across-sessions-an-objective-function">
+<div class="section" id="consistency-across-sessions-an-objective-function">
 <h3>Consistency across sessions: an objective function<a class="headerlink" href="#consistency-across-sessions-an-objective-function" title="Permalink to this headline">¶</a></h3>
 <p>I’m gonna argue that a longitudinal dataset recorded in the span of several spread out sessions is actually a fantstic resource.  We can use this to choose some of the hyperparameters in the study without relying on arbitrary metrics.  For instance, I have already established that the <strong>amount of overlap</strong> present in our results depends on the <strong>sparsification threshold</strong> used.  This is problematic, because ideally a biological fact should not depend so strongly on how we extract it from data.  This situation can potentially be remedied by using <em><strong>consistency across sessions</strong></em> as an objective function.</p>
-<section id="the-argument">
+<div class="section" id="the-argument">
 <h4>The argument<a class="headerlink" href="#the-argument" title="Permalink to this headline">¶</a></h4>
 <p>If thresholded covariance matrices are reprentative of the true interaction graphs in mice, then these interaction graphs must exhibit some level of consistency across sessions.  That is, if we take interaction graphs from session 1 and compare them to session 2, we should not see significant differences. Any significant and strong dependence on session label here would be concerning (assuming there was enough data per session to sample relevant corners of the phase space).</p>
 <p>Constructing the interaction graph depends nontrivially on the choices we make.  These choices include the initial parcellation scheme used (columnar or not?, number of columns, number of layers), data preprocessing steps (GSR or no GSR? bandpass frequency, etc.), edge filtering approach (proportional thresholding, constant threshold, or other?), and the threshold value used.  Rather than relying on heuristics, we should strive to find hyperparameters that maximize the representativeness of interaction graphs across sessions.  This is one reason why Condition # 1 is useful to consider.</p>
-</section>
-<section id="examples-in-the-literature">
+</div>
+<div class="section" id="examples-in-the-literature">
 <h4>Examples in the literature<a class="headerlink" href="#examples-in-the-literature" title="Permalink to this headline">¶</a></h4>
 <p>This very nice <a class="reference external" href="https://direct.mit.edu/netn/article/3/1/1/2187/Graph-theory-approaches-to-functional-network">paper</a> exposes some of the issues.  A recent <a class="reference external" href="https://direct.mit.edu/netn/article/5/1/96/97529/Combining-network-topology-and-information-theory">paper</a> uses Network Portrait Divergence (I discussed this in my very first presentation) to find parcellation and edge filtering schemes that are maximally representative.  Their goal is respectable; however, their objective is not very well motivated:</p>
 <blockquote>
@@ -1111,12 +1139,12 @@ a representative parcellation. Thus, our measure of representativeness for a giv
 was deﬁned as one minus its average divergence from all other parcellations.</p>
 </div></blockquote>
 <p>In other words, they consider a parcellation (or edge filtering) approach to be better (more representative) if it has smaller divergence from all other approaches.  This argument is inherently problematic since they assume being closer to the concensus (quantified by having smaller average divergence) is the best. We can do better by defining <em><strong>consistency across sessions</strong></em> as our objective.  How to do this?  Below I define an appropriate distance metric and statistical approach.</p>
-</section>
-<section id="distance-measure">
+</div>
+<div class="section" id="distance-measure">
 <h4>1) Distance measure<a class="headerlink" href="#distance-measure" title="Permalink to this headline">¶</a></h4>
 <p>We use Portrait Divergence between interaction graphs inferred from each run.  I do not like using correlation on the covariance matrix since the distribution of edge weights strongly depends on preprocessing steps.  For instance, GSR mathematically mandates that approximately 50% of correlations between regions will be negative.  Therefore, looking at distances between an idealized (binary) interaction graphs is a better choice.  We gain some sort of normalization (or abstraction) at the extent of losing information about correlation strengths.  Another reason to do this at the graph level is simply because SVINET accepts only binary edges.</p>
-</section>
-<section id="variability">
+</div>
+<div class="section" id="variability">
 <h4>2) Variability<a class="headerlink" href="#variability" title="Permalink to this headline">¶</a></h4>
 <p>There are <span class="math notranslate nohighlight">\(N_{ses} = 3\)</span> sessions and <span class="math notranslate nohighlight">\(N_{run} \times N_{sub} = 4 \times 10 = 40\)</span> runs per session for each data modality. Therefore, we have a total of <span class="math notranslate nohighlight">\(3 \times 40 = 120\)</span> runs overal.  Let’s say our goal is to find the best sparsity threshold that maximizes consistency across sessions for BOLD.  This means we would like to minimize topological distances between runs across sessions.  We compute the pairwise Portrait Divergence between each pairs of runs and arrange these numbers in a distance matrix with size <span class="math notranslate nohighlight">\(120 \times 120\)</span>.  This matrix has a block diagonal structure, meaning that blocks of size <span class="math notranslate nohighlight">\(40\)</span> can be identified that contain distances only in either <em>within-session</em> or <em>across-session</em> groups.  Please see figure below.</p>
 <p>We can compute the average distances for each label.  Here the null hypothesis can be that these numbers (<em>within-session</em> vs. <em>across-session</em> distances) come from different distributions.  This is not the usual choise becuase most people want to find group vs control effects, but here we want to show that our hyperparameter choices are effective as they minimize the differences between sessions. In other words, we want to show that distribution of within-session vs across-session distances are not different in a statistically sgificant way given our hyperparameter and preprocessing choices. A permutation test can be used to test statistical significane. It is equivalent to shuffling rows and columns of this distance matrix and performing the averaging for each group while pretending the session labels remain unchanged.</p>
@@ -1143,25 +1171,25 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 ></iframe>
 </div></div>
 </div>
-</section>
-</section>
-<section id="how-similar-different-are-these-animals-from-each-other">
+</div>
+</div>
+<div class="section" id="how-similar-different-are-these-animals-from-each-other">
 <h3>How similar/different are these animals from each other?<a class="headerlink" href="#how-similar-different-are-these-animals-from-each-other" title="Permalink to this headline">¶</a></h3>
 <p>I’m not really insisting on doing this. I don’t care about this particular measure as much.  I know that Eve definitely cares and maybe Todd does too, so I would like to include this as well.  One benefit of doing this analysis is that these numbers can put other numbers into perspective.  For instance we may find that the average distance between the animals is 0.3 but the distance between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD is 0.5 or whatever.  That’s it.  We are just looking at some numbers and trying to understand different sources of variability.</p>
-<section id="id1">
+<div class="section" id="id1">
 <h4>Examples in the literature<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>This <a class="reference external" href="https://www.nature.com/articles/s42003-020-01472-5">paper</a> has similar goals.  They compare adjacency matrices to characterize individual variation.  They do a bunch of CPM style analysis too.</p>
-</section>
-</section>
-<section id="ca-2-vs-bold">
+</div>
+</div>
+<div class="section" id="ca-2-vs-bold">
 <h3>Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD<a class="headerlink" href="#ca-2-vs-bold" title="Permalink to this headline">¶</a></h3>
 <p>We compare the interaction graphs constructed from different data modalities.  This is important since it’s the starting point for all the other downstream analysis.  How can we compare other things without knowing how the starting graphs compare to each other? Moreover, if necessary, we can include the results from here when choosing the appropriate frequency band for processing Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> data. This depends on our end goal, so we should discuss this during my presentation next week to see what Eve thinks.</p>
 <p>Here is what I have in mind specifically:</p>
-<section id="id2">
+<div class="section" id="id2">
 <h4>1) Distance measure<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Again, we use Portrait Divergence to quantify topological similarity between interaction graphs <span class="math notranslate nohighlight">\(G^{(\text{Ca}^{2+})}\)</span> and <span class="math notranslate nohighlight">\(G^{(\text{BOLD})}\)</span>.</p>
-</section>
-<section id="id3">
+</div>
+<div class="section" id="id3">
 <h4>2) Variability<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>There are a total of <span class="math notranslate nohighlight">\(N_{sub} \times N_{ses} \times N_{run} = 10 \times 3 \times 4 = 120\)</span> runs per modality.  We forget about all other labels here and retain only the Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs BOLD label.  Thus, we assume there are <span class="math notranslate nohighlight">\(N = 120\)</span> samples drawn from each group.  We then apply Portrait Divergence between every possible pair of graphs. This yields a distance matrix with size <span class="math notranslate nohighlight">\(240 \times 240\)</span>, because we have a total of <span class="math notranslate nohighlight">\(2 \times 120\)</span> runs.  Plea  This distancec matrix can be used to compute the average <em>within-group</em> distances (for each modality), as well as average <em>across-group</em> distance (Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD).  Similar to above, a permutation test here would correspond to randomly shuffling rows and columns of this distance matrix but pretending that the labels are the same.</p>
 <p><strong>Question:</strong> I’m not sure if this is the best approach.  This depends on what our goal is.  One possible goal would be to show that interaction graphs have different topologies for Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> vs. BOLD.  If that is the case, within-group mean distance will be significantly smaller than across-group mean distance. On the contrary, let’s say for a particular analysis we decided to choose a frequency band or number of ROIs that maximizes topological similarity between Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> and BOLD.  Here the null hypothesis would be: “distribution of within-group distances is significantly different than the distribution of across-group distances”.  If that is the case, the histograms obtained by shuffling modality labels will overlap.  Depending on the goal, we can define proper distributions, statistics, and hypothesis to test.</p>
@@ -1184,27 +1212,27 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 ></iframe>
 </div></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 <hr class="docutils" />
-<section id="differences-similarities-in-main-results">
+<div class="section" id="differences-similarities-in-main-results">
 <h2>Differences/similarities in main results<a class="headerlink" href="#differences-similarities-in-main-results" title="Permalink to this headline">¶</a></h2>
 <p>So far, we have used consistency across sessions to choose hyperparameters and have a sense of similarities and differences at the interaction graph level.  We have done this across sessions (condition # 1) and across modalities (condition # 3), and maybe across animals (condition # 2).  In this section we discuss how our main results (membership vectors or some of its deriivatives) compare when we use different modalities.</p>
-<section id="similarity-of-membership-vectors">
+<div class="section" id="similarity-of-membership-vectors">
 <h3>Similarity of membership vectors<a class="headerlink" href="#similarity-of-membership-vectors" title="Permalink to this headline">¶</a></h3>
 <p>We want to find out if the resulting membership vectors are similar across modalities. One goal here is to compare <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{Ca}^{2+})}\)</span> with <span class="math notranslate nohighlight">\(\pi^{(\alpha, \,\text{BOLD})}\)</span> for <span class="math notranslate nohighlight">\(\alpha \in \{1, 2, \dots, 10, group\}\)</span>.  There are multiple types of comparisons we can make, but for now let us assume we have an awesome metric, <span class="math notranslate nohighlight">\(d_{awesome}\)</span> that takes the resulting membership vectors and outputs a number in <span class="math notranslate nohighlight">\([0, 1]\)</span>.  This represents some sort of distance between the inputs and is informative about some aspect of the results.  For instance, it could be cosine distance between communities or the difference between overlap size and so on.</p>
-<section id="id4">
+<div class="section" id="id4">
 <h4>1) Distance measure<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Let’s skip details of this for now.  I will discuss possible options below.</p>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h4>2) Variability<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>There are several optoins.  First of all, for a comparison between <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{Ca}^{2+})}\)</span> with <span class="math notranslate nohighlight">\(\pi^{(group, \,\text{BOLD})}\)</span> we can simply use the bootstrapped distribution to get a sense of the variability around the number coming from real sample.  If we wanted to define a concrete hypothesis and test it, then a permutation test would be a better option.</p>
 <p><strong>Question:</strong> Is it OK sometimes to just look at some quantities without having to define a hypothesis to test for significance?  Simply report a number and quantify variability around it without having a hypothesis in mind.</p>
-</section>
-</section>
-<section id="distance-metrics">
+</div>
+</div>
+<div class="section" id="distance-metrics">
 <h3>Distance metrics<a class="headerlink" href="#distance-metrics" title="Permalink to this headline">¶</a></h3>
 <p>In general, community comparison can be divided into the following categories:</p>
 <ol class="simple">
@@ -1212,7 +1240,7 @@ was deﬁned as one minus its average divergence from all other parcellations.</
 <li><p>Disjoint comparison</p></li>
 </ol>
 <p>Furthermore, for each category, I define two complementary approaches to compare results across modalities: a) by comparing communities, and b) by comparing nodes.</p>
-<section id="overlapping-comparison">
+<div class="section" id="overlapping-comparison">
 <h4>1) Overlapping comparison<a class="headerlink" href="#overlapping-comparison" title="Permalink to this headline">¶</a></h4>
 <p><strong>Between communities.</strong> For overlapping communities, we compute the cosine similarity of membership vectors across communities (after aligning them).  Specifically, let’s use <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k}\)</span> to denote the membership vector over all nodes for community <span class="math notranslate nohighlight">\(k\)</span> estimated using data from condition/group <span class="math notranslate nohighlight">\(A\)</span>.  For instance, we could have <span class="math notranslate nohighlight">\(A = (group, \,\text{Ca}^{2+})\)</span> and so on. Here <span class="math notranslate nohighlight">\(\pi^{(A)}_{[1:N], k} = (\pi^{(A)}_{1k}, \dots, \pi^{(A)}_{ik}, \dots, \pi^{(A)}_{Nk})^T\)</span> is simply <span class="math notranslate nohighlight">\(k-\)</span>th column of <span class="math notranslate nohighlight">\(\pi^{(A)}\)</span>.  We use cosine distance to quantify network similarities at the overlapping community level</p>
 <div class="math notranslate nohighlight">
@@ -1234,8 +1262,8 @@ d_{JS}(A, B; i) = \frac{1}{2} d_{KL}(\pi^{(A)}_{i} || \pi^{(AB)}_{i}) + \frac{1}
 d_{KL}(Q || P) = \mathbb{E}_Q\Big[\log \frac{Q}{P}\Big].
 \]</div>
 <p>For identical membership distributions <span class="math notranslate nohighlight">\(\pi^{(A)}_{i} = \pi^{(B)}_{i}\)</span> we have <span class="math notranslate nohighlight">\(d_{JS}(A, B; i) = 0\)</span>, therefore, a smaller JS divergence indicates larger agreement between node membership distributions.</p>
-</section>
-<section id="disjoint-comparison">
+</div>
+<div class="section" id="disjoint-comparison">
 <h4>2) Disjoint comparison<a class="headerlink" href="#disjoint-comparison" title="Permalink to this headline">¶</a></h4>
 <p>Our overlapping results can be used to infer disjoint communities for each node as a special case.  We assign a disjoint community index <span class="math notranslate nohighlight">\(k_i\)</span> to node <span class="math notranslate nohighlight">\(i\)</span> by choosing its maximum membership value.  In other words, we have</p>
 <div class="math notranslate nohighlight">
@@ -1258,9 +1286,9 @@ d_{hamm}(A, B) = \text{# nodes with different community indices} \; /
 = \frac{|\{i : k^{(A)}_i \neq k^{(B)}_i \,\,\, \text{for} \,\,\, i \in V\}|}{|V|}.
 \end{split}\]</div>
 <p>If all nodes get the same disjoint community assignments in both groups <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, then we will have <span class="math notranslate nohighlight">\(d_{hamm}(A, B) = 0\)</span>.  This means maximum disjoint similarity.</p>
-</section>
-</section>
-<section id="comparing-the-amount-of-overlap">
+</div>
+</div>
+<div class="section" id="comparing-the-amount-of-overlap">
 <h3>Comparing the amount of overlap<a class="headerlink" href="#comparing-the-amount-of-overlap" title="Permalink to this headline">¶</a></h3>
 <p>So far there is strong evidence that <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{Ca}^{2+})}\)</span> is substantially more overlapping than <span class="math notranslate nohighlight">\(\pi^{(group, \, \text{BOLD})}\)</span>.  The best way to quantify this difference is across nodes, since there might be alignment issues between communities.  To do so, let us define a quantity, maximum membership value of a node</p>
 <div class="math notranslate nohighlight">
@@ -1284,10 +1312,10 @@ x_{i} = \underset{k}{\mathrm{max}} \; \pi_{ik}.
 \theta^{(A)} = \frac{\big| S^{(A)}_{overlap} \big|}{N}.
 \]</div>
 <p>Comparing the amount of overlap this way has several benefits.  For example, we avoid complications that come from having to match different communities across modalities, because <span class="math notranslate nohighlight">\(x_i\)</span> is well defined for any set of communities.</p>
-</section>
-</section>
+</div>
+</div>
 <hr class="docutils" />
-<section id="general-questions-to-discuss">
+<div class="section" id="general-questions-to-discuss">
 <h2>General questions to discuss<a class="headerlink" href="#general-questions-to-discuss" title="Permalink to this headline">¶</a></h2>
 <p>The comparisons discussed so far can be made at different levels.  For instance, we can consider each animal as a sample (<span class="math notranslate nohighlight">\(n=10\)</span>) and compute averages before comparing, or we can forget about session and animal labels and assume each run is a sample (<span class="math notranslate nohighlight">\(n=120\)</span>). I think both approaches are useful in different scenarios.</p>
 <ul class="simple">
@@ -1319,8 +1347,8 @@ x_{i} = \underset{k}{\mathrm{max}} \; \pi_{ik}.
 <hr class="docutils" />
 <hr class="docutils" />
 <hr class="docutils" />
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

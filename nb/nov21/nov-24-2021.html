@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>November 24th, 2021 (corr distrs) &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -90,7 +89,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   February 2021
  </span>
@@ -134,7 +133,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   March 2021
  </span>
@@ -198,7 +197,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   April 2021
  </span>
@@ -232,7 +231,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   May 2021
  </span>
@@ -291,7 +290,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   June 2021
  </span>
@@ -385,7 +384,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   July 2021
  </span>
@@ -429,7 +428,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   August 2021
  </span>
@@ -458,7 +457,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   September 2021
  </span>
@@ -517,7 +516,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   October 2021
  </span>
@@ -601,7 +600,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   November 2021
  </span>
@@ -655,6 +654,35 @@
    <li class="toctree-l2">
     <a class="reference internal" href="nov-29-2021.html">
      November 29th, 2021 (figs 1 and 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  December 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/dec21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/dec21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-01-2021.html">
+     Dec 1st, 2021 (topo dist)
     </a>
    </li>
   </ul>
@@ -803,7 +831,7 @@
         
               <div>
                 
-  <section id="november-24th-2021-corr-distrs">
+  <div class="section" id="november-24th-2021-corr-distrs">
 <h1>November 24th, 2021 (corr distrs)<a class="headerlink" href="#november-24th-2021-corr-distrs" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Visualizing distribution of correlation values, left/right hemisphere discrepacny in BOLD, some discussion on GSR <br></p>
 <div class="cell tag_hide-input docutils container">
@@ -1002,10 +1030,10 @@
 </div>
 </div>
 </div>
-<section id="distribution-of-correaltion-values">
+<div class="section" id="distribution-of-correaltion-values">
 <h2>Distribution of correaltion values<a class="headerlink" href="#distribution-of-correaltion-values" title="Permalink to this headline">¶</a></h2>
 <p>The goal here is to take a look at how correaltion values are distributed.  I find that there is a clear shift in distribution of left vs. right intra-hemisphere correlations in BOLD.  I also show that GSR completely shifts the distribution of correaltions toward negative values.  This is a consequence of the “mathematical mandate” in GSR.</p>
-<section id="aggregate-fig-combine-runs">
+<div class="section" id="aggregate-fig-combine-runs">
 <h3>1) Aggregate fig (combine runs)<a class="headerlink" href="#aggregate-fig-combine-runs" title="Permalink to this headline">¶</a></h3>
 <p>First let’s use data from all runs to visualize distribution of correlations.  To be clear: here I take adjacency matrices from all runs and lump all the correlation values together.  In the next section I will make the same plot for each run separately to compare.</p>
 <div class="cell tag_hide-input docutils container">
@@ -1124,8 +1152,8 @@
 <li><p>Large difference in distribution of correlations in BOLD and Ca. This is not too troubling.  Appropriate thresholding the covariance matrix gets rid of this issue by achieving some sort of normalization across modalities.</p></li>
 <li><p>Using GSR in BOLD has an enormous effect on the distribution of correlations.  We should do something about this.  Leaving noise in there is not good, but using GSR in its most general/simple form in not good either.</p></li>
 </ol>
-</section>
-<section id="each-run-separately">
+</div>
+<div class="section" id="each-run-separately">
 <h3>2) Each run separately<a class="headerlink" href="#each-run-separately" title="Permalink to this headline">¶</a></h3>
 <p>Now let’s focus on a single run that shows significant discrepancy for BOLD.  For example here is run 5 from session 3 from animal # 2.</p>
 <div class="cell docutils container">
@@ -1147,7 +1175,7 @@
 </div>
 <p><strong>Observations:</strong> Please see first row.  These show intra-hemisphere adjacency matrices for each hemisphere separately for each data modality.  For BOLD (1st vs. 2nd columns), we see this extreme difference between left and right intra-hemisphere correlations.  Why does it have to be this extreme?  This can’t be real.  The difference is also visible in the histogram and ECDF plots in the second row.</p>
 <p>We also see that not having GSR is not a good idea.  We should use a smarter version of GSR, looking forward to what Gabe comes up with.  Note that the left/right discrepancy is also visible in BOLD without GSR.</p>
-<section id="for-bookkeeping-purposes-i-make-the-same-plot-for-all-runs-below">
+<div class="section" id="for-bookkeeping-purposes-i-make-the-same-plot-for-all-runs-below">
 <h4>For bookkeeping purposes, I make the same plot for all runs below:<a class="headerlink" href="#for-bookkeeping-purposes-i-make-the-same-plot-for-all-runs-below" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1274,10 +1302,10 @@
 <img alt="../../_images/nov-24-2021_19_99.png" src="../../_images/nov-24-2021_19_99.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="data-in-common-space-ignore">
+</div>
+</div>
+</div>
+<div class="section" id="data-in-common-space-ignore">
 <h2>Data in common space (ignore)<a class="headerlink" href="#data-in-common-space-ignore" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1724,8 +1752,8 @@ Wall time: 1h 19min 28s
 <img alt="../../_images/nov-24-2021_49_0.png" src="../../_images/nov-24-2021_49_0.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

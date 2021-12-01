@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>May 20th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -90,7 +89,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   February 2021
  </span>
@@ -134,7 +133,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   March 2021
  </span>
@@ -198,7 +197,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   April 2021
  </span>
@@ -232,7 +231,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   May 2021
  </span>
@@ -291,7 +290,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   June 2021
  </span>
@@ -385,7 +384,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   July 2021
  </span>
@@ -429,7 +428,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   August 2021
  </span>
@@ -458,7 +457,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   September 2021
  </span>
@@ -517,7 +516,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   October 2021
  </span>
@@ -601,7 +600,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   November 2021
  </span>
@@ -645,6 +644,45 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../nov21/nov-24-2021.html">
      November 24th, 2021 (corr distrs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-26-2021.html">
+     November 26th, 2021 (identify spikes)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-29-2021.html">
+     November 29th, 2021 (figs 1 and 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  December 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/dec21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/dec21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-01-2021.html">
+     Dec 1st, 2021 (topo dist)
     </a>
    </li>
   </ul>
@@ -876,7 +914,7 @@
         
               <div>
                 
-  <section id="may-20th-2021">
+  <div class="section" id="may-20th-2021">
 <h1>May 20th, 2021<a class="headerlink" href="#may-20th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Allen SDK explored.  ANTs spatial transformation.</br></p>
 <div class="cell docutils container">
@@ -917,7 +955,7 @@
 </div>
 </div>
 </div>
-<section id="allen-coordinate-system">
+<div class="section" id="allen-coordinate-system">
 <h2>Allen Coordinate System<a class="headerlink" href="#allen-coordinate-system" title="Permalink to this headline">¶</a></h2>
 <p>Here is an image embedded from their website:</p>
 <blockquote>
@@ -927,8 +965,8 @@
 <div><p>All coronal data is registered to ReferenceSpace id = 9. All sagittal data is registered to ReferenceSpace id = 10.</p>
 </div></blockquote>
 <p><img alt="Allen Coordinate Space" src="http://help.brain-map.org/download/attachments/5308472/3DOrientation.png?version=1&amp;modificationDate=1368132564812&amp;api=v2" /></p>
-</section>
-<section id="allen-sdk">
+</div>
+<div class="section" id="allen-sdk">
 <h2>Allen SDK<a class="headerlink" href="#allen-sdk" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2009,9 +2047,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <p>316 rows × 8 columns</p>
 </div></div></div>
 </div>
-<section id="plot-example-projection-density">
+<div class="section" id="plot-example-projection-density">
 <h3>Plot example projection density<a class="headerlink" href="#plot-example-projection-density" title="Permalink to this headline">¶</a></h3>
-<section id="x">
+<div class="section" id="x">
 <h4>X<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2045,8 +2083,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_22_0.png" src="../../_images/may-20-2021_22_0.png" />
 </div>
 </div>
-</section>
-<section id="y">
+</div>
+<div class="section" id="y">
 <h4>Y<a class="headerlink" href="#y" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2080,8 +2118,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_24_0.png" src="../../_images/may-20-2021_24_0.png" />
 </div>
 </div>
-</section>
-<section id="z">
+</div>
+<div class="section" id="z">
 <h4>Z<a class="headerlink" href="#z" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2115,9 +2153,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_26_0.png" src="../../_images/may-20-2021_26_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="plot-template">
+</div>
+</div>
+<div class="section" id="plot-template">
 <h3>Plot template<a class="headerlink" href="#plot-template" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2172,7 +2210,7 @@ Function node is deprecated. Use SimpleTree.nodes instead
 </div>
 </div>
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h4>X<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2206,8 +2244,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_34_0.png" src="../../_images/may-20-2021_34_0.png" />
 </div>
 </div>
-</section>
-<section id="id2">
+</div>
+<div class="section" id="id2">
 <h4>Y<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2241,8 +2279,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_36_0.png" src="../../_images/may-20-2021_36_0.png" />
 </div>
 </div>
-</section>
-<section id="id3">
+</div>
+<div class="section" id="id3">
 <h4>Z<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2276,11 +2314,11 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_38_0.png" src="../../_images/may-20-2021_38_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="plot-annotation">
+</div>
+</div>
+<div class="section" id="plot-annotation">
 <h3>Plot Annotation<a class="headerlink" href="#plot-annotation" title="Permalink to this headline">¶</a></h3>
-<section id="id4">
+<div class="section" id="id4">
 <h4>X<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2314,8 +2352,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_42_0.png" src="../../_images/may-20-2021_42_0.png" />
 </div>
 </div>
-</section>
-<section id="id5">
+</div>
+<div class="section" id="id5">
 <h4>Y<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2349,8 +2387,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_44_0.png" src="../../_images/may-20-2021_44_0.png" />
 </div>
 </div>
-</section>
-<section id="id6">
+</div>
+<div class="section" id="id6">
 <h4>Z<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>Each subplot:</p>
 <ul class="simple">
@@ -2384,9 +2422,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_46_0.png" src="../../_images/may-20-2021_46_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="summary-plot">
+</div>
+</div>
+<div class="section" id="summary-plot">
 <h3>Summary plot<a class="headerlink" href="#summary-plot" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2441,9 +2479,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_49_0.png" src="../../_images/may-20-2021_49_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="spatial-normalization-using-ants">
+</div>
+</div>
+<div class="section" id="spatial-normalization-using-ants">
 <h2>Spatial normalization using ANTs<a class="headerlink" href="#spatial-normalization-using-ants" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2634,9 +2672,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 </div>
 </div>
 </div>
-<section id="register">
+<div class="section" id="register">
 <h3>Register<a class="headerlink" href="#register" title="Permalink to this headline">¶</a></h3>
-<section id="example">
+<div class="section" id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2690,9 +2728,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_71_2.png" src="../../_images/may-20-2021_71_2.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="mouse-data">
+</div>
+</div>
+<div class="section" id="mouse-data">
 <h3>Mouse data<a class="headerlink" href="#mouse-data" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2781,8 +2819,8 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_81_0.png" src="../../_images/may-20-2021_81_0.png" />
 </div>
 </div>
-</section>
-<section id="why-not-working">
+</div>
+<div class="section" id="why-not-working">
 <h3>Why not working?<a class="headerlink" href="#why-not-working" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2932,9 +2970,9 @@ Function node is deprecated. Use SimpleTree.nodes instead
 <img alt="../../_images/may-20-2021_96_0.png" src="../../_images/may-20-2021_96_0.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

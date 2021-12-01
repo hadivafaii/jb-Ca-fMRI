@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>March 16th, 2021 &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -90,7 +89,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   February 2021
  </span>
@@ -134,7 +133,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   March 2021
  </span>
@@ -198,7 +197,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   April 2021
  </span>
@@ -232,7 +231,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   May 2021
  </span>
@@ -291,7 +290,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   June 2021
  </span>
@@ -385,7 +384,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   July 2021
  </span>
@@ -429,7 +428,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   August 2021
  </span>
@@ -458,7 +457,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   September 2021
  </span>
@@ -517,7 +516,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   October 2021
  </span>
@@ -601,7 +600,7 @@
   </ul>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   November 2021
  </span>
@@ -645,6 +644,45 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../nov21/nov-24-2021.html">
      November 24th, 2021 (corr distrs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-26-2021.html">
+     November 26th, 2021 (identify spikes)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-29-2021.html">
+     November 29th, 2021 (figs 1 and 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  December 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/dec21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/dec21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-01-2021.html">
+     Dec 1st, 2021 (topo dist)
     </a>
    </li>
   </ul>
@@ -808,7 +846,7 @@
         
               <div>
                 
-  <section id="march-16th-2021">
+  <div class="section" id="march-16th-2021">
 <h1>March 16th, 2021<a class="headerlink" href="#march-16th-2021" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Cleaned up, functions moved to the top of document (will be hidden).</p>
 <p>Includes:</p>
@@ -1451,7 +1489,7 @@
 </div>
 </div>
 </div>
-<section id="closer-look-at-possible-data-flaws">
+<div class="section" id="closer-look-at-possible-data-flaws">
 <h2>Closer look at possible data flaws<a class="headerlink" href="#closer-look-at-possible-data-flaws" title="Permalink to this headline">¶</a></h2>
 <p>I choose a dataset that looks OK from subject named <strong>sub-SLC08</strong>.  Then I will describe a systematic way of examining data quality.  I don’t think serious flaws such as sudden drastic jumps are that frequent.</p>
 <div class="cell tag_hide-input docutils container">
@@ -1501,8 +1539,8 @@
 </div>
 </div>
 </div>
-</section>
-<section id="detect-anomalies">
+</div>
+<div class="section" id="detect-anomalies">
 <h2>Detect anomalies<a class="headerlink" href="#detect-anomalies" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1572,7 +1610,7 @@
 </div>
 </div>
 </div>
-<section id="delete-top-10-anomalous-idxs">
+<div class="section" id="delete-top-10-anomalous-idxs">
 <h3>Delete top 10 anomalous idxs<a class="headerlink" href="#delete-top-10-anomalous-idxs" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1648,9 +1686,9 @@
 <img alt="../../_images/mar-16-2021_15_0.png" src="../../_images/mar-16-2021_15_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="bandpass-filtering">
+</div>
+</div>
+<div class="section" id="bandpass-filtering">
 <h2>Bandpass filtering<a class="headerlink" href="#bandpass-filtering" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1795,8 +1833,8 @@
 <img alt="../../_images/mar-16-2021_21_0.png" src="../../_images/mar-16-2021_21_0.png" />
 </div>
 </div>
-</section>
-<section id="bandpass-on-anomaly-filtered-data">
+</div>
+<div class="section" id="bandpass-on-anomaly-filtered-data">
 <h2>Bandpass on anomaly filtered data<a class="headerlink" href="#bandpass-on-anomaly-filtered-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1936,8 +1974,8 @@
 <img alt="../../_images/mar-16-2021_30_0.png" src="../../_images/mar-16-2021_30_0.png" />
 </div>
 </div>
-</section>
-<section id="bandpass-full-data-comm">
+</div>
+<div class="section" id="bandpass-full-data-comm">
 <h2>Bandpass (full data) + Comm<a class="headerlink" href="#bandpass-full-data-comm" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1987,7 +2025,7 @@
 <img alt="../../_images/mar-16-2021_35_0.png" src="../../_images/mar-16-2021_35_0.png" />
 </div>
 </div>
-<section id="downsample">
+<div class="section" id="downsample">
 <h3>Downsample<a class="headerlink" href="#downsample" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2124,9 +2162,9 @@
 <img alt="../../_images/mar-16-2021_48_0.png" src="../../_images/mar-16-2021_48_0.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="scale-32-x-32">
+</div>
+</div>
+<div class="section" id="scale-32-x-32">
 <h2>Scale = 32 x 32<a class="headerlink" href="#scale-32-x-32" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2265,8 +2303,8 @@
 <img alt="../../_images/mar-16-2021_66_0.png" src="../../_images/mar-16-2021_66_0.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
