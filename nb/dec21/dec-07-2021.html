@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dec 7th, 2021 (tSNR: Ca\(^{2+}\)) &#8212; Ca-fMRI [Daily Progress]</title>
+    <title>Dec 7th, 2021 (tSNR: Ca) &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,6 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dec 8th, 2021 (scp2raw2npy)" href="dec-08-2021.html" />
     <link rel="prev" title="Dec 6th, 2021 (tSNR: draft)" href="dec-06-2021.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -698,11 +699,17 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Dec 7th, 2021 (tSNR: Ca
-     <span class="math notranslate nohighlight">
-      \(^{2+}\)
-     </span>
-     )
+     Dec 7th, 2021 (tSNR: Ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-08-2021.html">
+     Dec 8th, 2021 (scp2raw2npy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-09-2021.html">
+     Dec 9th, 2021 (tSNR: BOLD)
     </a>
    </li>
   </ul>
@@ -814,8 +821,8 @@
         
               <div>
                 
-  <div class="section" id="dec-7th-2021-tsnr-ca-2">
-<h1>Dec 7th, 2021 (tSNR: Ca<span class="math notranslate nohighlight">\(^{2+}\)</span>)<a class="headerlink" href="#dec-7th-2021-tsnr-ca-2" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dec-7th-2021-tsnr-ca">
+<h1>Dec 7th, 2021 (tSNR: Ca)<a class="headerlink" href="#dec-7th-2021-tsnr-ca" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: temporal SNR for Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> only <br></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1022,13 +1029,11 @@
     <span class="n">gs_good</span> <span class="o">=</span> <span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;snr&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="n">gs_bad</span> <span class="o">=</span> <span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">out2d</span><span class="p">[</span><span class="s1">&#39;snr&#39;</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     
-    <span class="n">fig3</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
-    <span class="c1"># axes[0].plot(out2d[&#39;gs&#39;], color=&#39;dimgrey&#39;, label=&#39;gs&#39;)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs_good</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gs good&#39;</span><span class="p">)</span>
-    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs_bad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gs bad&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">fig3</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs_bad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gs bad&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs_good</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;gs good&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     
     <span class="k">return</span> <span class="n">fig1</span><span class="p">,</span> <span class="n">fig2</span><span class="p">,</span> <span class="n">fig3</span>
@@ -1102,7 +1107,7 @@
             <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">)</span>
             <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run # </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
         <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
-        <span class="n">sup</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> / temporal SNR = &quot;</span>
+        <span class="n">sup</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span><span class="si">}</span><span class="s2"> / temporal SNR = &quot;</span>
         <span class="n">sup</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;$\mu / \sigma$&#39;</span>
         <span class="n">sup</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
     
@@ -1133,7 +1138,7 @@
                 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">])</span>
                 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
         <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-        <span class="n">sup</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> / temporal SNR = &quot;</span>
+        <span class="n">sup</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">)</span><span class="si">}</span><span class="s2"> / temporal SNR = &quot;</span>
         <span class="n">sup</span> <span class="o">+=</span> <span class="sa">r</span><span class="s1">&#39;$\mu / \sigma$&#39;</span>
         <span class="n">sup</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
         
@@ -1166,10 +1171,24 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/dec-07-2021_5_0.png" src="../../_images/dec-07-2021_5_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 40.1 s, sys: 45.1 s, total: 1min 25s
-Wall time: 2min 35s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 50.8 s, sys: 2min 52s, total: 3min 43s
+Wall time: 3min 46s
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC05_ses-1_run-3&#39;</span>
+<span class="n">out2d</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_2</span><span class="p">(</span><span class="n">out2d</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-07-2021_6_0.png" src="../../_images/dec-07-2021_6_0.png" />
+<img alt="../../_images/dec-07-2021_6_1.png" src="../../_images/dec-07-2021_6_1.png" />
+<img alt="../../_images/dec-07-2021_6_2.png" src="../../_images/dec-07-2021_6_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1177,7 +1196,7 @@ Wall time: 2min 35s
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
 <span class="n">figs</span><span class="p">,</span> <span class="n">sups</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">sub_ids</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">sub</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">sub_ids</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">ses</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">ses_ids</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">fig</span><span class="p">,</span> <span class="n">sup</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plot_4</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">,</span> <span class="n">brief</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1189,10 +1208,8 @@ Wall time: 2min 35s
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "dd08ba6009474460b66b76449222d18d", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18min 17s, sys: 30min 54s, total: 49min 11s
-Wall time: 1h 19min 44s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 23min 19s, sys: 1h 2min 15s, total: 1h 25min 35s
+Wall time: 3h 4min 48s
 </pre></div>
 </div>
 </div>
@@ -1238,6 +1255,7 @@ Wall time: 1h 19min 44s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dec-06-2021.html" title="previous page">Dec 6th, 2021 (tSNR: draft)</a>
+    <a class='right-next' id="next-link" href="dec-08-2021.html" title="next page">Dec 8th, 2021 (scp2raw2npy)</a>
 
         </div>
         
