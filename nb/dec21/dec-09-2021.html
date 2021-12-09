@@ -51,6 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dec 10th, 2021 (tSNR: identify bad areas)" href="dec-10-2021.html" />
     <link rel="prev" title="Dec 8th, 2021 (scp2raw2npy)" href="dec-08-2021.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -709,6 +710,11 @@
      Dec 9th, 2021 (tSNR: BOLD)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-10-2021.html">
+     Dec 10th, 2021 (tSNR: identify bad areas)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -821,8 +827,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#in-common-space">
-   In common space
+  <a class="reference internal nav-link" href="#old-ignore">
+   Old (ignore)
   </a>
  </li>
 </ul>
@@ -896,6 +902,9 @@
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="n">CMAP</span> <span class="o">=</span> <span class="s1">&#39;turbo&#39;</span>
 
 
 <span class="k">def</span> <span class="nf">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">which</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;individual&#39;</span><span class="p">):</span>
@@ -1024,16 +1033,16 @@
     
     <span class="n">fig1</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;width_ratios&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]})</span>
 
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mu_abs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mu_abs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
 
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\mu$ (abs)&#39;</span><span class="p">)</span>
@@ -1081,13 +1090,13 @@
             <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="n">x2plt</span> <span class="o">=</span> <span class="n">x2plt</span><span class="o">.</span><span class="n">T</span>
-            <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+            <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
             <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
         <span class="n">x2plt</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
         <span class="n">x2plt</span> <span class="o">=</span> <span class="n">filter_boundaries</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">out3d</span><span class="p">[</span><span class="s1">&#39;m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
             <span class="n">x2plt</span> <span class="o">=</span> <span class="n">x2plt</span><span class="o">.</span><span class="n">T</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
         <span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;plot #3, </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
 
@@ -1135,7 +1144,7 @@
         <span class="p">)</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
             <span class="n">snr</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+            <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
             <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">)</span>
             <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;run # </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.03</span><span class="p">)</span>
         <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -1160,7 +1169,7 @@
                 <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
                     <span class="k">continue</span>
 
-                <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+                <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
                 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">j</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
                 <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">)</span>
                 <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
@@ -1247,23 +1256,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">sup</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plot_4</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">brief</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_5_0.png" src="../../_images/dec-09-2021_5_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 42.6 s, sys: 2min 2s, total: 2min 45s
-Wall time: 3min 47s
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC05_ses-1_run-3&#39;</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1275,14 +1269,27 @@ Wall time: 3min 47s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2ac58ad00</span><span style="font-weight: bold">&gt;]</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e4b118cd9a0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_8_1.png" src="../../_images/dec-09-2021_8_1.png" />
+</div><img alt="../../_images/dec-09-2021_7_1.png" src="../../_images/dec-09-2021_7_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC04_ses-3_run-5&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-09-2021_9_0.png" src="../../_images/dec-09-2021_9_0.png" />
+<img alt="../../_images/dec-09-2021_9_1.png" src="../../_images/dec-09-2021_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC02_ses-3_run-5&#39;</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
 </pre></div>
@@ -1295,7 +1302,20 @@ Wall time: 3min 47s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC02_ses-3_run-5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC06_ses-1_run-5&#39;</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-09-2021_11_0.png" src="../../_images/dec-09-2021_11_0.png" />
+<img alt="../../_images/dec-09-2021_11_1.png" src="../../_images/dec-09-2021_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC02_ses-1_run-1&#39;</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
 </pre></div>
@@ -1308,7 +1328,7 @@ Wall time: 3min 47s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC06_ses-1_run-5&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC03_ses-3_run-1&#39;</span>
 <span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
 </pre></div>
@@ -1321,32 +1341,6 @@ Wall time: 3min 47s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC02_ses-1_run-1&#39;</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_14_0.png" src="../../_images/dec-09-2021_14_0.png" />
-<img alt="../../_images/dec-09-2021_14_1.png" src="../../_images/dec-09-2021_14_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC03_ses-3_run-1&#39;</span>
-<span class="n">_</span><span class="p">,</span> <span class="n">out3d</span> <span class="o">=</span> <span class="n">_load</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">raw_bold</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">space</span><span class="o">=</span><span class="s1">&#39;N162&#39;</span><span class="p">)</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">plot_3</span><span class="p">(</span><span class="n">out3d</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.50</span><span class="p">,</span> <span class="n">slice_ids</span><span class="o">=</span><span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_15_0.png" src="../../_images/dec-09-2021_15_0.png" />
-<img alt="../../_images/dec-09-2021_15_1.png" src="../../_images/dec-09-2021_15_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
 <span class="n">data</span><span class="p">,</span> <span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">sup</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">plot_5</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -1354,9 +1348,9 @@ Wall time: 3min 47s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_17_0.png" src="../../_images/dec-09-2021_17_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.7 s, sys: 7.3 s, total: 19 s
-Wall time: 19.1 s
+<img alt="../../_images/dec-09-2021_15_0.png" src="../../_images/dec-09-2021_15_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.7 s, sys: 11.2 s, total: 22.9 s
+Wall time: 46.1 s
 </pre></div>
 </div>
 </div>
@@ -1375,13 +1369,7 @@ Wall time: 19.1 s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snr</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">vals</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">snr</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">snr</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
@@ -1397,33 +1385,10 @@ Wall time: 19.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a34e1070</span><span style="font-weight: bold">&gt;</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e4b4b1294f0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_21_1.png" src="../../_images/dec-09-2021_21_1.png" />
+</div><img alt="../../_images/dec-09-2021_19_1.png" src="../../_images/dec-09-2021_19_1.png" />
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vals</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.64024677</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.89793508</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.58704249</span>, <span style="color: #808000; text-decoration-color: #808000">...</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.86608417</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.74392044</span>,
-       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.11139865</span><span style="font-weight: bold">])</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">24.07524134426312</span>
-</pre>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1432,9 +1397,9 @@ Wall time: 19.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a35048e0</span><span style="font-weight: bold">&gt;</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e4b4b16ad90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_25_1.png" src="../../_images/dec-09-2021_25_1.png" />
+</div><img alt="../../_images/dec-09-2021_20_1.png" src="../../_images/dec-09-2021_20_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1471,8 +1436,8 @@ Wall time: 19.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 6min 23s, sys: 18min 17s, total: 24min 40s
-Wall time: 37min 51s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 6min 32s, sys: 11min 9s, total: 17min 42s
+Wall time: 47min 9s
 </pre></div>
 </div>
 </div>
@@ -1512,19 +1477,19 @@ Wall time: 37min 51s
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sagittal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;axial # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
     
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;coronal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
     
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -1533,7 +1498,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_34_0.png" src="../../_images/dec-09-2021_34_0.png" />
+<img alt="../../_images/dec-09-2021_30_0.png" src="../../_images/dec-09-2021_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1548,7 +1513,7 @@ Wall time: 37min 51s
     <span class="n">_x2plt</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="n">_x2plt</span> <span class="o">=</span> <span class="n">_x2plt</span><span class="o">.</span><span class="n">T</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">_x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">_x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
     
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -1557,7 +1522,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_36_0.png" src="../../_images/dec-09-2021_36_0.png" />
+<img alt="../../_images/dec-09-2021_32_0.png" src="../../_images/dec-09-2021_32_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1570,7 +1535,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_38_0.png" src="../../_images/dec-09-2021_38_0.png" />
+<img alt="../../_images/dec-09-2021_34_0.png" src="../../_images/dec-09-2021_34_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1682,19 +1647,19 @@ Wall time: 37min 51s
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sagittal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;axial # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
     
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;coronal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr_filt_avg</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;filtered&#39;</span><span class="p">)</span>
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -1703,7 +1668,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_52_0.png" src="../../_images/dec-09-2021_52_0.png" />
+<img alt="../../_images/dec-09-2021_48_0.png" src="../../_images/dec-09-2021_48_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1729,7 +1694,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_59_0.png" src="../../_images/dec-09-2021_59_0.png" />
+<img alt="../../_images/dec-09-2021_55_0.png" src="../../_images/dec-09-2021_55_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1754,19 +1719,19 @@ Wall time: 37min 51s
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;sagittal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;axial # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
     
 <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">]):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;coronal # </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">snr</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">CMAP</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;bad run?&#39;</span><span class="p">)</span>
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
@@ -1775,7 +1740,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_61_0.png" src="../../_images/dec-09-2021_61_0.png" />
+<img alt="../../_images/dec-09-2021_57_0.png" src="../../_images/dec-09-2021_57_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1793,7 +1758,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_63_0.png" src="../../_images/dec-09-2021_63_0.png" />
+<img alt="../../_images/dec-09-2021_59_0.png" src="../../_images/dec-09-2021_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1803,9 +1768,9 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec276e7d370</span><span style="font-weight: bold">&gt;</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7e4b2071c880</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_64_1.png" src="../../_images/dec-09-2021_64_1.png" />
+</div><img alt="../../_images/dec-09-2021_60_1.png" src="../../_images/dec-09-2021_60_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1815,12 +1780,12 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_67_0.png" src="../../_images/dec-09-2021_67_0.png" />
+<img alt="../../_images/dec-09-2021_62_0.png" src="../../_images/dec-09-2021_62_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="in-common-space">
-<h2>In common space<a class="headerlink" href="#in-common-space" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="old-ignore">
+<h2>Old (ignore)<a class="headerlink" href="#old-ignore" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC03_ses-3_run-1&#39;</span>
@@ -1844,7 +1809,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ef2e3f9e310</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_77_1.png" src="../../_images/dec-09-2021_77_1.png" />
+</div><img alt="../../_images/dec-09-2021_68_1.png" src="../../_images/dec-09-2021_68_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1871,7 +1836,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a9ba29d0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_80_1.png" src="../../_images/dec-09-2021_80_1.png" />
+</div><img alt="../../_images/dec-09-2021_71_1.png" src="../../_images/dec-09-2021_71_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1890,7 +1855,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a9883a30</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_82_1.png" src="../../_images/dec-09-2021_82_1.png" />
+</div><img alt="../../_images/dec-09-2021_73_1.png" src="../../_images/dec-09-2021_73_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1917,7 +1882,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a973fe20</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_85_1.png" src="../../_images/dec-09-2021_85_1.png" />
+</div><img alt="../../_images/dec-09-2021_76_1.png" src="../../_images/dec-09-2021_76_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1936,7 +1901,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_88_1.png" src="../../_images/dec-09-2021_88_1.png" />
+</div><img alt="../../_images/dec-09-2021_79_1.png" src="../../_images/dec-09-2021_79_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1974,7 +1939,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ec2a8e467c0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_92_1.png" src="../../_images/dec-09-2021_92_1.png" />
+</div><img alt="../../_images/dec-09-2021_83_1.png" src="../../_images/dec-09-2021_83_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2009,7 +1974,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_98_0.png" src="../../_images/dec-09-2021_98_0.png" />
+<img alt="../../_images/dec-09-2021_89_0.png" src="../../_images/dec-09-2021_89_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2022,7 +1987,7 @@ Wall time: 37min 51s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.colorbar.Colorbar</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7ef2a2510ee0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-09-2021_100_1.png" src="../../_images/dec-09-2021_100_1.png" />
+</div><img alt="../../_images/dec-09-2021_91_1.png" src="../../_images/dec-09-2021_91_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2032,7 +1997,7 @@ Wall time: 37min 51s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-09-2021_103_0.png" src="../../_images/dec-09-2021_103_0.png" />
+<img alt="../../_images/dec-09-2021_94_0.png" src="../../_images/dec-09-2021_94_0.png" />
 </div>
 </div>
 </div>
@@ -2064,6 +2029,7 @@ Wall time: 37min 51s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dec-08-2021.html" title="previous page">Dec 8th, 2021 (scp2raw2npy)</a>
+    <a class='right-next' id="next-link" href="dec-10-2021.html" title="next page">Dec 10th, 2021 (tSNR: identify bad areas)</a>
 
         </div>
         
