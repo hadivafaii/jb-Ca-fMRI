@@ -49,6 +49,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Dec 6th, 2021 (tSNR: draft)" href="dec-06-2021.html" />
@@ -710,6 +712,11 @@
      Dec 9th, 2021 (tSNR: BOLD)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-10-2021.html">
+     Dec 10th, 2021 (tSNR: identify bad areas)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -820,21 +827,67 @@
   <a class="reference internal nav-link" href="#bold-full">
    BOLD full
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#average-over-layers">
+     Average over layers
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entropy-binary">
+       Entropy binary
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#entropy-sample">
+       Entropy sample
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vol">
+     Vol
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#binary">
+       1) Binary
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample">
+       2) Sample
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vol">
-   Vol
+  <a class="reference internal nav-link" href="#ca-2">
+   Ca
+   <span class="math notranslate nohighlight">
+    \(^{2+}\)
+   </span>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#binary">
-     1) Binary
+    <a class="reference internal nav-link" href="#id1">
+     Average over layers
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sample">
-     2) Sample
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Entropy binary
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Entropy sample
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -970,14 +1023,6 @@
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">192</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="s1">&#39;rest&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="section" id="bold-full">
 <h2>BOLD full<a class="headerlink" href="#bold-full" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -1038,6 +1083,12 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 30s, sys: 2min 28s, total: 3min 58s
+Wall time: 4min 53s
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,12 +1108,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-04-2021_10_0.png" src="../../_images/dec-04-2021_10_0.png" />
-<img alt="../../_images/dec-04-2021_10_1.png" src="../../_images/dec-04-2021_10_1.png" />
-<img alt="../../_images/dec-04-2021_10_2.png" src="../../_images/dec-04-2021_10_2.png" />
-<img alt="../../_images/dec-04-2021_10_3.png" src="../../_images/dec-04-2021_10_3.png" />
+<img alt="../../_images/dec-04-2021_9_0.png" src="../../_images/dec-04-2021_9_0.png" />
+<img alt="../../_images/dec-04-2021_9_1.png" src="../../_images/dec-04-2021_9_1.png" />
+<img alt="../../_images/dec-04-2021_9_2.png" src="../../_images/dec-04-2021_9_2.png" />
+<img alt="../../_images/dec-04-2021_9_3.png" src="../../_images/dec-04-2021_9_3.png" />
 </div>
 </div>
+<div class="section" id="average-over-layers">
+<h3>Average over layers<a class="headerlink" href="#average-over-layers" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi_surf_binary</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">get_surface_pi</span><span class="p">()</span>
@@ -1087,7 +1140,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-04-2021_14_0.png" src="../../_images/dec-04-2021_14_0.png" />
+<img alt="../../_images/dec-04-2021_12_0.png" src="../../_images/dec-04-2021_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1123,11 +1176,81 @@
 </pre>
 </div></div>
 </div>
+<div class="section" id="entropy-binary">
+<h4>Entropy binary<a class="headerlink" href="#entropy-binary" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">pi_surf_binary</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_surf_binary</span><span class="p">))</span>
+<span class="n">hr</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">proj_h</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_h</span><span class="p">(</span><span class="n">proj_h</span><span class="p">,</span> <span class="n">proj_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_20_0.png" src="../../_images/dec-04-2021_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-04-2021_21_1.png" src="../../_images/dec-04-2021_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="entropy-sample">
+<h4>Entropy sample<a class="headerlink" href="#entropy-sample" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">pi_surf_sample</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_surf_sample</span><span class="p">))</span>
+<span class="n">hr</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">proj_h</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_h</span><span class="p">(</span><span class="n">proj_h</span><span class="p">,</span> <span class="n">proj_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_25_0.png" src="../../_images/dec-04-2021_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-04-2021_26_1.png" src="../../_images/dec-04-2021_26_1.png" />
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="vol">
-<h2>Vol<a class="headerlink" href="#vol" title="Permalink to this headline">¶</a></h2>
+<h3>Vol<a class="headerlink" href="#vol" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="binary">
-<h3>1) Binary<a class="headerlink" href="#binary" title="Permalink to this headline">¶</a></h3>
+<h4>1) Binary<a class="headerlink" href="#binary" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">gr_binary</span><span class="o">.</span><span class="n">num_k</span><span class="p">,</span> <span class="o">*</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cortex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -1163,18 +1286,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-04-2021_24_0.png" src="../../_images/dec-04-2021_24_0.png" />
-<img alt="../../_images/dec-04-2021_24_1.png" src="../../_images/dec-04-2021_24_1.png" />
-<img alt="../../_images/dec-04-2021_24_2.png" src="../../_images/dec-04-2021_24_2.png" />
-<img alt="../../_images/dec-04-2021_24_3.png" src="../../_images/dec-04-2021_24_3.png" />
-<img alt="../../_images/dec-04-2021_24_4.png" src="../../_images/dec-04-2021_24_4.png" />
-<img alt="../../_images/dec-04-2021_24_5.png" src="../../_images/dec-04-2021_24_5.png" />
-<img alt="../../_images/dec-04-2021_24_6.png" src="../../_images/dec-04-2021_24_6.png" />
+<img alt="../../_images/dec-04-2021_31_0.png" src="../../_images/dec-04-2021_31_0.png" />
+<img alt="../../_images/dec-04-2021_31_1.png" src="../../_images/dec-04-2021_31_1.png" />
+<img alt="../../_images/dec-04-2021_31_2.png" src="../../_images/dec-04-2021_31_2.png" />
+<img alt="../../_images/dec-04-2021_31_3.png" src="../../_images/dec-04-2021_31_3.png" />
+<img alt="../../_images/dec-04-2021_31_4.png" src="../../_images/dec-04-2021_31_4.png" />
+<img alt="../../_images/dec-04-2021_31_5.png" src="../../_images/dec-04-2021_31_5.png" />
+<img alt="../../_images/dec-04-2021_31_6.png" src="../../_images/dec-04-2021_31_6.png" />
 </div>
 </div>
 </div>
 <div class="section" id="sample">
-<h3>2) Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h3>
+<h4>2) Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vol</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">gr_sample</span><span class="o">.</span><span class="n">num_k</span><span class="p">,</span> <span class="o">*</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cortex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -1210,13 +1333,239 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-04-2021_28_0.png" src="../../_images/dec-04-2021_28_0.png" />
-<img alt="../../_images/dec-04-2021_28_1.png" src="../../_images/dec-04-2021_28_1.png" />
-<img alt="../../_images/dec-04-2021_28_2.png" src="../../_images/dec-04-2021_28_2.png" />
-<img alt="../../_images/dec-04-2021_28_3.png" src="../../_images/dec-04-2021_28_3.png" />
-<img alt="../../_images/dec-04-2021_28_4.png" src="../../_images/dec-04-2021_28_4.png" />
-<img alt="../../_images/dec-04-2021_28_5.png" src="../../_images/dec-04-2021_28_5.png" />
-<img alt="../../_images/dec-04-2021_28_6.png" src="../../_images/dec-04-2021_28_6.png" />
+<img alt="../../_images/dec-04-2021_35_0.png" src="../../_images/dec-04-2021_35_0.png" />
+<img alt="../../_images/dec-04-2021_35_1.png" src="../../_images/dec-04-2021_35_1.png" />
+<img alt="../../_images/dec-04-2021_35_2.png" src="../../_images/dec-04-2021_35_2.png" />
+<img alt="../../_images/dec-04-2021_35_3.png" src="../../_images/dec-04-2021_35_3.png" />
+<img alt="../../_images/dec-04-2021_35_4.png" src="../../_images/dec-04-2021_35_4.png" />
+<img alt="../../_images/dec-04-2021_35_5.png" src="../../_images/dec-04-2021_35_5.png" />
+<img alt="../../_images/dec-04-2021_35_6.png" src="../../_images/dec-04-2021_35_6.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ca-2">
+<h2>Ca<span class="math notranslate nohighlight">\(^{2+}\)</span><a class="headerlink" href="#ca-2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">768</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="s1">&#39;rest&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
+    <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="s1">&#39;rest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;prepare_data&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">props_binary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="s1">&#39;p30-binary&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+<span class="n">props_sample</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="s1">&#39;p30-sample&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="c1"># HIDE CODE</span>
+
+
+<span class="c1"># Group results</span>
+<span class="n">gr_binary</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">centroids_from</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_binary</span><span class="p">)</span>
+<span class="n">group_binary</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">fit_group</span><span class="p">(</span><span class="n">skip_align</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">gr_sample</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">centroids_from</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_sample</span><span class="p">)</span>
+<span class="n">group_sample</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">fit_group</span><span class="p">(</span><span class="n">skip_align</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Make &amp; apply statistic</span>
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">statistic</span> <span class="o">=</span> <span class="n">mk_statistic_fn</span><span class="p">(</span><span class="n">bins</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">output_binary</span> <span class="o">=</span> <span class="n">statistic</span><span class="p">(</span><span class="n">group_binary</span><span class="p">[</span><span class="s1">&#39;gam_run&#39;</span><span class="p">])</span>
+<span class="n">output_sample</span> <span class="o">=</span> <span class="n">statistic</span><span class="p">(</span><span class="n">group_sample</span><span class="p">[</span><span class="s1">&#39;gam_run&#39;</span><span class="p">])</span>
+
+<span class="n">gr_binary</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">output_binary</span><span class="p">[</span><span class="s1">&#39;pi_avg&#39;</span><span class="p">]</span>
+<span class="n">gr_sample</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">output_sample</span><span class="p">[</span><span class="s1">&#39;pi_avg&#39;</span><span class="p">]</span>
+
+<span class="c1"># Proj</span>
+<span class="n">proj_binary</span><span class="p">,</span> <span class="n">proj_sample</span> <span class="o">=</span> <span class="p">(),</span> <span class="p">()</span>
+<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">proj_binary</span> <span class="o">+=</span> <span class="p">(</span><span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">),)</span>
+    <span class="n">proj_sample</span> <span class="o">+=</span> <span class="p">(</span><span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="n">layer</span><span class="p">),)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 7s, sys: 2min 48s, total: 3min 56s
+Wall time: 4min 20s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make fig, Ca2+</span>
+
+<span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+        <span class="n">proj_binary</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span> <span class="n">proj_sample</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span>
+        <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span> <span class="s1">&#39;Sample&#39;</span><span class="p">),</span>
+        <span class="n">cmaps</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;mako&#39;</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">sup</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Ca$^{2+}$:   &#39;</span>
+    <span class="n">sup</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;k</span><span class="si">{</span><span class="n">props_binary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num_k&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">,  &quot;</span>
+    <span class="n">sup</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;p30-binary/sample, layer = </span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">sup</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_42_0.png" src="../../_images/dec-04-2021_42_0.png" />
+<img alt="../../_images/dec-04-2021_42_1.png" src="../../_images/dec-04-2021_42_1.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Average over layers<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi_surf_binary</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">get_surface_pi</span><span class="p">()</span>
+<span class="n">proj_surf_binary</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">pi_surf_binary</span><span class="p">)</span>
+
+<span class="n">pi_surf_sample</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">get_surface_pi</span><span class="p">()</span>
+<span class="n">proj_surf_sample</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">pi_surf_sample</span><span class="p">)</span>
+
+<span class="c1"># Make fig, BOLD surface projection</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">proj_surf_binary</span><span class="p">,</span> <span class="n">proj_surf_sample</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Binary&#39;</span><span class="p">,</span> <span class="s1">&#39;Sample&#39;</span><span class="p">),</span>
+    <span class="n">cmaps</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;mako&#39;</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">sup</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;Ca$^{2+}$:   &#39;</span>
+<span class="n">sup</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;k</span><span class="si">{</span><span class="n">props_binary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;num_k&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">,  &quot;</span>
+<span class="n">sup</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;p30-binary/sample</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">sup</span> <span class="o">+=</span> <span class="s1">&#39;Surface projection (average over layers)&#39;</span>
+<span class="n">sup</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">sup</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_45_0.png" src="../../_images/dec-04-2021_45_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span> <span class="o">=</span> <span class="n">SVINET</span><span class="p">(</span><span class="o">**</span><span class="n">props_binary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">gr_binary</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9342</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9802</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9759</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9873</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9699</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9524</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9667</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sv</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">gr_sample</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.937</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9807</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9762</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9879</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9538</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9731</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-1</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9681</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="section" id="id2">
+<h4>Entropy binary<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">pi_surf_binary</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_surf_binary</span><span class="p">))</span>
+<span class="n">hr</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">proj_h</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr</span> <span class="o">=</span> <span class="n">gr_binary</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_h</span><span class="p">(</span><span class="n">proj_h</span><span class="p">,</span> <span class="n">proj_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_53_0.png" src="../../_images/dec-04-2021_53_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-04-2021_54_1.png" src="../../_images/dec-04-2021_54_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>Entropy sample<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">pi_surf_sample</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_surf_sample</span><span class="p">))</span>
+<span class="n">hr</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="n">proj_h</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr</span> <span class="o">=</span> <span class="n">gr_sample</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_h</span><span class="p">(</span><span class="n">proj_h</span><span class="p">,</span> <span class="n">proj_hr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-04-2021_58_0.png" src="../../_images/dec-04-2021_58_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-04-2021_59_1.png" src="../../_images/dec-04-2021_59_1.png" />
+</div>
 </div>
 </div>
 </div>
