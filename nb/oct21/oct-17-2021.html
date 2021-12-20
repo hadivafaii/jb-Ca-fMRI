@@ -685,6 +685,36 @@
      Dec 1st, 2021 (topo dist)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-04-2021.html">
+     Dec 4th, 2021 (Binary vs Sample)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-07-2021.html">
+     Dec 7th, 2021 (tSNR: Ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-08-2021.html">
+     Dec 8th, 2021 (scp2raw2npy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-09-2021.html">
+     Dec 9th, 2021 (tSNR: BOLD)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-10-2021.html">
+     Dec 10th, 2021 (tSNR: identify bad areas)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-17-2021.html">
+     Dec 17th, 2021 (GS all plots)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -884,20 +914,20 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
-<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">512</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run organize func.
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
 </pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 7.59 s, sys: 1.46 s, total: 9.05 s
-Wall time: 11.3 s
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3.12 s, sys: 346 ms, total: 3.47 s
+Wall time: 6.08 s
 </pre></div>
 </div>
 </div>
@@ -939,81 +969,106 @@ Wall time: 11.3 s
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
 </pre>
-</div><img alt="../../_images/oct-17-2021_5_8.png" src="../../_images/oct-17-2021_5_8.png" />
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! missing regions:
+<span style="color: #008000; text-decoration-color: #008000">'[1596, 1597, 2093, 2108, 2109, 2144, 2542, 4156, 4653, 4668, 4669, 4680, 5102, 5103]'</span>
+</pre>
+</div><img alt="../../_images/oct-17-2021_5_9.png" src="../../_images/oct-17-2021_5_9.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> merge: done
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'163'</span> is flat
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'131'</span> is flat
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'178'</span> is flat
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'181'</span> is flat
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'193'</span> is flat
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'233'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'267'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'291'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'305'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'311'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'329'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'335'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'350'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'355'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'371'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'374'</span> is flat
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, region <span style="color: #008000; text-decoration-color: #008000">'410'</span> is flat
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> erode: done
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">969</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">969</span>
-region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1024</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">969</span><span style="font-weight: bold">})</span>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2074</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2074</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2560</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2074</span><span style="font-weight: bold">})</span>
 
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'meta_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex-top_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex-raw_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex-eroded_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex-l_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex-r_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex-regions_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'merged-regions_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'top-regions_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'merged-ids_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-flat_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-top_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel3d_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-flat_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-top_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel3d_100um.npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>/parcellation
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>/parcellation
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
 </pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4h 45min 5s, sys: 56min 7s, total: 5h 41min 13s
-Wall time: 1h 13min 18s
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4h 37min 29s, sys: 53min 30s, total: 5h 31min
+Wall time: 30min 45s
 </pre></div>
 </div>
 </div>
@@ -1027,7 +1082,42 @@ Wall time: 1h 13min 18s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC10_ses-3: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [27:24&lt;00:00, 54.81s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-1:   0%|                                                                                                                                  | 0/29 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<img alt="../../_images/oct-17-2021_9_1.png" src="../../_images/oct-17-2021_9_1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>registering anat sub-SLC01_ses-1:   0%|                                                                                                                                  | 0/29 [09:41&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2585709</span><span class="o">/</span><span class="mf">289718693.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="n">Register</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">reg</span><span class="o">.</span><span class="n">register_anat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">register_anat</span><span class="nt">(self, save_results, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span> 				<span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>                         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">293</span> 				<span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>                                         <span class="n">name</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>                                         <span class="n">moving</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">fit_register</span><span class="nt">(self, name, fixed, moving, logger, syn_metric, aff_metric, affine_init, save_results, types, grads, syn_bins, aff_bins, aff_rates, mi_q, n_seeds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span> 				<span class="n">aff_bins</span><span class="p">,</span> <span class="n">aff_rates</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>                         <span class="k">for</span> <span class="n">_t</span><span class="p">,</span> <span class="n">_g</span><span class="p">,</span> <span class="n">_syn</span><span class="p">,</span> <span class="n">_aff</span><span class="p">,</span> <span class="n">_r</span> <span class="ow">in</span> <span class="n">looper</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">502</span> 				<span class="n">tx</span> <span class="o">=</span> <span class="n">ants</span><span class="o">.</span><span class="n">registration</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>                                         <span class="n">fixed</span><span class="o">=</span><span class="n">fixed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>                                         <span class="n">moving</span><span class="o">=</span><span class="n">moving_aff</span> <span class="k">if</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/ants/registration/interface.py</span> in <span class="ni">registration</span><span class="nt">(fixed, moving, type_of_transform, initial_transform, outprefix, mask, grad_step, flow_sigma, total_sigma, aff_metric, aff_sampling, aff_random_sampling_rate, syn_metric, syn_sampling, reg_iterations, aff_iterations, aff_shrink_factors, aff_smoothing_sigmas, write_composite_transform, random_seed, verbose, multivariate_extras, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1375</span>                 <span class="n">processed_args</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">_int_antsProcessArguments</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1376</span>                 <span class="n">libfn</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_lib_fn</span><span class="p">(</span><span class="s2">&quot;antsRegistration&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1377</span>                 <span class="n">libfn</span><span class="p">(</span><span class="n">processed_args</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1378</span>                 <span class="n">afffns</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">outprefix</span> <span class="o">+</span> <span class="s2">&quot;*&quot;</span> <span class="o">+</span> <span class="s2">&quot;[0-9]GenericAffine.mat&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1379</span>                 <span class="n">fwarpfns</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">outprefix</span> <span class="o">+</span> <span class="s2">&quot;*&quot;</span> <span class="o">+</span> <span class="s2">&quot;[0-9]Warp.nii.gz&quot;</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
