@@ -958,56 +958,109 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">192</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">full_load</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_parcel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">load_allen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) Extension for Scikit-learn* enabled (https://github.com/intel/scikit-learn-intelex)
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> kmeans fit: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 2D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> 2d --&gt; 3d: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fill gaps: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 3D 10um: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> downsample: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">num regions,    left: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">768</span>,  right: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">768</span>
+region id diff,         r - l:  <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">Counter</span><span style="font-weight: bold">({</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">768</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">768</span><span style="font-weight: bold">})</span>
+
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'cortex-top_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex-l_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'subcortex-r_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'regions-top_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'regions-cortex_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-flat_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel2d-top_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'nonzero-idxs_parcel3d_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-flat_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel2d-top_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'region-idxs_parcel3d_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'shape_parcel2d-flat_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'shape_parcel2d-top_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'shape_parcel3d_100um.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-256</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>/parcellation
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save results: done.
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">register.register</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">in_house_res</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">Register</span><span class="p">(</span><span class="n">mice</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
-ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
-         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
-         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
-         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">81</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">46</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">60</span><span style="font-weight: bold">)</span>
-         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">200.0</span><span style="font-weight: bold">)</span>
-         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-7.8</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">-6.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6.4</span><span style="font-weight: bold">)</span>
-         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
-
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
-ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: bold">)</span>
-         Pixel Type : float <span style="font-weight: bold">(</span>float32<span style="font-weight: bold">)</span>
-         Components : <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>
-         Dimensions : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
-         Spacing    : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span><span style="font-weight: bold">)</span>
-         Origin     : <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span><span style="font-weight: bold">)</span>
-         Direction  : <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>. <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>.<span style="font-weight: bold">]</span>
-
-</pre>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1019,8 +1072,8 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
     <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
     <span class="s1">&#39;aff_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
     <span class="s1">&#39;syn_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
-    <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+    <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">kwargs</span>
 </pre></div>
@@ -1036,8 +1089,8 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
     <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'syn_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'n_seeds'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>
+    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.75</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'n_seeds'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5</span>
 <span style="font-weight: bold">}</span>
 </pre>
 </div></div>
@@ -1052,9 +1105,19 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC06_ses-2&#39;</span>
+<span class="n">indiv</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
+<span class="n">indiv</span> <span class="o">*=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
+<span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">indiv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house_name</span><span class="p">,</span>
-    <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+    <span class="n">moving</span><span class="o">=</span><span class="n">indiv</span><span class="p">,</span>
     <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
     <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="o">**</span><span class="n">kwargs</span>
@@ -1063,66 +1126,12 @@ ANTsImage <span style="font-weight: bold">(</span>RAI<span style="font-weight: b
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/register_??_N162_13_0.png" src="../../_images/register_??_N162_13_0.png" />
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Symmetric_N162, perf:
-seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>
-type        ElasticSyN
-grad               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9</span>
-syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
-aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>
-metric             sym
-score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.990933</span>
-
-</pre>
-</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3255689</span><span class="o">/</span><span class="mf">1420153608.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">fit_register</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">name</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house_name</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">moving</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">in_house</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">fixed</span><span class="o">=</span><span class="n">reg</span><span class="o">.</span><span class="n">nissl</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-
-<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">fit_register</span><span class="nt">(self, name, fixed, moving, logger, syn_metric, aff_metric, affine_init, save_results, types, grads, syn_bins, aff_bins, aff_rates, mi_q, n_seeds)</span>
-<span class="g g-Whitespace">    </span><span class="mi">507</span>                 <span class="k">if</span> <span class="n">save_results</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span>                         <span class="bp">self</span><span class="o">.</span><span class="n">_sv_tx</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">best_tx</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">509</span> 			<span class="bp">self</span><span class="o">.</span><span class="n">_apply_tx_obj2lps</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span>                                 <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span>                                 <span class="n">moving</span><span class="o">=</span><span class="n">moving_aff</span> <span class="k">if</span>
-
-<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">_apply_tx_obj2lps</span><span class="nt">(self, name, moving, moving_orig, tx, tx_aff, save_results, use_mm, obj)</span>
-<span class="g g-Whitespace">    </span><span class="mi">723</span> 			<span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span>                         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">725</span> 				<span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">726</span>                                         <span class="n">item</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="n">item</span><span class="p">][:]</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                                         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span>
-
-<span class="nn">~/Dropbox/git/_Ca-fMRI/register/register.py</span> in <span class="ni">&lt;dictcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">724</span>                         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">725</span> 				<span class="n">obj</span> <span class="o">=</span> <span class="p">{</span>
-<span class="ne">--&gt; </span><span class="mi">726</span>                                         <span class="n">item</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="n">item</span><span class="p">][:]</span>
-<span class="g g-Whitespace">    </span><span class="mi">727</span>                                         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">obj</span>
-<span class="g g-Whitespace">    </span><span class="mi">728</span> 				<span class="p">}</span>
-
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
-</pre></div>
-</div>
+<img alt="../../_images/register_??_N162_11_0.png" src="../../_images/register_??_N162_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">save_obj</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fit_N162_</span><span class="si">{</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;npy&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3255689</span><span class="o">/</span><span class="mf">3177313780.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">save_obj</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fit_N162_</span><span class="si">{</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;npy&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;results&#39; is not defined
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">save_obj</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;fit_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">now</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tmp_dir</span><span class="p">,</span> <span class="s1">&#39;npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
