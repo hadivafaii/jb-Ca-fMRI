@@ -746,6 +746,55 @@
   </ul>
  </li>
 </ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  January 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/jan22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/jan22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jan22/jan-03-2022.html">
+     Jan 3rd, 2022 (Coreg ses play; fix 10_3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jan22/jan-04-2022.html">
+     Jan 4th, 2022 (Coreg ses)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jan22/jan-07-2022.html">
+     Jan 7th, 2021 (rabies: 2nd stage)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jan22/jan-12-2022.html">
+     Jan 12th, 2021 (voxel sz plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/jan22/jan-13-2022.html">
+     Jan 13th, 2021 (topo dist, best density)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
 
     </div>
 </nav> <!-- To handle the deprecated key -->
@@ -867,7 +916,7 @@
 <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="c1"># Collect a list of all notebooks in the content folder</span>
-<span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;dec21&#39;</span>
+<span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;jan22&#39;</span>
 <span class="n">notebooks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">nb_name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span>
     <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./nb/**/*.ipynb&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
