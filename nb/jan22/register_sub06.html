@@ -792,6 +792,11 @@
      Jan 13th, 2021 (topo dist, best density)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jan-17-2022.html">
+     Jan 17th, 2021 (Results at various thresholds, discussion on topology)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -986,7 +991,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mice.parcel.fit_parcel(True)</span>
 </pre></div>
 </div>
 </div>
@@ -1131,7 +1136,7 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC10_ses-2&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s1">&#39;sub-SLC08_ses-2&#39;</span>
 <span class="n">indiv</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
 <span class="n">indiv</span> <span class="o">*=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
 <span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">indiv</span><span class="p">)</span>
@@ -1152,20 +1157,16 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
- bad det -1 v 1 u -1 new 1
-</pre></div>
-</div>
-<img alt="../../_images/register_sub06_11_1.png" src="../../_images/register_sub06_11_1.png" />
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC10_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
-seed                 <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>
-type        ElasticSyN
-grad              <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.32</span>
-syn_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_bin             <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>
-aff_rate           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>
-metric             sym
-score         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.978856</span>
+<img alt="../../_images/register_sub06_11_0.png" src="../../_images/register_sub06_11_0.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
+seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
+type             SyN
+grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.34</span>
+syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
+aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
+metric           sym
+score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.933288</span>
 
 </pre>
 </div></div>
@@ -1177,7 +1178,7 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9788558053639951</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9332882920401651</span>
 </pre>
 </div></div>
 </div>
@@ -1188,10 +1189,10 @@ score         <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'fit_sub-SLC10_ses-2_(2022_01_13).df'</span> saved at
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'fit_sub-SLC08_ses-2_(2022_01_15).df'</span> saved at
 <span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">tmp</span>
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Dropbox/git/jb-Ca-fMRI/tmp/fit_sub-SLC10_ses-2_(2022_01_13).df'</span>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Dropbox/git/jb-Ca-fMRI/tmp/fit_sub-SLC08_ses-2_(2022_01_15).df'</span>
 </pre>
 </div></div>
 </div>
