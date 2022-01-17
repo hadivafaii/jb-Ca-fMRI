@@ -989,6 +989,11 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cosine-similarity">
+     Cosine similarity
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1189,7 +1194,7 @@
         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span>
         <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;large&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;best_d&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">&quot;best d = </span><span class="si">{</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;best_d&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> %</span><span class="se">\n</span><span class="s2">(min div = </span><span class="si">{</span><span class="n">dfs</span><span class="p">[</span><span class="s1">&#39;best_div&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">0.3f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
@@ -1210,19 +1215,19 @@
 <p>These figures show the how optimal graph densities depend on data modality, but also on the subset of ROIs that are included in the analysis.  Here I only report <strong>“within session”</strong> distances between pairs of runs from the same animal in the same session.</p>
 <p>First, let me define what each of these terms mean:</p>
 <ul class="simple">
-<li><p><strong>ca2</strong>: calcium data, obviously this only containst s subset of surface ROIs that appear in the 2D optical FOV</p></li>
+<li><p><strong>ca2</strong>: calcium data, obviously this only contains a subset of surface ROIs that appear in the 2D optical FOV</p></li>
 <li><p><strong>bold-lite</strong>: this is bold data, using exactly the same ROIs as ca2 data</p></li>
 <li><p><strong>bold-ctx</strong>: all cortical ROIs</p></li>
 <li><p><strong>bold</strong>: all cortical and subcortical ROIs</p></li>
 </ul>
-<p>We see that <strong>ca2</strong> and <strong>bold-lite</strong> show more or less the same behavior.  The average within session divergence plateaus starting from around <span class="math notranslate nohighlight">\(d = 0.1\)</span> and stays that way up to <span class="math notranslate nohighlight">\(d=0.2\)</span>.  <strong>bold-ctx</strong> and <strong>bold</strong> also show similar behavior, but very different from the surface cases.  Now we have a much smoother curve which peaks at around <span class="math notranslate nohighlight">\(d=0.1\)</span> and has a minimum at around <span class="math notranslate nohighlight">\(d\approx0.25\)</span>, then plataeus after that.</p>
-<p>Why do <strong>bold</strong> and <strong>bold-ctx</strong> behave so differently compared to the other two?  For <strong>bold-ctx</strong>, we have included full cortical ROIs.  This means for each column, there are 3 ROIs at different depths. These ROIs from the same column are expected to be highly correlated.  The correlation patterns among these ROIs is also expected to be similar across animals.  Therefore, it is possible that we get a relatively higher optimal density, because it helps preserve this robust structure.  These links are always present, no matter which run or which animal.  Also, interestingly the average distance for this case is smaller than surface-only case of <strong>bold-lite</strong>.</p>
-<p>For  <strong>bold</strong> there is something similar going on.  Some subcortical regions are expected to have more uniform correlation patterns.  This is even more expected under anesthesia.  So we see a slightly larger optimal density compared to <strong>bold-lite</strong>.  We also see a smaller minimum divergence overall, meaning that topology of interaction graphs is better preserved for this case.  Now let us look at individuals rather than the group averaged case.</p>
+<p>We see that <strong>ca2</strong> and <strong>bold-lite</strong> show more or less the same behavior.  The average within session divergence plateaus starting from around <span class="math notranslate nohighlight">\(d = 0.1\)</span> and stays that way up to <span class="math notranslate nohighlight">\(d=0.2\)</span>.  <strong>bold-ctx</strong> and <strong>bold</strong> also show similar behavior, but very different from the surface cases.  They have a much smoother curve which peaks at around <span class="math notranslate nohighlight">\(d=0.1\)</span> and has a minimum at around <span class="math notranslate nohighlight">\(d\approx0.25\)</span>, then plataeus after that.</p>
+<p>Why do <strong>bold</strong> and <strong>bold-ctx</strong> behave so differently compared to the other two?  For <strong>bold-ctx</strong>, we have included full cortical ROIs.  This means for each column, there are 3 ROIs at different depths. These ROIs from the same column are expected to be highly correlated.  The correlation patterns among these ROIs is also expected to be similar across animals.  Therefore, it is possible that we get a relatively higher optimal density, because it helps preserve this robust structure.  These links are likely always present, no matter which run or which animal.  Also, interestingly the average distance for this case is slightly smaller than surface-only case of <strong>bold-lite</strong>.</p>
+<p>For  <strong>bold</strong> there is something similar going on.  Some subcortical regions are expected to have more uniform correlation patterns.  This is even more expected under anesthesia.  Now let us look at individuals rather than the group averaged case.</p>
 </div>
 <div class="section" id="individuals">
 <h4>Individuals<a class="headerlink" href="#individuals" title="Permalink to this headline">¶</a></h4>
-<p>If we look at density vs. topological distance plots for individuals, once again we see an interesting difference between <strong>ca2</strong> and <strong>bold-lite</strong> compared to <strong>bold-ctx</strong> and <strong>bold</strong>.  For the latter, the estimated optimal densities are a lot less variable across individuals compared to the surface-only cases.  This suggests that including all of the ROIs makes our estimates of the abstract interaction graphs more stable.</p>
-<p>In figures below I use a cross mark (x) to show the optimal density for ech animal.  The dashed line shows this quantity for the group average.</p>
+<p>If we look at density vs. topological distance plots for individuals, once again we see an interesting difference between <strong>ca2</strong> and <strong>bold-lite</strong> compared to <strong>bold-ctx</strong> and <strong>bold</strong>.  For the latter, the estimated optimal densities are a lot less variable across individuals compared to the surface-only cases.  This suggests that inclusion of all ROIs makes our estimates of the abstract interaction graphs more stable.</p>
+<p>In figures below I use a cross mark (x) to show the optimal density for ech animal.  The dashed line shows group average.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
@@ -1283,22 +1288,22 @@
 <h3>What to do with this information?<a class="headerlink" href="#what-to-do-with-this-information" title="Permalink to this headline">¶</a></h3>
 <p>I have the following proposal:</p>
 <ul class="simple">
-<li><p>For the first paper, we should only look at BOLD vs. Ca2+ one layer at a time.  That is, we first compare only surface ROIs.  Then we repeat the analysis for the next layer (depth) separately and so on.  Because of the aforementioned reasons, I’m expecting a fixed threshold of <span class="math notranslate nohighlight">\(d=0.1\)</span> will work fine for all of these cases.</p></li>
+<li><p>For the first paper, we should only look at BOLD vs. Ca2+ one layer at a time.  That is, we first compare only surface ROIs.  Then we repeat the analysis for the next layer (depth) separately and so on.  Because of the aforementioned reasons, I’m expecting a fixed threshold of <span class="math notranslate nohighlight">\(d=0.1\)</span> or <span class="math notranslate nohighlight">\(0.2\)</span> or anything in between will work fine for all of these cases.</p></li>
 <li><p>For the next paper, we go all the way and include every cortical and subcortical regions.  As an important result of this paper, we introduce the topological distance method as a reliable and principled way of choosing hyperparameters.</p></li>
-<li><p>We can define a statistically precise model and test a few more things to turn this into a strong result.  We can possibly call it <strong>longitudinal consistency</strong> or something like that, if we decided to rely on the fact that we have several sessions in our recordings.</p></li>
-<li><p>The first paper is already loaded with results and topology would only confuse the reviewers and make the paper cumbersome to read.  Luckily, for this paper any threshold <span class="math notranslate nohighlight">\(d \in [0.1, 0.2]\)</span> is going to work just fine (I provide evidence below).</p></li>
-<li><p>For the next paper, inclusion of discussion on topology and thresholding in a principled way becomes necessary due to the fact that for one network (ca2) <span class="math notranslate nohighlight">\(d=0.1\)</span> is optimal but for the other (bold) this is almost exactly the worst choice.</p></li>
+<li><p>We can define a statistically precise model and test a few more things to turn this into a strong result.  We can possibly call it <strong>longitudinal consistency</strong> or something like that, if we decided to rely on the fact that we have several sessions in our recordings.  Here I haven’t relied on this and only focused on within session distances, but having multiple sessions is a resource we can (and should) exploint.</p></li>
+<li><p>The first paper is already loaded with many results, and topology would only confuse the reviewers and make the paper cumbersome to read.  Luckily, for this paper any density <span class="math notranslate nohighlight">\(d \in [0.1, 0.2]\)</span> is going to work just fine (I provide more evidence below by comparing membership values for different densities).</p></li>
+<li><p>For the next paper, inclusion of discussion on topology and thresholding in a principled way becomes necessary due to the fact that for one network (ca2) the “typical” choice of <span class="math notranslate nohighlight">\(d\approx0.1\)</span> is optimal but for the other (bold) this is almost exactly the worst choice.</p></li>
 <li><p>I believe this would be relatively quick since I already have a lot of results ready to go.</p></li>
 </ul>
-<p>For the 2nd paper there are two major TODO items:</p>
+<p>For the 2nd paper there are two major TODO items that I can think of now:</p>
 <ol class="simple">
 <li><p>First task is choosing subcortical regions carefully.  We have to decide which regions to include for each run based on tSNR. This should be relatively quick, as most of the script for this purpose is already written and reaady.  Just needs some modifications + coming up with appropriate criteria to make decisions.</p></li>
-<li><p>Next, we need to provide more evidence that the topological distance thing is working.  The fact that it is capturing some nontrivial density vs. topo distance structure is interesting.  It could very well have been a flat or random looking curve, but it’s not.  People need to know about this.  What I need is a good statistical model to make things more rigoroous, for which I can use some help.  I think that we can define an ANOVA based model inspired by how it is done in test-retest reliability work?  In any case, I would be happy with any logical decision that we make here as I don’t have strong opinions on this aspect of the work.</p></li>
+<li><p>Next, we need to provide more evidence that the topological distance thing is working.  The fact that it is capturing some nontrivial density vs. topo distance structure is interesting.  It could very well have been a flat or random looking curve, but it’s not.  People need to know about this.  What I need is a good, rigorous statistical model to strengthen the results, for which I can use some help.  I think we can define an ANOVA based model inspired by how it is done in test-retest reliability work?  In any case, I would be happy with any logical decision that we make here as I don’t have strong opinions on this aspect of the work.</p></li>
 </ol>
 </div>
 <div class="section" id="n-256-columns-hemisphere">
 <h3>N = 256 columns / hemisphere<a class="headerlink" href="#n-256-columns-hemisphere" title="Permalink to this headline">¶</a></h3>
-<p>Before moving on to the next section I make the same plots for a parcellation with different # ROIs.</p>
+<p>Before moving on to the next section I make the same plots for a parcellation with different # ROIs for bookkeeping purposes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">((</span><span class="mi">256</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
@@ -1430,7 +1435,7 @@
 </pre>
 </div></div>
 </div>
-<p>We see that at least for the first paper (Ca2+ and BOLD-Lite), the choise of <span class="math notranslate nohighlight">\(N = 256\)</span> columns is probably not a good idea as it increases the average minimum divregence.  This shows the utility of topological distane approach in choosing other hyperparams such as # ROIs and so on.</p>
+<p>We see that at least for the first paper (Ca2+ and BOLD-Lite only), the choise of <span class="math notranslate nohighlight">\(N = 256\)</span> columns is probably not a good idea as it increases the average minimum divregence.  This shows the utility of topological distane approach in choosing other hyperparams such as # ROIs and so on.</p>
 </div>
 </div>
 <div class="section" id="results-at-d-0-10-0-15-and-0-20">
@@ -1615,6 +1620,10 @@
 <img alt="../../_images/jan-17-2022_32_0.png" src="../../_images/jan-17-2022_32_0.png" />
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="cosine-similarity">
+<h3>Cosine similarity<a class="headerlink" href="#cosine-similarity" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
@@ -1663,7 +1672,7 @@
 <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;pairwise distanes (upper: CA, lower: BOLD)</span><span class="se">\n</span><span class="s2">same modality, different thresholds</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;pairwise cosine similarity</span><span class="se">\n</span><span class="s2">upper: CA, lower: BOLD</span><span class="se">\n</span><span class="s2">same modality, different thresholds</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1745,14 +1754,13 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;CA&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;pairwise cosine distanes</span><span class="se">\n</span><span class="s2">acorss modalities&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.57</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;pairwise cosine similarity</span><span class="se">\n</span><span class="s2">acorss modalities&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">0.57</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/jan-17-2022_39_0.png" src="../../_images/jan-17-2022_39_0.png" />
-</div>
 </div>
 </div>
 </div>
@@ -1767,15 +1775,18 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 </li>
 <li><p>Sometimes we are lucky and we make random but good choices, but some other times we may not be so lucky.</p></li>
 <li><p>For example, these choices include # ROIs, edge filtering approach, and the threshold chosen.</p></li>
-<li><p>I showed that for the case where we include ROIs from the full brain this matters significantly.</p></li>
+<li><p>I showed that for the case where we include ROIs from the full brain this matters a lot.</p></li>
 <li><p>Fortunately, for cases where we include only surface ROIs this doesn’t matter much.</p>
 <ul>
 <li><p>Evidence # 1: density vs. mean divergence plateaus in the range <span class="math notranslate nohighlight">\(d \in [0.1, 0.2]\)</span>.</p></li>
 <li><p>Evidence # 2: membership distributions are almost exactly identical for the 3 thresholds in that range.</p></li>
 </ul>
 </li>
-<li><p>Therfore, we can rest assured that <span class="math notranslate nohighlight">\(d = 0.1\)</span> or <span class="math notranslate nohighlight">\(0.2\)</span> will work fine for the main results in the first paper.</p></li>
-<li><p>We can include results for other thresholds in supplementary.</p></li>
+<li><p>Therfore, we can rest assured that <span class="math notranslate nohighlight">\(d = 0.1\)</span> or <span class="math notranslate nohighlight">\(0.2\)</span> will work fine for the main results in the first paper.</p>
+<ul>
+<li><p>Ideally we would include results for other thresholds in supplementary to show that our claims don’t depend strongly on the threshold.</p></li>
+</ul>
+</li>
 <li><p>For the next paper, we can discuss the necessaty of choosing hyperparameters in a more principled way, thus leading by example.</p></li>
 <li><p>Then we can analyze full brain BOLD vs Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> knowing that the interesting facts about the data are not distorted because of our random choices – to the best of our knowledge…</p></li>
 <li><p>I’ve already seen some interesting structure in the membership values and embedded gradients of subcotrical areas.  I’m expecting things to only improve from here on.</p></li>
@@ -1785,10 +1796,13 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 <h2>What next<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
 <p>Here is a tentative list of immediate things to do:</p>
 <ol class="simple">
-<li><p>Revise Figure 1 PDF, use parsimonious but informative sentences, fill in the gaps.</p></li>
-<li><p>Produce material for Figure 2 and write up another PDF.</p></li>
-<li><p>Start writing the main content of the paper, but only bullet points.</p></li>
+<li><p>Revise Figure 1 PDF, use parsimonious but informative sentences and fill in the gaps.</p></li>
+<li><p>Produce material for Figure 2 and writeup another PDF also with method.</p></li>
+<li><p>Start writing the main content of the paper, but only bullet points.  This, along with Figure PDF writeups will help shape the skeleton.</p></li>
 </ol>
+<blockquote>
+<div><p><strong>Data on its way:</strong> Gabe just sent an email to Eve and me that the data is resampled to 0.2mm and is ready to share.  I will finally receive the cleaned up data soon after Gabe gets his account.  Afteer that, I will produce the semi-final figures and include them in PDF write-ups of figures and methods.</p>
+</div></blockquote>
 </div>
 </div>
 
