@@ -797,6 +797,11 @@
      Jan 17th, 2021 (Results at various thresholds, discussion on topology)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jan-19-2022.html">
+     Jan 19th, 2021 (Hierarchical)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1082,14 +1087,14 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">,</span> <span class="s1">&#39;SyNAggro&#39;</span><span class="p">],</span>
     <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">,</span> <span class="mf">0.34</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
     <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
     <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
     <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
     <span class="s1">&#39;aff_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
     <span class="s1">&#39;syn_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;mattes&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span>
+    <span class="s1">&#39;mi_q&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
     <span class="s1">&#39;n_seeds&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">kwargs</span>
@@ -1099,7 +1104,7 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 <span style="font-weight: bold">{</span>
-    <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'ElasticSyN'</span><span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'ElasticSyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'SyNAggro'</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span>
         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.15</span>,
         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>,
@@ -1120,7 +1125,7 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
     <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'syn_metric'</span>: <span style="color: #008000; text-decoration-color: #008000">'mattes'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.75</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'mi_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,
     <span style="color: #008000; text-decoration-color: #008000">'n_seeds'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>
 <span style="font-weight: bold">}</span>
 </pre>
@@ -1158,29 +1163,7 @@ region id diff,         r - l:  <span style="color: #800080; text-decoration-col
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/register_sub06_11_0.png" src="../../_images/register_sub06_11_0.png" />
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">sub-SLC08_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>, perf:
-seed               <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>
-type             SyN
-grad            <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.34</span>
-syn_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
-aff_bin           <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>
-aff_rate         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>
-metric           sym
-score       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.933288</span>
-
-</pre>
-</div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;perf&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9332882920401651</span>
-</pre>
-</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1188,13 +1171,484 @@ score       <span style="color: #008080; text-decoration-color: #008080; font-we
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;SyN&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;grad&#39;</span><span class="p">:</span> <span class="mf">0.34</span><span class="p">,</span>
+    <span class="s1">&#39;syn_bin&#39;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+    <span class="s1">&#39;aff_bin&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s1">&#39;aff_rate&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span>
+<span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;df&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_sub_main</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+<span class="n">df_sub_main</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;perf&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;sym&#39;</span><span class="p">]</span>
+<span class="n">_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]]</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'fit_sub-SLC08_ses-2_(2022_01_15).df'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">tmp</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>type</th>
+      <th>grad</th>
+      <th>syn_bin</th>
+      <th>aff_bin</th>
+      <th>aff_rate</th>
+      <th>metric</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>48193</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym</td>
+      <td>0.948029</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()])</span>
+<span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;metric&#39;</span><span class="p">)</span>
+<span class="n">params</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;score&#39;</span><span class="p">)</span>
+
+<span class="n">cond</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span><span class="p">,</span>
+    <span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span>
+<span class="p">)</span>
+<span class="n">df_sub</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span>
+<span class="n">df_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>type</th>
+      <th>grad</th>
+      <th>syn_bin</th>
+      <th>aff_bin</th>
+      <th>aff_rate</th>
+      <th>metric</th>
+      <th>score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>48168</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>mi</td>
+      <td>0.504729</td>
+    </tr>
+    <tr>
+      <th>48169</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_MOp</td>
+      <td>0.998219</td>
+    </tr>
+    <tr>
+      <th>48170</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_MOp</td>
+      <td>0.956446</td>
+    </tr>
+    <tr>
+      <th>48171</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_MOs</td>
+      <td>0.998294</td>
+    </tr>
+    <tr>
+      <th>48172</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_MOs</td>
+      <td>0.979730</td>
+    </tr>
+    <tr>
+      <th>48173</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_SS</td>
+      <td>0.998292</td>
+    </tr>
+    <tr>
+      <th>48174</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_SS</td>
+      <td>0.973034</td>
+    </tr>
+    <tr>
+      <th>48175</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_VISC</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>48176</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_VISC</td>
+      <td>0.957265</td>
+    </tr>
+    <tr>
+      <th>48177</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_VIS</td>
+      <td>0.994318</td>
+    </tr>
+    <tr>
+      <th>48178</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_VIS</td>
+      <td>0.943218</td>
+    </tr>
+    <tr>
+      <th>48179</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_AI</td>
+      <td>0.942282</td>
+    </tr>
+    <tr>
+      <th>48180</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_AI</td>
+      <td>0.986667</td>
+    </tr>
+    <tr>
+      <th>48181</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_PTLp</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>48182</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_PTLp</td>
+      <td>0.983607</td>
+    </tr>
+    <tr>
+      <th>48183</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_TEa</td>
+      <td>0.996552</td>
+    </tr>
+    <tr>
+      <th>48184</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_TEa</td>
+      <td>0.933333</td>
+    </tr>
+    <tr>
+      <th>48185</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_CA1</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>48186</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_CA1</td>
+      <td>0.811280</td>
+    </tr>
+    <tr>
+      <th>48187</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_CLA</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>48188</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_CLA</td>
+      <td>0.821429</td>
+    </tr>
+    <tr>
+      <th>48189</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_STRd</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>48190</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_STRd</td>
+      <td>0.941382</td>
+    </tr>
+    <tr>
+      <th>48191</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp_iso</td>
+      <td>0.992305</td>
+    </tr>
+    <tr>
+      <th>48192</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym_iso</td>
+      <td>0.968444</td>
+    </tr>
+    <tr>
+      <th>48193</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>sym</td>
+      <td>0.948029</td>
+    </tr>
+    <tr>
+      <th>48194</th>
+      <td>2</td>
+      <td>ElasticSyN</td>
+      <td>0.2</td>
+      <td>64</td>
+      <td>13</td>
+      <td>0.8</td>
+      <td>ovp</td>
+      <td>0.994818</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_sub_main</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_sub</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fa770511f40</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Dropbox/git/jb-Ca-fMRI/tmp/fit_sub-SLC08_ses-2_(2022_01_15).df'</span>
+</div><img alt="../../_images/register_sub06_25_1.png" src="../../_images/register_sub06_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div></div>
+</div><img alt="../../_images/register_sub06_27_1.png" src="../../_images/register_sub06_27_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;sym&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'score'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/register_sub06_28_1.png" src="../../_images/register_sub06_28_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metric&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;sym&#39;</span><span class="p">,</span> <span class="s1">&#39;score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/register_sub06_30_1.png" src="../../_images/register_sub06_30_1.png" />
+</div>
 </div>
 <div class="section" id="kaba-continues">
 <h2>Kaba continues<a class="headerlink" href="#kaba-continues" title="Permalink to this headline">¶</a></h2>
