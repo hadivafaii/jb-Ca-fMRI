@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jan ??th, 2021 (figs for 2 animals) &#8212; Ca-fMRI [Daily Progress]</title>
+    <title>Jan ??th, 2022 (figs for 2 animals) &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -779,27 +779,32 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jan-07-2022.html">
-     Jan 7th, 2021 (rabies: 2nd stage)
+     Jan 7th, 2022 (rabies: 2nd stage)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jan-12-2022.html">
-     Jan 12th, 2021 (voxel sz plots)
+     Jan 12th, 2022 (voxel sz plots)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jan-13-2022.html">
-     Jan 13th, 2021 (topo dist, best density)
+     Jan 13th, 2022 (topo dist, best density)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jan-17-2022.html">
-     Jan 17th, 2021 (Results at various thresholds, discussion on topology)
+     Jan 17th, 2022 (Results at various thresholds, discussion on topology)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="jan-19-2022.html">
-     Jan 19th, 2021 (Hierarchical)
+     Jan 19th, 2022 (Hierarchical)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jan-22-2022.html">
+     Jan 22nd, 2022 (degree dist, cartography)
     </a>
    </li>
   </ul>
@@ -952,6 +957,13 @@
      d = 10 %
     </a>
    </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cartography">
+   Cartography
+  </a>
+  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#membership-plot-individuals">
      Membership plot: individuals
@@ -980,8 +992,8 @@
         
               <div>
                 
-  <div class="section" id="jan-th-2021-figs-for-2-animals">
-<h1>Jan ??th, 2021 (figs for 2 animals)<a class="headerlink" href="#jan-th-2021-figs-for-2-animals" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="jan-th-2022-figs-for-2-animals">
+<h1>Jan ??th, 2022 (figs for 2 animals)<a class="headerlink" href="#jan-th-2022-figs-for-2-animals" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: Debug  <br></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1364,36 +1376,6 @@
 <img alt="../../_images/jan-(2anim)-2022_21_0.png" src="../../_images/jan-(2anim)-2022_21_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="n">pi_from_gam</span><span class="p">(</span><span class="n">group_bold</span><span class="p">[</span><span class="s1">&#39;gam_run&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">174</span><span style="font-weight: bold">)</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">pi</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
-</pre>
-</div><img alt="../../_images/jan-(2anim)-2022_25_1.png" src="../../_images/jan-(2anim)-2022_25_1.png" />
-</div>
-</div>
 </div>
 <div class="section" id="d-10">
 <h3>d = 10 %<a class="headerlink" href="#d-10" title="Permalink to this headline">¶</a></h3>
@@ -1403,7 +1385,7 @@
 
 <span class="n">theta_all</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
 <span class="n">dlist1</span><span class="p">,</span> <span class="n">dlist2</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]:</span>
     <span class="n">props</span> <span class="o">=</span> <span class="n">props_base</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">props</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span>
 
@@ -1449,6 +1431,12 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> was not fit.  Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> was not fit.  Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> was not fit.  Moving on . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> was not fit.  Moving on . . .
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning! sub-SLC03_ses-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span> was not fit.  Moving on . . .
 </pre>
@@ -1512,7 +1500,1343 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_29_0.png" src="../../_images/jan-(2anim)-2022_29_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_24_0.png" src="../../_images/jan-(2anim)-2022_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;sub-SLC03_ses-1_run-2&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">)):</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;run-2&#39;</span><span class="p">,</span> <span class="s1">&#39;run-3&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">dst</span><span class="p">))</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;sub-SLC03_ses-1_run-4&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">)):</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;run-4&#39;</span><span class="p">,</span> <span class="s1">&#39;run-5&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">dst</span><span class="p">))</span>
+    
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;sub-SLC03_ses-1_run-6&#39;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">)):</span>
+    <span class="n">dst</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;run-6&#39;</span><span class="p">,</span> <span class="s1">&#39;run-7&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="n">dst</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_deg</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">keys</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">task</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;rest&#39;</span><span class="p">):</span>
+    <span class="n">dlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">,</span> <span class="n">run</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">looper</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">run</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span>
+            <span class="n">mice</span><span class="o">=</span><span class="n">mice</span><span class="p">,</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+            <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">load_network</span><span class="p">(</span><span class="n">full</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">g0</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">adj</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">weight</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]:</span>
+            <span class="n">weighted</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">weight</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">1</span>
+
+            <span class="k">for</span> <span class="n">density</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]:</span>
+                <span class="n">deg</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">net</span><span class="o">.</span><span class="n">graphs</span><span class="p">[</span><span class="n">density</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+                <span class="n">deg</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="n">n</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">d</span> <span class="k">for</span>
+                    <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="p">}</span>
+                <span class="n">dlist</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mode</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;sub&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">sub</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;ses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">ses</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;run&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">run</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;density&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">density</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;weighted&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">weighted</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                    <span class="s1">&#39;node&#39;</span><span class="p">:</span> <span class="n">deg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+                    <span class="s1">&#39;degree&#39;</span><span class="p">:</span> <span class="n">deg</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+                <span class="p">})</span>
+
+            <span class="n">deg</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">g0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span>
+            <span class="n">deg</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">n</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">d</span> <span class="k">for</span>
+                <span class="n">n</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">dict</span><span class="p">(</span><span class="n">deg</span><span class="p">)</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">}</span>
+            <span class="n">dlist</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">mode</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;sub&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">sub</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;ses&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">ses</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;run&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">run</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;density&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;weighted&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">weighted</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">deg</span><span class="p">),</span>
+                <span class="s1">&#39;node&#39;</span><span class="p">:</span> <span class="n">deg</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
+                <span class="s1">&#39;degree&#39;</span><span class="p">:</span> <span class="n">deg</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+            <span class="p">})</span>
+    <span class="k">return</span> <span class="n">dlist</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dlist</span> <span class="o">=</span> <span class="n">_deg</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">mice</span><span class="o">.</span><span class="n">bold</span><span class="p">,</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">)</span>
+<span class="n">dlist</span> <span class="o">+=</span> <span class="n">_deg</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">mice</span><span class="o">.</span><span class="n">ca</span><span class="p">,</span> <span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+<span class="n">df_deg</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">merge_dicts</span><span class="p">(</span><span class="n">dlist</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mode</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">]):</span>
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">mode</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span><span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;muted&#39;</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;non weighted&quot;</span><span class="p">)</span>
+
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">mode</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span><span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;density&#39;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;muted&#39;</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;weighted&quot;</span><span class="p">)</span>
+
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">mode</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">==</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;muted&#39;</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d = 10 %  weighted vs. non weighted&quot;</span><span class="p">)</span>
+    
+    <span class="n">axtw</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_34_0.png" src="../../_images/jan-(2anim)-2022_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">densities</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">densities</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mode</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">densities</span><span class="p">):</span>
+        <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">mode</span><span class="p">)</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">d</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+            <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+            <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;weighted&#39;</span><span class="p">,</span>
+            <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;muted&#39;</span><span class="p">,</span>
+            <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+            <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">densities</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_37_0.png" src="../../_images/jan-(2anim)-2022_37_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mako</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;mako&#39;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">rocket</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;rocket&#39;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ca2&#39;</span><span class="p">:</span> <span class="n">mako</span><span class="p">(</span><span class="mf">0.6</span><span class="p">),</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">:</span> <span class="n">rocket</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">densities</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">densities</span><span class="p">):</span>
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="n">pal</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Weighted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_40_0.png" src="../../_images/jan-(2anim)-2022_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+
+<span class="n">densities</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">densities</span><span class="p">):</span>
+    <span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span><span class="o">==</span> <span class="n">d</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+        <span class="n">kde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+        <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+        <span class="n">palette</span><span class="o">=</span><span class="n">pal</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s1">&#39;probability&#39;</span><span class="p">,</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;d = </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2"> %&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Non-weighted&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_41_0.png" src="../../_images/jan-(2anim)-2022_41_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;bold-lite&#39;</span>
+<span class="n">sub</span><span class="p">,</span> <span class="n">ses</span><span class="p">,</span> <span class="n">run</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mode</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;sub&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">sub</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;ses&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ses</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;run&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">run</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_45_1.png" src="../../_images/jan-(2anim)-2022_45_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Fitter</span><span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="float: left; border: 1px solid black; width:500px">
+  <div id="3d5bea3a-3a98-427c-8ee1-503a528f3297" style="background-color:blue; width:0%">&nbsp;</div>
+</div>
+<label id="f45c15af-588e-42ad-9803-a189d977792f" style="padding-left: 10px;" text = ""/>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:SKIPPED kstwo distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED rv_continuous distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED rv_histogram distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED genexpon distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED kappa4 distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED levy_stable distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED ncx2 distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED studentized_range distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED vonmises distribution (taking more than 30 seconds)
+WARNING:root:SKIPPED vonmises_line distribution (taking more than 30 seconds)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sumsquare_error</th>
+      <th>aic</th>
+      <th>bic</th>
+      <th>kl_div</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>exponweib</th>
+      <td>0.058966</td>
+      <td>740.273983</td>
+      <td>-1369.596245</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>genhalflogistic</th>
+      <td>0.058991</td>
+      <td>739.147845</td>
+      <td>-1374.684091</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>foldnorm</th>
+      <td>0.058993</td>
+      <td>745.419372</td>
+      <td>-1374.677221</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>gengamma</th>
+      <td>0.059016</td>
+      <td>740.789802</td>
+      <td>-1369.450500</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>gompertz</th>
+      <td>0.059031</td>
+      <td>742.715506</td>
+      <td>-1374.565269</td>
+      <td>inf</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../../_images/jan-(2anim)-2022_49_1.png" src="../../_images/jan-(2anim)-2022_49_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mode</span> <span class="o">=</span> <span class="s1">&#39;ca2&#39;</span>
+<span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mode</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">_df</span><span class="p">[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">data</span><span class="p">)]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_53_1.png" src="../../_images/jan-(2anim)-2022_53_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats._continuous_distns</span> <span class="kn">import</span> <span class="n">_distn_names</span>
+<span class="n">_distn_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="color: #008000; text-decoration-color: #008000">'ksone'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'kstwo'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'kstwobign'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'norm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'alpha'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'anglit'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'arcsine'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'beta'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'betaprime'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'bradford'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'burr'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'burr12'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fisk'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cauchy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'chi'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'chi2'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'cosine'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'dgamma'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'dweibull'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'expon'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'exponnorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'exponweib'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'exponpow'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fatiguelife'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'foldcauchy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'f'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'foldnorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'weibull_min'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'weibull_max'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genlogistic'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genpareto'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genexpon'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genextreme'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gamma'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'erlang'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gengamma'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genhalflogistic'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'genhyperbolic'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gompertz'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gumbel_r'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gumbel_l'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'halfcauchy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'halflogistic'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'halfnorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'hypsecant'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gausshyper'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'invgamma'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'invgauss'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'geninvgauss'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'norminvgauss'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'invweibull'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'johnsonsb'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'johnsonsu'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'laplace'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'laplace_asymmetric'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'levy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'levy_l'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'levy_stable'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'logistic'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'loggamma'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'loglaplace'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'lognorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gilbrat'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'maxwell'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'mielke'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'kappa4'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'kappa3'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'moyal'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'nakagami'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ncx2'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'ncf'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'t'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'nct'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'pareto'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'lomax'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'pearson3'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'powerlaw'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'powerlognorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'powernorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'rdist'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'rayleigh'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'loguniform'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'reciprocal'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'rice'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'recipinvgauss'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'semicircular'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'skewcauchy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'skewnorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'trapezoid'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'trapz'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'triang'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'truncexpon'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'truncnorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'tukeylambda'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'uniform'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'vonmises'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'vonmises_line'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'wald'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'wrapcauchy'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'gennorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'halfgennorm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'crystalball'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'argus'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'studentized_range'</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distn_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;alpha&#39;</span><span class="p">,</span> <span class="s1">&#39;beta&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="s1">&#39;lognorm&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;weibull_min&#39;</span><span class="p">,</span> <span class="s1">&#39;weibull_max&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;chi2&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Fitter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">distributions</span><span class="o">=</span><span class="n">_distn_names</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div style="float: left; border: 1px solid black; width:500px">
+  <div id="582f7bcf-9731-4bbf-b4d9-f45c1d251389" style="background-color:blue; width:0%">&nbsp;</div>
+</div>
+<label id="3426728c-8959-47d7-b7eb-16b65004bd35" style="padding-left: 10px;" text = ""/>
+</div><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('0%')</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:SKIPPED kstwo distribution (taking more than 2000 seconds)
+</pre></div>
+</div>
+<script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('1%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('0% in 3.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('2%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('1% in 4.0 sec')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('2% in 4.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('3%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('3% in 8.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('4%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('4% in 9.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('5%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('5% in 34.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('6%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('6% in 37.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('7%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('7% in 39.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('8%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('8% in 60.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('10%')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('9%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('10% in 62.3 sec')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('9% in 62.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('11%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('11% in 64.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('12%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('12% in 67.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('13%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('13% in 67.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('14%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('14% in 68.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('15%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('15% in 74.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('16%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('16% in 75.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('17%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('17% in 76.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('18%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('18% in 80.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('19%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('19% in 83.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('20%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('20% in 113.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('21%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('21% in 118.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('22%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('22% in 119.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('23%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('23% in 128.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('24%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('24% in 134.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('25%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('25% in 138.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('25%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('25% in 148.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('26%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('26% in 163.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('27%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('27% in 165.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('28%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('28% in 167.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('29%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('29% in 175.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('30%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('30% in 192.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('31%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('31% in 209.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('32%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('32% in 211.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('33%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('33% in 214.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('34%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('34% in 227.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('35%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('35% in 233.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('36%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('36% in 236.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('37%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('37% in 245.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('38%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('38% in 249.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('39%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('39% in 253.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('40%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('40% in 257.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('41%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('41% in 259.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('42%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('42% in 266.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('43%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('43% in 270.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('44%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('44% in 279.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('45%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('45% in 303.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('46%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('46% in 311.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('47%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('47% in 314.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('48%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('48% in 321.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('49%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('49% in 323.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('50%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('50% in 326.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('50%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('50% in 349.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('51%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('51% in 353.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('52%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('52% in 361.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('53%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('53% in 362.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('54%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('54% in 363.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('55%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('55% in 367.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('56%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('56% in 397.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('57%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('57% in 420.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('58%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('58% in 433.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('59%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('59% in 443.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('60%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('60% in 450.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('61%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('61% in 450.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('62%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('62% in 452.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('63%')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('64%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('63% in 458.4 sec')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('64% in 458.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('65%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('65% in 465.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('66%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('66% in 473.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('67%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('67% in 475.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('68%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('68% in 477.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('69%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('69% in 478.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('70%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('70% in 482.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('71%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('71% in 484.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('72%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('72% in 487.1 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('73%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('73% in 534.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('74%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('74% in 550.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('75%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('75% in 584.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('75%')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('76%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('75% in 591.4 sec')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('76% in 591.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('77%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('77% in 598.3 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('78%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('78% in 598.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('79%')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('80%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('79% in 603.6 sec')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('80% in 603.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('81%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('81% in 611.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('82%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('82% in 617.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('83%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('83% in 635.2 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('84%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('84% in 678.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('85%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('85% in 692.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('86%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('86% in 710.6 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('87%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('87% in 743.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('88%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('88% in 764.9 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('89%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('89% in 773.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('90%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('90% in 828.7 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('91%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('91% in 872.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('92%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('92% in 887.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('93%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('93% in 928.8 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('94%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('94% in 955.5 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('95%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('95% in 1092.0 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('96%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('96% in 1327.4 sec')</script><script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('97%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('97% in 1499.8 sec')</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:SKIPPED ksone distribution (taking more than 2000 seconds)
+</pre></div>
+</div>
+<script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('98%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('98% in 2003.6 sec')</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:SKIPPED levy_stable distribution (taking more than 2000 seconds)
+</pre></div>
+</div>
+<script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('99%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('99% in 2076.7 sec')</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING:root:SKIPPED studentized_range distribution (taking more than 2000 seconds)
+</pre></div>
+</div>
+<script type="application/javascript">$('div#582f7bcf-9731-4bbf-b4d9-f45c1d251389').width('100%')</script><script type="application/javascript">$('label#3426728c-8959-47d7-b7eb-16b65004bd35').text('100% in 2451.7 sec')</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">Nbest</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_59_0.png" src="../../_images/jan-(2anim)-2022_59_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sumsquare_error</th>
+      <th>aic</th>
+      <th>bic</th>
+      <th>kl_div</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>johnsonsb</th>
+      <td>0.000392</td>
+      <td>1012.448387</td>
+      <td>-349234.727054</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>gausshyper</th>
+      <td>0.000544</td>
+      <td>1018.955533</td>
+      <td>-342741.709408</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>geninvgauss</th>
+      <td>0.000554</td>
+      <td>970.800559</td>
+      <td>-342417.910257</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>pearson3</th>
+      <td>0.000554</td>
+      <td>968.811661</td>
+      <td>-342415.440361</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>gamma</th>
+      <td>0.000554</td>
+      <td>968.812837</td>
+      <td>-342414.739732</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>erlang</th>
+      <td>0.000554</td>
+      <td>968.812966</td>
+      <td>-342414.538197</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>chi2</th>
+      <td>0.000554</td>
+      <td>968.814375</td>
+      <td>-342414.157052</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>f</th>
+      <td>0.000554</td>
+      <td>970.819581</td>
+      <td>-342398.719689</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>burr12</th>
+      <td>0.000573</td>
+      <td>980.670911</td>
+      <td>-341744.549577</td>
+      <td>inf</td>
+    </tr>
+    <tr>
+      <th>beta</th>
+      <td>0.000596</td>
+      <td>1001.202468</td>
+      <td>-340977.656979</td>
+      <td>inf</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;node&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_63_0.png" src="../../_images/jan-(2anim)-2022_63_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;mode&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_64_0.png" src="../../_images/jan-(2anim)-2022_64_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sub&#39;</span><span class="p">,</span> <span class="s1">&#39;node&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ses&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;weighted&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>node</th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>164</th>
+      <th>165</th>
+      <th>166</th>
+      <th>167</th>
+      <th>168</th>
+      <th>169</th>
+      <th>170</th>
+      <th>171</th>
+      <th>172</th>
+      <th>173</th>
+    </tr>
+    <tr>
+      <th>sub</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6.500000</td>
+      <td>11.250000</td>
+      <td>10.090909</td>
+      <td>8.833333</td>
+      <td>13.909091</td>
+      <td>11.250000</td>
+      <td>16.750000</td>
+      <td>24.750000</td>
+      <td>26.166667</td>
+      <td>22.000000</td>
+      <td>...</td>
+      <td>48.083333</td>
+      <td>29.833333</td>
+      <td>44.916667</td>
+      <td>37.083333</td>
+      <td>52.750000</td>
+      <td>36.750000</td>
+      <td>49.750000</td>
+      <td>44.250000</td>
+      <td>35.000000</td>
+      <td>34.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>19.090909</td>
+      <td>16.545455</td>
+      <td>12.181818</td>
+      <td>27.727273</td>
+      <td>24.636364</td>
+      <td>18.090909</td>
+      <td>25.909091</td>
+      <td>33.454545</td>
+      <td>38.636364</td>
+      <td>23.454545</td>
+      <td>...</td>
+      <td>32.636364</td>
+      <td>24.272727</td>
+      <td>32.090909</td>
+      <td>19.363636</td>
+      <td>30.636364</td>
+      <td>22.363636</td>
+      <td>34.818182</td>
+      <td>36.272727</td>
+      <td>22.727273</td>
+      <td>30.363636</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.818182</td>
+      <td>13.181818</td>
+      <td>10.666667</td>
+      <td>19.909091</td>
+      <td>15.636364</td>
+      <td>28.545455</td>
+      <td>22.800000</td>
+      <td>24.454545</td>
+      <td>24.909091</td>
+      <td>18.454545</td>
+      <td>...</td>
+      <td>47.000000</td>
+      <td>26.818182</td>
+      <td>28.818182</td>
+      <td>32.181818</td>
+      <td>31.181818</td>
+      <td>31.090909</td>
+      <td>32.727273</td>
+      <td>45.181818</td>
+      <td>28.454545</td>
+      <td>30.272727</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>18.666667</td>
+      <td>13.250000</td>
+      <td>10.300000</td>
+      <td>16.500000</td>
+      <td>13.636364</td>
+      <td>20.333333</td>
+      <td>22.750000</td>
+      <td>29.750000</td>
+      <td>13.166667</td>
+      <td>21.250000</td>
+      <td>...</td>
+      <td>47.500000</td>
+      <td>12.500000</td>
+      <td>16.416667</td>
+      <td>27.083333</td>
+      <td>33.166667</td>
+      <td>22.833333</td>
+      <td>36.000000</td>
+      <td>43.000000</td>
+      <td>28.250000</td>
+      <td>33.666667</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>24.625000</td>
+      <td>28.750000</td>
+      <td>14.500000</td>
+      <td>12.272727</td>
+      <td>17.909091</td>
+      <td>25.000000</td>
+      <td>24.363636</td>
+      <td>20.818182</td>
+      <td>19.909091</td>
+      <td>21.363636</td>
+      <td>...</td>
+      <td>40.818182</td>
+      <td>9.909091</td>
+      <td>40.454545</td>
+      <td>40.454545</td>
+      <td>46.454545</td>
+      <td>36.818182</td>
+      <td>45.727273</td>
+      <td>46.363636</td>
+      <td>30.727273</td>
+      <td>37.000000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>27.833333</td>
+      <td>5.166667</td>
+      <td>9.583333</td>
+      <td>20.833333</td>
+      <td>13.416667</td>
+      <td>12.583333</td>
+      <td>11.083333</td>
+      <td>8.166667</td>
+      <td>19.666667</td>
+      <td>20.250000</td>
+      <td>...</td>
+      <td>44.166667</td>
+      <td>52.166667</td>
+      <td>22.333333</td>
+      <td>23.833333</td>
+      <td>30.666667</td>
+      <td>25.916667</td>
+      <td>30.083333</td>
+      <td>31.416667</td>
+      <td>24.583333</td>
+      <td>28.583333</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>24.333333</td>
+      <td>32.818182</td>
+      <td>15.181818</td>
+      <td>19.750000</td>
+      <td>27.000000</td>
+      <td>31.500000</td>
+      <td>38.000000</td>
+      <td>36.416667</td>
+      <td>18.916667</td>
+      <td>38.666667</td>
+      <td>...</td>
+      <td>28.500000</td>
+      <td>26.500000</td>
+      <td>30.000000</td>
+      <td>16.750000</td>
+      <td>28.166667</td>
+      <td>18.000000</td>
+      <td>27.000000</td>
+      <td>26.166667</td>
+      <td>20.583333</td>
+      <td>19.750000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>30.400000</td>
+      <td>24.000000</td>
+      <td>14.100000</td>
+      <td>24.000000</td>
+      <td>23.200000</td>
+      <td>25.800000</td>
+      <td>31.300000</td>
+      <td>42.400000</td>
+      <td>23.600000</td>
+      <td>44.700000</td>
+      <td>...</td>
+      <td>26.800000</td>
+      <td>27.500000</td>
+      <td>20.600000</td>
+      <td>13.555556</td>
+      <td>16.400000</td>
+      <td>14.600000</td>
+      <td>14.300000</td>
+      <td>12.700000</td>
+      <td>12.600000</td>
+      <td>24.200000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>25.416667</td>
+      <td>8.000000</td>
+      <td>7.750000</td>
+      <td>23.833333</td>
+      <td>9.083333</td>
+      <td>21.750000</td>
+      <td>26.333333</td>
+      <td>23.750000</td>
+      <td>7.090909</td>
+      <td>18.666667</td>
+      <td>...</td>
+      <td>47.916667</td>
+      <td>45.833333</td>
+      <td>38.750000</td>
+      <td>39.583333</td>
+      <td>34.083333</td>
+      <td>33.333333</td>
+      <td>29.583333</td>
+      <td>41.000000</td>
+      <td>33.500000</td>
+      <td>45.833333</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>17.545455</td>
+      <td>18.000000</td>
+      <td>5.000000</td>
+      <td>17.090909</td>
+      <td>20.272727</td>
+      <td>31.454545</td>
+      <td>22.636364</td>
+      <td>24.545455</td>
+      <td>21.363636</td>
+      <td>24.909091</td>
+      <td>...</td>
+      <td>34.090909</td>
+      <td>30.727273</td>
+      <td>48.454545</td>
+      <td>29.272727</td>
+      <td>41.272727</td>
+      <td>32.909091</td>
+      <td>24.909091</td>
+      <td>35.909091</td>
+      <td>39.090909</td>
+      <td>42.636364</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 174 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">174</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'None-node'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'sub'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_75_1.png" src="../../_images/jan-(2anim)-2022_75_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_78_0.png" src="../../_images/jan-(2anim)-2022_78_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_79_0.png" src="../../_images/jan-(2anim)-2022_79_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_80_0.png" src="../../_images/jan-(2anim)-2022_80_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jan-(2anim)-2022_81_0.png" src="../../_images/jan-(2anim)-2022_81_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_bold</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">output_bold</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">h_bold</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">output_bold</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">h_bold</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">h_bold</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">hr_bold</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h_bold</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">proj_h_bold</span> <span class="o">=</span> <span class="n">gr_bold</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h_bold</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr_bold</span> <span class="o">=</span> <span class="n">gr_bold</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr_bold</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">h_ca</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">output_ca</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">h_ca</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">output_ca</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">h_ca</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">h_ca</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">hr_ca</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">h_ca</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">proj_h_ca</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h_ca</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">proj_hr_ca</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">hr_ca</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">partition</span> <span class="o">=</span> <span class="n">net</span><span class="o">.</span><span class="n">get_disjoint_community</span><span class="p">(</span><span class="n">output_bold</span><span class="p">[</span><span class="s1">&#39;pi_avg&#39;</span><span class="p">],</span> <span class="n">to_vec</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_carto</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;oc_idx&#39;</span><span class="p">:</span> <span class="n">partition</span><span class="p">,</span>
+    <span class="s1">&#39;node&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">partition</span><span class="p">)),</span>
+    <span class="s1">&#39;degree&#39;</span><span class="p">:</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="s1">&#39;entropy&#39;</span><span class="p">:</span> <span class="n">h_bold</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df_carto</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">get_cluster_cmap</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'entropy'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'degree'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_86_1.png" src="../../_images/jan-(2anim)-2022_86_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">df_carto</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;degree&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">get_cluster_cmap</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'entropy'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'degree'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_87_1.png" src="../../_images/jan-(2anim)-2022_87_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sub&#39;</span><span class="p">,</span> <span class="s1">&#39;node&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ses&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;weighted&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span>
+<span class="n">deg_bold</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df_deg</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;weighted&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">df_deg</span><span class="p">[</span><span class="s1">&#39;mode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;sub&#39;</span><span class="p">,</span> <span class="s1">&#39;node&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ses&#39;</span><span class="p">,</span> <span class="s1">&#39;run&#39;</span><span class="p">,</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;weighted&#39;</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">unstack</span><span class="p">()[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span>
+<span class="n">deg_ca</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;oc_idx&#39;</span><span class="p">:</span> <span class="n">partition</span><span class="p">,</span>
+    <span class="s1">&#39;node&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">partition</span><span class="p">)),</span>
+    <span class="s1">&#39;entropy_ca&#39;</span><span class="p">:</span> <span class="n">h_ca</span><span class="p">,</span>
+    <span class="s1">&#39;degree_ca&#39;</span><span class="p">:</span> <span class="n">deg_ca</span><span class="p">,</span>
+    <span class="s1">&#39;entropy_bold&#39;</span><span class="p">:</span> <span class="n">h_bold</span><span class="p">,</span>
+    <span class="s1">&#39;degree_bold&#39;</span><span class="p">:</span> <span class="n">deg_bold</span><span class="p">,</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;degree_bold&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;degree_ca&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">get_cluster_cmap</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'degree_bold'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'degree_ca'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_91_1.png" src="../../_images/jan-(2anim)-2022_91_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;entropy_bold&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="s1">&#39;entropy_ca&#39;</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">get_cluster_cmap</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">xlabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'entropy_bold'</span><span style="color: #000000; text-decoration-color: #000000">, </span><span style="color: #808000; text-decoration-color: #808000">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'entropy_ca'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/jan-(2anim)-2022_92_1.png" src="../../_images/jan-(2anim)-2022_92_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cartography">
+<h2>Cartography<a class="headerlink" href="#cartography" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scatter</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="s1">&#39;oc_idx&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">oc_idx</span>
+<span class="n">_df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">jg</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">JointGrid</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">_df</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">measure</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">colors</span><span class="p">,</span>
+    <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">space</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">plot_joint</span><span class="p">(</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span>
+    <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;oc_idx&#39;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">180</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">plot_marginals</span><span class="p">(</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">,</span>
+    <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">_median</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="p">)])</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">_median</span><span class="p">,</span>
+    <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)[</span><span class="mi">7</span><span class="p">],</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;entropy median: </span><span class="si">{</span><span class="n">_median</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">_median</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">measure</span> <span class="o">==</span> <span class="n">measure</span><span class="p">,</span>
+    <span class="s1">&#39;centrality&#39;</span>
+<span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">_median</span><span class="p">,</span>
+    <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+    <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;deep&#39;</span><span class="p">)[</span><span class="mi">7</span><span class="p">],</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure</span><span class="si">}</span><span class="s2"> median: </span><span class="si">{</span><span class="n">_median</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">ax_joint</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">prop</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">})</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">measure</span><span class="si">}</span><span class="s2">_scatter.pdf&quot;</span><span class="p">)</span>
+<span class="n">jg</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1543,16 +2867,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_38_0.png" src="../../_images/jan-(2anim)-2022_38_0.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_1.png" src="../../_images/jan-(2anim)-2022_38_1.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_2.png" src="../../_images/jan-(2anim)-2022_38_2.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_3.png" src="../../_images/jan-(2anim)-2022_38_3.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_4.png" src="../../_images/jan-(2anim)-2022_38_4.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_5.png" src="../../_images/jan-(2anim)-2022_38_5.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_6.png" src="../../_images/jan-(2anim)-2022_38_6.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_7.png" src="../../_images/jan-(2anim)-2022_38_7.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_8.png" src="../../_images/jan-(2anim)-2022_38_8.png" />
-<img alt="../../_images/jan-(2anim)-2022_38_9.png" src="../../_images/jan-(2anim)-2022_38_9.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_0.png" src="../../_images/jan-(2anim)-2022_107_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_1.png" src="../../_images/jan-(2anim)-2022_107_1.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_2.png" src="../../_images/jan-(2anim)-2022_107_2.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_3.png" src="../../_images/jan-(2anim)-2022_107_3.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_4.png" src="../../_images/jan-(2anim)-2022_107_4.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_5.png" src="../../_images/jan-(2anim)-2022_107_5.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_6.png" src="../../_images/jan-(2anim)-2022_107_6.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_7.png" src="../../_images/jan-(2anim)-2022_107_7.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_8.png" src="../../_images/jan-(2anim)-2022_107_8.png" />
+<img alt="../../_images/jan-(2anim)-2022_107_9.png" src="../../_images/jan-(2anim)-2022_107_9.png" />
 </div>
 </div>
 </div>
@@ -1587,8 +2911,8 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC01
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_1.png" src="../../_images/jan-(2anim)-2022_42_1.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_2.png" src="../../_images/jan-(2anim)-2022_42_2.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_1.png" src="../../_images/jan-(2anim)-2022_111_1.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_2.png" src="../../_images/jan-(2anim)-2022_111_2.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1596,8 +2920,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC02
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_6.png" src="../../_images/jan-(2anim)-2022_42_6.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_7.png" src="../../_images/jan-(2anim)-2022_42_7.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_6.png" src="../../_images/jan-(2anim)-2022_111_6.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_7.png" src="../../_images/jan-(2anim)-2022_111_7.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1605,8 +2929,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC03
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_11.png" src="../../_images/jan-(2anim)-2022_42_11.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_12.png" src="../../_images/jan-(2anim)-2022_42_12.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_11.png" src="../../_images/jan-(2anim)-2022_111_11.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_12.png" src="../../_images/jan-(2anim)-2022_111_12.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1614,8 +2938,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC04
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_16.png" src="../../_images/jan-(2anim)-2022_42_16.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_17.png" src="../../_images/jan-(2anim)-2022_42_17.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_16.png" src="../../_images/jan-(2anim)-2022_111_16.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_17.png" src="../../_images/jan-(2anim)-2022_111_17.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1623,8 +2947,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC05
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_21.png" src="../../_images/jan-(2anim)-2022_42_21.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_22.png" src="../../_images/jan-(2anim)-2022_42_22.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_21.png" src="../../_images/jan-(2anim)-2022_111_21.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_22.png" src="../../_images/jan-(2anim)-2022_111_22.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1632,8 +2956,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC06
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_26.png" src="../../_images/jan-(2anim)-2022_42_26.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_27.png" src="../../_images/jan-(2anim)-2022_42_27.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_26.png" src="../../_images/jan-(2anim)-2022_111_26.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_27.png" src="../../_images/jan-(2anim)-2022_111_27.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1641,8 +2965,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC07
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_31.png" src="../../_images/jan-(2anim)-2022_42_31.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_32.png" src="../../_images/jan-(2anim)-2022_42_32.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_31.png" src="../../_images/jan-(2anim)-2022_111_31.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_32.png" src="../../_images/jan-(2anim)-2022_111_32.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1650,8 +2974,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC08
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_36.png" src="../../_images/jan-(2anim)-2022_42_36.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_37.png" src="../../_images/jan-(2anim)-2022_42_37.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_36.png" src="../../_images/jan-(2anim)-2022_111_36.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_37.png" src="../../_images/jan-(2anim)-2022_111_37.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1659,8 +2983,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC09
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_41.png" src="../../_images/jan-(2anim)-2022_42_41.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_42.png" src="../../_images/jan-(2anim)-2022_42_42.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_41.png" src="../../_images/jan-(2anim)-2022_111_41.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_42.png" src="../../_images/jan-(2anim)-2022_111_42.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1668,8 +2992,8 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Entropy: sub-SLC10
 </pre>
-</div><img alt="../../_images/jan-(2anim)-2022_42_46.png" src="../../_images/jan-(2anim)-2022_42_46.png" />
-<img alt="../../_images/jan-(2anim)-2022_42_47.png" src="../../_images/jan-(2anim)-2022_42_47.png" />
+</div><img alt="../../_images/jan-(2anim)-2022_111_46.png" src="../../_images/jan-(2anim)-2022_111_46.png" />
+<img alt="../../_images/jan-(2anim)-2022_111_47.png" src="../../_images/jan-(2anim)-2022_111_47.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">--------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1749,7 +3073,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_54_0.png" src="../../_images/jan-(2anim)-2022_54_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_123_0.png" src="../../_images/jan-(2anim)-2022_123_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1777,16 +3101,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_56_0.png" src="../../_images/jan-(2anim)-2022_56_0.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_1.png" src="../../_images/jan-(2anim)-2022_56_1.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_2.png" src="../../_images/jan-(2anim)-2022_56_2.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_3.png" src="../../_images/jan-(2anim)-2022_56_3.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_4.png" src="../../_images/jan-(2anim)-2022_56_4.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_5.png" src="../../_images/jan-(2anim)-2022_56_5.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_6.png" src="../../_images/jan-(2anim)-2022_56_6.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_7.png" src="../../_images/jan-(2anim)-2022_56_7.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_8.png" src="../../_images/jan-(2anim)-2022_56_8.png" />
-<img alt="../../_images/jan-(2anim)-2022_56_9.png" src="../../_images/jan-(2anim)-2022_56_9.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_0.png" src="../../_images/jan-(2anim)-2022_125_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_1.png" src="../../_images/jan-(2anim)-2022_125_1.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_2.png" src="../../_images/jan-(2anim)-2022_125_2.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_3.png" src="../../_images/jan-(2anim)-2022_125_3.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_4.png" src="../../_images/jan-(2anim)-2022_125_4.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_5.png" src="../../_images/jan-(2anim)-2022_125_5.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_6.png" src="../../_images/jan-(2anim)-2022_125_6.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_7.png" src="../../_images/jan-(2anim)-2022_125_7.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_8.png" src="../../_images/jan-(2anim)-2022_125_8.png" />
+<img alt="../../_images/jan-(2anim)-2022_125_9.png" src="../../_images/jan-(2anim)-2022_125_9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1807,7 +3131,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_60_0.png" src="../../_images/jan-(2anim)-2022_60_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_129_0.png" src="../../_images/jan-(2anim)-2022_129_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1817,7 +3141,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-(2anim)-2022_61_0.png" src="../../_images/jan-(2anim)-2022_61_0.png" />
+<img alt="../../_images/jan-(2anim)-2022_130_0.png" src="../../_images/jan-(2anim)-2022_130_0.png" />
 </div>
 </div>
 </div>
