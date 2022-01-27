@@ -51,6 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jan 27th, 2022 (SE debug)" href="jan-27-2022.html" />
     <link rel="prev" title="Jan 25th, 2022 (debug boot + 2 anim draft)" href="jan-25-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -818,6 +819,11 @@
      Jan 26th, 2022 (cleaner figs, SE bug)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jan-27-2022.html">
+     Jan 27th, 2022 (SE debug)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1337,6 +1343,21 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">anim_cut</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.43730501</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.99117844</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.07657219</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.03913143</span><span style="font-weight: bold">]</span>,
+       <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.75769787</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.60623069</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.73644921</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3.24905565</span><span style="font-weight: bold">]</span>,
+       <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.393746</span>  , <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.50586871</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.18249995</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.79260771</span><span style="font-weight: bold">]</span>,
+       <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.42274548</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.06888679</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.67237912</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.02185087</span><span style="font-weight: bold">]</span>,
+       <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.76135304</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.26142689</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.34429134</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.23653593</span><span style="font-weight: bold">]])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">boot_bca</span><span class="p">[</span><span class="s1">&#39;ca2&#39;</span><span class="p">][</span><span class="s1">&#39;se&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1364,6 +1385,20 @@
        <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.89172646</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.50390603</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.79898996</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4.49764132</span><span style="font-weight: bold">]])</span>
 </pre>
 </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">anim_cut</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">boot_bca</span><span class="p">[</span><span class="s1">&#39;ca2&#39;</span><span class="p">][</span><span class="s1">&#39;se&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">output_booted_ca</span><span class="p">[</span><span class="s1">&#39;cut_avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f86fc5be820</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/jan-26-2022_16_1.png" src="../../_images/jan-26-2022_16_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1419,7 +1454,7 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">done.
 </pre>
-</div><img alt="../../_images/jan-26-2022_20_2.png" src="../../_images/jan-26-2022_20_2.png" />
+</div><img alt="../../_images/jan-26-2022_27_2.png" src="../../_images/jan-26-2022_27_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1439,7 +1474,7 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">done.
 </pre>
-</div><img alt="../../_images/jan-26-2022_22_2.png" src="../../_images/jan-26-2022_22_2.png" />
+</div><img alt="../../_images/jan-26-2022_29_2.png" src="../../_images/jan-26-2022_29_2.png" />
 </div>
 </div>
 </div>
@@ -1549,7 +1584,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_26_0.png" src="../../_images/jan-26-2022_26_0.png" />
+<img alt="../../_images/jan-26-2022_33_0.png" src="../../_images/jan-26-2022_33_0.png" />
 </div>
 </div>
 </div>
@@ -1610,13 +1645,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_30_0.png" src="../../_images/jan-26-2022_30_0.png" />
-<img alt="../../_images/jan-26-2022_30_1.png" src="../../_images/jan-26-2022_30_1.png" />
-<img alt="../../_images/jan-26-2022_30_2.png" src="../../_images/jan-26-2022_30_2.png" />
-<img alt="../../_images/jan-26-2022_30_3.png" src="../../_images/jan-26-2022_30_3.png" />
-<img alt="../../_images/jan-26-2022_30_4.png" src="../../_images/jan-26-2022_30_4.png" />
-<img alt="../../_images/jan-26-2022_30_5.png" src="../../_images/jan-26-2022_30_5.png" />
-<img alt="../../_images/jan-26-2022_30_6.png" src="../../_images/jan-26-2022_30_6.png" />
+<img alt="../../_images/jan-26-2022_37_0.png" src="../../_images/jan-26-2022_37_0.png" />
+<img alt="../../_images/jan-26-2022_37_1.png" src="../../_images/jan-26-2022_37_1.png" />
+<img alt="../../_images/jan-26-2022_37_2.png" src="../../_images/jan-26-2022_37_2.png" />
+<img alt="../../_images/jan-26-2022_37_3.png" src="../../_images/jan-26-2022_37_3.png" />
+<img alt="../../_images/jan-26-2022_37_4.png" src="../../_images/jan-26-2022_37_4.png" />
+<img alt="../../_images/jan-26-2022_37_5.png" src="../../_images/jan-26-2022_37_5.png" />
+<img alt="../../_images/jan-26-2022_37_6.png" src="../../_images/jan-26-2022_37_6.png" />
 </div>
 </div>
 </div>
@@ -1704,7 +1739,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_33_0.png" src="../../_images/jan-26-2022_33_0.png" />
+<img alt="../../_images/jan-26-2022_40_0.png" src="../../_images/jan-26-2022_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1750,7 +1785,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_35_0.png" src="../../_images/jan-26-2022_35_0.png" />
+<img alt="../../_images/jan-26-2022_42_0.png" src="../../_images/jan-26-2022_42_0.png" />
 </div>
 </div>
 </div>
@@ -1800,7 +1835,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_39_0.png" src="../../_images/jan-26-2022_39_0.png" />
+<img alt="../../_images/jan-26-2022_46_0.png" src="../../_images/jan-26-2022_46_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1849,7 +1884,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_41_0.png" src="../../_images/jan-26-2022_41_0.png" />
+<img alt="../../_images/jan-26-2022_48_0.png" src="../../_images/jan-26-2022_48_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1864,7 +1899,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_43_0.png" src="../../_images/jan-26-2022_43_0.png" />
+<img alt="../../_images/jan-26-2022_50_0.png" src="../../_images/jan-26-2022_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1879,7 +1914,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_44_0.png" src="../../_images/jan-26-2022_44_0.png" />
+<img alt="../../_images/jan-26-2022_51_0.png" src="../../_images/jan-26-2022_51_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1892,7 +1927,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_46_0.png" src="../../_images/jan-26-2022_46_0.png" />
+<img alt="../../_images/jan-26-2022_53_0.png" src="../../_images/jan-26-2022_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1905,7 +1940,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_47_0.png" src="../../_images/jan-26-2022_47_0.png" />
+<img alt="../../_images/jan-26-2022_54_0.png" src="../../_images/jan-26-2022_54_0.png" />
 </div>
 </div>
 </div>
@@ -1936,7 +1971,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_52_0.png" src="../../_images/jan-26-2022_52_0.png" />
+<img alt="../../_images/jan-26-2022_59_0.png" src="../../_images/jan-26-2022_59_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1971,7 +2006,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jan-26-2022_56_0.png" src="../../_images/jan-26-2022_56_0.png" />
+<img alt="../../_images/jan-26-2022_63_0.png" src="../../_images/jan-26-2022_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1983,7 +2018,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jan-26-2022_59_1.png" src="../../_images/jan-26-2022_59_1.png" />
+</div><img alt="../../_images/jan-26-2022_66_1.png" src="../../_images/jan-26-2022_66_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2021,7 +2056,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jan-26-2022_63_1.png" src="../../_images/jan-26-2022_63_1.png" />
+</div><img alt="../../_images/jan-26-2022_70_1.png" src="../../_images/jan-26-2022_70_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2412,7 +2447,7 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">done.
 </pre>
-</div><img alt="../../_images/jan-26-2022_83_2.png" src="../../_images/jan-26-2022_83_2.png" />
+</div><img alt="../../_images/jan-26-2022_90_2.png" src="../../_images/jan-26-2022_90_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2435,7 +2470,7 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">done.
 </pre>
-</div><img alt="../../_images/jan-26-2022_85_2.png" src="../../_images/jan-26-2022_85_2.png" />
+</div><img alt="../../_images/jan-26-2022_92_2.png" src="../../_images/jan-26-2022_92_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2521,7 +2556,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.legend.Legend</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc1cba78460</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jan-26-2022_97_1.png" src="../../_images/jan-26-2022_97_1.png" />
+</div><img alt="../../_images/jan-26-2022_104_1.png" src="../../_images/jan-26-2022_104_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2754,14 +2789,44 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'boot-BCa_indiv_1.0e+03_(2022_01_26).npy'</span> saved at
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'boot-BCa_indiv_1.2e+04_(2022_01_27).npy'</span> saved at
 <span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">tmp</span>
 </pre>
-</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'boot-GAM_indiv_1.0e+03_(2022_01_26).npy'</span> saved at
-<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">tmp</span>
-</pre>
-</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18min 37s, sys: 15min 23s, total: 34min 1s
-Wall time: 34min 2s
+</div><div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OverflowError</span><span class="g g-Whitespace">                             </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">timed</span> <span class="n">exec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/analysis/group.py</span> in <span class="ni">boot_group</span><span class="nt">(gam_dict, bins, n_resamples, batch, indiv, save_dir, est_seed)</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>                 <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;boot-GAM&#39;</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>                 <span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">541</span> 		<span class="n">_</span> <span class="o">=</span> <span class="n">save_obj</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>                         <span class="n">obj</span><span class="o">=</span><span class="n">boot_gam</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>                         <span class="n">file_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">,</span>
+
+<span class="nn">~/Dropbox/git/_Ca-fMRI/utils/generic.py</span> in <span class="ni">save_obj</span><span class="nt">(obj, file_name, save_dir, mode, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">op_mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>                 <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;npy&#39;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">290</span>                         <span class="n">np</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>                 <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s1">&#39;df&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>                         <span class="n">pd</span><span class="o">.</span><span class="n">to_pickle</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="nn">&lt;__array_function__ internals&gt;</span> in <span class="ni">save</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/numpy/lib/npyio.py</span> in <span class="ni">save</span><span class="nt">(file, arr, allow_pickle, fix_imports)</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span>     <span class="k">with</span> <span class="n">file_ctx</span> <span class="k">as</span> <span class="n">fid</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">529</span>         <span class="nb">format</span><span class="o">.</span><span class="n">write_array</span><span class="p">(</span><span class="n">fid</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">allow_pickle</span><span class="o">=</span><span class="n">allow_pickle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>                            <span class="n">pickle_kwargs</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">fix_imports</span><span class="o">=</span><span class="n">fix_imports</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> 
+
+<span class="nn">~/anaconda3/lib/python3.8/site-packages/numpy/lib/format.py</span> in <span class="ni">write_array</span><span class="nt">(fp, array, version, allow_pickle, pickle_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span>         <span class="k">if</span> <span class="n">pickle_kwargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>             <span class="n">pickle_kwargs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">--&gt; </span><span class="mi">676</span>         <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="o">**</span><span class="n">pickle_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">677</span>     <span class="k">elif</span> <span class="n">array</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">array</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">c_contiguous</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="k">if</span> <span class="n">isfileobj</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+
+<span class="ne">OverflowError</span>: serializing a bytes object larger than 4 GiB requires pickle protocol 4 or higher
 </pre></div>
 </div>
 </div>
@@ -2795,6 +2860,7 @@ Wall time: 34min 2s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="jan-25-2022.html" title="previous page">Jan 25th, 2022 (debug boot + 2 anim draft)</a>
+    <a class='right-next' id="next-link" href="jan-27-2022.html" title="next page">Jan 27th, 2022 (SE debug)</a>
 
         </div>
         
