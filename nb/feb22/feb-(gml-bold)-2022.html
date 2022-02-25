@@ -897,8 +897,63 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="feb-09-2022.html">
-     Feb 09, 2022 (LED vs. REST; GLM)
+    <a class="reference internal" href="feb-14-2022.html">
+     Feb 14th, 2022 (pruned in grp)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-15a-2022.html">
+     Feb 15th, 2022 (Smart adj plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-15b-2022.html">
+     Feb 15th, 2022 (Smart adj plot; better)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-18-2022.html">
+     Feb 18th, 2022 (upsample bold; corr timeseries)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-22-2022.html">
+     Feb 22nd, 2022 (GLM Ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-24-2022.html">
+     Feb 24th, 2022 (grant finalize)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25a-2022.html">
+     Feb 25th, 2022 (Figs 4 the talk)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25b-2022.html">
+     Feb 25th, 2022 (compare cosine, DMN)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25c-2022.html">
+     Feb 25th, 2022 (Entropy, carto)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25d-2022.html">
+     Feb 25th, 2022 (LFR reboot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25e-2022.html">
+     Feb ??th, 2022 (ovp score, C_i; pie charts)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="feb-25f-2022.html">
+     Feb 25th, 2022 (ROI plots)
     </a>
    </li>
   </ul>
@@ -1641,7 +1696,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">174</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">174</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">40</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1652,7 +1707,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">174</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">40</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1750,6 +1805,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top</span><span class="p">,</span> <span class="n">flat</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">load_top_flat</span><span class="p">()</span>
+<span class="n">anim</span> <span class="o">=</span> <span class="mi">9</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 
 <span class="n">c_glm</span> <span class="o">=</span> <span class="n">coef_glm</span><span class="p">[</span><span class="n">anim</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -1776,7 +1839,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/feb-(gml-bold)-2022_66_0.png" src="../../_images/feb-(gml-bold)-2022_66_0.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_63_0.png" src="../../_images/feb-(gml-bold)-2022_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1803,6 +1866,53 @@
         <span class="n">proj</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">),</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">x2plt</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">x2plt</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x2plt</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Logistic Regression&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">anim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/feb-(gml-bold)-2022_65_0.png" src="../../_images/feb-(gml-bold)-2022_65_0.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_1.png" src="../../_images/feb-(gml-bold)-2022_65_1.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_2.png" src="../../_images/feb-(gml-bold)-2022_65_2.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_3.png" src="../../_images/feb-(gml-bold)-2022_65_3.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_4.png" src="../../_images/feb-(gml-bold)-2022_65_4.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_5.png" src="../../_images/feb-(gml-bold)-2022_65_5.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_6.png" src="../../_images/feb-(gml-bold)-2022_65_6.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_7.png" src="../../_images/feb-(gml-bold)-2022_65_7.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_8.png" src="../../_images/feb-(gml-bold)-2022_65_8.png" />
+<img alt="../../_images/feb-(gml-bold)-2022_65_9.png" src="../../_images/feb-(gml-bold)-2022_65_9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mf">8.</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
+
+    <span class="n">looper</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">looper</span><span class="p">:</span>
+        <span class="n">c_glm</span> <span class="o">=</span> <span class="n">coef_glm</span><span class="p">[</span><span class="n">anim</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+        <span class="n">c_logreg</span> <span class="o">=</span> <span class="n">coef_logreg</span><span class="p">[</span><span class="n">anim</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">proj</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">c_glm</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">c_glm</span><span class="p">),</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">&lt;</span> <span class="n">x2plt</span><span class="p">,</span> <span class="n">x2plt</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">x2plt</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Poisson GLM&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ses</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_run</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">proj</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">),</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">&lt;</span> <span class="n">x2plt</span><span class="p">,</span> <span class="n">x2plt</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">x2plt</span><span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
         <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
@@ -1824,53 +1934,6 @@
 <img alt="../../_images/feb-(gml-bold)-2022_68_7.png" src="../../_images/feb-(gml-bold)-2022_68_7.png" />
 <img alt="../../_images/feb-(gml-bold)-2022_68_8.png" src="../../_images/feb-(gml-bold)-2022_68_8.png" />
 <img alt="../../_images/feb-(gml-bold)-2022_68_9.png" src="../../_images/feb-(gml-bold)-2022_68_9.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">anim</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mf">8.</span><span class="p">,</span> <span class="mi">23</span><span class="p">))</span>
-
-    <span class="n">looper</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">looper</span><span class="p">:</span>
-        <span class="n">c_glm</span> <span class="o">=</span> <span class="n">coef_glm</span><span class="p">[</span><span class="n">anim</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-        <span class="n">c_logreg</span> <span class="o">=</span> <span class="n">coef_logreg</span><span class="p">[</span><span class="n">anim</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-        <span class="n">proj</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">c_glm</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">c_glm</span><span class="p">),</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">&lt;</span> <span class="n">x2plt</span><span class="p">,</span> <span class="n">x2plt</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">x2plt</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Poisson GLM&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ses</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">_run</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="n">j</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-        <span class="n">proj</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">,</span> <span class="n">thres</span><span class="o">=</span><span class="nb">min</span><span class="p">(</span><span class="n">c_logreg</span><span class="p">),</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">x2plt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">&lt;</span> <span class="n">x2plt</span><span class="p">,</span> <span class="n">x2plt</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">),</span> <span class="n">x2plt</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
-        <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x2plt</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Logistic Regression&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="n">anim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.01</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/feb-(gml-bold)-2022_71_0.png" src="../../_images/feb-(gml-bold)-2022_71_0.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_1.png" src="../../_images/feb-(gml-bold)-2022_71_1.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_2.png" src="../../_images/feb-(gml-bold)-2022_71_2.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_3.png" src="../../_images/feb-(gml-bold)-2022_71_3.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_4.png" src="../../_images/feb-(gml-bold)-2022_71_4.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_5.png" src="../../_images/feb-(gml-bold)-2022_71_5.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_6.png" src="../../_images/feb-(gml-bold)-2022_71_6.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_7.png" src="../../_images/feb-(gml-bold)-2022_71_7.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_8.png" src="../../_images/feb-(gml-bold)-2022_71_8.png" />
-<img alt="../../_images/feb-(gml-bold)-2022_71_9.png" src="../../_images/feb-(gml-bold)-2022_71_9.png" />
 </div>
 </div>
 </div>
