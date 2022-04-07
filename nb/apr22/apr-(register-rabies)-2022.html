@@ -1039,6 +1039,11 @@
      Apr 5th, 2022 (check co-registration perf)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-07-2022.html">
+     Apr 07, 2022 (Fig 4, OCs, cosine sim, DMN)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1237,7 +1242,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;types&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;SyN&#39;</span><span class="p">,</span> <span class="s1">&#39;ElasticSyN&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">],</span>
+    <span class="s1">&#39;grads&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.38</span><span class="p">,</span> <span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.42</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.60</span><span class="p">],</span>
     <span class="s1">&#39;syn_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
     <span class="s1">&#39;aff_bins&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span>
     <span class="s1">&#39;aff_rates&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">],</span>
@@ -1254,20 +1259,7 @@
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 <span style="font-weight: bold">{</span>
     <span style="color: #008000; text-decoration-color: #008000">'types'</span>: <span style="font-weight: bold">[</span><span style="color: #008000; text-decoration-color: #008000">'SyN'</span>, <span style="color: #008000; text-decoration-color: #008000">'ElasticSyN'</span><span style="font-weight: bold">]</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span>
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.38</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.39</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.45</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.47</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.55</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>
-    <span style="font-weight: bold">]</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'grads'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.35</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.38</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.42</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.45</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'syn_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">48</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_bins'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">13</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">25</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span><span style="font-weight: bold">]</span>,
     <span style="color: #008000; text-decoration-color: #008000">'aff_rates'</span>: <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8</span><span style="font-weight: bold">]</span>,
@@ -1289,7 +1281,7 @@
 </div>
 <div class="section" id="begin">
 <h2>Begin<a class="headerlink" href="#begin" title="Permalink to this headline">¶</a></h2>
-<p>Apr 5th, 2022, 14:32 pm</p>
+<p>Apr 7th, 2022, 09:31 am</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
@@ -1298,6 +1290,8 @@
 <span class="n">reg</span><span class="o">.</span><span class="n">mi_base</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">anat</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s1">&#39;ses-2&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+        <span class="k">continue</span>
     <span class="n">indiv</span> <span class="o">=</span> <span class="n">anat</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
     <span class="n">indiv</span> <span class="o">*=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
     <span class="n">indiv</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">_prepare</span><span class="p">(</span><span class="n">indiv</span><span class="p">)</span>
@@ -1313,11 +1307,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v 1 u -1
- bad det -1 v 1 u -1 new 1
-</pre></div>
-</div>
-<img alt="../../_images/apr-(register-rabies)-2022_8_1.png" src="../../_images/apr-(register-rabies)-2022_8_1.png" />
+<img alt="../../_images/apr-(register-rabies)-2022_8_0.png" src="../../_images/apr-(register-rabies)-2022_8_0.png" />
 </div>
 </div>
 </div>
