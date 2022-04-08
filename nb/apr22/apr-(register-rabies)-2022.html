@@ -1290,7 +1290,8 @@
 <span class="n">reg</span><span class="o">.</span><span class="n">mi_base</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">anat</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">T1w</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="k">if</span> <span class="s1">&#39;ses-2&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
+    <span class="n">tx</span><span class="p">,</span> <span class="n">tx_aff</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">load_tx</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tx</span> <span class="ow">or</span> <span class="s1">&#39;ses-2&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">key</span><span class="p">:</span>
         <span class="k">continue</span>
     <span class="n">indiv</span> <span class="o">=</span> <span class="n">anat</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
     <span class="n">indiv</span> <span class="o">*=</span> <span class="n">mice</span><span class="o">.</span><span class="n">mask3d</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">load_ants</span><span class="p">()</span>
@@ -1307,7 +1308,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/apr-(register-rabies)-2022_8_0.png" src="../../_images/apr-(register-rabies)-2022_8_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> bad det -1 v -1 u 1
+ bad det -1 v -1 u 1 new 1
+</pre></div>
+</div>
+<img alt="../../_images/apr-(register-rabies)-2022_9_1.png" src="../../_images/apr-(register-rabies)-2022_9_1.png" />
 </div>
 </div>
 </div>
