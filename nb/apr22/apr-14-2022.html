@@ -51,6 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Apr 15th, 2022 (parcellation fix)" href="apr-15-2022.html" />
     <link rel="prev" title="Apr 13th, 2022 (node &amp; oc overlap scores)" href="apr-13-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1065,6 +1066,11 @@
      Apr 14th, 2022 (carto fixed + some supp)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-15-2022.html">
+     Apr 15th, 2022 (parcellation fix)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1233,15 +1239,6 @@
 <span class="kn">from</span> <span class="nn">numpy.ma</span> <span class="kn">import</span> <span class="n">masked_where</span> <span class="k">as</span> <span class="n">mwh</span>
 <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="c1"># set style &amp; no interpolalation</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># tmp &amp; extras dir</span>
 <span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
@@ -1249,7 +1246,6 @@
 <span class="n">_fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/figs&#39;</span><span class="p">)</span>
 <span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
 <span class="n">lfr_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Documents/workspaces/lfr/binary_overlapping&#39;</span><span class="p">)</span>
-
 
 <span class="c1"># GitHub</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
@@ -1266,9 +1262,9 @@
 <span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
 <span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
 
-<span class="c1"># warnings</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="c1"># warnings &amp; style</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+<span class="n">set_style</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2319,6 +2315,7 @@ Wall time: 1h 21min 36s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="apr-13-2022.html" title="previous page">Apr 13th, 2022 (node &amp; oc overlap scores)</a>
+    <a class='right-next' id="next-link" href="apr-15-2022.html" title="next page">Apr 15th, 2022 (parcellation fix)</a>
 
         </div>
         
