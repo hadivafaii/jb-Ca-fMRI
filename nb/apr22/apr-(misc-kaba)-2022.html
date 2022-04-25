@@ -1089,6 +1089,11 @@
      Apr 21st, 2022 (Ca clean, many adj plots, Yale comare RABIES)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-24-2022.html">
+     Apr 24th, 2022 (findk both 128 and 512)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1312,12 +1317,128 @@
     <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
     <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
     <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="s1">&#39;centroids_from&#39;</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span>
 <span class="p">}</span>
 <span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
 <span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">n_top</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;   n_top = </span><span class="si">{</span><span class="n">n_top</span><span class="si">}</span><span class="s1">   &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_top</span><span class="o">=</span><span class="n">n_top</span><span class="p">)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">(</span><span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">n_top</span><span class="o">=</span><span class="n">n_top</span><span class="p">)</span>
+<span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+
+<span class="n">sim</span> <span class="o">=</span> <span class="n">dist2sim</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span>
+    <span class="n">XA</span><span class="o">=</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">grp_pi</span><span class="p">,</span>
+    <span class="n">XB</span><span class="o">=</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">grp_pi</span><span class="p">,</span>
+    <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">,</span>
+<span class="p">))</span>
+<span class="n">mapping</span> <span class="o">=</span> <span class="n">find_best_match</span><span class="p">(</span><span class="n">sim</span><span class="p">)</span>
+<span class="n">ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mapping</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+
+<span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">grp_pi</span>
+<span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">grp_pi</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span>
+
+<span class="n">proj_bo</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">()</span>
+<span class="n">proj_ca</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">()</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">grp_h</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">grp_h</span><span class="p">,</span> <span class="mi">0</span><span class="p">)])</span>
+<span class="n">proj</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">add_disjoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">tr</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">proj</span><span class="p">)</span>
+
+<span class="n">ovp</span><span class="p">,</span> <span class="n">disj</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;BOLD (corr)   : : :   ovp: </span><span class="si">{</span><span class="n">ovp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">,  disj: </span><span class="si">{</span><span class="n">disj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">ovp</span><span class="p">,</span> <span class="n">disj</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ca2  (corr)   : : :   ovp: </span><span class="si">{</span><span class="n">ovp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">,  disj: </span><span class="si">{</span><span class="n">disj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">proj_1</span><span class="o">=</span><span class="n">proj_bo</span><span class="p">,</span>
+    <span class="n">proj_2</span><span class="o">=</span><span class="n">proj_ca</span><span class="p">,</span>
+    <span class="n">cmaps</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;magma&#39;</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;BOLD&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">),</span>
+    <span class="n">fix_cmap</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">min_thres</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">dist2sim</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">cdist</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">diagonal</span><span class="p">()</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Similarity between OCs (correlation):  Avg = </span><span class="si">{</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_k</span><span class="p">):</span>
+    <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;OC</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">: </span><span class="si">{</span><span class="n">score</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">0.2f</span><span class="si">}</span><span class="s1">, &#39;</span>
+<span class="n">msg</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="n">vmin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()])</span>
+<span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()])</span>
+<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;cmap&#39;</span><span class="p">:</span> <span class="s1">&#39;icefire&#39;</span><span class="p">,</span> <span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="n">vmin</span><span class="p">,</span> <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="n">vmax</span><span class="p">}</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mwh</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mwh</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;CA2&#39;</span><span class="p">)</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mwh</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">tr</span><span class="p">[</span><span class="s1">&#39;proj-top&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;BOLD&#39;</span><span class="p">)</span>
+<span class="n">sim_h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">grp_h</span><span class="p">,</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">grp_h</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Similarity (correlation): </span><span class="si">{</span><span class="n">sim_h</span><span class="si">:</span><span class="s1">0.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.04</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">79</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">------------------------------    n_top = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>    ------------------------------
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Warning, <span style="color: #008000; text-decoration-color: #008000">'5'</span> nans detected . . . filling with ones
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">BOLD <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8466</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8026</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9597</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9688</span>
+</pre>
+</div><img alt="../../_images/apr-(misc-kaba)-2022_7_4.png" src="../../_images/apr-(misc-kaba)-2022_7_4.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.536</span>
+OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.64</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.36</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.80</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.62</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.26</span>, 
+
+</pre>
+</div><img alt="../../_images/apr-(misc-kaba)-2022_7_6.png" src="../../_images/apr-(misc-kaba)-2022_7_6.png" />
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+
+
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 13min 9s, sys: 1min 10s, total: 14min 19s
+Wall time: 6min 43s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">proj_1</span><span class="o">=</span><span class="n">proj_bo</span><span class="p">,</span>
+    <span class="n">proj_2</span><span class="o">=</span><span class="n">proj_ca</span><span class="p">,</span>
+    <span class="n">cmaps</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;magma&#39;</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">labels</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;BOLD&#39;</span><span class="p">,</span> <span class="s1">&#39;CA&#39;</span><span class="p">),</span>
+    <span class="n">fix_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">min_thres</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/apr-(misc-kaba)-2022_10_0.png" src="../../_images/apr-(misc-kaba)-2022_10_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1400,12 +1521,12 @@
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9774</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9429</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_3.png" src="../../_images/apr-(misc-kaba)-2022_7_3.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_3.png" src="../../_images/apr-(misc-kaba)-2022_12_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.805</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.77</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.88</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.91</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.88</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.59</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_5.png" src="../../_images/apr-(misc-kaba)-2022_7_5.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_5.png" src="../../_images/apr-(misc-kaba)-2022_12_5.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1418,12 +1539,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9607</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9688</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_11.png" src="../../_images/apr-(misc-kaba)-2022_7_11.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_11.png" src="../../_images/apr-(misc-kaba)-2022_12_11.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.684</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.88</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.79</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.84</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.59</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.32</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_13.png" src="../../_images/apr-(misc-kaba)-2022_7_13.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_13.png" src="../../_images/apr-(misc-kaba)-2022_12_13.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1436,12 +1557,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9725</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9636</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_19.png" src="../../_images/apr-(misc-kaba)-2022_7_19.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_19.png" src="../../_images/apr-(misc-kaba)-2022_12_19.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.586</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.84</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.71</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.76</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.34</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.28</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_21.png" src="../../_images/apr-(misc-kaba)-2022_7_21.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_21.png" src="../../_images/apr-(misc-kaba)-2022_12_21.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1454,12 +1575,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9695</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9584</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_27.png" src="../../_images/apr-(misc-kaba)-2022_7_27.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_27.png" src="../../_images/apr-(misc-kaba)-2022_12_27.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.556</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.78</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.70</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.74</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.26</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.30</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_29.png" src="../../_images/apr-(misc-kaba)-2022_7_29.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_29.png" src="../../_images/apr-(misc-kaba)-2022_12_29.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1472,12 +1593,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9674</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9533</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_35.png" src="../../_images/apr-(misc-kaba)-2022_7_35.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_35.png" src="../../_images/apr-(misc-kaba)-2022_12_35.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.538</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.75</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.69</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.73</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.20</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.31</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_7_37.png" src="../../_images/apr-(misc-kaba)-2022_7_37.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_12_37.png" src="../../_images/apr-(misc-kaba)-2022_12_37.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1578,12 +1699,12 @@ Wall time: 30min 9s
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9776</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9688</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_3.png" src="../../_images/apr-(misc-kaba)-2022_12_3.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_3.png" src="../../_images/apr-(misc-kaba)-2022_17_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.762</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.79</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.87</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.93</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.83</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.39</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_5.png" src="../../_images/apr-(misc-kaba)-2022_12_5.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_5.png" src="../../_images/apr-(misc-kaba)-2022_17_5.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1596,12 +1717,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9768</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9533</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_11.png" src="../../_images/apr-(misc-kaba)-2022_12_11.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_11.png" src="../../_images/apr-(misc-kaba)-2022_17_11.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.704</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.79</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.80</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.91</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.49</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.53</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_13.png" src="../../_images/apr-(misc-kaba)-2022_12_13.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_13.png" src="../../_images/apr-(misc-kaba)-2022_17_13.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1614,12 +1735,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9842</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9740</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_19.png" src="../../_images/apr-(misc-kaba)-2022_12_19.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_19.png" src="../../_images/apr-(misc-kaba)-2022_17_19.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.607</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.81</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.67</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.89</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.19</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.47</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_21.png" src="../../_images/apr-(misc-kaba)-2022_12_21.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_21.png" src="../../_images/apr-(misc-kaba)-2022_17_21.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1632,12 +1753,12 @@ OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: b
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9838</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9688</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_27.png" src="../../_images/apr-(misc-kaba)-2022_12_27.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_27.png" src="../../_images/apr-(misc-kaba)-2022_17_27.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Similarity between OCs <span style="font-weight: bold">(</span>correlation<span style="font-weight: bold">)</span>:  Avg = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.591</span>
 OC1: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.83</span>, OC2: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.65</span>, OC3: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.88</span>, OC4: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.14</span>, OC5: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.46</span>, 
 
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_12_29.png" src="../../_images/apr-(misc-kaba)-2022_12_29.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_17_29.png" src="../../_images/apr-(misc-kaba)-2022_17_29.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">-------------------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1727,7 +1848,7 @@ up/real_pearson_bold-lite_k5_p25-sample
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Ca2  <span style="font-weight: bold">(</span>corr<span style="font-weight: bold">)</span>   : : :   ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9774</span>,  disj: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9429</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_22_4.png" src="../../_images/apr-(misc-kaba)-2022_22_4.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_27_4.png" src="../../_images/apr-(misc-kaba)-2022_27_4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1769,7 +1890,7 @@ up/real_pearson_bold-lite_k5_p25-sample
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/apr-(misc-kaba)-2022_37_0.png" src="../../_images/apr-(misc-kaba)-2022_37_0.png" />
+<img alt="../../_images/apr-(misc-kaba)-2022_42_0.png" src="../../_images/apr-(misc-kaba)-2022_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1813,7 +1934,7 @@ up/real_pearson_bold-lite_k5_p25-sample
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/apr-(misc-kaba)-2022_40_0.png" src="../../_images/apr-(misc-kaba)-2022_40_0.png" />
+<img alt="../../_images/apr-(misc-kaba)-2022_45_0.png" src="../../_images/apr-(misc-kaba)-2022_45_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1923,7 +2044,7 @@ up/real_pearson_bold-lite_k5_p25-sample
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/apr-(misc-kaba)-2022_52_1.png" src="../../_images/apr-(misc-kaba)-2022_52_1.png" />
+</div><img alt="../../_images/apr-(misc-kaba)-2022_57_1.png" src="../../_images/apr-(misc-kaba)-2022_57_1.png" />
 </div>
 </div>
 </div>
