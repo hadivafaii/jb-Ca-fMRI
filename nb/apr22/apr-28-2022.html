@@ -1,0 +1,2030 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apr 28th, 2022 (plot ca node discont. + grey bg motion) &#8212; Ca-fMRI [Daily Progress]</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Apr 29th, 2022 (ROI sizes 2d &amp; 3d)" href="apr-29-2022.html" />
+    <link rel="prev" title="Apr 26th, 2022 (fix svinet, fix group)" href="apr-26-2022.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/intro.html">
+   Welcome
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  February 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/feb21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/feb21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-12-2021.html">
+     February, 12th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-13-2021.html">
+     February, 13th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-16-2021.html">
+     February, 16th 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb21/feb-20-2021.html">
+     February, 20th 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  March 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/mar21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/mar21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-10-2021.html">
+     March 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-13-2021.html">
+     March 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-15-2021.html">
+     March 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-16-2021.html">
+     March 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-18-2021.html">
+     March 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-19-2021.html">
+     March 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-26-2021.html">
+     March 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar21/mar-29-2021.html">
+     March 29th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  April 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/apr21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/apr21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-07-2021.html">
+     April 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr21/apr-30-2021.html">
+     April 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  May 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-08-2021.html">
+     May 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-09-2021.html">
+     May 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-11-2021.html">
+     May 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-12-2021.html">
+     May 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-20-2021.html">
+     May 20th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-24-2021.html">
+     May 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may21/may-31-2021.html">
+     May 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  June 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jun21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jun21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-05-2021.html">
+     June 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-06-2021.html">
+     June 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-07-2021.html">
+     June 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-12-2021.html">
+     June 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-13-2021.html">
+     June 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-15-2021.html">
+     June 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-17-2021.html">
+     June 17th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-18-2021.html">
+     June 18th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-19-2021.html">
+     June 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-21-2021.html">
+     June 21st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-24-2021.html">
+     June 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-26-2021.html">
+     June, 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-29-2021.html">
+     June 29th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun21/jun-30-2021.html">
+     June 30th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  July 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-01-2021.html">
+     July 1st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-09-2021.html">
+     July 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-11-2021.html">
+     July 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul21/jul-31-2021.html">
+     July 31st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  August 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/aug21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/aug21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug21/aug-21-2021.html">
+     Aug 21st, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  September 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/sep21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/sep21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-07-2021.html">
+     Sep 7th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-08-2021.html">
+     Sep 8th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-15-2021.html">
+     Sep 15th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-19-2021.html">
+     Sep 19th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-24-2021.html">
+     Sep 24th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-25-2021.html">
+     Sep 25th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../sep21/sep-27-2021.html">
+     Sep 27th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  October 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/oct21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/oct21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-06-2021.html">
+     October 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-10-2021.html">
+     October 10th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-11-2021.html">
+     October 11th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-12-2021.html">
+     October 12th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-16-2021.html">
+     October 16th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-17-2021.html">
+     October 17th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-21-2021.html">
+     October 21st, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-26-2021.html">
+     October 26th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-27-2021.html">
+     October 27th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-29-2021.html">
+     October 29th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-30-2021.html">
+     October 30th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../oct21/oct-31-2021.html">
+     October 31th, 2021
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  November 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/nov21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/nov21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-05-2021.html">
+     November 5th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-06-2021.html">
+     November 6th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-09-2021.html">
+     November 9th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-13-2021.html">
+     November 13th, 2021
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-24-2021.html">
+     November 24th, 2021 (corr distrs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-26-2021.html">
+     November 26th, 2021 (identify spikes)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../nov21/nov-29-2021.html">
+     November 29th, 2021 (figs 1 and 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  December 2021
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/dec21.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/dec21_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-01-2021.html">
+     Dec 1st, 2021 (topo dist)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-04-2021.html">
+     Dec 4th, 2021 (Binary vs Sample)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-06-2021.html">
+     Dec 6th, 2021 (tSNR: Ca all plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-07-2021.html">
+     Dec 7th, 2021 (tSNR: Ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-08-2021.html">
+     Dec 8th, 2021 (scp2raw2npy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-09-2021.html">
+     Dec 9th, 2021 (tSNR: BOLD)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-10-2021.html">
+     Dec 10th, 2021 (tSNR: identify bad areas)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-17-2021.html">
+     Dec 17th, 2021 (GS all plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-18-2021.html">
+     Dec 18th, 2021 (rabies)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-21-2021.html">
+     Dec 21st, 2021 (ROI layers: concept)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-22-2021.html">
+     Dec 22nd, 2021 (3-depths + render fns)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-24-2021.html">
+     Dec 24th, 2021 (ROI layers: compare)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dec21/dec-27-2021.html">
+     Dec 27th, 2021 (Parcel viz 3D)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  January 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jan22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jan22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-03-2022.html">
+     Jan 3rd, 2022 (Coreg ses play; fix 10_3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-04-2022.html">
+     Jan 4th, 2022 (Coreg ses)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-07-2022.html">
+     Jan 7th, 2022 (rabies: 2nd stage)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-12-2022.html">
+     Jan 12th, 2022 (voxel sz plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-13-2022.html">
+     Jan 13th, 2022 (topo dist, best density)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-17-2022.html">
+     Jan 17th, 2022 (Results at various thresholds, discussion on topology)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-19-2022.html">
+     Jan 19th, 2022 (Hierarchical)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-22-2022.html">
+     Jan 22nd, 2022 (degree dist, cartography)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-25-2022.html">
+     Jan 25th, 2022 (debug boot + 2 anim draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-26-2022.html">
+     Jan 26th, 2022 (cleaner figs, SE bug)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-27-2022.html">
+     Jan 27th, 2022 (SE debug)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-28-2022.html">
+     Jan 28th, 2022 (SE debug: cont.)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-29-2022.html">
+     Jan 29th, 2022 (seed filter: draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-30-2022.html">
+     Jan 30th, 2022 (seed filter)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jan22/jan-31-2022.html">
+     Jan 31st, 2022 (small memship vote: draft)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  February 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/feb22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/feb22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-01-2022.html">
+     Feb 1st, 2022 (small memship vote)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-02-2022.html">
+     Feb 2nd, 2022 (Mouse ICA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-04-2022.html">
+     Feb 4th, 2022 (plot bold+ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-06-2022.html">
+     Feb 6th, 2022 (rabies: 3rd stage)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-07-2022.html">
+     Feb 7th, 2022 (Structural Connectome)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-08-2022.html">
+     Feb 08, 2022 (LED vs. REST; avg over runs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-14-2022.html">
+     Feb 14th, 2022 (pruned in grp)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-15a-2022.html">
+     Feb 15th, 2022 (Smart adj plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-15b-2022.html">
+     Feb 15th, 2022 (Smart adj plot; better)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-18-2022.html">
+     Feb 18th, 2022 (upsample bold; corr timeseries)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-22-2022.html">
+     Feb 22nd, 2022 (GLM Ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-24-2022.html">
+     Feb 24th, 2022 (grant finalize)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25a-2022.html">
+     Feb 25th, 2022 (Figs 4 the talk)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25b-2022.html">
+     Feb 25th, 2022 (compare cosine, DMN)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25c-2022.html">
+     Feb 25th, 2022 (Entropy, carto)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25d-2022.html">
+     Feb 25th, 2022 (LFR reboot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25e-2022.html">
+     Feb 25th, 2022 (ovp score, C_i; pie charts)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../feb22/feb-25f-2022.html">
+     Feb 25th, 2022 (ROI plots)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  March 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/mar22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/mar22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar22/mar-05-2022.html">
+     Mar 5th, 2022 (debug net; spearman &gt; pearson)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mar22/mar-06-2022.html">
+     Mar 6th, 2022 (Cartography, explored)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  April 2022
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/apr22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../md/apr22_updates.html">
+   Updates
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-01-2022.html">
+     Apr 1st, 2022 (props, pie, entropy, contour, carto)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-02-2022.html">
+     Apr 2nd, 2022 (quality control: both modalities)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-03-2022.html">
+     Apr 3rd, 2022 (copy files: rabies + ca)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-04-2022.html">
+     Apr 4th, 2022 (ca ref; viz some t)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-05-2022.html">
+     Apr 5th, 2022 (check co-registration perf)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-07-2022.html">
+     Apr 7th, 2022 (Fig 4, OCs, cosine sim, DMN)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-11-2022.html">
+     Apr 11th, 2022 (fix: affiliation)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-12-2022.html">
+     Apr 12th, 2022 (ent fixed + some supp)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-13-2022.html">
+     Apr 13th, 2022 (node &amp; oc overlap scores)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-14-2022.html">
+     Apr 14th, 2022 (carto fixed + some supp)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-15-2022.html">
+     Apr 15th, 2022 (parcellation fix)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-16-2022.html">
+     Apr 16th, 2022 (register RABIES)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-17-2022.html">
+     Apr 17th, 2022 (a new beginning)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-20-2022.html">
+     Apr 20th, 2022 (tSNR masks, many plot funcs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-21-2022.html">
+     Apr 21st, 2022 (Ca clean, many adj plots, Yale comare RABIES)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-24-2022.html">
+     Apr 24th, 2022 (findk both 128 and 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-25-2022.html">
+     Apr 25th, 2022 (x-valid, both 128 and 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-26-2022.html">
+     Apr 26th, 2022 (fix svinet, fix group)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-29-2022.html">
+     Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-30a-2022.html">
+     Apr 30th, 2022 (Misc KABA, 128 * 3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="apr-30b-2022.html">
+     Apr 30th, 2022 (Misc GABAN, 512 * 3)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  May 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-02-2022.html">
+     May 2nd, 2022 (global order or not? – prelim)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-05-2022.html">
+     May 5th, 2022 (global order or not? + sample vs. binary)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-06-2022.html">
+     May 6th, 2022 (REST vs LED)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-08-2022.html">
+     May 8th, 2022 (x-valid, binary vs sample)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-15-2022.html">
+     May 15th, 2022 (rabies highpass: copy + plot n_t removed)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/nb/apr22/apr-28-2022.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/apr22/apr-28-2022.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/nb/apr22/apr-28-2022.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fig-dir">
+   Fig dir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mice">
+   Mice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#censor-masks">
+   Censor masks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discontinuity-times">
+   Discontinuity times
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generate-plots">
+   Generate plots
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="apr-28th-2022-plot-ca-node-discont-grey-bg-motion">
+<h1>Apr 28th, 2022 (plot ca node discont. + grey bg motion)<a class="headerlink" href="#apr-28th-2022-plot-ca-node-discont-grey-bg-motion" title="Permalink to this headline">¶</a></h1>
+<p><strong>Motivation</strong>:
+<br></p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<span class="kn">from</span> <span class="nn">numpy.ma</span> <span class="kn">import</span> <span class="n">masked_where</span> <span class="k">as</span> <span class="n">mwh</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
+
+<span class="c1"># tmp &amp; extras dir</span>
+<span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
+<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
+<span class="n">_fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/figs&#39;</span><span class="p">)</span>
+<span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
+<span class="n">lfr_dir</span> <span class="o">=</span> <span class="s1">&#39;Documents/workspaces/lfr/binary_overlapping&#39;</span>
+<span class="n">lfr_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="n">lfr_dir</span><span class="p">)</span>
+
+<span class="c1"># GitHub</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">make_tree_graph</span>
+<span class="kn">from</span> <span class="nn">register.parcellation</span> <span class="kn">import</span> <span class="n">Parcellation</span>
+<span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="n">Hierarchical</span>
+<span class="kn">from</span> <span class="nn">analysis.fourier</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.svinet</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.group</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.lfr</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
+<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
+
+<span class="c1"># set style &amp; no interpolalation</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'config.json'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-64</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">fit_parcel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">Parcellation not found, initiating fit
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> fit columnar: initiated
+</pre>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intel(R) oneAPI Data Analytics Library solvers for sklearn enabled: https://intelpython.github.io/daal4py/sklearn.html
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> kmeans fit: done
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> save 2D 10um: done
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_plot_gs_ca_with_censor_mask</span><span class="p">():</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">seg</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">seg</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>  <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">discont_ids</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">axtw</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;GS&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">axtw</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;all nodes&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+    <span class="n">x2p</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="mi">20</span><span class="p">)]</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2p</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">axtw</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;every 20 nodes&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=-</span><span class="mi">90</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">axtw</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+    <span class="n">sup</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">percent_removed</span><span class="si">:</span><span class="s2">0.1f</span><span class="si">}</span><span class="s2"> % removed)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.93</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">sup</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fig-dir">
+<h2>Fig dir<a class="headerlink" href="#fig-dir" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">set_style</span><span class="p">()</span>
+<span class="n">fig_kws</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s1">&#39;transparent&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;bbox_inches&#39;</span><span class="p">:</span> <span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">_fig_dir</span><span class="p">,</span> <span class="s1">&#39;quality_control&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">fig_dir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Dropbox/git/jb-Ca-fMRI/figs/quality_control'</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">save_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="s1">&#39;GS_CA2&#39;</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">save_dir</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008000; text-decoration-color: #008000">'/home/hadi/Dropbox/git/jb-Ca-fMRI/figs/quality_control/GS_CA2'</span>
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="mice">
+<h2>Mice<a class="headerlink" href="#mice" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">runs_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="censor-masks">
+<h2>Censor masks<a class="headerlink" href="#censor-masks" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">base_dir</span><span class="p">,</span> <span class="s1">&#39;meta_info&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s1">&#39;temporal_mask.df&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discontinuity-times">
+<h2>Discontinuity times<a class="headerlink" href="#discontinuity-times" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">ca</span><span class="p">[</span><span class="n">key</span><span class="p">][:]</span>
+<span class="n">gs</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gs</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/apr-28-2022_15_0.png" src="../../_images/apr-28-2022_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">discont_ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">gs</span><span class="p">)))[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">discont_ids</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2088</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4178</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">discont_ids</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">,  gs[i] = </span><span class="si">{</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">, gs[i + 1] = </span><span class="si">{</span><span class="n">gs</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">i = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2088</span>,  gs<span style="font-style: italic"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold; font-style: italic">155.1355308430821</span><span style="font-style: italic">, gs = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold; font-style: italic">4213.300392368619</span>
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">i = <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4178</span>,  gs<span style="font-style: italic"> = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold; font-style: italic">4227.700446334898</span><span style="font-style: italic">, gs = </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold; font-style: italic">-292.9524600907258</span>
+</pre>
+</div></div>
+</div>
+</div>
+<div class="section" id="generate-plots">
+<h2>Generate plots<a class="headerlink" href="#generate-plots" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">ca</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">[:]</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+        
+    <span class="n">tmask</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">,</span>
+        <span class="s1">&#39;temporal_mask&#39;</span><span class="p">,</span>
+    <span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">tmask_up</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">tmask</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">censored</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">tmask_up</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">looper</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="nb">enumerate</span><span class="p">(</span><span class="n">censored</span><span class="p">),</span>
+        <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">segments</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">looper</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">g</span><span class="p">)</span>
+        <span class="n">segments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+    <span class="n">percent_removed</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">tmask</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmask</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tmask</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">sum</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tmask</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">-</span> <span class="n">percent_removed</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-8</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">sup</span> <span class="o">=</span> <span class="n">_plot_gs_ca_with_censor_mask</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;gs-ca2_</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">.png&quot;</span><span class="p">),</span> <span class="o">**</span><span class="n">fig_kws</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 8min 18s, sys: 10.8 s, total: 8min 29s
+Wall time: 8min 29s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">discont_ids</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2088</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4178</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">ca</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">[:]</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">discont_ids</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gs</span><span class="p">))</span>
+    <span class="n">y</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">gs</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;dimgrey&#39;</span><span class="p">)</span>
+    
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/apr-28-2022_27_0.png" src="../../_images/apr-28-2022_27_0.png" />
+<img alt="../../_images/apr-28-2022_27_1.png" src="../../_images/apr-28-2022_27_1.png" />
+<img alt="../../_images/apr-28-2022_27_2.png" src="../../_images/apr-28-2022_27_2.png" />
+<img alt="../../_images/apr-28-2022_27_3.png" src="../../_images/apr-28-2022_27_3.png" />
+<img alt="../../_images/apr-28-2022_27_4.png" src="../../_images/apr-28-2022_27_4.png" />
+<img alt="../../_images/apr-28-2022_27_5.png" src="../../_images/apr-28-2022_27_5.png" />
+<img alt="../../_images/apr-28-2022_27_6.png" src="../../_images/apr-28-2022_27_6.png" />
+<img alt="../../_images/apr-28-2022_27_7.png" src="../../_images/apr-28-2022_27_7.png" />
+<img alt="../../_images/apr-28-2022_27_8.png" src="../../_images/apr-28-2022_27_8.png" />
+<img alt="../../_images/apr-28-2022_27_9.png" src="../../_images/apr-28-2022_27_9.png" />
+<img alt="../../_images/apr-28-2022_27_10.png" src="../../_images/apr-28-2022_27_10.png" />
+<img alt="../../_images/apr-28-2022_27_11.png" src="../../_images/apr-28-2022_27_11.png" />
+<img alt="../../_images/apr-28-2022_27_12.png" src="../../_images/apr-28-2022_27_12.png" />
+<img alt="../../_images/apr-28-2022_27_13.png" src="../../_images/apr-28-2022_27_13.png" />
+<img alt="../../_images/apr-28-2022_27_14.png" src="../../_images/apr-28-2022_27_14.png" />
+<img alt="../../_images/apr-28-2022_27_15.png" src="../../_images/apr-28-2022_27_15.png" />
+<img alt="../../_images/apr-28-2022_27_16.png" src="../../_images/apr-28-2022_27_16.png" />
+<img alt="../../_images/apr-28-2022_27_17.png" src="../../_images/apr-28-2022_27_17.png" />
+<img alt="../../_images/apr-28-2022_27_18.png" src="../../_images/apr-28-2022_27_18.png" />
+<img alt="../../_images/apr-28-2022_27_19.png" src="../../_images/apr-28-2022_27_19.png" />
+<img alt="../../_images/apr-28-2022_27_20.png" src="../../_images/apr-28-2022_27_20.png" />
+<img alt="../../_images/apr-28-2022_27_21.png" src="../../_images/apr-28-2022_27_21.png" />
+<img alt="../../_images/apr-28-2022_27_22.png" src="../../_images/apr-28-2022_27_22.png" />
+<img alt="../../_images/apr-28-2022_27_23.png" src="../../_images/apr-28-2022_27_23.png" />
+<img alt="../../_images/apr-28-2022_27_24.png" src="../../_images/apr-28-2022_27_24.png" />
+<img alt="../../_images/apr-28-2022_27_25.png" src="../../_images/apr-28-2022_27_25.png" />
+<img alt="../../_images/apr-28-2022_27_26.png" src="../../_images/apr-28-2022_27_26.png" />
+<img alt="../../_images/apr-28-2022_27_27.png" src="../../_images/apr-28-2022_27_27.png" />
+<img alt="../../_images/apr-28-2022_27_28.png" src="../../_images/apr-28-2022_27_28.png" />
+<img alt="../../_images/apr-28-2022_27_29.png" src="../../_images/apr-28-2022_27_29.png" />
+<img alt="../../_images/apr-28-2022_27_30.png" src="../../_images/apr-28-2022_27_30.png" />
+<img alt="../../_images/apr-28-2022_27_31.png" src="../../_images/apr-28-2022_27_31.png" />
+<img alt="../../_images/apr-28-2022_27_32.png" src="../../_images/apr-28-2022_27_32.png" />
+<img alt="../../_images/apr-28-2022_27_33.png" src="../../_images/apr-28-2022_27_33.png" />
+<img alt="../../_images/apr-28-2022_27_34.png" src="../../_images/apr-28-2022_27_34.png" />
+<img alt="../../_images/apr-28-2022_27_35.png" src="../../_images/apr-28-2022_27_35.png" />
+<img alt="../../_images/apr-28-2022_27_36.png" src="../../_images/apr-28-2022_27_36.png" />
+<img alt="../../_images/apr-28-2022_27_37.png" src="../../_images/apr-28-2022_27_37.png" />
+<img alt="../../_images/apr-28-2022_27_38.png" src="../../_images/apr-28-2022_27_38.png" />
+<img alt="../../_images/apr-28-2022_27_39.png" src="../../_images/apr-28-2022_27_39.png" />
+<img alt="../../_images/apr-28-2022_27_40.png" src="../../_images/apr-28-2022_27_40.png" />
+<img alt="../../_images/apr-28-2022_27_41.png" src="../../_images/apr-28-2022_27_41.png" />
+<img alt="../../_images/apr-28-2022_27_42.png" src="../../_images/apr-28-2022_27_42.png" />
+<img alt="../../_images/apr-28-2022_27_43.png" src="../../_images/apr-28-2022_27_43.png" />
+<img alt="../../_images/apr-28-2022_27_44.png" src="../../_images/apr-28-2022_27_44.png" />
+<img alt="../../_images/apr-28-2022_27_45.png" src="../../_images/apr-28-2022_27_45.png" />
+<img alt="../../_images/apr-28-2022_27_46.png" src="../../_images/apr-28-2022_27_46.png" />
+<img alt="../../_images/apr-28-2022_27_47.png" src="../../_images/apr-28-2022_27_47.png" />
+<img alt="../../_images/apr-28-2022_27_48.png" src="../../_images/apr-28-2022_27_48.png" />
+<img alt="../../_images/apr-28-2022_27_49.png" src="../../_images/apr-28-2022_27_49.png" />
+<img alt="../../_images/apr-28-2022_27_50.png" src="../../_images/apr-28-2022_27_50.png" />
+<img alt="../../_images/apr-28-2022_27_51.png" src="../../_images/apr-28-2022_27_51.png" />
+<img alt="../../_images/apr-28-2022_27_52.png" src="../../_images/apr-28-2022_27_52.png" />
+<img alt="../../_images/apr-28-2022_27_53.png" src="../../_images/apr-28-2022_27_53.png" />
+<img alt="../../_images/apr-28-2022_27_54.png" src="../../_images/apr-28-2022_27_54.png" />
+<img alt="../../_images/apr-28-2022_27_55.png" src="../../_images/apr-28-2022_27_55.png" />
+<img alt="../../_images/apr-28-2022_27_56.png" src="../../_images/apr-28-2022_27_56.png" />
+<img alt="../../_images/apr-28-2022_27_57.png" src="../../_images/apr-28-2022_27_57.png" />
+<img alt="../../_images/apr-28-2022_27_58.png" src="../../_images/apr-28-2022_27_58.png" />
+<img alt="../../_images/apr-28-2022_27_59.png" src="../../_images/apr-28-2022_27_59.png" />
+<img alt="../../_images/apr-28-2022_27_60.png" src="../../_images/apr-28-2022_27_60.png" />
+<img alt="../../_images/apr-28-2022_27_61.png" src="../../_images/apr-28-2022_27_61.png" />
+<img alt="../../_images/apr-28-2022_27_62.png" src="../../_images/apr-28-2022_27_62.png" />
+<img alt="../../_images/apr-28-2022_27_63.png" src="../../_images/apr-28-2022_27_63.png" />
+<img alt="../../_images/apr-28-2022_27_64.png" src="../../_images/apr-28-2022_27_64.png" />
+<img alt="../../_images/apr-28-2022_27_65.png" src="../../_images/apr-28-2022_27_65.png" />
+<img alt="../../_images/apr-28-2022_27_66.png" src="../../_images/apr-28-2022_27_66.png" />
+<img alt="../../_images/apr-28-2022_27_67.png" src="../../_images/apr-28-2022_27_67.png" />
+<img alt="../../_images/apr-28-2022_27_68.png" src="../../_images/apr-28-2022_27_68.png" />
+<img alt="../../_images/apr-28-2022_27_69.png" src="../../_images/apr-28-2022_27_69.png" />
+<img alt="../../_images/apr-28-2022_27_70.png" src="../../_images/apr-28-2022_27_70.png" />
+<img alt="../../_images/apr-28-2022_27_71.png" src="../../_images/apr-28-2022_27_71.png" />
+<img alt="../../_images/apr-28-2022_27_72.png" src="../../_images/apr-28-2022_27_72.png" />
+<img alt="../../_images/apr-28-2022_27_73.png" src="../../_images/apr-28-2022_27_73.png" />
+<img alt="../../_images/apr-28-2022_27_74.png" src="../../_images/apr-28-2022_27_74.png" />
+<img alt="../../_images/apr-28-2022_27_75.png" src="../../_images/apr-28-2022_27_75.png" />
+<img alt="../../_images/apr-28-2022_27_76.png" src="../../_images/apr-28-2022_27_76.png" />
+<img alt="../../_images/apr-28-2022_27_77.png" src="../../_images/apr-28-2022_27_77.png" />
+<img alt="../../_images/apr-28-2022_27_78.png" src="../../_images/apr-28-2022_27_78.png" />
+<img alt="../../_images/apr-28-2022_27_79.png" src="../../_images/apr-28-2022_27_79.png" />
+<img alt="../../_images/apr-28-2022_27_80.png" src="../../_images/apr-28-2022_27_80.png" />
+<img alt="../../_images/apr-28-2022_27_81.png" src="../../_images/apr-28-2022_27_81.png" />
+<img alt="../../_images/apr-28-2022_27_82.png" src="../../_images/apr-28-2022_27_82.png" />
+<img alt="../../_images/apr-28-2022_27_83.png" src="../../_images/apr-28-2022_27_83.png" />
+<img alt="../../_images/apr-28-2022_27_84.png" src="../../_images/apr-28-2022_27_84.png" />
+<img alt="../../_images/apr-28-2022_27_85.png" src="../../_images/apr-28-2022_27_85.png" />
+<img alt="../../_images/apr-28-2022_27_86.png" src="../../_images/apr-28-2022_27_86.png" />
+<img alt="../../_images/apr-28-2022_27_87.png" src="../../_images/apr-28-2022_27_87.png" />
+<img alt="../../_images/apr-28-2022_27_88.png" src="../../_images/apr-28-2022_27_88.png" />
+<img alt="../../_images/apr-28-2022_27_89.png" src="../../_images/apr-28-2022_27_89.png" />
+<img alt="../../_images/apr-28-2022_27_90.png" src="../../_images/apr-28-2022_27_90.png" />
+<img alt="../../_images/apr-28-2022_27_91.png" src="../../_images/apr-28-2022_27_91.png" />
+<img alt="../../_images/apr-28-2022_27_92.png" src="../../_images/apr-28-2022_27_92.png" />
+<img alt="../../_images/apr-28-2022_27_93.png" src="../../_images/apr-28-2022_27_93.png" />
+<img alt="../../_images/apr-28-2022_27_94.png" src="../../_images/apr-28-2022_27_94.png" />
+<img alt="../../_images/apr-28-2022_27_95.png" src="../../_images/apr-28-2022_27_95.png" />
+<img alt="../../_images/apr-28-2022_27_96.png" src="../../_images/apr-28-2022_27_96.png" />
+<img alt="../../_images/apr-28-2022_27_97.png" src="../../_images/apr-28-2022_27_97.png" />
+<img alt="../../_images/apr-28-2022_27_98.png" src="../../_images/apr-28-2022_27_98.png" />
+<img alt="../../_images/apr-28-2022_27_99.png" src="../../_images/apr-28-2022_27_99.png" />
+<img alt="../../_images/apr-28-2022_27_100.png" src="../../_images/apr-28-2022_27_100.png" />
+<img alt="../../_images/apr-28-2022_27_101.png" src="../../_images/apr-28-2022_27_101.png" />
+<img alt="../../_images/apr-28-2022_27_102.png" src="../../_images/apr-28-2022_27_102.png" />
+<img alt="../../_images/apr-28-2022_27_103.png" src="../../_images/apr-28-2022_27_103.png" />
+<img alt="../../_images/apr-28-2022_27_104.png" src="../../_images/apr-28-2022_27_104.png" />
+<img alt="../../_images/apr-28-2022_27_105.png" src="../../_images/apr-28-2022_27_105.png" />
+<img alt="../../_images/apr-28-2022_27_106.png" src="../../_images/apr-28-2022_27_106.png" />
+<img alt="../../_images/apr-28-2022_27_107.png" src="../../_images/apr-28-2022_27_107.png" />
+<img alt="../../_images/apr-28-2022_27_108.png" src="../../_images/apr-28-2022_27_108.png" />
+<img alt="../../_images/apr-28-2022_27_109.png" src="../../_images/apr-28-2022_27_109.png" />
+<img alt="../../_images/apr-28-2022_27_110.png" src="../../_images/apr-28-2022_27_110.png" />
+<img alt="../../_images/apr-28-2022_27_111.png" src="../../_images/apr-28-2022_27_111.png" />
+<img alt="../../_images/apr-28-2022_27_112.png" src="../../_images/apr-28-2022_27_112.png" />
+<img alt="../../_images/apr-28-2022_27_113.png" src="../../_images/apr-28-2022_27_113.png" />
+<img alt="../../_images/apr-28-2022_27_114.png" src="../../_images/apr-28-2022_27_114.png" />
+<img alt="../../_images/apr-28-2022_27_115.png" src="../../_images/apr-28-2022_27_115.png" />
+<img alt="../../_images/apr-28-2022_27_116.png" src="../../_images/apr-28-2022_27_116.png" />
+<img alt="../../_images/apr-28-2022_27_117.png" src="../../_images/apr-28-2022_27_117.png" />
+<img alt="../../_images/apr-28-2022_27_118.png" src="../../_images/apr-28-2022_27_118.png" />
+<img alt="../../_images/apr-28-2022_27_119.png" src="../../_images/apr-28-2022_27_119.png" />
+<img alt="../../_images/apr-28-2022_27_120.png" src="../../_images/apr-28-2022_27_120.png" />
+<img alt="../../_images/apr-28-2022_27_121.png" src="../../_images/apr-28-2022_27_121.png" />
+<img alt="../../_images/apr-28-2022_27_122.png" src="../../_images/apr-28-2022_27_122.png" />
+<img alt="../../_images/apr-28-2022_27_123.png" src="../../_images/apr-28-2022_27_123.png" />
+<img alt="../../_images/apr-28-2022_27_124.png" src="../../_images/apr-28-2022_27_124.png" />
+<img alt="../../_images/apr-28-2022_27_125.png" src="../../_images/apr-28-2022_27_125.png" />
+<img alt="../../_images/apr-28-2022_27_126.png" src="../../_images/apr-28-2022_27_126.png" />
+<img alt="../../_images/apr-28-2022_27_127.png" src="../../_images/apr-28-2022_27_127.png" />
+<img alt="../../_images/apr-28-2022_27_128.png" src="../../_images/apr-28-2022_27_128.png" />
+<img alt="../../_images/apr-28-2022_27_129.png" src="../../_images/apr-28-2022_27_129.png" />
+<img alt="../../_images/apr-28-2022_27_130.png" src="../../_images/apr-28-2022_27_130.png" />
+<img alt="../../_images/apr-28-2022_27_131.png" src="../../_images/apr-28-2022_27_131.png" />
+<img alt="../../_images/apr-28-2022_27_132.png" src="../../_images/apr-28-2022_27_132.png" />
+<img alt="../../_images/apr-28-2022_27_133.png" src="../../_images/apr-28-2022_27_133.png" />
+<img alt="../../_images/apr-28-2022_27_134.png" src="../../_images/apr-28-2022_27_134.png" />
+<img alt="../../_images/apr-28-2022_27_135.png" src="../../_images/apr-28-2022_27_135.png" />
+<img alt="../../_images/apr-28-2022_27_136.png" src="../../_images/apr-28-2022_27_136.png" />
+<img alt="../../_images/apr-28-2022_27_137.png" src="../../_images/apr-28-2022_27_137.png" />
+<img alt="../../_images/apr-28-2022_27_138.png" src="../../_images/apr-28-2022_27_138.png" />
+<img alt="../../_images/apr-28-2022_27_139.png" src="../../_images/apr-28-2022_27_139.png" />
+<img alt="../../_images/apr-28-2022_27_140.png" src="../../_images/apr-28-2022_27_140.png" />
+<img alt="../../_images/apr-28-2022_27_141.png" src="../../_images/apr-28-2022_27_141.png" />
+<img alt="../../_images/apr-28-2022_27_142.png" src="../../_images/apr-28-2022_27_142.png" />
+<img alt="../../_images/apr-28-2022_27_143.png" src="../../_images/apr-28-2022_27_143.png" />
+<img alt="../../_images/apr-28-2022_27_144.png" src="../../_images/apr-28-2022_27_144.png" />
+<img alt="../../_images/apr-28-2022_27_145.png" src="../../_images/apr-28-2022_27_145.png" />
+<img alt="../../_images/apr-28-2022_27_146.png" src="../../_images/apr-28-2022_27_146.png" />
+<img alt="../../_images/apr-28-2022_27_147.png" src="../../_images/apr-28-2022_27_147.png" />
+<img alt="../../_images/apr-28-2022_27_148.png" src="../../_images/apr-28-2022_27_148.png" />
+<img alt="../../_images/apr-28-2022_27_149.png" src="../../_images/apr-28-2022_27_149.png" />
+<img alt="../../_images/apr-28-2022_27_150.png" src="../../_images/apr-28-2022_27_150.png" />
+<img alt="../../_images/apr-28-2022_27_151.png" src="../../_images/apr-28-2022_27_151.png" />
+<img alt="../../_images/apr-28-2022_27_152.png" src="../../_images/apr-28-2022_27_152.png" />
+<img alt="../../_images/apr-28-2022_27_153.png" src="../../_images/apr-28-2022_27_153.png" />
+<img alt="../../_images/apr-28-2022_27_154.png" src="../../_images/apr-28-2022_27_154.png" />
+<img alt="../../_images/apr-28-2022_27_155.png" src="../../_images/apr-28-2022_27_155.png" />
+<img alt="../../_images/apr-28-2022_27_156.png" src="../../_images/apr-28-2022_27_156.png" />
+<img alt="../../_images/apr-28-2022_27_157.png" src="../../_images/apr-28-2022_27_157.png" />
+<img alt="../../_images/apr-28-2022_27_158.png" src="../../_images/apr-28-2022_27_158.png" />
+<img alt="../../_images/apr-28-2022_27_159.png" src="../../_images/apr-28-2022_27_159.png" />
+<img alt="../../_images/apr-28-2022_27_160.png" src="../../_images/apr-28-2022_27_160.png" />
+<img alt="../../_images/apr-28-2022_27_161.png" src="../../_images/apr-28-2022_27_161.png" />
+<img alt="../../_images/apr-28-2022_27_162.png" src="../../_images/apr-28-2022_27_162.png" />
+<img alt="../../_images/apr-28-2022_27_163.png" src="../../_images/apr-28-2022_27_163.png" />
+<img alt="../../_images/apr-28-2022_27_164.png" src="../../_images/apr-28-2022_27_164.png" />
+<img alt="../../_images/apr-28-2022_27_165.png" src="../../_images/apr-28-2022_27_165.png" />
+<img alt="../../_images/apr-28-2022_27_166.png" src="../../_images/apr-28-2022_27_166.png" />
+<img alt="../../_images/apr-28-2022_27_167.png" src="../../_images/apr-28-2022_27_167.png" />
+<img alt="../../_images/apr-28-2022_27_168.png" src="../../_images/apr-28-2022_27_168.png" />
+<img alt="../../_images/apr-28-2022_27_169.png" src="../../_images/apr-28-2022_27_169.png" />
+<img alt="../../_images/apr-28-2022_27_170.png" src="../../_images/apr-28-2022_27_170.png" />
+<img alt="../../_images/apr-28-2022_27_171.png" src="../../_images/apr-28-2022_27_171.png" />
+<img alt="../../_images/apr-28-2022_27_172.png" src="../../_images/apr-28-2022_27_172.png" />
+<img alt="../../_images/apr-28-2022_27_173.png" src="../../_images/apr-28-2022_27_173.png" />
+<img alt="../../_images/apr-28-2022_27_174.png" src="../../_images/apr-28-2022_27_174.png" />
+<img alt="../../_images/apr-28-2022_27_175.png" src="../../_images/apr-28-2022_27_175.png" />
+<img alt="../../_images/apr-28-2022_27_176.png" src="../../_images/apr-28-2022_27_176.png" />
+<img alt="../../_images/apr-28-2022_27_177.png" src="../../_images/apr-28-2022_27_177.png" />
+<img alt="../../_images/apr-28-2022_27_178.png" src="../../_images/apr-28-2022_27_178.png" />
+<img alt="../../_images/apr-28-2022_27_179.png" src="../../_images/apr-28-2022_27_179.png" />
+<img alt="../../_images/apr-28-2022_27_180.png" src="../../_images/apr-28-2022_27_180.png" />
+<img alt="../../_images/apr-28-2022_27_181.png" src="../../_images/apr-28-2022_27_181.png" />
+<img alt="../../_images/apr-28-2022_27_182.png" src="../../_images/apr-28-2022_27_182.png" />
+<img alt="../../_images/apr-28-2022_27_183.png" src="../../_images/apr-28-2022_27_183.png" />
+<img alt="../../_images/apr-28-2022_27_184.png" src="../../_images/apr-28-2022_27_184.png" />
+<img alt="../../_images/apr-28-2022_27_185.png" src="../../_images/apr-28-2022_27_185.png" />
+<img alt="../../_images/apr-28-2022_27_186.png" src="../../_images/apr-28-2022_27_186.png" />
+<img alt="../../_images/apr-28-2022_27_187.png" src="../../_images/apr-28-2022_27_187.png" />
+<img alt="../../_images/apr-28-2022_27_188.png" src="../../_images/apr-28-2022_27_188.png" />
+<img alt="../../_images/apr-28-2022_27_189.png" src="../../_images/apr-28-2022_27_189.png" />
+<img alt="../../_images/apr-28-2022_27_190.png" src="../../_images/apr-28-2022_27_190.png" />
+<img alt="../../_images/apr-28-2022_27_191.png" src="../../_images/apr-28-2022_27_191.png" />
+<img alt="../../_images/apr-28-2022_27_192.png" src="../../_images/apr-28-2022_27_192.png" />
+<img alt="../../_images/apr-28-2022_27_193.png" src="../../_images/apr-28-2022_27_193.png" />
+<img alt="../../_images/apr-28-2022_27_194.png" src="../../_images/apr-28-2022_27_194.png" />
+<img alt="../../_images/apr-28-2022_27_195.png" src="../../_images/apr-28-2022_27_195.png" />
+<img alt="../../_images/apr-28-2022_27_196.png" src="../../_images/apr-28-2022_27_196.png" />
+<img alt="../../_images/apr-28-2022_27_197.png" src="../../_images/apr-28-2022_27_197.png" />
+<img alt="../../_images/apr-28-2022_27_198.png" src="../../_images/apr-28-2022_27_198.png" />
+<img alt="../../_images/apr-28-2022_27_199.png" src="../../_images/apr-28-2022_27_199.png" />
+<img alt="../../_images/apr-28-2022_27_200.png" src="../../_images/apr-28-2022_27_200.png" />
+<img alt="../../_images/apr-28-2022_27_201.png" src="../../_images/apr-28-2022_27_201.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4min 55s, sys: 2.72 s, total: 4min 57s
+Wall time: 4min 57s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">ca</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="k">continue</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">func</span><span class="p">[:]</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">continue</span>
+        
+    <span class="n">good</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">good</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">delta</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">discont_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">delta</span><span class="p">:</span> <span class="n">discont_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">delta</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">151</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">151</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span><span style="font-weight: bold">))</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="c1">#, keepdims=True)</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="c1">#, keepdims=True)</span>
+<span class="n">nb_stds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">/</span> <span class="n">sd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">nb_stds</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/apr-28-2022_36_1.png" src="../../_images/apr-28-2022_36_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nb_stds</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sus</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">91</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">107</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">146</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">sus</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/apr-28-2022_39_0.png" src="../../_images/apr-28-2022_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outlier</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">b</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">134</span><span class="o">-</span><span class="mi">03</span><span class="n">a39a05448a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">outlier</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">b</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">))))</span>
+
+<span class="ne">ValueError</span>: operands could not be broadcast together with shapes (146,20) (146,) 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">i</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))]</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f5130bb3040</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/apr-28-2022_45_1.png" src="../../_images/apr-28-2022_45_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="s1">&#39;all&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">delta</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/apr-28-2022_48_0.png" src="../../_images/apr-28-2022_48_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/apr-28-2022_52_1.png" src="../../_images/apr-28-2022_52_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./nb/apr22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="apr-26-2022.html" title="previous page">Apr 26th, 2022 (fix svinet, fix group)</a>
+    <a class='right-next' id="next-link" href="apr-29-2022.html" title="next page">Apr 29th, 2022 (ROI sizes 2d &amp; 3d)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Hadi Vafaii<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

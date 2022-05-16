@@ -1105,6 +1105,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-28-2022.html">
+     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../apr22/apr-29-2022.html">
      Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
     </a>
@@ -1947,6 +1952,122 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pth</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Documents/Ca-fMRI/meta_info&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">pth</span><span class="p">,</span> <span class="s1">&#39;temporal_mask.df&#39;</span><span class="p">))</span>
+<span class="n">df_hp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">pth</span><span class="p">,</span> <span class="s1">&#39;temporal_mask_hp.df&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmask</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;temporal_mask&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">tmask_hp</span> <span class="o">=</span> <span class="n">df_hp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_hp</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;temporal_mask&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmask</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tmask_hp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f8f59af2760</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/may-(bp)-2022_61_1.png" src="../../_images/may-(bp)-2022_61_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmask</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">tmask_hp</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">550</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">526</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">tmask</span><span class="p">[</span><span class="n">intvl</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">tmask_hp</span><span class="p">[</span><span class="n">intvl</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f8f808ec4c0</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/may-(bp)-2022_64_1.png" src="../../_images/may-(bp)-2022_64_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intvl</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">tmask</span><span class="p">[</span><span class="n">intvl</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">intvl</span><span class="p">,</span> <span class="n">tmask_hp</span><span class="p">[</span><span class="n">intvl</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f8f7bce80d0</span><span style="font-weight: bold">&gt;]</span>
+</pre>
+</div><img alt="../../_images/may-(bp)-2022_65_1.png" src="../../_images/may-(bp)-2022_65_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pth</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Documents/Ca-fMRI/meta_info&#39;</span>
+<span class="n">df_hp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_pickle</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">pth</span><span class="p">,</span> <span class="s1">&#39;temporal_mask_hp.df&#39;</span><span class="p">))</span>
+<span class="n">tmask_hp</span> <span class="o">=</span> <span class="n">df_hp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_hp</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;temporal_mask&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">tmask_hp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tmask_hp</span><span class="p">[</span><span class="o">-</span><span class="mi">15</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span><span style="font-weight: bold">])</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22456</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">6000</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">ab</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">run_duration</span> <span class="o">-</span> <span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">exclude</span>
+<span class="n">ab</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">ab</span> <span class="o">*</span> <span class="n">fs</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">ab</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">22456</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5000</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">mice</span><span class="o">=</span><span class="n">mice</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">mice</span><span class="o">.</span><span class="n">get_key</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="s1">&#39;rest&#39;</span><span class="p">,</span> <span class="n">band</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="n">net</span><span class="o">.</span><span class="n">base_name</span>
 </pre></div>
@@ -2038,7 +2159,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f94d1ecfbe0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/may-(bp)-2022_78_1.png" src="../../_images/may-(bp)-2022_78_1.png" />
+</div><img alt="../../_images/may-(bp)-2022_92_1.png" src="../../_images/may-(bp)-2022_92_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2103,7 +2224,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(bp)-2022_82_0.png" src="../../_images/may-(bp)-2022_82_0.png" />
+<img alt="../../_images/may-(bp)-2022_96_0.png" src="../../_images/may-(bp)-2022_96_0.png" />
 </div>
 </div>
 </div>
@@ -2147,7 +2268,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f94cbad40a0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/may-(bp)-2022_89_1.png" src="../../_images/may-(bp)-2022_89_1.png" />
+</div><img alt="../../_images/may-(bp)-2022_103_1.png" src="../../_images/may-(bp)-2022_103_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2203,7 +2324,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(bp)-2022_92_0.png" src="../../_images/may-(bp)-2022_92_0.png" />
+<img alt="../../_images/may-(bp)-2022_106_0.png" src="../../_images/may-(bp)-2022_106_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2248,7 +2369,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(bp)-2022_94_0.png" src="../../_images/may-(bp)-2022_94_0.png" />
+<img alt="../../_images/may-(bp)-2022_108_0.png" src="../../_images/may-(bp)-2022_108_0.png" />
 </div>
 </div>
 </div>
@@ -2304,7 +2425,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(bp)-2022_98_0.png" src="../../_images/may-(bp)-2022_98_0.png" />
+<img alt="../../_images/may-(bp)-2022_112_0.png" src="../../_images/may-(bp)-2022_112_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2349,7 +2470,7 @@ accept ratio: <span style="color: #008080; text-decoration-color: #008080; font-
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(bp)-2022_100_0.png" src="../../_images/may-(bp)-2022_100_0.png" />
+<img alt="../../_images/may-(bp)-2022_114_0.png" src="../../_images/may-(bp)-2022_114_0.png" />
 </div>
 </div>
 </div>
