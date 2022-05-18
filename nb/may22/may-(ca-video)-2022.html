@@ -1105,6 +1105,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-28-2022.html">
+     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../apr22/apr-29-2022.html">
      Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
     </a>
@@ -1166,6 +1171,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="may-15-2022.html">
      May 15th, 2022 (rabies highpass: copy + plot n_t removed)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="may-16-2022.html">
+     May 16th, 2022 (ca bp, lombscargle_fill)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="may-17-2022.html">
+     May 17th, 2022 (ca bp, lombscargle_fill, finalize)
     </a>
    </li>
   </ul>
@@ -1356,12 +1371,85 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b0</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="n">b0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;rest&#39;</span>
+
+<span class="n">file_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">b</span><span class="p">:</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+        <span class="s1">&#39;key&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;task-task&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;space-spacedim&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;desc-bp</span><span class="si">{</span><span class="n">b</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">fs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+    <span class="p">])</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bands</span>
+<span class="p">}</span>
+<span class="n">file_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{(0.01, 0.5): &#39;key_task-task_space-spacedim_desc-bp(0.01,0.5)_mode&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bands</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">b0</span><span class="p">]</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_names</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">b</span><span class="p">:</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+        <span class="s1">&#39;key&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;task-task&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;space-spacedim&quot;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">&quot;desc-bp</span><span class="si">{</span><span class="n">b</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">fs</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;mode&#39;</span><span class="p">,</span>
+    <span class="p">])</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bands</span>
+<span class="p">}</span>
+<span class="n">file_names</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0.01: &#39;key_task-task_space-spacedim_desc-bp(0.01,5.0)_mode&#39;,
+ 0.5: &#39;key_task-task_space-spacedim_desc-bp(0.5,5.0)_mode&#39;,
+ (0.01, 0.5): &#39;key_task-task_space-spacedim_desc-bp(0.01,0.5)_mode&#39;}
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="id1">
 <h2>128 * 3<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
 <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="s1">&#39;rest&#39;</span><span class="p">,</span> <span class="n">runs_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">16</span><span class="o">-</span><span class="mi">311405</span><span class="n">ce3e8a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">Config</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="s1">&#39;rest&#39;</span><span class="p">,</span> <span class="n">runs_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;Mice&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1396,7 +1484,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f94cbad40a0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/may-(ca-video)-2022_7_1.png" src="../../_images/may-(ca-video)-2022_7_1.png" />
+</div><img alt="../../_images/may-(ca-video)-2022_14_1.png" src="../../_images/may-(ca-video)-2022_14_1.png" />
 </div>
 </div>
 </div>
@@ -1421,7 +1509,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(ca-video)-2022_10_0.png" src="../../_images/may-(ca-video)-2022_10_0.png" />
+<img alt="../../_images/may-(ca-video)-2022_17_0.png" src="../../_images/may-(ca-video)-2022_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1488,7 +1576,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(ca-video)-2022_18_0.png" src="../../_images/may-(ca-video)-2022_18_0.png" />
+<img alt="../../_images/may-(ca-video)-2022_25_0.png" src="../../_images/may-(ca-video)-2022_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1513,7 +1601,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f94cb0dda90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/may-(ca-video)-2022_20_1.png" src="../../_images/may-(ca-video)-2022_20_1.png" />
+</div><img alt="../../_images/may-(ca-video)-2022_27_1.png" src="../../_images/may-(ca-video)-2022_27_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1527,7 +1615,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(ca-video)-2022_22_0.png" src="../../_images/may-(ca-video)-2022_22_0.png" />
+<img alt="../../_images/may-(ca-video)-2022_29_0.png" src="../../_images/may-(ca-video)-2022_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
