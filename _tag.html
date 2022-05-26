@@ -1105,8 +1105,87 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="nb/apr22/apr-28-2022.html">
+     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="nb/apr22/apr-29-2022.html">
      Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/apr22/apr-30a-2022.html">
+     Apr 30th, 2022 (Misc KABA, 128 * 3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/apr22/apr-30b-2022.html">
+     Apr 30th, 2022 (Misc GABAN, 512 * 3)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  May 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="md/may22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="md/may22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-02-2022.html">
+     May 2nd, 2022 (global order or not? – prelim)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-05-2022.html">
+     May 5th, 2022 (global order or not? + sample vs. binary)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-06-2022.html">
+     May 6th, 2022 (REST vs LED)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-08-2022.html">
+     May 8th, 2022 (x-valid, binary vs sample)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-15-2022.html">
+     May 15th, 2022 (rabies highpass: copy + plot n_t removed)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-16-2022.html">
+     May 16th, 2022 (ca bp, lombscargle_fill)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-17-2022.html">
+     May 17th, 2022 (ca bp, lombscargle_fill, finalize)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nb/may22/may-24-2022.html">
+     May 24th, 2022 (new results w/ bp: 192 * 3, k = 7)
     </a>
    </li>
   </ul>
@@ -1233,7 +1312,7 @@
 <span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
 
 <span class="c1"># Collect a list of all notebooks in the content folder</span>
-<span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;apr22&#39;</span>
+<span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;may22&#39;</span>
 <span class="n">notebooks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span>
     <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">nb_name</span> <span class="ow">in</span> <span class="n">x</span><span class="p">,</span>
     <span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./nb/**/*.ipynb&quot;</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
