@@ -1198,6 +1198,16 @@
      May 27th, 2022 (plot degree dist; adj on ctx)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="may-31a-2022.html">
+     May 31st, 2022 (Results so far: KABA, 128 * 3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="may-31b-2022.html">
+     May 31st, 2022 (Results so far: GABAN, 512 * 3)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1315,8 +1325,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#task-all">
-   task = ‘all’
+  <a class="reference internal nav-link" href="#task-all-k-8-p-20">
+   task = ‘all’, k = 8, p = 20
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-all-k-7-p-20">
+   task = ‘all’, k = 7, p = 20
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-all-k-7-p-10">
+   task = ‘all’, k=7, p = 10
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1470,8 +1490,178 @@
 </div>
 </div>
 </div>
-<div class="section" id="task-all">
-<h2>task = ‘all’<a class="headerlink" href="#task-all" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="task-all-k-8-p-20">
+<h2>task = ‘all’, k = 8, p = 20<a class="headerlink" href="#task-all-k-8-p-20" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
+
+<span class="n">num_k</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">perc</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;p</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">-sample&#39;</span>
+<span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="n">perc</span><span class="p">,</span>
+    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="n">num_k</span><span class="p">,</span>
+    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
+    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
+    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+<span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2p</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># bold (+1)</span>
+<span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+    <span class="n">gr_bo</span><span class="o">.</span><span class="n">run_pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold+1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># bold (merged x 2)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold-1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># bold (merged)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># ca2</span>
+<span class="n">pi_ca</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">]:</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+    <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+        <span class="n">gr_ca</span><span class="o">.</span><span class="n">run_pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">d2p</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ca2</span><span class="se">\n</span><span class="s1">b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+    <span class="n">pi_ca</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mappings</span> <span class="o">=</span> <span class="n">find_best_mappings</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi_ca</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">gmap</span> <span class="ow">in</span> <span class="n">mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">new_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gmap</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="c1"># if b == 0.5:</span>
+    <span class="c1">#     i, j = new_ids[3], new_ids[4]</span>
+    <span class="c1">#     new_ids[3], new_ids[4] = j, i</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">pi_ca</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">new_ids</span><span class="p">]</span>
+    <span class="n">d2p</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ca2</span><span class="se">\n</span><span class="s1">b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quick_show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/may-(misc-kaba-128)-2022_11_0.png" src="../../_images/may-(misc-kaba-128)-2022_11_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="task-all-k-7-p-20">
+<h2>task = ‘all’, k = 7, p = 20<a class="headerlink" href="#task-all-k-7-p-20" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
+
+<span class="n">num_k</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">perc</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;p</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">-sample&#39;</span>
+<span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="n">perc</span><span class="p">,</span>
+    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="n">num_k</span><span class="p">,</span>
+    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
+    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
+    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+<span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2p</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># bold (+1)</span>
+<span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+    <span class="n">gr_bo</span><span class="o">.</span><span class="n">run_pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold+1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># bold (merged x 2)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold-1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># bold (merged)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
+<span class="c1"># ca2</span>
+<span class="n">pi_ca</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">]:</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+    <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+        <span class="n">gr_ca</span><span class="o">.</span><span class="n">run_pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">d2p</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ca2</span><span class="se">\n</span><span class="s1">b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+    <span class="n">pi_ca</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mappings</span> <span class="o">=</span> <span class="n">find_best_mappings</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">pi_ca</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">gmap</span> <span class="ow">in</span> <span class="n">mappings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">new_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gmap</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="c1"># if b == 0.5:</span>
+    <span class="c1">#     i, j = new_ids[3], new_ids[4]</span>
+    <span class="c1">#     new_ids[3], new_ids[4] = j, i</span>
+    <span class="n">pi</span> <span class="o">=</span> <span class="n">pi_ca</span><span class="p">[</span><span class="n">b</span><span class="p">][</span><span class="n">new_ids</span><span class="p">]</span>
+    <span class="n">d2p</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ca2</span><span class="se">\n</span><span class="s1">b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quick_show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/may-(misc-kaba-128)-2022_18_0.png" src="../../_images/may-(misc-kaba-128)-2022_18_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="task-all-k-7-p-10">
+<h2>task = ‘all’, k=7, p = 10<a class="headerlink" href="#task-all-k-7-p-10" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span>
@@ -1506,6 +1696,12 @@
     <span class="n">gr_bo</span><span class="o">.</span><span class="n">run_pi</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold+1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
 
+<span class="c1"># bold (merged x 2)</span>
+<span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">d2p</span><span class="p">[</span><span class="s1">&#39;bold-1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_bo</span><span class="o">.</span><span class="n">project_vec</span><span class="p">())</span>
+
 <span class="c1"># bold (merged)</span>
 <span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">_merge_bold</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
@@ -1513,7 +1709,7 @@
 
 <span class="c1"># ca2</span>
 <span class="n">pi_ca</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">]:</span>
     <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
     <span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
     <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
@@ -1545,7 +1741,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(misc-kaba-128)-2022_11_0.png" src="../../_images/may-(misc-kaba-128)-2022_11_0.png" />
+<img alt="../../_images/may-(misc-kaba-128)-2022_28_0.png" src="../../_images/may-(misc-kaba-128)-2022_28_0.png" />
 </div>
 </div>
 </div>
@@ -1624,7 +1820,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(misc-kaba-128)-2022_17_0.png" src="../../_images/may-(misc-kaba-128)-2022_17_0.png" />
+<img alt="../../_images/may-(misc-kaba-128)-2022_36_0.png" src="../../_images/may-(misc-kaba-128)-2022_36_0.png" />
 </div>
 </div>
 </div>
@@ -1703,7 +1899,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/may-(misc-kaba-128)-2022_23_0.png" src="../../_images/may-(misc-kaba-128)-2022_23_0.png" />
+<img alt="../../_images/may-(misc-kaba-128)-2022_42_0.png" src="../../_images/may-(misc-kaba-128)-2022_42_0.png" />
 </div>
 </div>
 </div>
