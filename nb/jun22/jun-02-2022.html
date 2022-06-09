@@ -1245,6 +1245,16 @@
      Jun 3rd, 2022 (global node selection (automatic now))
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-06a-2022.html">
+     Jun 6th, 2022 (results so far, prune, mg)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-06b-2022.html">
+     Jun 6th, 2022 (results so far, prune, mg)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1355,6 +1365,13 @@
   <a class="reference internal nav-link" href="#this-was-a-good-answer">
    This was a good answer
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fewer-seeds">
+     Fewer seeds?
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-experiment-with-different-kws">
@@ -1423,51 +1440,32 @@
 
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
-<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span> <span class="k">as</span> <span class="n">dc</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
-<span class="kn">from</span> <span class="nn">numpy.ma</span> <span class="kn">import</span> <span class="n">masked_where</span> <span class="k">as</span> <span class="n">mwh</span>
 <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter</span>
 <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span><span class="p">,</span> <span class="n">HTML</span>
-<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">rgb2hex</span><span class="p">,</span> <span class="n">to_rgb</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="c1"># set style &amp; no interpolalation</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;image.interpolation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">)</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># tmp &amp; extras dir</span>
 <span class="n">git_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Dropbox/git&#39;</span><span class="p">)</span>
-<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
-<span class="n">fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/figs&#39;</span><span class="p">)</span>
 <span class="n">extras_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/_extras&#39;</span><span class="p">)</span>
-<span class="n">lfr_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HOME&#39;</span><span class="p">],</span> <span class="s1">&#39;Documents/workspaces/lfr/binary_overlapping&#39;</span><span class="p">)</span>
+<span class="n">fig_base_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/figs&#39;</span><span class="p">)</span>
+<span class="n">tmp_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;jb-Ca-fMRI/tmp&#39;</span><span class="p">)</span>
 
 
 <span class="c1"># GitHub</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">register.atlas</span> <span class="kn">import</span> <span class="n">make_tree_graph</span>
-<span class="kn">from</span> <span class="nn">register.parcellation</span> <span class="kn">import</span> <span class="n">Parcellation</span>
-<span class="kn">from</span> <span class="nn">analysis.hierarchical</span> <span class="kn">import</span> <span class="n">Hierarchical</span>
-<span class="kn">from</span> <span class="nn">analysis.fourier</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.svinet</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.group</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.lfr</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">utils.plotting</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
 <span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
+<span class="kn">from</span> <span class="nn">analysis.group</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="c1"># warnings</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="c1"># warnings, tqdm, &amp; style</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">set_style</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1581,7 +1579,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5117763157894737</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5086842105263157</span>
 </pre>
 </div></div>
 </div>
@@ -1592,7 +1590,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5019463087248323</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4987919463087248</span>
 </pre>
 </div></div>
 </div>
@@ -1631,13 +1629,15 @@
     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;pr&#39;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
 <span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bins = [</span><span class="si">{</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, ..., </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_13_0.png" src="../../_images/jun-02-2022_13_0.png" />
+<img alt="../../_images/jun-02-2022_11_0.png" src="../../_images/jun-02-2022_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1675,13 +1675,15 @@
     <span class="n">label</span><span class="o">=</span><span class="s1">&#39;pr&#39;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
 <span class="p">)</span>
+<span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;bins = [</span><span class="si">{</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, ..., </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_15_0.png" src="../../_images/jun-02-2022_15_0.png" />
+<img alt="../../_images/jun-02-2022_12_0.png" src="../../_images/jun-02-2022_12_0.png" />
 </div>
 </div>
 <section id="this-was-a-good-answer">
@@ -1698,6 +1700,26 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">fit_meta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_03_15-57'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'min_runs_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'min_node_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.7</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'best_node_freq_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.93</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'num_total_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">110</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fraction_accepted_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.6727272727272727</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fraction_good_nodes'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.7368421052631579</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_03_15-59'</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">perf</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;raw  </span><span class="se">\t</span><span class="s2">.  .  .</span><span class="se">\t</span><span class="s2">ovp: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">, disj:  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -1710,9 +1732,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">raw     .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9869</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9763</span>
-pr      .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9828</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9842</span>
-pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9831</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9763</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">raw     .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9854</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9658</span>
+pr      .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9818</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9632</span>
+pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9823</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9632</span>
 
 </pre>
 </div></div>
@@ -1730,24 +1752,76 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_20_0.png" src="../../_images/jun-02-2022_20_0.png" />
+<img alt="../../_images/jun-02-2022_18_0.png" src="../../_images/jun-02-2022_18_0.png" />
 </div>
 </div>
+<section id="fewer-seeds">
+<h3>Fewer seeds?<a class="headerlink" href="#fewer-seeds" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aligned_new_avg</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+    <span class="n">aligned_new</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">115</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:],</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">perf</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">perf</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;raw  </span><span class="se">\t</span><span class="s2">.  .  .</span><span class="se">\t</span><span class="s2">ovp: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">, disj:  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">pr_ca</span><span class="p">[</span><span class="s1">&#39;pi_prune_avg&#39;</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">perf</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;pr  </span><span class="se">\t</span><span class="s2">.  .  .</span><span class="se">\t</span><span class="s2">ovp: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">, disj:  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">pi_symmetry_score</span><span class="p">(</span><span class="n">aligned_new_avg</span><span class="p">,</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">perf</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;pr+algn</span><span class="se">\t</span><span class="s2">.  .  .</span><span class="se">\t</span><span class="s2">ovp: </span><span class="si">{</span><span class="n">a</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="s2">, disj:  </span><span class="si">{</span><span class="n">b</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">0.4f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">raw     .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9854</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9658</span>
+pr      .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9818</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9632</span>
+pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9820</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9737</span>
+
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d2p</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;raw&#39;</span><span class="p">:</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">()),</span>
+    <span class="s1">&#39;pr(new)&#39;</span><span class="p">:</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">pr_ca</span><span class="p">[</span><span class="s1">&#39;pi_prune_avg&#39;</span><span class="p">])),</span>
+    <span class="s1">&#39;ctrd&#39;</span><span class="p">:</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">centroids</span><span class="p">)),</span>
+    <span class="s1">&#39;pr+algn(new)&#39;</span><span class="p">:</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">trim2d</span><span class="p">(</span><span class="n">gr_ca</span><span class="o">.</span><span class="n">project_vec</span><span class="p">(</span><span class="n">aligned_new_avg</span><span class="p">)),</span>
+<span class="p">}</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">quick_show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">ylabel_fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-02-2022_26_0.png" src="../../_images/jun-02-2022_26_0.png" />
+</div>
+</div>
+</section>
 </section>
 <section id="now-experiment-with-different-kws">
 <h2>Now experiment with different kws<a class="headerlink" href="#now-experiment-with-different-kws" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kw_kmeans</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;k-means++&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-    <span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-4</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">kw_kmeans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'n_init'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span>, <span style="color: #008000; text-decoration-color: #008000">'max_iter'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300</span>, <span style="color: #008000; text-decoration-color: #008000">'tol'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0001</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">kw_kmeans</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;n_init&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-    <span class="s1">&#39;algorithm&#39;</span><span class="p">:</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;max_iter&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s1">&#39;tol&#39;</span><span class="p">:</span> <span class="mf">1e-8</span><span class="p">,</span>
 <span class="p">}</span>
-<span class="n">aligned_new</span><span class="p">,</span> <span class="n">centroids</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">align_post_prune</span><span class="p">(</span>
-    <span class="n">pi</span><span class="o">=</span><span class="n">pr_ca</span><span class="p">[</span><span class="s1">&#39;pi_prune_run&#39;</span><span class="p">],</span> <span class="n">kw_kmeans</span><span class="o">=</span><span class="n">kw_kmeans</span><span class="p">)</span>
-<span class="n">aligned_new_avg</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">aligned_new</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">aligned_new</span><span class="p">,</span> <span class="n">centroids</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">align_post_prune</span><span class="p">(</span><span class="n">pr_ca</span><span class="p">[</span><span class="s1">&#39;pi_prune_run&#39;</span><span class="p">])</span>
+<span class="n">aligned_new_avg</span> <span class="o">=</span> <span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span>
+    <span class="n">aligned_new</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">centroids</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span><span class="n">centroids</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">gr_ca</span><span class="o">.</span><span class="n">avg</span><span class="p">()</span>
 </pre></div>
@@ -1776,20 +1850,24 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">raw     .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9869</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9763</span>
-pr      .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9828</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9842</span>
-pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9832</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9763</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">raw     .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9854</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9658</span>
+pr      .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9818</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9632</span>
+pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9821</span>, disj:  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9605</span>
 
 </pre>
-</div><img alt="../../_images/jun-02-2022_27_1.png" src="../../_images/jun-02-2022_27_1.png" />
+</div><img alt="../../_images/jun-02-2022_32_1.png" src="../../_images/jun-02-2022_32_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">KMeans</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">kw_kmeans</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'n_init'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span>, <span style="color: #008000; text-decoration-color: #008000">'max_iter'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">500</span>, <span style="color: #008000; text-decoration-color: #008000">'tol'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1e-08</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1812,7 +1890,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fd4a1b65ca0</span><span style="font-weight: bold">&gt;]</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_33_1.png" src="../../_images/jun-02-2022_33_1.png" />
+</div><img alt="../../_images/jun-02-2022_38_1.png" src="../../_images/jun-02-2022_38_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1877,7 +1955,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_40_1.png" src="../../_images/jun-02-2022_40_1.png" />
+</div><img alt="../../_images/jun-02-2022_45_1.png" src="../../_images/jun-02-2022_45_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1908,7 +1986,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_44_1.png" src="../../_images/jun-02-2022_44_1.png" />
+</div><img alt="../../_images/jun-02-2022_49_1.png" src="../../_images/jun-02-2022_49_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1974,7 +2052,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_53_1.png" src="../../_images/jun-02-2022_53_1.png" />
+</div><img alt="../../_images/jun-02-2022_58_1.png" src="../../_images/jun-02-2022_58_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2048,7 +2126,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_60_0.png" src="../../_images/jun-02-2022_60_0.png" />
+<img alt="../../_images/jun-02-2022_65_0.png" src="../../_images/jun-02-2022_65_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2106,7 +2184,7 @@ Wall time: 4min 53s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_66_0.png" src="../../_images/jun-02-2022_66_0.png" />
+<img alt="../../_images/jun-02-2022_71_0.png" src="../../_images/jun-02-2022_71_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2232,7 +2310,7 @@ Wall time: 4min 53s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_87_0.png" src="../../_images/jun-02-2022_87_0.png" />
+<img alt="../../_images/jun-02-2022_92_0.png" src="../../_images/jun-02-2022_92_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2246,7 +2324,7 @@ Wall time: 4min 53s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.lines.Line2D</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f3b54b77fd0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_88_1.png" src="../../_images/jun-02-2022_88_1.png" />
+</div><img alt="../../_images/jun-02-2022_93_1.png" src="../../_images/jun-02-2022_93_1.png" />
 </div>
 </div>
 </section>
@@ -2439,7 +2517,7 @@ Wall time: 4min 46s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_109_0.png" src="../../_images/jun-02-2022_109_0.png" />
+<img alt="../../_images/jun-02-2022_114_0.png" src="../../_images/jun-02-2022_114_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2484,7 +2562,7 @@ Wall time: 4min 46s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_115_0.png" src="../../_images/jun-02-2022_115_0.png" />
+<img alt="../../_images/jun-02-2022_120_0.png" src="../../_images/jun-02-2022_120_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2495,7 +2573,7 @@ Wall time: 4min 46s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_117_0.png" src="../../_images/jun-02-2022_117_0.png" />
+<img alt="../../_images/jun-02-2022_122_0.png" src="../../_images/jun-02-2022_122_0.png" />
 </div>
 </div>
 <section id="new-kmeans-using-pruned-pi">
@@ -2639,7 +2717,7 @@ Wall time: 4min 46s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_136_0.png" src="../../_images/jun-02-2022_136_0.png" />
+<img alt="../../_images/jun-02-2022_141_0.png" src="../../_images/jun-02-2022_141_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2754,7 +2832,7 @@ Wall time: 11.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_147_0.png" src="../../_images/jun-02-2022_147_0.png" />
+<img alt="../../_images/jun-02-2022_152_0.png" src="../../_images/jun-02-2022_152_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2804,7 +2882,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_153_0.png" src="../../_images/jun-02-2022_153_0.png" />
+<img alt="../../_images/jun-02-2022_158_0.png" src="../../_images/jun-02-2022_158_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2975,7 +3053,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_165_1.png" src="../../_images/jun-02-2022_165_1.png" />
+</div><img alt="../../_images/jun-02-2022_170_1.png" src="../../_images/jun-02-2022_170_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2987,7 +3065,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_166_1.png" src="../../_images/jun-02-2022_166_1.png" />
+</div><img alt="../../_images/jun-02-2022_171_1.png" src="../../_images/jun-02-2022_171_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2999,7 +3077,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_167_1.png" src="../../_images/jun-02-2022_167_1.png" />
+</div><img alt="../../_images/jun-02-2022_172_1.png" src="../../_images/jun-02-2022_172_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3011,7 +3089,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_172_1.png" src="../../_images/jun-02-2022_172_1.png" />
+</div><img alt="../../_images/jun-02-2022_177_1.png" src="../../_images/jun-02-2022_177_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3062,7 +3140,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_176_1.png" src="../../_images/jun-02-2022_176_1.png" />
+</div><img alt="../../_images/jun-02-2022_181_1.png" src="../../_images/jun-02-2022_181_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3074,7 +3152,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_177_1.png" src="../../_images/jun-02-2022_177_1.png" />
+</div><img alt="../../_images/jun-02-2022_182_1.png" src="../../_images/jun-02-2022_182_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3232,7 +3310,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_203_0.png" src="../../_images/jun-02-2022_203_0.png" />
+<img alt="../../_images/jun-02-2022_208_0.png" src="../../_images/jun-02-2022_208_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3250,7 +3328,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_207_0.png" src="../../_images/jun-02-2022_207_0.png" />
+<img alt="../../_images/jun-02-2022_212_0.png" src="../../_images/jun-02-2022_212_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3264,7 +3342,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_211_1.png" src="../../_images/jun-02-2022_211_1.png" />
+</div><img alt="../../_images/jun-02-2022_216_1.png" src="../../_images/jun-02-2022_216_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3316,7 +3394,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_214_0.png" src="../../_images/jun-02-2022_214_0.png" />
+<img alt="../../_images/jun-02-2022_219_0.png" src="../../_images/jun-02-2022_219_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3468,7 +3546,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_230_0.png" src="../../_images/jun-02-2022_230_0.png" />
+<img alt="../../_images/jun-02-2022_235_0.png" src="../../_images/jun-02-2022_235_0.png" />
 </div>
 </div>
 </section>
@@ -3557,7 +3635,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-02-2022_237_0.png" src="../../_images/jun-02-2022_237_0.png" />
+<img alt="../../_images/jun-02-2022_242_0.png" src="../../_images/jun-02-2022_242_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3576,7 +3654,7 @@ pr+algn .  .  . ovp: <span style="color: #008080; text-decoration-color: #008080
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jun-02-2022_240_1.png" src="../../_images/jun-02-2022_240_1.png" />
+</div><img alt="../../_images/jun-02-2022_245_1.png" src="../../_images/jun-02-2022_245_1.png" />
 </div>
 </div>
 </section>
