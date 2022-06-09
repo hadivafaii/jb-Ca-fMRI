@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jun 8th, 2022 (plot pi together for all: KABA 128)" href="jun-08a-2022.html" />
     <link rel="prev" title="Jun 6th, 2022 (results so far, prune, mg)" href="jun-06a-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1254,6 +1255,26 @@
      Jun 6th, 2022 (results so far, prune, mg)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-08a-2022.html">
+     Jun 8th, 2022 (plot pi together for all: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-08b-2022.html">
+     Jun 8th, 2022 (plot pi together for all: GABAN 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-09a-2022.html">
+     Jun 9th, 2022 (entropy (clean) k=7,10,14: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jun-09b-2022.html">
+     Jun 9th, 2022 (entropy (clean) k=7,10,14: GABAN 512)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1368,6 +1389,11 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ca2">
      Ca2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ca2-fast">
+     Ca2 (fast)
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -1506,9 +1532,9 @@
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "646ccc37dec44fad94e96b2e06eb75b5", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1d 2h 46min 48s, sys: 31min 26s, total: 1d 3h 18min 14s
-Wall time: 45min 4s
+{"model_id": "909f764091bc4ad982dc20c2f2934e24", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1d 1h 17min 17s, sys: 26min 20s, total: 1d 1h 43min 38s
+Wall time: 42min 23s
 </pre></div>
 </div>
 </div>
@@ -1627,6 +1653,174 @@ Wall time: 45min 4s
 </div>
 </div>
 </section>
+<section id="ca2-fast">
+<h3>Ca2 (fast)<a class="headerlink" href="#ca2-fast" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">pi_avg</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">pi_all</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">]):</span>
+    <span class="n">props_ca</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kk</span>
+    <span class="n">gr_ca</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
+    <span class="n">pi_ca</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">prune</span><span class="p">(</span><span class="n">thres</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)[</span><span class="s1">&#39;pi_prune&#39;</span><span class="p">]</span>
+    <span class="n">pi_all</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">pi_ca</span>
+    <span class="n">pi_avg</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;ca2-k</span><span class="si">{</span><span class="n">kk</span><span class="si">}</span><span class="s1">(pr95)</span><span class="se">\n</span><span class="s1">b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">avg</span><span class="p">(</span><span class="n">pi_ca</span><span class="p">)</span>
+    
+<span class="c1"># sort</span>
+<span class="n">d2p</span> <span class="o">=</span> <span class="n">pi_avg</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pi_avg</span><span class="p">)):</span>
+    <span class="n">lbl</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">pi_avg</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">src</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d2p</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">gmap</span> <span class="o">=</span> <span class="n">find_best_mappings</span><span class="p">(</span>
+        <span class="n">centroids</span><span class="o">=</span><span class="n">src</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="n">x</span><span class="p">},</span>
+        <span class="n">match_metric</span><span class="o">=</span><span class="s1">&#39;cosine&#39;</span><span class="p">,</span>
+        <span class="n">global_order</span><span class="o">=</span><span class="s1">&#39;infer&#39;</span><span class="p">,</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gmap</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">ids</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span> <span class="n">ids</span><span class="p">))</span>
+    <span class="n">d2p</span><span class="p">[</span><span class="n">lbl</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">ids</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "4f19d05dd4274cbeb113911cfc26eb49", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 14h 1min 16s, sys: 22min 56s, total: 14h 24min 13s
+Wall time: 24min 1s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">fit_meta</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_07_13-23'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'min_runs_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4099999999999998</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'min_node_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.4999999999999998</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'best_node_freq_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.885</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'num_total_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">110</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fraction_accepted_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.41818181818181815</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'fraction_good_nodes'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.507380073800738</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_07_13-28'</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gr_ca</span><span class="o">.</span><span class="n">kw_kmeans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'n_init'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100</span>, <span style="color: #008000; text-decoration-color: #008000">'max_iter'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">300</span>, <span style="color: #008000; text-decoration-color: #008000">'tol'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0001</span><span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-06b-2022_25_0.png" src="../../_images/jun-06b-2022_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">kk</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pi_all</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">h_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">h_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">h_all</span><span class="p">)</span>
+<span class="n">h_avg</span> <span class="o">=</span> <span class="n">avg</span><span class="p">(</span><span class="n">h_all</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">h_all</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">h_avg</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">11</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">))</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">h_avg</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">h_avg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8548549272471334</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">h_avg</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">h_avg</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">h_avg</span><span class="p">),</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;icefire&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-06b-2022_29_0.png" src="../../_images/jun-06b-2022_29_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_h</span> <span class="o">=</span> <span class="n">dist2sim</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">squareform</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">pdist</span><span class="p">(</span>
+    <span class="n">h_avg</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">h_avg</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">],</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">sim_h</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2g&#39;</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-06b-2022_32_0.png" src="../../_images/jun-06b-2022_32_0.png" />
+</div>
+</div>
+</section>
 <section id="bold">
 <h3>Bold<a class="headerlink" href="#bold" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -1635,7 +1829,7 @@ Wall time: 45min 4s
 
 <span class="n">pi_avg</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">pi_all</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">))):</span>
+<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="mi">16</span><span class="p">]):</span>
     <span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kk</span>
     <span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
     <span class="n">pi_bo</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">prune</span><span class="p">(</span><span class="n">thres</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)[</span><span class="s1">&#39;pi_prune&#39;</span><span class="p">]</span>
@@ -1663,9 +1857,9 @@ Wall time: 45min 4s
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "fcd58ce7442b426f912c119ae72ce2f8", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2d 5h 16min 22s, sys: 43min 5s, total: 2d 5h 59min 28s
-Wall time: 1h 24min 34s
+{"model_id": "6813c6f7fb7e45f8b21189f2da48c9cb", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2d 16h 17min 20s, sys: 1h 50min 11s, total: 2d 18h 7min 32s
+Wall time: 3h 10min 59s
 </pre></div>
 </div>
 </div>
@@ -1679,14 +1873,14 @@ Wall time: 1h 24min 34s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 <span style="font-weight: bold">{</span>
-    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-08'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-39'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'min_runs_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.75</span>,
     <span style="color: #008000; text-decoration-color: #008000">'min_node_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5799999999999997</span>,
     <span style="color: #008000; text-decoration-color: #008000">'best_node_freq_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.985</span>,
     <span style="color: #008000; text-decoration-color: #008000">'num_total_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fraction_accepted_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8245614035087719</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fraction_good_nodes'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.584870848708487</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-39'</span>
+    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_19-09'</span>
 <span style="font-weight: bold">}</span>
 </pre>
 </div></div>
@@ -1704,12 +1898,12 @@ Wall time: 1h 24min 34s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">d2p</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-06b-2022_25_0.png" src="../../_images/jun-06b-2022_25_0.png" />
+<img alt="../../_images/jun-06b-2022_40_0.png" src="../../_images/jun-06b-2022_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1726,7 +1920,7 @@ Wall time: 1h 24min 34s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">9</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">))</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">))</span>
 </pre>
 </div></div>
 </div>
@@ -1754,7 +1948,7 @@ Wall time: 1h 24min 34s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-06b-2022_29_0.png" src="../../_images/jun-06b-2022_29_0.png" />
+<img alt="../../_images/jun-06b-2022_44_0.png" src="../../_images/jun-06b-2022_44_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1780,7 +1974,7 @@ Wall time: 1h 24min 34s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-06b-2022_32_0.png" src="../../_images/jun-06b-2022_32_0.png" />
+<img alt="../../_images/jun-06b-2022_47_0.png" src="../../_images/jun-06b-2022_47_0.png" />
 </div>
 </div>
 </section>
@@ -1792,7 +1986,7 @@ Wall time: 1h 24min 34s
 
 <span class="n">pi_avg</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">pi_all</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">))):</span>
+<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span> <span class="o">+</span> <span class="p">[</span><span class="mi">16</span><span class="p">]):</span>
     <span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kk</span>
     <span class="n">gr_bo</span> <span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span><span class="o">.</span><span class="n">fit_group</span><span class="p">()</span>
     <span class="n">gr_bo</span><span class="o">.</span><span class="n">run_pi</span> <span class="o">=</span> <span class="n">gr_bo</span><span class="o">.</span><span class="n">prune</span><span class="p">(</span><span class="n">thres</span><span class="o">=</span><span class="mf">0.003</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mf">0.95</span><span class="p">)[</span><span class="s1">&#39;pi_prune&#39;</span><span class="p">]</span>
@@ -1822,9 +2016,9 @@ Wall time: 1h 24min 34s
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "a543d368ab46408eb6f1fdf03616f716", "version_major": 2, "version_minor": 0}
-</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2d 8h 10min 36s, sys: 54min 42s, total: 2d 9h 5min 18s
-Wall time: 1h 32min 26s
+{"model_id": "037c89db08224cf88216b58cc2cc0fc5", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2d 15h 50min 56s, sys: 49min 33s, total: 2d 16h 40min 30s
+Wall time: 1h 42min 54s
 </pre></div>
 </div>
 </div>
@@ -1838,14 +2032,14 @@ Wall time: 1h 32min 26s
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 <span style="font-weight: bold">{</span>
-    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-08'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'time_start'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-39'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'min_runs_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.75</span>,
     <span style="color: #008000; text-decoration-color: #008000">'min_node_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5799999999999997</span>,
     <span style="color: #008000; text-decoration-color: #008000">'best_node_freq_q'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.985</span>,
     <span style="color: #008000; text-decoration-color: #008000">'num_total_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fraction_accepted_runs'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8245614035087719</span>,
     <span style="color: #008000; text-decoration-color: #008000">'fraction_good_nodes'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.584870848708487</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_18-39'</span>
+    <span style="color: #008000; text-decoration-color: #008000">'time_end'</span>: <span style="color: #008000; text-decoration-color: #008000">'2022_06_06_19-09'</span>
 <span style="font-weight: bold">}</span>
 </pre>
 </div></div>
@@ -1868,7 +2062,78 @@ Wall time: 1h 32min 26s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jun-06b-2022_40_0.png" src="../../_images/jun-06b-2022_40_0.png" />
+<img alt="../../_images/jun-06b-2022_55_0.png" src="../../_images/jun-06b-2022_55_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h_all</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">kk</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">pi_all</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">sp_stats</span><span class="o">.</span><span class="n">entropy</span><span class="p">(</span><span class="n">bn</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">h_all</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">h_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">h_all</span><span class="p">)</span>
+<span class="n">h_avg</span> <span class="o">=</span> <span class="n">avg</span><span class="p">(</span><span class="n">h_all</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">h_all</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">h_avg</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">4</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">542</span><span style="font-weight: bold">))</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">h_avg</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">h_avg</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.2781593715899061</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.8324238024583426</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">gr_ca</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">h_avg</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmin</span><span class="p">(</span><span class="n">h_avg</span><span class="p">),</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">h_avg</span><span class="p">),</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;icefire&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-06b-2022_59_0.png" src="../../_images/jun-06b-2022_59_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sim_h</span> <span class="o">=</span> <span class="n">dist2sim</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">squareform</span><span class="p">(</span><span class="n">sp_dist</span><span class="o">.</span><span class="n">pdist</span><span class="p">(</span>
+    <span class="n">h_avg</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;correlation&#39;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span>
+    <span class="n">sim_h</span><span class="p">,</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.2g&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jun-06b-2022_62_0.png" src="../../_images/jun-06b-2022_62_0.png" />
 </div>
 </div>
 </section>
@@ -1901,6 +2166,7 @@ Wall time: 1h 32min 26s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="jun-06a-2022.html" title="previous page">Jun 6th, 2022 (results so far, prune, mg)</a>
+    <a class='right-next' id="next-link" href="jun-08a-2022.html" title="next page">Jun 8th, 2022 (plot pi together for all: KABA 128)</a>
 
         </div>
         
