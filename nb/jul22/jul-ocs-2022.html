@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jul 8th, 2022 (Fig-5 proportion plot)" href="jul-prop-2022.html" />
     <link rel="prev" title="Jul 6th, 2022 (Fig-3 OCs; K=20)" href="jul-ocs20-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1423,6 +1424,21 @@
      Jul 7th, 2022 (Fig-3 OCs; combined)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-prop-2022.html">
+     Jul 8th, 2022 (Fig-5 proportion plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-09-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-mem-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1639,39 +1655,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
-<span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;rest&#39;</span>
-
-<span class="n">num_k</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span>
-<span class="n">perc</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;p</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">-sample&#39;</span>
-<span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;kw_kmeans&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;n_init&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="n">perc</span><span class="p">,</span>
-    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="n">num_k</span><span class="p">,</span>
-    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
-    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
-    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-<span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-
-<span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-<span class="n">bt_bo</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">bt_cas</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">bt_caf</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">bt_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">BOLD</span><span class="p">:</span> <span class="n">bt_bo</span><span class="p">,</span>
-    <span class="n">CAS</span><span class="p">:</span> <span class="n">bt_cas</span><span class="p">,</span>
-    <span class="n">CAF</span><span class="p">:</span> <span class="n">bt_caf</span><span class="p">,</span>
-<span class="p">}</span>
+<span class="n">num_k</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
 </div>
@@ -1684,34 +1668,33 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">kk</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">]:</span>
-    <span class="n">props_ca</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kk</span>
-    <span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kk</span>
-    <span class="k">if</span> <span class="n">kk</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="n">props_bo</span><span class="p">[</span><span class="s1">&#39;num_k&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">num_k</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">num_k</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">global_order</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;infer&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="n">thres</span> <span class="o">=</span> <span class="mf">0.372</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="n">global_order</span> <span class="o">=</span> <span class="s1">&#39;infer&#39;</span>
         <span class="n">thres</span> <span class="o">=</span> <span class="kc">None</span>
     
-    <span class="k">if</span> <span class="n">kk</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num_k</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="n">kws_show</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
             <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
             <span class="s1">&#39;mask_thresh&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span>
             <span class="s1">&#39;add_disjoint&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s1">&#39;add_title&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-            <span class="s1">&#39;figsize_x&#39;</span><span class="p">:</span> <span class="mf">2.5</span><span class="p">,</span>
-            <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="s1">&#39;figsize_x&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
         <span class="p">}</span>
-    <span class="k">elif</span> <span class="n">kk</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">num_k</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
         <span class="n">kws_show</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
-            <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+            <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
             <span class="s1">&#39;mask_thresh&#39;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span>
             <span class="s1">&#39;add_disjoint&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s1">&#39;add_title&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
         <span class="p">}</span>
-    <span class="k">elif</span> <span class="n">kk</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">num_k</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
         <span class="n">kws_show</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s1">&#39;vmin&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
             <span class="s1">&#39;vmax&#39;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
@@ -1722,27 +1705,18 @@
             <span class="s1">&#39;add_disjoint&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s1">&#39;add_title&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
             <span class="s1">&#39;figsize_x&#39;</span><span class="p">:</span> <span class="mf">13.5</span><span class="p">,</span>
+            <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
         <span class="p">}</span>
-
-    <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-    <span class="n">bt_bo</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span>
-    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-    <span class="n">bt_cas</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">bt_caf</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-    <span class="n">bt_dict</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="n">BOLD</span><span class="p">:</span> <span class="n">bt_bo</span><span class="p">,</span>
-        <span class="n">CAS</span><span class="p">:</span> <span class="n">bt_cas</span><span class="p">,</span>
-        <span class="n">CAF</span><span class="p">:</span> <span class="n">bt_caf</span><span class="p">,</span>
-    <span class="p">}</span>
-
     <span class="n">res</span> <span class="o">=</span> <span class="n">similiarity_results</span><span class="p">(</span>
-        <span class="n">bt_dict</span><span class="o">=</span><span class="n">bt_dict</span><span class="p">,</span>
+        <span class="n">mice</span><span class="o">=</span><span class="n">mice</span><span class="p">,</span>
+        <span class="n">num_k</span><span class="o">=</span><span class="n">num_k</span><span class="p">,</span>
         <span class="n">merge_thres</span><span class="o">=</span><span class="n">thres</span><span class="p">,</span>
         <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">),</span>
+        <span class="n">global_order</span><span class="o">=</span><span class="n">global_order</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">results</span><span class="p">[</span><span class="n">kk</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
-    
+    <span class="n">results</span><span class="p">[</span><span class="n">num_k</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+
+    <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">res</span><span class="p">[</span><span class="s1">&#39;props_ca&#39;</span><span class="p">])</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
         <span class="n">data</span><span class="o">=</span><span class="n">res</span><span class="p">[</span><span class="s1">&#39;pi_sorted&#39;</span><span class="p">],</span>
         <span class="o">**</span><span class="n">kws_show</span><span class="p">,</span>
@@ -1754,8 +1728,8 @@
 <img alt="../../_images/jul-ocs-2022_7_0.png" src="../../_images/jul-ocs-2022_7_0.png" />
 <img alt="../../_images/jul-ocs-2022_7_1.png" src="../../_images/jul-ocs-2022_7_1.png" />
 <img alt="../../_images/jul-ocs-2022_7_2.png" src="../../_images/jul-ocs-2022_7_2.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 39min 9s, sys: 1min 59s, total: 41min 8s
-Wall time: 41min 9s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 39min 31s, sys: 2min 57s, total: 42min 29s
+Wall time: 43min 18s
 </pre></div>
 </div>
 </div>
@@ -1766,7 +1740,7 @@ Wall time: 41min 9s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig_ocs</span> <span class="kn">import</span> <span class="n">similarity_box</span> <span class="k">as</span> <span class="n">go</span>
-<span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.27</span><span class="p">,)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.27</span><span class="p">)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="s1">&#39;sim_bx.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
@@ -1784,9 +1758,9 @@ Wall time: 41min 9s
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvals</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">kk</span><span class="p">,</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">num_k</span><span class="p">,</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">test</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;tests&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="n">pvals</span><span class="p">[(</span><span class="n">kk</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">pvalue</span>
+        <span class="n">pvals</span><span class="p">[(</span><span class="n">num_k</span><span class="p">,</span> <span class="p">)</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">pvalue</span>
 </pre></div>
 </div>
 </div>
@@ -1891,7 +1865,7 @@ Wall time: 41min 9s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs-2022_19_0.png" src="../../_images/jul-ocs-2022_19_0.png" />
+<img alt="../../_images/jul-ocs-2022_18_0.png" src="../../_images/jul-ocs-2022_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1918,7 +1892,7 @@ Wall time: 41min 9s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs-2022_22_0.png" src="../../_images/jul-ocs-2022_22_0.png" />
+<img alt="../../_images/jul-ocs-2022_21_0.png" src="../../_images/jul-ocs-2022_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1930,7 +1904,7 @@ Wall time: 41min 9s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs-2022_27_0.png" src="../../_images/jul-ocs-2022_27_0.png" />
+<img alt="../../_images/jul-ocs-2022_24_0.png" src="../../_images/jul-ocs-2022_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1972,7 +1946,7 @@ Wall time: 41min 9s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs-2022_33_0.png" src="../../_images/jul-ocs-2022_33_0.png" />
+<img alt="../../_images/jul-ocs-2022_30_0.png" src="../../_images/jul-ocs-2022_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1994,7 +1968,7 @@ Wall time: 41min 9s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs-2022_45_0.png" src="../../_images/jul-ocs-2022_45_0.png" />
+<img alt="../../_images/jul-ocs-2022_36_0.png" src="../../_images/jul-ocs-2022_36_0.png" />
 </div>
 </div>
 </section>
@@ -2026,6 +2000,7 @@ Wall time: 41min 9s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="jul-ocs20-2022.html" title="previous page">Jul 6th, 2022 (Fig-3 OCs; K=20)</a>
+    <a class='right-next' id="next-link" href="jul-prop-2022.html" title="next page">Jul 8th, 2022 (Fig-5 proportion plot)</a>
 
         </div>
         
