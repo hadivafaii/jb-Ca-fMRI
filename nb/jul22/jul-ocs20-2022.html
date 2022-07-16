@@ -1424,6 +1424,36 @@
      Jul 7th, 2022 (Fig-3 OCs; combined)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-prop-2022.html">
+     Jul 8th, 2022 (Fig-5 proportion plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-09-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-mem-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-cbar-2022.html">
+     Jul 10th, 2022 (cbar for figs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-sup-2022.html">
+     Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-12-2022.html">
+     Jul 12th, 2022 (perc = 15 is better)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1644,9 +1674,8 @@
 
 <span class="c1"># GitHub</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
-<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="kn">from</span> <span class="nn">analysis.similarity</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">figures.fighelper</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.final</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># warnings, tqdm, &amp; style</span>
@@ -1686,40 +1715,11 @@
 <h2>Prepare (512)<a class="headerlink" href="#prepare-512" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
-<span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;rest&#39;</span>
-
-<span class="n">num_k</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span>
-<span class="n">perc</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;p</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">-sample&#39;</span>
-<span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;kw_kmeans&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;n_init&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="n">perc</span><span class="p">,</span>
-    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="n">num_k</span><span class="p">,</span>
-    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
-    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
-    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-<span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_k</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">bt_dict</span><span class="p">,</span> <span class="n">props_bo</span><span class="p">,</span> <span class="n">props_ca</span> <span class="o">=</span> <span class="n">default_props</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">num_k</span><span class="p">)</span>
 <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-<span class="n">bt_bo</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">bt_cas</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">bt_caf</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">bt_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">BOLD</span><span class="p">:</span> <span class="n">bt_bo</span><span class="p">,</span>
-    <span class="n">CAS</span><span class="p">:</span> <span class="n">bt_cas</span><span class="p">,</span>
-    <span class="n">CAF</span><span class="p">:</span> <span class="n">bt_caf</span><span class="p">,</span>
-<span class="p">}</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">prepare_palette</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>

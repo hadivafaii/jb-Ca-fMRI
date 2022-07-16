@@ -1404,6 +1404,56 @@
      Jul 5th, 2022 (Fig-3 OCs – draft)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs3-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=7)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs20-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=20)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-2022.html">
+     Jul 7th, 2022 (Fig-3 OCs; combined)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-prop-2022.html">
+     Jul 8th, 2022 (Fig-5 proportion plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-09-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-mem-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-cbar-2022.html">
+     Jul 10th, 2022 (cbar for figs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-sup-2022.html">
+     Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-12-2022.html">
+     Jul 12th, 2022 (perc = 15 is better)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1587,11 +1637,8 @@
 
 <span class="c1"># GitHub</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">git_dir</span><span class="p">,</span> <span class="s1">&#39;_Ca-fMRI&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">model.configuration</span> <span class="kn">import</span> <span class="n">Config</span>
-<span class="kn">from</span> <span class="nn">model.mouse</span> <span class="kn">import</span> <span class="n">Mice</span>
 <span class="kn">from</span> <span class="nn">figures.fighelper</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.bootstrap</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">analysis.network</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">analysis.final</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">utils.render</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># warnings, tqdm, &amp; style</span>
@@ -1631,47 +1678,11 @@
 <h2>Prepare (512)<a class="headerlink" href="#prepare-512" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
-<span class="n">pal</span><span class="p">,</span> <span class="n">_BOLD</span><span class="p">,</span> <span class="n">_CAS</span><span class="p">,</span> <span class="n">_CAF</span> <span class="o">=</span> <span class="n">prepare_palette</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;rest&#39;</span>
-
-<span class="n">num_k</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span>
-<span class="n">perc</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;p</span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">-sample&#39;</span>
-<span class="n">props_base</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;kw_kmeans&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;n_init&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">},</span>
-    <span class="s1">&#39;perc&#39;</span><span class="p">:</span> <span class="n">perc</span><span class="p">,</span>
-    <span class="s1">&#39;num_k&#39;</span><span class="p">:</span> <span class="n">num_k</span><span class="p">,</span>
-    <span class="s1">&#39;mice&#39;</span><span class="p">:</span> <span class="n">mice</span><span class="p">,</span>
-    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span>
-    <span class="s1">&#39;metric&#39;</span><span class="p">:</span> <span class="s1">&#39;pearson&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_using&#39;</span><span class="p">:</span> <span class="s1">&#39;gam&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;match_metric&#39;</span><span class="p">:</span> <span class="s1">&#39;euclidean&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;graph_type&#39;</span><span class="p">:</span> <span class="s1">&#39;real&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">props_ca</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-<span class="n">props_bo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="s1">&#39;bold-lite&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">props_base</span><span class="p">}</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_k</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">bt_dict</span><span class="p">,</span> <span class="n">props_bo</span><span class="p">,</span> <span class="n">props_ca</span> <span class="o">=</span> <span class="n">default_props</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">num_k</span><span class="p">)</span>
 <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-<span class="n">bt_bo</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_bo</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">bt_cas</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">band_ca</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">bt_caf</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
-
-<span class="n">bt_dict</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">_BOLD</span><span class="p">:</span> <span class="n">bt_bo</span><span class="p">,</span>
-    <span class="n">_CAS</span><span class="p">:</span> <span class="n">bt_cas</span><span class="p">,</span>
-    <span class="n">_CAF</span><span class="p">:</span> <span class="n">bt_caf</span><span class="p">,</span>
-<span class="p">}</span>
+<span class="n">pal</span> <span class="o">=</span> <span class="n">prepare_palette</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1687,14 +1698,14 @@
     <span class="n">o</span><span class="o">.</span><span class="n">compute_entropy</span><span class="p">(</span>
         <span class="n">use_prune</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">select_seeds</span><span class="o">=</span><span class="kc">True</span> <span class="k">if</span>
-        <span class="n">mode</span> <span class="o">==</span> <span class="n">_BOLD</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">mode</span> <span class="o">==</span> <span class="n">BOLD</span> <span class="k">else</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3min 11s, sys: 2.4 s, total: 3min 13s
-Wall time: 3min 13s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4min 54s, sys: 26 s, total: 5min 20s
+Wall time: 5min 27s
 </pre></div>
 </div>
 </div>
@@ -1703,14 +1714,14 @@ Wall time: 3min 13s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
-<span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">cut4figs</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">get_booter</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e3</span><span class="p">)))</span>
+<span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">cut4figs</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">get_booter</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">)))</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 35.1 s, sys: 5.89 s, total: 41 s
-Wall time: 41 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.8 s, sys: 2.85 s, total: 19.7 s
+Wall time: 19.7 s
 </pre></div>
 </div>
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span><span style="font-weight: bold">)</span>
@@ -1719,15 +1730,16 @@ Wall time: 41 s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig7</span> <span class="kn">import</span> <span class="n">dist_ent_inset</span> <span class="k">as</span> <span class="n">go</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">num_k</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig_ent</span> <span class="kn">import</span> <span class="n">dist_ent_inset</span> <span class="k">as</span> <span class="n">go</span>
+<span class="n">fig</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">xs</span><span class="p">,</span> <span class="n">num_k</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="s1">&#39;dist.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="s1">&#39;dist.png&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_12_0.png" src="../../_images/jul-ent-2022_12_0.png" />
+<img alt="../../_images/jul-ent-2022_11_0.png" src="../../_images/jul-ent-2022_11_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1757,7 +1769,7 @@ Wall time: 41 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_15_0.png" src="../../_images/jul-ent-2022_15_0.png" />
+<img alt="../../_images/jul-ent-2022_14_0.png" src="../../_images/jul-ent-2022_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1768,7 +1780,7 @@ Wall time: 41 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_17_0.png" src="../../_images/jul-ent-2022_17_0.png" />
+<img alt="../../_images/jul-ent-2022_16_0.png" src="../../_images/jul-ent-2022_16_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1803,7 +1815,7 @@ Wall time: 41 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_19_0.png" src="../../_images/jul-ent-2022_19_0.png" />
+<img alt="../../_images/jul-ent-2022_18_0.png" src="../../_images/jul-ent-2022_18_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1830,8 +1842,8 @@ Wall time: 41 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_21_0.png" src="../../_images/jul-ent-2022_21_0.png" />
-<img alt="../../_images/jul-ent-2022_21_1.png" src="../../_images/jul-ent-2022_21_1.png" />
+<img alt="../../_images/jul-ent-2022_20_0.png" src="../../_images/jul-ent-2022_20_0.png" />
+<img alt="../../_images/jul-ent-2022_20_1.png" src="../../_images/jul-ent-2022_20_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 35.7 s, sys: 646 ms, total: 36.3 s
 Wall time: 7.63 s
 </pre></div>
@@ -1871,6 +1883,17 @@ Wall time: 7.63 s
     <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contour</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">get_contour</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">contour</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jul-ent-2022_24_0.png" src="../../_images/jul-ent-2022_24_0.png" />
 </div>
 </div>
 </section>
@@ -1918,7 +1941,7 @@ Wall time: 7.63 s
         <span class="n">statistic</span><span class="o">=</span><span class="n">statistic</span><span class="p">,</span>
         <span class="n">permutation_type</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">,</span>
         <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">,</span>
-        <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">),</span>
+        <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">),</span>
         <span class="n">vectorized</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
         <span class="n">batch</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
@@ -1943,15 +1966,21 @@ Wall time: 7.63 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 23.7 s, sys: 27.8 ms, total: 23.7 s
-Wall time: 23.7 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 6min 19s, sys: 5.58 s, total: 6min 25s
+Wall time: 6min 25s
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span>
+    <span class="mi">2</span><span class="p">,</span>
+    <span class="mi">3</span><span class="p">,</span>
+    <span class="p">(</span><span class="mf">10.4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">((</span><span class="n">lbl_1</span><span class="p">,</span> <span class="n">lbl_2</span><span class="p">),</span> <span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
     <span class="n">vminmax</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -1962,29 +1991,32 @@ Wall time: 23.7 s
         <span class="n">vmin</span><span class="o">=-</span><span class="n">vminmax</span><span class="p">,</span>
         <span class="n">vmax</span><span class="o">=</span><span class="n">vminmax</span><span class="p">,</span>
         <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span>
-        <span class="n">cbar_shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">contour</span><span class="o">=</span><span class="n">contour</span><span class="p">,</span>
         <span class="n">contour_cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">,</span>
+        <span class="n">interp</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lbl_1</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">lbl_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.07</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lbl_1</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">lbl_2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
     
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">ListedColormap</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">cmap</span><span class="p">(</span><span class="mf">0.15</span><span class="p">),</span> <span class="n">cmap</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">cmap</span><span class="p">(</span><span class="mf">0.85</span><span class="p">)])</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
     <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
     <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">x</span><span class="p">[</span><span class="n">r</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">vminmax</span> <span class="o">=</span> <span class="mf">1.65</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">ctx2ax</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
         <span class="n">base</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span>
-        <span class="n">vmin</span><span class="o">=-</span><span class="n">vminmax</span><span class="p">,</span>
-        <span class="n">vmax</span><span class="o">=</span><span class="n">vminmax</span><span class="p">,</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;bwr&#39;</span><span class="p">,</span>
-        <span class="n">cbar_shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
         <span class="n">contour</span><span class="o">=</span><span class="n">contour</span><span class="p">,</span>
         <span class="n">contour_cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">,</span>
-        <span class="n">interp</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+        <span class="n">interp</span><span class="o">=</span><span class="s1">&#39;antialiased&#39;</span><span class="p">,</span>
     <span class="p">)</span>
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
 
@@ -1995,7 +2027,7 @@ Wall time: 23.7 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_32_0.png" src="../../_images/jul-ent-2022_32_0.png" />
+<img alt="../../_images/jul-ent-2022_31_0.png" src="../../_images/jul-ent-2022_31_0.png" />
 </div>
 </div>
 </section>
@@ -2037,7 +2069,7 @@ Wall time: 23.7 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_36_0.png" src="../../_images/jul-ent-2022_36_0.png" />
+<img alt="../../_images/jul-ent-2022_37_0.png" src="../../_images/jul-ent-2022_37_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2161,7 +2193,7 @@ Wall time: 23.7 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_42_0.png" src="../../_images/jul-ent-2022_42_0.png" />
+<img alt="../../_images/jul-ent-2022_43_0.png" src="../../_images/jul-ent-2022_43_0.png" />
 </div>
 </div>
 </section>
@@ -2235,19 +2267,19 @@ Wall time: 5min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_48_0.png" src="../../_images/jul-ent-2022_48_0.png" />
-<img alt="../../_images/jul-ent-2022_48_1.png" src="../../_images/jul-ent-2022_48_1.png" />
-<img alt="../../_images/jul-ent-2022_48_2.png" src="../../_images/jul-ent-2022_48_2.png" />
+<img alt="../../_images/jul-ent-2022_49_0.png" src="../../_images/jul-ent-2022_49_0.png" />
+<img alt="../../_images/jul-ent-2022_49_1.png" src="../../_images/jul-ent-2022_49_1.png" />
+<img alt="../../_images/jul-ent-2022_49_2.png" src="../../_images/jul-ent-2022_49_2.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------
 </pre>
-</div><img alt="../../_images/jul-ent-2022_48_4.png" src="../../_images/jul-ent-2022_48_4.png" />
-<img alt="../../_images/jul-ent-2022_48_5.png" src="../../_images/jul-ent-2022_48_5.png" />
-<img alt="../../_images/jul-ent-2022_48_6.png" src="../../_images/jul-ent-2022_48_6.png" />
+</div><img alt="../../_images/jul-ent-2022_49_4.png" src="../../_images/jul-ent-2022_49_4.png" />
+<img alt="../../_images/jul-ent-2022_49_5.png" src="../../_images/jul-ent-2022_49_5.png" />
+<img alt="../../_images/jul-ent-2022_49_6.png" src="../../_images/jul-ent-2022_49_6.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------
 </pre>
-</div><img alt="../../_images/jul-ent-2022_48_8.png" src="../../_images/jul-ent-2022_48_8.png" />
-<img alt="../../_images/jul-ent-2022_48_9.png" src="../../_images/jul-ent-2022_48_9.png" />
-<img alt="../../_images/jul-ent-2022_48_10.png" src="../../_images/jul-ent-2022_48_10.png" />
+</div><img alt="../../_images/jul-ent-2022_49_8.png" src="../../_images/jul-ent-2022_49_8.png" />
+<img alt="../../_images/jul-ent-2022_49_9.png" src="../../_images/jul-ent-2022_49_9.png" />
+<img alt="../../_images/jul-ent-2022_49_10.png" src="../../_images/jul-ent-2022_49_10.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------
 </pre>
 </div></div>
@@ -2291,7 +2323,7 @@ Wall time: 5min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_51_0.png" src="../../_images/jul-ent-2022_51_0.png" />
+<img alt="../../_images/jul-ent-2022_52_0.png" src="../../_images/jul-ent-2022_52_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2333,7 +2365,7 @@ Wall time: 5min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_53_0.png" src="../../_images/jul-ent-2022_53_0.png" />
+<img alt="../../_images/jul-ent-2022_54_0.png" src="../../_images/jul-ent-2022_54_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2422,7 +2454,7 @@ Wall time: 5min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-2022_57_0.png" src="../../_images/jul-ent-2022_57_0.png" />
+<img alt="../../_images/jul-ent-2022_58_0.png" src="../../_images/jul-ent-2022_58_0.png" />
 </div>
 </div>
 </section>
