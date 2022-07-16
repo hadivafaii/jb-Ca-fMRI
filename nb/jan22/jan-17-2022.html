@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Jan 17th, 2022 (Results at various thresholds, discussion on topology) &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
@@ -49,8 +50,8 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Jan 19th, 2022 (Hierarchical)" href="jan-19-2022.html" />
@@ -1074,8 +1075,385 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-16-2022.html">
+     Apr 16th, 2022 (register RABIES)
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../apr22/apr-17-2022.html">
-     April 17th, 2022 (register RABIES)
+     Apr 17th, 2022 (a new beginning)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-20-2022.html">
+     Apr 20th, 2022 (tSNR masks, many plot funcs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-21-2022.html">
+     Apr 21st, 2022 (Ca clean, many adj plots, Yale comare RABIES)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-24-2022.html">
+     Apr 24th, 2022 (findk both 128 and 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-25-2022.html">
+     Apr 25th, 2022 (x-valid, both 128 and 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-26-2022.html">
+     Apr 26th, 2022 (fix svinet, fix group)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-28-2022.html">
+     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-29-2022.html">
+     Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-30a-2022.html">
+     Apr 30th, 2022 (Misc KABA, 128 * 3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../apr22/apr-30b-2022.html">
+     Apr 30th, 2022 (Misc GABAN, 512 * 3)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  May 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/may22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/may22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+  <label for="toctree-checkbox-16">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-02-2022.html">
+     May 2nd, 2022 (global order or not? – prelim)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-05-2022.html">
+     May 5th, 2022 (global order or not? + sample vs. binary)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-06-2022.html">
+     May 6th, 2022 (REST vs LED)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-08-2022.html">
+     May 8th, 2022 (x-valid, binary vs sample)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-15-2022.html">
+     May 15th, 2022 (rabies highpass: copy + plot n_t removed)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-16-2022.html">
+     May 16th, 2022 (ca bp, lombscargle_fill)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-17-2022.html">
+     May 17th, 2022 (ca bp, lombscargle_fill, finalize)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-24-2022.html">
+     May 24th, 2022 (new results w/ bp: 192 * 3, k = 7)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-26-2022.html">
+     May 26th, 2022 (task = all, info on good_nodes)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-27-2022.html">
+     May 27th, 2022 (plot degree dist; adj on ctx)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-31a-2022.html">
+     May 31st, 2022 (Results so far: KABA, 128 * 3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../may22/may-31b-2022.html">
+     May 31st, 2022 (Results so far: GABAN, 512 * 3)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  June 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jun22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jun22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+  <label for="toctree-checkbox-17">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-02-2022.html">
+     Jun 2nd, 2022 (prune finalized – almost)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-03-2022.html">
+     Jun 3rd, 2022 (global node selection (automatic now))
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-06a-2022.html">
+     Jun 6th, 2022 (results so far, prune, mg)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-06b-2022.html">
+     Jun 6th, 2022 (results so far, prune, mg)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-08a-2022.html">
+     Jun 8th, 2022 (plot pi together for all: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-08b-2022.html">
+     Jun 8th, 2022 (plot pi together for all: GABAN 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-09a-2022.html">
+     Jun 9th, 2022 (entropy (clean) k=7,10,14: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-09b-2022.html">
+     Jun 9th, 2022 (entropy (clean) k=7,10,14: GABAN 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-12a-2022.html">
+     Jun 12th, 2022 (full brain bold: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-12b-2022.html">
+     Jun 12th, 2022 (full brain bold: GABAN 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-13-2022.html">
+     Jun 13th, 2022 (Node presnece figs for N=512 ROIs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-14a-2022.html">
+     Jun 14th, 2022 (ttest + ovp score new: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-14b-2022.html">
+     Jun 14th, 2022 (ttest + ovp score new: GABAN 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-18a-2022.html">
+     Jun 18th, 2022 (boot parallel: 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-18b-2022.html">
+     Jun 18th, 2022 (boot parallel: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-21-2022.html">
+     Jun 21st, 2022 (effect of mu and alpha on prune)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-22-2022.html">
+     Jun 22nd, 2022 (Debug degree + anomalous run 9-2-1 detected)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-23-2022.html">
+     Jun 23rd, 2022 (save fixed run_deg)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-27a-2022.html">
+     Jun 27th, 2022 (Carto not working: 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-27b-2022.html">
+     Jun 27th, 2022 (Carto not working: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-28-2022.html">
+     Jun 28th, 2022 (full brain bold: KABA 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-29a-2022.html">
+     Jun 29th, 2022 (plot pi together for all: 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-29b-2022.html">
+     Jun 29th, 2022 (plot pi together for all: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-30a-2022.html">
+     Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jun22/jun-30b-2022.html">
+     Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  July 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/jul22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/jul22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <label for="toctree-checkbox-18">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-deg-2022.html">
+     Jul 3rd, 2022 (Fig-2: Degree)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-04-2022.html">
+     Jul 4th, 2022 (Fig-7: Entropy – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-ent-2022.html">
+     Jul 5th, 2022 (Fig-7: Entropy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-05-2022.html">
+     Jul 5th, 2022 (Fig-3 OCs – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-ocs3-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-ocs7-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=7)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-ocs20-2022.html">
+     Jul 6th, 2022 (Fig-3 OCs; K=20)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-ocs-2022.html">
+     Jul 7th, 2022 (Fig-3 OCs; combined)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-prop-2022.html">
+     Jul 8th, 2022 (Fig-5 proportion plot)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-09-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots – draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-mem-2022.html">
+     Jul 9th, 2022 (Fig-6 mem plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-cbar-2022.html">
+     Jul 10th, 2022 (cbar for figs)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-sup-2022.html">
+     Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../jul22/jul-12-2022.html">
+     Jul 12th, 2022 (perc = 15 is better)
     </a>
    </li>
   </ul>
@@ -1295,7 +1673,7 @@
         
               <div>
                 
-  <div class="section" id="jan-17th-2022-results-at-various-thresholds-discussion-on-topology">
+  <section id="jan-17th-2022-results-at-various-thresholds-discussion-on-topology">
 <h1>Jan 17th, 2022 (Results at various thresholds, discussion on topology)<a class="headerlink" href="#jan-17th-2022-results-at-various-thresholds-discussion-on-topology" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>: First, I show that Network Portrait Divergence uncovers nontrivial dependence of network topologies to sparsification thresholds. I also compare memberships for runs that have <span class="math notranslate nohighlight">\(K = 4\)</span> communinities, but at different thresholds of <span class="math notranslate nohighlight">\(\{0.10, 0.15, 0.20\}\)</span>.  I conclude that they are not significantly different. Next, I propose how we go about this in the first 2 papers.  Finally, I discuss what I will be doing immediately to finish paper # 1 asap.  <br></p>
 <div class="cell tag_hide-input docutils container">
@@ -1407,9 +1785,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="topological-distances">
+<section id="topological-distances">
 <h2>Topological distances<a class="headerlink" href="#topological-distances" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="n-128-columns-hemisphere">
+<section id="n-128-columns-hemisphere">
 <h3>N = 128 columns / hemisphere<a class="headerlink" href="#n-128-columns-hemisphere" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1488,7 +1866,7 @@
 <img alt="../../_images/jan-17-2022_7_0.png" src="../../_images/jan-17-2022_7_0.png" />
 </div>
 </div>
-<div class="section" id="group-averaged">
+<section id="group-averaged">
 <h4>Group averaged<a class="headerlink" href="#group-averaged" title="Permalink to this headline">¶</a></h4>
 <p>These figures show the how optimal graph densities depend on data modality, but also on the subset of ROIs that are included in the analysis.  Here I only report <strong>“within session”</strong> distances between pairs of runs from the same animal in the same session.</p>
 <p>First, let me define what each of these terms mean:</p>
@@ -1501,8 +1879,8 @@
 <p>We see that <strong>ca2</strong> and <strong>bold-lite</strong> show more or less the same behavior.  The average within session divergence plateaus starting from around <span class="math notranslate nohighlight">\(d = 0.1\)</span> and stays that way up to <span class="math notranslate nohighlight">\(d=0.2\)</span>.  <strong>bold-ctx</strong> and <strong>bold</strong> also show similar behavior, but very different from the surface cases.  They have a much smoother curve which peaks at around <span class="math notranslate nohighlight">\(d=0.1\)</span> and has a minimum at around <span class="math notranslate nohighlight">\(d\approx0.25\)</span>, then plataeus after that.</p>
 <p>Why do <strong>bold</strong> and <strong>bold-ctx</strong> behave so differently compared to the other two?  For <strong>bold-ctx</strong>, we have included full cortical ROIs.  This means for each column, there are 3 ROIs at different depths. These ROIs from the same column are expected to be highly correlated.  The correlation patterns among these ROIs is also expected to be similar across animals.  Therefore, it is possible that we get a relatively higher optimal density, because it helps preserve this robust structure.  These links are likely always present, no matter which run or which animal.  Also, interestingly the average distance for this case is slightly smaller than surface-only case of <strong>bold-lite</strong>.</p>
 <p>For  <strong>bold</strong> there is something similar going on.  Some subcortical regions are expected to have more uniform correlation patterns.  This is even more expected under anesthesia.  Now let us look at individuals rather than the group averaged case.</p>
-</div>
-<div class="section" id="individuals">
+</section>
+<section id="individuals">
 <h4>Individuals<a class="headerlink" href="#individuals" title="Permalink to this headline">¶</a></h4>
 <p>If we look at density vs. topological distance plots for individuals, once again we see an interesting difference between <strong>ca2</strong> and <strong>bold-lite</strong> compared to <strong>bold-ctx</strong> and <strong>bold</strong>.  For the latter, the estimated optimal densities are a lot less variable across individuals compared to the surface-only cases.  This suggests that inclusion of all ROIs makes our estimates of the abstract interaction graphs more stable.</p>
 <p>In figures below I use a cross mark (x) to show the optimal density for ech animal.  The dashed line shows group average.</p>
@@ -1560,9 +1938,9 @@
 </pre>
 </div></div>
 </div>
-</div>
-</div>
-<div class="section" id="what-to-do-with-this-information">
+</section>
+</section>
+<section id="what-to-do-with-this-information">
 <h3>What to do with this information?<a class="headerlink" href="#what-to-do-with-this-information" title="Permalink to this headline">¶</a></h3>
 <p>I have the following proposal:</p>
 <ul class="simple">
@@ -1578,8 +1956,8 @@
 <li><p>First task is choosing subcortical regions carefully.  We have to decide which regions to include for each run based on tSNR. This should be relatively quick, as most of the script for this purpose is already written and reaady.  Just needs some modifications + coming up with appropriate criteria to make decisions.</p></li>
 <li><p>Next, we need to provide more evidence that the topological distance thing is working.  The fact that it is capturing some nontrivial density vs. topo distance structure is interesting.  It could very well have been a flat or random looking curve, but it’s not.  People need to know about this.  What I need is a good, rigorous statistical model to strengthen the results, for which I can use some help.  I think we can define an ANOVA based model inspired by how it is done in test-retest reliability work?  In any case, I would be happy with any logical decision that we make here as I don’t have strong opinions on this aspect of the work.</p></li>
 </ol>
-</div>
-<div class="section" id="n-256-columns-hemisphere">
+</section>
+<section id="n-256-columns-hemisphere">
 <h3>N = 256 columns / hemisphere<a class="headerlink" href="#n-256-columns-hemisphere" title="Permalink to this headline">¶</a></h3>
 <p>Before moving on to the next section I make the same plots for a parcellation with different # ROIs for bookkeeping purposes.</p>
 <div class="cell docutils container">
@@ -1714,9 +2092,9 @@
 </div></div>
 </div>
 <p>We see that at least for the first paper (Ca2+ and BOLD-Lite only), the choise of <span class="math notranslate nohighlight">\(N = 256\)</span> columns is probably not a good idea as it increases the average minimum divregence.  This shows the utility of topological distane approach in choosing other hyperparams such as # ROIs and so on.</p>
-</div>
-</div>
-<div class="section" id="results-at-d-0-10-0-15-and-0-20">
+</section>
+</section>
+<section id="results-at-d-0-10-0-15-and-0-20">
 <h2>Results at <span class="math notranslate nohighlight">\(d = 0.10, 0.15,\)</span> and <span class="math notranslate nohighlight">\(0.20\)</span><a class="headerlink" href="#results-at-d-0-10-0-15-and-0-20" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1782,9 +2160,9 @@
 </div>
 </div>
 </div>
-<div class="section" id="bold-lite">
+<section id="bold-lite">
 <h3>BOLD-Lite<a class="headerlink" href="#bold-lite" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="d-0-1-vs-d-0-15">
+<section id="d-0-1-vs-d-0-15">
 <h4>d = 0.1 vs d = 0.15<a class="headerlink" href="#d-0-1-vs-d-0-15" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1811,8 +2189,8 @@
 <img alt="../../_images/jan-17-2022_25_0.png" src="../../_images/jan-17-2022_25_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="d-0-1-vs-d-0-20">
+</section>
+<section id="d-0-1-vs-d-0-20">
 <h4>d = 0.1 vs d = 0.20<a class="headerlink" href="#d-0-1-vs-d-0-20" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1839,11 +2217,11 @@
 <img alt="../../_images/jan-17-2022_27_0.png" src="../../_images/jan-17-2022_27_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="ca-2">
+</section>
+</section>
+<section id="ca-2">
 <h3>Ca<span class="math notranslate nohighlight">\(^{2+}\)</span><a class="headerlink" href="#ca-2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
+<section id="id1">
 <h4>d = 0.1 vs d = 0.15<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1870,8 +2248,8 @@
 <img alt="../../_images/jan-17-2022_30_0.png" src="../../_images/jan-17-2022_30_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="d-0-1-vs-d-0-2">
+</section>
+<section id="d-0-1-vs-d-0-2">
 <h4>d = 0.1 vs d = 0.2<a class="headerlink" href="#d-0-1-vs-d-0-2" title="Permalink to this headline">¶</a></h4>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1898,9 +2276,9 @@
 <img alt="../../_images/jan-17-2022_32_0.png" src="../../_images/jan-17-2022_32_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="cosine-similarity">
+</section>
+</section>
+<section id="cosine-similarity">
 <h3>Cosine similarity<a class="headerlink" href="#cosine-similarity" title="Permalink to this headline">¶</a></h3>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -2041,9 +2419,9 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 <img alt="../../_images/jan-17-2022_39_0.png" src="../../_images/jan-17-2022_39_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="conclusion">
+</section>
+</section>
+<section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Inferring things from data depend on choices we make.</p>
@@ -2068,8 +2446,8 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 <li><p>Then we can analyze full brain BOLD vs Ca<span class="math notranslate nohighlight">\(^{2+}\)</span> knowing that our inferences are not distorted because of our random choices – to the best of our knowledge…</p></li>
 <li><p>I’ve already seen some interesting structure in the membership values and embedded gradients of subcotrical areas.  I’m expecting things to only improve from here on.</p></li>
 </ul>
-</div>
-<div class="section" id="what-next">
+</section>
+<section id="what-next">
 <h2>What next<a class="headerlink" href="#what-next" title="Permalink to this headline">¶</a></h2>
 <p>The following is a tentative list of things to do next:</p>
 <ol class="simple">
@@ -2080,8 +2458,8 @@ BOLD-Lite:  <span style="color: #008080; text-decoration-color: #008080; font-we
 <blockquote>
 <div><p><strong>Data on its way:</strong> Gabe just sent an email to Eve and me that the data is resampled to 0.2mm and is ready to share.  I will finally receive the cleaned up data soon after Gabe gets his account.  After that, I will produce semi-final figs and include them in PDF writeups with the relevant methods.</p>
 </div></blockquote>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
