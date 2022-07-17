@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jul 15th, 2022 (Fig-7: Degree)" href="jul-deg-final-2022.html" />
     <link rel="prev" title="Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)" href="jul-sup-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1453,6 +1454,56 @@
      Jul 12th, 2022 (perc = 15 is better)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-deg-final-2022.html">
+     Jul 15th, 2022 (Fig-7: Degree)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ent-final-2022.html">
+     Jul 15th, 2022 (Fig-6: Entropy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs3-final-2022.html">
+     Jul 15th, 2022 (Fig-2 OCs; K=3)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-final-2022.html">
+     Jul 15th, 2022 (Fig-2 OCs; K=7)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs20-final-2022.html">
+     Jul 15th, 2022 (Fig-3 OCs; K=20)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-final-2022.html">
+     Jul 15th, 2022 (Fig-2 OCs; combined)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-prop-final-2022.html">
+     Jul 15th, 2022 (Fig-4 proportion)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-mem-final-2022.html">
+     Jul 15th, 2022 (Fig-5 mem plots)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-sup-final-2022.html">
+     Jul 16th, 2022 (Fig-sup: Deg/Ent perc + carto + n128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-cbar-final-2022.html">
+     Jul 16th, 2022 (cbar for figs)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1577,12 +1628,24 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#k-21">
+   K = 21
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     OCs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#k-7">
    K = 7
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id2">
      OCs
     </a>
    </li>
@@ -1731,8 +1794,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 30.3 s, sys: 4min 12s, total: 4min 42s
-Wall time: 7min 15s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 23.8 s, sys: 36.8 s, total: 1min
+Wall time: 3min 21s
 </pre></div>
 </div>
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1764,11 +1827,11 @@ Wall time: 7min 15s
 </div>
 </section>
 </section>
-<section id="k-7">
-<h2>K = 7<a class="headerlink" href="#k-7" title="Permalink to this headline">¶</a></h2>
+<section id="k-21">
+<h2>K = 21<a class="headerlink" href="#k-21" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_k</span> <span class="o">=</span> <span class="mi">7</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_k</span> <span class="o">=</span> <span class="mi">21</span>
 <span class="n">bt_dict</span><span class="p">,</span> <span class="n">props_bo</span><span class="p">,</span> <span class="n">props_ca</span> <span class="o">=</span> <span class="n">default_props</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">num_k</span><span class="p">,</span> <span class="n">perc</span><span class="p">)</span>
 <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
 </pre></div>
@@ -1781,20 +1844,75 @@ Wall time: 7min 15s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
+<span class="n">results</span> <span class="o">=</span> <span class="n">similiarity_results</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">num_k</span><span class="p">,</span> <span class="n">perc</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">))</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 25.3 s, sys: 52.1 s, total: 1min 17s
+Wall time: 2min 40s
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">[</span>
+    <span style="color: #008000; text-decoration-color: #008000">'bt_dict'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'props_bo'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'props_ca'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'pi_sorted'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sim'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sim_b'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sim_overall'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sim_overall_b'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'good_runs'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'data4perm'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'tests'</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;pi_sorted&#39;</span><span class="p">],</span> <span class="o">**</span><span class="n">show_kws</span><span class="p">(</span><span class="n">num_k</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jul-12-2022_15_0.png" src="../../_images/jul-12-2022_15_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="k-7">
+<h2>K = 7<a class="headerlink" href="#k-7" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_k</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">bt_dict</span><span class="p">,</span> <span class="n">props_bo</span><span class="p">,</span> <span class="n">props_ca</span> <span class="o">=</span> <span class="n">default_props</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">num_k</span><span class="p">,</span> <span class="n">perc</span><span class="p">)</span>
+<span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">props_ca</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>OCs<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
 <span class="n">results</span> <span class="o">=</span> <span class="n">similiarity_results</span><span class="p">(</span>
     <span class="n">mice</span><span class="o">=</span><span class="n">mice</span><span class="p">,</span>
     <span class="n">perc</span><span class="o">=</span><span class="n">perc</span><span class="p">,</span>
     <span class="n">num_k</span><span class="o">=</span><span class="n">num_k</span><span class="p">,</span>
-    <span class="n">merge_thres</span><span class="o">=</span><span class="mf">0.372</span><span class="p">,</span>
+    <span class="n">merge_thres</span><span class="o">=</span><span class="mf">0.444</span><span class="p">,</span>
     <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">),</span>
-    <span class="n">global_order</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;infer&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 21 s, sys: 8.69 s, total: 29.7 s
-Wall time: 54.7 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 16.2 s, sys: 13.1 s, total: 29.3 s
+Wall time: 1min 13s
 </pre></div>
 </div>
 </div>
@@ -1806,7 +1924,7 @@ Wall time: 54.7 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_15_0.png" src="../../_images/jul-12-2022_15_0.png" />
+<img alt="../../_images/jul-12-2022_21_0.png" src="../../_images/jul-12-2022_21_0.png" />
 </div>
 </div>
 </section>
@@ -1873,7 +1991,7 @@ Wall time: 17min 53s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_21_0.png" src="../../_images/jul-12-2022_21_0.png" />
+<img alt="../../_images/jul-12-2022_28_0.png" src="../../_images/jul-12-2022_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1974,7 +2092,7 @@ Wall time: 11min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_29_0.png" src="../../_images/jul-12-2022_29_0.png" />
+<img alt="../../_images/jul-12-2022_36_0.png" src="../../_images/jul-12-2022_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2044,7 +2162,7 @@ Wall time: 11min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_36_0.png" src="../../_images/jul-12-2022_36_0.png" />
+<img alt="../../_images/jul-12-2022_43_0.png" src="../../_images/jul-12-2022_43_0.png" />
 </div>
 </div>
 </section>
@@ -2078,7 +2196,7 @@ Wall time: 11min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_40_0.png" src="../../_images/jul-12-2022_40_0.png" />
+<img alt="../../_images/jul-12-2022_47_0.png" src="../../_images/jul-12-2022_47_0.png" />
 </div>
 </div>
 </section>
@@ -2101,7 +2219,7 @@ Wall time: 11min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_42_0.png" src="../../_images/jul-12-2022_42_0.png" />
+<img alt="../../_images/jul-12-2022_49_0.png" src="../../_images/jul-12-2022_49_0.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 32.2 s, sys: 8min 44s, total: 9min 17s
 Wall time: 9min 54s
 </pre></div>
@@ -2206,7 +2324,7 @@ Wall time: 17min 18s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_46_0.png" src="../../_images/jul-12-2022_46_0.png" />
+<img alt="../../_images/jul-12-2022_53_0.png" src="../../_images/jul-12-2022_53_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2238,7 +2356,7 @@ Wall time: 17min 18s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_50_0.png" src="../../_images/jul-12-2022_50_0.png" />
+<img alt="../../_images/jul-12-2022_57_0.png" src="../../_images/jul-12-2022_57_0.png" />
 </div>
 </div>
 </section>
@@ -2256,7 +2374,7 @@ Wall time: 17min 18s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-12-2022_52_0.png" src="../../_images/jul-12-2022_52_0.png" />
+<img alt="../../_images/jul-12-2022_59_0.png" src="../../_images/jul-12-2022_59_0.png" />
 </div>
 </div>
 </section>
@@ -2296,6 +2414,7 @@ Wall time: 17min 18s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="jul-sup-2022.html" title="previous page">Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)</a>
+    <a class='right-next' id="next-link" href="jul-deg-final-2022.html" title="next page">Jul 15th, 2022 (Fig-7: Degree)</a>
 
         </div>
         
