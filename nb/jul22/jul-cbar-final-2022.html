@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jul 21st, 2022 (Allen Ctx + parc top)" href="jul-21-2022.html" />
     <link rel="prev" title="Jul 16th, 2022 (Fig-sup: Deg/Ent perc + carto + n128)" href="jul-sup-final-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1503,6 +1504,36 @@
      Jul 16th, 2022 (cbar for figs)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-21-2022.html">
+     Jul 21st, 2022 (Allen Ctx + parc top)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs3-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=3; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=7; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; combined; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-p25-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=7; p=25)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-p25-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; combined; p=25)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1835,12 +1866,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">cax</span><span class="p">,</span> <span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar_only</span><span class="p">(</span><span class="s1">&#39;gist_heat&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">tick_position</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
-<span class="n">cax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cosine</span><span class="se">\n</span><span class="s1">sim.&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">cax</span><span class="p">,</span> <span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar_only</span><span class="p">(</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">tick_position</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">cax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cosine</span><span class="se">\n</span><span class="s1">sim.&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">cax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
 
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;gist_heat.png&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;gist_heat.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;cos.png&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;cos.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
 <span class="n">fig</span>
 </pre></div>
 </div>
@@ -1995,6 +2026,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="jul-sup-final-2022.html" title="previous page">Jul 16th, 2022 (Fig-sup: Deg/Ent perc + carto + n128)</a>
+    <a class='right-next' id="next-link" href="jul-21-2022.html" title="next page">Jul 21st, 2022 (Allen Ctx + parc top)</a>
 
         </div>
         
