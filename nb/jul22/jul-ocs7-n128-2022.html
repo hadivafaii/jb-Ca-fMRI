@@ -1534,6 +1534,21 @@
      Jul 21st, 2022 (Fig-2 OCs; combined; p=25)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-22-2022.html">
+     Jul 22nd, 2022 (Fig2, add indiv circles)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-deg-n128-2022.html">
+     Jul 24th, 2022 (Fig-2: Degree; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ent-n128-2022.html">
+     Jul 24th, 2022 (Fig-6: Entropy)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1688,6 +1703,11 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-point">
+     Plot point
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#look-at-boot-stuff">
      Look at boot stuff
     </a>
@@ -1832,7 +1852,7 @@
     <span class="n">perc</span><span class="o">=</span><span class="n">perc</span><span class="p">,</span>
     <span class="n">num_k</span><span class="o">=</span><span class="n">num_k</span><span class="p">,</span>
     <span class="n">merge_thres</span><span class="o">=</span><span class="mf">0.376</span><span class="p">,</span>
-    <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">),</span>
+    <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">),</span>
     <span class="n">final_perm</span><span class="o">=</span><span class="n">final_perm</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">bt</span> <span class="o">=</span> <span class="n">BootStrap</span><span class="p">(</span><span class="o">**</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;props_ca&#39;</span><span class="p">])</span>
@@ -1841,8 +1861,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5min 47s, sys: 5.48 s, total: 5min 52s
-Wall time: 5min 52s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1min 33s, sys: 4.58 s, total: 1min 38s
+Wall time: 1min 38s
 </pre></div>
 </div>
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
@@ -1988,7 +2008,7 @@ Wall time: 5min 52s
 <h3>Plot line<a class="headerlink" href="#plot-line" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig_ocs</span> <span class="kn">import</span> <span class="n">similiarity_line</span> <span class="k">as</span> <span class="n">go</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig_ocs</span> <span class="kn">import</span> <span class="n">similarity_line</span> <span class="k">as</span> <span class="n">go</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;sim&#39;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;sim_b&#39;</span><span class="p">],</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;sim_ln.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
@@ -1998,6 +2018,23 @@ Wall time: 5min 52s
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/jul-ocs7-n128-2022_22_0.png" src="../../_images/jul-ocs7-n128-2022_22_0.png" />
+</div>
+</div>
+</section>
+<section id="plot-point">
+<h3>Plot point<a class="headerlink" href="#plot-point" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">figures.fig_ocs</span> <span class="kn">import</span> <span class="n">similarity_point</span> <span class="k">as</span> <span class="n">go</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">go</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;sim_pt.pdf&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">save_dir</span><span class="p">,</span> <span class="s1">&#39;sim_pt.png&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jul-ocs7-n128-2022_24_0.png" src="../../_images/jul-ocs7-n128-2022_24_0.png" />
 </div>
 </div>
 </section>
@@ -2021,7 +2058,7 @@ Wall time: 5min 52s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_24_0.png" src="../../_images/jul-ocs7-n128-2022_24_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_26_0.png" src="../../_images/jul-ocs7-n128-2022_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2034,13 +2071,13 @@ Wall time: 5min 52s
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'BOLD'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{slow}$'</span><span style="font-weight: bold">)</span>
-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.010320772747200089</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.023</span>
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.009401176155118445</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.021</span>
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'BOLD'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{fast}$'</span><span style="font-weight: bold">)</span>
-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.009000134014818013</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.02</span>
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.010785651825621672</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.024</span>
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{slow}$'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{fast}$'</span><span style="font-weight: bold">)</span>
-<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.007081311728955727</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.016</span>
+<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.011138523426318379</span> <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.025</span>
 </pre>
 </div></div>
 </div>
@@ -2065,7 +2102,7 @@ Wall time: 5min 52s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_27_0.png" src="../../_images/jul-ocs7-n128-2022_27_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_29_0.png" src="../../_images/jul-ocs7-n128-2022_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2084,12 +2121,12 @@ Wall time: 5min 52s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_28_0.png" src="../../_images/jul-ocs7-n128-2022_28_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_30_0.png" src="../../_images/jul-ocs7-n128-2022_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multipletests</span><span class="p">([</span><span class="mf">2e-5</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bonferroni&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multipletests</span><span class="p">([</span><span class="mf">2e-4</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bonferroni&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2165,7 +2202,7 @@ Wall time: 3min 6s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_35_0.png" src="../../_images/jul-ocs7-n128-2022_35_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_38_0.png" src="../../_images/jul-ocs7-n128-2022_38_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2266,7 +2303,7 @@ Wall time: 2min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_40_0.png" src="../../_images/jul-ocs7-n128-2022_40_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_43_0.png" src="../../_images/jul-ocs7-n128-2022_43_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2336,7 +2373,7 @@ Wall time: 2min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_44_0.png" src="../../_images/jul-ocs7-n128-2022_44_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_47_0.png" src="../../_images/jul-ocs7-n128-2022_47_0.png" />
 </div>
 </div>
 </section>
@@ -2371,7 +2408,7 @@ Wall time: 2min 58s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ocs7-n128-2022_48_0.png" src="../../_images/jul-ocs7-n128-2022_48_0.png" />
+<img alt="../../_images/jul-ocs7-n128-2022_51_0.png" src="../../_images/jul-ocs7-n128-2022_51_0.png" />
 </div>
 </div>
 </section>

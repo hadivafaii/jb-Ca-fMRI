@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Jul 22nd, 2022 (Fig-2: Degree; n=128) &#8212; Ca-fMRI [Daily Progress]</title>
+    <title>Jul 24th, 2022 (Fig-2: Degree; n=128) &#8212; Ca-fMRI [Daily Progress]</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,6 +52,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Jul 24th, 2022 (Fig-6: Entropy)" href="jul-ent-n128-2022.html" />
+    <link rel="prev" title="Jul 22nd, 2022 (Fig2, add indiv circles)" href="jul-22-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -1366,22 +1368,22 @@
   July 2022
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../md/jul22.html">
    Summary
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../../md/jul22_updates.html">
    Updates
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
   <label for="toctree-checkbox-18">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="jul-deg-2022.html">
      Jul 3rd, 2022 (Fig-2: Degree)
@@ -1530,6 +1532,21 @@
    <li class="toctree-l2">
     <a class="reference internal" href="jul-ocs-p25-2022.html">
      Jul 21st, 2022 (Fig-2 OCs; combined; p=25)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-22-2022.html">
+     Jul 22nd, 2022 (Fig2, add indiv circles)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Jul 24th, 2022 (Fig-2: Degree; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ent-n128-2022.html">
+     Jul 24th, 2022 (Fig-6: Entropy)
     </a>
    </li>
   </ul>
@@ -1691,8 +1708,8 @@
         
               <div>
                 
-  <section id="jul-22nd-2022-fig-2-degree-n-128">
-<h1>Jul 22nd, 2022 (Fig-2: Degree; n=128)<a class="headerlink" href="#jul-22nd-2022-fig-2-degree-n-128" title="Permalink to this headline">¶</a></h1>
+  <section id="jul-24th-2022-fig-2-degree-n-128">
+<h1>Jul 24th, 2022 (Fig-2: Degree; n=128)<a class="headerlink" href="#jul-24th-2022-fig-2-degree-n-128" title="Permalink to this headline">¶</a></h1>
 <p><strong>Motivation</strong>:  <br></p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -1785,8 +1802,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.82 s, sys: 36.2 ms, total: 2.86 s
-Wall time: 2.86 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.83 s, sys: 42.9 ms, total: 2.87 s
+Wall time: 2.87 s
 </pre></div>
 </div>
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">19</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span><span style="font-weight: bold">)</span>
@@ -1906,28 +1923,36 @@ Wall time: 2.86 s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">2.8</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">,</span> <span class="n">deg</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
     
     <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">BOLD</span><span class="p">:</span>
         <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nbins</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">CAS</span><span class="p">:</span>
         <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">nbins</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">CAF</span><span class="p">:</span>
+        <span class="n">vmin</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">nbins</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
     <span class="n">vmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">ctx2ax</span><span class="p">(</span>
+    <span class="n">ax</span><span class="p">,</span> <span class="n">cbar</span> <span class="o">=</span> <span class="n">ctx2ax</span><span class="p">(</span>
         <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
         <span class="n">base</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span>
         <span class="n">vmin</span><span class="o">=</span><span class="n">vmin</span><span class="p">,</span>
         <span class="n">vmax</span><span class="o">=</span><span class="n">vmax</span><span class="p">,</span>
         <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span>
-        <span class="n">cbar_shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">cbar_shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
         <span class="n">contour</span><span class="o">=</span><span class="n">contour</span><span class="p">,</span>
         <span class="n">contour_cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">,</span>
+        <span class="n">cbar_tick_nbins</span><span class="o">=</span><span class="n">nbins</span><span class="p">,</span>
+        <span class="n">cbar_aspect</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
 <span class="n">remove_ticks</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="s1">&#39;ctx.png&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kws_fig</span><span class="p">)</span>
@@ -1955,12 +1980,44 @@ Wall time: 2.86 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-deg-n128-2022_23_0.png" src="../../_images/jul-deg-n128-2022_23_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 14.3 s, sys: 447 ms, total: 14.7 s
-Wall time: 3.41 s
+<img alt="../../_images/jul-deg-n128-2022_25_0.png" src="../../_images/jul-deg-n128-2022_25_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 14.9 s, sys: 372 ms, total: 15.2 s
+Wall time: 3.57 s
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">pairwise_lite</span><span class="p">(</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">),</span> <span class="n">tick_nbins</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/jul-deg-n128-2022_27_0.png" src="../../_images/jul-deg-n128-2022_27_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">looper</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">bt_dict</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">looper</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>
+    <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'BOLD'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{slow}$'</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'BOLD'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{fast}$'</span><span style="font-weight: bold">)</span>,
+    <span style="font-weight: bold">(</span><span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{slow}$'</span>, <span style="color: #008000; text-decoration-color: #008000">'Ca$^{2\\!\\!+}_{fast}$'</span><span style="font-weight: bold">)</span>
+<span style="font-weight: bold">]</span>
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2113,7 +2170,7 @@ Wall time: 3.41 s
 <span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>/results/SVINET/Gro
 up/real_pearson_bold-<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">lite_rest_bp</span><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.01</span>,<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span><span style="font-weight: bold">)</span>_k20_p15-sample
 </pre>
-</div><img alt="../../_images/jul-deg-n128-2022_39_3.png" src="../../_images/jul-deg-n128-2022_39_3.png" />
+</div><img alt="../../_images/jul-deg-n128-2022_50_3.png" src="../../_images/jul-deg-n128-2022_50_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -2190,7 +2247,7 @@ up/real_pearson_bold-<span style="color: #800080; text-decoration-color: #800080
 <span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>/results/SVINET/Gro
 up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">real_pearson_ca2_rest_bp</span><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.01</span>,<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span><span style="font-weight: bold">)</span>_k20_p15-sample
 </pre>
-</div><img alt="../../_images/jul-deg-n128-2022_40_3.png" src="../../_images/jul-deg-n128-2022_40_3.png" />
+</div><img alt="../../_images/jul-deg-n128-2022_51_3.png" src="../../_images/jul-deg-n128-2022_51_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -2267,7 +2324,7 @@ up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bol
 <span style="color: #800080; text-decoration-color: #800080">/home/hadi/Documents/Ca-fMRI/processed/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">norm-global_parcel-columnar_n-512</span>*<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>/results/SVINET/Gro
 up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bold">real_pearson_ca2_rest_bp</span><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.5</span>,<span style="color: #008080; text-decoration-color: #008080; font-weight: bold">5.0</span><span style="font-weight: bold">)</span>_k20_p15-sample
 </pre>
-</div><img alt="../../_images/jul-deg-n128-2022_41_3.png" src="../../_images/jul-deg-n128-2022_41_3.png" />
+</div><img alt="../../_images/jul-deg-n128-2022_52_3.png" src="../../_images/jul-deg-n128-2022_52_3.png" />
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">----------------------------------------------------------------------
 </pre>
 </div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -2293,7 +2350,7 @@ up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bol
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-deg-n128-2022_44_0.png" src="../../_images/jul-deg-n128-2022_44_0.png" />
+<img alt="../../_images/jul-deg-n128-2022_55_0.png" src="../../_images/jul-deg-n128-2022_55_0.png" />
 </div>
 </div>
 </section>
@@ -2356,7 +2413,7 @@ up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bol
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/jul-deg-n128-2022_51_1.png" src="../../_images/jul-deg-n128-2022_51_1.png" />
+</div><img alt="../../_images/jul-deg-n128-2022_62_1.png" src="../../_images/jul-deg-n128-2022_62_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2396,7 +2453,7 @@ up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bol
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-deg-n128-2022_54_0.png" src="../../_images/jul-deg-n128-2022_54_0.png" />
+<img alt="../../_images/jul-deg-n128-2022_65_0.png" src="../../_images/jul-deg-n128-2022_65_0.png" />
 </div>
 </div>
 </section>
@@ -2427,6 +2484,8 @@ up/<span style="color: #800080; text-decoration-color: #800080; font-weight: bol
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="jul-22-2022.html" title="previous page">Jul 22nd, 2022 (Fig2, add indiv circles)</a>
+    <a class='right-next' id="next-link" href="jul-ent-n128-2022.html" title="next page">Jul 24th, 2022 (Fig-6: Entropy)</a>
 
         </div>
         
