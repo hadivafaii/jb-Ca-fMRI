@@ -1505,7 +1505,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="jul-21-2022.html">
+    <a class="reference internal" href="jul-allen-2022.html">
      Jul 21st, 2022 (Allen Ctx + parc top)
     </a>
    </li>
@@ -1547,6 +1547,40 @@
    <li class="toctree-l2">
     <a class="reference internal" href="jul-ent-n128-2022.html">
      Jul 24th, 2022 (Fig-6: Entropy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-27-2022.html">
+     Jul 27th, 2022 (Ent dist nonzero + Deg perm)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  August 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/aug22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/aug22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-09-2022.html">
+     Aug 9th, 2022 (Perm: OCs / overall)
     </a>
    </li>
   </ul>
@@ -1802,8 +1836,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3min 17s, sys: 2.46 s, total: 3min 20s
-Wall time: 3min 20s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 3min 14s, sys: 2.61 s, total: 3min 17s
+Wall time: 3min 17s
 </pre></div>
 </div>
 </div>
@@ -1812,17 +1846,17 @@ Wall time: 3min 20s
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
 
-<span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">cut4figs</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">get_booter</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e4</span><span class="p">)))</span>
+<span class="n">cut</span><span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">cut4figs</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">,</span> <span class="n">bt</span><span class="o">.</span><span class="n">get_booter</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">)))</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4min 19s, sys: 54.1 s, total: 5min 14s
-Wall time: 5min 14s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 14min 10s, sys: 1min 55s, total: 16min 6s
+Wall time: 16min 6s
 </pre></div>
 </div>
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">50</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">51</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">20</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">21</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1867,7 +1901,7 @@ Wall time: 5min 14s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_14_0.png" src="../../_images/jul-ent-final-2022_14_0.png" />
+<img alt="../../_images/jul-ent-final-2022_15_0.png" src="../../_images/jul-ent-final-2022_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1878,7 +1912,7 @@ Wall time: 5min 14s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_16_0.png" src="../../_images/jul-ent-final-2022_16_0.png" />
+<img alt="../../_images/jul-ent-final-2022_17_0.png" src="../../_images/jul-ent-final-2022_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1922,7 +1956,7 @@ Wall time: 5min 14s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_18_0.png" src="../../_images/jul-ent-final-2022_18_0.png" />
+<img alt="../../_images/jul-ent-final-2022_19_0.png" src="../../_images/jul-ent-final-2022_19_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1935,7 +1969,7 @@ Wall time: 5min 14s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_20_0.png" src="../../_images/jul-ent-final-2022_20_0.png" />
+<img alt="../../_images/jul-ent-final-2022_21_0.png" src="../../_images/jul-ent-final-2022_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1962,8 +1996,8 @@ Wall time: 5min 14s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_21_0.png" src="../../_images/jul-ent-final-2022_21_0.png" />
-<img alt="../../_images/jul-ent-final-2022_21_1.png" src="../../_images/jul-ent-final-2022_21_1.png" />
+<img alt="../../_images/jul-ent-final-2022_22_0.png" src="../../_images/jul-ent-final-2022_22_0.png" />
+<img alt="../../_images/jul-ent-final-2022_22_1.png" src="../../_images/jul-ent-final-2022_22_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 59.5 s, sys: 691 ms, total: 1min
 Wall time: 31.5 s
 </pre></div>
@@ -2005,9 +2039,9 @@ Wall time: 31.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_23_0.png" src="../../_images/jul-ent-final-2022_23_0.png" />
-<img alt="../../_images/jul-ent-final-2022_23_1.png" src="../../_images/jul-ent-final-2022_23_1.png" />
-<img alt="../../_images/jul-ent-final-2022_23_2.png" src="../../_images/jul-ent-final-2022_23_2.png" />
+<img alt="../../_images/jul-ent-final-2022_24_0.png" src="../../_images/jul-ent-final-2022_24_0.png" />
+<img alt="../../_images/jul-ent-final-2022_24_1.png" src="../../_images/jul-ent-final-2022_24_1.png" />
+<img alt="../../_images/jul-ent-final-2022_24_2.png" src="../../_images/jul-ent-final-2022_24_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2035,9 +2069,9 @@ Wall time: 31.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_25_0.png" src="../../_images/jul-ent-final-2022_25_0.png" />
-<img alt="../../_images/jul-ent-final-2022_25_1.png" src="../../_images/jul-ent-final-2022_25_1.png" />
-<img alt="../../_images/jul-ent-final-2022_25_2.png" src="../../_images/jul-ent-final-2022_25_2.png" />
+<img alt="../../_images/jul-ent-final-2022_26_0.png" src="../../_images/jul-ent-final-2022_26_0.png" />
+<img alt="../../_images/jul-ent-final-2022_26_1.png" src="../../_images/jul-ent-final-2022_26_1.png" />
+<img alt="../../_images/jul-ent-final-2022_26_2.png" src="../../_images/jul-ent-final-2022_26_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2048,7 +2082,7 @@ Wall time: 31.5 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_27_0.png" src="../../_images/jul-ent-final-2022_27_0.png" />
+<img alt="../../_images/jul-ent-final-2022_28_0.png" src="../../_images/jul-ent-final-2022_28_0.png" />
 </div>
 </div>
 </section>
@@ -2198,7 +2232,7 @@ Wall time: 4min 2s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_37_0.png" src="../../_images/jul-ent-final-2022_37_0.png" />
+<img alt="../../_images/jul-ent-final-2022_38_0.png" src="../../_images/jul-ent-final-2022_38_0.png" />
 </div>
 </div>
 </section>
@@ -2240,7 +2274,7 @@ Wall time: 4min 2s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_42_0.png" src="../../_images/jul-ent-final-2022_42_0.png" />
+<img alt="../../_images/jul-ent-final-2022_43_0.png" src="../../_images/jul-ent-final-2022_43_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2333,7 +2367,7 @@ Wall time: 4min 4s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_46_0.png" src="../../_images/jul-ent-final-2022_46_0.png" />
+<img alt="../../_images/jul-ent-final-2022_47_0.png" src="../../_images/jul-ent-final-2022_47_0.png" />
 </div>
 </div>
 </section>
@@ -2396,7 +2430,7 @@ Wall time: 2min 11s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_52_0.png" src="../../_images/jul-ent-final-2022_52_0.png" />
+<img alt="../../_images/jul-ent-final-2022_53_0.png" src="../../_images/jul-ent-final-2022_53_0.png" />
 </div>
 </div>
 <section id="this-is-old-below">
@@ -2487,7 +2521,7 @@ Wall time: 2min 11s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-ent-final-2022_58_0.png" src="../../_images/jul-ent-final-2022_58_0.png" />
+<img alt="../../_images/jul-ent-final-2022_59_0.png" src="../../_images/jul-ent-final-2022_59_0.png" />
 </div>
 </div>
 </section>
