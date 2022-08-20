@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Aug 10th, 2022 (cos sim 8 x conds: 128)" href="aug-10a-2022.html" />
     <link rel="prev" title="Updates" href="../../md/aug22_updates.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1582,6 +1583,51 @@
      Aug 9th, 2022 (Perm: OCs / overall)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-10a-2022.html">
+     Aug 10th, 2022 (cos sim 8 x conds: 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-10b-2022.html">
+     Aug 10th, 2022 (cos sim 8 x conds: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-11-2022.html">
+     Aug 11th, 2022 (render + ROI presence)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-12-2022.html">
+     Aug 12th, 2022 (cos sim 8 x conds: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-17-2022.html">
+     Aug 17th, 2022 (Degree: 0 –&gt; NaN; zscore)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-19a-2022.html">
+     Aug 19th, 2022 (Degree: w/o regression, KABA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-19b-2022.html">
+     Aug 19th, 2022 (Degree: w/o regression, GABAN)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-20-2022.html">
+     Aug 20th, 2022 (Degree: re-calculate save group)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="aug-21-2022.html">
+     Aug 21st, 2022 (Degree: w/o regression, final)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1876,8 +1922,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 36min 58s, sys: 19.9 s, total: 37min 18s
-Wall time: 37min 18s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 5min 22s, sys: 18.7 s, total: 5min 41s
+Wall time: 5min 41s
 </pre></div>
 </div>
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
@@ -1887,8 +1933,8 @@ Wall time: 37min 18s
     <span style="color: #008000; text-decoration-color: #008000">'props_ca'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'pi_sorted'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'sim'</span>,
-    <span style="color: #008000; text-decoration-color: #008000">'sim_b'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'sim_overall'</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'sim_b'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'sim_overall_b'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'good_runs'</span>,
     <span style="color: #008000; text-decoration-color: #008000">'sim_run'</span>,
@@ -1968,6 +2014,24 @@ Wall time: 37min 18s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multipletests</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">pvalue</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;holm&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="font-weight: bold">(</span>
+    <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span><span style="font-weight: bold">])</span>,
+    <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.41852581e-01</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>,
+       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.25597744e-02</span><span style="font-weight: bold">])</span>,
+    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.007300831979014655</span>,
+    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0071428571428571435</span>
+<span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multipletests</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">pvalue</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;bonferroni&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1976,8 +2040,8 @@ Wall time: 37min 18s
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
 <span style="font-weight: bold">(</span>
     <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,  <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>, <span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span><span style="font-weight: bold">])</span>,
-    <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.00000000e+00</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.53999846e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39999860e-05</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39999860e-05</span>,
-       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39999860e-05</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39999860e-05</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8.18579181e-02</span><span style="font-weight: bold">])</span>,
+    <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.00000000e+00</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.79997200e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>,
+       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.39998600e-04</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7.89592104e-02</span><span style="font-weight: bold">])</span>,
     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.007300831979014655</span>,
     <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0071428571428571435</span>
 <span style="font-weight: bold">)</span>
@@ -2045,7 +2109,7 @@ Wall time: 6h 2min 26s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aug-09-2022_25_0.png" src="../../_images/aug-09-2022_25_0.png" />
+<img alt="../../_images/aug-09-2022_26_0.png" src="../../_images/aug-09-2022_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2248,7 +2312,7 @@ Wall time: 5min 37s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aug-09-2022_43_0.png" src="../../_images/aug-09-2022_43_0.png" />
+<img alt="../../_images/aug-09-2022_44_0.png" src="../../_images/aug-09-2022_44_0.png" />
 </div>
 </div>
 </section>
@@ -2272,7 +2336,7 @@ Wall time: 5min 37s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aug-09-2022_47_0.png" src="../../_images/aug-09-2022_47_0.png" />
+<img alt="../../_images/aug-09-2022_48_0.png" src="../../_images/aug-09-2022_48_0.png" />
 </div>
 </div>
 </section>
@@ -2305,7 +2369,7 @@ Wall time: 5min 37s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aug-09-2022_50_0.png" src="../../_images/aug-09-2022_50_0.png" />
+<img alt="../../_images/aug-09-2022_51_0.png" src="../../_images/aug-09-2022_51_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2356,6 +2420,7 @@ Wall time: 5min 37s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../../md/aug22_updates.html" title="previous page">Updates</a>
+    <a class='right-next' id="next-link" href="aug-10a-2022.html" title="next page">Aug 10th, 2022 (cos sim 8 x conds: 128)</a>
 
         </div>
         
