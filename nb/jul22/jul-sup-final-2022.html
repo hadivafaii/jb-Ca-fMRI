@@ -1504,6 +1504,135 @@
      Jul 16th, 2022 (cbar for figs)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-allen-2022.html">
+     Jul 21st, 2022 (Allen Ctx + parc top)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs3-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=3; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=7; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-n128-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; combined; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs7-p25-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; K=7; p=25)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ocs-p25-2022.html">
+     Jul 21st, 2022 (Fig-2 OCs; combined; p=25)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-22-2022.html">
+     Jul 22nd, 2022 (Fig2, add indiv circles)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-deg-n128-2022.html">
+     Jul 24th, 2022 (Fig-2: Degree; n=128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-ent-n128-2022.html">
+     Jul 24th, 2022 (Fig-6: Entropy)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="jul-27-2022.html">
+     Jul 27th, 2022 (Ent dist nonzero + Deg perm)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  August 2022
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/aug22.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/aug22_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+  <label for="toctree-checkbox-19">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-09-2022.html">
+     Aug 9th, 2022 (Perm: OCs / overall)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-10a-2022.html">
+     Aug 10th, 2022 (cos sim 8 x conds: 128)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-10b-2022.html">
+     Aug 10th, 2022 (cos sim 8 x conds: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-11-2022.html">
+     Aug 11th, 2022 (render + ROI presence)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-12-2022.html">
+     Aug 12th, 2022 (cos sim 8 x conds: 512)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-17-2022.html">
+     Aug 17th, 2022 (Degree: 0 –&gt; NaN; zscore)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-19a-2022.html">
+     Aug 19th, 2022 (Degree: w/o regression, KABA)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-19b-2022.html">
+     Aug 19th, 2022 (Degree: w/o regression, GABAN)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-20-2022.html">
+     Aug 20th, 2022 (Degree: re-calculate save group)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-21-2022.html">
+     Aug 21st, 2022 (Degree: w/o regression, final)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../aug22/aug-24-2022.html">
+     Aug 24th, 2022 (LFR reboot 2)
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -1747,12 +1876,15 @@
         <span class="n">use_prune</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">select_seeds</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
+<span class="k">for</span> <span class="n">mode</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">bt_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">o</span><span class="o">.</span><span class="n">run_deg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">run_deg</span><span class="p">)</span>
+    <span class="n">o</span><span class="o">.</span><span class="n">run_deg</span><span class="p">[</span><span class="n">o</span><span class="o">.</span><span class="n">run_deg</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.24 s, sys: 2.84 s, total: 12.1 s
-Wall time: 12.1 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.06 s, sys: 2.69 s, total: 11.8 s
+Wall time: 11.8 s
 </pre></div>
 </div>
 </div>
@@ -1766,6 +1898,18 @@ Wall time: 12.1 s
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.15</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good</span> <span class="o">=</span> <span class="n">git_good</span><span class="p">(</span><span class="s1">&#39;deg&#39;</span><span class="p">,</span> <span class="n">bt_dict</span><span class="p">)</span>
+<span class="n">good</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">530</span>
 </pre>
 </div></div>
 </div>
@@ -1785,10 +1929,12 @@ Wall time: 12.1 s
     <span class="n">output</span> <span class="o">=</span> <span class="n">o</span><span class="o">.</span><span class="n">ent_deg_percentile</span><span class="p">(</span>
         <span class="n">n_resamples</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="mf">1e5</span><span class="p">),</span>
         <span class="n">mu</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">o</span><span class="o">.</span><span class="n">n2l</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">),</span>
+        <span class="n">good</span><span class="o">=</span><span class="n">good</span> <span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="n">CAF</span>
+        <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;p_deg&#39;</span><span class="p">,</span> <span class="s1">&#39;p_ent&#39;</span><span class="p">]):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">output</span><span class="p">[</span><span class="n">item</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">75</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">80</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
 
         <span class="n">ax</span> <span class="o">=</span> <span class="n">ctx2ax</span><span class="p">(</span>
@@ -1810,9 +1956,9 @@ Wall time: 12.1 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-sup-final-2022_11_0.png" src="../../_images/jul-sup-final-2022_11_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4min 2s, sys: 5.24 s, total: 4min 7s
-Wall time: 4min 7s
+<img alt="../../_images/jul-sup-final-2022_12_0.png" src="../../_images/jul-sup-final-2022_12_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 4min 38s, sys: 1.42 s, total: 4min 39s
+Wall time: 4min 39s
 </pre></div>
 </div>
 </div>
@@ -1834,13 +1980,13 @@ Wall time: 4min 7s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">bt</span><span class="o">.</span><span class="n">n2l</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">good</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span>
 <span class="n">mu</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">81.3</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">79.5</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1872,7 +2018,7 @@ Wall time: 4min 7s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-sup-final-2022_16_0.png" src="../../_images/jul-sup-final-2022_16_0.png" />
+<img alt="../../_images/jul-sup-final-2022_17_0.png" src="../../_images/jul-sup-final-2022_17_0.png" />
 </div>
 </div>
 <section id="save-disjoint-to-use-as-key">
@@ -1906,7 +2052,7 @@ Wall time: 15.9 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-sup-final-2022_19_0.png" src="../../_images/jul-sup-final-2022_19_0.png" />
+<img alt="../../_images/jul-sup-final-2022_21_0.png" src="../../_images/jul-sup-final-2022_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1935,9 +2081,9 @@ Wall time: 15.9 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/jul-sup-final-2022_20_0.png" src="../../_images/jul-sup-final-2022_20_0.png" />
-<img alt="../../_images/jul-sup-final-2022_20_1.png" src="../../_images/jul-sup-final-2022_20_1.png" />
-<img alt="../../_images/jul-sup-final-2022_20_2.png" src="../../_images/jul-sup-final-2022_20_2.png" />
+<img alt="../../_images/jul-sup-final-2022_22_0.png" src="../../_images/jul-sup-final-2022_22_0.png" />
+<img alt="../../_images/jul-sup-final-2022_22_1.png" src="../../_images/jul-sup-final-2022_22_1.png" />
+<img alt="../../_images/jul-sup-final-2022_22_2.png" src="../../_images/jul-sup-final-2022_22_2.png" />
 </div>
 </div>
 </section>
