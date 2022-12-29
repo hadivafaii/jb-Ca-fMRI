@@ -1764,13 +1764,53 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dec-19-2022.html">
-     Dec 19th, 2022 (SLC: props different bin)
+    <a class="reference internal" href="dec-21-2022.html">
+     Dec 21st, 2022 (Parc: subctx)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dec-21-2022.html">
-     Dec 21st, 2022 (Parc: subctx)
+    <a class="reference internal" href="dec-23-2022.html">
+     Dec 23rd, 2022 (Parc: subctx, render)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-24-2022.html">
+     Dec 24th, 2022 (AD: full brain, draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-25-2022.html">
+     Dec 25th, 2022 (AD: full brain, save a+g)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-26-2022.html">
+     Dec 26th, 2022 (AD: full brn, FC cos dist, mega)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-27-2022.html">
+     Dec 27th, 2022 (AD: full brn, FC cos dist, run)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-prop-2022.html">
+     Dec 28th, 2022 (SLC: props different bin)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-mem-2022.html">
+     Dec 28th, 2022 (SLC: mem + different thres)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-ocs7-2022.html">
+     Dec 28th, 2022 (SLC: cosine bluered)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-carto-2022.html">
+     Dec 28th, 2022 (SLC: Carto)
     </a>
    </li>
   </ul>
@@ -1832,11 +1872,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/hadivafaii/Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/hadivafaii/_Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/hadivafaii/Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/dec22/dec-(saba)-2022.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/hadivafaii/_Ca-fMRI/issues/new?title=Issue%20on%20page%20%2Fnb/dec22/dec-(saba)-2022.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -1857,7 +1897,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/Ca-fMRI/master?urlpath=tree/docs/nb/dec22/dec-(saba)-2022.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/_Ca-fMRI/master?urlpath=tree/docs/nb/dec22/dec-(saba)-2022.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
@@ -1939,86 +1979,245 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">ROI lookup not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">organize_func</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">combine metadata not found, time to run <span style="color: #800080; text-decoration-color: #800080; font-weight: bold">cat_data</span><span style="font-weight: bold">()</span> . . .
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bg_atlasapi</span> <span class="kn">import</span> <span class="n">BrainGlobeAtlas</span><span class="p">,</span> <span class="n">show_atlases</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">node_lookup</span><span class="p">[</span><span class="s1">&#39;bold&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zf_mpin</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;mpin_zfish_1um&#39;</span><span class="p">)</span>
+<span class="n">zf_azba</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;azba_zfish_4um&#39;</span><span class="p">)</span>
+
+<span class="n">princeton</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;princeton_mouse_20um&#39;</span><span class="p">)</span>
+<span class="n">admba_e18</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;admba_3d_e18_5_mouse_16um&#39;</span><span class="p">)</span>
+<span class="n">admba_p56</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;admba_3d_p56_mouse_25um&#39;</span><span class="p">)</span>
+<span class="n">osten</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;osten_mouse_100um&#39;</span><span class="p">)</span>
+<span class="n">kim</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;kim_mouse_100um&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_atlases</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3068</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">╭───────────────────────────────── Brainglobe Atlases ─────────────────────────────────╮
+│ <span style="color: #008000; text-decoration-color: #008000; font-weight: bold"> Name                              Downloaded  Updated  Local version     Latest    </span> │
+│                                                                       <span style="color: #008000; text-decoration-color: #008000; font-weight: bold">   version    </span> │
+│  <span style="font-weight: bold">osten_mouse_100um</span>                     <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>       │
+│  <span style="font-weight: bold">allen_mouse_25um</span>                      <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>       │
+│  <span style="font-weight: bold">mpin_zfish_1um</span>                        <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">allen_mouse_10um</span>                      <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>       │
+│  <span style="font-weight: bold">allen_mouse_100um</span>                     <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>       │
+│  <span style="font-weight: bold">admba_3d_e18_5_mouse_16um</span>             <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">azba_zfish_4um</span>                        <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>       │
+│  <span style="font-weight: bold">allen_mouse_50um</span>                      <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>       │
+│  <span style="font-weight: bold">admba_3d_p56_mouse_25um</span>               <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">kim_mouse_100um</span>                       <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">allen_human_500um</span>                     <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">0.1</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">0.1</span>       │
+│  <span style="font-weight: bold">princeton_mouse_20um</span>                  <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">example_mouse_100um</span>                   <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #008000; text-decoration-color: #008000">✔</span>          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.2</span>       │
+│  <span style="font-weight: bold">kim_mouse_10um</span>                                                            <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">kim_mouse_25um</span>                                                            <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">kim_mouse_50um</span>                                                            <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">osten_mouse_10um</span>                                                          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>       │
+│  <span style="font-weight: bold">osten_mouse_25um</span>                                                          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>       │
+│  <span style="font-weight: bold">osten_mouse_50um</span>                                                          <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.1</span>       │
+│  <span style="font-weight: bold">allen_cord_20um</span>                                                           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">whs_sd_rat_39um</span>                                                           <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">perens_lsfm_mouse_20um</span>                                                    <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_e11_5_mouse_16um</span>                                                 <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_e13_5_mouse_16um</span>                                                 <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_e15_5_mouse_16um</span>                                                 <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_p4_mouse_16.752um</span>                                                <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_p14_mouse_16.752um</span>                                               <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+│  <span style="font-weight: bold">admba_3d_p28_mouse_16.752um</span>                                               <span style="color: #c4c4c4; text-decoration-color: #c4c4c4">1.0</span>       │
+╰──────────────────────────────────────────────────────────────────────────────────────╯
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cortex</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cortex&#39;</span><span class="p">][</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cortex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()]</span>
-<span class="n">cortex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">cortex</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">cortex</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zf_azba</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">zf_mpin</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3066</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">((</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1224</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">470</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">670</span><span style="font-weight: bold">)</span>, <span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">974</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">359</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">597</span><span style="font-weight: bold">))</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cortex</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">zf_mpin</span><span class="o">.</span><span class="n">annotation</span><span class="p">[</span><span class="mi">550</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;flag_r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span>   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3</span>, <span style="color: #808000; text-decoration-color: #808000">...</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3070</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3071</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">3072</span><span style="font-weight: bold">]</span>, <span style="color: #808000; text-decoration-color: #808000">dtype</span>=<span style="color: #800080; text-decoration-color: #800080">uint32</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc42db9a670</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_11_1.png" src="../../_images/dec-(saba)-2022_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">zf_azba</span><span class="o">.</span><span class="n">annotation</span><span class="p">[</span><span class="mi">500</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;flag_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc42e01b1c0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_12_1.png" src="../../_images/dec-(saba)-2022_12_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">princeton</span><span class="o">.</span><span class="n">annotation</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">640</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">352</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subcortex</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;subcortex&#39;</span><span class="p">][</span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;subcortex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()]</span>
-<span class="n">subcortex</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">subcortex</span><span class="p">)</span>
-<span class="nb">len</span><span class="p">(</span><span class="n">subcortex</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">princeton</span><span class="o">.</span><span class="n">annotation</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;flag_r&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">155</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc4105f1790</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_15_1.png" src="../../_images/dec-(saba)-2022_15_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">princeton</span><span class="o">.</span><span class="n">annotation</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()])):</span>
+    <span class="n">x</span><span class="p">[</span><span class="n">x</span> <span class="o">==</span> <span class="n">r</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc4105bb7f0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_16_1.png" src="../../_images/dec-(saba)-2022_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">princeton</span><span class="o">.</span><span class="n">reference</span><span class="p">[</span><span class="mi">300</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc3f889f5b0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_17_1.png" src="../../_images/dec-(saba)-2022_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">admba_p56</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">528</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">320</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">456</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subcortex</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">admba_p56</span><span class="o">.</span><span class="n">reference</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080; font-weight: bold">array</span><span style="font-weight: bold">([</span>    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">7</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">15</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">27</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">56</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">59</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">63</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">64</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">88</span>,    <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">91</span>,
-          <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">96</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">101</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">105</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">122</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">127</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">131</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">141</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">149</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">155</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">157</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">159</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">170</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">178</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">181</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">186</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">188</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">196</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">204</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">210</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">218</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">250</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">255</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">258</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">260</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">262</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">266</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">278</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">290</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">298</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">303</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">310</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">311</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">319</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">323</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">325</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">333</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">339</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">340</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">342</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">348</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">349</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">362</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">365</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">366</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">370</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">382</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">414</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">422</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">423</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">429</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">437</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">445</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">451</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">463</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">475</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">483</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">491</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">502</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">507</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">513</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">515</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">525</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">538</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">539</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">557</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">564</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">566</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">572</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">575</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">579</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">581</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">583</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">587</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">589</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">595</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">596</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">599</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">609</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">612</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">629</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">632</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">639</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">642</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">647</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">651</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">672</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">685</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">693</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">711</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">718</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">725</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">733</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">741</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">754</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">780</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">788</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">809</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">814</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">843</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">846</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">867</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">903</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">907</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">918</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">920</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">926</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">928</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">930</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">936</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">942</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">944</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">946</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">951</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">957</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">961</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">968</span>,
-         <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">980</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">987</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">989</span>,   <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">998</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1004</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1007</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1017</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1020</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1022</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1025</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1029</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1031</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1033</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1037</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1041</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1049</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1077</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1084</span>,
-        <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1113</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1117</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1181</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1190</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1340</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1348</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1384</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1468</span>,  <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1477</span>,
-       <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10703</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">10704</span><span style="font-weight: bold">]</span>, <span style="color: #808000; text-decoration-color: #808000">dtype</span>=<span style="color: #800080; text-decoration-color: #800080">uint32</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc3d94d7af0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_20_1.png" src="../../_images/dec-(saba)-2022_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">admba_p56</span><span class="o">.</span><span class="n">reference</span><span class="p">[</span><span class="mi">300</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc3d92b3250</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_21_1.png" src="../../_images/dec-(saba)-2022_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+</pre>
+</div><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">
+<span style="color: #b56510; text-decoration-color: #b56510">╭──────────────────────────────────────────────────────────────────╮</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #f59e42; text-decoration-color: #f59e42; font-weight: bold">                        Kim mouse 100um                         </span> <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="font-weight: bold">                                                                </span> <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">        name: </span> kim_mouse <span style="color: #a9a9a9; text-decoration-color: #a9a9a9">(v1.0)</span>                                  <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">     species: </span> <span style="font-style: italic">Mus musculus</span>                                      <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">    citation: </span> Chon et al. 2019                                  <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span>                <span style="color: #a9a9a9; text-decoration-color: #a9a9a9">https://doi.org/10.1038/s41467-019-13057-w</span>        <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">        link: </span> https://kimlab.io/brain-map/atlas/                <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">              </span>                                                   <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold"> orientation: </span> <span style="font-weight: bold">asr</span>                                               <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">   symmetric: </span> <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>                                              <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">  resolution: </span> <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">100.0</span><span style="font-weight: bold">]</span>                             <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">│</span> <span style="color: #ffe4b5; text-decoration-color: #ffe4b5; font-weight: bold">       shape: </span> <span style="font-weight: bold">[</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">]</span>                                    <span style="color: #b56510; text-decoration-color: #b56510">│</span>
+<span style="color: #b56510; text-decoration-color: #b56510">╰──────────────────────────────────────────────────────────────────╯</span>
 </pre>
 </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allen</span> <span class="o">=</span> <span class="n">BrainGlobeAtlas</span><span class="p">(</span><span class="s1">&#39;allen_mouse_100um&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">allen</span><span class="o">.</span><span class="n">reference</span><span class="p">[</span><span class="mi">70</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fc3f83479d0</span><span style="font-weight: bold">&gt;</span>
+</pre>
+</div><img alt="../../_images/dec-(saba)-2022_28_1.png" src="../../_images/dec-(saba)-2022_28_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2061,7 +2260,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f8997ac2a90</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_12_1.png" src="../../_images/dec-(saba)-2022_12_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_33_1.png" src="../../_images/dec-(saba)-2022_33_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2122,7 +2321,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f89978dbee0</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_17_1.png" src="../../_images/dec-(saba)-2022_17_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_38_1.png" src="../../_images/dec-(saba)-2022_38_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2197,7 +2396,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f47a401d370</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_25_1.png" src="../../_images/dec-(saba)-2022_25_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_46_1.png" src="../../_images/dec-(saba)-2022_46_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2209,13 +2408,13 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7f47a464da60</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_26_1.png" src="../../_images/dec-(saba)-2022_26_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_47_1.png" src="../../_images/dec-(saba)-2022_47_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;/home/hadi/Downloads/ca_average&#39;</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;sub_SLC06ca_rest.npy&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># path = &#39;/home/hadi/Downloads/ca_average&#39;</span>
+<span class="c1"># x = np.load(pjoin(path, &#39;sub_SLC06ca_rest.npy&#39;))</span>
 </pre></div>
 </div>
 </div>
@@ -2245,16 +2444,115 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span> <span class="o">=</span> <span class="n">Mice</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+<span class="n">bs</span> <span class="o">=</span> <span class="n">Base</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bs</span> <span class="o">=</span> <span class="n">Base</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">e</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">node_lookup</span><span class="p">[</span><span class="s1">&#39;ca2&#39;</span><span class="p">]]),</span>
+    <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">node_lookup</span><span class="p">[</span><span class="s1">&#39;ca2&#39;</span><span class="p">])</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/dec-(saba)-2022_56_0.png" src="../../_images/dec-(saba)-2022_56_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">src</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Isocortex&#39;</span><span class="p">,</span> <span class="s1">&#39;MO&#39;</span><span class="p">,</span> <span class="s1">&#39;VIS&#39;</span><span class="p">,</span> <span class="s1">&#39;SS&#39;</span><span class="p">,</span> <span class="s1">&#39;SSp&#39;</span><span class="p">]</span>
+<span class="n">structs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">src</span><span class="p">)[</span><span class="s1">&#39;id&#39;</span><span class="p">]:</span>
+    <span class="n">tree</span><span class="p">,</span> <span class="n">base_lvl</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">get_subtree</span><span class="p">(</span>
+        <span class="n">base_id</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+        <span class="n">n_levels</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tree</span><span class="o">.</span><span class="n">nodes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">tree</span><span class="o">.</span><span class="n">level</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="p">(</span><span class="n">nodes</span><span class="p">)[</span><span class="s1">&#39;acronym&#39;</span><span class="p">]</span>
+    <span class="n">structs</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">nodes</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="n">structs</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">structs</span> <span class="k">if</span> <span class="n">e</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">src</span><span class="p">]</span>
+<span class="n">masks</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">al</span><span class="o">.</span><span class="n">get_masks</span><span class="p">(</span><span class="n">structs</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">masks</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">32</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">load_parcel</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cols&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">132</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">80</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">114</span><span style="font-weight: bold">)</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">node2area</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">mode</span><span class="p">,</span> <span class="n">lookup</span> <span class="ow">in</span> <span class="n">mice</span><span class="o">.</span><span class="n">node_lookup</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">lbl</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">lookup</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">lbl</span><span class="p">)</span>
+        <span class="n">max_match</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">([</span>
+            <span class="n">overlap_score</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="p">[</span><span class="s1">&#39;cols&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">masks</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">])</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">masks</span><span class="p">)[</span><span class="n">max_match</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">lr</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">layer</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="n">lbl</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">node2area</span><span class="p">[</span><span class="n">mode</span><span class="p">][</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">lr</span><span class="p">,</span> <span class="n">area</span><span class="p">,</span> <span class="n">layer</span><span class="p">)</span>
+<span class="n">node2area</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">k</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">node2area</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b38ecd47e3974d6f80e395a17972e616", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "b344996549ee4ee7b70982e9990e77e6", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 10min 46s, sys: 580 ms, total: 10min 47s
+Wall time: 10min 45s
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">save_obj</span><span class="p">(</span>
+    <span class="n">obj</span><span class="o">=</span><span class="n">node2area</span><span class="p">,</span>
+    <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;node2area&#39;</span><span class="p">,</span>
+    <span class="n">save_dir</span><span class="o">=</span><span class="n">tmp_dir</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;npy&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">[</span>PROGRESS<span style="font-weight: bold">]</span> <span style="color: #008000; text-decoration-color: #008000">'node2area.npy'</span> saved at
+<span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">tmp</span>
+</pre>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2263,7 +2561,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-(saba)-2022_38_0.png" src="../../_images/dec-(saba)-2022_38_0.png" />
+<img alt="../../_images/dec-(saba)-2022_66_0.png" src="../../_images/dec-(saba)-2022_66_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2275,7 +2573,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">AxesSubplot:</span><span style="color: #808000; text-decoration-color: #808000; font-weight: bold">ylabel</span><span style="color: #000000; text-decoration-color: #000000">=</span><span style="color: #008000; text-decoration-color: #008000">'Count'</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_39_1.png" src="../../_images/dec-(saba)-2022_39_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_67_1.png" src="../../_images/dec-(saba)-2022_67_1.png" />
 </div>
 </div>
 <section id="project">
@@ -2302,7 +2600,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fbe633bc100</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_44_1.png" src="../../_images/dec-(saba)-2022_44_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_72_1.png" src="../../_images/dec-(saba)-2022_72_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2385,7 +2683,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">&lt;</span><span style="color: #ff00ff; text-decoration-color: #ff00ff; font-weight: bold">matplotlib.image.AxesImage</span><span style="color: #000000; text-decoration-color: #000000"> object at </span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0x7fbd36571760</span><span style="font-weight: bold">&gt;</span>
 </pre>
-</div><img alt="../../_images/dec-(saba)-2022_59_1.png" src="../../_images/dec-(saba)-2022_59_1.png" />
+</div><img alt="../../_images/dec-(saba)-2022_87_1.png" src="../../_images/dec-(saba)-2022_87_1.png" />
 </div>
 </div>
 </section>
