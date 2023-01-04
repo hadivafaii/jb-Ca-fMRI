@@ -52,6 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dec 28th, 2022 (SLC: degree fix \(\rho\))" href="dec-deg-2022.html" />
     <link rel="prev" title="Dec 28th, 2022 (SLC: cosine bluered)" href="dec-ocs7-2022.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -1814,6 +1815,91 @@
      Dec 28th, 2022 (SLC: Carto)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-deg-2022.html">
+     Dec 28th, 2022 (SLC: degree fix
+     <span class="math notranslate nohighlight">
+      \(\rho\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-ent-2022.html">
+     Dec 28th, 2022 (SLC: entropy fix
+     <span class="math notranslate nohighlight">
+      \(\rho\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-particip-2022.html">
+     Dec 28th, 2022 (SLC: particip. coeff. fix
+     <span class="math notranslate nohighlight">
+      \(\rho\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-29-2022.html">
+     Dec 29th, 2022 (AD: full brain, draft)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-30-2022.html">
+     Dec 30th, 2022 (AD: full brain)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-31a-2022.html">
+     Dec 31st, 2022 (AD: register N162, round 2)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dec-31b-2022.html">
+     Dec 31st, 2022 (AD: register using S2PT,
+     <span class="math notranslate nohighlight">
+      \(25\mu m\)
+     </span>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  January 2023
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../md/01-23.html">
+   Summary
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../md/01-23_updates.html">
+   Updates
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+  <label for="toctree-checkbox-23">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-23/01-01-23_parcel-erode.html">
+     (01) Parcel: erode
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-23/01-02-23_ad-save.html">
+     (02) AD: save data
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -2051,8 +2137,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 11.5 s, sys: 2.89 s, total: 14.4 s
-Wall time: 14.4 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 9.5 s, sys: 2.64 s, total: 12.1 s
+Wall time: 12.1 s
 </pre></div>
 </div>
 </div>
@@ -2103,8 +2189,8 @@ Wall time: 14.4 s
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/dec-carto-2022_10_0.png" src="../../_images/dec-carto-2022_10_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2min 49s, sys: 854 ms, total: 2min 50s
-Wall time: 2min 50s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2min 17s, sys: 804 ms, total: 2min 17s
+Wall time: 2min 17s
 </pre></div>
 </div>
 </div>
@@ -2114,47 +2200,7 @@ Wall time: 2min 50s
 <h2>Create simulated blockmodels<a class="headerlink" href="#create-simulated-blockmodels" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">simulation.simulation</span> <span class="kn">import</span> <span class="n">get_adjacency</span><span class="p">,</span> <span class="n">mk_block</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_cartoon_types</span><span class="p">(</span>
-    <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
-    <span class="n">ovp_ratio</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
-    <span class="n">thresh_bg</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.85</span><span class="p">,</span>
-    <span class="n">thresh_base</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.60</span><span class="p">,</span>
-    <span class="n">thresh_dense</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.45</span><span class="p">,</span>
-    <span class="n">thresh_sparse</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.70</span><span class="p">,):</span>
-    
-    <span class="n">size_ovp</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="n">ovp_ratio</span>
-
-    <span class="n">disj</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="n">thresh_bg</span><span class="p">)</span>
-    <span class="n">dense</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="n">thresh_bg</span><span class="p">)</span>
-    <span class="n">sparse</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="n">thresh_bg</span><span class="p">)</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-        <span class="n">s_</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">size</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span><span class="p">)</span>
-        <span class="n">disj</span><span class="p">[</span><span class="n">s_</span><span class="p">][:,</span> <span class="n">s_</span><span class="p">]</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">thresh_base</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-
-        <span class="n">a</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">size_ovp</span><span class="p">)</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">size_ovp</span>
-        <span class="n">s_</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-        <span class="n">dense</span><span class="p">[</span><span class="n">s_</span><span class="p">][:,</span> <span class="n">s_</span><span class="p">]</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">,</span> <span class="n">thresh_base</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">sparse</span><span class="p">[</span><span class="n">s_</span><span class="p">][:,</span> <span class="n">s_</span><span class="p">]</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="p">,</span> <span class="n">thresh_base</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-
-    <span class="n">s_</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">size</span> <span class="o">-</span> <span class="n">size_ovp</span><span class="p">,</span> <span class="n">size</span> <span class="o">+</span> <span class="n">size_ovp</span><span class="p">)</span>
-    <span class="n">dense</span><span class="p">[</span><span class="n">s_</span><span class="p">][:,</span> <span class="n">s_</span><span class="p">]</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size_ovp</span><span class="p">,</span> <span class="n">thresh_dense</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-    <span class="n">sparse</span><span class="p">[</span><span class="n">s_</span><span class="p">][:,</span> <span class="n">s_</span><span class="p">]</span> <span class="o">=</span> <span class="n">mk_block</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">size_ovp</span><span class="p">,</span> <span class="n">thresh_sparse</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1623</span><span class="p">)</span>
-    
-    <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s1">&#39;disj&#39;</span><span class="p">:</span> <span class="n">disj</span><span class="p">,</span>
-        <span class="s1">&#39;dense&#39;</span><span class="p">:</span> <span class="n">dense</span><span class="p">,</span>
-        <span class="s1">&#39;sparse&#39;</span><span class="p">:</span> <span class="n">sparse</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">output</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">simulation.simulation</span> <span class="kn">import</span> <span class="n">get_cartoon_types</span>
 </pre></div>
 </div>
 </div>
@@ -2234,7 +2280,7 @@ Wall time: 1min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-carto-2022_22_0.png" src="../../_images/dec-carto-2022_22_0.png" />
+<img alt="../../_images/dec-carto-2022_20_0.png" src="../../_images/dec-carto-2022_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2245,7 +2291,7 @@ Wall time: 1min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-carto-2022_23_0.png" src="../../_images/dec-carto-2022_23_0.png" />
+<img alt="../../_images/dec-carto-2022_21_0.png" src="../../_images/dec-carto-2022_21_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2274,9 +2320,9 @@ Wall time: 1min 8s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dec-carto-2022_24_0.png" src="../../_images/dec-carto-2022_24_0.png" />
-<img alt="../../_images/dec-carto-2022_24_1.png" src="../../_images/dec-carto-2022_24_1.png" />
-<img alt="../../_images/dec-carto-2022_24_2.png" src="../../_images/dec-carto-2022_24_2.png" />
+<img alt="../../_images/dec-carto-2022_22_0.png" src="../../_images/dec-carto-2022_22_0.png" />
+<img alt="../../_images/dec-carto-2022_22_1.png" src="../../_images/dec-carto-2022_22_1.png" />
+<img alt="../../_images/dec-carto-2022_22_2.png" src="../../_images/dec-carto-2022_22_2.png" />
 </div>
 </div>
 </section>
@@ -2308,6 +2354,7 @@ Wall time: 1min 8s
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="dec-ocs7-2022.html" title="previous page">Dec 28th, 2022 (SLC: cosine bluered)</a>
+    <a class='right-next' id="next-link" href="dec-deg-2022.html" title="next page">Dec 28th, 2022 (SLC: degree fix <span class="math notranslate nohighlight">\(\rho\)</span>)</a>
 
         </div>
         
