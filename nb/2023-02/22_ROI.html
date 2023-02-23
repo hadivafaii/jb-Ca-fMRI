@@ -2060,8 +2060,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fig-dir">
+   Fig dir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prepare">
    Prepare
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-parcel-df">
+   Save parcel.df
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -2197,6 +2207,29 @@
 </div>
 </div>
 </div>
+<section id="fig-dir">
+<h2>Fig dir<a class="headerlink" href="#fig-dir" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_dir</span> <span class="o">=</span> <span class="s1">&#39;register_QC&#39;</span>
+<span class="n">fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">fig_base_dir</span><span class="p">,</span> <span class="s1">&#39;parcellation&#39;</span><span class="p">,</span> <span class="n">fig_dir</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">)</span>
+
+<span class="n">kws_fig</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;transparent&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;bbox_inches&#39;</span><span class="p">:</span> <span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/figs/parcellation/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">register_QC</span>
+</pre>
+</div></div>
+</div>
+</section>
 <section id="prepare">
 <h2>Prepare<a class="headerlink" href="#prepare" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -2254,6 +2287,142 @@
 <span style="color: #b56510; text-decoration-color: #b56510">╰──────────────────────────────────────────────────────────────────╯</span>
 </pre>
 </div></div>
+</div>
+</section>
+<section id="save-parcel-df">
+<h2>Save parcel.df<a class="headerlink" href="#save-parcel-df" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>acro</th>
+      <th>hemis</th>
+      <th>region</th>
+      <th>layer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Isocortex</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Isocortex</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Isocortex</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Isocortex</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Isocortex</td>
+      <td>1</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2777</th>
+      <td>2778</td>
+      <td>CB</td>
+      <td>2</td>
+      <td>2610</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2778</th>
+      <td>2779</td>
+      <td>CB</td>
+      <td>2</td>
+      <td>2611</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2779</th>
+      <td>2780</td>
+      <td>CB</td>
+      <td>2</td>
+      <td>2612</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2780</th>
+      <td>2781</td>
+      <td>CB</td>
+      <td>2</td>
+      <td>2613</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th>2781</th>
+      <td>2782</td>
+      <td>CB</td>
+      <td>2</td>
+      <td>2614</td>
+      <td>-1</td>
+    </tr>
+  </tbody>
+</table>
+<p>2782 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">parcel</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">pjoin</span><span class="p">(</span><span class="n">fig_base_dir</span><span class="p">,</span> <span class="s1">&#39;parcellation&#39;</span><span class="p">,</span> <span class="s1">&#39;region_ids.xlsx&#39;</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="verify-scores">
@@ -2331,26 +2500,6 @@
 <h2>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig_dir</span> <span class="o">=</span> <span class="s1">&#39;register_QC&#39;</span>
-<span class="n">fig_dir</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">fig_base_dir</span><span class="p">,</span> <span class="s1">&#39;parcellation&#39;</span><span class="p">,</span> <span class="n">fig_dir</span><span class="p">)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">)</span>
-
-<span class="n">kws_fig</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;transparent&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;bbox_inches&#39;</span><span class="p">:</span> <span class="s1">&#39;tight&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;dpi&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #800080; text-decoration-color: #800080">/home/hadi/Dropbox/git/jb-Ca-fMRI/figs/parcellation/</span><span style="color: #ff00ff; text-decoration-color: #ff00ff">register_QC</span>
-</pre>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">create_figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">template</span><span class="p">[</span><span class="mi">240</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys_r&#39;</span><span class="p">)</span>
@@ -2368,7 +2517,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_11_0.png" src="../../_images/22_ROI_11_0.png" />
+<img alt="../../_images/22_ROI_15_0.png" src="../../_images/22_ROI_15_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2380,7 +2529,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_13_0.png" src="../../_images/22_ROI_13_0.png" />
+<img alt="../../_images/22_ROI_17_0.png" src="../../_images/22_ROI_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2399,7 +2548,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_16_0.png" src="../../_images/22_ROI_16_0.png" />
+<img alt="../../_images/22_ROI_20_0.png" src="../../_images/22_ROI_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2438,7 +2587,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_18_0.png" src="../../_images/22_ROI_18_0.png" />
+<img alt="../../_images/22_ROI_22_0.png" src="../../_images/22_ROI_22_0.png" />
 </div>
 </div>
 </section>
@@ -2644,7 +2793,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_31_0.png" src="../../_images/22_ROI_31_0.png" />
+<img alt="../../_images/22_ROI_35_0.png" src="../../_images/22_ROI_35_0.png" />
 </div>
 </div>
 <section id="plot-eroded-results">
@@ -2688,7 +2837,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_35_0.png" src="../../_images/22_ROI_35_0.png" />
+<img alt="../../_images/22_ROI_39_0.png" src="../../_images/22_ROI_39_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2732,7 +2881,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_38_0.png" src="../../_images/22_ROI_38_0.png" />
+<img alt="../../_images/22_ROI_42_0.png" src="../../_images/22_ROI_42_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2768,7 +2917,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22_ROI_40_0.png" src="../../_images/22_ROI_40_0.png" />
+<img alt="../../_images/22_ROI_44_0.png" src="../../_images/22_ROI_44_0.png" />
 </div>
 </div>
 </section>
