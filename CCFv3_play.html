@@ -1,1923 +1,772 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>&lt;no title&gt; &#8212; Ca-fMRI [Daily Progress]</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CCFv3_play';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="md/intro.html">
+  
+  
+  
+  
+    
+    
       
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Ca-fMRI [Daily Progress]</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/intro.html">
-   Welcome
-  </a>
- </li>
-</ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  February 2021
- </span>
-</p>
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="md/intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">February 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/feb21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/feb21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb21/feb-12-2021.html">
-     February, 12th 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb21/feb-13-2021.html">
-     February, 13th 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb21/feb-16-2021.html">
-     February, 16th 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb21/feb-20-2021.html">
-     February, 20th 2021
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/feb21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/feb21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb21/feb-12-2021.html">February, 12th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb21/feb-13-2021.html">February, 13th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb21/feb-16-2021.html">February, 16th 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb21/feb-20-2021.html">February, 20th 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  March 2021
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/mar21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/mar21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-10-2021.html">
-     March 10th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-13-2021.html">
-     March 13th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-15-2021.html">
-     March 15th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-16-2021.html">
-     March 16th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-18-2021.html">
-     March 18th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-19-2021.html">
-     March 19th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-26-2021.html">
-     March 26th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar21/mar-29-2021.html">
-     March 29th, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  April 2021
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">March 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/apr21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/apr21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr21/apr-07-2021.html">
-     April 7th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr21/apr-30-2021.html">
-     April 30th, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/mar21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/mar21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-10-2021.html">March 10th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-13-2021.html">March 13th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-15-2021.html">March 15th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-16-2021.html">March 16th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-18-2021.html">March 18th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-19-2021.html">March 19th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-26-2021.html">March 26th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar21/mar-29-2021.html">March 29th, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  May 2021
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/may21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/may21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-08-2021.html">
-     May 8th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-09-2021.html">
-     May 9th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-11-2021.html">
-     May 11th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-12-2021.html">
-     May 12th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-20-2021.html">
-     May 20th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-24-2021.html">
-     May 24th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may21/may-31-2021.html">
-     May 31st, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  June 2021
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">April 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/jun21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/jun21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-05-2021.html">
-     June 5th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-06-2021.html">
-     June 6th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-07-2021.html">
-     June 7th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-12-2021.html">
-     June 12th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-13-2021.html">
-     June 13th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-15-2021.html">
-     June 15th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-17-2021.html">
-     June 17th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-18-2021.html">
-     June 18th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-19-2021.html">
-     June 19th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-21-2021.html">
-     June 21st, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-24-2021.html">
-     June 24th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-26-2021.html">
-     June, 26th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-29-2021.html">
-     June 29th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun21/jun-30-2021.html">
-     June 30th, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/apr21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/apr21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr21/apr-07-2021.html">April 7th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr21/apr-30-2021.html">April 30th, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  July 2021
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/jul21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/jul21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul21/jul-01-2021.html">
-     July 1st, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul21/jul-09-2021.html">
-     July 9th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul21/jul-11-2021.html">
-     July 11th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul21/jul-31-2021.html">
-     July 31st, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  August 2021
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">May 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/aug21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/aug21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug21/aug-21-2021.html">
-     Aug 21st, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/may21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/may21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-08-2021.html">May 8th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-09-2021.html">May 9th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-11-2021.html">May 11th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-12-2021.html">May 12th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-20-2021.html">May 20th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-24-2021.html">May 24th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may21/may-31-2021.html">May 31st, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  September 2021
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/sep21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/sep21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-07-2021.html">
-     Sep 7th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-08-2021.html">
-     Sep 8th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-15-2021.html">
-     Sep 15th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-19-2021.html">
-     Sep 19th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-24-2021.html">
-     Sep 24th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-25-2021.html">
-     Sep 25th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep21/sep-27-2021.html">
-     Sep 27th, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  October 2021
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">June 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/oct21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/oct21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-06-2021.html">
-     October 6th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-10-2021.html">
-     October 10th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-11-2021.html">
-     October 11th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-12-2021.html">
-     October 12th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-16-2021.html">
-     October 16th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-17-2021.html">
-     October 17th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-21-2021.html">
-     October 21st, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-26-2021.html">
-     October 26th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-27-2021.html">
-     October 27th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-29-2021.html">
-     October 29th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-30-2021.html">
-     October 30th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/oct21/oct-31-2021.html">
-     October 31th, 2021
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/jun21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/jun21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-05-2021.html">June 5th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-06-2021.html">June 6th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-07-2021.html">June 7th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-12-2021.html">June 12th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-13-2021.html">June 13th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-15-2021.html">June 15th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-17-2021.html">June 17th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-18-2021.html">June 18th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-19-2021.html">June 19th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-21-2021.html">June 21st, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-24-2021.html">June 24th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-26-2021.html">June, 26th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-29-2021.html">June 29th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun21/jun-30-2021.html">June 30th, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  November 2021
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/nov21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/nov21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-05-2021.html">
-     November 5th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-06-2021.html">
-     November 6th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-09-2021.html">
-     November 9th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-13-2021.html">
-     November 13th, 2021
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-24-2021.html">
-     November 24th, 2021 (corr distrs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-26-2021.html">
-     November 26th, 2021 (identify spikes)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov21/nov-29-2021.html">
-     November 29th, 2021 (figs 1 and 2)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  December 2021
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">July 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/dec21.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/dec21_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-01-2021.html">
-     Dec 1st, 2021 (topo dist)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-04-2021.html">
-     Dec 4th, 2021 (Binary vs Sample)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-06-2021.html">
-     Dec 6th, 2021 (tSNR: Ca all plots)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-07-2021.html">
-     Dec 7th, 2021 (tSNR: Ca)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-08-2021.html">
-     Dec 8th, 2021 (scp2raw2npy)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-09-2021.html">
-     Dec 9th, 2021 (tSNR: BOLD)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-10-2021.html">
-     Dec 10th, 2021 (tSNR: identify bad areas)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-17-2021.html">
-     Dec 17th, 2021 (GS all plots)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-18-2021.html">
-     Dec 18th, 2021 (rabies)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-21-2021.html">
-     Dec 21st, 2021 (ROI layers: concept)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-22-2021.html">
-     Dec 22nd, 2021 (3-depths + render fns)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-24-2021.html">
-     Dec 24th, 2021 (ROI layers: compare)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec21/dec-27-2021.html">
-     Dec 27th, 2021 (Parcel viz 3D)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/jul21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/jul21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul21/jul-01-2021.html">July 1st, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul21/jul-09-2021.html">July 9th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul21/jul-11-2021.html">July 11th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul21/jul-31-2021.html">July 31st, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  January 2022
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/jan22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/jan22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-03-2022.html">
-     Jan 3rd, 2022 (Coreg ses play; fix 10_3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-04-2022.html">
-     Jan 4th, 2022 (Coreg ses)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-07-2022.html">
-     Jan 7th, 2022 (rabies: 2nd stage)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-12-2022.html">
-     Jan 12th, 2022 (voxel sz plots)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-13-2022.html">
-     Jan 13th, 2022 (topo dist, best density)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-17-2022.html">
-     Jan 17th, 2022 (Results at various thresholds, discussion on topology)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-19-2022.html">
-     Jan 19th, 2022 (Hierarchical)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-22-2022.html">
-     Jan 22nd, 2022 (degree dist, cartography)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-25-2022.html">
-     Jan 25th, 2022 (debug boot + 2 anim draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-26-2022.html">
-     Jan 26th, 2022 (cleaner figs, SE bug)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-27-2022.html">
-     Jan 27th, 2022 (SE debug)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-28-2022.html">
-     Jan 28th, 2022 (SE debug: cont.)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-29-2022.html">
-     Jan 29th, 2022 (seed filter: draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-30-2022.html">
-     Jan 30th, 2022 (seed filter)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jan22/jan-31-2022.html">
-     Jan 31st, 2022 (small memship vote: draft)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  February 2022
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">August 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/feb22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/feb22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-01-2022.html">
-     Feb 1st, 2022 (small memship vote)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-02-2022.html">
-     Feb 2nd, 2022 (Mouse ICA)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-04-2022.html">
-     Feb 4th, 2022 (plot bold+ca)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-06-2022.html">
-     Feb 6th, 2022 (rabies: 3rd stage)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-07-2022.html">
-     Feb 7th, 2022 (Structural Connectome)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-08-2022.html">
-     Feb 08, 2022 (LED vs. REST; avg over runs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-14-2022.html">
-     Feb 14th, 2022 (pruned in grp)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-15a-2022.html">
-     Feb 15th, 2022 (Smart adj plot)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-15b-2022.html">
-     Feb 15th, 2022 (Smart adj plot; better)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-18-2022.html">
-     Feb 18th, 2022 (upsample bold; corr timeseries)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-22-2022.html">
-     Feb 22nd, 2022 (GLM Ca)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-24-2022.html">
-     Feb 24th, 2022 (grant finalize)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25a-2022.html">
-     Feb 25th, 2022 (Figs 4 the talk)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25b-2022.html">
-     Feb 25th, 2022 (compare cosine, DMN)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25c-2022.html">
-     Feb 25th, 2022 (Entropy, carto)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25d-2022.html">
-     Feb 25th, 2022 (LFR reboot)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25e-2022.html">
-     Feb 25th, 2022 (ovp score, C_i; pie charts)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/feb22/feb-25f-2022.html">
-     Feb 25th, 2022 (ROI plots)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/aug21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/aug21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug21/aug-21-2021.html">Aug 21st, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  March 2022
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/mar22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/mar22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-  <label for="toctree-checkbox-14">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar22/mar-05-2022.html">
-     Mar 5th, 2022 (debug net; spearman &gt; pearson)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/mar22/mar-06-2022.html">
-     Mar 6th, 2022 (Cartography, explored)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  April 2022
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">September 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/apr22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/apr22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-01-2022.html">
-     Apr 1st, 2022 (props, pie, entropy, contour, carto)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-02-2022.html">
-     Apr 2nd, 2022 (quality control: both modalities)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-03-2022.html">
-     Apr 3rd, 2022 (copy files: rabies + ca)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-04-2022.html">
-     Apr 4th, 2022 (ca ref; viz some t)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-05-2022.html">
-     Apr 5th, 2022 (check co-registration perf)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-07-2022.html">
-     Apr 7th, 2022 (Fig 4, OCs, cosine sim, DMN)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-11-2022.html">
-     Apr 11th, 2022 (fix: affiliation)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-12-2022.html">
-     Apr 12th, 2022 (ent fixed + some supp)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-13-2022.html">
-     Apr 13th, 2022 (node &amp; oc overlap scores)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-14-2022.html">
-     Apr 14th, 2022 (carto fixed + some supp)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-15-2022.html">
-     Apr 15th, 2022 (parcellation fix)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-16-2022.html">
-     Apr 16th, 2022 (register RABIES)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-17-2022.html">
-     Apr 17th, 2022 (a new beginning)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-20-2022.html">
-     Apr 20th, 2022 (tSNR masks, many plot funcs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-21-2022.html">
-     Apr 21st, 2022 (Ca clean, many adj plots, Yale comare RABIES)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-24-2022.html">
-     Apr 24th, 2022 (findk both 128 and 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-25-2022.html">
-     Apr 25th, 2022 (x-valid, both 128 and 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-26-2022.html">
-     Apr 26th, 2022 (fix svinet, fix group)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-28-2022.html">
-     Apr 28th, 2022 (plot ca node discont. + grey bg motion)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-29-2022.html">
-     Apr 29th, 2022 (ROI sizes 2d &amp; 3d)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-30a-2022.html">
-     Apr 30th, 2022 (Misc KABA, 128 * 3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/apr22/apr-30b-2022.html">
-     Apr 30th, 2022 (Misc GABAN, 512 * 3)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/sep21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/sep21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-07-2021.html">Sep 7th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-08-2021.html">Sep 8th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-15-2021.html">Sep 15th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-19-2021.html">Sep 19th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-24-2021.html">Sep 24th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-25-2021.html">Sep 25th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep21/sep-27-2021.html">Sep 27th, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  May 2022
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/may22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/may22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-  <label for="toctree-checkbox-16">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-02-2022.html">
-     May 2nd, 2022 (global order or not? – prelim)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-05-2022.html">
-     May 5th, 2022 (global order or not? + sample vs. binary)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-06-2022.html">
-     May 6th, 2022 (REST vs LED)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-08-2022.html">
-     May 8th, 2022 (x-valid, binary vs sample)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-15-2022.html">
-     May 15th, 2022 (rabies highpass: copy + plot n_t removed)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-16-2022.html">
-     May 16th, 2022 (ca bp, lombscargle_fill)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-17-2022.html">
-     May 17th, 2022 (ca bp, lombscargle_fill, finalize)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-24-2022.html">
-     May 24th, 2022 (new results w/ bp: 192 * 3, k = 7)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-26-2022.html">
-     May 26th, 2022 (task = all, info on good_nodes)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-27-2022.html">
-     May 27th, 2022 (plot degree dist; adj on ctx)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-31a-2022.html">
-     May 31st, 2022 (Results so far: KABA, 128 * 3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/may22/may-31b-2022.html">
-     May 31st, 2022 (Results so far: GABAN, 512 * 3)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  June 2022
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">October 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/jun22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/jun22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-  <label for="toctree-checkbox-17">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-02-2022.html">
-     Jun 2nd, 2022 (prune finalized – almost)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-03-2022.html">
-     Jun 3rd, 2022 (global node selection (automatic now))
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-06a-2022.html">
-     Jun 6th, 2022 (results so far, prune, mg)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-06b-2022.html">
-     Jun 6th, 2022 (results so far, prune, mg)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-08a-2022.html">
-     Jun 8th, 2022 (plot pi together for all: KABA 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-08b-2022.html">
-     Jun 8th, 2022 (plot pi together for all: GABAN 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-09a-2022.html">
-     Jun 9th, 2022 (entropy (clean) k=7,10,14: KABA 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-09b-2022.html">
-     Jun 9th, 2022 (entropy (clean) k=7,10,14: GABAN 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-12a-2022.html">
-     Jun 12th, 2022 (full brain bold: KABA 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-12b-2022.html">
-     Jun 12th, 2022 (full brain bold: GABAN 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-13-2022.html">
-     Jun 13th, 2022 (Node presnece figs for N=512 ROIs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-14a-2022.html">
-     Jun 14th, 2022 (ttest + ovp score new: KABA 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-14b-2022.html">
-     Jun 14th, 2022 (ttest + ovp score new: GABAN 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-18a-2022.html">
-     Jun 18th, 2022 (boot parallel: 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-18b-2022.html">
-     Jun 18th, 2022 (boot parallel: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-21-2022.html">
-     Jun 21st, 2022 (effect of mu and alpha on prune)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-22-2022.html">
-     Jun 22nd, 2022 (Debug degree + anomalous run 9-2-1 detected)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-23-2022.html">
-     Jun 23rd, 2022 (save fixed run_deg)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-27a-2022.html">
-     Jun 27th, 2022 (Carto not working: 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-27b-2022.html">
-     Jun 27th, 2022 (Carto not working: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-28-2022.html">
-     Jun 28th, 2022 (full brain bold: KABA 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-29a-2022.html">
-     Jun 29th, 2022 (plot pi together for all: 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-29b-2022.html">
-     Jun 29th, 2022 (plot pi together for all: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-30a-2022.html">
-     Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jun22/jun-30b-2022.html">
-     Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/oct21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/oct21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-06-2021.html">October 6th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-10-2021.html">October 10th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-11-2021.html">October 11th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-12-2021.html">October 12th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-16-2021.html">October 16th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-17-2021.html">October 17th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-21-2021.html">October 21st, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-26-2021.html">October 26th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-27-2021.html">October 27th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-29-2021.html">October 29th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-30-2021.html">October 30th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/oct21/oct-31-2021.html">October 31th, 2021</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  July 2022
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/jul22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/jul22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-  <label for="toctree-checkbox-18">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-deg-2022.html">
-     Jul 3rd, 2022 (Fig-2: Degree)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-04-2022.html">
-     Jul 4th, 2022 (Fig-7: Entropy – draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ent-2022.html">
-     Jul 5th, 2022 (Fig-7: Entropy)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-05-2022.html">
-     Jul 5th, 2022 (Fig-3 OCs – draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs3-2022.html">
-     Jul 6th, 2022 (Fig-3 OCs; K=3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs7-2022.html">
-     Jul 6th, 2022 (Fig-3 OCs; K=7)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs20-2022.html">
-     Jul 6th, 2022 (Fig-3 OCs; K=20)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs-2022.html">
-     Jul 7th, 2022 (Fig-3 OCs; combined)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-prop-2022.html">
-     Jul 8th, 2022 (Fig-5 proportion plot)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-09-2022.html">
-     Jul 9th, 2022 (Fig-6 mem plots – draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-mem-2022.html">
-     Jul 9th, 2022 (Fig-6 mem plots)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-cbar-2022.html">
-     Jul 10th, 2022 (cbar for figs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-sup-2022.html">
-     Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-12-2022.html">
-     Jul 12th, 2022 (perc = 15 is better)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-deg-final-2022.html">
-     Jul 15th, 2022 (Fig-7: Degree)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ent-final-2022.html">
-     Jul 15th, 2022 (Fig-6: Entropy)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs3-final-2022.html">
-     Jul 15th, 2022 (Fig-2 OCs; K=3)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs7-final-2022.html">
-     Jul 15th, 2022 (Fig-2 OCs; K=7)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs20-final-2022.html">
-     Jul 15th, 2022 (Fig-3 OCs; K=20)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs-final-2022.html">
-     Jul 15th, 2022 (Fig-2 OCs; combined)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-prop-final-2022.html">
-     Jul 15th, 2022 (Fig-4 proportion)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-mem-final-2022.html">
-     Jul 15th, 2022 (Fig-5 mem plots)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-sup-final-2022.html">
-     Jul 16th, 2022 (Fig-sup: Deg/Ent perc + carto + n128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-cbar-final-2022.html">
-     Jul 16th, 2022 (cbar for figs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-allen-2022.html">
-     Jul 21st, 2022 (Allen Ctx + parc top)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs3-n128-2022.html">
-     Jul 21st, 2022 (Fig-2 OCs; K=3; n=128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs7-n128-2022.html">
-     Jul 21st, 2022 (Fig-2 OCs; K=7; n=128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs-n128-2022.html">
-     Jul 21st, 2022 (Fig-2 OCs; combined; n=128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs7-p25-2022.html">
-     Jul 21st, 2022 (Fig-2 OCs; K=7; p=25)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ocs-p25-2022.html">
-     Jul 21st, 2022 (Fig-2 OCs; combined; p=25)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-22-2022.html">
-     Jul 22nd, 2022 (Fig2, add indiv circles)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-deg-n128-2022.html">
-     Jul 24th, 2022 (Fig-2: Degree; n=128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-ent-n128-2022.html">
-     Jul 24th, 2022 (Fig-6: Entropy)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/jul22/jul-27-2022.html">
-     Jul 27th, 2022 (Ent dist nonzero + Deg perm)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  August 2022
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">November 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/aug22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/aug22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-  <label for="toctree-checkbox-19">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-09-2022.html">
-     Aug 9th, 2022 (Perm: OCs / overall)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-10a-2022.html">
-     Aug 10th, 2022 (cos sim 8 x conds: 128)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-10b-2022.html">
-     Aug 10th, 2022 (cos sim 8 x conds: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-11-2022.html">
-     Aug 11th, 2022 (render + ROI presence)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-12-2022.html">
-     Aug 12th, 2022 (cos sim 8 x conds: 512)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-17-2022.html">
-     Aug 17th, 2022 (Degree: 0 –&gt; NaN; zscore)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-19a-2022.html">
-     Aug 19th, 2022 (Degree: w/o regression, KABA)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-19b-2022.html">
-     Aug 19th, 2022 (Degree: w/o regression, GABAN)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-20-2022.html">
-     Aug 20th, 2022 (Degree: re-calculate save group)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-21-2022.html">
-     Aug 21st, 2022 (Degree: w/o regression, final)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-24-2022.html">
-     Aug 24th, 2022 (LFR reboot 2)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/aug22/aug-31-2022.html">
-     Aug 31th, 2022 (Particip. Coeff.)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/nov21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/nov21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-05-2021.html">November 5th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-06-2021.html">November 6th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-09-2021.html">November 9th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-13-2021.html">November 13th, 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-24-2021.html">November 24th, 2021 (corr distrs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-26-2021.html">November 26th, 2021 (identify spikes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov21/nov-29-2021.html">November 29th, 2021 (figs 1 and 2)</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  September 2022
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/sep22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/sep22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-  <label for="toctree-checkbox-20">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep22/sep-13-2022.html">
-     Sep 13th, 2022 (Fig1: ROI plots, layer plots 10)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/sep22/sep-29-2022.html">
-     Sep 29th, 2022 (Generate data Fig 2E, Fig 3)
-    </a>
-   </li>
-  </ul>
- </li>
+</li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  November 2022
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">December 2021</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/nov22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/nov22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-  <label for="toctree-checkbox-21">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov22/nov-10-2022.html">
-     Nov 10th, 2022 (AD: copy data)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov22/nov-11-2022.html">
-     Nov 11th, 2022 (AD: co-reg)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov22/nov-16-2022.html">
-     Nov 16th, 2022 (AD: mega animal)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/nov22/nov-28-2022.html">
-     Nov 28th, 2022 (SLC: indiv)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/dec21.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/dec21_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-01-2021.html">Dec 1st, 2021 (topo dist)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-04-2021.html">Dec 4th, 2021 (Binary vs Sample)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-06-2021.html">Dec 6th, 2021 (tSNR: Ca all plots)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-07-2021.html">Dec 7th, 2021 (tSNR: Ca)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-08-2021.html">Dec 8th, 2021 (scp2raw2npy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-09-2021.html">Dec 9th, 2021 (tSNR: BOLD)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-10-2021.html">Dec 10th, 2021 (tSNR: identify bad areas)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-17-2021.html">Dec 17th, 2021 (GS all plots)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-18-2021.html">Dec 18th, 2021 (rabies)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-21-2021.html">Dec 21st, 2021 (ROI layers: concept)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-22-2021.html">Dec 22nd, 2021 (3-depths + render fns)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-24-2021.html">Dec 24th, 2021 (ROI layers: compare)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec21/dec-27-2021.html">Dec 27th, 2021 (Parcel viz 3D)</a></li>
 </ul>
-<p class="caption" role="heading">
- <span class="caption-text">
-  December 2022
- </span>
-</p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">January 2022</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="md/dec22.html">
-   Summary
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="md/dec22_updates.html">
-   Updates
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-  <label for="toctree-checkbox-22">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-05-2022.html">
-     Dec 5th, 2022 (SLC: export OCs)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-11-2022.html">
-     Dec 11th, 2022 (AD: copy BOLD + correct rename)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-12-2022.html">
-     Dec 12th, 2022 (AD: register N162)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-17-2022.html">
-     Dec 17th, 2022 (AD: new results, draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-18-2022.html">
-     Dec 18th, 2022 (AD: new results)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-21-2022.html">
-     Dec 21st, 2022 (Parc: subctx)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-23-2022.html">
-     Dec 23rd, 2022 (Parc: subctx, render)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-24-2022.html">
-     Dec 24th, 2022 (AD: full brain, draft)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-25-2022.html">
-     Dec 25th, 2022 (AD: full brain, save a+g)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-26-2022.html">
-     Dec 26th, 2022 (AD: full brn, FC cos dist, mega)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-27-2022.html">
-     Dec 27th, 2022 (AD: full brn, FC cos dist, run)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-prop-2022.html">
-     Dec 28th, 2022 (SLC: props different bin)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-mem-2022.html">
-     Dec 28th, 2022 (SLC: mem + different thres)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-ocs7-2022.html">
-     Dec 28th, 2022 (SLC: cosine bluered)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nb/dec22/dec-carto-2022.html">
-     Dec 28th, 2022 (SLC: Carto)
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="md/jan22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/jan22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-03-2022.html">Jan 3rd, 2022 (Coreg ses play; fix 10_3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-04-2022.html">Jan 4th, 2022 (Coreg ses)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-07-2022.html">Jan 7th, 2022 (rabies: 2nd stage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-12-2022.html">Jan 12th, 2022 (voxel sz plots)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-13-2022.html">Jan 13th, 2022 (topo dist, best density)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-17-2022.html">Jan 17th, 2022 (Results at various thresholds, discussion on topology)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-19-2022.html">Jan 19th, 2022 (Hierarchical)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-22-2022.html">Jan 22nd, 2022 (degree dist, cartography)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-25-2022.html">Jan 25th, 2022 (debug boot + 2 anim draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-26-2022.html">Jan 26th, 2022 (cleaner figs, SE bug)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-27-2022.html">Jan 27th, 2022 (SE debug)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-28-2022.html">Jan 28th, 2022 (SE debug: cont.)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-29-2022.html">Jan 29th, 2022 (seed filter: draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-30-2022.html">Jan 30th, 2022 (seed filter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jan22/jan-31-2022.html">Jan 31st, 2022 (small memship vote: draft)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">February 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/feb22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/feb22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-01-2022.html">Feb 1st, 2022 (small memship vote)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-02-2022.html">Feb 2nd, 2022 (Mouse ICA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-04-2022.html">Feb 4th, 2022 (plot bold+ca)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-06-2022.html">Feb 6th, 2022 (rabies: 3rd stage)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-07-2022.html">Feb 7th, 2022 (Structural Connectome)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-08-2022.html">Feb 08, 2022 (LED vs. REST; avg over runs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-14-2022.html">Feb 14th, 2022 (pruned in grp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-15a-2022.html">Feb 15th, 2022 (Smart adj plot)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-15b-2022.html">Feb 15th, 2022 (Smart adj plot; better)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-18-2022.html">Feb 18th, 2022 (upsample bold; corr timeseries)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-22-2022.html">Feb 22nd, 2022 (GLM Ca)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-24-2022.html">Feb 24th, 2022 (grant finalize)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25a-2022.html">Feb 25th, 2022 (Figs 4 the talk)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25b-2022.html">Feb 25th, 2022 (compare cosine, DMN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25c-2022.html">Feb 25th, 2022 (Entropy, carto)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25d-2022.html">Feb 25th, 2022 (LFR reboot)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25e-2022.html">Feb 25th, 2022 (ovp score, C_i; pie charts)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/feb22/feb-25f-2022.html">Feb 25th, 2022 (ROI plots)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">March 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/mar22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/mar22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar22/mar-05-2022.html">Mar 5th, 2022 (debug net; spearman &gt; pearson)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/mar22/mar-06-2022.html">Mar 6th, 2022 (Cartography, explored)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">April 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/apr22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/apr22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-01-2022.html">Apr 1st, 2022 (props, pie, entropy, contour, carto)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-02-2022.html">Apr 2nd, 2022 (quality control: both modalities)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-03-2022.html">Apr 3rd, 2022 (copy files: rabies + ca)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-04-2022.html">Apr 4th, 2022 (ca ref; viz some t)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-05-2022.html">Apr 5th, 2022 (check co-registration perf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-07-2022.html">Apr 7th, 2022 (Fig 4, OCs, cosine sim, DMN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-11-2022.html">Apr 11th, 2022 (fix: affiliation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-12-2022.html">Apr 12th, 2022 (ent fixed + some supp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-13-2022.html">Apr 13th, 2022 (node &amp; oc overlap scores)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-14-2022.html">Apr 14th, 2022 (carto fixed + some supp)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-15-2022.html">Apr 15th, 2022 (parcellation fix)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-16-2022.html">Apr 16th, 2022 (register RABIES)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-17-2022.html">Apr 17th, 2022 (a new beginning)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-20-2022.html">Apr 20th, 2022 (tSNR masks, many plot funcs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-21-2022.html">Apr 21st, 2022 (Ca clean, many adj plots, Yale comare RABIES)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-24-2022.html">Apr 24th, 2022 (findk both 128 and 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-25-2022.html">Apr 25th, 2022 (x-valid, both 128 and 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-26-2022.html">Apr 26th, 2022 (fix svinet, fix group)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-28-2022.html">Apr 28th, 2022 (plot ca node discont. + grey bg motion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-29-2022.html">Apr 29th, 2022 (ROI sizes 2d &amp; 3d)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-30a-2022.html">Apr 30th, 2022 (Misc KABA, 128 * 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/apr22/apr-30b-2022.html">Apr 30th, 2022 (Misc GABAN, 512 * 3)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">May 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/may22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/may22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-02-2022.html">May 2nd, 2022 (global order or not? – prelim)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-05-2022.html">May 5th, 2022 (global order or not? + sample vs. binary)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-06-2022.html">May 6th, 2022 (REST vs LED)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-08-2022.html">May 8th, 2022 (x-valid, binary vs sample)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-15-2022.html">May 15th, 2022 (rabies highpass: copy + plot n_t removed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-16-2022.html">May 16th, 2022 (ca bp, lombscargle_fill)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-17-2022.html">May 17th, 2022 (ca bp, lombscargle_fill, finalize)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-24-2022.html">May 24th, 2022 (new results w/ bp: 192 * 3, k = 7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-26-2022.html">May 26th, 2022 (task = all, info on good_nodes)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-27-2022.html">May 27th, 2022 (plot degree dist; adj on ctx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-31a-2022.html">May 31st, 2022 (Results so far: KABA, 128 * 3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/may22/may-31b-2022.html">May 31st, 2022 (Results so far: GABAN, 512 * 3)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">June 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/jun22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/jun22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-02-2022.html">Jun 2nd, 2022 (prune finalized – almost)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-03-2022.html">Jun 3rd, 2022 (global node selection (automatic now))</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-06a-2022.html">Jun 6th, 2022 (results so far, prune, mg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-06b-2022.html">Jun 6th, 2022 (results so far, prune, mg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-08a-2022.html">Jun 8th, 2022 (plot pi together for all: KABA 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-08b-2022.html">Jun 8th, 2022 (plot pi together for all: GABAN 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-09a-2022.html">Jun 9th, 2022 (entropy (clean) k=7,10,14: KABA 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-09b-2022.html">Jun 9th, 2022 (entropy (clean) k=7,10,14: GABAN 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-12a-2022.html">Jun 12th, 2022 (full brain bold: KABA 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-12b-2022.html">Jun 12th, 2022 (full brain bold: GABAN 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-13-2022.html">Jun 13th, 2022 (Node presnece figs for N=512 ROIs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-14a-2022.html">Jun 14th, 2022 (ttest + ovp score new: KABA 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-14b-2022.html">Jun 14th, 2022 (ttest + ovp score new: GABAN 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-18a-2022.html">Jun 18th, 2022 (boot parallel: 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-18b-2022.html">Jun 18th, 2022 (boot parallel: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-21-2022.html">Jun 21st, 2022 (effect of mu and alpha on prune)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-22-2022.html">Jun 22nd, 2022 (Debug degree + anomalous run 9-2-1 detected)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-23-2022.html">Jun 23rd, 2022 (save fixed run_deg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-27a-2022.html">Jun 27th, 2022 (Carto not working: 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-27b-2022.html">Jun 27th, 2022 (Carto not working: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-28-2022.html">Jun 28th, 2022 (full brain bold: KABA 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-29a-2022.html">Jun 29th, 2022 (plot pi together for all: 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-29b-2022.html">Jun 29th, 2022 (plot pi together for all: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-30a-2022.html">Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jun22/jun-30b-2022.html">Jun 30th, 2022 (find max pi sym - seeds, prune or not: 512)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">July 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/jul22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/jul22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-deg-2022.html">Jul 3rd, 2022 (Fig-2: Degree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-04-2022.html">Jul 4th, 2022 (Fig-7: Entropy – draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ent-2022.html">Jul 5th, 2022 (Fig-7: Entropy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-05-2022.html">Jul 5th, 2022 (Fig-3 OCs – draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs3-2022.html">Jul 6th, 2022 (Fig-3 OCs; K=3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs7-2022.html">Jul 6th, 2022 (Fig-3 OCs; K=7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs20-2022.html">Jul 6th, 2022 (Fig-3 OCs; K=20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs-2022.html">Jul 7th, 2022 (Fig-3 OCs; combined)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-prop-2022.html">Jul 8th, 2022 (Fig-5 proportion plot)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-09-2022.html">Jul 9th, 2022 (Fig-6 mem plots – draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-mem-2022.html">Jul 9th, 2022 (Fig-6 mem plots)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-cbar-2022.html">Jul 10th, 2022 (cbar for figs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-sup-2022.html">Jul 11th, 2022 (Fig-sup: Deg/Ent Percentile)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-12-2022.html">Jul 12th, 2022 (perc = 15 is better)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-deg-final-2022.html">Jul 15th, 2022 (Fig-7: Degree)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ent-final-2022.html">Jul 15th, 2022 (Fig-6: Entropy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs3-final-2022.html">Jul 15th, 2022 (Fig-2 OCs; K=3)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs7-final-2022.html">Jul 15th, 2022 (Fig-2 OCs; K=7)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs20-final-2022.html">Jul 15th, 2022 (Fig-3 OCs; K=20)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs-final-2022.html">Jul 15th, 2022 (Fig-2 OCs; combined)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-prop-final-2022.html">Jul 15th, 2022 (Fig-4 proportion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-mem-final-2022.html">Jul 15th, 2022 (Fig-5 mem plots)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-sup-final-2022.html">Jul 16th, 2022 (Fig-sup: Deg/Ent perc + carto + n128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-cbar-final-2022.html">Jul 16th, 2022 (cbar for figs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-allen-2022.html">Jul 21st, 2022 (Allen Ctx + parc top)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs3-n128-2022.html">Jul 21st, 2022 (Fig-2 OCs; K=3; n=128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs7-n128-2022.html">Jul 21st, 2022 (Fig-2 OCs; K=7; n=128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs-n128-2022.html">Jul 21st, 2022 (Fig-2 OCs; combined; n=128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs7-p25-2022.html">Jul 21st, 2022 (Fig-2 OCs; K=7; p=25)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ocs-p25-2022.html">Jul 21st, 2022 (Fig-2 OCs; combined; p=25)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-22-2022.html">Jul 22nd, 2022 (Fig2, add indiv circles)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-deg-n128-2022.html">Jul 24th, 2022 (Fig-2: Degree; n=128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-ent-n128-2022.html">Jul 24th, 2022 (Fig-6: Entropy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/jul22/jul-27-2022.html">Jul 27th, 2022 (Ent dist nonzero + Deg perm)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">August 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/aug22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/aug22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-09-2022.html">Aug 9th, 2022 (Perm: OCs / overall)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-10a-2022.html">Aug 10th, 2022 (cos sim 8 x conds: 128)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-10b-2022.html">Aug 10th, 2022 (cos sim 8 x conds: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-11-2022.html">Aug 11th, 2022 (render + ROI presence)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-12-2022.html">Aug 12th, 2022 (cos sim 8 x conds: 512)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-17-2022.html">Aug 17th, 2022 (Degree: 0 –&gt; NaN; zscore)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-19a-2022.html">Aug 19th, 2022 (Degree: w/o regression, KABA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-19b-2022.html">Aug 19th, 2022 (Degree: w/o regression, GABAN)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-20-2022.html">Aug 20th, 2022 (Degree: re-calculate save group)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-21-2022.html">Aug 21st, 2022 (Degree: w/o regression, final)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-24-2022.html">Aug 24th, 2022 (LFR reboot 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/aug22/aug-31-2022.html">Aug 31th, 2022 (Particip. Coeff.)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">September 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/sep22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/sep22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep22/sep-13-2022.html">Sep 13th, 2022 (Fig1: ROI plots, layer plots 10)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/sep22/sep-29-2022.html">Sep 29th, 2022 (Generate data Fig 2E, Fig 3)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">November 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/nov22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/nov22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov22/nov-10-2022.html">Nov 10th, 2022 (AD: copy data)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov22/nov-11-2022.html">Nov 11th, 2022 (AD: co-reg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov22/nov-16-2022.html">Nov 16th, 2022 (AD: mega animal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/nov22/nov-28-2022.html">Nov 28th, 2022 (SLC: indiv)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">December 2022</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/dec22.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/dec22_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-05-2022.html">Dec 5th, 2022 (SLC: export OCs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-11-2022.html">Dec 11th, 2022 (AD: copy BOLD + correct rename)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-12-2022.html">Dec 12th, 2022 (AD: register N162)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-17-2022.html">Dec 17th, 2022 (AD: new results, draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-18-2022.html">Dec 18th, 2022 (AD: new results)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-21-2022.html">Dec 21st, 2022 (Parc: subctx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-23-2022.html">Dec 23rd, 2022 (Parc: subctx, render)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-24-2022.html">Dec 24th, 2022 (AD: full brain, draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-25-2022.html">Dec 25th, 2022 (AD: full brain, save a+g)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-26-2022.html">Dec 26th, 2022 (AD: full brn, FC cos dist, mega)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-27-2022.html">Dec 27th, 2022 (AD: full brn, FC cos dist, run)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-prop-2022.html">Dec 28th, 2022 (SLC: props different bin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-mem-2022.html">Dec 28th, 2022 (SLC: mem + different thres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-ocs7-2022.html">Dec 28th, 2022 (SLC: cosine bluered)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-carto-2022.html">Dec 28th, 2022 (SLC: Carto)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-deg-2022.html">Dec 28th, 2022 (SLC: degree fix <span class="math notranslate nohighlight">\(\rho\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-ent-2022.html">Dec 28th, 2022 (SLC: entropy fix <span class="math notranslate nohighlight">\(\rho\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-particip-2022.html">Dec 28th, 2022 (SLC: particip. coeff. fix <span class="math notranslate nohighlight">\(\rho\)</span>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-29-2022.html">Dec 29th, 2022 (AD: full brain, draft)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-30-2022.html">Dec 30th, 2022 (AD: full brain)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-31a-2022.html">Dec 31st, 2022 (AD: register N162, round 2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/dec22/dec-31b-2022.html">Dec 31st, 2022 (AD: register using S2PT, <span class="math notranslate nohighlight">\(25\mu m\)</span>)</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">January 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/2023-01.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/2023-01_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-01/01_parcel-erode.html">(01) Parcel: erode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-01/02_ad-save.html">(02) AD: save data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-01/25_ocs7.html">(25) OCs7 – colormap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-01/30_slc128.html">(30) SLC: full-brn-begin</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">February 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="md/2023-02.html">Summary</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="md/2023-02_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-02/04_AD-SVINET.html">(04) AD – SVINET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-02/06-SLC-ent.html">(06) SLC: entropy rank + shared colorbars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-02/15_SCL-particip.html">(15) SLC: particip. coeff. shared colorbar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb/2023-02/22_ROI.html">(22) ROI – Create figs, document everything</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/CCFv3_play.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/hadivafaii/_Ca-fMRI"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/hadivafaii/_Ca-fMRI/issues/new?title=Issue%20on%20page%20%2FCCFv3_play.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/hadivafaii/_Ca-fMRI" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/hadivafaii/_Ca-fMRI/issues/new?title=Issue%20on%20page%20%2FCCFv3_play.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/hadivafaii/_Ca-fMRI/master?urlpath=tree/docs/CCFv3_play.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CCFv3_play.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
+  
 </div>
+</div>
+              
+              
 
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div>
+                <h2> Contents </h2>
             </div>
-            <nav id="bd-toc-nav">
+            <nav aria-label="Page">
                 <ul class="simple visible nav section-nav flex-column">
 </ul>
 
@@ -1925,12 +774,18 @@
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
 
@@ -2005,6 +860,7 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2070,7 +926,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_4_0.png" src="_images/CCFv3_play_4_0.png" />
+<img alt="_images/d0758290e1ee56a80de4a0f01a290ddb022d83b9684a16fdb808407392dff221.png" src="_images/d0758290e1ee56a80de4a0f01a290ddb022d83b9684a16fdb808407392dff221.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2145,7 +1001,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_10_0.png" src="_images/CCFv3_play_10_0.png" />
+<img alt="_images/562d72a04c1568b836647ea4b236043ce5e12f996a23fd51564be884b353f51a.png" src="_images/562d72a04c1568b836647ea4b236043ce5e12f996a23fd51564be884b353f51a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2182,84 +1038,84 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_13_0.png" src="_images/CCFv3_play_13_0.png" />
-<img alt="_images/CCFv3_play_13_1.png" src="_images/CCFv3_play_13_1.png" />
-<img alt="_images/CCFv3_play_13_2.png" src="_images/CCFv3_play_13_2.png" />
-<img alt="_images/CCFv3_play_13_3.png" src="_images/CCFv3_play_13_3.png" />
-<img alt="_images/CCFv3_play_13_4.png" src="_images/CCFv3_play_13_4.png" />
-<img alt="_images/CCFv3_play_13_5.png" src="_images/CCFv3_play_13_5.png" />
-<img alt="_images/CCFv3_play_13_6.png" src="_images/CCFv3_play_13_6.png" />
-<img alt="_images/CCFv3_play_13_7.png" src="_images/CCFv3_play_13_7.png" />
-<img alt="_images/CCFv3_play_13_8.png" src="_images/CCFv3_play_13_8.png" />
-<img alt="_images/CCFv3_play_13_9.png" src="_images/CCFv3_play_13_9.png" />
-<img alt="_images/CCFv3_play_13_10.png" src="_images/CCFv3_play_13_10.png" />
-<img alt="_images/CCFv3_play_13_11.png" src="_images/CCFv3_play_13_11.png" />
-<img alt="_images/CCFv3_play_13_12.png" src="_images/CCFv3_play_13_12.png" />
-<img alt="_images/CCFv3_play_13_13.png" src="_images/CCFv3_play_13_13.png" />
-<img alt="_images/CCFv3_play_13_14.png" src="_images/CCFv3_play_13_14.png" />
-<img alt="_images/CCFv3_play_13_15.png" src="_images/CCFv3_play_13_15.png" />
-<img alt="_images/CCFv3_play_13_16.png" src="_images/CCFv3_play_13_16.png" />
-<img alt="_images/CCFv3_play_13_17.png" src="_images/CCFv3_play_13_17.png" />
-<img alt="_images/CCFv3_play_13_18.png" src="_images/CCFv3_play_13_18.png" />
-<img alt="_images/CCFv3_play_13_19.png" src="_images/CCFv3_play_13_19.png" />
-<img alt="_images/CCFv3_play_13_20.png" src="_images/CCFv3_play_13_20.png" />
-<img alt="_images/CCFv3_play_13_21.png" src="_images/CCFv3_play_13_21.png" />
-<img alt="_images/CCFv3_play_13_22.png" src="_images/CCFv3_play_13_22.png" />
-<img alt="_images/CCFv3_play_13_23.png" src="_images/CCFv3_play_13_23.png" />
-<img alt="_images/CCFv3_play_13_24.png" src="_images/CCFv3_play_13_24.png" />
-<img alt="_images/CCFv3_play_13_25.png" src="_images/CCFv3_play_13_25.png" />
-<img alt="_images/CCFv3_play_13_26.png" src="_images/CCFv3_play_13_26.png" />
-<img alt="_images/CCFv3_play_13_27.png" src="_images/CCFv3_play_13_27.png" />
-<img alt="_images/CCFv3_play_13_28.png" src="_images/CCFv3_play_13_28.png" />
-<img alt="_images/CCFv3_play_13_29.png" src="_images/CCFv3_play_13_29.png" />
-<img alt="_images/CCFv3_play_13_30.png" src="_images/CCFv3_play_13_30.png" />
-<img alt="_images/CCFv3_play_13_31.png" src="_images/CCFv3_play_13_31.png" />
-<img alt="_images/CCFv3_play_13_32.png" src="_images/CCFv3_play_13_32.png" />
-<img alt="_images/CCFv3_play_13_33.png" src="_images/CCFv3_play_13_33.png" />
-<img alt="_images/CCFv3_play_13_34.png" src="_images/CCFv3_play_13_34.png" />
-<img alt="_images/CCFv3_play_13_35.png" src="_images/CCFv3_play_13_35.png" />
-<img alt="_images/CCFv3_play_13_36.png" src="_images/CCFv3_play_13_36.png" />
-<img alt="_images/CCFv3_play_13_37.png" src="_images/CCFv3_play_13_37.png" />
-<img alt="_images/CCFv3_play_13_38.png" src="_images/CCFv3_play_13_38.png" />
-<img alt="_images/CCFv3_play_13_39.png" src="_images/CCFv3_play_13_39.png" />
-<img alt="_images/CCFv3_play_13_40.png" src="_images/CCFv3_play_13_40.png" />
-<img alt="_images/CCFv3_play_13_41.png" src="_images/CCFv3_play_13_41.png" />
-<img alt="_images/CCFv3_play_13_42.png" src="_images/CCFv3_play_13_42.png" />
-<img alt="_images/CCFv3_play_13_43.png" src="_images/CCFv3_play_13_43.png" />
-<img alt="_images/CCFv3_play_13_44.png" src="_images/CCFv3_play_13_44.png" />
-<img alt="_images/CCFv3_play_13_45.png" src="_images/CCFv3_play_13_45.png" />
-<img alt="_images/CCFv3_play_13_46.png" src="_images/CCFv3_play_13_46.png" />
-<img alt="_images/CCFv3_play_13_47.png" src="_images/CCFv3_play_13_47.png" />
-<img alt="_images/CCFv3_play_13_48.png" src="_images/CCFv3_play_13_48.png" />
-<img alt="_images/CCFv3_play_13_49.png" src="_images/CCFv3_play_13_49.png" />
-<img alt="_images/CCFv3_play_13_50.png" src="_images/CCFv3_play_13_50.png" />
-<img alt="_images/CCFv3_play_13_51.png" src="_images/CCFv3_play_13_51.png" />
-<img alt="_images/CCFv3_play_13_52.png" src="_images/CCFv3_play_13_52.png" />
-<img alt="_images/CCFv3_play_13_53.png" src="_images/CCFv3_play_13_53.png" />
-<img alt="_images/CCFv3_play_13_54.png" src="_images/CCFv3_play_13_54.png" />
-<img alt="_images/CCFv3_play_13_55.png" src="_images/CCFv3_play_13_55.png" />
-<img alt="_images/CCFv3_play_13_56.png" src="_images/CCFv3_play_13_56.png" />
-<img alt="_images/CCFv3_play_13_57.png" src="_images/CCFv3_play_13_57.png" />
-<img alt="_images/CCFv3_play_13_58.png" src="_images/CCFv3_play_13_58.png" />
-<img alt="_images/CCFv3_play_13_59.png" src="_images/CCFv3_play_13_59.png" />
-<img alt="_images/CCFv3_play_13_60.png" src="_images/CCFv3_play_13_60.png" />
-<img alt="_images/CCFv3_play_13_61.png" src="_images/CCFv3_play_13_61.png" />
-<img alt="_images/CCFv3_play_13_62.png" src="_images/CCFv3_play_13_62.png" />
-<img alt="_images/CCFv3_play_13_63.png" src="_images/CCFv3_play_13_63.png" />
-<img alt="_images/CCFv3_play_13_64.png" src="_images/CCFv3_play_13_64.png" />
-<img alt="_images/CCFv3_play_13_65.png" src="_images/CCFv3_play_13_65.png" />
-<img alt="_images/CCFv3_play_13_66.png" src="_images/CCFv3_play_13_66.png" />
-<img alt="_images/CCFv3_play_13_67.png" src="_images/CCFv3_play_13_67.png" />
-<img alt="_images/CCFv3_play_13_68.png" src="_images/CCFv3_play_13_68.png" />
-<img alt="_images/CCFv3_play_13_69.png" src="_images/CCFv3_play_13_69.png" />
-<img alt="_images/CCFv3_play_13_70.png" src="_images/CCFv3_play_13_70.png" />
-<img alt="_images/CCFv3_play_13_71.png" src="_images/CCFv3_play_13_71.png" />
-<img alt="_images/CCFv3_play_13_72.png" src="_images/CCFv3_play_13_72.png" />
-<img alt="_images/CCFv3_play_13_73.png" src="_images/CCFv3_play_13_73.png" />
-<img alt="_images/CCFv3_play_13_74.png" src="_images/CCFv3_play_13_74.png" />
-<img alt="_images/CCFv3_play_13_75.png" src="_images/CCFv3_play_13_75.png" />
-<img alt="_images/CCFv3_play_13_76.png" src="_images/CCFv3_play_13_76.png" />
-<img alt="_images/CCFv3_play_13_77.png" src="_images/CCFv3_play_13_77.png" />
+<img alt="_images/b5e4df0f93958fc917fa0c2b8c193ab49bbea471aafcc96c5c602b166ee2877a.png" src="_images/b5e4df0f93958fc917fa0c2b8c193ab49bbea471aafcc96c5c602b166ee2877a.png" />
+<img alt="_images/99bd27146d47a4f5e61b5c7e099bf8393cf072f33321525cba9b60d6a86a8de8.png" src="_images/99bd27146d47a4f5e61b5c7e099bf8393cf072f33321525cba9b60d6a86a8de8.png" />
+<img alt="_images/73e4d7abfa1983179914ad10b3da591677d50ec426144fbcc523bc3bfff6c85d.png" src="_images/73e4d7abfa1983179914ad10b3da591677d50ec426144fbcc523bc3bfff6c85d.png" />
+<img alt="_images/e154ac2529808d0d121e4262496b78fd86df3414786644db0a0c359e7cfba94b.png" src="_images/e154ac2529808d0d121e4262496b78fd86df3414786644db0a0c359e7cfba94b.png" />
+<img alt="_images/9c1bc40922e5d9f7471d18cfa9e4a81ada940ff2995b657bf8fb119db016837a.png" src="_images/9c1bc40922e5d9f7471d18cfa9e4a81ada940ff2995b657bf8fb119db016837a.png" />
+<img alt="_images/75c6da11702063ab51e696451c35bbec735f2ba4802d5d1a8767616f57f655a1.png" src="_images/75c6da11702063ab51e696451c35bbec735f2ba4802d5d1a8767616f57f655a1.png" />
+<img alt="_images/31cf5cf5688656745c8c802bb34499221e1703c561b796a697a17f53b305e2fa.png" src="_images/31cf5cf5688656745c8c802bb34499221e1703c561b796a697a17f53b305e2fa.png" />
+<img alt="_images/f5eba4e8ea354307fcb3775a95b26e9978ce1e554a8fd3ed464510c2d4f1e25f.png" src="_images/f5eba4e8ea354307fcb3775a95b26e9978ce1e554a8fd3ed464510c2d4f1e25f.png" />
+<img alt="_images/fbc6a44095b100a08436d8779b039bc6175fd8fda1ceb55a567c7ed9c1450c10.png" src="_images/fbc6a44095b100a08436d8779b039bc6175fd8fda1ceb55a567c7ed9c1450c10.png" />
+<img alt="_images/6ee4a1737ee93d091089f2541e3b1d1fd873dbe4454ccb32edcb0fdfa91c4e76.png" src="_images/6ee4a1737ee93d091089f2541e3b1d1fd873dbe4454ccb32edcb0fdfa91c4e76.png" />
+<img alt="_images/03501db511b984baec1b64ac52faca1ce3a2cc7f71fee5943a5d9f3ea95a5a71.png" src="_images/03501db511b984baec1b64ac52faca1ce3a2cc7f71fee5943a5d9f3ea95a5a71.png" />
+<img alt="_images/97f5862547e8cdbf0caf6b8ab1e73b83ca372be1308c7c7b72e4c243cabeed03.png" src="_images/97f5862547e8cdbf0caf6b8ab1e73b83ca372be1308c7c7b72e4c243cabeed03.png" />
+<img alt="_images/6136ce9f03fa3bf489624420d013332c3974973fac25dd39d99b5a69da9e3ea9.png" src="_images/6136ce9f03fa3bf489624420d013332c3974973fac25dd39d99b5a69da9e3ea9.png" />
+<img alt="_images/b761170a2ba9ace1111ab0f9e305feb13e43fff5ef2afbd7047a8f29ea33f9a9.png" src="_images/b761170a2ba9ace1111ab0f9e305feb13e43fff5ef2afbd7047a8f29ea33f9a9.png" />
+<img alt="_images/0fd3824e59c9cad6bb3ea1ecba3d6ccb963ae82c4fb409f736671101b18790fd.png" src="_images/0fd3824e59c9cad6bb3ea1ecba3d6ccb963ae82c4fb409f736671101b18790fd.png" />
+<img alt="_images/eb17614a577234b3fc8defb8a4433cfa20d517e7214656e524e9aa03473319ff.png" src="_images/eb17614a577234b3fc8defb8a4433cfa20d517e7214656e524e9aa03473319ff.png" />
+<img alt="_images/0f25509844cccfe8469681571eb5d5222f5fbcc5716acaeab2ba8e962d721c9f.png" src="_images/0f25509844cccfe8469681571eb5d5222f5fbcc5716acaeab2ba8e962d721c9f.png" />
+<img alt="_images/3dcc6e498ffe2108a2777cd89f37dba5a8a9bbcf20cde32a4b8d3f548b86e2dc.png" src="_images/3dcc6e498ffe2108a2777cd89f37dba5a8a9bbcf20cde32a4b8d3f548b86e2dc.png" />
+<img alt="_images/78e86ac3c47d98ab4166e756c88c05f947a58eee308f6bd55c9b5671cddc4dca.png" src="_images/78e86ac3c47d98ab4166e756c88c05f947a58eee308f6bd55c9b5671cddc4dca.png" />
+<img alt="_images/f9d27f30c617f0785d3d790cc5c55d2c149a7aeaf71f4a5aa325b4710410af78.png" src="_images/f9d27f30c617f0785d3d790cc5c55d2c149a7aeaf71f4a5aa325b4710410af78.png" />
+<img alt="_images/e27b2ab40b6ca651b9afcee3e985b476d300dec724eacb48b1322e366640eed6.png" src="_images/e27b2ab40b6ca651b9afcee3e985b476d300dec724eacb48b1322e366640eed6.png" />
+<img alt="_images/fab183442c52804c8429660cb5b6cd8f50e4425fe277c812faff5d06fd3c2e6b.png" src="_images/fab183442c52804c8429660cb5b6cd8f50e4425fe277c812faff5d06fd3c2e6b.png" />
+<img alt="_images/fa560962cbc8ce34e5c97df69650efd4fbdbc966174d265889ec1e366ef9b5a0.png" src="_images/fa560962cbc8ce34e5c97df69650efd4fbdbc966174d265889ec1e366ef9b5a0.png" />
+<img alt="_images/a350045ab67d0184d017f95090ccacacc20f6dfa9d438f97b285ab4f59eb19aa.png" src="_images/a350045ab67d0184d017f95090ccacacc20f6dfa9d438f97b285ab4f59eb19aa.png" />
+<img alt="_images/56b1f170b9739cfb2a5668ddd07737aa367d67637a55a595ee8c9300b5361547.png" src="_images/56b1f170b9739cfb2a5668ddd07737aa367d67637a55a595ee8c9300b5361547.png" />
+<img alt="_images/f8794da2da99f73518e0113c98a4ad403b5b148be79ddfb3512430b3c0ef74cc.png" src="_images/f8794da2da99f73518e0113c98a4ad403b5b148be79ddfb3512430b3c0ef74cc.png" />
+<img alt="_images/282b7c8e647a5298e8c246fb032e4beba6755cc45e9de79165b19648ad43b920.png" src="_images/282b7c8e647a5298e8c246fb032e4beba6755cc45e9de79165b19648ad43b920.png" />
+<img alt="_images/e9b8e37d3b3d30564cf16e2fce38c3135f30700a4de7193face21e63f7ae8cb8.png" src="_images/e9b8e37d3b3d30564cf16e2fce38c3135f30700a4de7193face21e63f7ae8cb8.png" />
+<img alt="_images/4af7cfecdeceb803b6460db0a12d264bd42e86d45fdc0b89c06d6467051c7944.png" src="_images/4af7cfecdeceb803b6460db0a12d264bd42e86d45fdc0b89c06d6467051c7944.png" />
+<img alt="_images/fb6555af08cb21c972863664481b6f201ee8d30e1ece26021e07107cbdde3d1f.png" src="_images/fb6555af08cb21c972863664481b6f201ee8d30e1ece26021e07107cbdde3d1f.png" />
+<img alt="_images/7bae91d028ac3ceb136aedcf0188c24a6829aef088fd5073b213c23e92b02351.png" src="_images/7bae91d028ac3ceb136aedcf0188c24a6829aef088fd5073b213c23e92b02351.png" />
+<img alt="_images/5e67a8df2940e4a8f8b5cef671dddca23c873b3969c14f930b3af4a2560b34ea.png" src="_images/5e67a8df2940e4a8f8b5cef671dddca23c873b3969c14f930b3af4a2560b34ea.png" />
+<img alt="_images/5e6f8fe0b1b705c129f20f42f52ef63134d345a6f1439dc177e40a9377da0fa0.png" src="_images/5e6f8fe0b1b705c129f20f42f52ef63134d345a6f1439dc177e40a9377da0fa0.png" />
+<img alt="_images/30552a756f016d9f186ae8c964026b3c7b720d56ae6fb756310904066ce79461.png" src="_images/30552a756f016d9f186ae8c964026b3c7b720d56ae6fb756310904066ce79461.png" />
+<img alt="_images/4fad0c0d51b9e7b72891ef32b668ec4dbb29ccb861b57e8b1360494c588c41fd.png" src="_images/4fad0c0d51b9e7b72891ef32b668ec4dbb29ccb861b57e8b1360494c588c41fd.png" />
+<img alt="_images/30c1b16e376fa122b8941bfec7997b3301e5595c56246c5886b5b3624183be53.png" src="_images/30c1b16e376fa122b8941bfec7997b3301e5595c56246c5886b5b3624183be53.png" />
+<img alt="_images/9d0632fa3ead4eb88af9f75af0f2dac17207fdca9b5fd7079b20858e03f08cd0.png" src="_images/9d0632fa3ead4eb88af9f75af0f2dac17207fdca9b5fd7079b20858e03f08cd0.png" />
+<img alt="_images/3c39372c14fe566f4643e12110105cefbf23e1864b663ffd8f5f1574a97ee41c.png" src="_images/3c39372c14fe566f4643e12110105cefbf23e1864b663ffd8f5f1574a97ee41c.png" />
+<img alt="_images/58d88da3708f7cb99501c2a5fb628a985582e217b0f8bb90781e0340f805300c.png" src="_images/58d88da3708f7cb99501c2a5fb628a985582e217b0f8bb90781e0340f805300c.png" />
+<img alt="_images/57b8836408e9392081d3076119a1ecad3b0bdf01dd1a8c9a69266a6283284747.png" src="_images/57b8836408e9392081d3076119a1ecad3b0bdf01dd1a8c9a69266a6283284747.png" />
+<img alt="_images/492cd824452ecdaa5f8d30314af1fdf11c164009c9434b921803c88c7f130e62.png" src="_images/492cd824452ecdaa5f8d30314af1fdf11c164009c9434b921803c88c7f130e62.png" />
+<img alt="_images/75a0e60bce2e22582460a2152bf5eee7268e1f6231d43fc6c5955b99d752b196.png" src="_images/75a0e60bce2e22582460a2152bf5eee7268e1f6231d43fc6c5955b99d752b196.png" />
+<img alt="_images/1ca4c6064d50ab3b08ab01edb7760cbab3b9b606f20543bf50b330bd1ae10793.png" src="_images/1ca4c6064d50ab3b08ab01edb7760cbab3b9b606f20543bf50b330bd1ae10793.png" />
+<img alt="_images/54def2ed7b971ba4cd2d113e0a52c8bf7556d793363587eed2193c1fcebb6e93.png" src="_images/54def2ed7b971ba4cd2d113e0a52c8bf7556d793363587eed2193c1fcebb6e93.png" />
+<img alt="_images/a8528aac9f94a39fe5dd4abbe5457e7ec7218f1d0209ff0c5b26dbe279b3f837.png" src="_images/a8528aac9f94a39fe5dd4abbe5457e7ec7218f1d0209ff0c5b26dbe279b3f837.png" />
+<img alt="_images/1f8892241202afb28e42f30f40993c7393439e828d8ba309156a17de7327078c.png" src="_images/1f8892241202afb28e42f30f40993c7393439e828d8ba309156a17de7327078c.png" />
+<img alt="_images/fc03c915a0b00f41dbd34ccf1ef4f906a81db83dff837a7f4b80724e79097cc5.png" src="_images/fc03c915a0b00f41dbd34ccf1ef4f906a81db83dff837a7f4b80724e79097cc5.png" />
+<img alt="_images/a2ba93827c68f4bdca79c10cfc57990c2c8ad34111565ea3e22d1ffc8c8b10bc.png" src="_images/a2ba93827c68f4bdca79c10cfc57990c2c8ad34111565ea3e22d1ffc8c8b10bc.png" />
+<img alt="_images/4360d670241b55bda251b3d45461b962d5b6e579dd245d8e27b4edbe188fee6c.png" src="_images/4360d670241b55bda251b3d45461b962d5b6e579dd245d8e27b4edbe188fee6c.png" />
+<img alt="_images/f5bcb60b810c93d427d535f59c70ae947d444fb000346725a2295c0dfb259d39.png" src="_images/f5bcb60b810c93d427d535f59c70ae947d444fb000346725a2295c0dfb259d39.png" />
+<img alt="_images/10cac1abaced938f2054801a87d74fa709e505e12a21b9af859c892d86858e78.png" src="_images/10cac1abaced938f2054801a87d74fa709e505e12a21b9af859c892d86858e78.png" />
+<img alt="_images/d1b9edc9aebfa4c1789615737fc9a38619bd3498961925685925e0bd8182b145.png" src="_images/d1b9edc9aebfa4c1789615737fc9a38619bd3498961925685925e0bd8182b145.png" />
+<img alt="_images/c5c112b89ca0f3cc0893391f8706ec56ddf45a5131f2a3572005aa97ea9c8fb1.png" src="_images/c5c112b89ca0f3cc0893391f8706ec56ddf45a5131f2a3572005aa97ea9c8fb1.png" />
+<img alt="_images/389c9d2be6f474e3436e5e1e9e15ef6b565a8f255a8de58f160c751a34571a58.png" src="_images/389c9d2be6f474e3436e5e1e9e15ef6b565a8f255a8de58f160c751a34571a58.png" />
+<img alt="_images/024511fda8186124e54bb4dac434f87ca93e895ddd9829eaa152b56b22b6a4ad.png" src="_images/024511fda8186124e54bb4dac434f87ca93e895ddd9829eaa152b56b22b6a4ad.png" />
+<img alt="_images/7178cf7a7a26e009cb401b825808e0d424ab5870ef4ad5a4928a8bfece2babc1.png" src="_images/7178cf7a7a26e009cb401b825808e0d424ab5870ef4ad5a4928a8bfece2babc1.png" />
+<img alt="_images/d674cd9e2d98d03965bf007a020154a31427a913508cd0907668edfbae2ee0dc.png" src="_images/d674cd9e2d98d03965bf007a020154a31427a913508cd0907668edfbae2ee0dc.png" />
+<img alt="_images/b5f238e012d2243182ee48d980444d5265d446b9adabceefba062110f4e80e0b.png" src="_images/b5f238e012d2243182ee48d980444d5265d446b9adabceefba062110f4e80e0b.png" />
+<img alt="_images/6bf6b4a4496214ef6fdaeb8075713096bda0f204b183b750bf35098a60614dad.png" src="_images/6bf6b4a4496214ef6fdaeb8075713096bda0f204b183b750bf35098a60614dad.png" />
+<img alt="_images/9cc960e3bc7e36d6a83a2172ca8390d1d8d40cf31d2ac12bbdfc550aad554db3.png" src="_images/9cc960e3bc7e36d6a83a2172ca8390d1d8d40cf31d2ac12bbdfc550aad554db3.png" />
+<img alt="_images/6ed07e99dee8b95fbcf81a766cebbb903b25601d4491d3c57cdcf4948120fca4.png" src="_images/6ed07e99dee8b95fbcf81a766cebbb903b25601d4491d3c57cdcf4948120fca4.png" />
+<img alt="_images/6e3ee4470bc43d9defd8999c33ed728b45ae8da31d5ac6af654ae127cda49674.png" src="_images/6e3ee4470bc43d9defd8999c33ed728b45ae8da31d5ac6af654ae127cda49674.png" />
+<img alt="_images/1fb84fce5e662d57548e5798846de9098296a6471a94cb4e25ce7e66229aa370.png" src="_images/1fb84fce5e662d57548e5798846de9098296a6471a94cb4e25ce7e66229aa370.png" />
+<img alt="_images/346e0522f80687184de323accf1f9da1afc3c5e09b64121984b868540185f55a.png" src="_images/346e0522f80687184de323accf1f9da1afc3c5e09b64121984b868540185f55a.png" />
+<img alt="_images/10384ef58a393f818ec6a28336e3d0ad757ea52e3926d05c2807e25e15cf9a6b.png" src="_images/10384ef58a393f818ec6a28336e3d0ad757ea52e3926d05c2807e25e15cf9a6b.png" />
+<img alt="_images/ae902bfde6361488c275e6dfdd9a66ec3f9a919b8c0f11bf7a7e04249515aa13.png" src="_images/ae902bfde6361488c275e6dfdd9a66ec3f9a919b8c0f11bf7a7e04249515aa13.png" />
+<img alt="_images/06cbf72ff395cc7289c713abecb0897036c484e7616d2da42494326fa7a35932.png" src="_images/06cbf72ff395cc7289c713abecb0897036c484e7616d2da42494326fa7a35932.png" />
+<img alt="_images/b57d41e2bee38cc9dcf1664f4491669f44ca7e869d8836a3d24a9837c7d36abc.png" src="_images/b57d41e2bee38cc9dcf1664f4491669f44ca7e869d8836a3d24a9837c7d36abc.png" />
+<img alt="_images/8c81697dd0efc3a090038c3bdd1d7df8efe2993682eeb3db040bc67b5e79cc92.png" src="_images/8c81697dd0efc3a090038c3bdd1d7df8efe2993682eeb3db040bc67b5e79cc92.png" />
+<img alt="_images/22d819a6db3d73de10eeeb8f1a8dff0f1bd2b0146232cfc50de8cd29843bd60d.png" src="_images/22d819a6db3d73de10eeeb8f1a8dff0f1bd2b0146232cfc50de8cd29843bd60d.png" />
+<img alt="_images/7b2eae1e2fef4095f5c4f328dce8704e21fa938d3f74db6baa6e57a4d78d25c9.png" src="_images/7b2eae1e2fef4095f5c4f328dce8704e21fa938d3f74db6baa6e57a4d78d25c9.png" />
+<img alt="_images/22f9de7930a9457699cde2df764a8fcdaedb3b33ab2ce8f14cb7144c0a92271d.png" src="_images/22f9de7930a9457699cde2df764a8fcdaedb3b33ab2ce8f14cb7144c0a92271d.png" />
+<img alt="_images/1bac6231bed6ac29b6ae2b9dba186d2d9ce7c66269c40b7e94456eab7ec23c1d.png" src="_images/1bac6231bed6ac29b6ae2b9dba186d2d9ce7c66269c40b7e94456eab7ec23c1d.png" />
+<img alt="_images/425b56a5eb04a3aa370963456ee79f86a202e7d4cbb03e20217311fd5ecbd3c7.png" src="_images/425b56a5eb04a3aa370963456ee79f86a202e7d4cbb03e20217311fd5ecbd3c7.png" />
+<img alt="_images/b25d75876ebc2b758a9679bbc889c91bf60e28d5a2c9ce8f9303696a65c030bd.png" src="_images/b25d75876ebc2b758a9679bbc889c91bf60e28d5a2c9ce8f9303696a65c030bd.png" />
+<img alt="_images/8214af0f79ad863926d097f47894330496e068e6938746c4616786cdd6f3fd49.png" src="_images/8214af0f79ad863926d097f47894330496e068e6938746c4616786cdd6f3fd49.png" />
+<img alt="_images/7669a00e263ad76deb866e9ae4da2827152b52072000bce20153bc3ebc0462b4.png" src="_images/7669a00e263ad76deb866e9ae4da2827152b52072000bce20153bc3ebc0462b4.png" />
+<img alt="_images/3cb7b62da93da551e53c8161115009abd369f11d00713aa24f332e98c5c9e444.png" src="_images/3cb7b62da93da551e53c8161115009abd369f11d00713aa24f332e98c5c9e444.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2307,7 +1163,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc28c551af0&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_21_1.png" src="_images/CCFv3_play_21_1.png" />
+<img alt="_images/9c1da427fab7288bd303106bc8b681b9887c0bfd4e79bc94bbf0e234e7712d40.png" src="_images/9c1da427fab7288bd303106bc8b681b9887c0bfd4e79bc94bbf0e234e7712d40.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2349,7 +1205,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc28ac3a370&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_26_1.png" src="_images/CCFv3_play_26_1.png" />
+<img alt="_images/63942934fc615cb9ef30dc2d9db51b8814a5fdd6ea815b9456b988987a8bd282.png" src="_images/63942934fc615cb9ef30dc2d9db51b8814a5fdd6ea815b9456b988987a8bd282.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2370,7 +1226,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc28ab8e2e0&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_28_1.png" src="_images/CCFv3_play_28_1.png" />
+<img alt="_images/81cbb5b31b7fcbf78fac710d5bef98b9ec8d402579dbf8affbe29634d0a45e8e.png" src="_images/81cbb5b31b7fcbf78fac710d5bef98b9ec8d402579dbf8affbe29634d0a45e8e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2390,7 +1246,7 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;OrthoSlicer3D: /home/hadi/Downloads/sub-SLC06_ses-1_space-individual_desc-fineatlas2d_ca2.nii.gz (512, 500, 1)&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_30_1.png" src="_images/CCFv3_play_30_1.png" />
+<img alt="_images/daa8b27edd2e811e4a7273abf378c52d6c5a74675bb7d98aa399e76d6f61431c.png" src="_images/daa8b27edd2e811e4a7273abf378c52d6c5a74675bb7d98aa399e76d6f61431c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2494,7 +1350,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc2898fc100&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_37_1.png" src="_images/CCFv3_play_37_1.png" />
+<img alt="_images/ee9781d0f898078b3babe40c46c4ba5925b4c6880da9c3be9c3356b9b54c9dad.png" src="_images/ee9781d0f898078b3babe40c46c4ba5925b4c6880da9c3be9c3356b9b54c9dad.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2549,7 +1405,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc289854eb0&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_41_1.png" src="_images/CCFv3_play_41_1.png" />
+<img alt="_images/14620659dce4a2a681f9f55549b1ac15d86af7ce9e4536cdb5fd6e414d195c59.png" src="_images/14620659dce4a2a681f9f55549b1ac15d86af7ce9e4536cdb5fd6e414d195c59.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2591,7 +1447,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc2894e2610&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_46_1.png" src="_images/CCFv3_play_46_1.png" />
+<img alt="_images/264a80dfa69fed5b0844fe70f40ac234960476110c7a40e316479b20fe5abb89.png" src="_images/264a80dfa69fed5b0844fe70f40ac234960476110c7a40e316479b20fe5abb89.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2606,7 +1462,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc2889da130&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_48_1.png" src="_images/CCFv3_play_48_1.png" />
+<img alt="_images/0162149e2cbbf0b43a39deffa5362aae57f2bcb884ff9d1cd7c924bb11965831.png" src="_images/0162149e2cbbf0b43a39deffa5362aae57f2bcb884ff9d1cd7c924bb11965831.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2631,7 +1487,7 @@ magic           : b&#39;n+1&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_51_0.png" src="_images/CCFv3_play_51_0.png" />
+<img alt="_images/50198cb3f68a90c33091cfbff5a9f1a501360b7baca70a07729465645c0a78f6.png" src="_images/50198cb3f68a90c33091cfbff5a9f1a501360b7baca70a07729465645c0a78f6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2649,7 +1505,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc288a7fe20&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_53_1.png" src="_images/CCFv3_play_53_1.png" />
+<img alt="_images/61555c8734273bb734a29c8ef2e8a422436766e0e6ac14ad2705a25752334bc8.png" src="_images/61555c8734273bb734a29c8ef2e8a422436766e0e6ac14ad2705a25752334bc8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2669,16 +1525,16 @@ magic           : b&#39;n+1&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_57_0.png" src="_images/CCFv3_play_57_0.png" />
-<img alt="_images/CCFv3_play_57_1.png" src="_images/CCFv3_play_57_1.png" />
-<img alt="_images/CCFv3_play_57_2.png" src="_images/CCFv3_play_57_2.png" />
-<img alt="_images/CCFv3_play_57_3.png" src="_images/CCFv3_play_57_3.png" />
-<img alt="_images/CCFv3_play_57_4.png" src="_images/CCFv3_play_57_4.png" />
-<img alt="_images/CCFv3_play_57_5.png" src="_images/CCFv3_play_57_5.png" />
-<img alt="_images/CCFv3_play_57_6.png" src="_images/CCFv3_play_57_6.png" />
-<img alt="_images/CCFv3_play_57_7.png" src="_images/CCFv3_play_57_7.png" />
-<img alt="_images/CCFv3_play_57_8.png" src="_images/CCFv3_play_57_8.png" />
-<img alt="_images/CCFv3_play_57_9.png" src="_images/CCFv3_play_57_9.png" />
+<img alt="_images/f9b0e91b0f438cf9a66d06819105e878f26537eb75827b3b6bc98867fe0e1f33.png" src="_images/f9b0e91b0f438cf9a66d06819105e878f26537eb75827b3b6bc98867fe0e1f33.png" />
+<img alt="_images/5294cca071703b234ba89b19405c1244f7c163794baaca8a5c5d33f2275abe04.png" src="_images/5294cca071703b234ba89b19405c1244f7c163794baaca8a5c5d33f2275abe04.png" />
+<img alt="_images/58a52553e99098a3959bf0e33b364e081a1da4fde2b8b17f7923e31460d9358b.png" src="_images/58a52553e99098a3959bf0e33b364e081a1da4fde2b8b17f7923e31460d9358b.png" />
+<img alt="_images/fddad5f08814bfd474ae1388063f9512a8b58ee8b41ed9cadeeeee19053320e7.png" src="_images/fddad5f08814bfd474ae1388063f9512a8b58ee8b41ed9cadeeeee19053320e7.png" />
+<img alt="_images/20b9de705f0172727c4952de84fbefba5938743234b41a0305f43db7d3282128.png" src="_images/20b9de705f0172727c4952de84fbefba5938743234b41a0305f43db7d3282128.png" />
+<img alt="_images/f75b2bc9f550d1eb2f07dbb76adcfd611d7445e2b344b3eff771d55b38eec3ef.png" src="_images/f75b2bc9f550d1eb2f07dbb76adcfd611d7445e2b344b3eff771d55b38eec3ef.png" />
+<img alt="_images/692ecdb60808487710bf2abf89630d6428daf898781b3bfde99608c6b858ce0d.png" src="_images/692ecdb60808487710bf2abf89630d6428daf898781b3bfde99608c6b858ce0d.png" />
+<img alt="_images/58664f82610502a7a11493906498ff6350536bd6e6320278fdfac8a6114a4834.png" src="_images/58664f82610502a7a11493906498ff6350536bd6e6320278fdfac8a6114a4834.png" />
+<img alt="_images/b52a7669a32de5a02f895b044a236f4f53c78db40a94b46322b3958ec2720a93.png" src="_images/b52a7669a32de5a02f895b044a236f4f53c78db40a94b46322b3958ec2720a93.png" />
+<img alt="_images/080065ea246a539a6faa71b55d72231f4621e483d8d693afa8bb5b7bd7d41c86.png" src="_images/080065ea246a539a6faa71b55d72231f4621e483d8d693afa8bb5b7bd7d41c86.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2697,16 +1553,16 @@ magic           : b&#39;n+1&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/CCFv3_play_60_0.png" src="_images/CCFv3_play_60_0.png" />
-<img alt="_images/CCFv3_play_60_1.png" src="_images/CCFv3_play_60_1.png" />
-<img alt="_images/CCFv3_play_60_2.png" src="_images/CCFv3_play_60_2.png" />
-<img alt="_images/CCFv3_play_60_3.png" src="_images/CCFv3_play_60_3.png" />
-<img alt="_images/CCFv3_play_60_4.png" src="_images/CCFv3_play_60_4.png" />
-<img alt="_images/CCFv3_play_60_5.png" src="_images/CCFv3_play_60_5.png" />
-<img alt="_images/CCFv3_play_60_6.png" src="_images/CCFv3_play_60_6.png" />
-<img alt="_images/CCFv3_play_60_7.png" src="_images/CCFv3_play_60_7.png" />
-<img alt="_images/CCFv3_play_60_8.png" src="_images/CCFv3_play_60_8.png" />
-<img alt="_images/CCFv3_play_60_9.png" src="_images/CCFv3_play_60_9.png" />
+<img alt="_images/bd3439239a730eaeac3744ec1f3cb33ab6b05adbbceb0c92ae3f34d3aed366a0.png" src="_images/bd3439239a730eaeac3744ec1f3cb33ab6b05adbbceb0c92ae3f34d3aed366a0.png" />
+<img alt="_images/b0bffc6b9d878fe170b9b9397ced3fdc769ac536f100e2aec37973ce23959b1e.png" src="_images/b0bffc6b9d878fe170b9b9397ced3fdc769ac536f100e2aec37973ce23959b1e.png" />
+<img alt="_images/7cf24aa5f2e2f57d252c9c31e5baf1de991f4a56d72fa472c8ef0d7ec234bdca.png" src="_images/7cf24aa5f2e2f57d252c9c31e5baf1de991f4a56d72fa472c8ef0d7ec234bdca.png" />
+<img alt="_images/85649d33d7e9f0ace859cb31eba58683e01d36debefe8aca55ff03bfae574a81.png" src="_images/85649d33d7e9f0ace859cb31eba58683e01d36debefe8aca55ff03bfae574a81.png" />
+<img alt="_images/30a269e8733147d097c9a9a22cf3547a1ab4242388918a5a9869a60270a828d6.png" src="_images/30a269e8733147d097c9a9a22cf3547a1ab4242388918a5a9869a60270a828d6.png" />
+<img alt="_images/d3ba0bd46580206cb2ec542fa642a6735051799a491ca91d5f6cdefcdf95c7a8.png" src="_images/d3ba0bd46580206cb2ec542fa642a6735051799a491ca91d5f6cdefcdf95c7a8.png" />
+<img alt="_images/c5c88ccfac38b997b58060a3bcdd74bc009bc7356429688c373500cbe4cab391.png" src="_images/c5c88ccfac38b997b58060a3bcdd74bc009bc7356429688c373500cbe4cab391.png" />
+<img alt="_images/0687fab5bb6f770ae7f10209543f8825f7afd24030c16608d9800b6c744ae442.png" src="_images/0687fab5bb6f770ae7f10209543f8825f7afd24030c16608d9800b6c744ae442.png" />
+<img alt="_images/9cf27cd982f6d20b2c1ac2ab92bdb9b37568511d31590fd26156f3f8ad96de02.png" src="_images/9cf27cd982f6d20b2c1ac2ab92bdb9b37568511d31590fd26156f3f8ad96de02.png" />
+<img alt="_images/7cc29a1f70f32f18c90775c225f26adecb478de01b68572b51d2be2732c60d65.png" src="_images/7cc29a1f70f32f18c90775c225f26adecb478de01b68572b51d2be2732c60d65.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2728,7 +1584,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7fc281768a00&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_63_1.png" src="_images/CCFv3_play_63_1.png" />
+<img alt="_images/5df2bda987973d8bead53fb6ee39e8fe85da6dbb36b32ddf15165ec255569d51.png" src="_images/5df2bda987973d8bead53fb6ee39e8fe85da6dbb36b32ddf15165ec255569d51.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2748,7 +1604,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc282ebe340&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_65_1.png" src="_images/CCFv3_play_65_1.png" />
+<img alt="_images/3b86b22b211818c79b4dc42ff4af1bcddeb5e4ca7254c7f005b1a2988833a581.png" src="_images/3b86b22b211818c79b4dc42ff4af1bcddeb5e4ca7254c7f005b1a2988833a581.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2761,7 +1617,7 @@ magic           : b&#39;n+1&#39;
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7fc281b4f8e0&gt;
 </pre></div>
 </div>
-<img alt="_images/CCFv3_play_67_1.png" src="_images/CCFv3_play_67_1.png" />
+<img alt="_images/edad3d264067e1f413ce71d2b97cfa677dcaba7870a920156334cc272b1f7ca8.png" src="_images/edad3d264067e1f413ce71d2b97cfa677dcaba7870a920156334cc272b1f7ca8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2791,7 +1647,7 @@ magic           : b&#39;n+1&#39;
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
@@ -2799,34 +1655,87 @@ magic           : b&#39;n+1&#39;
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        
-        <div class='prev-next-bottom'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
             
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-        </div>
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hadi Vafaii
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
         
-        </div>
+
+      </main>
     </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Hadi Vafaii<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
-    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
   </footer>
-</main>
-
-
-      </div>
-    </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
-
-  
   </body>
 </html>
