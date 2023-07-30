@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'nb/2023-07/26_awake-net';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="(27) Marija" href="27_marija.html" />
+    <link rel="next" title="(26) Awake – sv + gr" href="26_awake-sv%2Bgr.html" />
     <link rel="prev" title="(25) ca awake – organize func" href="25_ca-awake-orgfunc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -599,7 +599,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="24_ca-awake-affine.html">(24) ca awake – affine</a></li>
 <li class="toctree-l2"><a class="reference internal" href="25_ca-awake-orgfunc.html">(25) ca awake – organize func</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">(26) Awake – network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="27_marija.html">(27) Marija</a></li>
+<li class="toctree-l2"><a class="reference internal" href="26_awake-sv%2Bgr.html">(26) Awake – sv + gr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="27_awake-plot.html">(27) Awake – plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="28_marija.html">(28) Marija</a></li>
+<li class="toctree-l2"><a class="reference internal" href="30_revision-prop.html">(30) Revsions – Membership dist (proportion plot)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="30_revision-tier.html">(30) Revsions – Membership tier (collapse)</a></li>
 </ul>
 </li>
 </ul>
@@ -806,7 +810,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">KMeans</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svinet-group">SVINET + Group</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#region-wise-connectivity">Region-wise connectivity</a></li>
 </ul>
             </nav>
@@ -894,52 +897,46 @@ document.write(`
     <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">bands</span><span class="p">),</span>
 <span class="p">)</span>
 <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">pbar1</span><span class="p">:</span>
-    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">kws</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="n">props</span><span class="p">[</span><span class="s1">&#39;task&#39;</span><span class="p">],</span>
-        <span class="s1">&#39;desc&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ca2&#39;</span><span class="p">:</span> <span class="s1">&#39;awake&#39;</span><span class="p">},</span>
-        <span class="s1">&#39;runs_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;desc_ca2&#39;</span><span class="p">:</span> <span class="s1">&#39;awake&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;band_ca2&#39;</span><span class="p">:</span> <span class="n">b</span><span class="p">,</span>
     <span class="p">}</span>
-    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="n">mice</span><span class="o">.</span><span class="n">set_band</span><span class="p">(</span><span class="n">band</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ca2&#39;</span><span class="p">:</span> <span class="n">b</span><span class="p">})</span>
-    <span class="n">proc</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">mice</span><span class="o">.</span><span class="n">get_data_containers</span><span class="p">(</span><span class="s1">&#39;ca2&#39;</span><span class="p">)</span>
+    <span class="n">mice</span><span class="o">.</span><span class="n">setup_func_data</span><span class="p">(</span><span class="o">**</span><span class="n">kws</span><span class="p">)</span>
     <span class="n">pbar2</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span>
-        <span class="n">proc</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span>
+        <span class="n">mice</span><span class="o">.</span><span class="n">get_data_containers</span><span class="p">(</span><span class="s1">&#39;ca2&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
         <span class="n">leave</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">pbar2</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">pbar2</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;running net (task-</span><span class="si">{</span><span class="n">props</span><span class="p">[</span><span class="s1">&#39;task&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, &quot;</span>
         <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;b-</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span>
         <span class="n">msg</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;: </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="n">pbar1</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-        <span class="n">net</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">props</span><span class="p">)</span><span class="o">.</span><span class="n">fit_network</span><span class="p">(</span>
+        <span class="n">_</span> <span class="o">=</span> <span class="n">Network</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">props</span><span class="p">)</span><span class="o">.</span><span class="n">fit_network</span><span class="p">(</span>
             <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">full</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "befaf53646aa4bdea04810c3f7be233e", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7b6656a4950643ea907e155c15b023c3", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="adjacencies">
 <h2>Adjacencies<a class="headerlink" href="#adjacencies" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">set_band</span><span class="p">({</span><span class="s1">&#39;ca2&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)})</span>
-<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="s1">&#39;rest&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;exclude&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;runs_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;desc&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;ca2&#39;</span><span class="p">:</span> <span class="s1">&#39;awake&#39;</span><span class="p">},</span>
-<span class="p">}</span>
-<span class="n">adjacencies</span> <span class="o">=</span> <span class="n">collect_adjacencies</span><span class="p">(</span>
-    <span class="n">mice</span><span class="p">,</span> <span class="s1">&#39;ca2&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mice</span><span class="o">.</span><span class="n">set_kws</span><span class="p">(</span>
+    <span class="n">task</span><span class="o">=</span><span class="s1">&#39;rest&#39;</span><span class="p">,</span>
+    <span class="n">desc_ca2</span><span class="o">=</span><span class="s1">&#39;awake&#39;</span><span class="p">,</span>
+    <span class="n">band_ca2</span><span class="o">=</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">adjacencies</span> <span class="o">=</span> <span class="n">collect_adjacencies</span><span class="p">(</span><span class="n">mice</span><span class="p">,</span> <span class="s1">&#39;ca2&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">adjacencies</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -962,7 +959,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -975,14 +972,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">31</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="n">bin_edges</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_bins</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">bin_edges</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">210</span><span class="p">)</span>
 <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">bin_edges</span><span class="p">,</span> <span class="n">num_bins</span><span class="p">)</span>
 <span class="n">bins</span> <span class="o">-=</span> <span class="mf">2.5</span>
 
@@ -991,7 +988,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5f7c8ebee117b87507f6a52859a6a1c64f55b83d5861e5b6fa893c7bbc61a89e.png" src="../../_images/5f7c8ebee117b87507f6a52859a6a1c64f55b83d5861e5b6fa893c7bbc61a89e.png" />
+<img alt="../../_images/bcff9c6034ac217562450c7737ad2439f5c29426e4df4e1c8abea7ffbf04a568.png" src="../../_images/bcff9c6034ac217562450c7737ad2439f5c29426e4df4e1c8abea7ffbf04a568.png" />
 </div>
 </div>
 <section id="binary">
@@ -1012,7 +1009,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b822201bc46ff6fa7ec0d258d26d99d0258f72202a98726f78a546799a8948e7.png" src="../../_images/b822201bc46ff6fa7ec0d258d26d99d0258f72202a98726f78a546799a8948e7.png" />
+<img alt="../../_images/931c995957f20cdb9c1afb6c755660960fcf85b88bd8a7f34cece9fb955d637e.png" src="../../_images/931c995957f20cdb9c1afb6c755660960fcf85b88bd8a7f34cece9fb955d637e.png" />
 </div>
 </div>
 </section>
@@ -1026,7 +1023,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1046,7 +1043,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ca94a2fe9c90cb9949738ff1ef59771cd5dd62db5c6959e65e94aeb87c5eff96.png" src="../../_images/ca94a2fe9c90cb9949738ff1ef59771cd5dd62db5c6959e65e94aeb87c5eff96.png" />
+<img alt="../../_images/f9809bcaa65e6cfa91660fcdf615670dfe9ee270c0e7301dba16a3a51476e6e2.png" src="../../_images/f9809bcaa65e6cfa91660fcdf615670dfe9ee270c0e7301dba16a3a51476e6e2.png" />
 </div>
 </div>
 </section>
@@ -1063,7 +1060,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1092,28 +1089,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0a7eda6feb42f76a5a935f2f9d0f3195cb6547d110d39946deccb4c84e67c19b.png" src="../../_images/0a7eda6feb42f76a5a935f2f9d0f3195cb6547d110d39946deccb4c84e67c19b.png" />
+<img alt="../../_images/b7205894b009eeb2fa1e33c9ab58103c68c8ff5fefa3e206d0f682109677fadc.png" src="../../_images/b7205894b009eeb2fa1e33c9ab58103c68c8ff5fefa3e206d0f682109677fadc.png" />
 </div>
-</div>
-</section>
-<section id="svinet-group">
-<h2>SVINET + Group<a class="headerlink" href="#svinet-group" title="Permalink to this headline">#</a></h2>
-<p>TODO</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="n">count_sv_fitted</span><span class="p">(</span><span class="n">mice</span><span class="o">.</span><span class="n">cfg</span><span class="o">.</span><span class="n">svinet_dir</span><span class="p">,</span> <span class="s1">&#39;p15-sample&#39;</span><span class="p">)</span>
-<span class="n">remaining</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">b</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">sum</span><span class="p">(</span><span class="n">e</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">b</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">total</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-<span class="p">}</span>
-<span class="n">remaining</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span><span style="color: #008000; text-decoration-color: #008000">'(0.0,5.0)'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">44.1</span>, <span style="color: #008000; text-decoration-color: #008000">'(0.01,0.5)'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42.7</span>, <span style="color: #008000; text-decoration-color: #008000">'(0.01,5.0)'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">35.0</span>, <span style="color: #008000; text-decoration-color: #008000">'(0.5,5.0)'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">42.0</span><span style="font-weight: bold">}</span>
-</pre>
-</div></div>
 </div>
 </section>
 <section id="region-wise-connectivity">
@@ -1126,7 +1103,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">480</span><span style="font-weight: bold">)</span>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">(</span><span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span>, <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">540</span><span style="font-weight: bold">)</span>
 </pre>
 </div></div>
 </div>
@@ -1147,102 +1124,102 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/611db433f55e659f57baaeae2f99a28d36dd41bd79504b4f7674fefa4a494a1f.png" src="../../_images/611db433f55e659f57baaeae2f99a28d36dd41bd79504b4f7674fefa4a494a1f.png" />
-<img alt="../../_images/d3d909e9503c245202ed3cdf51cbb9f66d0d4f0e191d38fce3b4ef3023a9ead4.png" src="../../_images/d3d909e9503c245202ed3cdf51cbb9f66d0d4f0e191d38fce3b4ef3023a9ead4.png" />
-<img alt="../../_images/bc0c71c994cc689ab018d8ae4962e5ab67a99c2279a4eb196d9bc3fe3820ec6a.png" src="../../_images/bc0c71c994cc689ab018d8ae4962e5ab67a99c2279a4eb196d9bc3fe3820ec6a.png" />
-<img alt="../../_images/97f6741e87a0c7f8f56443adbdb45600504703531e12d727031811678c505283.png" src="../../_images/97f6741e87a0c7f8f56443adbdb45600504703531e12d727031811678c505283.png" />
-<img alt="../../_images/096ce536f3879164b2a846dcf9fe59f032747c1dca413b2be7deee6f741680ea.png" src="../../_images/096ce536f3879164b2a846dcf9fe59f032747c1dca413b2be7deee6f741680ea.png" />
-<img alt="../../_images/d443d7f759dd4c4a55d08fba67a23a252bfd358ccac8dce44f65de6435e87dc9.png" src="../../_images/d443d7f759dd4c4a55d08fba67a23a252bfd358ccac8dce44f65de6435e87dc9.png" />
-<img alt="../../_images/7a038be6be5af02421044b8c7a6a4793ade9b3919e016cb63e31ac19eb7eb490.png" src="../../_images/7a038be6be5af02421044b8c7a6a4793ade9b3919e016cb63e31ac19eb7eb490.png" />
-<img alt="../../_images/b0cba5b0e531b8bbc0f8530e26bcb815bd089df14b492581989d0e32a2b39c13.png" src="../../_images/b0cba5b0e531b8bbc0f8530e26bcb815bd089df14b492581989d0e32a2b39c13.png" />
-<img alt="../../_images/de3e6e8ab9ad4efbc7b6b92df7fdd21f3a7581cce8dcf8777684105a4ece2ec6.png" src="../../_images/de3e6e8ab9ad4efbc7b6b92df7fdd21f3a7581cce8dcf8777684105a4ece2ec6.png" />
-<img alt="../../_images/4f1881e788e34a70bd9e31fcc9819695807126c1abcd53d6cb975debc5a0ce47.png" src="../../_images/4f1881e788e34a70bd9e31fcc9819695807126c1abcd53d6cb975debc5a0ce47.png" />
-<img alt="../../_images/31729a16c2f26bd690ed8db670603caa76790c890c09e098a0f15c50d4b587aa.png" src="../../_images/31729a16c2f26bd690ed8db670603caa76790c890c09e098a0f15c50d4b587aa.png" />
-<img alt="../../_images/6ba19016bdf9be75904adf9741bba8c3a24cd4563acc7d73021109f85df41ca0.png" src="../../_images/6ba19016bdf9be75904adf9741bba8c3a24cd4563acc7d73021109f85df41ca0.png" />
-<img alt="../../_images/1994d6cc850acca140982a9a45a685105ec27cc0a5be5ec6b1a9a625c1643d6c.png" src="../../_images/1994d6cc850acca140982a9a45a685105ec27cc0a5be5ec6b1a9a625c1643d6c.png" />
-<img alt="../../_images/691d1f813ba26d1fa58414c4bfee9a7c291fef4ed04d5c764f8ea596e8961d4f.png" src="../../_images/691d1f813ba26d1fa58414c4bfee9a7c291fef4ed04d5c764f8ea596e8961d4f.png" />
-<img alt="../../_images/b49a4768a7e1e3ab88dc81f55e8b387d4ac240260905ef1efc4197395ff59667.png" src="../../_images/b49a4768a7e1e3ab88dc81f55e8b387d4ac240260905ef1efc4197395ff59667.png" />
-<img alt="../../_images/92b4104650d166b7b68d422b193d1c8893fa3ea0c2e6ca12124f6122fe91b8ac.png" src="../../_images/92b4104650d166b7b68d422b193d1c8893fa3ea0c2e6ca12124f6122fe91b8ac.png" />
-<img alt="../../_images/6a8e2a6e58209f2e9aba8be8b5b4dc2fbd79bacaa32683ab5c04e61e47004fd6.png" src="../../_images/6a8e2a6e58209f2e9aba8be8b5b4dc2fbd79bacaa32683ab5c04e61e47004fd6.png" />
-<img alt="../../_images/a17c6e3a438a4395ecd816e241e0e5d0dd04e1e04bd5c139c22cea2e8d132e65.png" src="../../_images/a17c6e3a438a4395ecd816e241e0e5d0dd04e1e04bd5c139c22cea2e8d132e65.png" />
-<img alt="../../_images/3f380785e0f8e6b90b5e0832041faa9c0462b8c8553b81957cb49379169fd509.png" src="../../_images/3f380785e0f8e6b90b5e0832041faa9c0462b8c8553b81957cb49379169fd509.png" />
-<img alt="../../_images/dbf06ecdb6008b9cc62a97d894d5833fd8906ef35df889a0df8a43a70f0330ec.png" src="../../_images/dbf06ecdb6008b9cc62a97d894d5833fd8906ef35df889a0df8a43a70f0330ec.png" />
-<img alt="../../_images/967bf2b0aba0513bd3886a1855a3d3771f99c18f3b886202483fae7b03adbb10.png" src="../../_images/967bf2b0aba0513bd3886a1855a3d3771f99c18f3b886202483fae7b03adbb10.png" />
-<img alt="../../_images/c034a0ece1b39c36e0ed5ebeb4c97db3644dcf77953131853c64d5811457a8ca.png" src="../../_images/c034a0ece1b39c36e0ed5ebeb4c97db3644dcf77953131853c64d5811457a8ca.png" />
-<img alt="../../_images/ba45ca81f1c7fdf71e6a9d851a98d5cfb82d644aaba00367c50e0cc8f814de49.png" src="../../_images/ba45ca81f1c7fdf71e6a9d851a98d5cfb82d644aaba00367c50e0cc8f814de49.png" />
-<img alt="../../_images/ffb2ee87ed4ae6c89c025c15a3bfec4294d5eeb5276c917823bf9685bfc49d7d.png" src="../../_images/ffb2ee87ed4ae6c89c025c15a3bfec4294d5eeb5276c917823bf9685bfc49d7d.png" />
-<img alt="../../_images/fc430f917f7b20263f096e6d09dab865ccee104fa83bb41d331b6446ede04f21.png" src="../../_images/fc430f917f7b20263f096e6d09dab865ccee104fa83bb41d331b6446ede04f21.png" />
-<img alt="../../_images/f7805ed4593cf50c57f896cf63da229f00a0275fe1811baf9a69597dd1afb76d.png" src="../../_images/f7805ed4593cf50c57f896cf63da229f00a0275fe1811baf9a69597dd1afb76d.png" />
-<img alt="../../_images/9825d9ec7f25425f683eb84704741ba76151333eb74f569cca8c51a3a519f326.png" src="../../_images/9825d9ec7f25425f683eb84704741ba76151333eb74f569cca8c51a3a519f326.png" />
-<img alt="../../_images/78803974bbafe4f255bbe1b6aa499f256cba6ce5d12dab06b11f744610297e4e.png" src="../../_images/78803974bbafe4f255bbe1b6aa499f256cba6ce5d12dab06b11f744610297e4e.png" />
-<img alt="../../_images/3ca0cb5af3b4dbcc234b66b4ea02e12c7f466b859d09f2b09b148fa48b7f3c87.png" src="../../_images/3ca0cb5af3b4dbcc234b66b4ea02e12c7f466b859d09f2b09b148fa48b7f3c87.png" />
-<img alt="../../_images/f0f04d9695fbef8eb85cb75f9d7277d2126fb23722dd28d977494487bae9a0bf.png" src="../../_images/f0f04d9695fbef8eb85cb75f9d7277d2126fb23722dd28d977494487bae9a0bf.png" />
-<img alt="../../_images/36d65415ef4a8468e0004c6dba1c9a3882c6bf6dda3004db460a69b763b277b6.png" src="../../_images/36d65415ef4a8468e0004c6dba1c9a3882c6bf6dda3004db460a69b763b277b6.png" />
-<img alt="../../_images/81b0ab20f4f08102b1311f9a1dee751780ea2cfa32183c2af0a6c56ea8ebe1fd.png" src="../../_images/81b0ab20f4f08102b1311f9a1dee751780ea2cfa32183c2af0a6c56ea8ebe1fd.png" />
-<img alt="../../_images/91c730fd9c59783bb2fdb2706781108a7836d429c574dfc59d3c430695382c4f.png" src="../../_images/91c730fd9c59783bb2fdb2706781108a7836d429c574dfc59d3c430695382c4f.png" />
-<img alt="../../_images/9d7619d3c3ade90c8b1bdf0bf0a353e45f3c41a15011d2f14b8ec533a7968d0e.png" src="../../_images/9d7619d3c3ade90c8b1bdf0bf0a353e45f3c41a15011d2f14b8ec533a7968d0e.png" />
-<img alt="../../_images/9bb8f1b7da153513848cdf6925f804f5caf7448379637ca4fdbfeb570b11182b.png" src="../../_images/9bb8f1b7da153513848cdf6925f804f5caf7448379637ca4fdbfeb570b11182b.png" />
-<img alt="../../_images/79802ef3adb99a67409a1ce61f8ad28d2002549b9ae58942291592277c180100.png" src="../../_images/79802ef3adb99a67409a1ce61f8ad28d2002549b9ae58942291592277c180100.png" />
-<img alt="../../_images/b6e3110b3097c6568b66276358c994430413d47b9d3014cec7c4fd67e718b1ec.png" src="../../_images/b6e3110b3097c6568b66276358c994430413d47b9d3014cec7c4fd67e718b1ec.png" />
-<img alt="../../_images/d8705493916190b6040f2aa62c91e2377a8caff8daa65836bf1a1ee5f99b8bf0.png" src="../../_images/d8705493916190b6040f2aa62c91e2377a8caff8daa65836bf1a1ee5f99b8bf0.png" />
-<img alt="../../_images/e4776bc476f39a39867d4431cf83d819ed7d7738f608306b2425592dff285683.png" src="../../_images/e4776bc476f39a39867d4431cf83d819ed7d7738f608306b2425592dff285683.png" />
-<img alt="../../_images/4ba29c992560d777f25fba22310ba6bdbc66cdcbd5cfdec9a73cf55896f8510d.png" src="../../_images/4ba29c992560d777f25fba22310ba6bdbc66cdcbd5cfdec9a73cf55896f8510d.png" />
-<img alt="../../_images/56ce054e34ce1c2f2cfa61528ce8d4512d2ab66b9714964a8a9c75a8bab33e7e.png" src="../../_images/56ce054e34ce1c2f2cfa61528ce8d4512d2ab66b9714964a8a9c75a8bab33e7e.png" />
-<img alt="../../_images/a974f72a346b9d18345d00a299b5bd2f9bec1772430efaf8c33ea3074b18d0ff.png" src="../../_images/a974f72a346b9d18345d00a299b5bd2f9bec1772430efaf8c33ea3074b18d0ff.png" />
-<img alt="../../_images/09f2847fa79c4a4b74e1ead99a4234d606b27d53b55a8a87f15f957eb7cced5b.png" src="../../_images/09f2847fa79c4a4b74e1ead99a4234d606b27d53b55a8a87f15f957eb7cced5b.png" />
-<img alt="../../_images/05cef2b6687a6fde7bc09d073621baefd5fcb458124c19853aa3a8e6e3c3292e.png" src="../../_images/05cef2b6687a6fde7bc09d073621baefd5fcb458124c19853aa3a8e6e3c3292e.png" />
-<img alt="../../_images/0a3ac7b113167c87bd3d9d660a5bc99869b373ad62cfa7f887c9960c724df790.png" src="../../_images/0a3ac7b113167c87bd3d9d660a5bc99869b373ad62cfa7f887c9960c724df790.png" />
-<img alt="../../_images/6e9471a906723d1b3af49746558c0a41b68f96d087903936e3e86a3bf7b4eb4e.png" src="../../_images/6e9471a906723d1b3af49746558c0a41b68f96d087903936e3e86a3bf7b4eb4e.png" />
-<img alt="../../_images/351e401231dac41c4b71260ccb436d4532c980de1d903f797d07a97725b86337.png" src="../../_images/351e401231dac41c4b71260ccb436d4532c980de1d903f797d07a97725b86337.png" />
-<img alt="../../_images/044c9c6b9690d38645bab5ea93f5c7f634c11e2ff243a50fbad0b7052cbede35.png" src="../../_images/044c9c6b9690d38645bab5ea93f5c7f634c11e2ff243a50fbad0b7052cbede35.png" />
-<img alt="../../_images/0af8603f02c652616d17a76aa56e2117883c02d1dd791a873d67089061d89982.png" src="../../_images/0af8603f02c652616d17a76aa56e2117883c02d1dd791a873d67089061d89982.png" />
-<img alt="../../_images/4431f2ff9ff25d3bafc50468c736e574e0c4af4f3d4168972b17cad4eac357e7.png" src="../../_images/4431f2ff9ff25d3bafc50468c736e574e0c4af4f3d4168972b17cad4eac357e7.png" />
-<img alt="../../_images/22422f106d349ff877482a68ac64aed334c6d1d1f2ff7c6c0894efaabe520f55.png" src="../../_images/22422f106d349ff877482a68ac64aed334c6d1d1f2ff7c6c0894efaabe520f55.png" />
-<img alt="../../_images/f5999f8f7a6529f5f2b78f34e3065aceaa08f147713f519f71204398ebb3432d.png" src="../../_images/f5999f8f7a6529f5f2b78f34e3065aceaa08f147713f519f71204398ebb3432d.png" />
-<img alt="../../_images/1568c7a155137ba727595b5cd3691477d946ba67b868c463fb8ae8d41265e695.png" src="../../_images/1568c7a155137ba727595b5cd3691477d946ba67b868c463fb8ae8d41265e695.png" />
-<img alt="../../_images/d60cdbdd3674d0653437eccb95734e2cc32c9750b60f3925771f6b3d695d7527.png" src="../../_images/d60cdbdd3674d0653437eccb95734e2cc32c9750b60f3925771f6b3d695d7527.png" />
-<img alt="../../_images/05ed3471e48309620afce4e5e0b96fb81dff1342b7ae78139b6d876a9a0b4ef8.png" src="../../_images/05ed3471e48309620afce4e5e0b96fb81dff1342b7ae78139b6d876a9a0b4ef8.png" />
-<img alt="../../_images/553009a82e1876c7d2c01ff11c0d722f0c79ae8f92e1617917108d966a695388.png" src="../../_images/553009a82e1876c7d2c01ff11c0d722f0c79ae8f92e1617917108d966a695388.png" />
-<img alt="../../_images/facb1e9eadc0df605b7fa6f878d1a92fba6269e7a0522c5a7c716b09f7179649.png" src="../../_images/facb1e9eadc0df605b7fa6f878d1a92fba6269e7a0522c5a7c716b09f7179649.png" />
-<img alt="../../_images/8e04647b509ca9dd83a53f0351b4c3485f142466c6d0a10eb6d877bb1daf8e0f.png" src="../../_images/8e04647b509ca9dd83a53f0351b4c3485f142466c6d0a10eb6d877bb1daf8e0f.png" />
-<img alt="../../_images/603df6741bcb8e42dcc79c9703d280eafe863d8be8c26a280ac23ef7852a1555.png" src="../../_images/603df6741bcb8e42dcc79c9703d280eafe863d8be8c26a280ac23ef7852a1555.png" />
-<img alt="../../_images/c15002dc1c8807352fd14719a755bab08eb2c672ea0f4e21109720d1a5f9aa45.png" src="../../_images/c15002dc1c8807352fd14719a755bab08eb2c672ea0f4e21109720d1a5f9aa45.png" />
-<img alt="../../_images/41d55062102b41306ab5f5e7b49a2f7334105d4a32039b3ff9d483a23345b89c.png" src="../../_images/41d55062102b41306ab5f5e7b49a2f7334105d4a32039b3ff9d483a23345b89c.png" />
-<img alt="../../_images/21992ca6faf6e990eb93d3a8c96fa107188e1ce6f59aa43227e50555dea4d03d.png" src="../../_images/21992ca6faf6e990eb93d3a8c96fa107188e1ce6f59aa43227e50555dea4d03d.png" />
-<img alt="../../_images/8ef0e8213b50beb659423bf9f7c0182dd85d9213a44bda8423165becd449e8c8.png" src="../../_images/8ef0e8213b50beb659423bf9f7c0182dd85d9213a44bda8423165becd449e8c8.png" />
-<img alt="../../_images/b12f4060853b097b07a7346fff073f0de11d17e1139ae612800ab72d7fce4924.png" src="../../_images/b12f4060853b097b07a7346fff073f0de11d17e1139ae612800ab72d7fce4924.png" />
-<img alt="../../_images/e214cd0ef874fa68b36f9181384b15c453c7fe1df5846bdcd16912aa4eff077f.png" src="../../_images/e214cd0ef874fa68b36f9181384b15c453c7fe1df5846bdcd16912aa4eff077f.png" />
-<img alt="../../_images/c8c88b07f047421c47df184178691e45e7a5397a1efce990261ec8082787b7d3.png" src="../../_images/c8c88b07f047421c47df184178691e45e7a5397a1efce990261ec8082787b7d3.png" />
-<img alt="../../_images/3c869177593e5b3ee8dc09646f7427825b44a75e36c017140cffe289a10cd20e.png" src="../../_images/3c869177593e5b3ee8dc09646f7427825b44a75e36c017140cffe289a10cd20e.png" />
-<img alt="../../_images/bdd1e3cda116a96d7d9a57b5d4a6665eaa5bddda4969193e7fb65b335b13de76.png" src="../../_images/bdd1e3cda116a96d7d9a57b5d4a6665eaa5bddda4969193e7fb65b335b13de76.png" />
-<img alt="../../_images/14023b98871515a63a3c6dd3773ff3dbd2678442f555849a032da1118a79bb12.png" src="../../_images/14023b98871515a63a3c6dd3773ff3dbd2678442f555849a032da1118a79bb12.png" />
-<img alt="../../_images/7b25b7a8cadece54f191d40e8bb0a7f38c85d89c141cceaf60e7e77f17c36960.png" src="../../_images/7b25b7a8cadece54f191d40e8bb0a7f38c85d89c141cceaf60e7e77f17c36960.png" />
-<img alt="../../_images/cdbd0bb1341449cae2025014419543bfce22fb48f1c3c4431f937dfb3a7cb91d.png" src="../../_images/cdbd0bb1341449cae2025014419543bfce22fb48f1c3c4431f937dfb3a7cb91d.png" />
-<img alt="../../_images/dccf3f2235ee48439fdc32532a97566106dba096d2c5483b58f5b1c321e0d976.png" src="../../_images/dccf3f2235ee48439fdc32532a97566106dba096d2c5483b58f5b1c321e0d976.png" />
-<img alt="../../_images/1993aa1580138d60610f730e8095d5c67725fd8eb9fd64ad2ecde76a2753d69c.png" src="../../_images/1993aa1580138d60610f730e8095d5c67725fd8eb9fd64ad2ecde76a2753d69c.png" />
-<img alt="../../_images/f6f9d581cb8af0043af6f8afe4bc3e6674c0003d491b8272627361a4ced05ed5.png" src="../../_images/f6f9d581cb8af0043af6f8afe4bc3e6674c0003d491b8272627361a4ced05ed5.png" />
-<img alt="../../_images/0df589a336d7df5d717ce886783eb05fee32cb4b67607d3d4f0943223ed7151d.png" src="../../_images/0df589a336d7df5d717ce886783eb05fee32cb4b67607d3d4f0943223ed7151d.png" />
-<img alt="../../_images/0fcbdc6c73ac6bd6ef9e83f0f3ea5946da747a862902ae011029423fb83cf9e8.png" src="../../_images/0fcbdc6c73ac6bd6ef9e83f0f3ea5946da747a862902ae011029423fb83cf9e8.png" />
-<img alt="../../_images/8b416e8e7084f79d7518cfc18a17548465683de9159304e82ea768dd090142e4.png" src="../../_images/8b416e8e7084f79d7518cfc18a17548465683de9159304e82ea768dd090142e4.png" />
-<img alt="../../_images/62030e97f841e46ac203449e5a27800d3c9215fa8f1c083ebdb1fa5a1bc0672c.png" src="../../_images/62030e97f841e46ac203449e5a27800d3c9215fa8f1c083ebdb1fa5a1bc0672c.png" />
-<img alt="../../_images/a49e71c985a856f007cfc458386aa7a6ed753976642857902d1b1dbc10f52682.png" src="../../_images/a49e71c985a856f007cfc458386aa7a6ed753976642857902d1b1dbc10f52682.png" />
-<img alt="../../_images/6927400de2fcb9b47dc493d82bba1f3dbb922072301d83c9787b6f8da16a99c4.png" src="../../_images/6927400de2fcb9b47dc493d82bba1f3dbb922072301d83c9787b6f8da16a99c4.png" />
-<img alt="../../_images/8ab4e88e8d6086cfc07f95a95c6a960ea45938a425ba8a8a99d1fc37357cb9d0.png" src="../../_images/8ab4e88e8d6086cfc07f95a95c6a960ea45938a425ba8a8a99d1fc37357cb9d0.png" />
-<img alt="../../_images/21602f29ec828b469db0d513c8a07686af38411e456488b2147d27ca4c0ccdb5.png" src="../../_images/21602f29ec828b469db0d513c8a07686af38411e456488b2147d27ca4c0ccdb5.png" />
-<img alt="../../_images/58eb0c1a3facdbb761148c677b29f1fa45ddb2763adf4ba328f9b5fdbea66696.png" src="../../_images/58eb0c1a3facdbb761148c677b29f1fa45ddb2763adf4ba328f9b5fdbea66696.png" />
-<img alt="../../_images/6572cb2c65dbe4fde73422957017f3fc4922570745c6fca4bf4aef8b335cba92.png" src="../../_images/6572cb2c65dbe4fde73422957017f3fc4922570745c6fca4bf4aef8b335cba92.png" />
-<img alt="../../_images/bc98d19d1ffaaa9069acc2cffc5c4e3357154d5fdd24d4089492c01c57e55cb1.png" src="../../_images/bc98d19d1ffaaa9069acc2cffc5c4e3357154d5fdd24d4089492c01c57e55cb1.png" />
-<img alt="../../_images/4d5e1da3a727448cc3612816e61b940ae3c5f20cdcc16b96ce6c829a201d61ad.png" src="../../_images/4d5e1da3a727448cc3612816e61b940ae3c5f20cdcc16b96ce6c829a201d61ad.png" />
-<img alt="../../_images/c9638b79aa3cb36816b45f339df032eb12fde67060e9913361b00ddfb2160f7b.png" src="../../_images/c9638b79aa3cb36816b45f339df032eb12fde67060e9913361b00ddfb2160f7b.png" />
-<img alt="../../_images/5bd7643ce4ffd2e7ce92c51dd3859a1f70375a5fd6deb3648f945267a127254e.png" src="../../_images/5bd7643ce4ffd2e7ce92c51dd3859a1f70375a5fd6deb3648f945267a127254e.png" />
-<img alt="../../_images/958e4a41287238d372b259a32b964b6f12ae34bc921e883ad26f597310fa1118.png" src="../../_images/958e4a41287238d372b259a32b964b6f12ae34bc921e883ad26f597310fa1118.png" />
-<img alt="../../_images/2db3e00e491d5ddd477e3a50307e021e815c76a97d531147e40d199a2eb62e48.png" src="../../_images/2db3e00e491d5ddd477e3a50307e021e815c76a97d531147e40d199a2eb62e48.png" />
-<img alt="../../_images/aff7b6e2b7fd34e5b7fc4c047f69009eda7802945c4138297957eed76645420c.png" src="../../_images/aff7b6e2b7fd34e5b7fc4c047f69009eda7802945c4138297957eed76645420c.png" />
-<img alt="../../_images/247ea17a33ee0a7f29ac1e8c1987fa0cdc6fc85ff23029036bdf11a76d392406.png" src="../../_images/247ea17a33ee0a7f29ac1e8c1987fa0cdc6fc85ff23029036bdf11a76d392406.png" />
-<img alt="../../_images/dc807f3777a4b0586f4432a7e51f85ccf89f0cfd859214f0690d9ef28389171c.png" src="../../_images/dc807f3777a4b0586f4432a7e51f85ccf89f0cfd859214f0690d9ef28389171c.png" />
-<img alt="../../_images/27d43101b5f0dea7593cbd73d6729a8bcc329eb244e936fa5e584bad403dafcc.png" src="../../_images/27d43101b5f0dea7593cbd73d6729a8bcc329eb244e936fa5e584bad403dafcc.png" />
-<img alt="../../_images/438f47aa9265c594b3e2df4be10583668d06a310c260e051e1a10549586277b1.png" src="../../_images/438f47aa9265c594b3e2df4be10583668d06a310c260e051e1a10549586277b1.png" />
-<img alt="../../_images/596ec46d688328940831706d063ff5d0f4e3faa1b9d141f5a7b59c8253078fa7.png" src="../../_images/596ec46d688328940831706d063ff5d0f4e3faa1b9d141f5a7b59c8253078fa7.png" />
+<img alt="../../_images/a60d5a0a20fe7575246449601493449cfef8ba4aa25497ad93851f41b97c11c2.png" src="../../_images/a60d5a0a20fe7575246449601493449cfef8ba4aa25497ad93851f41b97c11c2.png" />
+<img alt="../../_images/92f46e4c3b202eaa4bda17ba5787d57854aee1162283777f37bb1d3eb8d9065a.png" src="../../_images/92f46e4c3b202eaa4bda17ba5787d57854aee1162283777f37bb1d3eb8d9065a.png" />
+<img alt="../../_images/bf5b7d3a89582f07404829587603f2b7eaad0b342faabc1ddbfb9e708911a51d.png" src="../../_images/bf5b7d3a89582f07404829587603f2b7eaad0b342faabc1ddbfb9e708911a51d.png" />
+<img alt="../../_images/f2f5aba159b7794eee81187f422cff7268373d2dac1de806781614767e2a6ebb.png" src="../../_images/f2f5aba159b7794eee81187f422cff7268373d2dac1de806781614767e2a6ebb.png" />
+<img alt="../../_images/742dccc029c8fb0f77ca08d19d58eecfe7fe77af5bd3d2015c874ac226f7615b.png" src="../../_images/742dccc029c8fb0f77ca08d19d58eecfe7fe77af5bd3d2015c874ac226f7615b.png" />
+<img alt="../../_images/32d3cc42827ef797de8a2f434e89fd04722197033e26bb2966314e825a098ab1.png" src="../../_images/32d3cc42827ef797de8a2f434e89fd04722197033e26bb2966314e825a098ab1.png" />
+<img alt="../../_images/cad1b55ecce53be9b72183fdf5f78e4717d8a409de6d2c2c50694f2cdd9f0055.png" src="../../_images/cad1b55ecce53be9b72183fdf5f78e4717d8a409de6d2c2c50694f2cdd9f0055.png" />
+<img alt="../../_images/fca24776a3e4c71c7dbf6378a1917871ff4422cb99bec6768b161b242eed709b.png" src="../../_images/fca24776a3e4c71c7dbf6378a1917871ff4422cb99bec6768b161b242eed709b.png" />
+<img alt="../../_images/5459032072cec19217e286534b5d82fed4719dea99216f7ef9bc86de5228780e.png" src="../../_images/5459032072cec19217e286534b5d82fed4719dea99216f7ef9bc86de5228780e.png" />
+<img alt="../../_images/2adc577677dbfe66b3542f76db7610fad4ce365d9394a95fde5d116bdcffd988.png" src="../../_images/2adc577677dbfe66b3542f76db7610fad4ce365d9394a95fde5d116bdcffd988.png" />
+<img alt="../../_images/38a51f327b0ae7428afcb99f84bcab5f6ce51c909bccf4f8719fef74a8be553a.png" src="../../_images/38a51f327b0ae7428afcb99f84bcab5f6ce51c909bccf4f8719fef74a8be553a.png" />
+<img alt="../../_images/a6fb5631fe056e21f3de8616ebad33eac283a421ec804689f091a0c89173851a.png" src="../../_images/a6fb5631fe056e21f3de8616ebad33eac283a421ec804689f091a0c89173851a.png" />
+<img alt="../../_images/ebd336eb94f17e4efdd4396c59454444a6969ab3f3b3daf825b5a05ea3607733.png" src="../../_images/ebd336eb94f17e4efdd4396c59454444a6969ab3f3b3daf825b5a05ea3607733.png" />
+<img alt="../../_images/0841c789655dc12667fcd396d4cd25f52fcb322e04259f3698b318a04f58a82a.png" src="../../_images/0841c789655dc12667fcd396d4cd25f52fcb322e04259f3698b318a04f58a82a.png" />
+<img alt="../../_images/472c8eeaa731eb80cff38057c67d5ffc0fb296af7e5dec7b6828768564bc79d9.png" src="../../_images/472c8eeaa731eb80cff38057c67d5ffc0fb296af7e5dec7b6828768564bc79d9.png" />
+<img alt="../../_images/d5d11c0ecef93e1f423c412e7e7d6d74336be86d1dec723de436fcf0719b8c20.png" src="../../_images/d5d11c0ecef93e1f423c412e7e7d6d74336be86d1dec723de436fcf0719b8c20.png" />
+<img alt="../../_images/f6c7d267617dc9f5c4351f656ae6cb4bd444885b457e9b513dbf3a4dc2baa5c2.png" src="../../_images/f6c7d267617dc9f5c4351f656ae6cb4bd444885b457e9b513dbf3a4dc2baa5c2.png" />
+<img alt="../../_images/48b4d8b9b70b80cdba0fac648d37fa309f10fba4d73d5ecf61aeddc85f43ea11.png" src="../../_images/48b4d8b9b70b80cdba0fac648d37fa309f10fba4d73d5ecf61aeddc85f43ea11.png" />
+<img alt="../../_images/b2ad4984a9eb954518c6c550062e36960df427d03da4f09acc90c9c2cd39b9cd.png" src="../../_images/b2ad4984a9eb954518c6c550062e36960df427d03da4f09acc90c9c2cd39b9cd.png" />
+<img alt="../../_images/7ec13ca9ad881413fd29ff3461c8abe227d20546f2e5bd4abb96a948c628a050.png" src="../../_images/7ec13ca9ad881413fd29ff3461c8abe227d20546f2e5bd4abb96a948c628a050.png" />
+<img alt="../../_images/4ac3e105daf3411a77bf2aebad3fe4712d26f4a5cd8b7965a0d6b9885f8af595.png" src="../../_images/4ac3e105daf3411a77bf2aebad3fe4712d26f4a5cd8b7965a0d6b9885f8af595.png" />
+<img alt="../../_images/5130e59e650ca4641c9a4209a2251371945a0f832d18ab59b7855e5211beea70.png" src="../../_images/5130e59e650ca4641c9a4209a2251371945a0f832d18ab59b7855e5211beea70.png" />
+<img alt="../../_images/597a1fa82e73dcdcd261fbd15c4a41c8eab8c01c5cb0cb80fffd0bb846da9d38.png" src="../../_images/597a1fa82e73dcdcd261fbd15c4a41c8eab8c01c5cb0cb80fffd0bb846da9d38.png" />
+<img alt="../../_images/5ad9f2862f63134d5fddcf67fe1b2d7956d708d32576428c027476b400372934.png" src="../../_images/5ad9f2862f63134d5fddcf67fe1b2d7956d708d32576428c027476b400372934.png" />
+<img alt="../../_images/9edf9cd834ad135f57b8a7943b98d1660fd6054a7baaaf41e7eefda8268ec47e.png" src="../../_images/9edf9cd834ad135f57b8a7943b98d1660fd6054a7baaaf41e7eefda8268ec47e.png" />
+<img alt="../../_images/411409d51bba5fa0191508e19887decc786bca8d6a4f4e67bc62145b3a0a5a7d.png" src="../../_images/411409d51bba5fa0191508e19887decc786bca8d6a4f4e67bc62145b3a0a5a7d.png" />
+<img alt="../../_images/0a8ed05c669953b01451ece49d7df38324e8ea7bba68f23a479e42d63d352e39.png" src="../../_images/0a8ed05c669953b01451ece49d7df38324e8ea7bba68f23a479e42d63d352e39.png" />
+<img alt="../../_images/10e4f4e87ad2576c8fbebcb9ece161635efbc33d86d03ddd3f1870cbe7ec4592.png" src="../../_images/10e4f4e87ad2576c8fbebcb9ece161635efbc33d86d03ddd3f1870cbe7ec4592.png" />
+<img alt="../../_images/714cea7585bf2c9ed8b34b4617bb8adb74ed2621a5eace0925d95edac88cafeb.png" src="../../_images/714cea7585bf2c9ed8b34b4617bb8adb74ed2621a5eace0925d95edac88cafeb.png" />
+<img alt="../../_images/0cd94e69c201c581845455e3ff104a8424d6f0d59dbf7273e77ab13985d9f0d1.png" src="../../_images/0cd94e69c201c581845455e3ff104a8424d6f0d59dbf7273e77ab13985d9f0d1.png" />
+<img alt="../../_images/7b9f91f86ae15e2c5bfe3e34d26eab8aad0cf676723d246aab6b8f90823227bd.png" src="../../_images/7b9f91f86ae15e2c5bfe3e34d26eab8aad0cf676723d246aab6b8f90823227bd.png" />
+<img alt="../../_images/785d8abe53551fb05024bcee3ef643c02ba434e63755d086c9f998e1629292e9.png" src="../../_images/785d8abe53551fb05024bcee3ef643c02ba434e63755d086c9f998e1629292e9.png" />
+<img alt="../../_images/b9c0ee78d7d82a12e84cc2f3f141b5e2ab79be50b5f3fddbe96dd0950ceb5aed.png" src="../../_images/b9c0ee78d7d82a12e84cc2f3f141b5e2ab79be50b5f3fddbe96dd0950ceb5aed.png" />
+<img alt="../../_images/ca2ed738b329cc7dc59ca54e1f64f31609b8b33700ed551c3d4dd2e5637f51eb.png" src="../../_images/ca2ed738b329cc7dc59ca54e1f64f31609b8b33700ed551c3d4dd2e5637f51eb.png" />
+<img alt="../../_images/5f4e3c71e29953a40135f98a34922ba863ee4b9b65a9687b36f868ae3d583c13.png" src="../../_images/5f4e3c71e29953a40135f98a34922ba863ee4b9b65a9687b36f868ae3d583c13.png" />
+<img alt="../../_images/8a57b866949cb599362d89c04780dc869aa437d3f1fb6618595c619aba6c0fa4.png" src="../../_images/8a57b866949cb599362d89c04780dc869aa437d3f1fb6618595c619aba6c0fa4.png" />
+<img alt="../../_images/34a29c3ffd47ab0bf783e6a639ee7cc9a1b52326549f1baf30162d961b021f3e.png" src="../../_images/34a29c3ffd47ab0bf783e6a639ee7cc9a1b52326549f1baf30162d961b021f3e.png" />
+<img alt="../../_images/8fb1a82fa4eca6a3122a9401e9f724bcf862bb3f0d3a365e7c75cf5fc31d7a72.png" src="../../_images/8fb1a82fa4eca6a3122a9401e9f724bcf862bb3f0d3a365e7c75cf5fc31d7a72.png" />
+<img alt="../../_images/71a5dd21542e79579f6e283013969561c8e18b7681c45ff1dd76495eaa8c48c4.png" src="../../_images/71a5dd21542e79579f6e283013969561c8e18b7681c45ff1dd76495eaa8c48c4.png" />
+<img alt="../../_images/d1e80368a03ee6e8441a8a95432709926941dd24a02f68601bdf7a673f40021a.png" src="../../_images/d1e80368a03ee6e8441a8a95432709926941dd24a02f68601bdf7a673f40021a.png" />
+<img alt="../../_images/da8fec09932671e14ae3b90047ad85f40884c6bcab5775bb89088ba0723852d6.png" src="../../_images/da8fec09932671e14ae3b90047ad85f40884c6bcab5775bb89088ba0723852d6.png" />
+<img alt="../../_images/22040167de83d9e518586ab76698e1550da18a071a2b77e2639b545d18dfb004.png" src="../../_images/22040167de83d9e518586ab76698e1550da18a071a2b77e2639b545d18dfb004.png" />
+<img alt="../../_images/1275ca7414e6624d2d30cba535ee6fd60ad2e6403a2b2a5661b2a3ccbb1f5dcb.png" src="../../_images/1275ca7414e6624d2d30cba535ee6fd60ad2e6403a2b2a5661b2a3ccbb1f5dcb.png" />
+<img alt="../../_images/b49730262ebf1c525fcf8f847164c69c2d3020a75a1d2d5644c6c544ad824eae.png" src="../../_images/b49730262ebf1c525fcf8f847164c69c2d3020a75a1d2d5644c6c544ad824eae.png" />
+<img alt="../../_images/02e0163526df8dbf14364f0ba522274ed2e0e572656a4695bad6e47b3846e0a7.png" src="../../_images/02e0163526df8dbf14364f0ba522274ed2e0e572656a4695bad6e47b3846e0a7.png" />
+<img alt="../../_images/2f627f2c7bb4b35f5a9ac374fcc099733469868c8c51b6b6adde22bd7ce979f3.png" src="../../_images/2f627f2c7bb4b35f5a9ac374fcc099733469868c8c51b6b6adde22bd7ce979f3.png" />
+<img alt="../../_images/a2490ee5297e30b3d474e250736006ba0f66227c9d55c407bdd6273bf19e7f4b.png" src="../../_images/a2490ee5297e30b3d474e250736006ba0f66227c9d55c407bdd6273bf19e7f4b.png" />
+<img alt="../../_images/af72594f0cba81130f67acd3849427fc150aa3aad811cf34b29b0d284e2abe01.png" src="../../_images/af72594f0cba81130f67acd3849427fc150aa3aad811cf34b29b0d284e2abe01.png" />
+<img alt="../../_images/80b16947f6da6cc85be199cc3d71575ba416f893c381b3dab58dd4ef921f9501.png" src="../../_images/80b16947f6da6cc85be199cc3d71575ba416f893c381b3dab58dd4ef921f9501.png" />
+<img alt="../../_images/1301e619794fe4f3e68a241449d84c4807ccd6fa248d4ffac1090f5883244635.png" src="../../_images/1301e619794fe4f3e68a241449d84c4807ccd6fa248d4ffac1090f5883244635.png" />
+<img alt="../../_images/b81ce2b40d51d3740eaf63c8abb0ef1134ca32a5281326bb2d9cc1783354db59.png" src="../../_images/b81ce2b40d51d3740eaf63c8abb0ef1134ca32a5281326bb2d9cc1783354db59.png" />
+<img alt="../../_images/aef1760dc8cb2847280888a635691a53b0b8a1262e5a4c559898ad9573c4ff14.png" src="../../_images/aef1760dc8cb2847280888a635691a53b0b8a1262e5a4c559898ad9573c4ff14.png" />
+<img alt="../../_images/30b933e565caed1f186207cf697755ec3ef87d8c40298852e930d8b13b923bc0.png" src="../../_images/30b933e565caed1f186207cf697755ec3ef87d8c40298852e930d8b13b923bc0.png" />
+<img alt="../../_images/0907d5169be49761c6b4454389edc7718b9fbe0a13d9b5df5d06b8b7ef9c8e94.png" src="../../_images/0907d5169be49761c6b4454389edc7718b9fbe0a13d9b5df5d06b8b7ef9c8e94.png" />
+<img alt="../../_images/86c3adba4fe652cc045f7b9711fbeceba9985b4a140398b7d1dfa422082878e8.png" src="../../_images/86c3adba4fe652cc045f7b9711fbeceba9985b4a140398b7d1dfa422082878e8.png" />
+<img alt="../../_images/4f4f3679aae5ece4cd3093d965de866464abbb2ae53993a3b2472ce3a5cdc1e2.png" src="../../_images/4f4f3679aae5ece4cd3093d965de866464abbb2ae53993a3b2472ce3a5cdc1e2.png" />
+<img alt="../../_images/ebc5eab15ecbcf53cb4a8eaf3287a31f3ea43e5bfca0932991415208c3a92fb5.png" src="../../_images/ebc5eab15ecbcf53cb4a8eaf3287a31f3ea43e5bfca0932991415208c3a92fb5.png" />
+<img alt="../../_images/188e95a7a19b06ab54047802935d482022ce0528290699b312b2c8d365537e39.png" src="../../_images/188e95a7a19b06ab54047802935d482022ce0528290699b312b2c8d365537e39.png" />
+<img alt="../../_images/441e09c1018ee83254f3ab18bcd1f94964b211cecb8397e40f9e8cde44708e21.png" src="../../_images/441e09c1018ee83254f3ab18bcd1f94964b211cecb8397e40f9e8cde44708e21.png" />
+<img alt="../../_images/6c5d8fca770528e029253fd460611fcc5afc883a3c45754920e5d21b92434932.png" src="../../_images/6c5d8fca770528e029253fd460611fcc5afc883a3c45754920e5d21b92434932.png" />
+<img alt="../../_images/cb4d799e5b4d6070f6ceecb18dfb6be3b424e74b0e077538b0920ad2e618005e.png" src="../../_images/cb4d799e5b4d6070f6ceecb18dfb6be3b424e74b0e077538b0920ad2e618005e.png" />
+<img alt="../../_images/23759df7858741d12d8583c5178f521b7def2c714ada8eb842cded45b54ad6b2.png" src="../../_images/23759df7858741d12d8583c5178f521b7def2c714ada8eb842cded45b54ad6b2.png" />
+<img alt="../../_images/bafb11cfefaec89ec9768b64bfeabf6b96f532345ff77c22fd755043bec57676.png" src="../../_images/bafb11cfefaec89ec9768b64bfeabf6b96f532345ff77c22fd755043bec57676.png" />
+<img alt="../../_images/919ff14148621ea5f4c0f08cd9a13dce68ab85d013c5c97ccd7b4e9519b2208f.png" src="../../_images/919ff14148621ea5f4c0f08cd9a13dce68ab85d013c5c97ccd7b4e9519b2208f.png" />
+<img alt="../../_images/99965c0bf06e899ecfc442931ee3c68ef35b4e4aec9aca36b849b6268040f0fd.png" src="../../_images/99965c0bf06e899ecfc442931ee3c68ef35b4e4aec9aca36b849b6268040f0fd.png" />
+<img alt="../../_images/7ede8e886062b6956b9aa083b5a8ad34c0e1007ad5956dfccb16d3df17864385.png" src="../../_images/7ede8e886062b6956b9aa083b5a8ad34c0e1007ad5956dfccb16d3df17864385.png" />
+<img alt="../../_images/001fbe72b6452c1d9191e3625e225f3a54fd79cb8651630559aaac9e8c553d4b.png" src="../../_images/001fbe72b6452c1d9191e3625e225f3a54fd79cb8651630559aaac9e8c553d4b.png" />
+<img alt="../../_images/60a6075987d33c3b5e71d91d90d6c8c6d14693ec916e15c39a47d5ac7e9f80fd.png" src="../../_images/60a6075987d33c3b5e71d91d90d6c8c6d14693ec916e15c39a47d5ac7e9f80fd.png" />
+<img alt="../../_images/0681cba153cfa13e23005878f4acd0b8a2a50a2af4ef6913de85fcfbffd74566.png" src="../../_images/0681cba153cfa13e23005878f4acd0b8a2a50a2af4ef6913de85fcfbffd74566.png" />
+<img alt="../../_images/f02a599922f1d63c51319f882a39f99dc007a13bd1e93acf5deef09ec4dabef8.png" src="../../_images/f02a599922f1d63c51319f882a39f99dc007a13bd1e93acf5deef09ec4dabef8.png" />
+<img alt="../../_images/5c0ac24756ebba587094d747a8d019637935dc2f120f1ad2bc89a3542eaad6bc.png" src="../../_images/5c0ac24756ebba587094d747a8d019637935dc2f120f1ad2bc89a3542eaad6bc.png" />
+<img alt="../../_images/b53769d8ae6e99e9a89cf5fc622cb0b8785859a9c304b3f8f6f76cb575709930.png" src="../../_images/b53769d8ae6e99e9a89cf5fc622cb0b8785859a9c304b3f8f6f76cb575709930.png" />
+<img alt="../../_images/55cfad4470b3e7a6f7bffef1304f9b48bec303ebac7f8196ea42c3fc8f9e5bc5.png" src="../../_images/55cfad4470b3e7a6f7bffef1304f9b48bec303ebac7f8196ea42c3fc8f9e5bc5.png" />
+<img alt="../../_images/8e79f89e85672248067c969196c0b1de0c6c3a9cde2f1a972e3ef9fde8d344d1.png" src="../../_images/8e79f89e85672248067c969196c0b1de0c6c3a9cde2f1a972e3ef9fde8d344d1.png" />
+<img alt="../../_images/649487fd28c8e12526d3565a90f6dc658b7efa818d37f17cec810a48b0584713.png" src="../../_images/649487fd28c8e12526d3565a90f6dc658b7efa818d37f17cec810a48b0584713.png" />
+<img alt="../../_images/56b1724fbc6ea3994919eb72b6d5947fa0dcc1c6d466742ad908763cbadc2151.png" src="../../_images/56b1724fbc6ea3994919eb72b6d5947fa0dcc1c6d466742ad908763cbadc2151.png" />
+<img alt="../../_images/20525c1c99f6b80cf52f4ec3d8aa26a98bbd8132e43b86fa48166371a8e6cfe8.png" src="../../_images/20525c1c99f6b80cf52f4ec3d8aa26a98bbd8132e43b86fa48166371a8e6cfe8.png" />
+<img alt="../../_images/d487d999f0a34bf18729df84d3e8eaf7a6c44ba6ceb98658e5925c830b758d0e.png" src="../../_images/d487d999f0a34bf18729df84d3e8eaf7a6c44ba6ceb98658e5925c830b758d0e.png" />
+<img alt="../../_images/9137ba5b3dfe19d8ec2bf39c1bc9cb2f47163c5c87b54a53694c106855d70cf0.png" src="../../_images/9137ba5b3dfe19d8ec2bf39c1bc9cb2f47163c5c87b54a53694c106855d70cf0.png" />
+<img alt="../../_images/92fd7908844a3f145f9106c0d1892ed015607f71fc5d7a39a2cf24c54df74dad.png" src="../../_images/92fd7908844a3f145f9106c0d1892ed015607f71fc5d7a39a2cf24c54df74dad.png" />
+<img alt="../../_images/7006ce701ecb30b1e3bd2bbffd6f1bb1fed14fe63e157474f3425c6d551906e9.png" src="../../_images/7006ce701ecb30b1e3bd2bbffd6f1bb1fed14fe63e157474f3425c6d551906e9.png" />
+<img alt="../../_images/c7589c8ef6e15b059d9cdf3cceda11e172bed259fb1b49938f0156350130f46a.png" src="../../_images/c7589c8ef6e15b059d9cdf3cceda11e172bed259fb1b49938f0156350130f46a.png" />
+<img alt="../../_images/92a57acc87f010865c6f74ed447a50a169f8d7fb26feeb4043c76c9cddf636ab.png" src="../../_images/92a57acc87f010865c6f74ed447a50a169f8d7fb26feeb4043c76c9cddf636ab.png" />
+<img alt="../../_images/2f70919e0c325bbc28e2f3d4f97c5b3c0ab89905b9f4fc8db99a80ff1e268166.png" src="../../_images/2f70919e0c325bbc28e2f3d4f97c5b3c0ab89905b9f4fc8db99a80ff1e268166.png" />
+<img alt="../../_images/174402a847bd55578eddb13c4fe750bbd1a950c977decbdbe792652ced532b21.png" src="../../_images/174402a847bd55578eddb13c4fe750bbd1a950c977decbdbe792652ced532b21.png" />
+<img alt="../../_images/d737819399d57ebe141bd401754b75e37d232d1e9288d3e4e5b8b10fd2d54e5b.png" src="../../_images/d737819399d57ebe141bd401754b75e37d232d1e9288d3e4e5b8b10fd2d54e5b.png" />
+<img alt="../../_images/e8c8ec57044ceaca1086a487ef07136aafb2fc91645ec94c7411664f87619504.png" src="../../_images/e8c8ec57044ceaca1086a487ef07136aafb2fc91645ec94c7411664f87619504.png" />
+<img alt="../../_images/0961b3b37ab4a57169e88e14019c8dc0dd6cdca1308ea4875b9ede16dc8cb498.png" src="../../_images/0961b3b37ab4a57169e88e14019c8dc0dd6cdca1308ea4875b9ede16dc8cb498.png" />
+<img alt="../../_images/39d4b3c7be9c6b3eb3f27aec186b07a9760e39d39c56310d78f6ebd45be2d3fe.png" src="../../_images/39d4b3c7be9c6b3eb3f27aec186b07a9760e39d39c56310d78f6ebd45be2d3fe.png" />
+<img alt="../../_images/08b9681e35a32a73578a1129165b5e684ff51baf717376a5b06026b234af8c6b.png" src="../../_images/08b9681e35a32a73578a1129165b5e684ff51baf717376a5b06026b234af8c6b.png" />
+<img alt="../../_images/d8b5e8e311bf72843b79c3b837c04c934539d55db684ee2b37bde644a275faca.png" src="../../_images/d8b5e8e311bf72843b79c3b837c04c934539d55db684ee2b37bde644a275faca.png" />
+<img alt="../../_images/60a8c501228af9d3c11bd172dbac62ca874dabcc6373c0678e6aa8b5f837f456.png" src="../../_images/60a8c501228af9d3c11bd172dbac62ca874dabcc6373c0678e6aa8b5f837f456.png" />
+<img alt="../../_images/515be3774a61be21d249e42c0d473e41e3c7ba2013782ef4a41411a7e4ff0edc.png" src="../../_images/515be3774a61be21d249e42c0d473e41e3c7ba2013782ef4a41411a7e4ff0edc.png" />
+<img alt="../../_images/de322ef394d0bd0b1603580e2770fd9b97dc1e7babda61dd28f62fb94d65bf32.png" src="../../_images/de322ef394d0bd0b1603580e2770fd9b97dc1e7babda61dd28f62fb94d65bf32.png" />
+<img alt="../../_images/fdc57649b4e434d69ed9acf9215a123cec66fe5770ab85f80e1b9ba5a9701e58.png" src="../../_images/fdc57649b4e434d69ed9acf9215a123cec66fe5770ab85f80e1b9ba5a9701e58.png" />
+<img alt="../../_images/fd51a9330b16969e40b994d0e82e12d49895f6b88f28eedc48d0f5656cf4d0fc.png" src="../../_images/fd51a9330b16969e40b994d0e82e12d49895f6b88f28eedc48d0f5656cf4d0fc.png" />
 </div>
 </div>
 </section>
@@ -1289,11 +1266,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="27_marija.html"
+       href="26_awake-sv%2Bgr.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">(27) Marija</p>
+        <p class="prev-next-title">(26) Awake – sv + gr</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1326,7 +1303,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kmeans">KMeans</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#svinet-group">SVINET + Group</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#region-wise-connectivity">Region-wise connectivity</a></li>
 </ul>
   </nav></div>
