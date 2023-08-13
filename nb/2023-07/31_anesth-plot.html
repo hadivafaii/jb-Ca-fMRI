@@ -612,7 +612,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../md/2023-08.html">Summary</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../md/2023-08_updates.html">Updates</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-27"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../2023-08/02_marija.html">(02) Marija</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023-08/02_daniel.html">(02) Daniel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023-08/03_marija.html">(03) Marija</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023-08/11_hrf.html">(11) HRF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023-08/12_cossim-anesth-awake.html">(12) Cos sim – awake vs. anesth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../2023-08/13_variograms-deg.html">(13) Variograms – degree</a></li>
 </ul>
 </li>
 </ul>
@@ -815,7 +819,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sim">Cosine sim</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-fig">Save fig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-fig">Save fig</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-full-range-of-memberships">Show full range of memberships</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1184,6 +1191,52 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="show-full-range-of-memberships">
+<h3>Show full range of memberships<a class="headerlink" href="#show-full-range-of-memberships" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kws_show</span><span class="p">[</span><span class="s1">&#39;vmin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">kws_show</span><span class="p">[</span><span class="s1">&#39;mask_thresh&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.005</span>
+
+<span class="n">kws_show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="font-weight: bold">{</span>
+    <span style="color: #008000; text-decoration-color: #008000">'vmin'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'vmax'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.9</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'mask_thresh'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">0.005</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'label_fontsize'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">8</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'add_disjoint'</span>: <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'add_title'</span>: <span style="color: #00ff00; text-decoration-color: #00ff00; font-style: italic">True</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'figsize_x'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">2.8</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'figsize_y'</span>: <span style="color: #008080; text-decoration-color: #008080; font-weight: bold">1.0</span>,
+    <span style="color: #008000; text-decoration-color: #008000">'display'</span>: <span style="color: #ff0000; text-decoration-color: #ff0000; font-style: italic">False</span>
+<span style="font-weight: bold">}</span>
+</pre>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">bs</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">pi_sorted_avg</span><span class="p">,</span> <span class="o">**</span><span class="n">kws_show</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Group results, full range&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.06</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span>
+    <span class="n">pjoin</span><span class="p">(</span><span class="n">fig_dir</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;anesth_ca2_group_full.png&quot;</span><span class="p">),</span>
+    <span class="n">bbox_extra_artists</span><span class="o">=</span><span class="p">[</span><span class="n">s</span><span class="p">],</span>
+    <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">,</span>
+    <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/474fde57a8888ea4b2888874262e634ac28e60a3dc8ba99c362d8f8a90f97d7f.png" src="../../_images/474fde57a8888ea4b2888874262e634ac28e60a3dc8ba99c362d8f8a90f97d7f.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -1261,7 +1314,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cosine-sim">Cosine sim</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-fig">Save fig</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-fig">Save fig</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#show-full-range-of-memberships">Show full range of memberships</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
